@@ -43,12 +43,11 @@ const pills = pillFields
 
 const repoPath = `https://github.com/ZAODEVZ/ZAOfractal/blob/main/${collection}/${slug}.md`;
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
-const ogImage = `/og/${collection}/${slug}.png`;
 
 // Long-form reading: whitepaper draft pages get the top progress bar.
 const showReadProgress = collection === 'whitepaper' && slug.startsWith('draft/');
 ---
-<BaseLayout title={title} ogImage={ogImage}>
+<BaseLayout title={title}>
   {showReadProgress && <ReadProgress />}
   <div class="doc-grid-3col">
     <aside class="doc-sidebar-rail">

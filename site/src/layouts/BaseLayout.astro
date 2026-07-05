@@ -15,8 +15,9 @@ const {
   ogImage,
 } = Astro.props;
 const fullTitle = title === 'ZAOfractal' ? title : `${title} - ZAOfractal`;
-// OG card generation is pending - use favicon as fallback for now.
-const ogImageUrl = new URL('/favicon.svg', Astro.site).toString();
+// Social card: use the passed per-page ogImage if it exists, else the branded
+// default card (1200x630 PNG). Favicon SVG is a poor social card, so avoid it here.
+const ogImageUrl = new URL(ogImage ?? '/og-default.png', Astro.site).toString();
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 <!doctype html>
