@@ -43,7 +43,6 @@ const pills = pillFields
 
 const repoPath = `https://github.com/ZAODEVZ/ZAOfractal/blob/main/${collection}/${slug}.md`;
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
-const ogImage = `/og/${collection}/${slug}.png`;
 
 // Per-page structured data (schema.org TechArticle) passed to BaseLayout's
 // jsonLd prop. Every doc (whitepaper chapter, research, reference) is an article.
@@ -65,7 +64,7 @@ if (frontmatter['last-validated']) {
 // Long-form reading: whitepaper draft pages get the top progress bar.
 const showReadProgress = collection === 'whitepaper' && slug.startsWith('draft/');
 ---
-<BaseLayout title={title} ogImage={ogImage} jsonLd={articleJsonLd}>
+<BaseLayout title={title} jsonLd={articleJsonLd}>
   {showReadProgress && <ReadProgress />}
   <div class="doc-grid-3col">
     <aside class="doc-sidebar-rail">
