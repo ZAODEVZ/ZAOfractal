@@ -7,18 +7,43 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
 const {
   title,
   description = 'ZAO Fractal - the weekly Respect Game, ORDAO governance, and the lineage of fractal democracy.',
   ogImage,
+  jsonLd,
 } = Astro.props;
 const fullTitle = title === 'ZAOfractal' ? title : `${title} - ZAOfractal`;
 // Social card: use the passed per-page ogImage if it exists, else the branded
 // default card (1200x630 PNG). Favicon SVG is a poor social card, so avoid it here.
 const ogImageUrl = new URL(ogImage ?? '/og-default.png', Astro.site).toString();
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const siteUrl = Astro.site ? Astro.site.toString() : 'https://zaofractal.vercel.app/';
+// Site-wide structured data (WebSite + Organization). Page-specific schema can be
+// passed via the `jsonLd` prop and is rendered in addition to this.
+const siteJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: 'ZAOfractal',
+      url: siteUrl,
+      description:
+        'The weekly Respect Game, 100+ weeks unbroken. Governance from contribution, not capital.',
+    },
+    {
+      '@type': 'Organization',
+      name: 'The ZAO',
+      alternateName: 'ZAO Fractal',
+      url: siteUrl,
+      description:
+        'A music community running the ZAO Fractal - a soulbound, peer-ranked weekly governance ritual on Optimism.',
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -42,6 +67,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
   <link rel="canonical" href={canonical} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{fullTitle}</title>
+  <script type="application/ld+json" set:html={JSON.stringify(siteJsonLd)} />
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 </head>
 <body>
   <Nav />
