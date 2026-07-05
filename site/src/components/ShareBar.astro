@@ -1,5 +1,5 @@
 ---
-// Inline share bar - Farcaster (Warpcast composeCast), X, copy link.
+// Inline share bar - Farcaster (composeCast), X, copy link.
 // Mounted at top of each doc page after the title block.
 
 interface Props {
@@ -9,13 +9,14 @@ interface Props {
 
 const { title, url } = Astro.props;
 
-// Warpcast composeCast deep link. The embeds[]= parameter unfurls the URL as a card in the cast.
+// Farcaster composeCast deep link (farcaster.xyz, formerly warpcast.com).
+// The embeds[]= parameter unfurls the URL as a card in the cast.
 const castText = `${title} - via @bettercallzaal`;
-const warpcastUrl = `https://warpcast.com/~/compose?text=${encodeURIComponent(castText)}&embeds[]=${encodeURIComponent(url)}`;
+const farcasterUrl = `https://farcaster.xyz/~/compose?text=${encodeURIComponent(castText)}&embeds[]=${encodeURIComponent(url)}`;
 const xUrl = `https://x.com/intent/post?text=${encodeURIComponent(castText)}&url=${encodeURIComponent(url)}`;
 ---
 <div class="sharebar" aria-label="Share this page">
-  <a href={warpcastUrl} target="_blank" rel="noopener noreferrer" class="share-btn share-fc" title="Cast on Farcaster">
+  <a href={farcasterUrl} target="_blank" rel="noopener noreferrer" class="share-btn share-fc" title="Cast on Farcaster">
     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 1000 1000" fill="currentColor" aria-hidden="true">
       <path d="M257.778 155.556h484.444v688.889h-71.111V528.889h-.697c-7.86-87.212-81.156-155.556-170.414-155.556s-162.554 68.344-170.414 155.556h-.697v315.555h-71.111V155.556Z"/>
       <path d="M128.889 253.333 157.778 351.111h24.444v395.556a24.444 24.444 0 0 0-24.444 24.444v26.667h-4.444A24.444 24.444 0 0 0 128.889 822.222v26.667h271.111v-26.667A24.444 24.444 0 0 0 375.556 797.778h-4.444v-26.667A24.444 24.444 0 0 0 346.667 746.667V253.333H128.889Zm539.555 493.334a24.444 24.444 0 0 0-22.221 24.444v26.667h-4.444A24.444 24.444 0 0 0 617.333 822.222v26.667h271.112v-26.667A24.444 24.444 0 0 0 864 797.778h-4.445v-26.667a24.444 24.444 0 0 0-22.222-24.444V351.111h24.445L890.667 253.333h-217.78V746.667h-4.443Z"/>
