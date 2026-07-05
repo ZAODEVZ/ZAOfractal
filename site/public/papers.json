@@ -1,0 +1,147 @@
+{
+  "name": "ZAO Fractal Whitepaper",
+  "description": "The weekly Respect Game, 100+ weeks unbroken. The only music-focused fractal, the only active fractal on Optimism, one of two on the Ethereum Superchain. Governance from contribution, not capital.",
+  "site": "https://zaofractal.vercel.app",
+  "source_repo": "https://github.com/ZAODEVZ/ZAOfractal",
+  "llms_txt": "https://zaofractal.vercel.app/llms.txt",
+  "license": "see repo",
+  "sections": [
+    {
+      "id": "whitepaper",
+      "title": "Whitepaper",
+      "url": "https://zaofractal.vercel.app/whitepaper",
+      "kind": "whitepaper"
+    },
+    {
+      "id": "research",
+      "title": "Research",
+      "url": "https://zaofractal.vercel.app/research",
+      "kind": "research"
+    },
+    {
+      "id": "reference",
+      "title": "Reference",
+      "url": "https://zaofractal.vercel.app/reference",
+      "kind": "reference"
+    },
+    {
+      "id": "lineage",
+      "title": "Lineage timeline",
+      "url": "https://zaofractal.vercel.app/lineage",
+      "kind": "timeline"
+    },
+    {
+      "id": "people",
+      "title": "People",
+      "url": "https://zaofractal.vercel.app/people",
+      "kind": "people"
+    },
+    {
+      "id": "bibliography",
+      "title": "Bibliography",
+      "url": "https://zaofractal.vercel.app/bibliography",
+      "kind": "bibliography"
+    },
+    {
+      "id": "resources",
+      "title": "Resources master index",
+      "url": "https://zaofractal.vercel.app/resources",
+      "kind": "index"
+    }
+  ],
+  "whitepaper": {
+    "status": "draft",
+    "chapter_count": 11,
+    "chapters": [
+      {
+        "number": 1,
+        "title": "Chapter 1: Preamble and Vision",
+        "slug": "ch01-preamble-and-vision",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch01-preamble-and-vision"
+      },
+      {
+        "number": 2,
+        "title": "Chapter 2: The Problem",
+        "slug": "ch02-the-problem",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch02-the-problem"
+      },
+      {
+        "number": 3,
+        "title": "Chapter 3: Fractal Democracy - First Principles",
+        "slug": "ch03-fractal-democracy-first-principles",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch03-fractal-democracy-first-principles"
+      },
+      {
+        "number": 4,
+        "title": "Chapter 4: The Respect Token",
+        "slug": "ch04-the-respect-token",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch04-the-respect-token"
+      },
+      {
+        "number": 5,
+        "title": "Chapter 5: The Respect Game",
+        "slug": "ch05-the-respect-game",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch05-the-respect-game"
+      },
+      {
+        "number": 6,
+        "title": "Chapter 6: On-Chain Architecture",
+        "slug": "ch06-on-chain-architecture",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch06-on-chain-architecture"
+      },
+      {
+        "number": 7,
+        "title": "Chapter 7: Why Fractal",
+        "slug": "ch07-why-fractal",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch07-why-fractal"
+      },
+      {
+        "number": 8,
+        "title": "Chapter 8: The ZAO Fractal",
+        "slug": "ch08-the-zao-fractal",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch08-the-zao-fractal"
+      },
+      {
+        "number": 9,
+        "title": "Chapter 9: Limitations and Open Problems",
+        "slug": "ch09-limitations-and-open-problems",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch09-limitations-and-open-problems"
+      },
+      {
+        "number": 10,
+        "title": "Chapter 10: Roadmap",
+        "slug": "ch10-roadmap",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch10-roadmap"
+      },
+      {
+        "number": 11,
+        "title": "Chapter 11: Conclusion",
+        "slug": "ch11-conclusion",
+        "url": "https://zaofractal.vercel.app/whitepaper/draft/ch11-conclusion"
+      }
+    ]
+  },
+  "onchain": {
+    "network": "Optimism (OP Mainnet)",
+    "contracts": [
+      {
+        "name": "OREC executor",
+        "address": "0xcB05F9254765CA521F7698e61E0A6CA6456Be532",
+        "standard": "ORDAO"
+      },
+      {
+        "name": "OG Respect",
+        "address": "0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957",
+        "standard": "ERC-20",
+        "fractals": "1-73"
+      },
+      {
+        "name": "ZOR Respect",
+        "address": "0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c",
+        "standard": "ERC-1155",
+        "fractals": "74+"
+      }
+    ]
+  },
+  "generated_note": "Static manifest for machine consumption. Companion to llms.txt."
+}
