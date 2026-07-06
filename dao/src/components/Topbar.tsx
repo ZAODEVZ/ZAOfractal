@@ -1,5 +1,6 @@
 import React from 'react';
 import { shortAddr } from '../lib/format';
+import { FRAPPS_URL } from '../lib/constants';
 
 interface Props {
   wallet: string | null;
@@ -9,25 +10,36 @@ interface Props {
 
 export default function Topbar({ wallet, onConnect, onDisconnect }: Props) {
   const handleConnect = () => {
-    // Placeholder — replace with Privy or WalletConnect flow
-    const mock = prompt('Enter wallet address (dev mode):');
+    const mock = prompt('Enter your wallet address:');
     if (mock?.startsWith('0x')) onConnect(mock);
   };
 
   return (
     <header className="topbar">
-      <div className="topbar-brand">
-        ZAO <span>DAO</span>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div className="topbar-brand">
+          ZAO <span>fractal</span>
+        </div>
+        <span className="pill pill-orange" style={{ fontSize: '0.68rem' }}>OP Mainnet</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
         <a
-          href="https://zao.frapps.xyz"
+          href={FRAPPS_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-secondary"
           style={{ fontSize: '0.8rem', padding: '0.35rem 0.85rem' }}
         >
-          frapps ↗
+          frapps.xyz ↗
+        </a>
+        <a
+          href="https://zaofractal.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-secondary"
+          style={{ fontSize: '0.8rem', padding: '0.35rem 0.85rem' }}
+        >
+          Docs ↗
         </a>
         {wallet ? (
           <button className="btn btn-secondary" onClick={onDisconnect} style={{ fontSize: '0.82rem' }}>

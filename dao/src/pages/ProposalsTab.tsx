@@ -12,55 +12,85 @@ interface Proposal {
   memo?: string;
 }
 
+const DEMO_PROPOSALS: Proposal[] = [
+  {
+    id: '0xabc001',
+    title: 'Season 9 Respect Game Results — Week 102',
+    status: 'executed',
+    yesWeight: 3480,
+    noWeight: 0,
+    createTime: Date.now() / 1000 - 86400 * 3,
+    memo: 'Batch mint ZOR Respect for 18 participants across 3 breakout rooms.',
+  },
+  {
+    id: '0xabc002',
+    title: 'Season 9 Respect Game Results — Week 101',
+    status: 'executed',
+    yesWeight: 2960,
+    noWeight: 110,
+    createTime: Date.now() / 1000 - 86400 * 10,
+  },
+  {
+    id: '0xabc003',
+    title: 'Season 9 Respect Game Results — Week 100',
+    status: 'executed',
+    yesWeight: 3200,
+    noWeight: 0,
+    createTime: Date.now() / 1000 - 86400 * 17,
+  },
+];
+
 interface Props { wallet: string | null; }
 
-export default function ProposalsTab({ wallet }: Props) {
+export default function ProposalsTab({ wallet: _wallet }: Props) {
   const [proposals, setProposals] = useState<Proposal[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [offline, setOffline] = useState(false);
 
   useEffect(() => {
-    fetch(`${ORNODE_URL}/proposals?limit=20`)
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 6000);
+
+    fetch(`${ORNODE_URL}/proposals?limit=20`, { signal: controller.signal })
       .then((r) => r.json())
       .then((data) => {
-        setProposals(Array.isArray(data) ? data : data.proposals ?? []);
+        clearTimeout(timeout);
+        const list: Proposal[] = Array.isArray(data) ? data : (data.proposals ?? []);
+        if (list.length > 0) {
+          setProposals(list);
+        } else {
+          setProposals(DEMO_PROPOSALS);
+          setOffline(true);
+        }
         setLoading(false);
       })
       .catch(() => {
-        setError('Could not reach ZAO ornode. It may be offline.');
+        clearTimeout(timeout);
+        setProposals(DEMO_PROPOSALS);
+        setOffline(true);
         setLoading(false);
       });
+
+    return () => { clearTimeout(timeout); controller.abort(); };
   }, []);
 
   if (loading) return <div className="empty-state"><p>Loading proposals…</p></div>;
 
-  if (error) return (
-    <div className="empty-state">
-      <h3>Ornode unreachable</h3>
-      <p style={{ marginBottom: '1.25rem' }}>{error}</p>
-      <a href={`${FRAPPS_URL}/proposals`} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-        View on frapps.xyz ↗
-      </a>
-    </div>
-  );
-
-  if (!proposals.length) return (
-    <div className="empty-state">
-      <h3>No proposals yet</h3>
-      <p style={{ marginBottom: '1.25rem' }}>Be the first to submit a governance proposal.</p>
-      <a href={`${FRAPPS_URL}/newProposal`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-        New Proposal ↗
-      </a>
-    </div>
-  );
-
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-        <h2 style={{ margin: 0 }}>Active Proposals</h2>
-        <a href={`${FRAPPS_URL}/newProposal`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-          + New Proposal
-        </a>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+        <h2 style={{ margin: 0 }}>Governance Proposals</h2>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          {offline && (
+            <span className="ornode-status">
+              <span className="dot offline" />
+              demo data
+            </span>
+          )}
+          <a href={`${FRAPPS_URL}/newProposal`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            + New Proposal
+          </a>
+        </div>
       </div>
 
       <div className="proposal-list">
@@ -72,6 +102,9 @@ export default function ProposalsTab({ wallet }: Props) {
               <div className="proposal-header">
                 <div style={{ flex: 1 }}>
                   <div className="proposal-title">{p.title || p.memo || `Proposal ${shortAddr(p.id)}`}</div>
+                  {p.memo && p.title && (
+                    <div style={{ color: 'var(--text-dim)', fontSize: '0.82rem', marginTop: '0.3rem' }}>{p.memo}</div>
+                  )}
                   <div className="proposal-meta">
                     <span className={`pill pill-${p.status === 'active' ? 'cyan' : p.status === 'passed' || p.status === 'executed' ? 'orange' : 'dim'}`}>
                       {p.status}
@@ -89,15 +122,15 @@ export default function ProposalsTab({ wallet }: Props) {
                   style={{ fontSize: '0.8rem', padding: '0.35rem 0.85rem', flexShrink: 0 }}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  Vote ↗
+                  View ↗
                 </a>
               </div>
               <div className="vote-bar">
                 <div className="vote-bar-fill" style={{ width: `${yesPct}%` }} />
               </div>
               <div className="vote-counts">
-                <span>YES — {p.yesWeight.toLocaleString()} Respect ({yesPct}%)</span>
-                <span>NO — {p.noWeight.toLocaleString()} Respect</span>
+                <span>YES — {p.yesWeight.toLocaleString()} ZOR ({yesPct}%)</span>
+                <span>NO — {p.noWeight.toLocaleString()} ZOR</span>
               </div>
             </div>
           );
