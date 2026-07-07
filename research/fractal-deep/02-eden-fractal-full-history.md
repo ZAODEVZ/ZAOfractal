@@ -612,11 +612,168 @@ No competing hubs. No governance fragmentation. One general-purpose + one specia
 
 **Document Status:** RESEARCH-COMPLETE
 
-**Last Validated:** 2026-05-24
+**Last Validated:** 2026-06-20 (updated with blog research + site audit)
 
-**For:** ZAO Fractal Whitepaper & Governance Documentation
+---
 
-**Next Steps:**
-1. Cross-reference with ZAO internal project documents (project_fractal_process.md, project_fractal_vision.md)
-2. Extract key quotes for whitepaper chapters
-3. Use Eden's precedents as benchmark for ZAO scaling (100+ weekly participants would require parallel breakout rooms per Roy Fractal model)
+## PART: EDEN FRACTAL BLOG & SITE AUDIT (Added 2026-06-20)
+
+*Source: edenfractal.com scraped via search indexing (site blocks direct fetch). All URLs confirmed via Google indexes.*
+
+### Blog Articles (edenfractal.com/blog)
+
+Blog appears to have started ~September 2024. Confirmed articles:
+
+| # | Title | URL | Topic |
+|---|-------|-----|-------|
+| 1 | Participating in Fractal Governance: A Beginner's Guide | [/blog/participating-in-fractal-governance-a-beginners-guide](https://edenfractal.com/blog/participating-in-fractal-governance-a-beginners-guide) | How to join Thursday 17:00 UTC events, earn Respect, participate in governance |
+| 2 | Upvote Elections: A Pioneering Framework for Scaling Democratic Coordination | [/blog/upvote-elections](https://edenfractal.com/blog/upvote-elections) | Multi-round deliberation system for democratic governance at any scale |
+| 3 | The Respect Game: A Revolutionary Framework for Community Growth | [/blog/respect-game](https://edenfractal.com/blog/respect-game) | How the Respect Game works as a social coordination system (also at optimystics.io/respectgame) |
+| 4 | Respect Tokens: Transforming Intangible Appreciation into Digital Forms | slug unconfirmed | ERC-1155 soulbound Respect tokens, how they measure impact and enable governance |
+| 5 | Fractal Democracy: The Natural Evolution of Governance | slug unconfirmed | Scalable human-centered governance philosophy and evolution |
+| 6 | Cultivating Civilization: Why Fractal Democracy is Necessary | slug unconfirmed | Fractal democracy as solution to centralized power; resilient governance |
+| 7 | Prosocial Games: Enabling Fractal Decision-Making Through Play | slug unconfirmed | How prosocial games align individual incentives with community benefits |
+| 8 | Fractal Apps: Open-Source Software for Collaboration and Governance | [/fractal-apps](https://edenfractal.com/fractal-apps) | Suite of open-source tools: Fractalgram, ORDAO, Respect.Games |
+| 9 | Eden Fractal Epoch 2: A New Era of Collaborative Decision-Making | slug unconfirmed | Intro to Epoch 2: ORDAO on Base, Fractal Fellowship, Fractal Development Fund |
+| 10 | Eden Fractal Epoch 1: A Retrospective on Our First Three Years | slug unconfirmed | Deep dive on 3 years of fractal governance; covers OF, Spanish Speaking, Alien Worlds, Aquadac, ZAO |
+| 11 | A History of Fractal Communities: Our Journey from 2021 to 2025 | [optimystics.io/blog/fractalhistory](https://optimystics.io/blog/fractalhistory) | Full lineage from Larimer's 2021 book through all communities (cross-published) |
+
+### Key Site Pages
+
+| Page | URL |
+|------|-----|
+| Main | [edenfractal.com](https://edenfractal.com) |
+| Blog | [edenfractal.com/blog](https://edenfractal.com/blog) |
+| About | [edenfractal.com/about](https://edenfractal.com/about) |
+| History | [edenfractal.com/history](https://edenfractal.com/history) |
+| Videos | [edenfractal.com/videos](https://edenfractal.com/videos) |
+| Fractal Decision-Making | [edenfractal.com/fractal-decision-making-processes](https://edenfractal.com/fractal-decision-making-processes) |
+| Fractal Apps | [edenfractal.com/fractal-apps](https://edenfractal.com/fractal-apps) |
+| Ep. 117 — Governance Architecture | [edenfractal.com/117](https://edenfractal.com/117) |
+| Epoch 2 Implementation Plan | [edenfractal.com/epoch2-implementation-plan](https://edenfractal.com/epoch2-implementation-plan) |
+| Epoch 2 Timeline Clarification | [edenfractal.com/epoch2-implementation-plan/elements-of-epoch-2/clarifying-eden-fractals-epoch-1-and-epoch-2-timeline](https://edenfractal.com/epoch2-implementation-plan/elements-of-epoch-2/clarifying-eden-fractals-epoch-1-and-epoch-2-timeline) |
+| Epoch 2 Videos | [edenfractal.com/epoch2/videos-about-eden-fractal-epoch-2](https://edenfractal.com/epoch2/videos-about-eden-fractal-epoch-2) |
+| Eden+ FAQ | [edenfractal.com/plus/edenfractal-faq](https://edenfractal.com/plus/edenfractal-faq) |
+| Optimism Fractal Proposal Updates | [edenfractal.com/eden-fractal-site-database/eden-fractal-community/optimism-fractal-proposal-updates](https://edenfractal.com/eden-fractal-site-database/eden-fractal-community/optimism-fractal-proposal-updates) |
+
+### Episode Archive Pattern
+
+Eden Fractal uses `edenfractal.com/[number]` for episode show notes (same pattern as Optimism Fractal):
+
+| Episode | URL | Notes |
+|---------|-----|-------|
+| 29 | [edenfractal.com/29](https://edenfractal.com/29) | Vlad discusses mission; first "Vlalendas" game |
+| 30 | [edenfractal.com/30](https://edenfractal.com/30) | |
+| 36 | [edenfractal.com/36](https://edenfractal.com/36) | |
+| 47 | [edenfractal.com/47](https://edenfractal.com/47) | |
+| 51 | [edenfractal.com/51](https://edenfractal.com/51) | |
+| 58 | [edenfractal.com/58](https://edenfractal.com/58) | Eden shifting focus; Alien Worlds + Rosmari community stories |
+| 60 | [edenfractal.com/60](https://edenfractal.com/60) | Engaging discussions + next steps |
+| 63 | [edenfractal.com/63](https://edenfractal.com/63) | |
+| 64 | [edenfractal.com/64](https://edenfractal.com/64) | Has episode extras: [/64/episode-extras/notes](https://edenfractal.com/64/episode-extras/notes) |
+| 117 | [edenfractal.com/117](https://edenfractal.com/117) | Fractal Governance Architecture (tripartite model) — see below |
+| **121** | — | **Epoch 2 launch episode** (June 5, 2025) |
+
+**Total episode count:** 120 episodes in Epoch 1 (May 2022 – May 22, 2025); Epoch 2 starts at #121.
+
+### Episode 117 — Fractal Governance Architecture (Key Episode)
+
+**URL:** [edenfractal.com/117](https://edenfractal.com/117)
+
+This episode features Dan Singjoy presenting his second Optimism Grants deliverable — the Governance Integration Strategy. The tripartite model is explained using Daniel Kahneman's "Thinking Fast and Slow" framework:
+
+| Branch | Role | Kahneman Parallel |
+|--------|------|-------------------|
+| **Judicial — Respect Game** | Peer evaluation; slow deliberative layer; creates on-chain attestations | System 2 (slow, deliberate) |
+| **Legislative — Sages Council** | Abstract human deliberation; guides strategy; top Respect earners | System 2 (deliberate) |
+| **Executive — ORDAO** | Fast technical execution; automates proposals | System 1 (fast) |
+
+Tadas and contributor Will both presented in this episode. ORDAO was described as "coming soon" at the time.
+
+### ORDAO Deployment Keys (All Active Instances)
+
+| Key | Community | Frontend URL |
+|-----|-----------|-------------|
+| `ef` | Eden Fractal | [eden.frapps.xyz](https://eden.frapps.xyz) |
+| `of` | Optimism Fractal | [of.frapps.xyz](https://of.frapps.xyz) / [optimism.frapps.xyz](https://optimism.frapps.xyz) |
+| `zao` | ZAO Fractal | [zao.frapps.xyz](https://zao.frapps.xyz) |
+| `orf` | ORDAO Fractal | — |
+| `oh` | ORDAO Office Hours | — |
+| `buildium` | Buildium Fractal | — |
+| `op-sepolia` | Test deployment | — |
+
+### Ecosystem Statistics (Confirmed Numbers)
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| Eden Fractal founded | May 2022 | edenfractal.com |
+| Epoch 1 total events | 120 (10 seasons × 12 events) | edenfractal.com |
+| Epoch 1 end | Episode #120, May 22, 2025 | edenfractal.com |
+| Epoch 2 launch | Episode #121, June 5, 2025 | edenfractal.com |
+| 3-year anniversary celebration | June 19, 2025 | edenfractal.com |
+| Governance system start | January 2024 | edenfractal.com |
+| Community proposals evaluated | 200+ | edenfractal.com |
+| Eden Creators videos | 300+ | edencreators.com |
+| Eden Creators shows | 12+ | edencreators.com |
+| Eden Town Hall events | 70+ | edentownhall.com |
+| Educational events (Epoch 1) | 110+ | edenfractal.com |
+| Optimism governance-focused events | 37+ (since Oct 2023) | edenfractal.com |
+| Council size | Top 6 Respect earners | edenfractal.com |
+| Council consensus threshold | 2/3 supermajority | edenfractal.com |
+| Respect token standard | ERC-1155 soulbound | github.com/sim31/ordao |
+| Epoch 2 blockchain | Base (Ethereum L2) | edenfractal.com |
+
+### Frapps Toolkit — Detailed Breakdown
+
+**GitHub:** [github.com/Optimystics/frapps](https://github.com/Optimystics/frapps)
+
+Three generations of tools included:
+
+1. **Original Optimism Fractal Software** (October 2023) — First-gen: weekly consensus games, Fibonacci Respect distribution, basic on-chain records.
+
+2. **ORDAO / Fractalgram** — Advanced governance with consent-based voting. Fractalgram is a Telegram web app enabling Respect Game play with automated polling and one-button score push to web app. License: GPL-3.0 (original), MIT (next-gen). Orclient docs: [orclient-docs.frapps.xyz](https://orclient-docs.frapps.xyz).
+
+3. **Respect.Games** — Full-featured async gameplay platform with Graph Protocol indexing. On-chain council: top 5 earners from past 12 weeks (automated). Testing completed Sep 2024.
+
+### Key Contributor Roster (Eden Fractal Epoch 1)
+
+| Name | Role | Contributions |
+|------|------|--------------|
+| **Dan SingJoy** | Founder, host | Governance design, event facilitation, proposals, content, all key community decisions |
+| **Tadas (sim31)** | ORDAO architect | Smart contracts (OREC, Respect1155, SolidRespect), ornode backend, frapps toolkit |
+| **Vlad (Vladislav Hramtsov)** | Frontend dev | Rank submission web app, Fractalgram UI, CETF smart contracts (EOS era), first 12-person event participant |
+| **Rosmari** | Media/community | Podcast production, video editing, thumbnails, community stories, content for 300+ Eden Creators videos |
+| **Chuck MacDonald** | Chief Delegate | Commemorative Eden NFTs; planned yield-bearing NFTs |
+| **James Mart** | Contributor/writer | Smart contracts for EOS Respect distribution; authored "Fractal Democracy: A Primer" and "On Persistent Roles in Fractal Governance" (Medium) |
+| **Abraham** | UI contributor | Fractalgram UI improvements, mainnet deployment |
+| **Noam, Jorge, Eric, Duane** | Active members | Named in episode descriptions |
+
+### External Links — Full Resource Index
+
+| Resource | URL |
+|----------|-----|
+| Eden Fractal | [edenfractal.com](https://edenfractal.com) |
+| Eden ORDAO app | [eden.frapps.xyz](https://eden.frapps.xyz) |
+| Eden Town Hall | [edentownhall.com](https://edentownhall.com) |
+| Eden Creators | [edencreators.com](https://edencreators.com) |
+| Eden Creators YouTube | [youtube.com/@EdenCreators](https://www.youtube.com/@EdenCreators) |
+| Optimystics | [optimystics.io](https://optimystics.io) |
+| Optimism Fractal | [optimismfractal.com](https://optimismfractal.com) |
+| ORDAO repo | [github.com/sim31/ordao](https://github.com/sim31/ordao) |
+| Frapps toolkit | [github.com/Optimystics/frapps](https://github.com/Optimystics/frapps) |
+| orclient docs | [orclient-docs.frapps.xyz](https://orclient-docs.frapps.xyz) |
+| Dan SingJoy | [dansingjoy.com](https://dansingjoy.com) |
+| Dan EcoDev Proposal | [dansingjoy.com/ecodev-proposal](https://dansingjoy.com/ecodev-proposal) |
+| Fractal History (Optimystics) | [optimystics.io/blog/fractalhistory](https://optimystics.io/blog/fractalhistory) |
+| Respect Game info | [optimystics.io/respectgame](https://optimystics.io/respectgame) |
+| ORDAO info | [optimystics.io/ordao](https://optimystics.io/ordao) |
+| OREC info | [optimystics.io/orec](https://optimystics.io/orec) |
+| Fractalgram | [optimystics.io/fractalgram](https://optimystics.io/fractalgram) |
+| Optimystics tools | [optimystics.io/tools](https://optimystics.io/tools) |
+| 2025 Strategy | [optimystics.io/2025-strategy](https://optimystics.io/2025-strategy) |
+| Epoch 2 (Optimism forum) | [gov.optimism.io/t/eden-fractal-epoch-2…/9976](https://gov.optimism.io/t/eden-fractal-epoch-2-implementing-fractal-decision-making-on-the-superchain/9976) |
+| James Mart — Fractal Democracy Primer | [james-mart.medium.com/fractal-democracy-a-primer-c5b1726e8c3a](https://james-mart.medium.com/fractal-democracy-a-primer-c5b1726e8c3a) |
+| James Mart — Persistent Roles | [james-mart.medium.com/on-persistent-roles-in-fractal-governance-68d0f7dad9e2](https://james-mart.medium.com/on-persistent-roles-in-fractal-governance-68d0f7dad9e2) |
+| Hats Protocol | [hatsprotocol.xyz](https://www.hatsprotocol.xyz) |
+| Vlad Hramtsov Medium | [medium.com/@vladislavhramtsov](https://medium.com/@vladislavhramtsov) |
+| EdenOS Medium | [medium.com/edenos](https://medium.com/edenos) |

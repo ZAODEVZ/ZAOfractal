@@ -9,6 +9,7 @@ import {
 } from '@shikijs/transformers';
 import rehypeContractAddresses from './src/plugins/rehype-contract-addresses.mjs';
 import rehypeCopyButton from './src/plugins/rehype-copy-button.mjs';
+import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 
 // The repo lives at github.com/ZAODEVZ/ZAOfractal.
 // Public site at zaofractal.vercel.app; canonical domain fractal.thezao.com pending DNS.
@@ -26,7 +27,7 @@ export default defineConfig({
         transformerMetaHighlight(),
       ],
     },
-    rehypePlugins: [rehypeContractAddresses, rehypeCopyButton],
+    rehypePlugins: [rehypeExternalLinks, rehypeContractAddresses, rehypeCopyButton],
   },
   build: {
     format: 'directory',

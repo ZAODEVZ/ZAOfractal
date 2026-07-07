@@ -597,7 +597,7 @@ Most DAO governance is binary: voting on Discord, then a multisig executes. Opti
 
 ## SUMMARY: THE OPTIMISM FRACTAL ARC
 
-**October 2023 - January 2026: 15 months, 72 events, 65 Respect holders, 1 innovation.**
+**October 2023 - January 2026: 15 months, 84–87 episodes, 65 Respect holders, 1 innovation.**
 
 Optimism Fractal was born from a strategic question: *Can fractal governance work on Ethereum L2s?* The team (Dan SingJoy + Optimystics) answered yes - by launching a **tripartite governance model** (Judicial/Legislative/Executive) with **on-chain ORDAO execution**, proving that peer-evaluated governance could scale to 65+ members in production on OP Mainnet.
 
@@ -621,24 +621,183 @@ In January 2026, the council voted to **pause indefinitely and consolidate into 
 
 ## UNKNOWNS REMAINING (After Full Research)
 
-1. **Vote tally on January 2026 pause** - UNKNOWN; council voted but no public record
+1. **Vote tally on January 2026 pause** - UNKNOWN; council voted but no public record (likely off-chain consensus + December 2024 proposal to shift cadence)
 2. **Optimism Grants Council Season 6 award amount** - UNKNOWN; likely $50k-$250k, not published
 3. **Grant funding expiration timeline** - UNKNOWN; when did Season 6 funds run out?
 4. **Optimism Fractal Respect migration plan** - UNKNOWN; no announced pathway for OF -> Eden transition
-5. **Individual season milestones** - UNKNOWN; what specific events/proposals happened in each season?
-6. **ORDAO first proposal details** - UNKNOWN; what was the first on-chain vote?
-7. **Proposal success rate** - UNKNOWN; how many proposals passed vs. failed?
-8. **Volunteer retention curve** - UNKNOWN; did attendance decline in final 3 months?
-9. **Hats Protocol tree ID for Sages Council** - UNKNOWN; which tree on Hats managed the council?
-10. **Superchain Interop Incubator participation level** - UNKNOWN; was OF a pilot, case study, or reference?
+5. **ORDAO first proposal details** - UNKNOWN; what was the first on-chain vote?
+6. **Proposal success rate** - UNKNOWN; how many proposals passed vs. failed?
+7. **Volunteer retention curve** - UNKNOWN; did attendance decline in final 3 months?
+8. **Hats Protocol tree ID for Sages Council** - UNKNOWN; which tree on Hats managed the council?
+9. **Superchain Interop Incubator participation level** - UNKNOWN; was OF a pilot, case study, or reference?
+10. **Total final episode count** - Confirmed 81+ (OF 81 = Oct 3, 2025); Season 6 finale likely Ep 84-87 (Jan 22, 2026)
+
+---
+
+## PART 8: EPISODE ARCHIVE & SEASON GUIDE
+
+*Added 2026-06-20 via web research. Source: optimismfractal.com episode pages + gov.optimism.io season posts.*
+
+### Session Format
+
+| Parameter | Value |
+|-----------|-------|
+| **Day** | Thursday |
+| **Time** | 17:00 UTC |
+| **Platform** | Zoom (recorded + posted to YouTube) |
+| **Group size** | Breakout rooms of ~6 participants |
+| **Duration per session** | ~1 hour (Respect Game) + optional Town Hall |
+| **Ranking mechanism** | 2/3 consensus required within each breakout room |
+| **Results** | Submitted on-chain to OP Mainnet Respect1155 contract |
+
+### Season Boundaries
+
+| Season | First Episode | Finale Episode | Approx. Dates | Governance Forum |
+|--------|--------------|---------------|---------------|-----------------|
+| **Season 1** | OF 1 | ~OF 23 | Oct 20, 2023 – Apr 2024 | [Introducing OF](https://gov.optimism.io/t/introducing-optimism-fractal/6990) |
+| **Season 2** | ~OF 13 | OF 24 | Early 2024 – Apr 18, 2024 | UNKNOWN |
+| **Season 3** | OF 25 | OF 36 | May 9, 2024 – Jul 25, 2024 | [Season 3](https://gov.optimism.io/t/optimism-fractal-season-3/8095/18) |
+| **Season 4** | OF 37 | ~OF 47 | Aug 15, 2024 – Oct 2024 | [Season 4](https://gov.optimism.io/t/optimism-fractal-season-4/8707/5) |
+| **Season 5** | ~OF 48 | ~OF 62 | Nov 21, 2024 – early 2025 | [Season 5](https://gov.optimism.io/t/optimism-fractal-season-5-level-up-with-weekly-respect-games-on-the-superchain/9294) |
+| **Season 6** | ~OF 63 | ~OF 84-87 | May 2, 2025 – Jan 22, 2026 | [Season 6](https://gov.optimism.io/t/optimism-fractal-season-6-expanding-democratic-coordination-across-the-superchain/9924) |
+
+**Note:** Season 6 had a summer break (~Aug–Oct 2025). OF 81 (Oct 3, 2025) was the return from that break. The Season 6 Finale aired Jan 22, 2026.
+
+### Episode Milestones (Confirmed)
+
+| Episode | Title | Date | Notes |
+|---------|-------|------|-------|
+| **OF 1** | Welcome to Optimism Fractal! | Oct 20, 2023 | First ever session |
+| **OF 8** | Merry Measures | Dec 2023 | Early Season 1 |
+| **OF 15** | Optimistic Vision | Feb 12, 2024 | Season 1 |
+| **OF 22** | Retro Funding Optimism Fractal | 2024 | RetroPGF focus |
+| **OF 23** | Optimism Fractal Seasons | Apr 2024 | Season overview/milestone |
+| **OF 24** | Season 2 Finale | Apr 18, 2024 | End of Season 2 |
+| **OF 25** | Welcome to Optimism Fractal Season 3 | May 9, 2024 | Season 3 kickoff |
+| **OF 28** | Optimism Fractal Software | Jun 2024 | Software demo |
+| **OF 29** | Reflection Session | Jun 6, 2024 | Mid-Season 3 |
+| **OF 33** | Superchain Builders | Jul 2024 | Season 3 |
+| **OF 34** | Season Prep | Jul 2024 | Pre-Season 4 |
+| **OF 36** | Season 3 Finale | Jul 25, 2024 | End of Season 3 |
+| **OF 37** | Season 4 debut | Aug 15, 2024 | Season 4 kickoff |
+| **OF 40** | Optimism Fractal ORDAO App | Sep 5, 2024 | ORDAO frontend demo |
+| **OF 42** | Builder Progress & Retro Funding 6 | Fall 2024 | |
+| **OF 43** | Optimism Missions & Governance Enhancements | Fall 2024 | |
+| **OF 44** | Governance Gardeners & Hats Protocol Deep Dive | Oct 3, 2024 | Guest: David Ehrlichman |
+| **OF 47** | RetroPitches & One Year Anniversary Celebration | ~Oct 2024 | 1-year milestone |
+| **OF 54** | Ethereum Gardeners | Late 2024 | |
+| **OF 58** | Rebuilding Economies | Late 2024/early 2025 | |
+| **OF 62** | Building Ethereum with Respect Games and ORDAO | 2025 | |
+| **OF 65** | Onchain Builders | Jul 10, 2025 | Season 6 |
+| **OF 67** | Welcome Back & Discussion on Eric's Initiatives | ~Aug 2025 | Pre-summer-break return |
+| **OF 81** | Return from Summer Break | Oct 3, 2025 | Season 6 second half |
+| **~OF 84–87** | Season 6 Finale — "Reflections on Two Years" | Jan 22, 2026 | Final episode; honored Tadas, Vlad, Zaal, Swarthy Hatter |
+
+### Video Archive
+
+| Resource | URL |
+|----------|-----|
+| **YouTube Playlist (all episodes)** | [youtube.com/playlist?list=PLa5URJF9l5lk5Aavi98CqFj7ryM42bvbP](https://www.youtube.com/playlist?list=PLa5URJF9l5lk5Aavi98CqFj7ryM42bvbP) |
+| **Eden Creators YouTube Channel** | [youtube.com/@EdenCreators](https://www.youtube.com/@EdenCreators) |
+| **Episode show notes** | [optimismfractal.com/videos](https://optimismfractal.com/videos) |
+| **OF 1: Welcome to Optimism Fractal!** | [youtube.com/watch?v=UxZIcui76Po](https://www.youtube.com/watch?v=UxZIcui76Po) |
+| **OF 22: Retro Funding** | [youtube.com/watch?v=5FeRMLjw0yY](https://www.youtube.com/watch?v=5FeRMLjw0yY) |
+| **OF 25: Welcome to Season 3** | [youtube.com/watch?v=-QbLQgOZKwk](https://www.youtube.com/watch?v=-QbLQgOZKwk) |
+| **OF 28: Optimism Fractal Software** | [youtube.com/watch?v=CsTqPS4HHsw](https://www.youtube.com/watch?v=CsTqPS4HHsw) |
+| **OF 40: ORDAO App** | [youtube.com/watch?v=jYcMpadnaZA](https://www.youtube.com/watch?v=jYcMpadnaZA) |
+| **Pre-series: OF and RetroPGF** | [youtube.com/watch?v=ugSdR2A3PIs](https://www.youtube.com/watch?v=ugSdR2A3PIs) |
+| **Pre-series: OF Proposal Overview** | [youtube.com/watch?v=IFNjgReIV0c](https://www.youtube.com/watch?v=IFNjgReIV0c) |
+
+### Luma Events Page
+
+Live event calendar: [lu.ma/optimismfractal](https://lu.ma/optimismfractal)
+
+---
+
+## PART 9: FULL TEAM ROSTER
+
+*Added 2026-06-20. Sources: optimystics.io/blog/optimism-fractal-contributors, Season 6 Finale honors.*
+
+| Name | Role | Focus | Socials |
+|------|------|-------|---------|
+| **Dan SingJoy** | Founder, host, lead designer | Respect Game design, community facilitation, governance proposals, Superchain advocacy | [dansingjoy.com](https://dansingjoy.com) · [@DanSingjoy](https://x.com/dansingjoy) · [gov.optimism.io](https://gov.optimism.io/u/dansingjoy) |
+| **Tadas (sim31)** | Co-founder, lead engineer | ORDAO/OREC smart contracts, orfrapps deployment configs, ornode backend | [github.com/sim31](https://github.com/sim31) |
+| **Vlad** | Co-founder, frontend engineer | Rank submission web app, Fractalgram UI, smart contracts; also involved in Alien Worlds Fractal | UNKNOWN |
+| **Rosmari** | Co-founder, marketing/media | Branding, podcast production, video editing, thumbnails, community outreach, Eden Fractal meeting production | [gov.optimism.io/u/Rosmari](https://gov.optimism.io/u/Rosmari) |
+| **Abraham** | Contributor | Fractalgram UI improvements, mainnet deployment, organizational management features | UNKNOWN |
+| **Swarthy Hatter** | Recognized builder | Active community contributor; honored at Season 6 Finale | UNKNOWN |
+| **Zaal** | Cross-community bridge | ZAO Fractal founder; honored at Season 6 Finale; community member bridging music and governance | [thezao.com](https://thezao.com) |
+
+---
+
+## PART 10: OREC CONTRACT TECHNICAL DETAILS
+
+*Added 2026-06-20. Source: github.com/sim31/ordao (Orec.sol).*
+
+### Key State Variables
+
+| Variable | Type | Purpose |
+|----------|------|---------|
+| `voteLen` | uint64 | Duration of voting period (seconds) |
+| `vetoLen` | uint64 | Duration of veto period (seconds) |
+| `minWeight` | uint256 | Minimum YES-weight for a proposal to be eligible |
+| `respectContract` | address | The Respect ERC-1155 contract used for vote weighting |
+| `maxLiveYesVotes` | uint8 | Max concurrent active YES votes per account (anti-spam) |
+| `proposals` | mapping | PropId → ProposalState (createTime, yesWeight, noWeight) |
+
+### Pass/Veto Condition
+
+```solidity
+// Proposal passes if:
+noWeight * 2 < yesWeight && yesWeight >= minWeight
+
+// Interpretation:
+// YES must exceed 2× NO (roughly 2/3 of turnout)
+// AND minimum participation threshold must be met
+// 1/3 of turnout voting NO = veto
+```
+
+### Core Function Signatures
+
+```solidity
+vote(PropId, VoteType, bytes)    // Vote and optionally create proposal
+propose(PropId)                  // Create proposal without voting
+execute(Message)                 // Execute a passed proposal
+setRespectContract(IERC165)      // Swap in new Respect token contract
+proposalId(Message) returns (PropId)  // keccak256(Message) → ID
+```
+
+### Key Design: Offchain Content, Onchain Hash
+
+Only the **keccak256 hash** of a proposal's Message is stored on-chain. Full proposal content (description, rationale, calldata) lives in the **ornode** (off-chain API). The `orclient` TypeScript library merges both sources for the UI.
+
+This keeps gas costs low while maintaining auditability — anyone can verify a hash matches the content in ornode.
+
+### Stack
+
+| Layer | Technology |
+|-------|------------|
+| Contracts | Solidity (Hardhat, Lerna monorepo) |
+| Backend | ornode — Node.js + MongoDB |
+| Client lib | orclient — TypeScript (93.6% of codebase) |
+| Frontend | React + Chakra UI (Fractalgram/frapps) |
+| Wallet | Privy (`@ordao/privy-react-orclient`) |
+
+### Deployed ORDAO Frontend URLs
+
+| Community | URL |
+|-----------|-----|
+| Optimism Fractal | [of.frapps.xyz](https://of.frapps.xyz) / [optimism.frapps.xyz](https://optimism.frapps.xyz) |
+| Eden Fractal | [eden.frapps.xyz](https://eden.frapps.xyz) |
+| ZAO Fractal | [zao.frapps.xyz](https://zao.frapps.xyz) |
+
+Deployment configs: [github.com/sim31/orfrapps](https://github.com/sim31/orfrapps)
 
 ---
 
 ## Metadata
 
-- **Word count:** 5,800+
-- **Sources verified:** 13 FULL + 3 PARTIAL + 11 FAILED = 27 total sources
-- **Fetch budget used:** 13/30 allowed fetches
-- **Time spent:** ~30 minutes wall clock
-- **Research confidence:** HIGH for launch/funding/ecosystem facts; MODERATE for operational history; LOW for vote tallies and grant amounts
-- **Last validated:** 2026-05-24
+- **Word count:** 8,500+
+- **Sources verified:** 13 FULL + 3 PARTIAL + 11 FAILED = 27 original sources; 15+ additional sources added 2026-06-20
+- **Research confidence:** HIGH for launch/funding/ecosystem/team/episode facts; MODERATE for operational history; LOW for vote tallies and grant amounts
+- **Last validated:** 2026-06-20

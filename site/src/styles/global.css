@@ -266,6 +266,60 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
 .tag-cyan { color: var(--cyan); }
 .tag-gold { color: var(--gold); }
 
+/* External links (rendered by rehype-external-links plugin) */
+.ext-link {
+  color: var(--cyan);
+  border-bottom: 1px solid rgba(91, 134, 168, 0.35);
+  transition: color 0.15s, border-color 0.15s;
+}
+.ext-link::after {
+  content: ' ↗';
+  font-size: 0.75em;
+  opacity: 0.6;
+  vertical-align: super;
+  line-height: 1;
+}
+.ext-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* Standalone external links — rendered as full-width "Visit Site" buttons */
+p.ext-link-block {
+  margin: 1.25rem 0;
+}
+p.ext-link-block .ext-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--cyan);
+  border-bottom: 1px solid var(--cyan);
+  border-radius: var(--radius);
+  background: rgba(91, 134, 168, 0.08);
+  color: var(--cyan);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  max-width: 100%;
+  word-break: break-all;
+}
+p.ext-link-block .ext-link::after {
+  content: '→';
+  font-size: 1em;
+  opacity: 1;
+  vertical-align: baseline;
+  flex-shrink: 0;
+}
+p.ext-link-block .ext-link:hover {
+  background: rgba(91, 134, 168, 0.18);
+  color: var(--text);
+  border-color: var(--gold);
+}
+
 /* Contract address pill (rendered by rehype-contract-addresses plugin) */
 .contract-address {
   display: inline-flex;
