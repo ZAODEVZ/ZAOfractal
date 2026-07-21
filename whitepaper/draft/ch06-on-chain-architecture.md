@@ -40,7 +40,7 @@ Vote weight is non-delegatable. Your Respect is soulbound; your vote comes direc
 
 When voting closes, the veto window opens. NO votes are still accepted. YES votes are not.
 
-This is the crucial minority protection mechanism. If consensus-building failed off-chain, the community has 72 hours to mobilize opposition. A veto vote has no additional weight multiplier - it is not a "weighted veto" - but the veto window shifts the burden of proof. The proposer must accommodate dissent or watch the proposal fail.
+This is the crucial minority protection mechanism. If consensus-building failed off-chain, the community has a challenge window to mobilize opposition. Blocking power comes from the passing threshold, not from any per-vote multiplier: under the OREC default a proposal fails unless YES exceeds twice the NO weight (see Phase 3), so a coalition holding roughly one-third of the YES weight can block it. These thresholds are OREC defaults - ZAO sets and has historically adjusted its own parameters - and the current ZAO values should be read from the live contract, not assumed. The veto window shifts the burden of proof onto the proposer, who must accommodate dissent or watch the proposal fail.
 
 The veto window also prevents last-minute attacks. An attacker cannot wait until the final block of voting to dump a massive NO vote (by purchasing Respect from a reluctant holder). Respect is soulbound; no one sells it. The attacker would have had to earn it over weeks. This creates a natural audit trail: high-impact veto voters are visible, and their Respect history is public.
 
@@ -72,7 +72,7 @@ ZAO maintains two separate Respect token contracts to decouple voting power from
 
 Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` (Optimism Mainnet)
 
-Total supply: 38,484 Respect tokens, frozen since December 2025.
+Total supply: 38,484 Respect tokens (read on-chain), frozen since late 2025 - the ORDAO contract walkthrough dates the last mint to 18 December 2025.
 
 OG Respect is the historical ledger. It covers fractals 1-73 (August 2024 - September 2025), before OREC was deployed. These tokens are soulbound: both `transfer()` and `transferFrom()` functions revert with "Respect is soulbound and cannot be transferred."
 
@@ -96,7 +96,9 @@ Only the OREC contract can mint ZOR. There is no admin minting. No manual overri
 
 **Democratic Future:** ZOR reflects ongoing peer evaluation. Because it is minted by OREC proposals only, it is provably trustworthy - no backstage favoritism, no admin discretion.
 
-**Vote Weight Decoupling:** A member's ability to vote (based on cumulative Respect, OG + ZOR) is independent of their ongoing earnings (new ZOR mints each week). This prevents "who earned Respect this week" from overwhelming "who should vote on long-term decisions." A member with high OG votes at full weight even if they have been inactive lately. A newer member with no OG but growing ZOR participates in recent decisions without overriding early history.
+**Vote Weight Decoupling:** On-chain voting power is read from the OG ledger only. OREC snapshots a member's OG balance at the block a proposal is created; ZOR mints do not change voting weight. This is deliberate: it prevents "who earned Respect this week" from overwhelming "who has earned standing over the life of the community." A member with high OG votes at full weight even if they have been inactive lately.
+
+The honest consequence: a member who joined after the OG freeze and holds only ZOR currently has no on-chain voting weight, however much ZOR they earn. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - is an open governance problem (see Chapter 9).
 
 ---
 
@@ -313,7 +315,7 @@ orfrapps deploy \
   --min-threshold=1000
 ```
 
-Currently, three communities run production instances: ZAO (music DAO), Optimism Fractal (paused, Jan 2026), and Fractally (EOS-based, pre-OREC). Base (Optimism's L2 sibling) has experimental instances.
+Currently, the live production OREC instances are ZAO Fractal (Optimism) and Eden Fractal (Base). Optimism Fractal ran an instance but has been paused since January 2026. Fractally, the original EOS community, predates OREC and runs on a different, pre-OREC stack - it is not a frapps instance.
 
 The frapps pattern decouples ORDAO from ZAO governance. ZAO is an application built on ORDAO; other applications can be built the same way.
 
