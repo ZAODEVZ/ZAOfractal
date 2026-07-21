@@ -52,7 +52,7 @@ Corrections applied to `whitepaper/draft/` (grounded in the above):
 ## Open flags for operator/author decision (NOT edited)
 
 1. **ch04 decay** - claims Respect decays to ~0 after ~230 weeks of inactivity, but also says OG holders keep full weight forever; on-chain OG is frozen/static with no decay mechanism. Real planned feature, or Fractally-inheritance prose to cut?
-2. **ch06 minThreshold** - line 61 says ~10% (3,800-4,000); config table + code-walk say 1,000 units. Which is ZAO's actual value?
+2. ~~**ch06 minThreshold**~~ RESOLVED by live OREC read: `minWeight` = 1,000 Respect (1000e18), `voteLen` = `vetoLen` = 259,200s (72h), `respectContract` = OG. The config table was right; line 61's "~10% / 3,800-4,000" was wrong. ch06 corrected.
 3. **ch06 gas** - line 33 (0.02-0.05 USD/vote) vs line 176 (0.001-0.003). 10x apart.
 4. **Fractal numbering/dates** - OG "fractals 1-73 through Sep 2025" but froze Dec 2025; ZOR "74+ from Sep 2025". 3-month overlap unexplained.
 5. **App-vs-chain weight** - dashboard OG+ZOR vs governance OG-only (see above).
