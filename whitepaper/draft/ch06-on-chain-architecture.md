@@ -58,7 +58,7 @@ AND
 
 In mathematical form: 1/3 of active Respect holders can block any proposal (veto power). 2/3 can guarantee passage. A 50-50 split always fails (not > 2x). Abstentions are invisible (zero voting weight contributes nothing).
 
-The min_threshold is typically 10% of total Respect. On Optimism, this translates to roughly 3,800-4,000 Respect units (ZAO has 38,000+ total Respect in circulation as of May 2026).
+ZAO's `minWeight` is a fixed 1,000 Respect, read live from the OREC contract - not a percentage of supply. Against ZAO's 38,484 OG Respect that is roughly 2.6%, deliberately low so a small active minority can pass routine proposals while the veto window protects everyone else. (The value is a governance parameter ZAO sets, not a constant; read it from the contract for the current figure.)
 
 When conditions are met, **anyone** can call the execute function. This is important. Execution is not centralized to the proposer or a multisig. Any community member can trigger it. This removes a critical single-point-of-failure: if the proposer's wallet is compromised, the execution still happens.
 
@@ -157,10 +157,10 @@ This enforcement is at the contract level, not the wallet level. Even if a membe
 
 | Parameter | Value | Purpose |
 |-----------|-------|---------|
-| `votingPeriod` | 259,200 seconds (3 days) | Duration of YES/NO voting |
-| `vetoPeriod` | 259,200 seconds (3 days) | Duration of NO-only veto |
-| `minThreshold` | 1,000 Respect units (~10% of active) | Minimum YES votes to qualify |
-| `respectContractOG` | `0x34cE89...` | Vote weight source (historical) |
+| `voteLen` | 259,200 seconds (3 days) | Duration of YES/NO voting (read live) |
+| `vetoLen` | 259,200 seconds (3 days) | Duration of NO-only veto (read live) |
+| `minWeight` | 1,000 Respect (~2.6% of OG supply) | Minimum YES weight to qualify (read live) |
+| `respectContract` | `0x34cE89...` (OG) | Vote weight source, read live from OREC |
 | `respectContractZOR` | `0x9885CC...` | Minting target (active) |
 | `maxConcurrentProposals` | 10 | Prevent proposal spam |
 
