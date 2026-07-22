@@ -126,7 +126,7 @@ After submission, the proposal enters a two-phase governance cycle:
 ### Voting Period (48 hours typical)
 
 - Any member with OG Respect can vote YES or NO.
-- Vote weight = OG Respect balance at proposal creation block (immutable historical snapshot).
+- Vote weight = your OG Respect balance at the moment you cast your vote (live, not snapshotted).
 - Cost: approximately $0.02-0.05 per vote on Optimism (cheap, non-prohibitive).
 - Process: On-chain transactions via Etherscan or a governance interface.
 
@@ -192,10 +192,12 @@ Each rank earns approximately 60% more than the rank below (phi = 1.618). This r
 
 **Respect accumulation over time:**
 
-A member ranking 1st every week with 2% decay reaches:
+Respect today accumulates without decay; the OG and ZOR ledgers are static. A member ranking 1st every week for 52 weeks reaches approximately:
 ```
-R(52 weeks, 1x per week) ≈ 5,720 Respect (with decay factored in)
+R(52 weeks, 1x per week) ≈ 5,720 Respect (without decay)
 ```
+
+A weekly decay mechanism - to keep governance weighted toward recent contribution - is a design option under consideration for the new Respect token. If adopted, a 2% weekly decay would give a ~34-week half-life and reduce long-inactive members' voting power over time.
 
 The same member reaches Elder tier (2000+ Respect) in approximately 50 weeks. Tier thresholds in ZAO are:
 
@@ -248,7 +250,7 @@ In behavioral economics, people accept splits that feel "fair enough" even if un
 
 **Defense layer 3: Removal threat.** If the group suspects collusion, they can refuse to reach consensus. The entire group gets zero Respect. This creates peer pressure against collusion.
 
-**Defense layer 4: Decay.** If a fake account somehow amasses Respect, it decays at 2% per week. Within 34 weeks (one half-life), the balance drops to 50%.
+**Defense layer 4: Soulbound token.** OG Respect is soulbound for members (restricted transfers). This prevents a fake account from cashing out or transferring stolen Respect to another account. Soulbinding locks earned Respect in place.
 
 **Defense layer 5: OREC voting.** Even if a breakout group successfully mines Respect for a fake account, the OREC proposal can be vetoed by the wider community. 1/3 of Respect holders can block execution.
 
@@ -358,15 +360,14 @@ Both approaches are valid. The important thing is that the mechanism is consiste
 
 ## IX. Sybil and Collusion Defense: A Layered Architecture
 
-The Respect Game defends against attacks through five stacked barriers:
+The Respect Game defends against attacks through four stacked barriers:
 
 | Layer | Mechanism | Attack Cost |
 |---|---|---|
 | 1 | Randomized 3-6 person groups | Attacker cannot control groupmates |
 | 2 | Peer evaluation + 2/3 consensus | Fake account must convince real humans |
 | 3 | 2/3 OREC veto gate | Community can block proposals |
-| 4 | Public voting + removal threat | Collusion visible; group earns zero if consensus fails |
-| 5 | Weekly decay (2% + 34-week half-life) | Old Respect evaporates; attacks erode over time |
+| 4 | Soulbound token + peer ranking | Earned Respect cannot be transferred; small group reputations are visible |
 
 **No single layer is perfect.** Randomization can be broken with enough fake accounts. Consensus can be faked with enough collusion. But the combination is strong.
 
@@ -375,10 +376,10 @@ To move one real person 10 places in ranking over 15 weeks (a modest attack) req
 - 150+ fake accounts (to ensure group presence across all randomizations)
 - Consensus building with 10+ real humans per group per week
 - Coordinated voting (public, audible, visible to all)
-- Sybil survival through decay (accounts expire if not active)
+- Persistent peer ranking (small-circle reputation is hard to fake across groups)
 
 **Cost: High (time, identity, coordination).**
-**Benefit: Modest (15 ranking movements, possibly vetoed, decaying anyway).**
+**Benefit: Modest (15 ranking movements, likely vetoed, soulbound).**
 
 The economics are unfavorable. Honest contribution is cheaper.
 
@@ -404,12 +405,12 @@ This is documented in ZAO research Doc 115 as a medium-priority governance upgra
 
 ## Sources
 
-- `/Users/zaalpanthaki/Documents/ZAOfractal/research/whitepaper-foundations/02-respect-game-mechanism.md` (step-by-step mechanics, Fibonacci mathematics, game theory)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/reference/09-respect-game-process.md` (the weekly ritual, Discord bot implementation, visibility bias)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/research/whitepaper-foundations/03-ordao-onchain-architecture.md` (OREC voting cycle, 2/3 rule, soulbound enforcement)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/research/primary-sources/respect-deep-dive.md` (Fibonacci justification, Ultimatum Game, equilibrium analysis)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/reference/07-respect-token-mechanics.md` (voting criteria, Gini equality, tier thresholds)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/research/01-foundations-deep.md` (game theory, Nash equilibrium, mechanism design)
+- ZAO internal research: Respect Game mechanism design (step-by-step mechanics, Fibonacci mathematics, game theory)
+- ZAO internal reference: weekly ritual process, Discord bot implementation, visibility bias mitigation
+- ZAO internal research: ORDAO on-chain architecture (OREC voting cycle, 2/3 rule, soulbound enforcement)
+- ZAO internal research: Fibonacci justification, Ultimatum Game fairness, Nash equilibrium analysis
+- ZAO internal reference: voting criteria specifications, Gini equality, tier thresholds
+- ZAO internal research: foundational game theory, mechanism design, equilibrium analysis
 
 ---
 

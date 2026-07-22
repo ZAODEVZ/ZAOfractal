@@ -52,7 +52,19 @@ A new member joins ZAO Fractal and begins at zero Respect. Existing members have
 
 The DAOstar research (2025) on blockchain governance shows that cold-start inequality is a primary barrier to DAO growth. When newcomers feel unheard, they do not return. The insider advantage is permanent unless the system has explicit on-boarding.
 
-ZAO's mitigation: one-time grants of baseline Respect to new joiners (exact amount: TBD by council). This narrows the gap. But it also dilutes the signal - if everyone starts with 30 Respect, does that Respect still mean contribution? The problem is not solved. It is traded off.
+ZAO's mitigation: one-time grants of baseline Respect to new joiners (an amount the council sets). This narrows the gap. But it also dilutes the signal - if everyone starts with 30 Respect, does that Respect still mean contribution? The problem is not solved. It is traded off.
+
+---
+
+## Respect Decay and Governance Weight Over Time
+
+Respect today accumulates and does not decay. The current OG and ZOR ledgers are static - once minted, a member's Respect balance does not erode. This means that long-inactive early members retain their full voting weight indefinitely, even if they have contributed nothing for months or years. Over multi-year horizons, this creates a structural bias: governance power settles toward whoever arrived first and has not been voted out, regardless of recent contribution.
+
+A weekly decay - for example, a 2% reduction per week (giving a ~34-week half-life) - would keep governance weighted toward recent contribution rather than letting long-inactive members hold power forever. The math works: if Respect erodes over time, stepping away costs you authority. Staying active preserves it. This would incentivize continuous participation and make the system more responsive to the community's current state.
+
+But decay has real tradeoffs. Earned standing erodes if you step away for a season (e.g., a member on sabbatical or managing personal crisis loses voting power even though they earned it). Decay also requires on-chain implementation (recurring token burns, week-by-week state updates) which adds operational complexity. And there is a philosophical question: should governance power be time-limited at all? Early contributors built the system; do they not deserve to carry that weight permanently?
+
+This is an open design decision for the new Respect token under development. Respect today does not decay. Whether to add decay to the next generation of the token is a tradeoff the community will decide, balancing liveness (current members have voice) against durability (contribution you earned stays earned).
 
 ---
 
@@ -72,7 +84,7 @@ ZAO's roadmap (Chapter 10) includes a decision point: if ZAO grows past 100 acti
 
 ZAO maintains two Respect ledgers (OG ERC-20 for Fractals 1-73, ZOR ERC-1155 for Fractals 74+). They are reconciled in Supabase. But on-chain, they are separate contracts. A member who earned 300 Respect in the OG era holds that in one contract. Respect earned in the ZOR era lives in another.
 
-For ORDAO voting, this creates a real gap: does on-chain voting power include the active ZOR ledger? The current answer is no - OREC reads OG balances only, at the block a proposal is created. New ZOR mints do not change anyone's voting weight. This means the disadvantage runs toward newer members: a member who joined after the OG freeze (18 December 2025) and holds only ZOR has no on-chain voting weight at all, however much ZOR they have since earned. Early members who hold OG vote at full weight; the active reward ledger confers standing and record, but not yet a vote.
+For ORDAO voting, this creates a real gap: does on-chain voting power include the active ZOR ledger? The current answer is no - OREC reads OG balances only, at the moment you vote. New ZOR mints do not change anyone's voting weight. This means the disadvantage runs toward newer members: a member who joined after the OG freeze (18 December 2025) and holds only ZOR has no on-chain voting weight at all, however much ZOR they have since earned. Early members who hold OG vote at full weight; the active reward ledger confers standing and record, but not yet a vote.
 
 This is not a critical bug - it is the deliberate decoupling described in Chapter 6, seen from its uncomfortable side. But left unreconciled it could poison trust: the members most active today have the least on-chain say. The Chapter 10 roadmap includes giving the ZOR ledger a path to voting weight - publishing an OG-to-ZOR weighting formula and a retroactive claim mechanism - without discarding the OG history the two-ledger model was built to preserve.
 
