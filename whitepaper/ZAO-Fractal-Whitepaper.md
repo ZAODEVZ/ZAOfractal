@@ -1481,7 +1481,7 @@ OREC proposals move through three explicit phases: voting, veto, and execution. 
 
 ### Phase 1: Voting Window (72 hours typical)
 
-When a member proposes a change - a Respect game outcome, a treasury allocation, a governance parameter adjustment - the proposal enters voting. Any holder of Respect can vote YES or NO. Their vote weight is their Respect balance at the block the proposal was submitted (a historical snapshot, not a live balance).
+When a member proposes a change - a Respect game outcome, a treasury allocation, a governance parameter adjustment - the proposal enters voting. Any holder of Respect can vote YES or NO. Their vote weight is their OG Respect balance read live at the moment they cast their vote (not a snapshot taken at proposal creation). This matches the OREC contract's behavior and is why the token must be soulbound - a live-balance vote is only safe when the balance cannot be borrowed or transferred in.
 
 On Optimism, voting costs approximately 0.02-0.05 USD per vote in gas. This is affordable enough for serious votes but expensive enough to discourage spam.
 
@@ -1666,7 +1666,7 @@ ORDAO is not immune to attack. Six documented security vectors have been identif
 
 **Risk:** OREC's execution is permissionless (anyone can execute), but Respect Game results are submitted via a specific wallet (the "game runner"). If this wallet is compromised, malicious proposals could be submitted.
 
-**Mitigation (Partial):** The game runner submits proposals, but ORDAO voting still enforces consensus. A malicious proposal would need to pass YES > 2x NO and meet the 10% threshold. This is non-trivial, but a sufficiently motivated attacker with institutional access could propose spending the treasury to themselves, knowing they hold enough Respect to vote YES.
+**Mitigation (Partial):** The game runner submits proposals, but ORDAO voting still enforces consensus. A malicious proposal would need to pass YES > 2x NO and clear the `minWeight` of 1,000 Respect. This is non-trivial, but a sufficiently motivated attacker with institutional access could propose spending the treasury to themselves, knowing they hold enough Respect to vote YES.
 
 **Better Mitigation (Recommended):** Deploy a multi-sig (e.g., 2-of-3) to authorize game results before OREC submission. This adds 1-2 hours of latency but removes centralization.
 
