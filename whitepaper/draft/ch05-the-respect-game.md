@@ -127,7 +127,7 @@ After submission, the proposal enters a two-phase governance cycle:
 
 - Any member with OG Respect can vote YES or NO.
 - Vote weight = your OG Respect balance at the moment you cast your vote (live, not snapshotted).
-- Cost: approximately $0.02-0.05 per vote on Optimism (cheap, non-prohibitive).
+- Cost: a fraction of a cent per vote on Optimism (roughly $0.001-0.003 in gas - cheap, non-prohibitive).
 - Process: On-chain transactions via Etherscan or a governance interface.
 
 ### Veto Period (48 hours typical)

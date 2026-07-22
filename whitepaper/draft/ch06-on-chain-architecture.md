@@ -30,7 +30,7 @@ OREC proposals move through three explicit phases: voting, veto, and execution. 
 
 When a member proposes a change - a Respect game outcome, a treasury allocation, a governance parameter adjustment - the proposal enters voting. Any holder of Respect can vote YES or NO. Their vote weight is their OG Respect balance read live at the moment they cast their vote (not a snapshot taken at proposal creation). This matches the OREC contract's behavior and is why the token must be soulbound - a live-balance vote is only safe when the balance cannot be borrowed or transferred in.
 
-On Optimism, voting costs approximately 0.02-0.05 USD per vote in gas. This is affordable enough for serious votes but expensive enough to discourage spam.
+On Optimism, voting costs a fraction of a cent - roughly 0.001-0.003 USD per vote in gas (see the detailed breakdown below). Cheap enough that gas is never a barrier to voting, which is the point: participation should not cost anything meaningful.
 
 The proposer's wallet automatically votes YES upon submission. This is not a conflict of interest. It is an assumption of good faith: if you propose something, you believe it is good.
 
