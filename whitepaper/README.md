@@ -1,8 +1,8 @@
 # The ZAO Fractal Whitepaper
 
-**Status:** All 11 chapters drafted (v0.1) - 28,529 words total
+**Status:** Abstract + 11 chapters (v0.1) - share-readiness accuracy pass complete (2026-07-21)
 
-**Version:** v0.1 - awaiting Zaal review
+**Version:** v0.1 - reviewed against on-chain reality; decay reframed as a design option (not a live feature); vote weight corrected to live-at-vote; abstract added
 
 ---
 
@@ -18,6 +18,7 @@ The whitepaper is hybrid manifesto-specification: it makes the case for earned g
 
 | # | Title | Voice | Status | Word Count |
 |---|-------|-------|--------|-----------|
+| 0 | Abstract | Precision | Share-ready | 400 |
 | 1 | Preamble and Vision | Manifesto | Draft v0.1 | 2,458 |
 | 2 | The Problem - why current DAO governance fails | Manifesto + Argument | Draft v0.1 | 2,434 |
 | 3 | Fractal Democracy: First Principles | Argument + Precision | Draft v0.1 | 3,348 |

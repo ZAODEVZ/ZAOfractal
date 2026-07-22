@@ -96,7 +96,7 @@ Only the OREC contract can mint ZOR. There is no admin minting. No manual overri
 
 **Democratic Future:** ZOR reflects ongoing peer evaluation. Because it is minted by OREC proposals only, it is provably trustworthy - no backstage favoritism, no admin discretion.
 
-**Vote Weight Decoupling:** On-chain voting power is read from the OG ledger only. OREC snapshots a member's OG balance at the block a proposal is created; ZOR mints do not change voting weight. This is deliberate: it prevents "who earned Respect this week" from overwhelming "who has earned standing over the life of the community." A member with high OG votes at full weight even if they have been inactive lately.
+**Vote Weight Decoupling:** On-chain voting power is read from the OG ledger only. OREC reads a member's OG balance live, at the moment they cast their vote (not a snapshot at proposal creation); ZOR mints do not change voting weight. This is deliberate: it prevents "who earned Respect this week" from overwhelming "who has earned standing over the life of the community." A member with high OG votes at full weight even if they have been inactive lately.
 
 The honest consequence: a member who joined after the OG freeze and holds only ZOR currently has no on-chain voting weight, however much ZOR they earn. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - is an open governance problem (see Chapter 9).
 

@@ -110,7 +110,7 @@ The ZAO Fractal has been running for 90+ weeks. It will keep running, with or wi
 
 - **Chapter 4: The Respect Token** - What is Respect? How is it soulbound? Why non-transferability matters. Ordinal ranking (1st, 2nd, 3rd) vs. cardinal scoring (5 stars). Respect accumulation and reputation compounding over time.
 
-- **Chapter 5: The Respect Game** - The weekly mechanism. Six-person breakout rooms. The 50-minute consensus-building conversation. Fibonacci distribution (ZAO's 110-68-42-26-16-10 variant). The 2% decay factor and the 34-week half-life. Five voting criteria specific to music.
+- **Chapter 5: The Respect Game** - The weekly mechanism. Six-person breakout rooms. The 50-minute consensus-building conversation. Fibonacci distribution (ZAO's 110-68-42-26-16-10 variant). The case for optional decay as future design evolution. Five voting criteria specific to music.
 
 - **Chapter 6: On-Chain Architecture** - ORDAO and OREC contracts. The three-phase cycle (voting / veto / execution). How Respect tokens are minted. ERC-1155 soulbound tokens. Optimism Mainnet deployment. Contract addresses and on-chain history.
 

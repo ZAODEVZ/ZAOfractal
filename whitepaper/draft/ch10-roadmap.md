@@ -21,7 +21,7 @@
 - Read-only (no wallet required)
 - HTTPS, hosted on Vercel or Netlify
 
-**Owner:** ZAO Engineering (TBD)
+**Owner:** ZAO Engineering (role to be assigned)
 
 **Rationale:** The on-chain history is immutable but inaccessible. Members cannot verify their own Respect without trusting the Discord bot. A public dashboard earns trust and makes governance visible.
 
@@ -112,11 +112,11 @@
 - Can we ship Phase 1 (async ranking, no on-chain) in 2-3 sprints? (Scope review with engineering)
 
 **If go:**
-- Assign engineering lead (TBD)
+- Assign engineering lead (role to be filled)
 - Commit to Phase 1 MVP by August 31 (see below)
 
 **If no-go:**
-- Commit to Respect.Games (Optimystics beta) pilot instead (timeline TBD)
+- Commit to Respect.Games (Optimystics beta) pilot instead (timeline to be determined by the council)
 
 **Owner:** Zaal + ZAO Engineering + Tadas Vaitiekunas (advisory)
 
@@ -132,7 +132,7 @@
 
 **Setup:**
 1. Contact Tadas Vaitiekunas (@sim31) to discuss Cignals integration
-2. Propose a ZAO Fractal session (date TBD) where members rank music tracks instead of peers
+2. Propose a ZAO Fractal session (date to be confirmed) where members rank music tracks instead of peers
 3. Submit results on-chain to OREC, distributing Respect based on track ranking
 
 **Measurement:** Track engagement + satisfaction vs. standard Respect Game sessions. Decide: is Cignals a regular tool for ZAO, or one-off experiment?
@@ -152,7 +152,7 @@
 **Format:**
 - 60 minutes, Zoom (or Discord voice)
 - Bi-weekly (other Monday from the Fractal call, or alternate week)
-- Open to any member with sufficient Respect to attend (TBD threshold)
+- Open to any member with sufficient Respect to attend (a threshold the community sets)
 - Agenda: State of ZAO, upcoming challenges, community feedback, proposals for change
 
 **Reference:** Eden Fractal has a Town Hall that serves this purpose. ZAO should experiment with an equivalent.

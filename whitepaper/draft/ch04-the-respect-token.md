@@ -32,12 +32,7 @@ On Optimism Mainnet, ZAO maintains two Respect token contracts:
 - Deployed: July 30, 2024
 - Total Supply: 38,484 ZAO
 - Status: Frozen (no new mints since December 18, 2025)
-- Transfer Function: Reverts all transfers. Code enforcement:
-  ```solidity
-  function transfer(address to, uint256 amount) public override returns (bool) {
-    revert("Respect is soulbound and cannot be transferred");
-  }
-  ```
+- Transfer Restriction: Enforced via role-based access control (thirdweb). Members cannot transfer; the admin can move it, but has chosen not to. Soulbound in practice.
 
 **ZOR Respect (ERC-1155, Active Democratic Era)**
 - Address: `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c`
@@ -167,54 +162,54 @@ This is mechanism design: Fibonacci is not arbitrary. It is the specific curve t
 
 ---
 
-## VI. Respect Accumulation and Decay: The 2% Weekly Model
+## VI. Respect Accumulation, and the Decay Question
 
-Respect does not disappear when earned. It accumulates over time, creating persistent reputation. But it also decays, preventing ancient history from dominating present governance.
+Respect does not disappear when earned. It accumulates over time, creating persistent reputation. Today, Respect ledgers are static - the current OG and ZOR balances do not decay. However, to keep governance weighted toward recent contribution rather than letting long-inactive members hold power forever, a weekly decay model is under consideration for the next-generation Respect token.
 
-### The Decay Formula
+### The Proposed Decay Model
 
-Each week, a member's Respect balance evolves according to:
+If adopted, each week a member's Respect balance would evolve according to:
 
 ```
 R(t) = R(t-1) * 0.98 + earned(t)
 ```
 
-At the start of each week, balances shrink by 2%. New earnings are added. Over time, if a member stops contributing, their balance decays to zero.
+At the start of each week, balances would shrink by 2%. New earnings would be added. Over time, if a member stops contributing, their balance would decay to zero.
 
-### Equilibrium: The 50x Rule
+### Equilibrium: The 50x Rule (If Decay Is Adopted)
 
-If a member earns a constant amount every week, their balance reaches equilibrium when:
+If a member earns a constant amount every week and decay is active, their balance would reach equilibrium when:
 
 ```
 R_equilibrium = earned / 0.02 = 50 * earned
 ```
 
-**Example:** A member ranking 2nd every week earns 68 Respect. Their equilibrium balance is:
+**Example:** A member ranking 2nd every week earns 68 Respect. Their equilibrium balance would be:
 
 ```
 R_eq = 68 / 0.02 = 3,400 Respect
 ```
 
-At this point, weekly earnings (68) exactly offset weekly decay (3,400 * 0.02 = 68). The balance stabilizes.
+At this point, weekly earnings (68) would exactly offset weekly decay (3,400 * 0.02 = 68). The balance would stabilize.
 
-### Half-Life: 34 Weeks
+### Half-Life: 34 Weeks (If Decay Is Adopted)
 
-With 2% weekly decay, Respect has a half-life of approximately 34.3 weeks:
+With 2% weekly decay, Respect would have a half-life of approximately 34.3 weeks:
 
 ```
 0.5 = 0.98^n
 n = log(0.5) / log(0.98) = 34.3 weeks
 ```
 
-An inactive member's Respect balance will drop to 50% of its current value every 34 weeks (approximately 8 months).
+An inactive member's Respect balance would drop to 50% of its current value every 34 weeks (approximately 8 months).
 
-### Why Decay Exists
+### The Case for Decay
 
-Decay enforces meritocratic governance. Without it, a member who earned high Respect years ago but contributed nothing recently would retain full voting power forever. This creates an unearned oligarchy of past contributors.
+Decay would enforce meritocratic governance. Without it, a member who earned high Respect years ago but contributed nothing recently would retain full voting power forever - creating an unearned oligarchy of past contributors.
 
-With decay, voting power gradually shifts to active contributors. After 4.4 years of zero participation (approximately 230 weeks), a member's balance decays to near-zero. Governance power is tied to recent contribution, not accumulated history.
+With decay, voting power would gradually shift to active contributors. After 4.4 years of zero participation (approximately 230 weeks), a member's balance would decay to near-zero. Governance power would be tied to recent contribution, not accumulated history.
 
-This creates a tension, intentionally: The system values consistency (you must keep showing up to maintain power) but tolerates gaps (your balance does not vanish immediately if you miss a week). The 34-week half-life is long enough to weather temporary absence, short enough to prevent stale oligarchy.
+This creates an intentional tension: The system would value consistency (you must keep showing up to maintain power) but tolerate gaps (your balance does not vanish immediately if you miss a week). The 34-week half-life would be long enough to weather temporary absence, short enough to prevent stale oligarchy.
 
 ---
 
@@ -261,7 +256,7 @@ Soulbound design has honest costs:
 
 **2. No rapid onboarding of external capital.** A wealthy person cannot buy their way into ZAO governance in week one. This is intentional, but it makes cold-start difficult. New fractals cannot bootstrap voting power by external funding.
 
-**3. No transfer-on-death mechanism.** If a member passes away, their Respect cannot be transferred to heirs or designated stewards. The balance simply decays to zero over 34 weeks. This is a limitation for human life planning.
+**3. No transfer-on-death mechanism.** If a member passes away, their Respect cannot be transferred to heirs or designated stewards. Under current static ledgers, the balance remains frozen; if decay is adopted in a future token, the balance would decay over time. This is a limitation for human life planning.
 
 **4. Requires active participation to maintain power.** Unlike token holders (who can buy and hold passively), Respect holders must keep contributing to stay above the governance threshold. This is intentionally demanding.
 
@@ -285,11 +280,10 @@ All transactions are publicly verifiable on Etherscan (Optimism Mainnet explorer
 
 ## Sources
 
-- `/Users/zaalpanthaki/Documents/ZAOfractal/research/whitepaper-foundations/02-respect-game-mechanism.md` (Fibonacci mathematics, game theory, sybil defense)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/research/whitepaper-foundations/03-ordao-onchain-architecture.md` (contract addresses, soulbound enforcement, two-ledger model)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/research/primary-sources/respect-deep-dive.md` (decay equilibrium, half-life, tier thresholds)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/reference/07-respect-token-mechanics.md` (voting criteria, Gini coefficient, one-time grants)
-- `/Users/zaalpanthaki/Documents/ZAOfractal/research/01-foundations-deep.md` (Larimer, Ultimatum Game, mechanism design)
+- ZAO internal research: Respect Game mechanism (Fibonacci mathematics, game theory, sybil defense)
+- ZAO internal research: ORDAO on-chain architecture (contract addresses, soulbound enforcement, two-ledger model)
+- ZAO internal research: Respect token mechanics deep dive (decay equilibrium, half-life, tier thresholds, voting criteria, Gini coefficient, one-time grants)
+- ZAO internal research: Foundational mechanism design (Daniel Larimer, Ultimatum Game, consensus models)
 
 ---
 
