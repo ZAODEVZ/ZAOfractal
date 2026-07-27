@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { ORNODE_URL, FRAPPS_URL } from '../lib/constants';
 import { shortAddr, formatDate } from '../lib/format';
+import { parseProposals, type Proposal } from '../lib/ornode';
+import SampleDataBanner from '../components/SampleDataBanner';
 
-interface Proposal {
-  id: string;
-  title: string;
-  status: 'active' | 'passed' | 'vetoed' | 'executed';
-  yesWeight: number;
-  noWeight: number;
-  createTime: number;
-  memo?: string;
-}
-
-const DEMO_PROPOSALS: Proposal[] = [
+// Illustrative placeholder proposals shown ONLY when the ornode is unreachable.
+// These vote tallies are NOT real; the sample banner makes that explicit.
+const SAMPLE_PROPOSALS: Proposal[] = [
   {
     id: '0xabc001',
-    title: 'Season 9 Respect Game Results — Week 102',
+    title: 'Season 9 Respect Game Results - Week 102',
     status: 'executed',
     yesWeight: 3480,
     noWeight: 0,
@@ -24,7 +18,7 @@ const DEMO_PROPOSALS: Proposal[] = [
   },
   {
     id: '0xabc002',
-    title: 'Season 9 Respect Game Results — Week 101',
+    title: 'Season 9 Respect Game Results - Week 101',
     status: 'executed',
     yesWeight: 2960,
     noWeight: 110,
@@ -32,7 +26,7 @@ const DEMO_PROPOSALS: Proposal[] = [
   },
   {
     id: '0xabc003',
-    title: 'Season 9 Respect Game Results — Week 100',
+    title: 'Season 9 Respect Game Results - Week 100',
     status: 'executed',
     yesWeight: 3200,
     noWeight: 0,
@@ -40,9 +34,7 @@ const DEMO_PROPOSALS: Proposal[] = [
   },
 ];
 
-interface Props { wallet: string | null; }
-
-export default function ProposalsTab({ wallet: _wallet }: Props) {
+export default function ProposalsTab() {
   const [proposals, setProposals] = useState<Proposal[]>([]);
   const [loading, setLoading] = useState(true);
   const [offline, setOffline] = useState(false);
@@ -55,18 +47,19 @@ export default function ProposalsTab({ wallet: _wallet }: Props) {
       .then((r) => r.json())
       .then((data) => {
         clearTimeout(timeout);
-        const list: Proposal[] = Array.isArray(data) ? data : (data.proposals ?? []);
+        // Validate + coerce the ornode payload before trusting any of it.
+        const list = parseProposals(data);
         if (list.length > 0) {
           setProposals(list);
         } else {
-          setProposals(DEMO_PROPOSALS);
+          setProposals(SAMPLE_PROPOSALS);
           setOffline(true);
         }
         setLoading(false);
       })
       .catch(() => {
         clearTimeout(timeout);
-        setProposals(DEMO_PROPOSALS);
+        setProposals(SAMPLE_PROPOSALS);
         setOffline(true);
         setLoading(false);
       });
@@ -84,7 +77,7 @@ export default function ProposalsTab({ wallet: _wallet }: Props) {
           {offline && (
             <span className="ornode-status">
               <span className="dot offline" />
-              demo data
+              sample data
             </span>
           )}
           <a href={`${FRAPPS_URL}/newProposal`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
@@ -92,6 +85,16 @@ export default function ProposalsTab({ wallet: _wallet }: Props) {
           </a>
         </div>
       </div>
+
+      {offline && (
+        <SampleDataBanner>
+          Live proposal data from the ornode is unavailable right now, so the vote tallies below are
+          illustrative placeholders, not real governance results.{' '}
+          <a href={FRAPPS_URL} target="_blank" rel="noopener noreferrer">
+            Open the live app on frapps.xyz ↗
+          </a>
+        </SampleDataBanner>
+      )}
 
       <div className="proposal-list">
         {proposals.map((p) => {
@@ -115,7 +118,7 @@ export default function ProposalsTab({ wallet: _wallet }: Props) {
                   </div>
                 </div>
                 <a
-                  href={`${FRAPPS_URL}/proposal/${p.id}`}
+                  href={`${FRAPPS_URL}/proposal/${encodeURIComponent(p.id)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-secondary"
@@ -129,8 +132,8 @@ export default function ProposalsTab({ wallet: _wallet }: Props) {
                 <div className="vote-bar-fill" style={{ width: `${yesPct}%` }} />
               </div>
               <div className="vote-counts">
-                <span>YES — {p.yesWeight.toLocaleString()} ZOR ({yesPct}%)</span>
-                <span>NO — {p.noWeight.toLocaleString()} ZOR</span>
+                <span>YES - {p.yesWeight.toLocaleString()} ZOR ({yesPct}%)</span>
+                <span>NO - {p.noWeight.toLocaleString()} ZOR</span>
               </div>
             </div>
           );

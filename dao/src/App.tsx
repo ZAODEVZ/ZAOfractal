@@ -10,11 +10,10 @@ type Tab = 'proposals' | 'leaderboard' | 'about';
 
 export default function App() {
   const [tab, setTab] = useState<Tab>('leaderboard');
-  const [wallet, setWallet] = useState<string | null>(null);
 
   return (
     <div className="app-shell">
-      <Topbar wallet={wallet} onConnect={setWallet} onDisconnect={() => setWallet(null)} />
+      <Topbar />
       <TabNav active={tab} onChange={(t) => setTab(t as Tab)} tabs={[
         { id: 'leaderboard', label: 'Leaderboard' },
         { id: 'proposals',   label: 'Proposals' },
@@ -23,7 +22,7 @@ export default function App() {
       <main className="content">
         <StatsBar />
         {tab === 'leaderboard' && <LeaderboardTab />}
-        {tab === 'proposals'   && <ProposalsTab wallet={wallet} />}
+        {tab === 'proposals'   && <ProposalsTab />}
         {tab === 'about'       && <AboutTab />}
       </main>
     </div>
