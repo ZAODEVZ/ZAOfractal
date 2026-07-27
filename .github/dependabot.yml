@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /site
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      site-dependencies:
+        patterns:
+          - "*"
+
+  - package-ecosystem: npm
+    directory: /dao
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      dao-dependencies:
+        patterns:
+          - "*"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

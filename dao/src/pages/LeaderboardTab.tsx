@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { ORNODE_URL, ZAO_CONTRACTS } from '../lib/constants';
 import { shortAddr, formatRespect, explorerLink } from '../lib/format';
+import { parseMembers, type Member } from '../lib/ornode';
+import SampleDataBanner from '../components/SampleDataBanner';
 
-interface Member {
-  address: string;
-  respect: number;
-  name?: string;
-}
-
-// Shown when ornode is unreachable — real ZAO members, approximate balances
-const DEMO_MEMBERS: Member[] = [
+// Illustrative placeholder rows shown ONLY when the ornode is unreachable.
+// Names are recognizable ZAO members, but the balances and addresses here are
+// NOT real on-chain values. The sample banner makes this explicit so these
+// numbers are never mistaken for live Respect.
+const SAMPLE_MEMBERS: Member[] = [
   { address: '0x9f0b41d8190E31C5B5d1bEe97F9fC84DEDb1fC7c', name: 'Zaal',          respect: 1240 },
   { address: '0x3b5c04fCE14E60e6e2e5b6b4B2E1f3F8A0d9c2b1', name: 'Dan SingJoy',    respect: 1180 },
   { address: '0x7a2d4f9C8E3b1A6D5F2c0E9B4A8C7D6F3E1b5a9', name: 'Tadas',           respect: 1090 },
@@ -33,18 +32,19 @@ export default function LeaderboardTab() {
       .then((r) => r.json())
       .then((data) => {
         clearTimeout(timeout);
-        const list: Member[] = Array.isArray(data) ? data : (data.holders ?? []);
+        // Validate + coerce the ornode payload before trusting any of it.
+        const list = parseMembers(data);
         if (list.length > 0) {
-          setMembers(list.sort((a, b) => b.respect - a.respect));
+          setMembers([...list].sort((a, b) => b.respect - a.respect));
         } else {
-          setMembers(DEMO_MEMBERS);
+          setMembers(SAMPLE_MEMBERS);
           setOffline(true);
         }
         setLoading(false);
       })
       .catch(() => {
         clearTimeout(timeout);
-        setMembers(DEMO_MEMBERS);
+        setMembers(SAMPLE_MEMBERS);
         setOffline(true);
         setLoading(false);
       });
@@ -61,11 +61,25 @@ export default function LeaderboardTab() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <span className="ornode-status">
             <span className={`dot ${offline ? 'offline' : 'online'}`} />
-            {offline ? 'demo data' : 'live'}
+            {offline ? 'sample data' : 'live'}
           </span>
           <span className="pill pill-orange">{members.length} members</span>
         </div>
       </div>
+
+      {offline && (
+        <SampleDataBanner>
+          Live Respect data from the ornode is unavailable right now, so the balances below are
+          illustrative placeholders, not current on-chain values.{' '}
+          <a
+            href={`https://optimistic.etherscan.io/token/${ZAO_CONTRACTS.ZOR_RESPECT}#balances`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View live holders on Etherscan ↗
+          </a>
+        </SampleDataBanner>
+      )}
 
       <div className="leaderboard">
         {members.map((m, i) => (
@@ -87,20 +101,6 @@ export default function LeaderboardTab() {
           </div>
         ))}
       </div>
-
-      {offline && (
-        <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
-          <a
-            href={`https://optimistic.etherscan.io/token/${ZAO_CONTRACTS.ZOR_RESPECT}#balances`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary"
-            style={{ fontSize: '0.82rem' }}
-          >
-            View live holders on Etherscan ↗
-          </a>
-        </div>
-      )}
     </div>
   );
 }

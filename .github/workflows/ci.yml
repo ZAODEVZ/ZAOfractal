@@ -21,6 +21,14 @@ jobs:
         working-directory: site
       - run: npm run build
         working-directory: site
+      # Advisory only: current highs are all in build tooling (astro/esbuild/
+      # sharp/postcss), fixable only via a breaking Astro major. Dependabot
+      # (.github/dependabot.yml) drives those upgrades; this surfaces new
+      # advisories in the log without gating merges on unrelated transitives.
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+        working-directory: site
+        continue-on-error: true
 
   dao:
     name: Build dao
@@ -36,3 +44,7 @@ jobs:
         working-directory: dao
       - run: npm run build
         working-directory: dao
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+        working-directory: dao
+        continue-on-error: true
