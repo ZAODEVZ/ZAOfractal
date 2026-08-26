@@ -2,22 +2,24 @@
 
 Earned governance, verified on-chain. The ZAO.
 
-Version v0.1 - 2026-07-21
+Version v0.2 - 2026-08-26
+
+Assembled from `whitepaper/draft/` by `scripts/assemble-whitepaper.mjs`.
+Edit the chapters, not this file.
 
 ---
 
 # Abstract
 
-
----
-
 In most decentralized organizations, a vote is something you buy. Tokens are capital, capital is voting power, and governance drifts toward whoever holds the most. The ZAO takes the opposite position: here, a vote is something you earn.
 
-**ZAO Fractal is The ZAO's weekly ritual for turning recognized contribution into on-chain governance.** Each week, members gather in small breakout circles, discuss what each person actually did for the community, and rank the circle. Those rankings mint **Respect** - a soulbound reputation token that cannot be bought, sold, or transferred. Respect is not a currency. It is a record of contribution, and it is your weight in how The ZAO governs itself.
+**ZAO Fractal is The ZAO's weekly ritual for turning recognized contribution into on-chain governance.** Each week, members gather in small breakout circles, discuss what each person actually did for the community, and rank the circle. Those rankings mint **Respect** - a soulbound reputation token that cannot be bought, sold, or transferred. Respect is not a currency. It is a record of contribution, and it is the intended basis of weight in how The ZAO governs itself. "Intended" is doing real work in that sentence: The ZAO runs two Respect ledgers, and today only the older one confers a vote. See below, and Chapter 4.
 
 Governance runs on **ORDAO**, an optimistic, Respect-weighted system deployed on Optimism. Instead of demanding majority turnout - which produces apathy at scale - ORDAO lets a proactive minority propose, gives the community a challenge window to veto, and executes if no successful challenge arrives. A proposal passes only when yes-weight exceeds twice the no-weight and clears a minimum threshold. It is consent-based, not majority-based, and every award and every vote is verifiable on-chain.
 
 This paper documents the theory, the mechanics, and the specific story of ZAO Fractal - the longest-running fractal governance community in the ecosystem, on-chain since September 2025.
+
+**A note on where the numbers come from.** Every on-chain figure in this paper is measured from a snapshot of OP Mainnet at block 156,055,426, taken 2026-08-26 and committed to this repository under `data/`. Re-pull it with `node scripts/pull-data.mjs` and re-check every quoted figure with `node scripts/verify-claims.mjs`, which holds each one as an expectation and exits non-zero when the chain has moved. Where a number is *not* from the chain - the community roll of 188, the weekly meeting streak - the text says so, because the chain records settlement and not attendance, and conflating the two was the central accuracy problem in v0.1 of this paper.
 
 **A note on what is live versus what is designed.** This is both a specification and a manifesto. Where it describes something running today - the Respect Game, the OREC contract, the two Respect ledgers - the facts are verifiable at the addresses given in Chapter 6. Where it proposes a future property - notably a decay mechanism to keep governance weighted toward recent contribution, and a single unified Respect ledger that lets every active member vote - it is marked as a design decision, not a shipped feature. The current Respect ledgers are static and do not decay, and today only the historical ledger confers a vote. Closing that gap is the near-term work.
 
@@ -27,20 +29,17 @@ ZAO Fractal is not a new governance technology. It is a new governance culture: 
 
 # Chapter 1: Preamble and Vision
 
-
----
-
 ## The Case for Earned Governance
 
 In The ZAO, governance does not flow from capital. It flows from contribution.
 
 This is not idealism. It is a statement about how power should be earned in a community built to make music, art, and culture. When you join a band, the lead singer does not own the most votes because they have the most money. Voting power emerges from what you bring to the table - your skill, your time, your judgment about what the community should do next. This is how human organizations have always worked at their best. Web3 forgot it. We remember.
 
-The ZAO is a music community of 188 builders - artists, engineers, curators, mentors, DJs - coordinating on Farcaster and Optimism to create culture together. We use Web3 tools not because we worship blockchain, but because we need tooling that cannot be captured by one person's capital. We use soulbound tokens, not to exclude, but to ensure that every ranking decision reflects genuine peer judgment about contribution, not the size of someone's wallet.
+The ZAO is a music community of 188 builders - artists, engineers, curators, mentors, DJs - coordinating on Farcaster and Optimism to create culture together. That 188 is a community roll, counted off-chain. The on-chain population is smaller and is a different measurement; Chapter 8 gives both numbers and says why they differ. We use Web3 tools not because we worship blockchain, but because we need tooling that cannot be captured by one person's capital. We use soulbound tokens, not to exclude, but to ensure that every ranking decision reflects genuine peer judgment about contribution, not the size of someone's wallet.
 
 ZAO Fractal is the governance mechanism that makes this possible. Every Monday at 6pm EST, we gather in breakout rooms of 5-6 people. No votes are cast. No tally. Instead, we reach consensus through back-and-forth negotiation about who in our community advanced the ZAO vision - music, art, and technology - that week. We rank each other on five explicit criteria: Vision alignment, Contribution, Collaboration, Innovation, and Onboarding. The ranking produces Respect tokens - soulbound, non-transferable, earned through peer consensus. You cannot buy Respect. You cannot trade it. You can only earn it by showing up, doing work, and convincing people who know you that the work mattered.
 
-We have run this ritual for 90+ unbroken weeks. The ZAO Fractal is now the longest-running fractal governance community in the ecosystem. It is the only fractal focused on music. It is the only active fractal on Optimism. And it is embedded in a full social client - governance lives inside the place where community already works, not in a separate dashboard.
+We have run this ritual weekly since August 2024. The community's own period counter reads 110, settled on chain on 2026-08-25. The ZAO Fractal is the longest-running fractal governance community in the ecosystem. It is the only fractal focused on music. It is the only active fractal on Optimism, and has been since Optimism Fractal paused in January 2026. And it is embedded in a full social client - governance lives inside the place where community already works, not in a separate dashboard.
 
 This whitepaper documents how and why.
 
@@ -48,7 +47,9 @@ This whitepaper documents how and why.
 
 ## What This Whitepaper Is
 
-This is not a proposal. The ZAO Fractal exists. 90+ weeks of on-chain governance history proves it works.
+This is not a proposal. The ZAO Fractal exists, and most of what follows can be checked at a contract address instead of taken on trust.
+
+Be precise about which part. The chain records **settlement, not attendance**. What it proves, measured at OP Mainnet block 156,055,426 on 2026-08-26: 153 OREC proposals, 123 of them executed; 333 Respect awards across 41 settled periods; 169 addresses that have ever held Respect. What it cannot prove is that a meeting happened in any given week - a session that ran and was never submitted looks identical to one that never ran, and the 66 periods that predate the on-chain award ledger carry no per-week record at all. So the weekly streak is a community record and the governance history is an on-chain one. Both are in this paper, and each is labelled as what it is.
 
 This is a document for the wider world - for other music communities, for other fractals, for anyone building Web3 governance and wondering if there is an alternative to token-weighted voting. It is a manual for earned governance. It is also a reflection on first principles: what does democracy actually mean at human scale, and how do we scale it fractally to larger communities without losing the human relationships that make power legitimate?
 
@@ -82,7 +83,7 @@ This whitepaper exists because the theory is proven. The implementation is live.
 
 ## What The ZAO Fractal Is (One Paragraph)
 
-The ZAO Fractal is a weekly 60-minute governance meeting where 40+ members gather in breakout rooms of 5-6 people and reach consensus on the rank-ordering of contributions that advanced the ZAO vision that week. The ranking produces soulbound Respect tokens distributed via Fibonacci scoring (110 for rank 1, 68 for rank 2, etc., in ZAO's escalated variant). These tokens are non-transferable and immutable, creating a persistent on-chain record of community judgment. Respect accumulates over time, creating persistent reputation. Members with high Respect can propose changes to ZAO governance and culture. The voting criteria are specific to music and art: advancing ZAO's vision of music, art, and technology; meaningful contribution; collaboration and uplifting others; innovation and groundbreaking ideas; and helping newcomers join ZAO and Web3. The Respect Game has run every Monday at 6pm EST since August 2024 without pause. It is the longest-running fractal in the ecosystem, and the only active fractal on Optimism Mainnet.
+The ZAO Fractal is a weekly 60-minute governance meeting where members gather in breakout rooms of 5-6 people and reach consensus on the rank-ordering of contributions that advanced the ZAO vision that week. The ranking produces soulbound Respect tokens distributed via Fibonacci scoring (110 for rank 1, 68 for rank 2, etc., in ZAO's escalated variant). These tokens are non-transferable and immutable, creating a persistent on-chain record of community judgment. Respect accumulates over time, creating persistent reputation. Members with high Respect can propose changes to ZAO governance and culture. The voting criteria are specific to music and art: advancing ZAO's vision of music, art, and technology; meaningful contribution; collaboration and uplifting others; innovation and groundbreaking ideas; and helping newcomers join ZAO and Web3. The Respect Game has run every Monday at 6pm EST since August 2024; period 110 settled on chain on 2026-08-25. Recent sessions settle 4 to 12 people each, at a mean of 8.1 across every period the on-chain ledger covers. It is the longest-running fractal in the ecosystem, and the only active fractal on Optimism Mainnet.
 
 ---
 
@@ -122,9 +123,9 @@ The technology matters. The non-transferability of Respect tokens prevents marke
 
 But the culture is what sustains it. The culture is Mondays at 6pm EST. The culture is showing up every week, even when it would be easier not to. The culture is ranking people whose work you disagree with, honestly, because that is what integrity looks like in a governance meeting. The culture is knowing that you are being ranked too, and that your ranking depends on your judgment, not on your capital.
 
-This is not new. This is how human organizations have always worked at their best. It is how bands are run, how research labs function, how open-source projects stay true to their mission. The novelty is that we can now encode it on-chain, prove it works at 188+ people, and show that it scales better than voting.
+This is not new. This is how human organizations have always worked at their best. It is how bands are run, how research labs function, how open-source projects stay true to their mission. The novelty is that we can now encode it on-chain, prove it works at the scale of a 188-person community, and show that it scales better than voting.
 
-The ZAO Fractal has been running for 90+ weeks. It will keep running, with or without this whitepaper. But we write this whitepaper because other communities should see: there is an alternative. Voting is not the only way. Governance can be earned.
+The ZAO Fractal has been running weekly since August 2024. It will keep running, with or without this whitepaper. But we write this whitepaper because other communities should see: there is an alternative. Voting is not the only way. Governance can be earned.
 
 ---
 
@@ -142,9 +143,9 @@ The ZAO Fractal has been running for 90+ weeks. It will keep running, with or wi
 
 - **Chapter 7: Why Fractal** - Comparative analysis. How does fractal differ from quadratic voting (QV requires identity infrastructure), conviction voting (QV is temporal, Fractal is social), Nouns (Nouns is capital-gated membership, Fractal is contribution-gated), Moloch (Moloch is grant-making, Fractal is continuous reputation), and Optimism's bicameral system (two houses vs. nested fractals).
 
-- **Chapter 8: The ZAO Fractal Specific Story** - What is distinctive about ZAO. 90+ weeks unbroken. Only music-focused fractal. Only active Optimism fractal. Embedded in ZAO OS social client. Five voting criteria operationalize music-first governance. Founder expertise from Larimer-SingJoy-Zaal lineage.
+- **Chapter 8: The ZAO Fractal Specific Story** - What is distinctive about ZAO. 110 periods since August 2024. Only music-focused fractal. Only active Optimism fractal. Embedded in ZAO OS social client. Five voting criteria operationalize music-first governance. Founder expertise from Larimer-SingJoy-Zaal lineage.
 
-- **Chapter 9: Limitations and Open Problems** - Privacy and pseudonymity constraints. Scalability limits beyond 400-500 people. Measurement problem (can peers actually judge contribution?). Participation collapse risks. The "operating core bottleneck" (currently Zaal and civilmonkey.eth run OREC, intentional but planned decentralization). Cold-start problem for new fractals.
+- **Chapter 9: Limitations and Open Problems** - Privacy and pseudonymity constraints. Scalability limits beyond 400-500 people. Measurement problem (can peers actually judge contribution?). Participation collapse risks. The operating-core bottleneck, which turns out to be three separate bottlenecks - weight, operations, and a single-member admin key on the ledger that votes. Cold-start problem for new fractals.
 
 - **Chapter 10: Roadmap** - Integration into ZAO OS. Two-ledger reconciliation (OG Airtable era to ZOR on-chain era). Nested fractals (could ZAO Fractal scale to 500+ by running parallel fractals?). Governance on key decisions (music direction, partnerships, treasury). Connection to WaveWarZ (music competition game, could earn Respect).
 
@@ -155,19 +156,15 @@ The ZAO Fractal has been running for 90+ weeks. It will keep running, with or wi
 ## Citation Sources
 
 - **01-theory-foundations.md** (Daniel Larimer, "More Equal Animals" [Feb 20 2021], rational ignorance problem, fractal scaling, Pareto principle)
-- **07-zao-fractal-distinctness.md** (90+ weeks, music-focused, Optimism incumbent status, voting criteria, Zaal lineage)
+- **07-zao-fractal-distinctness.md** (weekly cadence since August 2024, music-focused, Optimism incumbent status, voting criteria, Zaal lineage)
+- **`data/summary.json`, `data/periods.json`, `data/members.json`** - the committed OP Mainnet snapshot, block 156,055,426, pulled 2026-08-26. Every chain figure in this chapter is re-checkable with `node scripts/verify-claims.mjs`.
 - **04-comparative-dao-governance.md** (Compound 8 delegates / 50%+ power, Uniswap 11 delegates, voter apathy 3-10%, token-weighted plutocracy)
 
 ---
 
-**Word count: 1,748**
-
 ---
 
 # Chapter 2: The Problem
-
-
----
 
 ## Modern DAO Governance Does Not Work
 
@@ -375,14 +372,9 @@ The whitepaper documents how.
 
 ---
 
-**Word count: 2,148**
-
 ---
 
 # Chapter 3: Fractal Democracy - First Principles
-
-
----
 
 ## I. The Three Pillars of True Democracy
 
@@ -671,7 +663,7 @@ Fractal governance achieves Sybil resistance without requiring capital or on-cha
 
 3. **Exit is possible:** If I suspect you are a Sybil, I can exit the circle. I do not have to participate with you.
 
-4. **Reputation compounds:** Over 90+ weeks, a person's true contributions emerge. A Sybil that showed up once cannot accumulate meaningful Respect.
+4. **Reputation compounds:** Over two years of weekly sessions, a person's true contributions emerge. A Sybil that showed up once cannot accumulate meaningful Respect.
 
 This is why KYC and identity are acceptable here, whereas they are often rejected in crypto. The purpose is not surveillance or financial control; it is Sybil resistance. And the benefit - earned governance without capital requirements - is worth it.
 
@@ -697,7 +689,7 @@ The result is a governance system that:
 - Avoids power concentration (fractal structure + exit power prevent Pareto cascades).
 - Avoids tyranny of the majority (unanimous consensus or exit available).
 
-No single element is new. But the combination - practiced weekly at scale (188 ZAO members, 90+ weeks, 40+ per session) - is unprecedented in music communities.
+No single element is new. But the combination - practiced weekly since August 2024, across a community roll of 188 and 110 numbered periods - is unprecedented in music communities.
 
 ---
 
@@ -705,19 +697,21 @@ No single element is new. But the combination - practiced weekly at scale (188 Z
 
 ZAO Fractal operationalizes all of the above:
 
-- **Small groups:** 40+ members organize into 6-7 breakout rooms of 5-6 people each.
+- **Small groups:** members organize into breakout rooms of 5-6. Measured across all 68 groups the on-chain ledger has settled, the median group is 5 and the largest ever was 8. The rooms are real and they are small; the count of them is smaller than the design anticipated - 11 of the 15 most recent settled sessions ran a single group and 4 ran two, never three.
 - **Consensus:** Groups reach consensus on rank-ordering contributions (Fibonacci: 110-68-42-26-16-10 points).
 - **Soulbound Respect:** ERC-1155 tokens, non-transferable, minted weekly via OREC.
 - **Music-specific criteria:** Members rank on Vision (music/art/tech), Contribution, Collaboration, Innovation, Onboarding.
-- **Weekly rhythm:** Mondays 6pm EST, 90+ weeks unbroken.
+- **Weekly rhythm:** Mondays 6pm EST since August 2024. The community's period counter reads 110; the chain can confirm settlement of 41 of those periods, not attendance at any of them.
 - **Exit power:** Members can leave ZAO Fractal, join another circle, or initiate a parallel fractal.
 - **Fractal scaling:** (Potential future: 100 members split into two 50-person parallel fractals, each running the same weekly mechanism).
 
 The mechanism has produced:
 
-- 60-80% participation (vs. 3-10% in token-weighted DAOs).
-- Elected council members (proposals are made, debated, executed by top-Respect members).
-- Persistent on-chain history (242+ OREC transactions as of May 2026).
+- **A room that keeps meeting.** 41 settled periods on the ZOR ledger, at a median of 7 days apart, mean 8.1 people settled per period and 4 to 12 in recent sessions. Read against a 188-person community roll that is low participation, not the 60-80% figure reported for fractal communities generally; read against a token-weighted DAO's 3-10% of holders it is comparable, and the deliberation behind it is of an entirely different kind. Chapter 9 treats the gap as the open problem it is.
+- **Proposals that execute.** 153 OREC proposals since September 2025, 123 executed on-chain.
+- **Persistent on-chain history.** 316 transactions touching the OREC contract, and 514 contract events, in the snapshot committed at block 156,055,426.
+
+One thing it has not produced, and the honest version of this chapter has to say so: **contested deliberation at the OREC layer.** 137 of the 153 proposals were decided by a single voter, and no proposal has ever been voted down by anyone other than the person who opened it. The consensus work happens in the breakout room. The on-chain vote that follows is, so far, ratification. See Chapter 9.
 - Cultural anchor (Monday at 6pm EST is when ZAO decides what it is).
 
 ---
@@ -729,14 +723,9 @@ The mechanism has produced:
 
 ---
 
-**Word count: 2,691**
-
 ---
 
 # Chapter 4: The Respect Token
-
-
----
 
 > *Respect is a soulbound, peer-earned reputation token. It cannot be bought, sold, or transferred. Governance power tracks contribution, not capital.*
 
@@ -761,18 +750,24 @@ Soulbound means: Respect cannot be transferred from one address to another. The 
 
 On Optimism Mainnet, ZAO maintains two Respect token contracts:
 
-**OG Respect (ERC-20, Frozen Archive)**
+**OG Respect (ERC-20, dormant, and the only ledger that votes)**
 - Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`
 - Deployed: July 30, 2024
-- Total Supply: 38,484 ZAO
-- Status: Frozen (no new mints since December 18, 2025)
-- Transfer Restriction: Enforced via role-based access control (thirdweb). Members cannot transfer; the admin can move it, but has chosen not to. Soulbound in practice.
+- Total supply: 38,484, held across 122 addresses
+- Status: dormant, not frozen. Last mint December 9, 2025; last distribution December 18, 2025. The distinction matters: `DEFAULT_ADMIN_ROLE` on this contract has exactly one member, and that role can still grant itself minting rights and issue vote weight. Nothing on-chain prevents it. See Chapter 9.
+- Transfer restriction: enforced via role-based access control (thirdweb). Members cannot transfer; the admin can move it, but has not. Soulbound in practice, and the ledger bears this out - across 518 transfers there have been **zero peer-to-peer transfers**. All 447 distributions went from the treasury wallet to a member, and only two ever came back.
 
-**ZOR Respect (ERC-1155, Active Democratic Era)**
+**ZOR Respect (ERC-1155, the active ledger, and it does not vote)**
 - Address: `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c`
 - Deployed: September 11, 2025
-- Minting Authority: OREC contract only (`0xcB05F9254765CA521F7698e61E0A6CA6456Be532`)
-- Transfer Function: All transfers revert except minting (from zero address) and burning (to zero address)
+- Minting authority: OREC contract only (`0xcB05F9254765CA521F7698e61E0A6CA6456Be532`)
+- Transfer function: all transfers revert except minting (from the zero address) and burning (to the zero address)
+- 333 awards to 70 addresses across 41 settled periods; 18,266 minted, 848 burned, 17,418 outstanding
+
+**Read those two together before going further.** The active ledger confers no
+vote, and the voting ledger is no longer being issued. Section III states that in
+full, because it is the most important thing to understand about Respect at The
+ZAO today and the earlier draft of this chapter left it to be inferred.
 
 The soulbound property solves a critical problem: **separation of voting power from capital**.
 
@@ -786,7 +781,7 @@ Soulbound enforcement prevents this. Your Respect balance equals your verified c
 
 The ZAO maintains two separate Respect ledgers because the community went through two distinct eras:
 
-**Era 1: Manual Distribution (Fractals 1-73, August 2024 - August 2025)**
+**Era 1: Manual Distribution (periods 1-66, August 2024 - September 2025)**
 
 Pre-OREC governance used an Airtable audit trail. Community members earned OG Respect through:
 - Posting introductions in #intros (25 points)
@@ -797,19 +792,21 @@ Pre-OREC governance used an Airtable audit trail. Community members earned OG Re
 - Featured artist showcase on thezao.com (50 points)
 - Weekly Respect Game rankings (Fibonacci curve: 55/34/21/13/8/5)
 
-Zaal and civilmonkey.eth manually reviewed contributions and minted OG Respect to the appropriate addresses. The frozen OG contract preserves this ledger as an immutable historical record.
+Zaal and civilmonkey.eth manually reviewed contributions and minted OG Respect to the appropriate addresses. The OG contract preserves this ledger, but it preserves only balances. All 69 mints went to a single treasury wallet, which then distributed by transfer, and OG carries no per-award metadata at all - no period, no group, no rank. A transfer of 110 Respect on a Tuesday is indistinguishable from any other transfer of 110. Two thirds of ZAO's history therefore cannot be reconstructed from chain data even in principle.
 
-**Era 2: Democratic Distribution (Fractals 74+, September 2025 - Present)**
+**Era 2: Democratic Distribution (periods 67-110, September 2025 - present)**
 
-Post-OREC governance distributes Respect through on-chain voting proposals. Every Monday at 6pm EST, The ZAO Fractal convenes. Breakout groups reach consensus on contribution rankings. A facilitator submits the ranking via `proposeBreakoutResult()` to the OREC contract. If the proposal passes the OREC voting cycle (2/3 supermajority, no active veto), ZOR Respect is minted directly to the wallets of ranked members.
+Post-OREC governance distributes Respect through on-chain voting proposals. Every Monday at 6pm EST, The ZAO Fractal convenes. Breakout groups reach consensus on contribution rankings. A facilitator submits the ranking via `proposeBreakoutResult()` to the OREC contract. If the proposal passes the OREC voting cycle (2/3 supermajority, no active veto), ZOR Respect is minted directly to the wallets of ranked members. Unlike OG, each award is a distinct token id carrying its period, group and rank, which is why the weekly game can be reconstructed from chain data from period 67 onward and not before.
 
 **Why maintain both?**
 
 1. **Historical integrity.** OG Respect cannot be lost or retroactively modified. It proves that early contributors were recognized.
-2. **Vote weight continuity.** OREC reads OG Respect balances to determine voting power on new proposals. A member with 1000 OG Respect retains full voting weight even if they have not earned ZOR lately.
-3. **Democratic transition.** ZOR allows future Respect distribution to be purely peer-driven, with no central admin (not even Zaal) holding minting authority.
+2. **Vote weight.** OREC's `respectContract` is set to the OG ERC-20, and it reads a voter's balance **live from that contract at the moment the vote is cast**. A member with 1,000 OG Respect carries full voting weight even if they have not earned ZOR lately.
+3. **Democratic transition.** ZOR allows Respect distribution to be purely peer-driven, with no central admin holding minting authority over it.
 
-The two ledgers have not yet been unified - they remain separate on-chain. This is an acknowledged open issue for ZAO governance (documented in ZAO research Doc 115).
+**The cost of running both, stated plainly.** ZOR confers no vote. Of the 70 people ever awarded ZOR, **47 hold no OG at all and therefore have no vote weight whatsoever**. Narrow it to the people actually showing up - the 27 awarded ZOR in the last 12 settled periods - and 14 have zero OG, 9 hold some but sit under the 1,000 minimum weight, and 4 can carry a proposal alone. The ledger that records who is contributing and the ledger that decides who governs have come apart, and the gap runs in the worst direction: the more recently you joined, the less likely your recognized contribution carries a vote.
+
+The two ledgers have not been unified - they remain separate on-chain. This is the largest open issue in ZAO governance. The measurement, the migration options and their costs are worked through in `respect/LEDGER-RECONCILIATION.md`; Chapter 10 carries the roadmap item.
 
 ---
 
@@ -949,18 +946,23 @@ This creates an intentional tension: The system would value consistency (you mus
 
 ## VII. Equality: Respect vs. Token-Weighted DAOs
 
-The Gini coefficient measures income inequality (0 = perfect equality, 1 = perfect inequality). ZAO's Fibonacci distribution produces a Gini of approximately **0.23**.
+The Gini coefficient measures inequality (0 = perfect equality, 1 = perfect inequality). Earlier drafts of this chapter reported a single figure of ~0.23 for "ZAO". There is no single figure, and the honest version needs three, because a weekly payout and an accumulated ledger are not the same object.
 
-| System | Gini Coefficient |
+| What is being measured | Gini |
 |---|---|
-| Fractal Respect Game (ZAO) | ~0.23 |
+| A single Respect Game payout (110-68-42-26-16-10) | 0.41 |
+| The ZOR ledger as accumulated to date (64 holders) | 0.53 |
+| The OG ledger, which is what actually votes (122 holders) | **0.73** |
 | Typical token-weighted DAO | 0.97-0.99 |
 | US household income | ~0.39 |
-| Most equal countries (Slovakia, Slovenia) | ~0.24 |
 
-ZAO's governance is **dramatically more equal** than token-weighted DAOs while still rewarding excellence. The top 33% of a group (ranks 1-2) earn roughly 65% of the Respect - meaningfully unequal, but far from winner-take-all.
+The first is computed from the payout vector; the other two from the committed snapshot at block 156,055,426.
 
-By contrast, Compound has a Gini of approximately 0.97 (8 delegates hold 50%+ of voting power). Uniswap is similarly concentrated. These are plutocracies, not democracies.
+Read the table honestly. The **mechanism** is egalitarian: within a group the top 33% (ranks 1-2) take 65% of the Respect - meaningfully unequal, far from winner-take-all - and no member can hoard the rest, because consensus is required. The **outcome** is much less so. Two years of compounding on a ledger distributed by hand produces a vote-weight distribution at 0.73, and it takes only **9 of the 122 OG holders to reach a majority of vote weight, or 16 to reach the two-thirds supermajority OREC requires**.
+
+Set that beside the Compound number this chapter has always quoted - 8 delegates holding 50%+ - and the comparison stops being flattering. ZAO's 9 is not meaningfully better than Compound's 8. What differs is not the concentration; it is **how it was acquired**. Compound's was bought. ZAO's was earned in a room, one week at a time, and every award traces to a named ranking. That is a real difference and it is the one worth defending. Claiming an equality the ledger does not show is not.
+
+The remedies are concrete: unify the ledgers so current contribution carries current weight (Chapter 10), and adopt the decay model in section VI so accumulation stops being permanent. Chapter 9 treats this as an open problem rather than a solved one.
 
 The Respect Game achieves fairness through deliberate mechanism design: Fibonacci scaling + ordinal ranking + peer consensus. No group member can hoard all available Respect; consensus is required, and 2/3 of the group must agree on each rank. Gaming a consensus group of 5-6 people is dramatically harder than gaming a permissionless token market.
 
@@ -968,7 +970,7 @@ The Respect Game achieves fairness through deliberate mechanism design: Fibonacc
 
 ## VIII. Voting Weight: The 2/3+ Rule
 
-Respect determines voting weight in the OREC governance contract. A proposal passes when:
+OG Respect - and only OG Respect - determines voting weight in the OREC governance contract. A proposal passes when:
 
 ```
 yesWeight > 2 * noWeight  AND  yesWeight >= minWeight
@@ -979,6 +981,8 @@ This is the **2/3 supermajority rule**. Equivalently, **1/3 of active Respect ca
 This is fundamentally consent-based, not majority-based. A 60/40 vote fails (YES must exceed double NO). A 51/49 vote fails. Only a 67+/33 or stronger split passes.
 
 This supermajority forces genuine consensus building. A slim majority cannot impose outcomes on a large minority. The minority has real blocking power.
+
+That is the design. What the deployed contract has so far experienced is different, and Chapter 9 is where it is confronted: across 153 proposals, **no proposal has ever been voted down by anyone other than the person who opened it**, and no proposal has ever needed a second voter to clear the minimum weight. The supermajority rule has never had to bind, because the vote has never been contested.
 
 ---
 
@@ -1021,18 +1025,11 @@ All transactions are publicly verifiable on Etherscan (Optimism Mainnet explorer
 
 ---
 
-**Word count: 2,847**
-
----
-
 Continue to Chapter 5: The Respect Game
 
 ---
 
 # Chapter 5: The Respect Game
-
-
----
 
 > *The Respect Game is the weekly ceremony where five-person breakout groups reach consensus on contribution rankings. No votes are cast. No tallies. Just honest peer judgment, encoded on-chain.*
 
@@ -1061,12 +1058,14 @@ The official weekly session runs Monday 6pm EST. Ad-hoc sessions can launch anyt
 
 ### Phase 2: Randomization (5 minutes)
 
-A facilitator (typically Zaal or civilmonkey.eth) runs the `/randomize` command. The bot:
+A facilitator runs the `/randomize` command. The bot:
 
 1. Fetches all members currently in the Fractal Waiting Room.
-2. Splits them into groups (maximum 6 per group, minimum 2).
+2. Splits them into groups (design maximum 6 per group, minimum 2; in practice 4 of the 68 groups ever settled ran larger, the biggest at 8).
 3. Auto-moves members into individual Discord voice channels (Fractal Group 1, Fractal Group 2, etc.).
 4. Posts a confirmation message with group assignments.
+
+**Who facilitates is a live problem, not a footnote.** The chain cannot name a facilitator - it records who was ranked, not who ran the room - but the proxy is stark: over the fifteen settled sessions from period 95 to period 110, Zaal was ranked in fourteen, and no other member exceeded ten. One person's Monday is load-bearing for the whole ritual. Building a facilitator bench is the first item on ZAO's decentralization scale; the run sheet, the candidates and the gate live in `respect/FACILITATION-RUNBOOK.md`. This chapter documents the mechanism, and Chapter 9 treats the dependency as the open problem it is.
 
 Randomization is cryptographically seeded. This prevents pre-planned collusion. A player cannot predict which group they will join; they cannot pre-arrange to rank each other highly.
 
@@ -1143,7 +1142,11 @@ await orclient.proposeBreakoutResult({
 })
 ```
 
-The OREC contract creates a new governance proposal. The proposer's wallet auto-votes YES with their OG Respect weight (vote weight is frozen at proposal creation time, preventing double-voting).
+The OREC contract creates a new governance proposal. The proposer's wallet auto-votes YES with their OG Respect weight.
+
+**There is no snapshot.** Earlier drafts of this chapter said vote weight is frozen at proposal creation. It is not: OREC reads `balanceOf` on the OG contract live, at the moment each vote is cast, with no checkpointing of any kind. Voting twice is prevented by recording one vote per address, not by freezing a balance.
+
+This is not a nuance. On December 9, 2025 the largest OG holder cast three votes that carried **zero weight**, because for four days his Respect was sitting in a different wallet. The votes registered as participation and changed nothing. Twelve of the votes ever cast on OREC carried zero weight for this class of reason. If you move your tokens, you move your vote with them, and nothing warns you.
 
 Respect is not minted yet. The proposal is recorded on-chain but awaits voting and veto windows.
 
@@ -1153,31 +1156,37 @@ Respect is not minted yet. The proposal is recorded on-chain but awaits voting a
 
 After submission, the proposal enters a two-phase governance cycle:
 
-### Voting Period (48 hours typical)
+### Voting Period (72 hours, fixed)
 
-- Any member with OG Respect can vote YES or NO.
-- Vote weight = your OG Respect balance at the moment you cast your vote (live, not snapshotted).
+- Any address can call `vote`. Holding OG Respect is what gives the vote weight; holding none is permitted and counts for nothing.
+- Vote weight = your OG Respect balance at the moment you cast your vote, read live.
+- Length: the deployed OREC has `voteLen` set to 259,200 seconds. Not "typical" - fixed, and changeable only by a passed proposal.
 - Cost: a fraction of a cent per vote on Optimism (roughly $0.001-0.003 in gas - cheap, non-prohibitive).
 - Process: On-chain transactions via Etherscan or a governance interface.
 
-### Veto Period (48 hours typical)
+### Veto Period (72 hours, fixed)
 
 - Voting period has closed; no new YES votes accepted.
 - ONLY NO votes are accepted (challenge window).
+- Length: `vetoLen`, also 259,200 seconds.
 - Purpose: Allows the community to mobilize opposition if off-chain consensus-building failed.
 - Prevents last-minute attacks: an attacker cannot wait until the final block of voting to dump a massive NO vote.
+
+So a breakout result submitted on Monday night is executable **six days later**, not four. Six days is the protocol floor; the median proposal is actually executed on day seven, a day after it first becomes possible.
 
 ### Execution
 
 After both windows elapse, anyone calls `execute(propId)` on OREC. The contract checks:
 
 ```
-(block.timestamp >= proposal.startBlock + votingPeriod + vetoPeriod)
+block.timestamp >= createTime + voteLen + vetoLen
 AND
-(proposal.yesWeight >= (totalRespect * minThreshold))
+proposal.yesWeight >= minWeight          // an absolute floor, currently 1,000 Respect
 AND
-(proposal.yesWeight > proposal.noWeight * 2)
+proposal.noWeight * 2 < proposal.yesWeight
 ```
+
+Note that `minWeight` is an absolute quantity of Respect, not a fraction of total supply. It does not rise as the ledger grows.
 
 If all conditions are met:
 - OREC calls the ZOR Respect contract's `mintRespect()` function.
@@ -1417,19 +1426,17 @@ The economics are unfavorable. Honest contribution is cheaper.
 
 ## X. The Open Bottleneck: OREC Authority
 
-As of May 2026, OREC minting authority is held by Zaal and civilmonkey.eth. These two individuals review proposals, run the `/randomize` and `/timer` commands, and facilitate sessions.
+Earlier drafts said OREC minting authority "is held by Zaal and civilmonkey.eth". Reading the deployed contract, that is the wrong mechanism, and the wrong mechanism leads to the wrong fix.
 
-This is **intentionally centralized** in the short term. It allows ZAO to operate efficiently without complex decentralized governance infrastructure. But it is also an acknowledged bottleneck.
+**Nothing about OREC is permissioned in the way that sentence implies.** `propose` is open to anyone. `vote` is open to anyone, at whatever weight their OG balance gives them, including none. `execute` is open to anyone, once a proposal has passed. There is no signer set to join, no key to be granted, no multisig to be added to. Every parameter that *is* privileged - `setMinWeight`, `setPeriodLengths`, `setRespectContract` - is `onlyOwner`, and the owner is OREC itself, which means only a passed proposal can change it.
 
-**The problem:** If Zaal or civilmonkey.eth become unavailable or corrupt, OREC operations halt. The weekly ritual breaks.
+What exists instead is three distinct bottlenecks wearing one name:
 
-**The plan:** Future ZAO governance should decentralize session facilitation. Possible mechanisms:
+1. **Weight.** Only 12 addresses hold enough OG to clear the 1,000 minimum alone, and one of them shows up reliably. No proposal in 153 has ever needed a second voter to reach the threshold. The practical rule today is that if one person votes yes it passes, and if he does not, nothing does.
+2. **Operations.** Execution is permissionless and unpaid, so almost nobody does it. Of 134 execution attempts, 130 were one person clicking a button anyone could click; the other 4 were a single other member, all in the first six weeks, none since October 2025.
+3. **Keys, and this one is real.** `DEFAULT_ADMIN_ROLE` on the OG Respect contract has exactly one member. That role can grant itself minting rights and issue vote weight at will. This is the only genuinely permissioned thing in the stack, and it sits under the ledger that decides every vote.
 
-1. **Rotate facilitators.** Each week, a different high-Respect member facilitates `/randomize` and `/timer`.
-2. **Multisig authority.** Require 3-of-5 trusted members to approve OREC execution.
-3. **Automate trivial sessions.** If consensus is obvious (e.g., 5-0 ranking), auto-execute without manual review.
-
-This is documented in ZAO research Doc 115 as a medium-priority governance upgrade.
+The first two are solved by recruiting people, not by changing contracts. The third is solved by relinquishing or splitting a role. Conflating them is what produced three years of "we should set up a multisig" for a system that has no signer set. The measurement and the proposed fixes are in `respect/SIGNER-COMMITTEE.md` and `respect/EXECUTION-RUNBOOK.md`; Chapter 9 carries the honest version of the limitation.
 
 ---
 
@@ -1444,18 +1451,11 @@ This is documented in ZAO research Doc 115 as a medium-priority governance upgra
 
 ---
 
-**Word count: 3,118**
-
----
-
 Continue to Chapter 6: On-Chain Architecture - ORDAO, OREC
 
 ---
 
 # Chapter 6: On-Chain Architecture
-
-
----
 
 > *ORDAO is the optimistic Respect-based executive contract that turns peer-evaluated contribution into on-chain governance. It solves the voter apathy problem by inverting the burden of proof: instead of proving consensus exists, the system assumes it and allows the minority to veto.*
 
@@ -1479,7 +1479,7 @@ The result: Respect-weighted proposals pass with 5-10% quorum (instead of 50%+),
 
 OREC proposals move through three explicit phases: voting, veto, and execution. Each phase has a fixed duration and distinct rules.
 
-### Phase 1: Voting Window (72 hours typical)
+### Phase 1: Voting Window (72 hours, fixed)
 
 When a member proposes a change - a Respect game outcome, a treasury allocation, a governance parameter adjustment - the proposal enters voting. Any holder of Respect can vote YES or NO. Their vote weight is their OG Respect balance read live at the moment they cast their vote (not a snapshot taken at proposal creation). This matches the OREC contract's behavior and is why the token must be soulbound - a live-balance vote is only safe when the balance cannot be borrowed or transferred in.
 
@@ -1489,7 +1489,7 @@ The proposer's wallet automatically votes YES upon submission. This is not a con
 
 Vote weight is non-delegatable. Your Respect is soulbound; your vote comes directly from your wallet. This prevents vote-buying intermediaries.
 
-### Phase 2: Veto Window (72 hours, follows voting)
+### Phase 2: Veto Window (72 hours, fixed, follows voting)
 
 When voting closes, the veto window opens. NO votes are still accepted. YES votes are not.
 
@@ -1521,13 +1521,15 @@ When conditions are met, **anyone** can call the execute function. This is impor
 
 ZAO maintains two separate Respect token contracts to decouple voting power from ongoing earnings.
 
-**OG Respect (ERC-20, Frozen Historical Ledger)**
+**OG Respect (ERC-20, dormant historical ledger - and the only one that votes)**
 
 Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` (Optimism Mainnet)
 
-Total supply: 38,484 Respect tokens (read on-chain), frozen since late 2025 - the ORDAO contract walkthrough dates the last mint to 18 December 2025.
+Total supply: 38,484 Respect across 122 holders (read on-chain). Dormant since late 2025: the last mint was 9 December 2025 and the last distribution 18 December 2025.
 
-OG Respect is the historical ledger. It covers fractals 1-73 (August 2024 - September 2025), before OREC was deployed. These tokens are soulbound: both `transfer()` and `transferFrom()` functions revert with "Respect is soulbound and cannot be transferred."
+**Dormant is not frozen, and the difference is a live risk.** `DEFAULT_ADMIN_ROLE` on this contract has exactly one member. That role can grant itself minting rights and issue vote weight at any time. Nothing on-chain prevents it and no proposal is required. This is the only genuinely permissioned capability anywhere in the stack, and it sits directly beneath the ledger that decides every vote. See Chapter 9 and `respect/SIGNER-COMMITTEE.md`.
+
+OG Respect is the historical ledger. It covers periods 1-66 (August 2024 - September 2025), before OREC was deployed. These tokens are soulbound: both `transfer()` and `transferFrom()` functions revert with "Respect is soulbound and cannot be transferred."
 
 OG Respect holders retain full voting power in ORDAO. If you earned 500 Respect in the early weeks, your 500 Respect still counts as voting weight in every proposal. This decouples voting rights from recency of contribution. An early adopter who has been absent for months can still vote at full weight, if they choose to.
 
@@ -1535,7 +1537,7 @@ OG Respect holders retain full voting power in ORDAO. If you earned 500 Respect 
 
 Address: `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` (Optimism Mainnet)
 
-ZOR is the active ledger for fractals 74+ (deployed September 2025, post-OREC). Every weekly Respect game result since September 2025 is minted as ZOR.
+ZOR is the active ledger from period 67 onward (deployed September 2025, post-OREC). Every weekly Respect game result since September 2025 is minted as ZOR: 333 awards to 70 addresses across 41 settled periods, 18,266 minted and 848 burned, leaving 17,418 outstanding.
 
 ZOR uses ERC-1155 (non-fungible token standard), not ERC-20. Each Respect award is a separate token ID, with metadata tracking the round, circle members, and rank. This creates an immutable record: "on 2026-05-20, member Alice earned 68 Respect for Rank 2 in Circle 3, with peers Bob, Carol, and Dan."
 
@@ -1545,13 +1547,13 @@ Only the OREC contract can mint ZOR. There is no admin minting. No manual overri
 
 ### Why Two Tokens?
 
-**Historical Preservation:** The OG ledger cannot be lost or rewritten. Even though frozen, members' OG balances remain on-chain as proof of early recognition and contribution. This is important for legitimacy: new members join a system with a visible, auditable history.
+**Historical Preservation:** The OG ledger cannot be lost or rewritten by members. Even while dormant, OG balances remain on-chain as proof of early recognition and contribution. This is important for legitimacy: new members join a system with a visible, auditable history.
 
 **Democratic Future:** ZOR reflects ongoing peer evaluation. Because it is minted by OREC proposals only, it is provably trustworthy - no backstage favoritism, no admin discretion.
 
 **Vote Weight Decoupling:** On-chain voting power is read from the OG ledger only. OREC reads a member's OG balance live, at the moment they cast their vote (not a snapshot at proposal creation); ZOR mints do not change voting weight. This is deliberate: it prevents "who earned Respect this week" from overwhelming "who has earned standing over the life of the community." A member with high OG votes at full weight even if they have been inactive lately.
 
-The honest consequence: a member who joined after the OG freeze and holds only ZOR currently has no on-chain voting weight, however much ZOR they earn. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - is an open governance problem (see Chapter 9).
+The honest consequence, and it is now measured rather than asserted: a member who joined after OG went dormant and holds only ZOR has no on-chain voting weight, however much ZOR they earn. **47 of the 70 people ever awarded ZOR are in exactly that position.** Among the 27 active in the last twelve settled periods, 14 hold no OG at all and another 9 sit below the 1,000 minimum weight - so 23 of 27 active contributors cannot carry a proposal. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - is an open governance problem (see Chapter 9).
 
 ---
 
@@ -1602,7 +1604,7 @@ This enforcement is at the contract level, not the wallet level. Even if a membe
 
 | Contract | Address | Role | Token Standard | Status |
 |----------|---------|------|---|---|
-| **OG Respect** | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` | Historical voting ledger | ERC-20 | Frozen (no new mints) |
+| **OG Respect** | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` | Historical ledger; the sole source of vote weight | ERC-20 | Dormant (no mints since Dec 2025; admin role can still mint) |
 | **ZOR Respect** | `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` | Active weekly ledger | ERC-1155 | Active (OREC mints each week) |
 | **OREC** | `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` | Voting + execution engine | Smart contract | Active |
 
@@ -1610,14 +1612,18 @@ This enforcement is at the contract level, not the wallet level. Even if a membe
 
 | Parameter | Value | Purpose |
 |-----------|-------|---------|
-| `voteLen` | 259,200 seconds (3 days) | Duration of YES/NO voting (read live) |
-| `vetoLen` | 259,200 seconds (3 days) | Duration of NO-only veto (read live) |
-| `minWeight` | 1,000 Respect (~2.6% of OG supply) | Minimum YES weight to qualify (read live) |
-| `respectContract` | `0x34cE89...` (OG) | Vote weight source, read live from OREC |
-| `respectContractZOR` | `0x9885CC...` | Minting target (active) |
-| `maxConcurrentProposals` | 10 | Prevent proposal spam |
+| `voteLen` | 259,200 seconds (3 days) | Duration of YES/NO voting |
+| `vetoLen` | 259,200 seconds (3 days) | Duration of NO-only veto |
+| `minWeight` | 1,000 Respect (~2.6% of OG supply) | Minimum YES weight to qualify |
+| `respectContract` | `0x34cE89...` (OG) | The one and only source of vote weight, read live at each vote |
+| `owner` | `0xcB05F9...` (OREC itself) | Every setter is `onlyOwner`, so parameters change only by passed proposal |
+| `maxLiveVotes` | not captured in the committed snapshot | Caps concurrent live votes per proposer; read it from the contract |
 
-These values are optimized for ZAO's 188-person community. Larger fractals would increase thresholds; smaller fractals might tighten windows.
+Every value above except `maxLiveVotes` is read from OREC in `data/summary.json` at block 156,055,426 and re-checked by `scripts/verify-claims.mjs`.
+
+Two corrections against earlier drafts of this table. There is **no `respectContractZOR` parameter** - OREC does not hold a pointer to the ZOR ledger; the relationship runs the other way, with OREC being the only address ZOR will accept a mint from. And the spam cap is `maxLiveVotes`, not `maxConcurrentProposals`; the value of 10 previously printed here was not read from the contract.
+
+These values suit ZAO's current scale - a community roll of 188, with 4 to 12 people settled per recent session. Larger fractals would raise thresholds; smaller ones might tighten windows.
 
 ---
 
@@ -1632,7 +1638,7 @@ Governance on Ethereum mainnet is prohibitively expensive. A single YES vote on 
 - **Executing a passed proposal:** ~100,000 gas = 0.002-0.005 USD
 - **Minting ZOR Respect tokens:** ~30,000 gas per token = 0.0006-0.0015 USD per member
 
-A weekly Respect game with 40+ members and 8 groups costs approximately 0.10-0.20 USD in total gas. For comparison, a single governance vote on Ethereum mainnet costs more.
+A weekly Respect game costs cents in total gas - roughly 0.10-0.20 USD even at 40 members across 8 groups, and a fraction of that at the one or two groups a recent session actually runs. For comparison, a single governance vote on Ethereum mainnet costs more.
 
 This enables ZAO to run governance at a scale where every member's participation has financial viability. Members are not discouraged from voting due to gas costs.
 
@@ -1717,7 +1723,7 @@ ORDAO is **not** formally audited by a third-party security firm as of May 2026.
 
 1. **Optimystics Code Review:** sim31 (author) and the Optimystics team conducted line-by-line review of Solidity contracts.
 2. **Fuzzing:** orclient has unit tests covering all major vote paths.
-3. **Live Deployment:** OREC has been live on Optimism since September 2025, with 242+ transactions as of May 2026, all successful.
+3. **Live Deployment:** OREC has been live on Optimism since September 2025. As of block 156,055,426 on 2026-08-26 the committed snapshot records 316 transactions against it and 514 contract events, across 153 proposals. They have **not** all succeeded, and the earlier claim that they had was wrong: 123 proposals executed, 15 failed to pass, and **11 execution attempts reverted on-chain**. Every one of the 11 was a `mintRespectGroup` call, meaning a week of Respect Game results failed to settle and had to be redone. The failure mode and its 24 unminted award slots are documented in `respect/EXECUTION-RUNBOOK.md`.
 4. **Academic Review:** Larimer and Eden Fractal governance team reviewed the mechanism against Fractally design principles.
 
 **Recommended Next Steps:**
@@ -1731,7 +1737,7 @@ For production use at scale (>500 members or >$1M treasury), commission a formal
 It is crucial to understand the architecture boundary: the Respect Game (breakout circles, Fibonacci ranking) is entirely off-chain. OREC is the enforcement layer.
 
 **Off-Chain (Human consensus):**
-- 40+ members gather in breakout rooms of 5-6 (breakout rooms on Farcaster, Discord, or Gather.town).
+- Members gather in breakout rooms of 5-6 (on Farcaster, Discord, or Gather.town).
 - Each circle discusses and reaches consensus on ranking (which names to place at each Fibonacci level).
 - The circle lead submits the ranking (e.g., "Alice: 110, Bob: 68, Carol: 42, ...") to a shared spreadsheet or Discord channel.
 
@@ -1783,13 +1789,9 @@ The frapps pattern decouples ORDAO from ZAO governance. ZAO is an application bu
 - `github.com/Optimystics/ordao` - Production deployment (Optimism Mainnet, maintained)
 - Optimism Mainnet Etherscan: Contract verification and transaction history (all addresses verified on-chain)
 
-
 ---
 
 # Chapter 7: Why Fractal
-
-
----
 
 > *Token-weighted voting is not broken because we designed it wrong. It is broken because we designed it right - we gave voting power to capital, and capital concentrates. Fractal governance addresses the root cause: it gives power to contribution, which is distributed and peer-evaluated.*
 
@@ -1828,7 +1830,7 @@ Nine major governance models exist in production DAOs and research. Each solves 
 
 **Capture Risk:** 51% of voting power = control. In Compound, this is 8 coordinating delegates (low bar). In reality, control is lower: the top 8 delegates may not be coordinated, so effective control requires 20-30 delegates. Still oligarchic.
 
-**Assessment for ZAO:** Token voting would make ZAO plutocratic. ZAO has 188 members (artists, engineers, curators). Some are early adopters with capital, others are recent joiners with more contribution. If voting power flowed to capital, ZAO would be controlled by whoever accumulated the most tokens early, not by the community that creates music.
+**Assessment for ZAO:** Token voting would make ZAO plutocratic. ZAO has a community roll of 188 (artists, engineers, curators); 169 addresses have ever held Respect on chain. Some are early adopters with capital, others are recent joiners with more contribution. If voting power flowed to capital, ZAO would be controlled by whoever accumulated the most tokens early, not by the community that creates music.
 
 ---
 
@@ -1980,17 +1982,19 @@ Moreover, SourceCred's algorithm is opaque ("PageRank says you earned 47 cred").
 
 ### 9. Fractal Governance (Respect Tokens, ORDAO)
 
-**How it works:** Weekly 5-6 person circles reach consensus on ranking contributions. Fibonacci distribution (55/34/21/13/8/5 or variants). Soulbound Respect tokens minted on-chain. ORDAO voting with 5-10% quorum and veto period for minority protection.
+**How it works:** Weekly 5-6 person circles reach consensus on ranking contributions. Fibonacci distribution (55/34/21/13/8/5 or variants). Soulbound Respect tokens minted on-chain. ORDAO voting with a minimum-weight floor and a veto period for minority protection. In ZAO's deployment that floor is an absolute 1,000 Respect, roughly 2.6% of the OG supply, not a percentage quorum that scales with the ledger.
 
 **Sybil Resistance:** Extremely high. Respect earned via consensus; cannot be split or bought.
 
 **Plutocracy Resistance:** Extremely high. Respect = contribution quality (peer-evaluated), not capital.
 
-**Voter Participation:** High. Weekly rhythm embeds governance in community. 60-80% participation typical (vs. 3-10% in token voting).
+**Voter Participation:** High. Weekly rhythm embeds governance in community. 60-80% participation is the figure reported across fractal communities generally (vs. 3-10% in token voting).
+
+**A caveat that applies to every 60-80% in this chapter.** That number comes from the fractal literature and from other communities' self-reporting. It has never been measured at ZAO, and ZAO's own ledger does not support it: 4 to 12 people settle in a recent session against a community roll of 188. The comparison rows below are a comparison of *governance designs*, drawing on each design's reported experience. They are not a claim about ZAO's turnout. Section VII and Chapter 9 give ZAO's actual numbers.
 
 **Contribution vs. Capital:** Contribution-only. Capital has no direct influence.
 
-**Decision Speed:** Medium. Weekly circles take time; ORDAO voting + veto is 6 days (voting) + 3 days (veto) = 9 days.
+**Decision Speed:** Medium. Weekly circles take time; ORDAO voting + veto is 3 days (voting) + 3 days (veto) = 6 days before a proposal becomes executable. In ZAO's deployment the median proposal is executed on day 7.
 
 **Capture Risk:** Low. To control ORDAO, a coalition needs majority support in multiple circles AND high Respect (ORDAO voting power). This is hard - requires embedding deep in community culture.
 
@@ -2039,7 +2043,7 @@ Fractal does Sybil resistance by making identity costly to fake *without* capita
 
 Token-weighted DAOs have a participation crisis: 3-10% of eligible voters participate in typical governance. Moloch and Coordinape have higher participation, but Moloch requires high-friction capital tributes, and Coordinape requires synchronous voting each epoch.
 
-Fractal's weekly rhythm and human-scaled circles create high participation (60-80% typical). Governance is not a separate chore; it is embedded in community rhythm. "Monday 6pm EST, we gather and rank contributions." This becomes a cultural anchor, like a standup meeting in an open-source project.
+Fractal's weekly rhythm and human-scaled circles create high participation (60-80% typical across fractal communities; not measured at ZAO - see the caveat in section IV). Governance is not a separate chore; it is embedded in community rhythm. "Monday 6pm EST, we gather and rank contributions." This becomes a cultural anchor, like a standup meeting in an open-source project.
 
 **Winner: Fractal.**
 
@@ -2109,7 +2113,9 @@ Why does this matter? Because music is not capital. Music is contribution. A son
 
 Token voting says: the wealthiest music DAO member decides the community's future. Fractal voting says: the community decides, based on who creates value.
 
-ZAO Fractal is the first music governance system to implement this. We have proven (90+ weeks, 188 members, 40+ participants per session) that it works. It works better than token voting. Members show up. Engagement is high. Decisions reflect community values, not capital concentration.
+ZAO Fractal is the first music governance system to implement this, and it has been running weekly since August 2024 - 110 numbered periods, 41 of them settled on the on-chain ledger, 333 Respect awards, 153 governance proposals with 123 executed.
+
+Two years in, the claim that survives contact with the data is narrower than the one earlier drafts made, and it is still the important one. **What is proven:** that peer-ranked contribution can be the sole basis of governance weight, sustained week after week, with every award attributable to a named ranking and every proposal verifiable at an address. **What is not proven:** that it produces broad participation. A mean of 8.1 people settle per period against a community roll of 188. Section VII is where that gets treated as the open problem it is, and Chapter 9 gives it a chapter of its own. Fractal governance beats token voting on the question of *what confers power*. It has not yet beaten it on the question of *how many people show up*.
 
 ---
 
@@ -2159,9 +2165,9 @@ Fractal governance is optimal for ZAO because:
 
 1. It makes contribution, not capital, the source of voting power.
 2. It is Sybil-resistant without capital gatekeeping.
-3. It achieves high participation (60-80% of active members show up each week).
+3. It achieves high participation **among those who engage** - but the engaged group is small: 4 to 12 people settle in a recent session, out of a roll of 188. The 60-80% figure reported for fractal communities generally has never been measured at ZAO, and the ZAO ledger does not support it.
 4. It builds community as it governs.
-5. It has been proven over 90+ weeks in production.
+5. It has been running in production since August 2024, across 110 numbered periods.
 
 ---
 
@@ -2175,7 +2181,7 @@ It is the anti-whale, anti-VC, anti-plutocratic approach to music community gove
 
 Fractal governance is the mechanism. But the mechanism is only as good as the culture that sustains it.
 
-ZAO has built that culture over 90+ weeks. This whitepaper documents how and why. For music communities, for DAOs, and for anyone asking "is there an alternative to token voting?": there is. ZAO Fractal is the proof.
+ZAO has built that culture week by week since August 2024. This whitepaper documents how and why. For music communities, for DAOs, and for anyone asking "is there an alternative to token voting?": there is. ZAO Fractal is the proof.
 
 ---
 
@@ -2188,16 +2194,11 @@ ZAO has built that culture over 90+ weeks. This whitepaper documents how and why
 - Chapter 2 of this whitepaper - The Problem (token voting failures in Compound, Uniswap, music DAOs)
 - Chapter 3 of this whitepaper - First Principles (Larimer, fractal theory, deliberative democracy)
 
-
 ---
 
 # Chapter 8: The ZAO Fractal
 
-> **Draft v0.1 - 2026-05-25 - awaiting Zaal review**
-
----
-
-*ZAO Fractal is not generic fractal governance with a music overlay. It is fractal governance built from the ground up for a music community, running weekly for 100+ weeks without pause, embedded in a social client, and standing as the only active fractal on Optimism Mainnet.*
+*ZAO Fractal is not generic fractal governance with a music overlay. It is fractal governance built from the ground up for a music community, running weekly since August 2024 through 110 numbered periods, embedded in a social client, and standing as the only active fractal on Optimism Mainnet.*
 
 ---
 
@@ -2209,19 +2210,58 @@ ZAO Fractal occupies a unique position in the fractal governance ecosystem. This
 
 **Second, we are embedded in a full social client.** ZAO OS is a Farcaster social application that includes real-time messages, music player, artist feeds, spaces for conversation, and fractal governance data. Governance does not live in a separate dashboard. It lives inside the place where community already gathers. No other fractal - Eden, Roy, Optimism Fractal, Aquadac - is part of a complete social application. Governance is always separate from culture. In ZAO OS, they are one.
 
-**Third, ZAO Fractal is the only active fractal on Optimism Mainnet.** Optimism Fractal, the testbed for fractal governance on Ethereum L2s, paused in January 2026 after running for 15 months (October 2023 - January 2026). The pause was strategic consolidation - the Optimism Foundation and the Optimystics team decided to concentrate resources on Eden Fractal (Base) as the Superchain hub. This left ZAO as the sole governance fractal keeping Optimism OP Mainnet alive. ZAO inherited a position of strategic importance: we are the default fractal for Optimism, and we are music-focused. No other blockchain in the Superchain has that combination.
+**Third, ZAO Fractal is the only active fractal on Optimism Mainnet.** This is true as of the fractal communities directory compiled in May 2026 and re-checked against it on 2026-08-26; it is a claim about other people's communities and should be re-verified before each publication rather than assumed to hold. Optimism Fractal, the testbed for fractal governance on Ethereum L2s, paused in January 2026 after running for 15 months (October 2023 - January 2026). The pause was strategic consolidation - the Optimism Foundation and the Optimystics team decided to concentrate resources on Eden Fractal (Base) as the Superchain hub. This left ZAO as the sole governance fractal keeping Optimism OP Mainnet alive. ZAO inherited a position of strategic importance: we are the default fractal for Optimism, and we are music-focused. No other blockchain in the Superchain has that combination.
 
-**Fourth, ZAO is one of only two active fractals on the entire Ethereum Superchain.** Eden Fractal (Base) is the other. This is a consequence of consolidation: Roy Fractal operates on EOS (a separate ecosystem), Aquadac is Zoom-only (no blockchain), and Optimism Fractal paused. With Optimism Fractal gone, the Superchain fractal governance landscape has crystallized around two hubs - Eden on Base (governance R&D, bi-weekly, 40-80 active members) and ZAO on Optimism (music-culture, weekly, 40 active members, 188 total community). Two fractals holding the Superchain together. One is music.
+**Fourth, ZAO is one of only two active fractals on the entire Ethereum Superchain.** Eden Fractal (Base) is the other. This is a consequence of consolidation: Roy Fractal operates on EOS (a separate ecosystem), Aquadac is Zoom-only (no blockchain), and Optimism Fractal paused. With Optimism Fractal gone, the Superchain fractal governance landscape has crystallized around two hubs - Eden on Base (governance R&D, bi-weekly, 40-80 active members) and ZAO on Optimism (music-culture, weekly, a community roll of 188 and 4 to 12 people settling per recent session; see "The numbers, and what each one counts" below). Two fractals holding the Superchain together. One is music.
 
-**Fifth, ZAO has the longest unbroken weekly streak.** We have run governance meetings every Monday at 6pm EST since August 2024, through May 2026 - 100+ consecutive weeks without pause or skip. Eden Fractal has been running longer overall (since May 2022, now 130+ events), but Eden runs bi-weekly, not weekly. Roy Fractal at 700+ members exists and scales, but its public cadence is undocumented. Optimism Fractal ran for 15 months (72 events in that span, suggesting weekly-to-bi-weekly hybrid) then paused. By every measure - unbroken streak, weekly consistency, membership stability - ZAO Fractal has demonstrated longevity that no other fractal community has proven.
+**Fifth, ZAO has the longest sustained weekly cadence - and here is exactly how much of that the chain can back.** We have run governance meetings every Monday at 6pm EST since August 2024, and the community's own period counter reads 110, settled on 2026-08-25. Eden Fractal has been running longer overall (since May 2022, now 130+ events), but Eden runs bi-weekly. Roy Fractal at 700+ members exists and scales, but its public cadence is undocumented. Optimism Fractal ran for 15 months (72 events in that span) then paused.
 
-**Sixth, ZAO maintains two Respect ledgers reflecting two eras of growth.** Fractals 1-73 (August 2024 - September 2025) ran in Discord, tracked contribution in Airtable, and distributed OG Respect (ERC-20, non-transferable, address `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`). The ledger froze at 122 holders and 38,484 total supply in December 2025 as the community scaled. Fractals 74 onward (September 2025 onward) run on-chain via ORDAO/OREC, distributing ZOR Respect (ERC-1155, non-transferable, address `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c`). The OREC contract (address `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` on Optimism) has recorded 242+ transactions as of May 19, 2026. This two-ledger system reflects institutional learning: ZAO went from offline community organization (Airtable) to production blockchain infrastructure (ORDAO) without losing history or community. The transition is documented, reconciled, and both eras remain on-chain and auditable.
+Earlier drafts said "100+ consecutive weeks without pause or skip" and cited on-chain history as the proof. **The chain does not prove that, and it cannot.** It records settlement, not attendance. A session that ran and was never submitted looks identical to one that never ran.
 
-**Seventh, ZAO uses a two-times-scaled Fibonacci scoring that reflects sustained high engagement.** The standard fractal uses Fibonacci (55, 34, 21, 13, 8, 5 Respect per rank). ZAO uses 110, 68, 42, 26, 16, 10 - exactly double. Why? After 70+ weeks of weekly meetings, the community sustains itself. Contribution is measurable and consistent. Doubling the curve increases differentiation: a rank-1 contributor earns 5x more than a rank-6, instead of 11x. This reflects maturity. It also reflects the reality of a 188-member community with 40 active per session. At that scale, we can trust peer evaluation. We can afford to give more Respect to more people, because the people earning it have proven themselves. Standard fractals use standard Fibonacci. ZAO's escalation is evidence that longevity enables generosity.
+What the chain does say, at block 156,055,426:
+
+| | |
+|---|---|
+| Latest period number | 110 |
+| Periods with awards on the ZOR ledger | 41, covering periods 67-110 |
+| Periods inside that range with no awards at all | 71, 72 and 103 |
+| Longest run of consecutive periods ending at 110 | 7 |
+| Elapsed span of those 41 settled periods | 47.8 weeks, median 7 days apart |
+| Largest gap between settled periods | 29 days |
+| Periods 1-66 | ran on OG, which carries no per-period record whatsoever |
+
+So two thirds of the claimed history is unverifiable on-chain in principle, and inside the third that is verifiable, settlement is lumpy: results get batched, submissions revert and get redone (11 of them did), and a 29-day gap on the ledger is at least as likely to be a settlement backlog as a month of cancelled Mondays.
+
+The honest form of the claim is therefore two claims, and this paper keeps them apart. **The ritual claim** - we met every Monday - rests on the community's own records and the memory of the people in the room, and it is the claim ZAO stands behind. **The chain claim** - governance decisions were executed, verifiably, by a public process - rests on 153 proposals and 123 executions and needs no one's word for it. Presenting the first as though the second proved it was the single biggest accuracy problem in v0.1 of this paper.
+
+**Sixth, ZAO maintains two Respect ledgers reflecting two eras of growth.** Periods 1-66 (August 2024 - September 2025) ran in Discord, tracked contribution in Airtable, and distributed OG Respect (ERC-20, non-transferable, address `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`). That ledger went dormant at 122 holders and 38,484 total supply in December 2025 - dormant rather than frozen, because a single admin role can still mint on it. Periods 67 onward (September 2025 onward) run on-chain via ORDAO/OREC, distributing ZOR Respect (ERC-1155, non-transferable, address `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c`): 333 awards to 70 addresses. The OREC contract (address `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` on Optimism) had recorded 316 transactions and 153 proposals as of 2026-08-26.
+
+The part this chapter used to leave out: **the two ledgers have come apart, and only the dormant one votes.** OREC reads vote weight from OG, so 47 of the 70 people ever awarded ZOR hold no vote weight at all. Institutional learning, yes - and an unfinished migration. Chapter 4 measures it and Chapter 10 carries the fix. This two-ledger system reflects institutional learning: ZAO went from offline community organization (Airtable) to production blockchain infrastructure (ORDAO) without losing history or community. The transition is documented, reconciled, and both eras remain on-chain and auditable.
+
+**Seventh, ZAO uses a two-times-scaled Fibonacci scoring.** The standard fractal uses Fibonacci (55, 34, 21, 13, 8, 5 Respect per rank). ZAO uses 110, 68, 42, 26, 16, 10 - exactly double.
+
+Earlier drafts claimed the doubling "increases differentiation: a rank-1 contributor earns 5x more than a rank-6, instead of 11x". That is arithmetically impossible. Doubling every entry in a vector changes no ratio in it: 110/10 and 55/5 are both **11 to 1**, and the top two ranks take 65% of the pot on either curve. The shape of ZAO's incentive is identical to standard Fibonacci.
+
+What doubling actually changes is the absolute number, and therefore the rate at which the ledger accumulates - roughly 272 Respect issued per settled group rather than 136. That is a real choice with a real consequence, and the consequence is the one Chapter 4 measures: a ledger that compounds twice as fast, in a system where nothing decays, concentrates twice as fast. Calling the escalation "evidence that longevity enables generosity" was a nice line covering an unexamined decision. The generosity is real; so is the compounding, and the decay design in Chapter 4 section VI is what would make the two compatible.
 
 ---
 
-## The Zaal Arc: From Theory to 100 Weeks
+## The numbers, and what each one counts
+
+Three different counts of "how many people are in ZAO" appear in this paper and in ZAO's own materials. They are all correct and they measure different things. Stating which is which, once, so no chapter has to hedge:
+
+| Count | What it is |
+|---|---|
+| **188** | The community roll - members on Farcaster, counted off-chain. The broadest number, and the one that answers "how big is The ZAO". |
+| **169** | Addresses that have ever held Respect on either ledger: 122 on OG, 70 on ZOR, overlapping. The number that answers "how many people has governance ever recognized". |
+| **144** | Names in the member registry that can be resolved to a wallet, of which 129 currently hold Respect. |
+| **4 to 12** | People settled per session in recent months, mean 8.1 across all settled periods. The number that answers "how many people were in the room on Monday". |
+
+The gap between 188 and 8.1 is not a rounding error and this paper does not present it as one. It is the central open problem in Chapter 9. A governance system that recognizes 169 people and convenes eight is working, but it is not yet working at the scale of its own community.
+
+---
+
+## The Zaal Arc: From Theory to Two Years
 
 Understanding ZAO Fractal requires understanding its founder's path through the fractal ecosystem.
 
@@ -2231,7 +2271,7 @@ The ZAO community, in parallel, had grown to 188 members on Farcaster - musician
 
 In August 2024, Zaal founded ZAO Fractal. He took the Respect Game, the soulbound token model, the weekly ritual from Fractally and Eden. He did not invent the governance primitive. He inherited it. What he did was specific: he operationalized it for music, embedded it in the place where the community already gathered, committed to a weekly cadence, and never stopped. 
 
-For 100+ weeks, every Monday at 6pm EST, ZAO Fractal met. The ritual became the culture. Culture became the difference between ZAO and every other fractal. Daniel Larimer showed the theory. Dan SingJoy proved it worked. Zaal scaled it through commitment. This is the arc: theory - proof of concept - implementation at one specific community's scale, week after week, until it was no longer an experiment. It was how we governed ourselves.
+Week after week since August 2024, every Monday at 6pm EST, ZAO Fractal met. The ritual became the culture. Culture became the difference between ZAO and every other fractal. Daniel Larimer showed the theory. Dan SingJoy proved it worked. Zaal scaled it through commitment. This is the arc: theory - proof of concept - implementation at one specific community's scale, week after week, until it was no longer an experiment. It was how we governed ourselves.
 
 ---
 
@@ -2253,21 +2293,21 @@ ZAO's five criteria are specific. Every ranking decision encodes an answer to th
 
 **Criterion 5: Onboarding.** Did this person help new members join and understand ZAO? Did they explain fractal governance to someone new to crypto and web3? Did they make someone feel welcome? Onboarding is where most DAOs fail. They build sophisticated governance and forget to invite people in. ZAO makes it a voting criterion because retention beats architecture. A community that grows together beats a perfect system with no one in it.
 
-These five criteria are not negotiable. They are written in the ZAO constitution. Every Monday, every member ranking peers asks themselves: *Did this person advance vision? Did they contribute? Did they collaborate? Did they innovate? Did they onboard?* Over 100+ weeks, thousands of ranking decisions have encoded the same answer: These five things are what ZAO values.
+These five criteria are not negotiable. They are written in the ZAO constitution. Every Monday, every member ranking peers asks themselves: *Did this person advance vision? Did they contribute? Did they collaborate? Did they innovate? Did they onboard?* Across 110 periods and, on the on-chain ledger alone, 333 recorded awards, ranking decisions have encoded the same answer: These five things are what ZAO values.
 
 ---
 
 ## The Discord Bot: Operationalizing the Respect Game
 
-The Respect Game is conceptually simple. Running it at 40+ people per week requires infrastructure.
+The Respect Game is conceptually simple. Running it every week - at 40-plus people in the sessions it was built for, and at the 4 to 12 who settle in a typical recent one - requires infrastructure.
 
 `fractalbotmarch2026` is a Python Discord bot deployed by the ZAO team. It has 52 slash commands. The three core commands that make a fractal session work are:
 
 `/timer` - The facilitator starts the session with `/timer 60`. The bot counts down. This is the ritual frame. Sixty minutes. Go.
 
-`/randomize` - The bot shuffles 40+ members into breakout rooms of 5-6 people. It does this with a constraint: try to mix up the groups so not the same people meet every week. The randomization is pseudo-random but weighted by attendance history - people who miss sessions are overweighted for randomization so they meet newer faces. The bot posts the groups to Discord.
+`/randomize` - The bot shuffles everyone in the waiting room into breakout rooms of 5-6 people. In practice recent sessions have produced one group, sometimes two; nobody has yet run three. It does this with a constraint: try to mix up the groups so not the same people meet every week. The randomization is pseudo-random but weighted by attendance history - people who miss sessions are overweighted for randomization so they meet newer faces. The bot posts the groups to Discord.
 
-`/zaofractal` - This is the ranking interface. After the breakout room discussion (30 minutes), facilitators collect rankings. The `/zaofractal` command opens a multi-page React-based voting form. Each voter (in a group of 6) ranks the other 5 members 1-6. The bot collects all votes, aggregates by Fibonacci weighting, and posts the results to the Discord channel. It also logs the results to a Supabase database (the master ledger) and, if on-chain is enabled (Fractals 74+), submits to the OREC contract on Optimism.
+`/zaofractal` - This is the ranking interface. After the breakout room discussion (30 minutes), facilitators collect rankings. The `/zaofractal` command opens a multi-page React-based voting form. Each voter (in a group of 6) ranks the other 5 members 1-6. The bot collects all votes, aggregates by Fibonacci weighting, and posts the results to the Discord channel. It also logs the results to a Supabase database (the master ledger) and, if on-chain is enabled (period 67 onward), submits to the OREC contract on Optimism.
 
 The other 49 commands handle session management, member queries, leaderboard displays, history archival, vacation signaling, and documentation. The bot is not just tooling. It is the mechanical heart of the system. Without it, a Respect Game requires a facilitator, a spreadsheet, a tally, manual on-chain submission. With it, the bot handles everything. The facilitator can focus on the culture.
 
@@ -2297,11 +2337,11 @@ ZAO Fractal inherits the Fractally protocol from Daniel Larimer. It inherits the
 
 What is distinctive about ZAO is not the technology. It is the culture.
 
-One hundred weeks of showing up. Every Monday. 6pm Eastern. Breakout rooms, Fibonacci scores, peer judgment, Respect recorded on-chain. Never paused. Never consolidated into another fractal. Never abandoned when the founders got busy. One hundred weeks of institutional commitment to the same ritual, the same time, the same values.
+Two years of showing up. Every Monday. 6pm Eastern. Breakout rooms, Fibonacci scores, peer judgment, Respect recorded on-chain. Never consolidated into another fractal. Never abandoned when the founders got busy. A hundred and ten numbered periods of institutional commitment to the same ritual, the same time, the same values.
 
 No one else in the fractal ecosystem has sustained a weekly cadence at this scale. Eden runs bi-weekly. Roy's cadence is undocumented. Optimism Fractal paused. Aquadac runs 12-week seasons. ZAO commits to every week. This consistency is the moat. It becomes predictable. Predictability becomes culture. Culture becomes governance that works.
 
-Music is the mission. Not an accident. Not a theme layered on generic governance. The five voting criteria, the Respect curves, the Discord bot commands, the ZAO OS integration - all of it is designed so that peer judgment about music contribution becomes the feedback loop that runs the community. You earn Respect by advancing music. You earn rank by collaborating with musicians. You advance the vision by making art together. In 100+ weeks, that alignment has become complete. ZAO Fractal is not a governance tool that serves a music community. It is a music community that governs itself.
+Music is the mission. Not an accident. Not a theme layered on generic governance. The five voting criteria, the Respect curves, the Discord bot commands, the ZAO OS integration - all of it is designed so that peer judgment about music contribution becomes the feedback loop that runs the community. You earn Respect by advancing music. You earn rank by collaborating with musicians. You advance the vision by making art together. Across 110 periods, that alignment has become complete. ZAO Fractal is not a governance tool that serves a music community. It is a music community that governs itself.
 
 Embedded in social infrastructure. The Farcaster social client is not a governance dashboard bolted onto culture. It is culture with governance living inside it. This is the only fractal that inhabits a complete social application. The consequence is that members do not feel governed. They feel like they are part of something.
 
@@ -2311,8 +2351,9 @@ These three things - longevity, music-first alignment, social embedding - are wh
 
 ## Sources
 
-- **07-zao-fractal-distinctness.md** (90+ weeks unbroken, music-focused, embedded in social client, five voting criteria, two ledgers, founder expertise path)
-- **01-preamble-and-vision.md** (Respect token non-transferability, community scale 188 members, 40 active per session, Monday 6pm EST ritual)
+- **07-zao-fractal-distinctness.md** (weekly cadence since August 2024, music-focused, embedded in social client, five voting criteria, two ledgers, founder expertise path)
+- **01-preamble-and-vision.md** (Respect token non-transferability, community roll of 188, Monday 6pm EST ritual)
+- **`data/` snapshot, OP Mainnet block 156,055,426, pulled 2026-08-26** (period 110, 41 settled periods, 333 awards, 316 OREC transactions, 153 proposals, 169 addresses; re-check with `node scripts/verify-claims.mjs`)
 - **02-live-communities-deep.md** (Optimism Fractal pause Jan 2026, Eden Fractal Epoch 2 bi-weekly cadence, Roy Fractal scale proof at 700+)
 - **03-optimism-fractal-full-history.md** (Optimism Fractal Oct 2023 - Jan 2026 pause, tripartite governance innovation, ORDAO production deployment)
 - **05-eden-fractal.md** (Eden cadence comparison, shared tooling stack ORDAO/OREC, shared people with ZAO)
@@ -2321,17 +2362,11 @@ These three things - longevity, music-first alignment, social embedding - are wh
 
 ---
 
-**Word count: 2,847**
-
 ---
 
 # Chapter 9: Limitations and Open Problems
 
-> **Draft v0.1 - 2026-05-25 - awaiting Zaal review**
-
----
-
-*Fractal governance works in production. ZAO Fractal's 100+ weeks prove it. But the model breaks under specific conditions, fails in visible ways, and faces open problems that no fractal has solved yet. This chapter names those limits openly, not to undermine the system, but to earn its credibility.*
+*Fractal governance works in production. Two years of ZAO Fractal prove it. But the model breaks under specific conditions, fails in visible ways, and faces open problems that no fractal has solved yet. This chapter names those limits openly, not to undermine the system, but to earn its credibility. Everything measured here comes from the committed on-chain snapshot at OP Mainnet block 156,055,426, pulled 2026-08-26.*
 
 ---
 
@@ -2339,11 +2374,33 @@ These three things - longevity, music-first alignment, social embedding - are wh
 
 Weekly synchronous governance is demanding. Research on real-world participation shows a sharp drop-off: after 2-4 months of weekly meetings, attendance stabilizes around a core 40-50% who carry the consensus burden. The rest attend sporadically. The psychological research is clear: webinar fatigue, decision fatigue, and the simple human cost of predictable weekly commitment cause participation collapse.
 
-ZAO Fractal has sustained weekly meetings for 100+ weeks without an announced pause. By the evidence, this should not be possible. The fact that it is possible suggests either that:
+ZAO Fractal has sustained weekly meetings since August 2024 without an announced pause, across 110 numbered periods. Earlier drafts said this should not be possible by the evidence, and offered three explanations, the third being that the fatigue had not been measured and was accumulating beneath the surface.
 
-1. Music community members are unusually committed to governance, or
-2. The ritual is psychologically embedded in the weekly culture in a way that prevents burnout, or
-3. We have not yet measured the actual fatigue, and it is accumulating beneath the surface.
+**It has now been measured, and the third explanation is the one the data supports.** The ritual has held. The room has not.
+
+| | |
+|---|---|
+| Community roll | 188 |
+| Addresses that have ever held Respect | 169 |
+| People settled in a recent session | 4 to 12 |
+| Mean settled per period, all 41 settled periods | 8.1 |
+| Recent sessions that ran a single breakout group | 11 of 15 |
+| Sessions that ran three or more groups, ever | 0 |
+| Sessions in which the founder was ranked, periods 95-110 | 14 of 15 |
+| Highest count for anyone else | 10 |
+
+The weekly cadence did not collapse. Attendance did, quietly, to a core of
+under a dozen - and one person is in the room almost every week. That is not
+a governance system that has beaten democracy fatigue. It is one where the
+fatigue landed on attendance rather than on the calendar, and where a single
+person's absence would end the streak.
+
+Three readings remain open and the chain cannot distinguish them: the
+community genuinely shrank; participation moved to surfaces that do not
+settle on-chain; or settlement failures are erasing people who did turn up
+(section 5 of `respect/EXECUTION-RUNBOOK.md` documents 24 award slots owed
+to 16 people that never minted, so this is real but not large enough to
+explain the gap).
 
 Mitigations ZAO uses: We accept that not every member can attend every session. A core group of 4+ unplayed (absent) members triggers an automatic session (no rescheduling required). This lowers the barrier to skip a week. We also rotate facilitators so the burden does not fall on one person. But these are partial fixes. The risk is real: if the weekly ritual becomes a chore instead of a gathering, participation collapses into delegated voting, and the deliberation that makes fractals different evaporates.
 
@@ -2353,9 +2410,9 @@ Mitigations ZAO uses: We accept that not every member can attend every session. 
 
 Ranking contribution is subjective. Every study on open-source work, organizational bias, and implicit ranking shows the same pattern: visible work (presenting, facilitating, loud talking) is ranked higher than quiet work (infrastructure, documentation, mentorship behind closed doors). Two-thirds of open-source labor is invisible. When invisible labor is ranked, it gets lower compensation, lower status, lower Respect.
 
-ZAO Fractal is vulnerable to this. The Discord bot facilitators, the Discord channel mods, the people who speak in breakout rooms - they accumulate visibility. A developer who fixed a critical security bug in silence may earn less Respect than a community manager who posted memes weekly. Over 100+ weeks, this bias compounds. Early, visible, charismatic members accumulate Respect faster than late-arriving, quiet builders. The governance then drifts toward the preferences of high-Respect members, amplifying the original bias. ZAO Fractal becomes a soft plutocracy, ruled by visibility instead of contribution.
+ZAO Fractal is vulnerable to this. The Discord bot facilitators, the Discord channel mods, the people who speak in breakout rooms - they accumulate visibility. A developer who fixed a critical security bug in silence may earn less Respect than a community manager who posted memes weekly. Over two years, this bias compounds. Early, visible, charismatic members accumulate Respect faster than late-arriving, quiet builders. The governance then drifts toward the preferences of high-Respect members, amplifying the original bias. ZAO Fractal becomes a soft plutocracy, ruled by visibility instead of contribution.
 
-Evidence of this: As of May 2026, only two wallets have ever submitted to the OREC contract (Zaal and civilmonkey.eth). The operating core is concentrated. This is intentional - we designed it this way during growth phase - but it creates a visibility bottleneck. If OREC submission is the mechanism for on-chain governance, only people visible enough to be trusted with OREC signing power can propose on-chain changes. Newer members, quiet contributors, people in other timezones are locked out.
+Evidence of this, corrected: 9 addresses have ever cast a vote on OREC and 2 have ever executed a proposal. But there is no "OREC signing power" to be trusted with - the next section explains why that framing was wrong, and why the correct diagnosis is harder rather than easier.
 
 Mitigation: Transparent contribution rubric. Use an explicit checklist for ranking: *Did this person ship code? Did they mentor someone? Did they document? Did they curate?* Instead of "did they impress me," use structured judgment. This does not eliminate bias - it just makes it visible. The next mitigation is off-chain ranking on GitHub (Chapter 10 roadmap: Frapp-GH), which makes work verifiable and attributable without visibility bias.
 
@@ -2365,7 +2422,7 @@ Mitigation: Transparent contribution rubric. Use an explicit checklist for ranki
 
 Small groups can be gamed. A coordinated ring of 10 people in a 40-person fractal can dominate the Respect flows to the next layer if they rank each other highly in every session. The academic literature on Sybil attacks, collusion in consensus systems, and voting manipulation is clear: a minority that coordinates can capture a system designed for honest majority.
 
-ZAO Fractal has not experienced a documented attack of this kind. But we have not tried hard to prevent it either. The current mitigations are social: *we know each other, we would notice if someone was gaming the system, we would call it out.* This works at 40 active members. It breaks at 400. And it breaks instantly if someone joins with the intent to subvert.
+ZAO Fractal has not experienced a documented attack of this kind. But we have not tried hard to prevent it either. The current mitigations are social: *we know each other, we would notice if someone was gaming the system, we would call it out.* At a settled session of 8 people this is genuinely strong - everyone in a group of 5 knows everyone else. It breaks at 400. And it breaks instantly if someone joins with the intent to subvert.
 
 This is not a theoretical risk. Other DAOs have experienced this. Synthetify DAO on Solana lost $230,000 when an attacker created a governance proposal and voted it through an inattentive circle. The attack succeeded because the governance group was small and the attacker had capital resources.
 
@@ -2399,7 +2456,7 @@ This is an open design decision for the new Respect token under development. Res
 
 Roy Fractal at 700+ members on EOS proves that the mathematical structure of nested fractals scales. But Roy operates on EOS, a separate ecosystem with different visibility and economics. No Ethereum-side fractal has sustained 400+ members at consistent weekly cadence.
 
-ZAO is at 188 members, 40 active per session. What happens at 200? 400? 1000?
+ZAO has a community roll of 188 and settles a mean of 8.1 people per session. The scaling question this chapter used to ask - what happens at 200, 400, 1000? - is the wrong end of the problem. ZAO has never run three breakout groups in a single session. The nested-fractal machinery beyond one or two circles is untested at ZAO not because scaling is hard, but because the room has never been large enough to need it. What happens at 200 is still worth designing for. What happens at 40 is the live question.
 
 Dunbar's number (the cognitive limit on human relationships) is ~150. Beyond that, you cannot maintain trust through direct relationships. You need hierarchy, explicit roles, and representatives you have never met. Fractal governance is designed to scale through nested circles, but nesting adds layers of representative risk. At Layer 1 (40-person circle), your voice is 1/40. At Layer 2 (6 reps per circle), you are represented by someone. At Layer 3, you are represented by someone who is represented by someone. The voice attenuates.
 
@@ -2409,7 +2466,7 @@ ZAO's roadmap (Chapter 10) includes a decision point: if ZAO grows past 100 acti
 
 ## Two-Ledger Reconciliation is Incomplete
 
-ZAO maintains two Respect ledgers (OG ERC-20 for Fractals 1-73, ZOR ERC-1155 for Fractals 74+). They are reconciled in Supabase. But on-chain, they are separate contracts. A member who earned 300 Respect in the OG era holds that in one contract. Respect earned in the ZOR era lives in another.
+ZAO maintains two Respect ledgers (OG ERC-20 for periods 1-66, ZOR ERC-1155 for periods 67 onward). They are reconciled in Supabase. But on-chain they are separate contracts, and only OG confers a vote - so this is not merely an accounting inconvenience. A member who earned 300 Respect in the OG era holds it in one contract and votes with it; a member who earned 300 in the ZOR era holds it in another and cannot vote at all. 47 of the 70 people ever awarded ZOR are in the second position.
 
 For ORDAO voting, this creates a real gap: does on-chain voting power include the active ZOR ledger? The current answer is no - OREC reads OG balances only, at the moment you vote. New ZOR mints do not change anyone's voting weight. This means the disadvantage runs toward newer members: a member who joined after the OG freeze (18 December 2025) and holds only ZOR has no on-chain voting weight at all, however much ZOR they have since earned. Early members who hold OG vote at full weight; the active reward ledger confers standing and record, but not yet a vote.
 
@@ -2439,11 +2496,35 @@ Mitigation: Publish this whitepaper, then commission the documentation set (Chap
 
 ## Operating Core Concentration
 
-As of May 26, 2026, zaal.eth and civilmonkey.eth are the only two wallets that have ever submitted to the OREC contract. This is intentional. During ZAO Fractal's growth phase (Fractals 1-90+), we centralized submission authority for simplicity and coordination. One or two people could confirm that results were accurate, submit them on-chain, and maintain the contract.
+Earlier drafts of this chapter described the bottleneck as "zaal.eth and civilmonkey.eth are the only two wallets that have ever submitted to the OREC contract", and prescribed a signer committee with multi-sig approval.
 
-But centralization is intentional only if it is temporary. The longer two wallets remain the sole OREC signers, the more ZAO Fractal looks like a governance theater - voting happens, consensus is reached, but a single gatekeeper executes on-chain. This is not plutocracy (Respect is earned, not capital-weighted). But it is a bottleneck.
+**The diagnosis named the wrong mechanism, and the wrong mechanism produced a fix that cannot be built.** Reading the deployed contract: `propose` is open to anyone. `vote` is open to anyone. `execute` is open to anyone, once a proposal has passed. **There is no signer set.** There is nothing to be a member of, no key to be granted, no multi-sig to establish. Every wallet on Optimism with gas can already execute a passed ZAO proposal today. Nobody does.
 
-Mitigation: Establish a 3+ signer committee for OREC (Chapter 10, June 30 2026 target). Require multi-sig approval for on-chain submissions. This distributes execution authority and makes ZAO Fractal more resilient to single-person failure (what if zaal disappears?).
+Here is what the chain actually shows across 153 proposals from September 2025 to August 2026:
+
+| | |
+|---|---|
+| Addresses that have ever cast a vote | 9 |
+| Addresses that have ever executed a proposal | 2 |
+| Executions by the founder's wallet | 130 of 134 |
+| Executions by anyone else | 4, all before 2025-10-24 |
+| Proposals decided by a single voter | 137 of 153 |
+| Proposals needing a second voter to clear the minimum weight | 0 |
+| Proposals ever voted down by someone other than their author | 0 |
+
+(The 10 No votes on record are all one person reversing a proposal he opened himself. OREC has never seen a contested vote. And the name "civilmonkey.eth" cannot be matched to either executing wallet from the snapshot; the second executor, with 4 executions, is Tadas Vaitiekunas.)
+
+So the single bottleneck is really three, and they need three different fixes:
+
+**1. A weight bottleneck.** Only 12 addresses hold enough OG Respect to clear the 1,000 minimum weight alone, and only one of them shows up reliably. Because no proposal has ever needed a second voter, the operative rule is: if one person votes yes it passes, and if he does not, nothing does. *Fix: unify the ledgers so active contributors carry weight (Chapter 10). This is a governance change, not a key change.*
+
+**2. An operational bottleneck.** Execution is permissionless and unpaid, so nobody does it. 130 of 134 executions are one person clicking a button anyone could click. *Fix: recruit and, if necessary, compensate executors. This needs people, not contracts.*
+
+**3. A key bottleneck - and this one is real, and it is not in any previous draft of this chapter.** The OG Respect contract's `DEFAULT_ADMIN_ROLE` has **exactly one member**. That role can grant itself minting rights and issue vote weight at will. It is not frozen and it is not time-locked. OG is the sole source of vote weight in the entire system, so this is one wallet that can mint governance power for anyone, including itself, with no proposal and no veto window. *Fix: relinquish or split the role. This is the only genuinely permissioned thing in the stack and the only one a multi-sig would actually address.*
+
+Naming all three as "the OREC bottleneck" is what produced two years of "we should set up a multi-sig" for a system with no signer set, while the one component that is genuinely single-keyed went unmentioned. The measured case and the proposed remedies are in `respect/SIGNER-COMMITTEE.md` and `respect/EXECUTION-RUNBOOK.md`.
+
+**The facilitation dependency is the same shape.** The chain cannot name a facilitator, but over periods 95-110 the founder was ranked in 14 of 15 settled sessions and nobody else exceeded 10. A facilitator bench is the first item on ZAO's decentralization scale, with a stated gate: four consecutive weeks with two or more meetings per week and two or more non-founder facilitators. `respect/FACILITATION-RUNBOOK.md` holds the run sheet. As of this draft the gate has not been met and the bench has not been asked.
 
 ---
 
@@ -2466,21 +2547,42 @@ This matters because if peers are bad at judging contribution, the entire system
 - **05-critiques-failure-modes.md** (democracy fatigue research, visibility bias invisibility study, Sybil attack literature, cold-start inequality DAOstar research, scaling limits Dunbar's number, dormancy risk, subjectivity in ranking)
 - **02-live-communities-deep.md** (OF pause burnout hypothesis, Aquadac 4-year retention at 20-30 members, Eden Epoch 2 false start Aug 2024, Roy Fractal 700+ scale but documentation sparse)
 - **03-optimism-fractal-full-history.md** (OF paused Jan 2026 after 15 months, consolidation logic, developer concentration burnout)
-- **07-zao-fractal-distinctness.md** (OREC 2-wallet concentration zaal.eth + civilmonkey.eth, documentation gap Tanja call May 18 2026, ornode down, zao-fractal.vercel.app deleted, two-ledger reconciliation Doc 115)
+- **07-zao-fractal-distinctness.md** (documentation gap Tanja call May 18 2026, ornode down, zao-fractal.vercel.app deleted, two-ledger reconciliation Doc 115)
+- **`respect/SIGNER-COMMITTEE.md`, `respect/EXECUTION-RUNBOOK.md`, `respect/FACILITATION-RUNBOOK.md`** (the three bottlenecks, measured, with proposed remedies)
+- **`data/` snapshot, OP Mainnet block 156,055,426, pulled 2026-08-26** (9 voters, 2 executors, 137 single-voter proposals, 8.1 mean settled per period; re-check with `node scripts/verify-claims.mjs`)
 
 ---
-
-**Word count: 1,847**
 
 ---
 
 # Chapter 10: Roadmap
 
-> **Draft v0.1 - 2026-05-25 - awaiting Zaal review**
+*ZAO Fractal is not a finished system. It is a practice that improves through iteration. The following roadmap is concrete: target dates, accountable owners, measurable outcomes. Each item addresses a limitation from Chapter 9 or an opportunity from Chapter 8.*
 
 ---
 
-*ZAO Fractal is not a finished system. It is a practice that improves through iteration. The following roadmap is concrete: target dates, accountable owners, measurable outcomes. Each item addresses a limitation from Chapter 9 or an opportunity from Chapter 8.*
+## Status as of 2026-08-26
+
+This roadmap was written in May 2026 with target dates through August. Those
+dates have passed. Publishing a roadmap whose deadlines are in the reader's
+past, without saying what happened, is how a roadmap becomes decoration - so
+here is the state of each item, before the items themselves.
+
+| Item | Target | Status as of 2026-08-26 |
+|---|---|---|
+| Restore fractals web dashboard | Jun 15 | **Partly done, elsewhere.** A dashboard exists in this repo (`dao/`) reading a committed on-chain snapshot rather than a live indexer. Not deployed at zaoos.com. |
+| Publish OG-to-ZOR reconciliation formula | Jun 15 | **Measured, not decided.** `respect/LEDGER-RECONCILIATION.md` costs out the options against real balances and names the open calls. No formula is adopted, and the decision is one person's to make. |
+| Establish 3+ signer committee for OREC | Jun 30 | **Superseded - see the rewritten item below.** The deliverable as written cannot be built. |
+| Ship documentation set | Jun 30 | **Partly done.** The whitepaper is complete and this accuracy pass is what you are reading; the operational runbooks now exist under `respect/`. Not published externally. |
+| Restore ornode or retire it | Jul 15 | **Decided by circumstance.** ornode is down and the dashboard was rewritten on 2026-08-25 to read a committed snapshot instead. The retirement is real; the formal notice has not been given. |
+| Frapp-GH go/no-go | Jul 15 | **Not decided.** |
+| Cignals pilot, EFBS pilot, Frapp-GH phase 1 | Q3 / Aug 31 | **Not started.** |
+
+Two of these were overtaken by measurement rather than by work: the ledger
+question turned out to be bigger than a conversion formula (Chapter 4), and
+the signer committee turned out to be the wrong fix for the wrong mechanism
+(Chapter 9). The dates below are left as written, because a roadmap that
+silently rewrites its own history is worth less than one that missed.
 
 ---
 
@@ -2511,7 +2613,7 @@ This matters because if peers are bad at judging contribution, the entire system
 - The snapshot date (Dec 2025)
 - The conversion ratio (1 OG = X ZOR, if applicable)
 - The claim mechanism (how to retroactively mint ZOR for earned OG)
-- A worked example (Alice earned 200 OG in Fractals 1-60, here is her ZOR balance)
+- A worked example (Alice earned 200 OG across periods 1-60, here is her ZOR balance)
 
 **Owner:** ZAO Governance + Tadas Vaitiekunas (Optimystics)
 
@@ -2519,21 +2621,19 @@ This matters because if peers are bad at judging contribution, the entire system
 
 ---
 
-## June 30, 2026: Establish 3+ Signer Committee for OREC
+## June 30, 2026: Establish 3+ Signer Committee for OREC - **superseded**
 
-**Target date:** June 30, 2026
+**Target date:** June 30, 2026. **Status:** cannot be built as specified.
 
-**Deliverable:** Multi-sig authorization for OREC contract submission. Propose and implement a 3-of-5 multi-sig (or equivalent) that controls ORDAO execution on-chain.
+**Why it is superseded.** The deliverable was "transfer OREC contract admin to a 3-of-5 multi-sig". OREC's owner is OREC itself, and every privileged setter is `onlyOwner`, so there is no admin to transfer; and `propose`, `vote` and `execute` are already open to anyone, so there is no submission permission to distribute. Chapter 9 works through the measurement. A multi-sig over OREC would grant nobody anything they do not already have.
 
-**Process:**
-1. ZAO council nominates 5 candidates (zaal + 4 others from the community)
-2. Fractal 120+ votes on the 5 nominees (simple majority)
-3. If approved, transfer OREC contract admin to the 3-of-5 multi-sig
-4. Test the multi-sig by submitting results from a Fractal through the new mechanism
+**What replaces it,** as three separate items rather than one:
 
-**Owner:** ZAO Governance + Zaal
+**10a. Relinquish or split the OG admin role.** This is the only genuinely permissioned capability in the stack: `DEFAULT_ADMIN_ROLE` on the OG Respect contract has exactly one member and can mint vote weight at will. A multi-sig *here* would do real work, and so would renouncing the role outright once the ledger question is settled. **Owner:** Zaal. **Blocker:** relinquishing before migration would freeze the genesis allocation, so this is sequenced after 10b, not before.
 
-**Rationale:** Centralized submission (zaal + civilmonkey.eth only) is a single-person failure mode. A multi-sig distributes trust and makes the system more resilient. It also demonstrates to the community that decentralization is real, not aspirational.
+**10b. Unify the ledgers so vote weight tracks current contribution.** The weight bottleneck - 12 addresses able to clear the minimum, one showing up - is a governance problem, not a key problem, and 47 of 70 ZOR recipients having no vote is what makes it urgent. `respect/LEDGER-RECONCILIATION.md` holds the costed options. **Owner:** Zaal, then a proposal.
+
+**10c. Recruit executors and facilitators.** Execution is permissionless, unpaid, and done by one person 130 times out of 134; facilitation shows the same shape. Both are solved by people agreeing to do a job, not by contracts. `respect/EXECUTION-RUNBOOK.md` and `respect/FACILITATION-RUNBOOK.md` hold the run sheets and the gates. **Owner:** ZAO Governance.
 
 ---
 
@@ -2558,7 +2658,9 @@ This matters because if peers are bad at judging contribution, the entire system
 
 **Target date:** July 15, 2026
 
-**Decision point:** ornode (an indexing service for ORDAO events) is currently DOWN. Restore it or retire it in favor of direct contract reads.
+**Decision point:** ornode (an indexing service for ORDAO events) is DOWN. Restore it or retire it in favor of direct contract reads.
+
+**Update, 2026-08-26:** effectively retired. The dashboard in `dao/` was rewritten on 2026-08-25 to read a committed on-chain snapshot produced by `scripts/pull-data.mjs`, which reconciles both ledgers to zero residual and needs no indexer at all. That is Option B without the subgraph. What is outstanding from this item is only the formal deprecation notice.
 
 **Option A (Restore):**
 - Debug the indexing service (likely infrastructure issue)
@@ -2706,15 +2808,9 @@ Governance is not a problem to be solved once. It is a practice. The practice im
 
 ---
 
-**Word count: 1,256**
-
 ---
 
 # Chapter 11: Conclusion
-
-> **Draft v0.1 - 2026-05-25 - awaiting Zaal review**
-
----
 
 *Governance is not a problem to be solved once. It is a practice, a culture, a weekly ceremony that defines what we are.*
 
@@ -2730,7 +2826,7 @@ Fractally operationalized this with the Respect Game. Eden on EOS proved it work
 
 The pattern repeats: in the communities that run fractal governance, voter participation is 60-80%. Members show up every week. They engage in real deliberation. They change their minds based on new information. The weekly ritual becomes a cultural anchor - "Monday at 6pm EST, we gather and decide what we value." This is what modern governance should feel like.
 
-ZAO Fractal has proven this for 100+ weeks in production. The governance history is on-chain. The members are real. The Respect tokens are soulbound and earned. The weekly ritual has become a cultural institution.
+ZAO Fractal has run this for two years in production, across 110 numbered periods. The governance history is on-chain: 153 proposals, 123 of them executed, 333 Respect awards, every one attributable to a named ranking. The members are real. The Respect tokens are soulbound and earned. The weekly ritual has become a cultural institution.
 
 ---
 
@@ -2746,7 +2842,7 @@ But the culture is what sustains it.
 
 The culture is Mondays at 6pm EST. The culture is showing up every week, even when it would be easier not to. The culture is ranking people whose work you disagree with, honestly, because that is what integrity looks like in a governance meeting. The culture is knowing that you are being ranked too, and that your ranking depends on your judgment, not on your capital. The culture is the understanding that we are building music together, and governance is how we align on what that means.
 
-This is not new. This is how human organizations have always worked at their best. It is how bands are run, how research labs function, how open-source projects stay true to their mission. The novelty is that we can now encode it on-chain, prove it works at 188+ people, and show that it scales better than voting.
+This is not new. This is how human organizations have always worked at their best. It is how bands are run, how research labs function, how open-source projects stay true to their mission. The novelty is that we can now encode it on-chain, show it working inside a 188-person community, and argue that it scales better than voting.
 
 ---
 
@@ -2758,7 +2854,7 @@ What we got instead was plutocracy. Compound has 8 delegates holding 50% of voti
 
 ZAO Fractal is the proof that there is a way out. Not perfect. Not complete. But tested, live, and better than the alternative.
 
-This whitepaper documents that proof. It is not a proposal. ZAO Fractal exists. 100+ weeks of on-chain governance history proves it works. The Respect tokens are soulbound on Optimism Mainnet. The Discord bot is 52 commands strong. The ZAO OS integration makes governance part of daily culture. The ecosystem consolidation (Optimism Fractal paused, ZAO standing alone) has given ZAO strategic importance.
+This whitepaper documents that proof, and it is careful about which half of it the chain can carry. It is not a proposal: ZAO Fractal exists. The on-chain record proves the governance - 153 proposals and 123 executions, public and checkable at an address. The weekly streak is ZAO's own record, held by the people who were in the room, because a blockchain records settlement and not attendance. Chapter 8 keeps those two apart on purpose. Both are true; only one of them needs your trust. The Respect tokens are soulbound on Optimism Mainnet. The Discord bot is 52 commands strong. The ZAO OS integration makes governance part of daily culture. The ecosystem consolidation (Optimism Fractal paused, ZAO standing alone) has given ZAO strategic importance.
 
 But we write this whitepaper not to celebrate. We write it because other communities should see: there is an alternative. Voting is not the only way. Governance can be earned. Community can scale through trust, ritual, and peer judgment. Music can be the measure of contribution. Culture can be the foundation of systems.
 
@@ -2776,7 +2872,7 @@ Tadas Vaitiekunas built ORDAO and OREC. He operationalized fractal governance on
 
 Rosmari brings operations and community care. The fractals work because someone is paying attention to people, not just mechanisms.
 
-Zaal founded ZAO Fractal and has kept it alive for 100+ weeks. Every Monday. 6pm EST. He carries the ritual. He is the keeper of the culture.
+Zaal founded ZAO Fractal and has kept it alive for two years. Every Monday. 6pm EST. He carries the ritual - and the ledger says so almost too clearly: over the last fifteen settled sessions he was in fourteen, and nobody else was in more than ten. He is the keeper of the culture, and Chapter 9 is honest that a culture with one keeper is a culture with one point of failure.
 
 Every Eden Fractal council member who showed up, voted honestly, and helped Zaal learn.
 
@@ -2800,11 +2896,11 @@ This is not a pitch. This is an invitation. The next fractal starts in a few hou
 
 Governance is not a problem to be solved once. It is a practice, a culture, a weekly ceremony that defines what we are.
 
-For 100+ weeks, ZAO has gathered every Monday and asked: What did we build? Who advanced the vision? Who collaborated? Who innovated? Who onboarded someone new? The answers compound. The Respect accumulates. The culture deepens.
+For two years, ZAO has gathered every Monday and asked: What did we build? Who advanced the vision? Who collaborated? Who innovated? Who onboarded someone new? The answers compound. The Respect accumulates. The culture deepens.
 
 We do not know if this will scale to 1000 members. We do not know if other music communities will fork this model and adapt it. We do not know if fractal governance will become the standard for Web3 organizations.
 
-We know that for 100+ weeks, it has worked. We know that members show up. We know that Respect is earned, not bought. We know that music is the measure. We know that governance is a ceremony, not a mechanism.
+We know that for two years, it has worked. We know that a room shows up - a smaller room than we want, and Chapter 9 says so without flinching. We know that Respect is earned, not bought. We know that music is the measure. We know that governance is a ceremony, not a mechanism.
 
 That is enough to build on.
 
@@ -2816,13 +2912,8 @@ Monday, 6pm Eastern. Discord.thezao.com. See you there.
 
 - **Ch.1 Preamble and Vision** (Larimer theory, fractal governance proof-of-concept, governance culture thesis)
 - **Ch.2-3** (token voting plutocracy critique, rational ignorance problem, Pareto principle, DAOstar research)
-- **Ch.8** (ZAO Fractal 100+ weeks, 188 members, music-first values, social embedding, strategic position on Optimism)
+- **Ch.8** (110 periods since August 2024, the three member counts and what each one measures, music-first values, social embedding, strategic position on Optimism)
 - **01-theory-foundations.md** (Larimer "More Equal Animals," democracy as exit, Pareto, sortition history)
 - **All Optimystics Credits** (Tadas Vaitiekunas / sim31 ORDAO architect, Dan SingJoy Eden founder, Rosmari operations)
 
 ---
-
-**Word count: 847**
-
----
-
