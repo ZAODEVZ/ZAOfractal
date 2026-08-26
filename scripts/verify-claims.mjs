@@ -451,7 +451,13 @@ const CLAIMS = [
   ['WP ch04', 'recently active with zero OG', activeRecently.filter((a) => !ogBalance.has(a)).length, 14],
   ['WP ch04', 'recently active under the minimum weight', activeRecently.filter((a) => ogBalance.has(a) && ogBalance.get(a) < MIN_WEIGHT).length, 9],
   ['WP ch04', 'recently active able to pass alone', activeRecently.filter((a) => (ogBalance.get(a) || 0) >= MIN_WEIGHT).length, 4],
-  ['WP ch04', 'Gini of one Respect Game payout', gini([110, 68, 42, 26, 16, 10]), '0.41'],
+  // ch04 says "either curve" and the claim has to hold both, not just today's.
+  // The curve is policy, not physics - ZAO has escalated once already - so a
+  // figure pinned to one vector would quietly become a snapshot.
+  ['WP ch04', 'Gini of one Respect Game payout, 2x curve', gini([110, 68, 42, 26, 16, 10]), '0.41'],
+  ['WP ch04', 'Gini of one Respect Game payout, standard curve', gini([55, 34, 21, 13, 8, 5]), '0.41'],
+  ['WP ch04', 'doubling the curve leaves the payout Gini unchanged',
+    gini([110, 68, 42, 26, 16, 10]) === gini([55, 34, 21, 13, 8, 5]), true],
   ['WP ch04', 'Gini of the ZOR ledger', gini([...zorBalance.values()]), '0.53'],
   ['WP ch04', 'Gini of the OG ledger (the one that votes)', gini([...ogBalance.values()]), '0.73'],
   ['WP ch04', 'OG holders for a majority of vote weight', holdersToReach(0.5), 9],

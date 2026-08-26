@@ -954,13 +954,15 @@ The Gini coefficient measures inequality (0 = perfect equality, 1 = perfect ineq
 
 | What is being measured | Gini |
 |---|---|
-| A single Respect Game payout (110-68-42-26-16-10) | 0.41 |
+| A single Respect Game payout, either curve | 0.41 |
 | The ZOR ledger as accumulated to date (64 holders) | 0.53 |
 | The OG ledger, which is what actually votes (122 holders) | **0.73** |
 | Typical token-weighted DAO | 0.97-0.99 |
 | US household income | ~0.39 |
 
 The first is computed from the payout vector; the other two from the committed snapshot at block 156,071,456.
+
+"Either curve" is not a hedge. ZAO has paid two payout curves - standard Fibonacci for its first four settled periods, the 2x curve since (Chapter 8 gives the history from the ledger) - and their Gini is **identical**, because doubling every entry in a vector changes no ratio in it. The escalation moved how fast the ledger accumulates, not how unequal a single week is. Which is why the 0.73 below, and not the 0.41 above, is the number this section is really about.
 
 Read the table honestly. The **mechanism** is egalitarian: within a group the top 33% (ranks 1-2) take 65% of the Respect - meaningfully unequal, far from winner-take-all - and no member can hoard the rest, because consensus is required. The **outcome** is much less so. Two years of compounding on a ledger distributed by hand produces a vote-weight distribution at 0.73, and it takes only **9 of the 122 OG holders to reach a majority of vote weight, or 16 to reach the two-thirds supermajority OREC requires**.
 
