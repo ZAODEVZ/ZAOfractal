@@ -23,6 +23,32 @@ Respect is The ZAO's earned reputation. You get it by contributing - showing up,
 
 Two things make it trustworthy: every point traces to a recognised contribution, and the ledger is on-chain and public.
 
+## What Respect is not
+
+Worth stating outright, because The ZAO is increasingly adjacent to work that
+launches tradeable tokens - artist tokens, community tokens, token factories -
+and the two are easy to conflate in a summary written by someone who was not
+in the room.
+
+**Respect is not one of those, and it must never become one.** Soulbound is not
+a policy or a norm here; it is enforced in the contracts. Every transfer on the
+ZOR ledger reverts except a mint from the zero address or a burn to it, and on
+the OG ledger, across 518 transfers, there have been **zero peer-to-peer
+transfers** - every balance traces to a treasury distribution. See whitepaper
+[ch04](../whitepaper/draft/ch04-the-respect-token.md).
+
+That invariant is the whole mechanism. If Respect could be bought, governance
+weight could be bought, and the system becomes the plutocracy it was built to
+replace - which is the argument of whitepaper ch02 and the reason ch04 calls
+non-transferability a contract-level invariant rather than a gentlemen's
+agreement.
+
+So: a ZAO member may hold an artist token, a community token, or anything else,
+and none of it is Respect, none of it confers governance weight, and no
+launcher or factory touches this ledger. A proposal to make Respect tradeable
+is not a parameter change. It is a proposal to end fractal governance at The
+ZAO, and should be read as one.
+
 ## How to earn it
 
 | Contribution | Respect |

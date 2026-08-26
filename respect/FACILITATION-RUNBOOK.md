@@ -346,6 +346,16 @@ that can be used.
 2. **Does Iman have a registered wallet?** He is not in `data/members.json` at
    all. Facilitating needs no wallet until Phase 5, and then it does. Five
    minutes, and it is a first-night blocker if it is missed.
+
+   **The cheap moment to fix this is whenever an address already exists for
+   some other reason.** ZAO people acquire wallets for all sorts of work that
+   has nothing to do with the Respect Game, and the registry only learns about
+   them if somebody asks. Anyone collecting an address from a member for any
+   purpose should ask whether it is in `/register` while they have their
+   attention. This generalises past Iman: 40 of the 169 addresses that have
+   ever held Respect still have no name on file, and 23 names in the registry
+   have no wallet - so the gap runs in both directions and neither side closes
+   itself.
 3. **Ask Hurric4n3ike directly.** Highest non-Zaal attendance in the window and
    absent from the last five sessions. That is either the strongest candidate on
    the page or somebody who has stepped back, and only a conversation

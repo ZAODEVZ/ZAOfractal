@@ -612,6 +612,13 @@ const CLAIMS = [
   ['ROADMAP', 'circles a week at 1,000 participants in groups of 6', Math.round(1000 / 6), 167],
   ['ROADMAP', 'growth multiple from the community roll to 1,000', (1000 / 188).toFixed(1), '5.3'],
 
+  ['SOULBOUND', 'ZOR transfers only mint or burn - no peer-to-peer path exists',
+    zor.holders.length > 0 && og.transfers.filter((t) => t.kind === 'peer-transfer').length === 0, true],
+  ['SOULBOUND', 'OG peer-to-peer transfers, across all transfers', og.transfers.filter((t) => t.kind === 'peer-transfer').length, 0],
+  ['SOULBOUND', 'OG transfers examined', summary.og.transfers, 518],
+  ['SOULBOUND', 'respect/README states the boundary against tradeable tokens',
+    /Respect is not one of those, and it must never become one/.test(docText('respect/README.md')), true],
+
   // --- prose invariants -----------------------------------------------------
   ['NOT-ASKED', 'runbook says the bench has not been contacted or agreed',
     /has been contacted, asked, approached or has agreed to\s+anything/.test(docText('respect/FACILITATION-RUNBOOK.md')), true],
