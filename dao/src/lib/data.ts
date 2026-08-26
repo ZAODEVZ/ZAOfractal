@@ -75,7 +75,12 @@ export interface Proposal {
   canceled: boolean;
   yesWeight: number;
   noWeight: number;
+  /** Every vote event, including changes. */
   votes: Vote[];
+  /** The standing vote per voter - what the tally is actually built from. */
+  finalVotes: Vote[];
+  voterCount: number;
+  voteChanges: number;
   action?: ProposalAction;
 }
 

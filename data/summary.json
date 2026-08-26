@@ -1,6 +1,6 @@
 {
-  "pulledAt": "2026-08-26T01:09:18.373Z",
-  "latestBlock": 156053890,
+  "pulledAt": "2026-08-26T02:00:30.821Z",
+  "latestBlock": 156055426,
   "chainId": 10,
   "sources": {
     "blockscout": "https://optimism.blockscout.com/api/v2",

@@ -380,7 +380,7 @@ function decodeOrecLogs(logs) {
       proposals.set(id, {
         propId: id, createdBlock: null, createdTx: null, createdAt: null,
         stage: 'Unknown', executed: false, executionFailed: false, canceled: false,
-        yesWei: 0n, noWei: 0n, votes: [],
+        votes: [],
       });
     }
     return proposals.get(id);
@@ -422,8 +422,6 @@ function decodeOrecLogs(logs) {
         weight: Number(weiWeight / 10n ** 18n), weightWei: weiWeight.toString(),
         block, at, tx: l.transactionHash,
       });
-      if (vtype === 1) p.yesWei += weiWeight;
-      if (vtype === 2) p.noWei += weiWeight;
     } else if (name === 'EmptyVoteIn') {
       const p = get(l.topics[1]);
       const voter = addrFromWord(l.topics[2]);
@@ -435,17 +433,36 @@ function decodeOrecLogs(logs) {
   }
   const list = [...proposals.values()]
     .sort((a, b) => (a.createdBlock || 0) - (b.createdBlock || 0))
-    .map((p) => {
-      const { yesWei, noWei, ...rest } = p;
-      return {
-        ...rest,
-        yesWeight: Number(yesWei / 10n ** 18n),
-        noWeight: Number(noWei / 10n ** 18n),
-        yesWeightWei: yesWei.toString(),
-        noWeightWei: noWei.toString(),
-      };
-    });
+    .map((p) => ({ ...p, ...tally(p.votes) }));
   return { proposals: list, signals };
+}
+
+/** OREC lets a voter change their vote, and emits an event for each change
+ * while replacing the stored one. Summing every event therefore double-counts
+ * anyone who switched - it produced nine proposals reading 3094 yes and 3094 no
+ * from a single 3094-weight wallet. The standing tally is the LAST vote each
+ * voter cast, so reduce to that first. The full event log is kept as history. */
+function tally(votes) {
+  const final = new Map();
+  for (const v of votes) {
+    const prev = final.get(v.voter);
+    if (!prev || v.block > prev.block) final.set(v.voter, v);
+  }
+  let yesWei = 0n;
+  let noWei = 0n;
+  for (const v of final.values()) {
+    if (v.vote === 'Yes') yesWei += BigInt(v.weightWei);
+    if (v.vote === 'No') noWei += BigInt(v.weightWei);
+  }
+  return {
+    yesWeight: Number(yesWei / 10n ** 18n),
+    noWeight: Number(noWei / 10n ** 18n),
+    yesWeightWei: yesWei.toString(),
+    noWeightWei: noWei.toString(),
+    voterCount: final.size,
+    voteChanges: votes.length - final.size,
+    finalVotes: [...final.values()].sort((a, b) => b.weight - a.weight),
+  };
 }
 
 /** OREC's own pass rule: a 2/3 supermajority with a 1/3 veto, above a floor. */

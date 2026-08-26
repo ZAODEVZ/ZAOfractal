@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-08-26T01:09:18.373Z",
+  "pulledAt": "2026-08-26T02:00:30.821Z",
   "contract": "0xcB05F9254765CA521F7698e61E0A6CA6456Be532",
   "deployBlock": 141001439,
   "config": {
@@ -35,7 +35,20 @@
       "yesWeight": 0,
       "noWeight": 0,
       "yesWeightWei": "0",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0xaed620c450911c38714e666cd84137767e3d6286",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 141002673,
+          "at": "2025-09-11T15:22:03.000000Z",
+          "tx": "0x9da312f4f82e4e93d62811aafe0b22877499e913c5e4c4abfb784ecc4e7663d0"
+        }
+      ]
     },
     {
       "propId": "0x79c33ba3566e550ae93683300eb1892613e1758b43fed8d5c3b81aafb405736a",
@@ -73,6 +86,28 @@
       "noWeight": 0,
       "yesWeightWei": "3179000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66",
+          "vote": "Yes",
+          "weight": 1914,
+          "weightWei": "1914000000000000000000",
+          "block": 141188906,
+          "at": "2025-09-15T22:49:49.000000Z",
+          "tx": "0x952614262fdafb3209fd670b300dab01c68122743406275f84bc5f4606dd27a1"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 141188612,
+          "at": "2025-09-15T22:40:01.000000Z",
+          "tx": "0x9806854f9c974998982b9e8bd9d2b4ec2b00c0b528013fa05ebdeb5192c82d55"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0xaed620c450911c38714e666cd84137767e3d6286",
       "action": {
@@ -157,6 +192,37 @@
       "noWeight": 0,
       "yesWeightWei": "5833000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 3,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 141188877,
+          "at": "2025-09-15T22:48:51.000000Z",
+          "tx": "0xa3be485fdf13a79183934b834f664a3c27d0101a07ffbd4ab9d7c2e466b95d5b"
+        },
+        {
+          "voter": "0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66",
+          "vote": "Yes",
+          "weight": 1914,
+          "weightWei": "1914000000000000000000",
+          "block": 141188951,
+          "at": "2025-09-15T22:51:19.000000Z",
+          "tx": "0x8c6fbde394e9feae5e8f48f73d0fe7c4845595be1bbb21402a42ef21065aa374"
+        },
+        {
+          "voter": "0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b",
+          "vote": "Yes",
+          "weight": 825,
+          "weightWei": "825000000000000000000",
+          "block": 141188926,
+          "at": "2025-09-15T22:50:29.000000Z",
+          "tx": "0x268ca6d690d72f6a5554cc2f1689dacc46a3c9efb204f4d6c684d2ca42fdd34d"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0xaed620c450911c38714e666cd84137767e3d6286",
       "action": {
@@ -232,6 +298,28 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 141255337,
+          "at": "2025-09-17T11:44:11.000000Z",
+          "tx": "0x7d0b72172935f505755c856258fe1f0613afd8754a5fb674dddd14528b9eae78"
+        },
+        {
+          "voter": "0xaed620c450911c38714e666cd84137767e3d6286",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 141199429,
+          "at": "2025-09-16T04:40:35.000000Z",
+          "tx": "0xd13fa8959b37e17af13356c65b8ae83bf593de66f807cc605f3af0e5798e818c"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -300,6 +388,46 @@
       "noWeight": 0,
       "yesWeightWei": "3144000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 4,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 141309874,
+          "at": "2025-09-18T18:02:05.000000Z",
+          "tx": "0x967636b9023bf36e4bf9fe11514db919c663ff6e8e24e2f4e2721373644b7cda"
+        },
+        {
+          "voter": "0xc11c6f47fe090a706ba82964b8a98f1682b244ff",
+          "vote": "Yes",
+          "weight": 50,
+          "weightWei": "50000000000000000000",
+          "block": 141310384,
+          "at": "2025-09-18T18:19:05.000000Z",
+          "tx": "0x0106e87a2d5820d640c738872b81b953322de9777e7093498013abc1495d6c2c"
+        },
+        {
+          "voter": "0x461acd846b4cc249b96242f1ab7c72a39d94747c",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 141315281,
+          "at": "2025-09-18T21:02:19.000000Z",
+          "tx": "0x2aa6ece7bfa79cb2885143ba809ab7ca1421f8016c38333b2fa3c48f26247463"
+        },
+        {
+          "voter": "0xaed620c450911c38714e666cd84137767e3d6286",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 141309934,
+          "at": "2025-09-18T18:04:05.000000Z",
+          "tx": "0x38d71cf0b3f063efa14fe8b40049eedf32ccf3919034dc23b53e0bdd2d44b8f4"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0xaed620c450911c38714e666cd84137767e3d6286",
       "action": {
@@ -377,10 +505,32 @@
           "tx": "0xd4fea72f36f7cb22f362cc731e62c001c480949bc44ccd550fc61f97d216340f"
         }
       ],
-      "yesWeight": 4359,
+      "yesWeight": 1265,
       "noWeight": 3094,
-      "yesWeightWei": "4359000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "1265000000000000000000",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 2,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 141492042,
+          "at": "2025-09-22T23:14:21.000000Z",
+          "tx": "0x10006444c748419349ffcde2284f411518791be9ee855152017446d701a1eaba"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 141491997,
+          "at": "2025-09-22T23:12:51.000000Z",
+          "tx": "0xe3b9c08f25c4b85b4439fbad6f97463188b3fe74c893378e47f9019d049d216b"
+        }
+      ]
     },
     {
       "propId": "0x4f8a993661551446e0182af2c78a2c244eafe4b7cbba33e791cd59fa0e593cde",
@@ -409,6 +559,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 141570795,
+          "at": "2025-09-24T18:59:27.000000Z",
+          "tx": "0xc01ec18d4b0913b35a79468b97f36e5bb22f367b79523e82019ab2754279a28e"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -505,6 +668,37 @@
       "noWeight": 0,
       "yesWeightWei": "3144000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 3,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 141612541,
+          "at": "2025-09-25T18:10:59.000000Z",
+          "tx": "0x57bcc80154ceae329c05a08103c95bf1107584587d0445300edc0284c22024e6"
+        },
+        {
+          "voter": "0xc11c6f47fe090a706ba82964b8a98f1682b244ff",
+          "vote": "Yes",
+          "weight": 50,
+          "weightWei": "50000000000000000000",
+          "block": 141612807,
+          "at": "2025-09-25T18:19:51.000000Z",
+          "tx": "0xc6e70599487b10642b5d756a11ddd86f4473e237932154282705275717fe979d"
+        },
+        {
+          "voter": "0xaed620c450911c38714e666cd84137767e3d6286",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 141612672,
+          "at": "2025-09-25T18:15:21.000000Z",
+          "tx": "0x138125c2187efdac2aa63e1c1085fd7e94192f3f9c15e30a368450ea6fea219b"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -571,6 +765,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 141613160,
+          "at": "2025-09-25T18:31:37.000000Z",
+          "tx": "0x7f4771b4f83e1ee69950f23dd48014224cecce000f976cf7b9dd9f374bd18cd0"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -612,6 +819,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 142095063,
+          "at": "2025-10-06T22:15:03.000000Z",
+          "tx": "0x6471cb131a4698efa35e98bcfb2043d6e15d9971b1220181752192f9296b2468"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -653,6 +873,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 142095889,
+          "at": "2025-10-06T22:42:35.000000Z",
+          "tx": "0xaa80a4ce284c6f91c630d9e668f437955de335a5f5bd60f033f3f5c38af16aac"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -713,6 +946,19 @@
       "noWeight": 0,
       "yesWeightWei": "1914000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66",
+          "vote": "Yes",
+          "weight": 1914,
+          "weightWei": "1914000000000000000000",
+          "block": 142096168,
+          "at": "2025-10-06T22:51:53.000000Z",
+          "tx": "0x2144ded1e095d6b2e0ea2f76de5204b3f6890ba18cfbf15a44da2cc5ac0a8ce7"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -773,6 +1019,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 142557958,
+          "at": "2025-10-17T15:24:53.000000Z",
+          "tx": "0x3e55a3dab250e4ee57255925ba5ef7c7aa6492389c5a0c90adfa9164a5251371"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0xaed620c450911c38714e666cd84137767e3d6286",
       "action": {
@@ -814,6 +1073,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 142822777,
+          "at": "2025-10-23T18:32:11.000000Z",
+          "tx": "0xf6c279b85364fa337c1aa920b3665625e3b017b0ef3291e1845b996fe4f3568c"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -855,6 +1127,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143002242,
+          "at": "2025-10-27T22:14:21.000000Z",
+          "tx": "0x11371897ecff32872bce29e14e611e0746d5a043c11018ced8419188e83ebc93"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -896,6 +1181,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143002380,
+          "at": "2025-10-27T22:18:57.000000Z",
+          "tx": "0xcc3530b7d235f7cc6a5c954730f8f7fad3c84ed036443025e59a063b5411e79b"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -937,6 +1235,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143267693,
+          "at": "2025-11-03T01:42:43.000000Z",
+          "tx": "0x51a977c98796e47575279a7c0719e7a90831a53b60eeba5fa563514f85343966"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -978,6 +1289,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143267715,
+          "at": "2025-11-03T01:43:27.000000Z",
+          "tx": "0x7d15536d4a083d2fc73c46533028fb2b3e43322078ceeef80c9314adc68f7295"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1028,6 +1352,28 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143307625,
+          "at": "2025-11-03T23:53:47.000000Z",
+          "tx": "0x313ad5c8b91c394d6a9bd3e7a049ded537f5c461b85ea6d88313f98ac269354a"
+        },
+        {
+          "voter": "0x8a1891e106b504656c525b3c45a3e95f7a73a73e",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 143307709,
+          "at": "2025-11-03T23:56:35.000000Z",
+          "tx": "0xdcb45be8d8c3cccd24e48433afe7ea69ea6055bfb8c193c38293d3370aeb4616"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1109,6 +1455,28 @@
       "noWeight": 0,
       "yesWeightWei": "4359000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143307908,
+          "at": "2025-11-04T00:03:13.000000Z",
+          "tx": "0x3f8d7f3fb590a6048bf10a232278ec42574df670f3078c90772c2653e7c3be2e"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 143307977,
+          "at": "2025-11-04T00:05:31.000000Z",
+          "tx": "0x4c33696b67e77e77a1c494aa926e4d8b8062acab1b65a5dcc016a7c7569d2ed9"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1181,6 +1549,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143586530,
+          "at": "2025-11-10T10:50:37.000000Z",
+          "tx": "0x5c7313fc568345a1f525a7ee899886598a341b6f1fabd845d6fa4025135fa22f"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1222,6 +1603,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143609392,
+          "at": "2025-11-10T23:32:41.000000Z",
+          "tx": "0xb7cccdc8701db7644a5b77b117c87b4433c52f1e25d69bd39489533f6917379a"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1288,6 +1682,19 @@
       "noWeight": 0,
       "yesWeightWei": "1265000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 143609738,
+          "at": "2025-11-10T23:44:13.000000Z",
+          "tx": "0xbdc81d5b60ab207d8d7a33a3c7441698183a475ce91e360e75b2c1bfb16a8fd0"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1354,6 +1761,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143812122,
+          "at": "2025-11-15T16:10:21.000000Z",
+          "tx": "0x6173af5f15e4790e2552bef868b7a0b3761b7ee37f69a8be906d791fa841f084"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1432,6 +1852,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143813377,
+          "at": "2025-11-15T16:52:11.000000Z",
+          "tx": "0xc188e9bead6c235d86803e87bcb3c630e7a06848d369140e853025878b0e42f3"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1498,6 +1931,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143911093,
+          "at": "2025-11-17T23:09:23.000000Z",
+          "tx": "0x7a4c444a0bae9e48b2e63d913b861bab230a0dd0e71b165ae899fbb8b561ebdf"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1548,6 +1994,28 @@
       "noWeight": 0,
       "yesWeightWei": "4359000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143912362,
+          "at": "2025-11-17T23:51:41.000000Z",
+          "tx": "0x364889ba0428ca4415e1734c657378a8c49ab39f59e952a218decf1180af7bcd"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 143912390,
+          "at": "2025-11-17T23:52:37.000000Z",
+          "tx": "0x45edf4824c93b8658968903ff72f853ba9b197b462e3171388192dce836ca5c9"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1620,6 +2088,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 143950541,
+          "at": "2025-11-18T21:04:19.000000Z",
+          "tx": "0xd2e7cbaf02c1c319f4ac826a8b1c279e1224d13e7ede18e908d1f382ae5ec975"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1692,6 +2173,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 144214345,
+          "at": "2025-11-24T23:37:47.000000Z",
+          "tx": "0x1aa8070e0bc44fd4df031677e3db19cb15dcf16f88597899b47f097f06545b4b"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1764,6 +2258,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 144214869,
+          "at": "2025-11-24T23:55:15.000000Z",
+          "tx": "0x16810a3f21134fe6ec1d52d77f03e1286e45cce5aec895256835a58dff0c1fbb"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1830,6 +2337,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 144215255,
+          "at": "2025-11-25T00:08:07.000000Z",
+          "tx": "0xeca098fd6242f58eefce7aec64bf3eeb46d1b0963a3ae759f9b00b65fdc05e98"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1871,6 +2391,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 144255084,
+          "at": "2025-11-25T22:15:45.000000Z",
+          "tx": "0x74ed7e3feb1a88034d7397d80688e18b6eb4547de09ee981b616510bec71b11f"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -1937,6 +2470,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 144255125,
+          "at": "2025-11-25T22:17:07.000000Z",
+          "tx": "0x6f80cab6cf67242812b3eaacccffd8cf910b53ff6b3c58a3870fb3c9eacfdfc9"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2005,7 +2551,20 @@
       "yesWeight": 0,
       "noWeight": 0,
       "yesWeightWei": "0",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 144838814,
+          "at": "2025-12-09T10:33:25.000000Z",
+          "tx": "0x210c679f415c345301087574fc1078c0a727ee5f831ef1beefafbe6d42f807b1"
+        }
+      ]
     },
     {
       "propId": "0x9cac9da6c45d801fd05a05e3aefb3866ad29062ecd8ac2bb39609cb2d828681b",
@@ -2030,7 +2589,20 @@
       "yesWeight": 0,
       "noWeight": 0,
       "yesWeightWei": "0",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 144850831,
+          "at": "2025-12-09T17:13:59.000000Z",
+          "tx": "0x41e00221730f94deb7f4bc4e33c815a3c40aae4e68aac0e9e4659bd5fde32b0b"
+        }
+      ]
     },
     {
       "propId": "0xdd3f9ef1cfedadf2c738abaa7cc039d4b138a3f3a357200c37a27dc7dc270446",
@@ -2055,7 +2627,20 @@
       "yesWeight": 0,
       "noWeight": 0,
       "yesWeightWei": "0",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 144850848,
+          "at": "2025-12-09T17:14:33.000000Z",
+          "tx": "0x7e6ba73a6d1b3f0184555d09f34101ac59a16b036c631346ee4287828c71bf97"
+        }
+      ]
     },
     {
       "propId": "0x9b10530972b268163a1f3e834ded8bea54839d906692a506e335c72c08b5f001",
@@ -2080,7 +2665,20 @@
       "yesWeight": 0,
       "noWeight": 0,
       "yesWeightWei": "0",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0xaed620c450911c38714e666cd84137767e3d6286",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 144876799,
+          "at": "2025-12-10T07:39:35.000000Z",
+          "tx": "0x38b674a410644beefac97ff7eaa0b40dd76c5dfa2faa394f7e339571bffd5f0c"
+        }
+      ]
     },
     {
       "propId": "0x1f6805af1e8046db29d75022aa410b98fdae1a2417b6478642d28b5c92ce85d5",
@@ -2109,6 +2707,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145110218,
+          "at": "2025-12-15T17:20:13.000000Z",
+          "tx": "0xb8081d352d5be7c2254faef7b083260348b5f5fb0d6f15d47ba33e94aa062c82"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2199,6 +2810,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145110239,
+          "at": "2025-12-15T17:20:55.000000Z",
+          "tx": "0xa5d5328ec99ba0066b010ad1a27c6573b2e00a4b6019e822380b68bd5f240e1d"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2277,6 +2901,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145124098,
+          "at": "2025-12-16T01:02:53.000000Z",
+          "tx": "0x107d14652a439078978065214700daa149851b1c169fa60f0358857f4587aff4"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2349,6 +2986,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145124189,
+          "at": "2025-12-16T01:05:55.000000Z",
+          "tx": "0x94ef5add4970dfc792ff1bf8e6d02472ef1f2c41cfb0d05a096fdeddd58558a6"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2390,6 +3040,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145124203,
+          "at": "2025-12-16T01:06:23.000000Z",
+          "tx": "0x3694c32ff01cc458e9ecee16cbc2f8ea81d744e20ff7098c2195c76e5271be83"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2431,6 +3094,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145423216,
+          "at": "2025-12-22T23:13:29.000000Z",
+          "tx": "0xdfe5670dd006e7014c424350708fc489d99bcf9ab7068fc423fcc2cd0f243af3"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2472,6 +3148,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145423251,
+          "at": "2025-12-22T23:14:39.000000Z",
+          "tx": "0xda802744593036b52e6f06f71885470ec8f47c49b43fa3afd68dfcf20e4fe3bd"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2513,6 +3202,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145424417,
+          "at": "2025-12-22T23:53:31.000000Z",
+          "tx": "0x38e14ee0c0764f2931fbeb735fefa241b4f1c8296c94b9669e7fc4e0ffd134fc"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2591,6 +3293,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145689151,
+          "at": "2025-12-29T02:57:59.000000Z",
+          "tx": "0xeae9ba02c4e1628b437d74e1cb4d36489439800d18261a313873f29be6da35b2"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2653,10 +3368,23 @@
           "tx": "0x71cd174e3796d725094ecba5ddd29eb0f3ff2d414ef730be2850211802a3e03e"
         }
       ],
-      "yesWeight": 3094,
+      "yesWeight": 0,
       "noWeight": 3094,
-      "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "0",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 1,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145689443,
+          "at": "2025-12-29T03:07:43.000000Z",
+          "tx": "0xb44ddfc21f86858fad3d1ace12a4b79d3de3468219d9dd57759326f8706bc413"
+        }
+      ]
     },
     {
       "propId": "0x9b236d31119f9024cdf118e64da139ed7ccb9a81c0197928cbf832871155ba5b",
@@ -2685,6 +3413,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145689488,
+          "at": "2025-12-29T03:09:13.000000Z",
+          "tx": "0xe16a93ec4ce3044621d50d18c117929262eb7f7ae4a4d2a45f082d9236936288"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2745,6 +3486,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145689603,
+          "at": "2025-12-29T03:13:03.000000Z",
+          "tx": "0x166a460821904b59b32fb87128321c2715d577f3e7d3f66d8149bd3ce022e3a3"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2835,6 +3589,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145707485,
+          "at": "2025-12-29T13:09:07.000000Z",
+          "tx": "0x976b36f5e3e87884878cee5237e3660dc3475eb8ed2e82c04b00a09d30799529"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2913,6 +3680,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145725436,
+          "at": "2025-12-29T23:07:29.000000Z",
+          "tx": "0xc8931bd37e78d9cc9c12108c5cfb731da11bdba4a59e363b6acf1bfedbe034ad"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -2954,6 +3734,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 145746407,
+          "at": "2025-12-30T10:46:31.000000Z",
+          "tx": "0xc0098a9f5cf46cddc6c59ca797936740ad98a7e1925e7e170baa68f5e899d0f9"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3026,6 +3819,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 146234419,
+          "at": "2026-01-10T17:53:35.000000Z",
+          "tx": "0xd01d7aefbe4ff84702173845e60f47a314a198230c34ac38e9cd5a9d726c2d15"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3104,6 +3910,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 146321486,
+          "at": "2026-01-12T18:15:49.000000Z",
+          "tx": "0x729c41cee62f59de20d2316a9dc707e8726ff7d895cb4c8f9b81b4f3164f2e7e"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3145,6 +3964,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 146321505,
+          "at": "2026-01-12T18:16:27.000000Z",
+          "tx": "0x4aa12c0e3160333df4bc9d0307bdabff218bffc3bc68bad4cca9672a73af4a3e"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3186,6 +4018,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 146936096,
+          "at": "2026-01-26T23:42:49.000000Z",
+          "tx": "0x9cc23bc35cc0e06fb3390b055bc80818d544729a6174e523b2fc23873dd7eb51"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3261,6 +4106,28 @@
       "noWeight": 0,
       "yesWeightWei": "4359000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147238186,
+          "at": "2026-02-02T23:32:29.000000Z",
+          "tx": "0x5496d85cda47a557157639b0dfcfcbc788aaafd99927d8a8af427054eb7c489f"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 147239262,
+          "at": "2026-02-03T00:08:21.000000Z",
+          "tx": "0xa1aa5f31e6c1bce6671b454824224c0b0ca18a196499f7f831bef088b65089b9"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3324,6 +4191,28 @@
       "noWeight": 0,
       "yesWeightWei": "4359000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147238204,
+          "at": "2026-02-02T23:33:05.000000Z",
+          "tx": "0x686241f444dd8d2b9806bc18907ebce0c4313ee714c60cb14a668164af26b0b0"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 147239236,
+          "at": "2026-02-03T00:07:29.000000Z",
+          "tx": "0xeb4b5626cfd6b89ce9b9f3b039debf54dbd47dd562966bbc7026f04b9a5b5ae2"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3374,6 +4263,28 @@
       "noWeight": 0,
       "yesWeightWei": "4359000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147238617,
+          "at": "2026-02-02T23:46:51.000000Z",
+          "tx": "0xe292402f6969d12706a58cfb177a839e46802642580b37e1f6eb04058f8212e4"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 147238840,
+          "at": "2026-02-02T23:54:17.000000Z",
+          "tx": "0xa221e417e574cd71d4e86f85c2bf1c3c6c40eb2e1b0865c11bc41fcb5aa45b32"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3440,6 +4351,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147529483,
+          "at": "2026-02-09T17:22:23.000000Z",
+          "tx": "0xcf2f3af99b7d5ac2ad5432f0c9427b6d837d0772fd6ad8da1298be711f39233d"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3481,6 +4405,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147540919,
+          "at": "2026-02-09T23:43:35.000000Z",
+          "tx": "0x6cfd6cc5d49cdd6c0083976a49d754acd52f3fdcc5fc09f4631e398c10f17c49"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3553,6 +4490,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147560226,
+          "at": "2026-02-10T10:27:09.000000Z",
+          "tx": "0xadcd1fe7c23953eead3bff2a1759c966016871fa9cd4f7fdf0ecb5495937ff0d"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3613,6 +4563,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147572008,
+          "at": "2026-02-10T16:59:53.000000Z",
+          "tx": "0xfe80226ec74ef06c64916197e5004aabd11b0252511f25b43d4d9050258ba1b7"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3670,6 +4633,28 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147843558,
+          "at": "2026-02-16T23:51:33.000000Z",
+          "tx": "0x74003127e60c45ca32dc321242ad20bb130761c449a34293fc596ff164b63027"
+        },
+        {
+          "voter": "0xe5adabbd71225e8074e30ff6ce2a66c9319c071b",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 147843627,
+          "at": "2026-02-16T23:53:51.000000Z",
+          "tx": "0xb603871f27b5a226735320839f5c209d5a223f0c693e1faaece86841c3d0d056"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3757,6 +4742,28 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 147843586,
+          "at": "2026-02-16T23:52:29.000000Z",
+          "tx": "0x227127be79b368e629075948d4cb8ccd0201c6d04eebdb1c2e28acba8709e9f0"
+        },
+        {
+          "voter": "0xe5adabbd71225e8074e30ff6ce2a66c9319c071b",
+          "vote": "Yes",
+          "weight": 0,
+          "weightWei": "0",
+          "block": 147843650,
+          "at": "2026-02-16T23:54:37.000000Z",
+          "tx": "0x28fcd09f31c4cd4c7747a52e3485eca447a97652e8f76ac2d95ba1d256c9f899"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3798,6 +4805,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148145593,
+          "at": "2026-02-23T23:39:23.000000Z",
+          "tx": "0xa430eef95899d298153d7c21cce1b1b1a7909c8ae6afdc74216030a790bef33f"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3864,6 +4884,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148145680,
+          "at": "2026-02-23T23:42:17.000000Z",
+          "tx": "0x5200607ae99b5c3f18ab7d134cf294528ce6984556f49e2ad35a22a60dfad97d"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3905,6 +4938,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148145954,
+          "at": "2026-02-23T23:51:25.000000Z",
+          "tx": "0xf4394de86df0a1fa6d1d0b82ce52a79eefeb238e134c11e362d7d01b6bccae42"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -3971,6 +5017,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148145978,
+          "at": "2026-02-23T23:52:13.000000Z",
+          "tx": "0xefd14944f0d6c40726b859ed635d7f34dc565be68065ec2b7aac645fb4910266"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4043,6 +5102,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148477999,
+          "at": "2026-03-03T16:19:35.000000Z",
+          "tx": "0xe8a1fa7c055f182b6c83e699fae02b5b4aebf7b64016448dc8f636f68449b10c"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4084,6 +5156,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148481363,
+          "at": "2026-03-03T18:11:43.000000Z",
+          "tx": "0xf3aab6159d78abc5d4a66f6f0b35a5e1658250f55a83d1dc509300ba15a230c0"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4150,6 +5235,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148481416,
+          "at": "2026-03-03T18:13:29.000000Z",
+          "tx": "0x23ec653a605e01ef3b8ea3b7fbfbcea87f62c933609fb1331ba0d2d5c731e53f"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4222,6 +5320,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148483787,
+          "at": "2026-03-03T19:32:31.000000Z",
+          "tx": "0x54b5be0a38270d65a5104cc367a09ecbc0138f49342cb660ff62fcb077fcb45b"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4288,6 +5399,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148748728,
+          "at": "2026-03-09T22:43:53.000000Z",
+          "tx": "0x78af5fd8df33ec179b1ec30ff1daafac53326f38555c7e62c191e14b714de8ea"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4348,6 +5472,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148748772,
+          "at": "2026-03-09T22:45:21.000000Z",
+          "tx": "0x85c3b7dd7206a559c495184287e6e8f204bde1dd17a6651e18a3fbb6b43067e5"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4420,6 +5557,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148815401,
+          "at": "2026-03-11T11:46:19.000000Z",
+          "tx": "0x1ecc5cf67bc8f49bdb3b614bc9bb26f8a36f070f6e4eb06371acf46b3369efa1"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4461,6 +5611,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 148867290,
+          "at": "2026-03-12T16:35:57.000000Z",
+          "tx": "0x0424e06c2fa55bc4d0520d9782a453708f4b01ab2589c7975c942af19be32f05"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4529,10 +5692,23 @@
           "tx": "0x9d9bc8d7974c775151d44c4ab433587cb3823b4e429f1290538be7027d34e5d2"
         }
       ],
-      "yesWeight": 3094,
+      "yesWeight": 0,
       "noWeight": 3094,
-      "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "0",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 1,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149115820,
+          "at": "2026-03-18T10:40:17.000000Z",
+          "tx": "0x6a5ee44c467b5374f1b571a913fa9235a6525d1ae5b2fb99f0b776acac199d6c"
+        }
+      ]
     },
     {
       "propId": "0xc2a68944dbe20f89a7b70a5678e79d08b1fcdf4cf6f90725bf3711e560673e3d",
@@ -4561,6 +5737,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149051344,
+          "at": "2026-03-16T22:51:05.000000Z",
+          "tx": "0x7914e1ba6eeb1e05239daf1ebf29ac8d9df9c70d26568e9afda6a8bc256d1ce6"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4627,6 +5816,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149051405,
+          "at": "2026-03-16T22:53:07.000000Z",
+          "tx": "0xcccc3503e414a07e0606394b1dd611c8ad140ebb24636813486a3279c6b42faf"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4693,6 +5895,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149115780,
+          "at": "2026-03-18T10:38:57.000000Z",
+          "tx": "0xe6fe32dcb1dc970794c572442a982b0e947b796fb563b66f6066da0e3197b035"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4734,6 +5949,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149115865,
+          "at": "2026-03-18T10:41:47.000000Z",
+          "tx": "0x8fea393c9338b9962433e13d9b01f4754cc7fc034f978305c9db2d4d61943b72"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4812,6 +6040,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149129898,
+          "at": "2026-03-18T18:29:33.000000Z",
+          "tx": "0xe8cbd6ea7771bb97be40026469d42b68e093abc28f62d358a31e10152a04c060"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4853,6 +6094,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149206386,
+          "at": "2026-03-20T12:59:09.000000Z",
+          "tx": "0x5a85f11f2639d3cfacb84e17c6956c5e5a6e1ebaceb6ecbbed390bb92b248218"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -4930,7 +6184,29 @@
       "yesWeight": 1265,
       "noWeight": 3094,
       "yesWeightWei": "1265000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149353769,
+          "at": "2026-03-23T22:51:55.000000Z",
+          "tx": "0xb17f127958d4fbd3bed93b46806b406ede9114b6b329cd8731dc5597ca8ac54e"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 149353629,
+          "at": "2026-03-23T22:47:15.000000Z",
+          "tx": "0x92875b2d15c6a74b73aba0f2ecccf77eab9a051f785d3ea9ffeddf1477822afe"
+        }
+      ]
     },
     {
       "propId": "0x42fcf1e3a6ac71213fe1926aebaadfd7bc654bd6a99221c23526db51457dd0c4",
@@ -4959,6 +6235,19 @@
       "noWeight": 0,
       "yesWeightWei": "1265000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 149353743,
+          "at": "2026-03-23T22:51:03.000000Z",
+          "tx": "0x25fe0eb31e59eacc4b355dbaa1b5202babdcea78d34beb521827d1715be3719f"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5037,6 +6326,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149459969,
+          "at": "2026-03-26T09:51:55.000000Z",
+          "tx": "0x6850fd138b6afe4c45ece01a9f343772ab655c3a24b1214c285d3067f59512cf"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5078,6 +6380,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149655229,
+          "at": "2026-03-30T22:20:35.000000Z",
+          "tx": "0xa44756001df00ebe46af7105522871f7bbc274acff0d42e2483230fdc21b18b3"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5119,6 +6434,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149655879,
+          "at": "2026-03-30T22:42:15.000000Z",
+          "tx": "0xf04f5c922a6cad8a4ae2698806dcc32880142ad2f672df0724dddfa6d2f66171"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5191,6 +6519,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149656237,
+          "at": "2026-03-30T22:54:11.000000Z",
+          "tx": "0x3d76ab13340f6e1420b2c6d29404a7a9d936cc0b52161577fe2a50846d7a5139"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5263,6 +6604,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149656323,
+          "at": "2026-03-30T22:57:03.000000Z",
+          "tx": "0x1ffa67de1e890e985012595f3fddf252802e283bf29fb435f79c7806202e268a"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5335,6 +6689,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149958131,
+          "at": "2026-04-06T22:37:19.000000Z",
+          "tx": "0xcdcedfa13c10b43593855f86f023756e592f1538526443f31fae116b8379c6e7"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5413,6 +6780,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149958199,
+          "at": "2026-04-06T22:39:35.000000Z",
+          "tx": "0x424ef45d7c132d352cdeb8057614711147dce8a6477bed0209ee736279218f1e"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5456,10 +6836,23 @@
           "tx": "0xae346e694505a158e62558c9fe63d528d4f0b0a54ee8d45ac100cb860b89722c"
         }
       ],
-      "yesWeight": 3094,
+      "yesWeight": 0,
       "noWeight": 3094,
-      "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "0",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 1,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149958339,
+          "at": "2026-04-06T22:44:15.000000Z",
+          "tx": "0xdee6d7c27d81894d9de386e9da9e6b757d708b8e61374e45c34652b3af4d49a1"
+        }
+      ]
     },
     {
       "propId": "0x4aa301f1d1fdea1a85d1a710d2345830959778928eb7b61d9c64fae68a6ce93b",
@@ -5488,6 +6881,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 149958360,
+          "at": "2026-04-06T22:44:57.000000Z",
+          "tx": "0xd6dd86a6af0da54495c483a1166b5c4ae1713b531d6453fe5038e8add8f68bb3"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5560,6 +6966,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150000007,
+          "at": "2026-04-07T21:53:11.000000Z",
+          "tx": "0x6c9487b9d2686a132d7b2c612cb8d69a02c87a9efbba6c19c74c4da9e89093db"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5620,6 +7039,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150000174,
+          "at": "2026-04-07T21:58:45.000000Z",
+          "tx": "0x1ade728f9aee706d2b584f1c28a7bc7b8bef47bb29eb2806ce5216352f83c0d3"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5668,6 +7100,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150000273,
+          "at": "2026-04-07T22:02:03.000000Z",
+          "tx": "0x8ea1e2ff104ae31fa55d6a4dca037adf936c8e1fde475e1c76e379e39c50f458"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5716,6 +7161,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150260643,
+          "at": "2026-04-13T22:41:03.000000Z",
+          "tx": "0xfa6f1361b7c95f6401462a1fd590d5ecefb766e22a3c5bf3278701fc0ba635a0"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5770,6 +7228,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150260667,
+          "at": "2026-04-13T22:41:51.000000Z",
+          "tx": "0x781ddd6a8b8954720dffe0e8412fe32033bb2f6508edb4142400c8dfda8064c5"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5811,6 +7282,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150260855,
+          "at": "2026-04-13T22:48:07.000000Z",
+          "tx": "0xb177585daed5672dcdafba494c3a44a2aa44339501ad1660b3b4ddd9ef28c922"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5877,6 +7361,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150261363,
+          "at": "2026-04-13T23:05:03.000000Z",
+          "tx": "0x6a9eab256580f1ce11edb430daf12d1aa60c54fc4e3ca3d82059246b76f368c0"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5949,6 +7446,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150561323,
+          "at": "2026-04-20T21:43:43.000000Z",
+          "tx": "0x76f36b612d71929d84cbf7170e0ad2965731c024526d3bb468c7102b759bd587"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -5990,6 +7500,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150563049,
+          "at": "2026-04-20T22:41:15.000000Z",
+          "tx": "0x5b9999bd12407d424b0e718c6c65a67a292a6fe3bee1002a6eda543c92ccc79d"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6056,6 +7579,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150563124,
+          "at": "2026-04-20T22:43:45.000000Z",
+          "tx": "0xb4fc313510e5b1fe56bafb8e4ea9198dfb20b7719369462de0361c7272ea37f5"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6122,6 +7658,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150864880,
+          "at": "2026-04-27T22:22:17.000000Z",
+          "tx": "0x3db21bf8948aa98f23d19f76cc979bf2b2b478ea295817e642763dd645bb3e9a"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6163,6 +7712,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 150865405,
+          "at": "2026-04-27T22:39:47.000000Z",
+          "tx": "0x301cc41a64abb0beefd653650c162c4b7645dc2f71847675a79e3b76ef43e42c"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6235,6 +7797,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151167917,
+          "at": "2026-05-04T22:43:31.000000Z",
+          "tx": "0xd95330329fcf006d8adff9b7fd0e8ce3bd4eaa97a743111fe5b1eb2fec418663"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6307,6 +7882,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151472053,
+          "at": "2026-05-11T23:41:23.000000Z",
+          "tx": "0x69f296b3e0583addd46a506dfcb63665a89f3982d3887175685c847a1e154471"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6385,6 +7973,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151472068,
+          "at": "2026-05-11T23:41:53.000000Z",
+          "tx": "0x3b20de15457bd9d4c26adbe69277f13d1d352fc0ab9ce4bcb5f538e5a884aa82"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6457,6 +8058,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151633082,
+          "at": "2026-05-15T17:09:01.000000Z",
+          "tx": "0xfec23fcce8e7aa4c9ce79d334120575569515a9b41e9735b0a782db2f5ea9e07"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6498,6 +8112,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151633097,
+          "at": "2026-05-15T17:09:31.000000Z",
+          "tx": "0xbe633843075ac3dc68d0da51804559832ec44fc80241e364bcf6857fc6b55a53"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6539,6 +8166,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151716459,
+          "at": "2026-05-17T15:28:15.000000Z",
+          "tx": "0x276373adbe272316dc4a3511efb231928c6d83ef36330955229b02a2ba4d5d2f"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6587,6 +8227,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151773281,
+          "at": "2026-05-18T23:02:19.000000Z",
+          "tx": "0x635f4301f97bb70041c14232a5b3fcc828e140eb45bb595eda6a293d2c2254b9"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6655,10 +8308,23 @@
           "tx": "0x7c7ca5fcd87899ad28eec5d4d9c8290842ead9fcd93313b60d585d6db4e51936"
         }
       ],
-      "yesWeight": 3094,
+      "yesWeight": 0,
       "noWeight": 3094,
-      "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "0",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 1,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151774649,
+          "at": "2026-05-18T23:47:55.000000Z",
+          "tx": "0x52ebcb746a27f4c78a83157d175dcf69f1cf340cfb940d6aece6760b8c82f963"
+        }
+      ]
     },
     {
       "propId": "0x70764ca910504125bdd07c1e36df7420beb3a93a765c640784e5b96a60d8194f",
@@ -6687,6 +8353,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151773321,
+          "at": "2026-05-18T23:03:39.000000Z",
+          "tx": "0xf0db8ea7516f96c0951ea9b586349ae0f1b25e3bc1a7a3d3e60e0f425d93d53a"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6728,6 +8407,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151774657,
+          "at": "2026-05-18T23:48:11.000000Z",
+          "tx": "0x54814c8c49eb7bdc69a83fb22e270e164650da1aafe40442d43abaf8d9e127e0"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6794,6 +8486,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 151810453,
+          "at": "2026-05-19T19:41:23.000000Z",
+          "tx": "0xa5a7cf5da29669a745d2de312c30d2a635fafa27309e7791cafa816d6b643e09"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6866,6 +8571,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 152075049,
+          "at": "2026-05-25T22:41:15.000000Z",
+          "tx": "0xce9a1451e6eebceecb6c57f4a9c22037452411ca821f996c2b9292e14bea654b"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6907,6 +8625,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 152075071,
+          "at": "2026-05-25T22:41:59.000000Z",
+          "tx": "0x6c0950106958fc17f5ef8fedeeba62e5fa28b44df5032c5b45bbdc3fa79aad21"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -6973,6 +8704,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 152075753,
+          "at": "2026-05-25T23:04:43.000000Z",
+          "tx": "0xfd33509f791bee2f392c5e500e0bf8c960908d7d6f5b44def096032e1f486b83"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7039,6 +8783,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 152377662,
+          "at": "2026-06-01T22:48:21.000000Z",
+          "tx": "0x3c239909ba5e750e670cee65af3623af8717bc707e9b31d9708916cde7ab64cf"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7117,6 +8874,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 152495526,
+          "at": "2026-06-04T16:17:09.000000Z",
+          "tx": "0xa511b90c663e4811e71df8e784faf71a9869fbaa8e93e7b8d94904feb19e8509"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7160,10 +8930,23 @@
           "tx": "0xf26d78dfb732b02b2653cae1ae8ea13207887a3a71576c3e4a9f64d785306710"
         }
       ],
-      "yesWeight": 3094,
+      "yesWeight": 0,
       "noWeight": 3094,
-      "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "0",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 1,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 152682009,
+          "at": "2026-06-08T23:53:15.000000Z",
+          "tx": "0x0d248c5423710945d6ea3866c5defc4d6e939b656f3e52b8a2d019ecaa3bf8b1"
+        }
+      ]
     },
     {
       "propId": "0x5c0a3c91a12a7bb6fecab9e2a61ce26115c7f6b4057614b979d4665ff6255bf9",
@@ -7192,6 +8975,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 152681921,
+          "at": "2026-06-08T23:50:19.000000Z",
+          "tx": "0xa9c13c395a4b10fe8fe994a32b44699e61c1b22312960f0b699157f237afb513"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7233,6 +9029,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 152681987,
+          "at": "2026-06-08T23:52:31.000000Z",
+          "tx": "0xe7a64fd1a4bdafff3f43cc70554b1f6eead02621182de72c37a38a333073f5bd"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7313,10 +9122,23 @@
           "tx": "0x50cd9ecf233012f49d7fe516b3b47311fe17eef7cc9cfc0d4ed39fe139652cad"
         }
       ],
-      "yesWeight": 3094,
+      "yesWeight": 0,
       "noWeight": 3094,
-      "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "0",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 1,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 153284960,
+          "at": "2026-06-22T22:51:37.000000Z",
+          "tx": "0x3e133e9a8e9e0e284faa5b752cb3c731f5df680b40cfb88779af215842f06ef7"
+        }
+      ]
     },
     {
       "propId": "0x79c5c8262d8af463bbedd4389eea531e4ef25595f865397d092a06d6ef692ea5",
@@ -7345,6 +9167,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 153284905,
+          "at": "2026-06-22T22:49:47.000000Z",
+          "tx": "0x956575a1798eb93d6d02410a120c22492abd85fa5fb0bdeff3724725363c7f41"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7386,6 +9221,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 153284974,
+          "at": "2026-06-22T22:52:05.000000Z",
+          "tx": "0xf6259c3d13f1c60370ba8ba23438dc74bfdd409edeb2307b5375834a524eadd4"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7452,6 +9300,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 153284994,
+          "at": "2026-06-22T22:52:45.000000Z",
+          "tx": "0xea26dfb1e4910671ccba6f356f5a2b14a0a7d6db2b48086078531ce0030fbe9d"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7493,6 +9354,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 153891046,
+          "at": "2026-07-06T23:34:29.000000Z",
+          "tx": "0x00791deba9a0efc5ee13546f8089bf797573154062b816ffa358e3f2d4e51b7c"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7534,6 +9408,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154494680,
+          "at": "2026-07-20T22:55:37.000000Z",
+          "tx": "0xbbd937118274de93c285eee527d49467f9bedf193be65d2316a00591d4c09e3a"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7612,6 +9499,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154794790,
+          "at": "2026-07-27T21:39:17.000000Z",
+          "tx": "0x9a53e09a5b078fb35b667648abd8183a56ec39e90eb0a16d2919267105bd962d"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7690,6 +9590,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154796206,
+          "at": "2026-07-27T22:26:29.000000Z",
+          "tx": "0xab416e84ab0d45c40bb0e05aa8e215e4f8e4331d94ca95698e3bcd2d06ec35cc"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7731,6 +9644,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154796234,
+          "at": "2026-07-27T22:27:25.000000Z",
+          "tx": "0xa22eebdecd33a45158459500e7c2d1fc72f8c974db284fa68d13266601158839"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7772,6 +9698,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154797078,
+          "at": "2026-07-27T22:55:33.000000Z",
+          "tx": "0xa394b3de746433f1bce6128c8b9f677c62d93e24356c0badf686de528aae8b65"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7846,10 +9785,23 @@
           "tx": "0x1f03d667112a5462504d4b829a204d9790d8e48a2929791f7da78e7e7401bd4b"
         }
       ],
-      "yesWeight": 3094,
+      "yesWeight": 0,
       "noWeight": 3094,
-      "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "0",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 1,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154798918,
+          "at": "2026-07-27T23:56:53.000000Z",
+          "tx": "0xf3b64c3f24a8192f016cf9171063ae40352a4bd5e5b752e349ef5be4ae44f83e"
+        }
+      ]
     },
     {
       "propId": "0xf7ca8ad381b63f4bcda56d165d9ed72550d0aff8adff00d886e52c1f78ececab",
@@ -7880,10 +9832,23 @@
           "tx": "0xc0742e678920cf7eb7bce7a2995f6802c12f9dad91842ac32507270f051700cf"
         }
       ],
-      "yesWeight": 3094,
+      "yesWeight": 0,
       "noWeight": 3094,
-      "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "3094000000000000000000"
+      "yesWeightWei": "0",
+      "noWeightWei": "3094000000000000000000",
+      "voterCount": 1,
+      "voteChanges": 1,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "No",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154829207,
+          "at": "2026-07-28T16:46:31.000000Z",
+          "tx": "0x98c3609f47b9f62581518e1bc7fcf684ac2070d6bacf67d9b7fd9d34a0c286cd"
+        }
+      ]
     },
     {
       "propId": "0x55e992ec923ea0110ccbf5fe995e1f9b8ffa4e9a361c9f54956eb5b8241e102d",
@@ -7908,7 +9873,20 @@
       "yesWeight": 3094,
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154829273,
+          "at": "2026-07-28T16:48:43.000000Z",
+          "tx": "0x0171a63a89983cb12a8129dfaba7e05c50ed650636cf83ac4018a3a4bce303bc"
+        }
+      ]
     },
     {
       "propId": "0x4d29b3095f93af85310846a6d102c651f09f2b40e3eca6e8280acaa0659acead",
@@ -7937,6 +9915,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154830292,
+          "at": "2026-07-28T17:22:41.000000Z",
+          "tx": "0x1909cfdbb21c882ea02b428f271b8bce67de3b615b4edf7683ae4366ede6cc06"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -7991,6 +9982,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 154830417,
+          "at": "2026-07-28T17:26:51.000000Z",
+          "tx": "0xf891a2fe02aefc3a7866938b05c116357cd2f3cdf0105753947d6f1f99f354a9"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8069,6 +10073,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155098204,
+          "at": "2026-08-03T22:13:05.000000Z",
+          "tx": "0x5f08e16e379cd90ad8c4dbace2945d356180b3e65ea8e6e60f462ad07e8c1240"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8110,6 +10127,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155099103,
+          "at": "2026-08-03T22:43:03.000000Z",
+          "tx": "0x8b94f01e3df43eb2af13c9a9fa287999c7e0c6e5d10b583f444e80a56e7970d0"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8176,6 +10206,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155099174,
+          "at": "2026-08-03T22:45:25.000000Z",
+          "tx": "0x5cd116619cd9ac774ad7996b0cf915bf8555b1f629960be56f86892febc9d354"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8242,6 +10285,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155400922,
+          "at": "2026-08-10T22:23:41.000000Z",
+          "tx": "0xce9045af0182a6e92373cb618771fde59bc8b0f90c4189e492660aa05d3e2294"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8292,6 +10348,28 @@
       "noWeight": 0,
       "yesWeightWei": "4359000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 2,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155401681,
+          "at": "2026-08-10T22:48:59.000000Z",
+          "tx": "0x31f4c692de18deabe099f461a5532a78ba782718cfd22896b7ab43a8964939eb"
+        },
+        {
+          "voter": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
+          "vote": "Yes",
+          "weight": 1265,
+          "weightWei": "1265000000000000000000",
+          "block": 155401724,
+          "at": "2026-08-10T22:50:25.000000Z",
+          "tx": "0xea7e024d195fb26c6f9ea1bfdd6a9a59f1b136fe538bc6339a4dc192fd302391"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8364,6 +10442,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155402293,
+          "at": "2026-08-10T23:09:23.000000Z",
+          "tx": "0x7543029061dd2b9fd5916f87f757e09835bb2f1e821377878b79bc08b6ab3ccd"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8418,6 +10509,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155704408,
+          "at": "2026-08-17T22:59:53.000000Z",
+          "tx": "0xa7eae559ffed284adf1646d2a023ba7f5edd1a3abc2e1b9576b1fde69f221ce7"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8459,6 +10563,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155704727,
+          "at": "2026-08-17T23:10:31.000000Z",
+          "tx": "0xef244dbf06bd890ae657b0222441557fb50fb289ff76b7745e068d0ca6ce19de"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8537,6 +10654,19 @@
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
       "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155736040,
+          "at": "2026-08-18T16:34:17.000000Z",
+          "tx": "0xd3046829549133b483403a5a99fab7c9233f31d9eaa3690ea659c142dca6c898"
+        }
+      ],
       "entrypoint": "execute(Message)",
       "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
       "action": {
@@ -8599,7 +10729,20 @@
       "yesWeight": 3094,
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 155736086,
+          "at": "2026-08-18T16:35:49.000000Z",
+          "tx": "0x5b1424e7943c5399dff44d0fbcd47865c585004f51c3fcf19df817877d32e690"
+        }
+      ]
     },
     {
       "propId": "0xf6b82dd0fce869e62c9740d28c0b9484c8a6a8ae8b448fc6f49d574848c26ed7",
@@ -8624,7 +10767,20 @@
       "yesWeight": 3094,
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 156038699,
+          "at": "2026-08-25T16:42:55.000000Z",
+          "tx": "0x1c30456d5fed829aac78e08dbe4cccd87bfb73ff9ab4677c05481fd4b665b403"
+        }
+      ]
     },
     {
       "propId": "0xef44b3e281c395883f468e82f232a1d14fde815a3f08ee42fe7e635d06792aca",
@@ -8649,7 +10805,20 @@
       "yesWeight": 3094,
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
-      "noWeightWei": "0"
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 156038743,
+          "at": "2026-08-25T16:44:23.000000Z",
+          "tx": "0x675f161cc79d0ac3ef6d694ad54ce6896eb7f4ce28207c2b444538fd3fe9f45f"
+        }
+      ]
     }
   ],
   "signals": [

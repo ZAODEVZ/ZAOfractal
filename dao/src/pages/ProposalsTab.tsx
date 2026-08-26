@@ -92,7 +92,10 @@ export default function ProposalsTab({ wallet: _wallet }: Props) {
                   <div className="proposal-meta">
                     <span className={`pill ${STAGE_PILL[p.stage] ?? 'pill-dim'}`}>{p.stage}</span>
                     {p.createdAt && <span className="text-dim">{p.createdAt.slice(0, 10)}</span>}
-                    <span className="text-dim">{p.votes.length} {p.votes.length === 1 ? 'vote' : 'votes'}</span>
+                    <span className="text-dim">{p.voterCount} {p.voterCount === 1 ? 'voter' : 'voters'}</span>
+                    {p.voteChanges > 0 && (
+                      <span className="text-dim">{p.voteChanges} vote {p.voteChanges === 1 ? 'change' : 'changes'}</span>
+                    )}
                   </div>
                 </div>
                 <a
@@ -117,7 +120,7 @@ export default function ProposalsTab({ wallet: _wallet }: Props) {
               {isOpen && (
                 <div style={{ marginTop: '0.85rem', borderTop: '1px solid var(--border)', paddingTop: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                    {p.votes.map((v) => (
+                    {p.finalVotes.map((v) => (
                       <div key={`${v.tx}-${v.voter}`} style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', fontSize: '0.82rem', flexWrap: 'wrap' }}>
                         <span className={`pill ${v.vote === 'Yes' ? 'pill-orange' : v.vote === 'No' ? 'pill-dim' : 'pill-cyan'}`} style={{ fontSize: '0.7rem' }}>
                           {v.vote}
