@@ -188,7 +188,9 @@ This 2/3 rule creates a **consent-based system**, not a majority rule system. A 
 
 ## III. The Fibonacci Curve: Mathematical Details
 
-ZAO's 2x Fibonacci curve (see Chapter 4 for justification) distributes Respect per 6-person group:
+ZAO's 2x Fibonacci curve (see Chapter 4 for justification) distributes Respect **per 6-person group**, not per session - a session running two groups pays this curve twice, which is why a single period can settle more than one top award.
+
+The curve below is what has been paid since period 73. It is not what was paid before: periods 67 to 70 settled on the standard Fibonacci curve (55, 34, 21, 13, 8, 5), and two later periods departed from any curve. Chapter 8 gives the full history from the ledger.
 
 | Rank | ZAO Respect | Phi Ratio | Cumulative |
 |---|---|---|---|

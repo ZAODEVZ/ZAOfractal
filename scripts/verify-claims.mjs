@@ -276,6 +276,33 @@ const chainCurve = [...curveLevels.entries()]
   .sort(([a], [b]) => b - a)
   .map(([, respect]) => respect);
 
+/** The payout curve as the ledger actually records it. ch05 and ch08 quote the
+ * 2x curve; the first four settled periods paid standard Fibonacci and two
+ * later periods paid neither, so the history is pinned rather than the constant.
+ * Derived per period from the distinct Respect values awarded. */
+const STD_CURVE = new Set([55, 34, 21, 13, 8, 5]);
+const ZAO_CURVE = new Set([110, 68, 42, 26, 16, 10]);
+const curveByPeriod = new Map();
+for (const e of awards.events) {
+  if (!curveByPeriod.has(e.periodNumber)) curveByPeriod.set(e.periodNumber, new Set());
+  curveByPeriod.get(e.periodNumber).add(e.respect);
+}
+const periodsPaying = (curve) => [...curveByPeriod.entries()]
+  .filter(([n, vals]) => n > 0 && [...vals].every((v) => curve.has(v)))
+  .map(([n]) => n).sort((a, b) => a - b);
+const offCurvePeriods = [...curveByPeriod.entries()]
+  .filter(([n, vals]) => n > 0 && ![...vals].every((v) => ZAO_CURVE.has(v))
+    && ![...vals].every((v) => STD_CURVE.has(v)))
+  .map(([n]) => n).sort((a, b) => a - b);
+
+/** Top awards per period. A session pays a full curve PER GROUP, so several
+ * 110s in one period is normal and "one 110 per period" is false for the
+ * synchronous game. */
+const topAwardsByPeriod = new Map();
+for (const e of awards.events) {
+  if (e.respect === 110) topAwardsByPeriod.set(e.periodNumber, (topAwardsByPeriod.get(e.periodNumber) ?? 0) + 1);
+}
+
 const CLAIMS = [
   ['LEDGER', 'OG holders with a balance', ogBalance.size, 122],
   ['LEDGER', 'ZOR holders with a balance', zorBalance.size, 64],
@@ -540,6 +567,16 @@ const CLAIMS = [
   ['ADMIN KEY', 'OG DEFAULT_ADMIN_ROLE member count', og.adminRole?.memberCount ?? 'unverified', 1],
   ['ADMIN KEY', 'OG admin is the treasury wallet', (og.adminRole?.members ?? []).map(lower).join(','), lower(summary.og.treasury)],
   ['ADMIN KEY', 'ZOR is owned by OREC, not by a wallet', lower(summary.orec.config.owner), lower(summary.contracts.OREC)],
+
+  ['WP CURVE', 'periods that paid standard Fibonacci', periodsPaying(STD_CURVE).join(','), '67,68,69,70'],
+  ['WP CURVE', 'periods that paid neither curve', offCurvePeriods.join(','), '78,105'],
+  ['WP CURVE', 'period 105 paid a single flat amount', [...curveByPeriod.get(105)].join(','), '40'],
+  ['WP CURVE', 'period 105 recipients', awards.events.filter((e) => e.periodNumber === 105).length, 6],
+  ['WP CURVE', 'first period on the ZAO 2x curve', periodsPaying(ZAO_CURVE).find((n) => n > 70), 73],
+  ['WP CURVE', 'the gap between the two curves is the empty periods', missingPeriods(), '71,72,103'],
+  ['WP CURVE', 'periods minting more than one top award', [...topAwardsByPeriod.values()].filter((n) => n > 1).length, 21],
+  ['WP CURVE', 'top awards in period 107', topAwardsByPeriod.get(107), 3],
+  ['WP CURVE', 'top awards in period 110', topAwardsByPeriod.get(110), 2],
 
   // --- ROADMAP.md, the public L0-L7 scale ------------------------------------
   ['ROADMAP', 'period counter', summary.zor.latestPeriod, 110],

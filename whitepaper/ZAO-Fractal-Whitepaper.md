@@ -1219,7 +1219,9 @@ This 2/3 rule creates a **consent-based system**, not a majority rule system. A 
 
 ## III. The Fibonacci Curve: Mathematical Details
 
-ZAO's 2x Fibonacci curve (see Chapter 4 for justification) distributes Respect per 6-person group:
+ZAO's 2x Fibonacci curve (see Chapter 4 for justification) distributes Respect **per 6-person group**, not per session - a session running two groups pays this curve twice, which is why a single period can settle more than one top award.
+
+The curve below is what has been paid since period 73. It is not what was paid before: periods 67 to 70 settled on the standard Fibonacci curve (55, 34, 21, 13, 8, 5), and two later periods departed from any curve. Chapter 8 gives the full history from the ledger.
 
 | Rank | ZAO Respect | Phi Ratio | Cumulative |
 |---|---|---|---|
@@ -2247,6 +2249,20 @@ The part this chapter used to leave out: **the two ledgers have come apart, and 
 Earlier drafts claimed the doubling "increases differentiation: a rank-1 contributor earns 5x more than a rank-6, instead of 11x". That is arithmetically impossible. Doubling every entry in a vector changes no ratio in it: 110/10 and 55/5 are both **11 to 1**, and the top two ranks take 65% of the pot on either curve. The shape of ZAO's incentive is identical to standard Fibonacci.
 
 What doubling actually changes is the absolute number, and therefore the rate at which the ledger accumulates - roughly 272 Respect issued per settled group rather than 136. That is a real choice with a real consequence, and the consequence is the one Chapter 4 measures: a ledger that compounds twice as fast, in a system where nothing decays, concentrates twice as fast. Calling the escalation "evidence that longevity enables generosity" was a nice line covering an unexamined decision. The generosity is real; so is the compounding, and the decay design in Chapter 4 section VI is what would make the two compatible.
+
+**And the curve has a history, which this chapter used to present as a constant.** Each on-chain award carries its rank, so this is checkable rather than remembered:
+
+| Periods | Curve paid |
+|---|---|
+| 67-70 | **standard Fibonacci** - 55, 34, 21, 13, 8, 5 |
+| 71-72 | no awards settled at all |
+| 73 onward | ZAO's 2x - 110, 68, 42, 26, 16, 10 |
+| 78 | mixed: a 110 alongside flat 40s |
+| 105 | **a flat 40 to all six recipients**, no ranking curve at all |
+
+The first four periods ZAO ever settled on-chain paid the standard curve; the escalation came afterwards. Two later periods departed from any curve. Whether 78 and 105 were experiments, corrections or settlement mistakes is not something the chain can answer - it records what was paid, not why - but a chapter describing the 2x curve as simply what ZAO does should say that the ledger disagrees four times out of forty-one.
+
+**A period is not a group, which matters for anyone counting.** A live session runs one or more breakout groups and pays a full curve to *each*, so a single period can mint several top awards: period 107 minted three 110s, period 110 minted two, and 21 of the 41 settled periods minted more than one. "One 110 per period" is false for the synchronous game. It holds only for a single-group session, which is what the async tool in `frapp-gh/` runs.
 
 ---
 
