@@ -1,11 +1,12 @@
 # Handoff - fractal dashboard + fractal docs (2026-08-25/26)
 
-Repo: `ZAOfractal`, branch `main`, **12 commits ahead of origin, nothing
+Repo: `ZAOfractal`, branch `main`, **14 commits ahead of origin, nothing
 pushed**. Push is Zaal's call.
 
-Two lanes ran in this pane. The dashboard data layer (task_52ea0cb8c31c) landed
-first; the two fractal docs (task_fa960c63996b, task_b5f03719b980) were built
-directly on its output. All three tasks are closed and coordinator-verified.
+Three lanes ran in this pane. The dashboard data layer (task_52ea0cb8c31c)
+landed first; the two fractal docs (task_fa960c63996b, task_b5f03719b980) were
+built on its output and are closed and coordinator-verified; the facilitator
+bench (task_5e424cc44289) followed and produced two more runbooks.
 
 ---
 
@@ -102,12 +103,86 @@ contract changed the recommendation:
   the others did not turn up, not because they were blocked. The L5 gate is
   behavioural.
 
-**`scripts/verify-claims.mjs`** (commit `4c5986f`) - both docs quote hard
-figures that go stale the moment anyone reruns the puller. This holds **all 62
-of them** as expectations and exits non-zero on drift. It caught one on the
-first run (47.8 weeks, not 47.7 - a rounding step in the wrong order). All 62
+**`scripts/verify-claims.mjs`** (commit `4c5986f`, extended in `d306f75` and
+`f36f71e`) - the respect/ docs quote hard figures that go stale the moment
+anyone reruns the puller. This holds **all 98 of them** as expectations and
+exits non-zero on drift. It has caught two real errors so far: 47.8 weeks (not
+47.7, a rounding step in the wrong order) and 29 people ranked in the recent
+window (not 27, because two of them never had their Respect minted). All 98
 currently match. Run it after every pull; a drift means the prose needs an edit,
 not that the data is wrong.
+
+---
+
+## Part 3 - the facilitator bench lane (task_5e424cc44289)
+
+The brief arrived truncated - only its last three sentences survived the
+compaction boundary, and they set the hard constraint (a naming decision only,
+nobody contacted, write it as a proposed bench, do not push). The task title
+`facilitator-bench` and the L1 section of
+`~/zao-vault/notes/zao-decentralization-scale.md` supplied the rest. One doc was
+written before that recovery and one after, and both are worth keeping.
+
+**`respect/EXECUTION-RUNBOOK.md`** (commit `d306f75`) - Step 1 of the
+SIGNER-COMMITTEE migration path, written out. Execution on OREC is already
+permissionless, so this is a naming and procedure problem. Three findings came
+out of tracing the eleven reverted executions:
+
+- **Every revert has a cause.** Seven happened because a recipient already held
+  an award for that period (ZOR ids pack `mintType|period|owner`, so one badge
+  per person per period). The other four have no duplicate at all, and the
+  Blockscout internal-transaction traces show Respect1155 calling out to
+  recipients that hold code - three EIP-7702 delegated EOAs and one EIP-1167
+  proxy failing the ERC-1155 acceptance check. **A member who upgraded to a
+  smart-account wallet silently stopped being able to receive Respect, and
+  nothing told them.**
+- **A reverted execution spends the proposal,** so nobody ever recovered these.
+  **24 award slots across 8 periods were never minted to 16 people, worth 1,672
+  Respect.** Seven of the sixteen have no name on file. That table is the
+  bench's first real job.
+- **All 153 proposals were created by `vote(bytes32,uint8,string)`, never by
+  `propose(Message)`.** The chain records what was approved only as a hash; the
+  award list lives off chain until execution puts it in the calldata. So the
+  executor has to already hold the Message. Its known home, ornode, returns 404
+  on every path tried (`/`, `/proposals`, `/api/proposals`, `/getProposals`,
+  and `POST /` answers `Can not POST /`) while `zao.frapps.xyz` returns 200.
+  **This is the real reason execution never spread past two wallets, and it
+  blocks the terminal path for any rota.**
+
+Proposed executor bench: Ohnahji B, CandyToyBox, Meta Mu, by stated criteria.
+Tadas is called out separately - the only non-Zaal executor on record, four
+times, but no Respect Game award since period 68.
+
+**`respect/FACILITATION-RUNBOOK.md`** (commit `f36f71e`) - the actual L1 item.
+Whitepaper ch05 documents the mechanism; this is the operational half.
+
+- **The room is small.** The scale note describes ~40 active per session. The
+  last 15 settled sessions ranked **4 to 12 people each**, ran a single breakout
+  group **11 times out of 15**, and have never run three. A second facilitator
+  is not for overflow - it is so the meeting can happen without one person.
+- **Zaal was ranked in 14 of those 15 sessions.** No one else exceeded 10.
+- Proposed facilitator bench, on attendance alone: **Jose (Joseph Goats) (9/15),
+  Meta Mu (8/15), Ohnahji B (8/15)**. Alternates: CandyToyBox (7/15, ranked in
+  110), Hurric4n3ike (10/15 but nothing since period 105 - ask directly), and
+  `0xf73485a6…a8ea` who is 7/15 including period 110 and has no name on file.
+- Section 6 is an inventory of what a new facilitator hits on night one with no
+  documented answer: who can run `/randomize`, which wallet submits Phase 5 and
+  whether it needs OG weight, where the fractal number comes from, what to do
+  with a group of 7 (three have happened against a documented cap of 6), what to
+  do when a round does not converge, who to escalate to mid-meeting. None are
+  decisions. They are the difference between a bench that exists and one that
+  can be used.
+- The rota is sequenced shadow (weeks 1-2) then solo Monday (3-4) then the
+  second meeting (5+), because the L1 gate asks for more meetings *and* more
+  facilitators at once and starting both cold is how it stalls.
+
+**Both docs state three times over that nobody named has been contacted, asked,
+or agreed to anything.** They are naming proposals for Zaal, not rosters.
+
+Three more ch05 claims went to the whitepaper v0.2 queue rather than being
+edited in place: the 48-hour vote/veto windows (the contract says 72 each),
+"vote weight is frozen at proposal creation time" (OREC reads it live, no
+snapshot), and the facilitator naming.
 
 ---
 
@@ -160,9 +235,34 @@ From the signer doc:
    Recommendation is now; a single EOA that can mint vote weight is the
    highest-severity item and the migration has no date.
 10. **Investigate the 11 recurring `mintRespectGroup` execution failures?**
-    Eleven across ten months is a pattern, and each is a week of results that
-    did not settle first time.
+    **Now answered** - both causes traced, see Part 3 and
+    `respect/EXECUTION-RUNBOOK.md` section 6. What remains is a decision, not an
+    investigation: approve re-proposing the 24 unsettled award slots.
 11. **The two passed-but-unexecuted proposals** - execute, cancel, or expire?
+    One has been waiting 28 days.
+
+From the two runbooks:
+
+12. **Where does a proposal's Message actually come from?** ornode 404s on every
+    path while the Frapps UI works. This blocks the terminal path for any
+    execution rota and is the single highest-leverage answer on this list.
+13. **Accept, edit or replace the two proposed benches** - executor (Ohnahji B,
+    CandyToyBox, Meta Mu) and facilitator (Jose (Joseph Goats), Meta Mu,
+    Ohnahji B). **Nobody has been contacted.** Then ask them.
+14. **Ask Tadas** (only non-Zaal executor, four times, no award since period 68)
+    and **Hurric4n3ike** (highest non-Zaal attendance, nothing since period 105)
+    directly. Both are either the strongest candidate on their page or someone
+    who has stepped back, and only a conversation tells them apart.
+15. **Who is `0xf73485a6…a8ea`?** 7 of the last 15 sessions including period
+    110, no name on file. On attendance they belong on the facilitator bench.
+16. **Name the six other unnamed backlog wallets** so people can be told what
+    they are owed.
+17. **Answer the six undocumented items** in `FACILITATION-RUNBOOK.md` section 6
+    (bot permissions, submitting wallet, fractal number, oversized groups,
+    non-converging rounds, mid-meeting escalation). Cheapest unblock on the
+    list; none of them is a decision.
+18. **Is `/randomize` gated to one Discord role?** If so it is a five-minute fix
+    and it is the literal first blocker for a second facilitator.
 
 ---
 
@@ -170,7 +270,8 @@ From the signer doc:
 
 1. Name the 40 unnamed holders - `data/members.json` has them under
    `unnamedHolders`, ranked. Unmined sources: `zao-fractal-bot`'s Supabase
-   migrations, Farcaster handles.
+   migrations, Farcaster handles. Seven of them are owed unminted Respect and
+   one of them belongs on the facilitator bench, so this is no longer cosmetic.
 2. Once Zaal answers tap 1, do the whitepaper v0.2 pass in one commit across
    ch01, ch04, ch06, ch07, ch08, ch09 and the repo README.
 3. Member write-up view: `awardsForMember()` in `dao/src/lib/data.ts` already
@@ -184,8 +285,8 @@ From the signer doc:
 ```bash
 node scripts/pull-data.mjs        # refresh data/*.json from OP Mainnet
 node scripts/build-members.mjs    # refresh the wallet -> name map
-node scripts/verify-claims.mjs    # re-check all 62 figures in the docs
+node scripts/verify-claims.mjs    # re-check all 98 figures in the docs
 cd dao && npm run dev             # browse the same numbers
 ```
 
-Nothing deployed, nothing pushed. 12 commits ahead of origin.
+Nothing deployed, nothing pushed. **14 commits ahead of origin.**
