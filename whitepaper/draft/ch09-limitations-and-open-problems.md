@@ -191,4 +191,4 @@ This matters because if peers are bad at judging contribution, the entire system
 
 ---
 
-**Word count: 3,268**
+**Word count: 3,310**

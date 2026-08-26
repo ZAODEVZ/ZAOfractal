@@ -210,4 +210,4 @@ The whitepaper documents how.
 
 ---
 
-**Word count: 2,148**
+**Word count: 2,417**

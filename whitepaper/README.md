@@ -1,8 +1,15 @@
 # The ZAO Fractal Whitepaper
 
-**Status:** Abstract + 11 chapters (v0.1) - share-readiness accuracy pass complete (2026-07-21)
+**Status:** Abstract + 11 chapters (v0.2) - accuracy pass against the committed
+on-chain snapshot complete (2026-08-26)
 
-**Version:** v0.1 - reviewed against on-chain reality; decay reframed as a design option (not a live feature); vote weight corrected to live-at-vote; abstract added
+**Version:** v0.2 - every chain figure re-measured at OP Mainnet block
+156,055,426 and held as an expectation in `scripts/verify-claims.mjs`; the
+weekly-streak claim separated from the on-chain claim; the ledger that actually
+confers a vote named in every chapter that touches it
+
+Assemble the full document with `node scripts/assemble-whitepaper.mjs`. Edit the
+chapters in `draft/`, never `ZAO-Fractal-Whitepaper.md`.
 
 ---
 
@@ -18,20 +25,20 @@ The whitepaper is hybrid manifesto-specification: it makes the case for earned g
 
 | # | Title | Voice | Status | Word Count |
 |---|-------|-------|--------|-----------|
-| 0 | Abstract | Precision | Share-ready | 400 |
-| 1 | Preamble and Vision | Manifesto | Draft v0.1 | 2,458 |
-| 2 | The Problem - why current DAO governance fails | Manifesto + Argument | Draft v0.1 | 2,434 |
-| 3 | Fractal Democracy: First Principles | Argument + Precision | Draft v0.1 | 3,348 |
-| 4 | The Respect Token - soulbound reputation | Precision | Draft v0.1 | 2,283 |
-| 5 | The Respect Game - the weekly mechanism | Precision | Draft v0.1 | 3,238 |
-| 6 | On-Chain Architecture - ORDAO, OREC | Precision | Draft v0.1 | 2,951 |
-| 7 | Why Fractal - comparative case | Argument | Draft v0.1 | 4,002 |
-| 8 | The ZAO Fractal - specific story | Manifesto + Narrative | Draft v0.1 | 2,701 |
-| 9 | Limitations and Open Problems | Plain Honesty | Draft v0.1 | 2,117 |
-| 10 | Roadmap | Plain | Draft v0.1 | 1,578 |
-| 11 | Conclusion - "new governance culture" | Manifesto | Draft v0.1 | 1,419 |
+| 0 | Abstract | Precision | v0.2 | 492 |
+| 1 | Preamble and Vision | Manifesto | v0.2 | 2,684 |
+| 2 | The Problem - why current DAO governance fails | Manifesto + Argument | v0.1 (no chain figures to correct) | 2,417 |
+| 3 | Fractal Democracy: First Principles | Argument + Precision | v0.2 | 3,569 |
+| 4 | The Respect Token - soulbound reputation | Precision | v0.2 | 3,038 |
+| 5 | The Respect Game - the weekly mechanism | Precision | v0.2 | 3,844 |
+| 6 | On-Chain Architecture - ORDAO, OREC | Precision | v0.2 | 3,593 |
+| 7 | Why Fractal - comparative case | Argument | v0.2 | 4,324 |
+| 8 | The ZAO Fractal - specific story | Manifesto + Narrative | v0.2 | 3,473 |
+| 9 | Limitations and Open Problems | Plain Honesty | v0.2 | 3,310 |
+| 10 | Roadmap | Plain | v0.2 | 2,121 |
+| 11 | Conclusion - "new governance culture" | Manifesto | v0.2 | 1,556 |
 
-**Total: 28,529 words.**
+**Total: 34,421 words.**
 
 ---
 
@@ -65,7 +72,7 @@ The theory chapter. Establishes the intellectual foundation for fractal governan
 
 ---
 
-## Chapters 4-11 (To Come)
+## Chapters 4-11 at a glance
 
 | Chapter | Focus |
 |---------|-------|
@@ -123,8 +130,8 @@ Every claim in the whitepaper is verified against canonical sources:
 - **Fractally whitepaper** - released Feb 22 2022.
 - **Eden on EOS** - launched Oct 9 2021, 400+ participants, 9 election cycles, 1.5M USD distributed.
 - **Optimism Fractal** - paused Jan 2026 (verified via Optimystics, Optimism Collective updates).
-- **ZAO Fractal** - Aug 2024 start, 90+ weeks, Monday 6pm EST, 188 members, 40+ active per session.
-- **Contract addresses** - verified on Optimism Etherscan (OREC, ORDAO, Respect tokens).
+- **ZAO Fractal** - Aug 2024 start, Monday 6pm EST, period counter at 110 as of 2026-08-25, community roll of 188, mean 8.1 people settled per period.
+- **Contract addresses and every on-chain figure** - measured from the committed snapshot at OP Mainnet block 156,055,426 and held as expectations in `scripts/verify-claims.mjs`, which exits non-zero the moment one drifts.
 - **Compound/Uniswap delegate concentration** - 8 and 11 delegates for 50%+ power (verified via governance portals, research papers).
 - **Navajas et al. 2018 Nature study** - empirically verified.
 - **Citizens' assemblies** - Ireland (66.4% support for abortion repeal 2018), France (149 recommendations 2020), British Columbia (57.69% support for STV 2005).
@@ -146,38 +153,64 @@ Unknown or unverifiable claims are NOT INCLUDED.
 
 ## Contributing / Feedback
 
-Chapters 1-3 are draft v0.1 awaiting Zaal's review and feedback. Upon approval, they will be finalized and submitted for external review (Eden Fractal, Optimystics, OP Collective governance team, academic advisors).
+All twelve pieces are drafted. Eleven are at v0.2 after the 2026-08-26 accuracy
+pass; ch02 stays at v0.1 because it quotes no ZAO figures and had nothing to
+correct.
 
-Chapters 4-11 will be drafted in sequence, following the same research-to-draft flow.
+Nothing is approved. Everything awaits Zaal's read, and the publish gate below
+is unchanged.
 
 ---
 
-**Last updated:** 2026-05-25 - all 11 chapters drafted, brand-cleaned, deployed.
+**Last updated:** 2026-08-26 - v0.2 accuracy pass against the committed on-chain snapshot; assembly moved to a script.
 
 **For questions:** Contact Zaal (zaalp99@gmail.com)
 
 ---
 
-## Known-stale claims - v0.2 accuracy queue (2026-08-25)
+## The v0.2 accuracy pass (2026-08-26) - what was corrected
 
-Logged here so the next accuracy pass has a checklist instead of a re-read.
-None of these are edited in the chapters yet; prose changes wait for the pass.
+The queue that used to live here has been worked. Every row below was a claim
+the chain contradicted, and every one is now fixed in the chapters and held as
+an expectation in `scripts/verify-claims.mjs` (234 figures, passing) so it
+cannot drift back silently.
 
-| Claim | Where | Reality check needed |
+| Was | Now | Where |
 |---|---|---|
-| "90+ unbroken weeks" | ch01 (x3), ch08, this README | Repo README says 100+; Aug 2024 start implies ~104 by Aug 2026. Pick one number, source it, update everywhere in one commit. **See the settlement-vs-ritual row below before picking.** |
-| "188 members" | ch07, ch08 (x3), ch09 | Count was from ~May 2026. On-chain, 169 addresses have ever held Respect on either ledger (122 OG, 70 ZOR, overlapping) as of 2026-08-26. 188 is presumably a community count, not a holder count - say which one the chapter means. |
-| "as of May 2026" facts table | repo README | Measured 2026-08-26: OREC has 287 transactions and 153 proposals, 123 executed, 11 execution failures, 15 failed to pass. Streak and bot version still need their own sourcing. |
-| "only active fractal on Optimism" | ch01, ch08 | Was true at drafting; re-verify against the fractal-communities directory before publishing. |
-| On-chain verifiability used to support the streak claim | ch01, ch08 | **The chain records settlement, not attendance, and these are different claims.** Provable: the latest period number is 110; the ZOR ledger covers periods 67-110 with 71, 72 and 103 carrying no awards; the longest run of consecutive periods ending at 110 is 7; those 41 settled periods span 47.8 weeks with a median 7-day gap and a largest gap of 29 days. Not provable: whether the game met in any given week. Periods 1-66 predate ZOR and ran on OG, which carries no per-week record at all, so two thirds of the history cannot be checked on chain even in principle. Do not silently restate the streak as 7 - fix the *justification*, then pick the number from off-chain evidence. Full working: `respect/LEDGER-RECONCILIATION.md` section 6. |
-| ZOR described as the governance token | ch04, ch06 (check) | OREC's `respectContract` is the OG ERC-20 `0x34cE...6957`, read live at vote time. ZOR confers no vote. 47 of the 70 people ever awarded ZOR hold zero vote weight. |
-| "Voting Period (48 hours typical)" and "Veto Period (48 hours typical)" | ch05 | The deployed OREC has `voteLen` and `vetoLen` both set to 259,200 seconds - **72 hours each**. A submitted breakout is executable 6 days later, not 4. Measured 2026-08-26 from `data/summary.json`. |
-| "vote weight is frozen at proposal creation time, preventing double-voting" | ch05 | OREC reads vote weight **live from the OG balance at the moment each vote is cast**. There is no snapshot and no checkpointing. This is not a nuance: on 2025-12-09 the largest holder cast three votes that carried zero weight because his OG was sitting in another wallet for four days. See `respect/SIGNER-COMMITTEE.md` section 1. |
-| "A facilitator (typically Zaal or civilmonkey.eth) runs `/randomize`" | ch05 | Same wrong-mechanism problem as the ch09 row, on the facilitation side. The chain cannot name facilitators, but it can name who is in the room: over periods 95-110, Zaal was ranked in 14 of 15 settled sessions and no other member exceeded 10. Name the bench from `respect/FACILITATION-RUNBOOK.md` section 3 once Zaal has confirmed it. |
-| OREC bottleneck described as "zaal.eth + civilmonkey.eth" | ch09 | Measured: 9 addresses have ever voted, 2 have ever executed (Zaal 130, Tadas 4), and 137 of 153 proposals were decided by a single voter. Name the wallets from the data rather than from memory. See `respect/SIGNER-COMMITTEE.md`. |
+| "90+ / 100+ unbroken weeks", proved by on-chain history | The period counter reads 110. The chain records **settlement, not attendance**, so the streak is ZAO's own record and the governance history is the on-chain one. Kept apart throughout. | ch01, ch03, ch07, ch08, ch11 |
+| "188 members" used interchangeably with holder counts | Four counts, each labelled once: 188 community roll, 169 addresses that ever held Respect, 144 names resolvable to a wallet, 4-12 settled per session | ch08, referenced from ch01 |
+| "40+ active per session", "60-80% participation" | 4 to 12 settled per recent session, mean 8.1. The 60-80% is other communities' reported figure and is marked as such. | ch01, ch03, ch07, ch09 |
+| "242+ OREC transactions, all successful" | 316 transactions, 514 events, 153 proposals, 123 executed - and **not** all successful: 15 failed to pass, 11 execution attempts reverted | ch03, ch06, ch08 |
+| ZOR presented as the governance token | OREC's `respectContract` is the OG ERC-20. ZOR confers no vote; 47 of 70 ZOR recipients have zero vote weight | ch04, ch06, ch08, ch09 |
+| "Voting / Veto Period (48 hours typical)" | 259,200 seconds each - 72 hours, fixed. Executable at day 6; median execution day 7 | ch05, ch07 |
+| "Vote weight is frozen at proposal creation" | Read live at each vote, no snapshot. 12 votes on record carried zero weight, including three by the largest holder on 2025-12-09 | ch05, ch06 |
+| OREC bottleneck as "zaal.eth + civilmonkey.eth" | There is no signer set - propose/vote/execute are all open. Three separate bottlenecks: weight, operations, and a single-member `DEFAULT_ADMIN_ROLE` on OG | ch05, ch09, ch10 |
+| Facilitator named as "typically Zaal or civilmonkey.eth" | The measurement (Zaal ranked in 14 of 15 recent sessions, nobody else above 10) with a pointer to `respect/FACILITATION-RUNBOOK.md`. The whitepaper names no facilitator, because nobody on the bench has been asked. | ch05 |
+| Gini of ~0.23 for "ZAO" | Three measured figures: 0.41 for one payout, 0.53 for the ZOR ledger, **0.73 for OG, the ledger that votes**. 9 holders reach a majority of vote weight; Compound's 8 delegates is the comparison the chapter always quoted | ch04 |
+| "Doubling increases differentiation: 5x instead of 11x" | Doubling a vector changes no ratio. Both curves are 11:1. What it changes is accumulation rate: 272 Respect per group instead of 136 | ch08 |
+| A roadmap of June-August 2026 targets, all past | Status table for every item; the signer-committee item superseded because its deliverable cannot be built | ch10 |
+| "Fractals 1-73 / 74+" era boundaries | Periods 1-66 and 67-110, from the ledger | ch04, ch06, ch08, ch09, ch10 |
+| `respectContractZOR` and `maxConcurrentProposals: 10` in the config table | Neither exists. The spam cap is `maxLiveVotes`; its value was never read from the contract and is marked as such | ch06 |
+| Empty-looking Abstract heading in the assembled file | `scripts/assemble-whitepaper.mjs` builds the document from the drafts and strips drafting state | whitepaper/ |
 
-Also: the assembled `ZAO-Fractal-Whitepaper.md` renders an empty-looking
-Abstract heading (stray `---` after the title) - cosmetic, content is intact.
+### Still open, and not this pass's to close
+
+- **The streak number itself.** 110 is the community's own period counter and
+  this pass adopted it everywhere. It has not been corroborated against an
+  off-chain record - Discord history, the Airtable era, the bot's Supabase -
+  and the chain cannot corroborate it in principle. If a better source exists,
+  it changes a number in six chapters and nothing else.
+- **The 188.** Sourced to a ~May 2026 Farcaster count. Nobody has re-counted it.
+- **"Only active fractal on Optimism."** True per the fractal communities
+  directory compiled May 2026 and re-checked against it on 2026-08-26. It is a
+  claim about other people's communities, so ch08 now says it should be
+  re-verified before each publication rather than assumed.
+- **Bot version and slash-command count** (`fractalbotmarch2026`, 52 commands,
+  v2.1) still have no source in this repo.
+- **The `civilmonkey.eth` identity.** Named throughout the research library as
+  the second OREC operator; cannot be matched to either executing wallet in the
+  snapshot. The second executor, with 4 executions, is Tadas Vaitiekunas.
 
 Publish gate unchanged: nothing goes to permaweb and no Hat mints until Zaal
-re-reads and gives explicit go (board card b1281a6a).
+re-reads and gives explicit go (board card b1281a6a). The repo-wide push gate
+(`gate_4c836a146dcd`) is separate and also unresolved - see `REVIEW.md`.

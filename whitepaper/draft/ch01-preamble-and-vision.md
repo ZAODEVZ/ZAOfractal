@@ -137,4 +137,4 @@ The ZAO Fractal has been running weekly since August 2024. It will keep running,
 
 ---
 
-**Word count: 1,930**
+**Word count: 2,684**
