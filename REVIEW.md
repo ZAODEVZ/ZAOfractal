@@ -110,6 +110,8 @@ have not accepted.
 | `a37008e` | repo README facts table, measured, with a source column per row. |
 | `af7ecbd` | This file - stops printing a commit count it invalidates by existing. |
 | `ece1e7a` | Reads OG's `DEFAULT_ADMIN_ROLE` membership from the contract into the snapshot, so the paper's highest-consequence claim is pinned rather than asserted. Moves the snapshot to block 156,071,456; no quoted figure changed. |
+| `a4e90cb` | Handoff records the v0.2 lane. |
+| `528855b` | **Licensing, per your decision.** MIT (`LICENSE`) for code, CC BY 4.0 (`LICENSE-DOCS`) for documents, Copyright 2026 BetterCallZaal Strategies LLC. README gains a Licensing section; the pending flag is gone. Worth one look before push: this is the commit that sets the terms under which everything else in the branch can be reused. |
 
 ### On the whitepaper commits specifically
 
