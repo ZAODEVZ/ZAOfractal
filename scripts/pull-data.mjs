@@ -514,6 +514,39 @@ async function attachActions(proposals) {
   }
 }
 
+/** The OG Respect contract's DEFAULT_ADMIN_ROLE membership, read live.
+ *
+ * This is the highest-consequence claim in the whitepaper: a role with one
+ * member that can grant itself minting rights and issue vote weight at will,
+ * on the only ledger that confers a vote. It was asserted in prose before it
+ * was ever read from the chain. Reading it here makes it an expectation in
+ * scripts/verify-claims.mjs, so the day it is renounced, granted or split, the
+ * docs break loudly instead of going quietly stale.
+ *
+ * OG is a thirdweb TokenERC20, whose PermissionsEnumerable exposes the
+ * OpenZeppelin AccessControlEnumerable pair. DEFAULT_ADMIN_ROLE is bytes32(0)
+ * by definition, so no role-name hashing is needed and the script stays
+ * dependency-free.
+ */
+async function readOgAdminRole() {
+  const ROLE = '0'.repeat(64); // DEFAULT_ADMIN_ROLE == bytes32(0)
+  const call = (data) => rpc('eth_call', [{ to: CONTRACTS.OG_RESPECT, data }, 'latest']);
+  try {
+    const count = Number(hexToBig(await call('0xca15c873' + ROLE))); // getRoleMemberCount(bytes32)
+    const members = [];
+    for (let i = 0; i < count; i++) {
+      // getRoleMember(bytes32,uint256)
+      members.push(addrFromWord(await call('0x9010d07c' + ROLE + i.toString(16).padStart(64, '0'))));
+    }
+    return { role: 'DEFAULT_ADMIN_ROLE', memberCount: count, members };
+  } catch (err) {
+    // A null here is itself information: it means the claim is unverified for
+    // this snapshot, and verify-claims will say so rather than pass silently.
+    log(`  [OG] admin role read failed: ${err.message}`);
+    return { role: 'DEFAULT_ADMIN_ROLE', memberCount: null, members: null };
+  }
+}
+
 async function readOrecConfig() {
   const sel = {
     voteLen: '0xcb156a4a', vetoLen: '0x0ee572fd', minWeight: '0x0c2ee55e',
@@ -598,12 +631,14 @@ async function main() {
     const holders = normalizeOgHolders(og.holders);
     const { treasury, rows } = ogTransferEvents(og.transfers);
     const distributions = rows.filter((r) => r.kind === 'distribution');
+    const adminRole = await readOgAdminRole();
     await write('og-respect.json', {
       pulledAt, contract: CONTRACTS.OG_RESPECT, deployBlock: DEPLOY_BLOCK.OG_RESPECT,
       name: og.meta.name, symbol: og.meta.symbol, decimals: Number(og.meta.decimals),
       treasury,
       holderCount: holders.length, transferCount: Number(og.counters.transfers_count),
       totalSupply: Number(BigInt(og.meta.total_supply) / 10n ** 18n),
+      adminRole,
       holders,
       transfers: rows,
     });
@@ -622,6 +657,7 @@ async function main() {
       firstDistribution: distributions[0]?.date ?? null,
       latestDistribution: distributions.at(-1)?.date ?? null,
       totalSupply: Number(BigInt(og.meta.total_supply) / 10n ** 18n),
+      adminRoleMembers: adminRole.memberCount,
     };
   }
 

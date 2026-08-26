@@ -19,7 +19,7 @@ Governance runs on **ORDAO**, an optimistic, Respect-weighted system deployed on
 
 This paper documents the theory, the mechanics, and the specific story of ZAO Fractal - the longest-running fractal governance community in the ecosystem, on-chain since September 2025.
 
-**A note on where the numbers come from.** Every on-chain figure in this paper is measured from a snapshot of OP Mainnet at block 156,055,426, taken 2026-08-26 and committed to this repository under `data/`. Re-pull it with `node scripts/pull-data.mjs` and re-check every quoted figure with `node scripts/verify-claims.mjs`, which holds each one as an expectation and exits non-zero when the chain has moved. Where a number is *not* from the chain - the community roll of 188, the weekly meeting streak - the text says so, because the chain records settlement and not attendance, and conflating the two was the central accuracy problem in v0.1 of this paper.
+**A note on where the numbers come from.** Every on-chain figure in this paper is measured from a snapshot of OP Mainnet at block 156,071,456, taken 2026-08-26 and committed to this repository under `data/`. Re-pull it with `node scripts/pull-data.mjs` and re-check every quoted figure with `node scripts/verify-claims.mjs`, which holds each one as an expectation and exits non-zero when the chain has moved. Where a number is *not* from the chain - the community roll of 188, the weekly meeting streak - the text says so, because the chain records settlement and not attendance, and conflating the two was the central accuracy problem in v0.1 of this paper.
 
 **A note on what is live versus what is designed.** This is both a specification and a manifesto. Where it describes something running today - the Respect Game, the OREC contract, the two Respect ledgers - the facts are verifiable at the addresses given in Chapter 6. Where it proposes a future property - notably a decay mechanism to keep governance weighted toward recent contribution, and a single unified Respect ledger that lets every active member vote - it is marked as a design decision, not a shipped feature. The current Respect ledgers are static and do not decay, and today only the historical ledger confers a vote. Closing that gap is the near-term work.
 
@@ -49,7 +49,7 @@ This whitepaper documents how and why.
 
 This is not a proposal. The ZAO Fractal exists, and most of what follows can be checked at a contract address instead of taken on trust.
 
-Be precise about which part. The chain records **settlement, not attendance**. What it proves, measured at OP Mainnet block 156,055,426 on 2026-08-26: 153 OREC proposals, 123 of them executed; 333 Respect awards across 41 settled periods; 169 addresses that have ever held Respect. What it cannot prove is that a meeting happened in any given week - a session that ran and was never submitted looks identical to one that never ran, and the 66 periods that predate the on-chain award ledger carry no per-week record at all. So the weekly streak is a community record and the governance history is an on-chain one. Both are in this paper, and each is labelled as what it is.
+Be precise about which part. The chain records **settlement, not attendance**. What it proves, measured at OP Mainnet block 156,071,456 on 2026-08-26: 153 OREC proposals, 123 of them executed; 333 Respect awards across 41 settled periods; 169 addresses that have ever held Respect. What it cannot prove is that a meeting happened in any given week - a session that ran and was never submitted looks identical to one that never ran, and the 66 periods that predate the on-chain award ledger carry no per-week record at all. So the weekly streak is a community record and the governance history is an on-chain one. Both are in this paper, and each is labelled as what it is.
 
 This is a document for the wider world - for other music communities, for other fractals, for anyone building Web3 governance and wondering if there is an alternative to token-weighted voting. It is a manual for earned governance. It is also a reflection on first principles: what does democracy actually mean at human scale, and how do we scale it fractally to larger communities without losing the human relationships that make power legitimate?
 
@@ -157,7 +157,7 @@ The ZAO Fractal has been running weekly since August 2024. It will keep running,
 
 - **01-theory-foundations.md** (Daniel Larimer, "More Equal Animals" [Feb 20 2021], rational ignorance problem, fractal scaling, Pareto principle)
 - **07-zao-fractal-distinctness.md** (weekly cadence since August 2024, music-focused, Optimism incumbent status, voting criteria, Zaal lineage)
-- **`data/summary.json`, `data/periods.json`, `data/members.json`** - the committed OP Mainnet snapshot, block 156,055,426, pulled 2026-08-26. Every chain figure in this chapter is re-checkable with `node scripts/verify-claims.mjs`.
+- **`data/summary.json`, `data/periods.json`, `data/members.json`** - the committed OP Mainnet snapshot, block 156,071,456, pulled 2026-08-26. Every chain figure in this chapter is re-checkable with `node scripts/verify-claims.mjs`.
 - **04-comparative-dao-governance.md** (Compound 8 delegates / 50%+ power, Uniswap 11 delegates, voter apathy 3-10%, token-weighted plutocracy)
 
 ---
@@ -709,7 +709,7 @@ The mechanism has produced:
 
 - **A room that keeps meeting.** 41 settled periods on the ZOR ledger, at a median of 7 days apart, mean 8.1 people settled per period and 4 to 12 in recent sessions. Read against a 188-person community roll that is low participation, not the 60-80% figure reported for fractal communities generally; read against a token-weighted DAO's 3-10% of holders it is comparable, and the deliberation behind it is of an entirely different kind. Chapter 9 treats the gap as the open problem it is.
 - **Proposals that execute.** 153 OREC proposals since September 2025, 123 executed on-chain.
-- **Persistent on-chain history.** 316 transactions touching the OREC contract, and 514 contract events, in the snapshot committed at block 156,055,426.
+- **Persistent on-chain history.** 316 transactions touching the OREC contract, and 514 contract events, in the snapshot committed at block 156,071,456.
 
 One thing it has not produced, and the honest version of this chapter has to say so: **contested deliberation at the OREC layer.** 137 of the 153 proposals were decided by a single voter, and no proposal has ever been voted down by anyone other than the person who opened it. The consensus work happens in the breakout room. The on-chain vote that follows is, so far, ratification. See Chapter 9.
 - Cultural anchor (Monday at 6pm EST is when ZAO decides what it is).
@@ -956,7 +956,7 @@ The Gini coefficient measures inequality (0 = perfect equality, 1 = perfect ineq
 | Typical token-weighted DAO | 0.97-0.99 |
 | US household income | ~0.39 |
 
-The first is computed from the payout vector; the other two from the committed snapshot at block 156,055,426.
+The first is computed from the payout vector; the other two from the committed snapshot at block 156,071,456.
 
 Read the table honestly. The **mechanism** is egalitarian: within a group the top 33% (ranks 1-2) take 65% of the Respect - meaningfully unequal, far from winner-take-all - and no member can hoard the rest, because consensus is required. The **outcome** is much less so. Two years of compounding on a ledger distributed by hand produces a vote-weight distribution at 0.73, and it takes only **9 of the 122 OG holders to reach a majority of vote weight, or 16 to reach the two-thirds supermajority OREC requires**.
 
@@ -1619,7 +1619,7 @@ This enforcement is at the contract level, not the wallet level. Even if a membe
 | `owner` | `0xcB05F9...` (OREC itself) | Every setter is `onlyOwner`, so parameters change only by passed proposal |
 | `maxLiveVotes` | not captured in the committed snapshot | Caps concurrent live votes per proposer; read it from the contract |
 
-Every value above except `maxLiveVotes` is read from OREC in `data/summary.json` at block 156,055,426 and re-checked by `scripts/verify-claims.mjs`.
+Every value above except `maxLiveVotes` is read from OREC in `data/summary.json` at block 156,071,456 and re-checked by `scripts/verify-claims.mjs`.
 
 Two corrections against earlier drafts of this table. There is **no `respectContractZOR` parameter** - OREC does not hold a pointer to the ZOR ledger; the relationship runs the other way, with OREC being the only address ZOR will accept a mint from. And the spam cap is `maxLiveVotes`, not `maxConcurrentProposals`; the value of 10 previously printed here was not read from the contract.
 
@@ -1723,7 +1723,7 @@ ORDAO is **not** formally audited by a third-party security firm as of May 2026.
 
 1. **Optimystics Code Review:** sim31 (author) and the Optimystics team conducted line-by-line review of Solidity contracts.
 2. **Fuzzing:** orclient has unit tests covering all major vote paths.
-3. **Live Deployment:** OREC has been live on Optimism since September 2025. As of block 156,055,426 on 2026-08-26 the committed snapshot records 316 transactions against it and 514 contract events, across 153 proposals. They have **not** all succeeded, and the earlier claim that they had was wrong: 123 proposals executed, 15 failed to pass, and **11 execution attempts reverted on-chain**. Every one of the 11 was a `mintRespectGroup` call, meaning a week of Respect Game results failed to settle and had to be redone. The failure mode and its 24 unminted award slots are documented in `respect/EXECUTION-RUNBOOK.md`.
+3. **Live Deployment:** OREC has been live on Optimism since September 2025. As of block 156,071,456 on 2026-08-26 the committed snapshot records 316 transactions against it and 514 contract events, across 153 proposals. They have **not** all succeeded, and the earlier claim that they had was wrong: 123 proposals executed, 15 failed to pass, and **11 execution attempts reverted on-chain**. Every one of the 11 was a `mintRespectGroup` call, meaning a week of Respect Game results failed to settle and had to be redone. The failure mode and its 24 unminted award slots are documented in `respect/EXECUTION-RUNBOOK.md`.
 4. **Academic Review:** Larimer and Eden Fractal governance team reviewed the mechanism against Fractally design principles.
 
 **Recommended Next Steps:**
@@ -2218,7 +2218,7 @@ ZAO Fractal occupies a unique position in the fractal governance ecosystem. This
 
 Earlier drafts said "100+ consecutive weeks without pause or skip" and cited on-chain history as the proof. **The chain does not prove that, and it cannot.** It records settlement, not attendance. A session that ran and was never submitted looks identical to one that never ran.
 
-What the chain does say, at block 156,055,426:
+What the chain does say, at block 156,071,456:
 
 | | |
 |---|---|
@@ -2353,7 +2353,7 @@ These three things - longevity, music-first alignment, social embedding - are wh
 
 - **07-zao-fractal-distinctness.md** (weekly cadence since August 2024, music-focused, embedded in social client, five voting criteria, two ledgers, founder expertise path)
 - **01-preamble-and-vision.md** (Respect token non-transferability, community roll of 188, Monday 6pm EST ritual)
-- **`data/` snapshot, OP Mainnet block 156,055,426, pulled 2026-08-26** (period 110, 41 settled periods, 333 awards, 316 OREC transactions, 153 proposals, 169 addresses; re-check with `node scripts/verify-claims.mjs`)
+- **`data/` snapshot, OP Mainnet block 156,071,456, pulled 2026-08-26** (period 110, 41 settled periods, 333 awards, 316 OREC transactions, 153 proposals, 169 addresses; re-check with `node scripts/verify-claims.mjs`)
 - **02-live-communities-deep.md** (Optimism Fractal pause Jan 2026, Eden Fractal Epoch 2 bi-weekly cadence, Roy Fractal scale proof at 700+)
 - **03-optimism-fractal-full-history.md** (Optimism Fractal Oct 2023 - Jan 2026 pause, tripartite governance innovation, ORDAO production deployment)
 - **05-eden-fractal.md** (Eden cadence comparison, shared tooling stack ORDAO/OREC, shared people with ZAO)
@@ -2366,7 +2366,7 @@ These three things - longevity, music-first alignment, social embedding - are wh
 
 # Chapter 9: Limitations and Open Problems
 
-*Fractal governance works in production. Two years of ZAO Fractal prove it. But the model breaks under specific conditions, fails in visible ways, and faces open problems that no fractal has solved yet. This chapter names those limits openly, not to undermine the system, but to earn its credibility. Everything measured here comes from the committed on-chain snapshot at OP Mainnet block 156,055,426, pulled 2026-08-26.*
+*Fractal governance works in production. Two years of ZAO Fractal prove it. But the model breaks under specific conditions, fails in visible ways, and faces open problems that no fractal has solved yet. This chapter names those limits openly, not to undermine the system, but to earn its credibility. Everything measured here comes from the committed on-chain snapshot at OP Mainnet block 156,071,456, pulled 2026-08-26.*
 
 ---
 
@@ -2520,7 +2520,7 @@ So the single bottleneck is really three, and they need three different fixes:
 
 **2. An operational bottleneck.** Execution is permissionless and unpaid, so nobody does it. 130 of 134 executions are one person clicking a button anyone could click. *Fix: recruit and, if necessary, compensate executors. This needs people, not contracts.*
 
-**3. A key bottleneck - and this one is real, and it is not in any previous draft of this chapter.** The OG Respect contract's `DEFAULT_ADMIN_ROLE` has **exactly one member**. That role can grant itself minting rights and issue vote weight at will. It is not frozen and it is not time-locked. OG is the sole source of vote weight in the entire system, so this is one wallet that can mint governance power for anyone, including itself, with no proposal and no veto window. *Fix: relinquish or split the role. This is the only genuinely permissioned thing in the stack and the only one a multi-sig would actually address.*
+**3. A key bottleneck - and this one is real, and it is not in any previous draft of this chapter.** The OG Respect contract's `DEFAULT_ADMIN_ROLE` has **exactly one member**, read from the contract at snapshot time via `getRoleMemberCount` and pinned in `scripts/verify-claims.mjs` - so if the role is ever renounced, granted or split, this sentence breaks loudly rather than aging into a falsehood. That role can grant itself minting rights and issue vote weight at will. It is not frozen and it is not time-locked. OG is the sole source of vote weight in the entire system, so this is one wallet that can mint governance power for anyone, including itself, with no proposal and no veto window. *Fix: relinquish or split the role. This is the only genuinely permissioned thing in the stack and the only one a multi-sig would actually address.*
 
 Naming all three as "the OREC bottleneck" is what produced two years of "we should set up a multi-sig" for a system with no signer set, while the one component that is genuinely single-keyed went unmentioned. The measured case and the proposed remedies are in `respect/SIGNER-COMMITTEE.md` and `respect/EXECUTION-RUNBOOK.md`.
 
@@ -2549,7 +2549,7 @@ This matters because if peers are bad at judging contribution, the entire system
 - **03-optimism-fractal-full-history.md** (OF paused Jan 2026 after 15 months, consolidation logic, developer concentration burnout)
 - **07-zao-fractal-distinctness.md** (documentation gap Tanja call May 18 2026, ornode down, zao-fractal.vercel.app deleted, two-ledger reconciliation Doc 115)
 - **`respect/SIGNER-COMMITTEE.md`, `respect/EXECUTION-RUNBOOK.md`, `respect/FACILITATION-RUNBOOK.md`** (the three bottlenecks, measured, with proposed remedies)
-- **`data/` snapshot, OP Mainnet block 156,055,426, pulled 2026-08-26** (9 voters, 2 executors, 137 single-voter proposals, 8.1 mean settled per period; re-check with `node scripts/verify-claims.mjs`)
+- **`data/` snapshot, OP Mainnet block 156,071,456, pulled 2026-08-26** (9 voters, 2 executors, 137 single-voter proposals, 8.1 mean settled per period; re-check with `node scripts/verify-claims.mjs`)
 
 ---
 

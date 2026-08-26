@@ -4,7 +4,7 @@
 
 ---
 
-*Fractal governance works in production. Two years of ZAO Fractal prove it. But the model breaks under specific conditions, fails in visible ways, and faces open problems that no fractal has solved yet. This chapter names those limits openly, not to undermine the system, but to earn its credibility. Everything measured here comes from the committed on-chain snapshot at OP Mainnet block 156,055,426, pulled 2026-08-26.*
+*Fractal governance works in production. Two years of ZAO Fractal prove it. But the model breaks under specific conditions, fails in visible ways, and faces open problems that no fractal has solved yet. This chapter names those limits openly, not to undermine the system, but to earn its credibility. Everything measured here comes from the committed on-chain snapshot at OP Mainnet block 156,071,456, pulled 2026-08-26.*
 
 ---
 
@@ -158,7 +158,7 @@ So the single bottleneck is really three, and they need three different fixes:
 
 **2. An operational bottleneck.** Execution is permissionless and unpaid, so nobody does it. 130 of 134 executions are one person clicking a button anyone could click. *Fix: recruit and, if necessary, compensate executors. This needs people, not contracts.*
 
-**3. A key bottleneck - and this one is real, and it is not in any previous draft of this chapter.** The OG Respect contract's `DEFAULT_ADMIN_ROLE` has **exactly one member**. That role can grant itself minting rights and issue vote weight at will. It is not frozen and it is not time-locked. OG is the sole source of vote weight in the entire system, so this is one wallet that can mint governance power for anyone, including itself, with no proposal and no veto window. *Fix: relinquish or split the role. This is the only genuinely permissioned thing in the stack and the only one a multi-sig would actually address.*
+**3. A key bottleneck - and this one is real, and it is not in any previous draft of this chapter.** The OG Respect contract's `DEFAULT_ADMIN_ROLE` has **exactly one member**, read from the contract at snapshot time via `getRoleMemberCount` and pinned in `scripts/verify-claims.mjs` - so if the role is ever renounced, granted or split, this sentence breaks loudly rather than aging into a falsehood. That role can grant itself minting rights and issue vote weight at will. It is not frozen and it is not time-locked. OG is the sole source of vote weight in the entire system, so this is one wallet that can mint governance power for anyone, including itself, with no proposal and no veto window. *Fix: relinquish or split the role. This is the only genuinely permissioned thing in the stack and the only one a multi-sig would actually address.*
 
 Naming all three as "the OREC bottleneck" is what produced two years of "we should set up a multi-sig" for a system with no signer set, while the one component that is genuinely single-keyed went unmentioned. The measured case and the proposed remedies are in `respect/SIGNER-COMMITTEE.md` and `respect/EXECUTION-RUNBOOK.md`.
 
@@ -187,7 +187,7 @@ This matters because if peers are bad at judging contribution, the entire system
 - **03-optimism-fractal-full-history.md** (OF paused Jan 2026 after 15 months, consolidation logic, developer concentration burnout)
 - **07-zao-fractal-distinctness.md** (documentation gap Tanja call May 18 2026, ornode down, zao-fractal.vercel.app deleted, two-ledger reconciliation Doc 115)
 - **`respect/SIGNER-COMMITTEE.md`, `respect/EXECUTION-RUNBOOK.md`, `respect/FACILITATION-RUNBOOK.md`** (the three bottlenecks, measured, with proposed remedies)
-- **`data/` snapshot, OP Mainnet block 156,055,426, pulled 2026-08-26** (9 voters, 2 executors, 137 single-voter proposals, 8.1 mean settled per period; re-check with `node scripts/verify-claims.mjs`)
+- **`data/` snapshot, OP Mainnet block 156,071,456, pulled 2026-08-26** (9 voters, 2 executors, 137 single-voter proposals, 8.1 mean settled per period; re-check with `node scripts/verify-claims.mjs`)
 
 ---
 

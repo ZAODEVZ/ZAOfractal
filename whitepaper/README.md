@@ -4,7 +4,7 @@
 on-chain snapshot complete (2026-08-26)
 
 **Version:** v0.2 - every chain figure re-measured at OP Mainnet block
-156,055,426 and held as an expectation in `scripts/verify-claims.mjs`; the
+156,071,456 and held as an expectation in `scripts/verify-claims.mjs`; the
 weekly-streak claim separated from the on-chain claim; the ledger that actually
 confers a vote named in every chapter that touches it
 
@@ -131,7 +131,7 @@ Every claim in the whitepaper is verified against canonical sources:
 - **Eden on EOS** - launched Oct 9 2021, 400+ participants, 9 election cycles, 1.5M USD distributed.
 - **Optimism Fractal** - paused Jan 2026 (verified via Optimystics, Optimism Collective updates).
 - **ZAO Fractal** - Aug 2024 start, Monday 6pm EST, period counter at 110 as of 2026-08-25, community roll of 188, mean 8.1 people settled per period.
-- **Contract addresses and every on-chain figure** - measured from the committed snapshot at OP Mainnet block 156,055,426 and held as expectations in `scripts/verify-claims.mjs`, which exits non-zero the moment one drifts.
+- **Contract addresses and every on-chain figure** - measured from the committed snapshot at OP Mainnet block 156,071,456 and held as expectations in `scripts/verify-claims.mjs`, which exits non-zero the moment one drifts.
 - **Compound/Uniswap delegate concentration** - 8 and 11 delegates for 50%+ power (verified via governance portals, research papers).
 - **Navajas et al. 2018 Nature study** - empirically verified.
 - **Citizens' assemblies** - Ireland (66.4% support for abortion repeal 2018), France (149 recommendations 2020), British Columbia (57.69% support for STV 2005).

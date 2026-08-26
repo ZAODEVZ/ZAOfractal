@@ -476,6 +476,19 @@ const CLAIMS = [
   ['WP ch11', 'founder ranked in the last 15 settled sessions', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
   ['WP ch11', 'highest non-founder attendance', Math.max(...[...attendance.entries()].filter(([a]) => a !== '0x7234c36a71ec237c2ae7698e8916e0735001e9af').map(([, v]) => v.size)), 10],
 
+  // --- the single-admin-key claim ------------------------------------------
+  // ch04, ch05, ch06, ch09 and roadmap item 10a all rest on this: one member
+  // on the OG contract's DEFAULT_ADMIN_ROLE, able to grant itself minting
+  // rights and issue vote weight on the only ledger that votes. It is the
+  // highest-consequence claim in the paper and it was prose before it was ever
+  // read from the chain. Now it is read by pull-data.mjs and pinned here.
+  //
+  // memberCount === null means the read failed and the claim is UNVERIFIED for
+  // this snapshot - which drifts loudly, exactly as a wrong count would.
+  ['ADMIN KEY', 'OG DEFAULT_ADMIN_ROLE member count', og.adminRole?.memberCount ?? 'unverified', 1],
+  ['ADMIN KEY', 'OG admin is the treasury wallet', (og.adminRole?.members ?? []).map(lower).join(','), lower(summary.og.treasury)],
+  ['ADMIN KEY', 'ZOR is owned by OREC, not by a wallet', lower(summary.orec.config.owner), lower(summary.contracts.OREC)],
+
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see
   // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the

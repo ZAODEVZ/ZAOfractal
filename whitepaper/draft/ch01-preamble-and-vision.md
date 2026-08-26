@@ -24,7 +24,7 @@ This whitepaper documents how and why.
 
 This is not a proposal. The ZAO Fractal exists, and most of what follows can be checked at a contract address instead of taken on trust.
 
-Be precise about which part. The chain records **settlement, not attendance**. What it proves, measured at OP Mainnet block 156,055,426 on 2026-08-26: 153 OREC proposals, 123 of them executed; 333 Respect awards across 41 settled periods; 169 addresses that have ever held Respect. What it cannot prove is that a meeting happened in any given week - a session that ran and was never submitted looks identical to one that never ran, and the 66 periods that predate the on-chain award ledger carry no per-week record at all. So the weekly streak is a community record and the governance history is an on-chain one. Both are in this paper, and each is labelled as what it is.
+Be precise about which part. The chain records **settlement, not attendance**. What it proves, measured at OP Mainnet block 156,071,456 on 2026-08-26: 153 OREC proposals, 123 of them executed; 333 Respect awards across 41 settled periods; 169 addresses that have ever held Respect. What it cannot prove is that a meeting happened in any given week - a session that ran and was never submitted looks identical to one that never ran, and the 66 periods that predate the on-chain award ledger carry no per-week record at all. So the weekly streak is a community record and the governance history is an on-chain one. Both are in this paper, and each is labelled as what it is.
 
 This is a document for the wider world - for other music communities, for other fractals, for anyone building Web3 governance and wondering if there is an alternative to token-weighted voting. It is a manual for earned governance. It is also a reflection on first principles: what does democracy actually mean at human scale, and how do we scale it fractally to larger communities without losing the human relationships that make power legitimate?
 
@@ -132,7 +132,7 @@ The ZAO Fractal has been running weekly since August 2024. It will keep running,
 
 - **01-theory-foundations.md** (Daniel Larimer, "More Equal Animals" [Feb 20 2021], rational ignorance problem, fractal scaling, Pareto principle)
 - **07-zao-fractal-distinctness.md** (weekly cadence since August 2024, music-focused, Optimism incumbent status, voting criteria, Zaal lineage)
-- **`data/summary.json`, `data/periods.json`, `data/members.json`** - the committed OP Mainnet snapshot, block 156,055,426, pulled 2026-08-26. Every chain figure in this chapter is re-checkable with `node scripts/verify-claims.mjs`.
+- **`data/summary.json`, `data/periods.json`, `data/members.json`** - the committed OP Mainnet snapshot, block 156,071,456, pulled 2026-08-26. Every chain figure in this chapter is re-checkable with `node scripts/verify-claims.mjs`.
 - **04-comparative-dao-governance.md** (Compound 8 delegates / 50%+ power, Uniswap 11 delegates, voter apathy 3-10%, token-weighted plutocracy)
 
 ---

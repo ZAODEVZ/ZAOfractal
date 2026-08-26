@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-08-26T01:09:18.373Z",
+  "pulledAt": "2026-08-26T10:54:50.882Z",
   "contract": "0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957",
   "deployBlock": 123349892,
   "name": "ZAO RESPECT TOKEN",
@@ -9,6 +9,13 @@
   "holderCount": 122,
   "transferCount": 518,
   "totalSupply": 38484,
+  "adminRole": {
+    "role": "DEFAULT_ADMIN_ROLE",
+    "memberCount": 1,
+    "members": [
+      "0x7234c36a71ec237c2ae7698e8916e0735001e9af"
+    ]
+  },
   "holders": [
     {
       "address": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
@@ -5160,7 +5167,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x29185eB8cfD22Aa719529217bFbadE61677e0Ad2",
       "respect": 48,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5190,7 +5197,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x547f8B793362df477a23aF6ee05F8e4e291a2Ee4",
       "respect": 212,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5220,7 +5227,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x6E11a90FD63617FA22978451076dFE1d0EaFB907",
       "respect": 186,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5280,7 +5287,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x9e4281619db487C2f577e67A7174Ff8F5c5e4706",
       "respect": 500,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5290,7 +5297,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xa36411680ABBFd712E5F6C61DF054b5cf5ae6810",
       "respect": 36,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5300,7 +5307,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xa4A8E3d3d9907767150Be04C55B5095bF639529D",
       "respect": 178,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5320,7 +5327,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xb7f4b9CAbA6bb0AEaA2B5d8dF23E2B59c192bDbB",
       "respect": 66,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5340,7 +5347,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xC11C6f47fe090a706bA82964B8A98F1682b244Ff",
       "respect": 40,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5350,7 +5357,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xeAe357BDe3dC9EC3bBF81f4239760B37aa318405",
       "respect": 10,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-06-25T17:50:59.000000Z",
@@ -5490,7 +5497,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x29185eB8cfD22Aa719529217bFbadE61677e0Ad2",
       "respect": 214,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5500,7 +5507,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x29F5DeE65E1Fb856B816EaB4f0B702c10e5Eaa34",
       "respect": 810,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5510,7 +5517,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x2d9cBC4ECFBd1B8F66Aa798FD51585AE058dAA8B",
       "respect": 16,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5520,7 +5527,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x3D5E3102b2dF3289799F5b09fe4827A59c3e59EF",
       "respect": 131,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5530,7 +5537,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x64A15b1D2DE581097CB48e5D82619203E24BB3e1",
       "respect": 208,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5540,7 +5547,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x65284960d4eAdaf45e923430A59B7D3Bf34dB641",
       "respect": 402,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5550,7 +5557,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x6710287cee1A9d1a00251fdC9A12795EC7a86189",
       "respect": 136,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5560,7 +5567,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x744CDf12D5D289db118Ed9293c10cfa952169071",
       "respect": 298,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5570,7 +5577,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x7990D756aCF4E12afC41F995130a33925fB868EE",
       "respect": 110,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5580,7 +5587,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x82Cb2305388C853eCfe9eA83a1604Acf58466659",
       "respect": 88,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5590,7 +5597,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0x8D43A3fC2fed663BF6B82Ea4792C0e5239D5eE66",
       "respect": 194,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5600,7 +5607,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xA70fE49c71529808EB881455073bEdED47f7016C",
       "respect": 162,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5610,7 +5617,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xb7f4b9CAbA6bb0AEaA2B5d8dF23E2B59c192bDbB",
       "respect": 184,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5620,7 +5627,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xc96Ab83C1B1605c9cf5ecc661A415E41423185D8",
       "respect": 110,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5630,7 +5637,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xEd78B6236C14c4088715cd90513C6C604275Db96",
       "respect": 68,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5640,7 +5647,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xF6519fEf3EAcfdB7843BEEa94a887255794438F0",
       "respect": 52,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5650,7 +5657,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xfAb9a3D37999E12252b47468D2FFD4BE15936012",
       "respect": 334,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-26T18:16:37.000000Z",
@@ -5660,7 +5667,7 @@
       "from": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "to": "0xFCf77aC2CeF5eB373d8eb9163f518126ccE44f47",
       "respect": 110,
-      "method": "multicall"
+      "method": "0xac9650d8"
     },
     {
       "date": "2025-08-27T10:19:41.000000Z",

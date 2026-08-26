@@ -166,7 +166,7 @@ This enforcement is at the contract level, not the wallet level. Even if a membe
 | `owner` | `0xcB05F9...` (OREC itself) | Every setter is `onlyOwner`, so parameters change only by passed proposal |
 | `maxLiveVotes` | not captured in the committed snapshot | Caps concurrent live votes per proposer; read it from the contract |
 
-Every value above except `maxLiveVotes` is read from OREC in `data/summary.json` at block 156,055,426 and re-checked by `scripts/verify-claims.mjs`.
+Every value above except `maxLiveVotes` is read from OREC in `data/summary.json` at block 156,071,456 and re-checked by `scripts/verify-claims.mjs`.
 
 Two corrections against earlier drafts of this table. There is **no `respectContractZOR` parameter** - OREC does not hold a pointer to the ZOR ledger; the relationship runs the other way, with OREC being the only address ZOR will accept a mint from. And the spam cap is `maxLiveVotes`, not `maxConcurrentProposals`; the value of 10 previously printed here was not read from the contract.
 
@@ -270,7 +270,7 @@ ORDAO is **not** formally audited by a third-party security firm as of May 2026.
 
 1. **Optimystics Code Review:** sim31 (author) and the Optimystics team conducted line-by-line review of Solidity contracts.
 2. **Fuzzing:** orclient has unit tests covering all major vote paths.
-3. **Live Deployment:** OREC has been live on Optimism since September 2025. As of block 156,055,426 on 2026-08-26 the committed snapshot records 316 transactions against it and 514 contract events, across 153 proposals. They have **not** all succeeded, and the earlier claim that they had was wrong: 123 proposals executed, 15 failed to pass, and **11 execution attempts reverted on-chain**. Every one of the 11 was a `mintRespectGroup` call, meaning a week of Respect Game results failed to settle and had to be redone. The failure mode and its 24 unminted award slots are documented in `respect/EXECUTION-RUNBOOK.md`.
+3. **Live Deployment:** OREC has been live on Optimism since September 2025. As of block 156,071,456 on 2026-08-26 the committed snapshot records 316 transactions against it and 514 contract events, across 153 proposals. They have **not** all succeeded, and the earlier claim that they had was wrong: 123 proposals executed, 15 failed to pass, and **11 execution attempts reverted on-chain**. Every one of the 11 was a `mintRespectGroup` call, meaning a week of Respect Game results failed to settle and had to be redone. The failure mode and its 24 unminted award slots are documented in `respect/EXECUTION-RUNBOOK.md`.
 4. **Academic Review:** Larimer and Eden Fractal governance team reviewed the mechanism against Fractally design principles.
 
 **Recommended Next Steps:**

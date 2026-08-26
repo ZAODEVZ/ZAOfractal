@@ -233,7 +233,7 @@ The Gini coefficient measures inequality (0 = perfect equality, 1 = perfect ineq
 | Typical token-weighted DAO | 0.97-0.99 |
 | US household income | ~0.39 |
 
-The first is computed from the payout vector; the other two from the committed snapshot at block 156,055,426.
+The first is computed from the payout vector; the other two from the committed snapshot at block 156,071,456.
 
 Read the table honestly. The **mechanism** is egalitarian: within a group the top 33% (ranks 1-2) take 65% of the Respect - meaningfully unequal, far from winner-take-all - and no member can hoard the rest, because consensus is required. The **outcome** is much less so. Two years of compounding on a ledger distributed by hand produces a vote-weight distribution at 0.73, and it takes only **9 of the 122 OG holders to reach a majority of vote weight, or 16 to reach the two-thirds supermajority OREC requires**.
 

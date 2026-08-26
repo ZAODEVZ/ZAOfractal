@@ -33,7 +33,7 @@ Start at [reference/README.md](reference/README.md) for the survey. Move to [res
 
 ## Live ZAO Fractal facts
 
-Measured from the committed snapshot at OP Mainnet block 156,055,426, pulled
+Measured from the committed snapshot at OP Mainnet block 156,071,456, pulled
 2026-08-26. Re-pull with `node scripts/pull-data.mjs`; re-check every figure
 quoted anywhere in this repo with `node scripts/verify-claims.mjs`.
 

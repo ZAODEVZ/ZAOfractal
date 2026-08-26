@@ -23,7 +23,7 @@ is logged to the whitepaper v0.2 accuracy queue rather than silently corrected
 here.
 
 Every figure below is measured from the committed snapshot pulled at OP Mainnet
-block 156,055,426. Reproduce with `node scripts/pull-data.mjs`.
+block 156,071,456. Reproduce with `node scripts/pull-data.mjs`.
 
 ---
 

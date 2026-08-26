@@ -1,6 +1,6 @@
 {
-  "pulledAt": "2026-08-26T02:00:30.821Z",
-  "latestBlock": 156055426,
+  "pulledAt": "2026-08-26T10:54:50.882Z",
+  "latestBlock": 156071456,
   "chainId": 10,
   "sources": {
     "blockscout": "https://optimism.blockscout.com/api/v2",
@@ -37,7 +37,8 @@
     "reconciliationResidual": 0,
     "firstDistribution": "2024-07-30T00:24:27.000000Z",
     "latestDistribution": "2025-12-18T15:46:11.000000Z",
-    "totalSupply": 38484
+    "totalSupply": 38484,
+    "adminRoleMembers": 1
   },
   "orec": {
     "config": {

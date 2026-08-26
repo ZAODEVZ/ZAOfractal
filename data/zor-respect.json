@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-08-26T01:09:18.373Z",
+  "pulledAt": "2026-08-26T10:54:50.882Z",
   "contract": "0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c",
   "deployBlock": 141001446,
   "name": "ZAO Fractal Respect",
@@ -11,7 +11,7 @@
     {
       "address": "0x8D43A3fC2fed663BF6B82Ea4792C0e5239D5eE66",
       "respect": 1570,
-      "awards": 23
+      "awards": 19
     },
     {
       "address": "0x29F5DeE65E1Fb856B816EaB4f0B702c10e5Eaa34",
@@ -31,7 +31,7 @@
     {
       "address": "0x2d9cBC4ECFBd1B8F66Aa798FD51585AE058dAA8B",
       "respect": 746,
-      "awards": 6
+      "awards": 12
     },
     {
       "address": "0xF73485A61856Ab07Ad57152151db3ab99dF9a8Ea",
@@ -41,7 +41,7 @@
     {
       "address": "0x29185eB8cfD22Aa719529217bFbadE61677e0Ad2",
       "respect": 732,
-      "awards": 9
+      "awards": 7
     },
     {
       "address": "0x07686BedB0102E47D33Cec73307D2CC391aFf396",
@@ -51,12 +51,12 @@
     {
       "address": "0x849e1C0b2460979D2f7c77B87b90C65C70406421",
       "respect": 670,
-      "awards": 1
+      "awards": 8
     },
     {
       "address": "0xc96Ab83C1B1605c9cf5ecc661A415E41423185D8",
       "respect": 634,
-      "awards": 2
+      "awards": 7
     },
     {
       "address": "0x64A15b1D2DE581097CB48e5D82619203E24BB3e1",
@@ -101,7 +101,7 @@
     {
       "address": "0x65284960d4eAdaf45e923430A59B7D3Bf34dB641",
       "respect": 312,
-      "awards": 4
+      "awards": 5
     },
     {
       "address": "0x4440397b9E67A020bc96269F263817BE63184F3A",
@@ -111,7 +111,7 @@
     {
       "address": "0x547f8B793362df477a23aF6ee05F8e4e291a2Ee4",
       "respect": 288,
-      "awards": 3
+      "awards": 4
     },
     {
       "address": "0x698e5A259c7564Fc209a31994d664Cb919725383",
@@ -286,7 +286,7 @@
     {
       "address": "0xA88c00082a73BE6E71b80cDf836766f4e15a6454",
       "respect": 52,
-      "awards": 0
+      "awards": 1
     },
     {
       "address": "0x5F18D3e8Fd97e4E95033b53c0f4c6861825A0564",

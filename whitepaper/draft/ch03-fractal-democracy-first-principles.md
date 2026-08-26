@@ -337,7 +337,7 @@ The mechanism has produced:
 
 - **A room that keeps meeting.** 41 settled periods on the ZOR ledger, at a median of 7 days apart, mean 8.1 people settled per period and 4 to 12 in recent sessions. Read against a 188-person community roll that is low participation, not the 60-80% figure reported for fractal communities generally; read against a token-weighted DAO's 3-10% of holders it is comparable, and the deliberation behind it is of an entirely different kind. Chapter 9 treats the gap as the open problem it is.
 - **Proposals that execute.** 153 OREC proposals since September 2025, 123 executed on-chain.
-- **Persistent on-chain history.** 316 transactions touching the OREC contract, and 514 contract events, in the snapshot committed at block 156,055,426.
+- **Persistent on-chain history.** 316 transactions touching the OREC contract, and 514 contract events, in the snapshot committed at block 156,071,456.
 
 One thing it has not produced, and the honest version of this chapter has to say so: **contested deliberation at the OREC layer.** 137 of the 153 proposals were decided by a single voter, and no proposal has ever been voted down by anyone other than the person who opened it. The consensus work happens in the breakout room. The on-chain vote that follows is, so far, ratification. See Chapter 9.
 - Cultural anchor (Monday at 6pm EST is when ZAO decides what it is).

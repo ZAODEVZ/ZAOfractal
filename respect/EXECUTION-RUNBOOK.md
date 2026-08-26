@@ -3,7 +3,7 @@
 **Status:** proposal, 2026-08-26. Nothing here executes and nothing here is
 agreed. Every figure is measured from `data/orec-proposals.json`,
 `data/award-events.json` and `data/members.json` in the committed snapshot,
-pulled at OP Mainnet block 156,055,426. Reproduce with `node scripts/pull-data.mjs`.
+pulled at OP Mainnet block 156,071,456. Reproduce with `node scripts/pull-data.mjs`.
 
 **Nobody named on this page has been contacted, approached, asked or has
 agreed to anything.** The bench in section 2 is a naming proposal derived from

@@ -2,7 +2,7 @@
 
 **Status:** decision surface, 2026-08-26. Nothing here executes. Every number is
 measured from the committed snapshot in `data/`, pulled at OP Mainnet block
-156,055,426 on 2026-08-26. Reproduce with `node scripts/pull-data.mjs`.
+156,071,456 on 2026-08-26. Reproduce with `node scripts/pull-data.mjs`.
 
 This document exists because a single unified ledger is the prerequisite for
 **L5 - Autonomous operations** on the decentralization scale, whose gate is that

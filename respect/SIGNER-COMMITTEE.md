@@ -2,7 +2,7 @@
 
 **Status:** proposal, 2026-08-26. Nothing here executes. Every figure is
 measured from `data/orec-proposals.json` in the committed snapshot, pulled at OP
-Mainnet block 156,055,426. Reproduce with `node scripts/pull-data.mjs`.
+Mainnet block 156,071,456. Reproduce with `node scripts/pull-data.mjs`.
 
 This is the **L5 - Autonomous operations** item on the decentralization scale.
 The gate for L5 is that Zaal takes 30 days fully off and cadence, settlement and
@@ -87,7 +87,12 @@ So the bottleneck is three separate things wearing one name:
    anybody could click. The four exceptions were all Tadas, all in the first six
    weeks, and it has not happened since 2025-10-24.
 3. **A key bottleneck, and this one is real.** The OG Respect contract's
-   `DEFAULT_ADMIN_ROLE` has **exactly one member**, Zaal's wallet. That role can
+   `DEFAULT_ADMIN_ROLE` has **exactly one member**, Zaal's wallet. This is now
+   read from the contract by `scripts/pull-data.mjs` (`getRoleMemberCount` and
+   `getRoleMember` on DEFAULT_ADMIN_ROLE, which is `bytes32(0)`) into
+   `data/og-respect.json`, and held as an expectation. When this doc first made
+   the claim it was stated, not measured; it has now been checked and is
+   correct. That role can
    grant itself minting rights and issue vote weight at will. It is not frozen
    on-chain; it simply has not been used since 2025-12-09. ZOR by contrast is
    owned by OREC, and OREC is owned by itself - those two are already

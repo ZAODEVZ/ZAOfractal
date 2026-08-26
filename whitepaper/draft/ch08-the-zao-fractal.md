@@ -24,7 +24,7 @@ ZAO Fractal occupies a unique position in the fractal governance ecosystem. This
 
 Earlier drafts said "100+ consecutive weeks without pause or skip" and cited on-chain history as the proof. **The chain does not prove that, and it cannot.** It records settlement, not attendance. A session that ran and was never submitted looks identical to one that never ran.
 
-What the chain does say, at block 156,055,426:
+What the chain does say, at block 156,071,456:
 
 | | |
 |---|---|
@@ -159,7 +159,7 @@ These three things - longevity, music-first alignment, social embedding - are wh
 
 - **07-zao-fractal-distinctness.md** (weekly cadence since August 2024, music-focused, embedded in social client, five voting criteria, two ledgers, founder expertise path)
 - **01-preamble-and-vision.md** (Respect token non-transferability, community roll of 188, Monday 6pm EST ritual)
-- **`data/` snapshot, OP Mainnet block 156,055,426, pulled 2026-08-26** (period 110, 41 settled periods, 333 awards, 316 OREC transactions, 153 proposals, 169 addresses; re-check with `node scripts/verify-claims.mjs`)
+- **`data/` snapshot, OP Mainnet block 156,071,456, pulled 2026-08-26** (period 110, 41 settled periods, 333 awards, 316 OREC transactions, 153 proposals, 169 addresses; re-check with `node scripts/verify-claims.mjs`)
 - **02-live-communities-deep.md** (Optimism Fractal pause Jan 2026, Eden Fractal Epoch 2 bi-weekly cadence, Roy Fractal scale proof at 700+)
 - **03-optimism-fractal-full-history.md** (Optimism Fractal Oct 2023 - Jan 2026 pause, tripartite governance innovation, ORDAO production deployment)
 - **05-eden-fractal.md** (Eden cadence comparison, shared tooling stack ORDAO/OREC, shared people with ZAO)
