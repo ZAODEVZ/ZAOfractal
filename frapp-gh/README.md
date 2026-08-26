@@ -4,8 +4,9 @@ GitHub-native async fractal governance. Runs the ZAO Respect Game on Issues,
 Discussions, and Projects - no call to attend, no chain to touch.
 
 Phase 1 (this repo): async ranking, off-chain. Contributions are Issues, ballots
-are Discussion comments, aggregation is Borda count, Respect is the ZAO 2x
-Fibonacci curve, and everything is committed back to the repo as JSON.
+are Discussion comments, aggregation is Borda count, Respect is whatever curve
+the live Monday game currently pays (2x Fibonacci today, and it has not always
+been), and everything is committed back to the repo as JSON.
 
 **Status: never run live.** Phase 1 is code-complete and tested end to end
 locally - the suite is green and `npm run replay` plays a whole period against
@@ -29,7 +30,7 @@ would be stale the moment it was committed. Paths in this README are relative to
 
 | When | What happens | Who |
 |---|---|---|
-| Mon 18:00 ET | Session Discussion opens, ranking board created, week label ensured | `fractal-open` workflow |
+| Mon 18:00 ET | Session Discussion opens, period label ensured, ranking board created if Projects scope allows | `fractal-open` workflow |
 | Mon-Sat | Contributions submitted as Issues labeled `week-N-contribution` | contributors |
 | Sat 18:00 ET | Ballots read from Discussion comments, eligibility checked, snapshot committed | `fractal-snapshot` workflow |
 | Sun 18:00 ET | Borda aggregation, Respect assigned, results posted, leaderboard rebuilt | `fractal-tally` workflow |
@@ -78,7 +79,10 @@ contributions you did not place share the leftover positions, so a short ballot
 neither boosts nor buries the rest.
 
 **Why comments and not the Projects board:** Projects v2 exposes one shared board
-order per project, not a per-voter order (PRD risk 5). Discussion comments give
+order per project, not a per-voter order (PRD risk 5). The board is a view, not
+the ranking surface - `open` creates one when it can and logs a warning and
+carries on when it cannot, because Projects needs org-level scope that a repo
+token may not carry. A period runs fine without it. Discussion comments give
 each voter their own ballot and leave a public audit trail. If a
 `github.projectNumber` is configured and nobody comments a ballot, the board
 order is counted as a single facilitator ballot rather than losing the week.
