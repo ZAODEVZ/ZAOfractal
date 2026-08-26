@@ -11,6 +11,7 @@ Status as of 2026-07-21: the new token is BUILT and tested locally; nothing is d
 - **Community / members** - start with [What Respect is](#what-respect-is) and [How to earn it](#how-to-earn-it). The public page is thezao.com/zao-token.
 - **Builders / team** - [On-chain reality](#on-chain-reality-verified) and [The new Respect token](#the-new-respect-token), then the detailed [LAUNCH-RUNBOOK.md](./LAUNCH-RUNBOOK.md).
 - **Deciding / launch** - jump to [Build status](#build-status) and [LAUNCH-RUNBOOK.md](./LAUNCH-RUNBOOK.md). Nothing launches without a deliberate go.
+- **Deciding the migration** - [LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md) is the measured decision surface: who can vote today, who cannot, and what each genesis allocation rule costs. [SIGNER-COMMITTEE.md](./SIGNER-COMMITTEE.md) covers the governance bottleneck and what actually fixes it.
 - **Investors / partners** - the whole page reads top to bottom; the mechanics are verifiable on-chain (addresses below).
 
 ---
@@ -73,9 +74,11 @@ Planned addition (not built): `award(to, amount, reason)` so each distribution r
 
 Full launch sequence and what each step needs: **[LAUNCH-RUNBOOK.md](./LAUNCH-RUNBOOK.md)**.
 
+Measured against chain data as of 2026-08-26: **[LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md)** (the OG-to-ZOR migration, five genesis allocation options scored, identity gaps) and **[SIGNER-COMMITTEE.md](./SIGNER-COMMITTEE.md)** (the OREC bottleneck, what breaks if a signer is lost, migration path).
+
 ## Open decisions (block a real launch, not the docs)
 
-1. Confirm the genesis allocation rule (default: lifetime Respect = sum of your fractal scores; does the export already include the ZOR era?).
+1. Confirm the genesis allocation rule (default: lifetime Respect = sum of your fractal scores; does the export already include the ZOR era?). **Now scored against chain data - see [LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md) section 4.**
 2. The `FINAL_ADMIN` multisig that will own the token.
 3. Whether to add a real per-voter weight cap (today there is none).
 4. Audit firm + budget before mainnet.
