@@ -98,6 +98,16 @@ for (const p of proposals.proposals) {
   const largestYes = Math.max(0, ...p.finalVotes.filter((v) => v.vote === 'Yes').map((v) => v.weight));
   if (p.yesWeight >= MIN_WEIGHT && largestYes < MIN_WEIGHT) neededASecondVoter++;
 }
+/** Every distinct transaction the snapshot records against OREC - proposal
+ * creations, votes and execution attempts. The repo README quoted "242+ as of
+ * May 2026" from a block explorer; this is the number the committed snapshot
+ * can actually reproduce. */
+const orecTransactions = new Set();
+for (const p of proposals.proposals) {
+  for (const key of ['createdTx', 'executedTx']) if (p[key]) orecTransactions.add(p[key]);
+  for (const v of p.votes) if (v.tx) orecTransactions.add(v.tx);
+}
+
 const lags = proposals.proposals
   .filter((p) => p.executedAt)
   .map((p) => (Date.parse(p.executedAt) - Date.parse(p.createdAt)) / 86400000)
@@ -317,6 +327,16 @@ const CLAIMS = [
   ['WP ch01', 'mean people settled per period', (ascending.reduce((s, p) => s + p.participants, 0) / ascending.length).toFixed(1), '8.1'],
   ['WP ch01', 'fewest settled in a recent session', windowSessionSizes[0], 4],
   ['WP ch01', 'most settled in a recent session', windowSessionSizes.at(-1), 12],
+
+  ['WP ch03', 'groups ever settled', allGroupSizes.length, 68],
+  ['WP ch03', 'median group size', allGroupSizes[Math.floor(allGroupSizes.length / 2)], 5],
+  ['WP ch03', 'largest group ever', allGroupSizes.at(-1), 8],
+  ['WP ch03', 'recent sessions running one group', windowGroupCounts.filter((n) => n === 1).length, 11],
+  ['WP ch03', 'recent sessions running two groups', windowGroupCounts.filter((n) => n === 2).length, 4],
+  ['WP ch03', 'median gap between settled periods (days)', gaps.slice().sort((a, b) => a - b)[Math.floor(gaps.length / 2)], 7],
+  ['WP ch03', 'transactions touching OREC', orecTransactions.size, 316],
+  ['WP ch03', 'OREC contract events', proposals.logCount, 514],
+  ['WP ch03', 'proposals decided by a single voter', proposals.proposals.filter((p) => p.voterCount === 1).length, 137],
 
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see

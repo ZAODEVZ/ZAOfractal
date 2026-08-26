@@ -1,6 +1,6 @@
 # Chapter 3: Fractal Democracy - First Principles
 
-Draft v0.1 - 2026-05-24 - awaiting Zaal review
+Draft v0.2 - 2026-08-26 - accuracy pass against the committed chain snapshot
 
 ---
 
@@ -291,7 +291,7 @@ Fractal governance achieves Sybil resistance without requiring capital or on-cha
 
 3. **Exit is possible:** If I suspect you are a Sybil, I can exit the circle. I do not have to participate with you.
 
-4. **Reputation compounds:** Over 90+ weeks, a person's true contributions emerge. A Sybil that showed up once cannot accumulate meaningful Respect.
+4. **Reputation compounds:** Over two years of weekly sessions, a person's true contributions emerge. A Sybil that showed up once cannot accumulate meaningful Respect.
 
 This is why KYC and identity are acceptable here, whereas they are often rejected in crypto. The purpose is not surveillance or financial control; it is Sybil resistance. And the benefit - earned governance without capital requirements - is worth it.
 
@@ -317,7 +317,7 @@ The result is a governance system that:
 - Avoids power concentration (fractal structure + exit power prevent Pareto cascades).
 - Avoids tyranny of the majority (unanimous consensus or exit available).
 
-No single element is new. But the combination - practiced weekly at scale (188 ZAO members, 90+ weeks, 40+ per session) - is unprecedented in music communities.
+No single element is new. But the combination - practiced weekly since August 2024, across a community roll of 188 and 110 numbered periods - is unprecedented in music communities.
 
 ---
 
@@ -325,19 +325,21 @@ No single element is new. But the combination - practiced weekly at scale (188 Z
 
 ZAO Fractal operationalizes all of the above:
 
-- **Small groups:** 40+ members organize into 6-7 breakout rooms of 5-6 people each.
+- **Small groups:** members organize into breakout rooms of 5-6. Measured across all 68 groups the on-chain ledger has settled, the median group is 5 and the largest ever was 8. The rooms are real and they are small; the count of them is smaller than the design anticipated - 11 of the 15 most recent settled sessions ran a single group and 4 ran two, never three.
 - **Consensus:** Groups reach consensus on rank-ordering contributions (Fibonacci: 110-68-42-26-16-10 points).
 - **Soulbound Respect:** ERC-1155 tokens, non-transferable, minted weekly via OREC.
 - **Music-specific criteria:** Members rank on Vision (music/art/tech), Contribution, Collaboration, Innovation, Onboarding.
-- **Weekly rhythm:** Mondays 6pm EST, 90+ weeks unbroken.
+- **Weekly rhythm:** Mondays 6pm EST since August 2024. The community's period counter reads 110; the chain can confirm settlement of 41 of those periods, not attendance at any of them.
 - **Exit power:** Members can leave ZAO Fractal, join another circle, or initiate a parallel fractal.
 - **Fractal scaling:** (Potential future: 100 members split into two 50-person parallel fractals, each running the same weekly mechanism).
 
 The mechanism has produced:
 
-- 60-80% participation (vs. 3-10% in token-weighted DAOs).
-- Elected council members (proposals are made, debated, executed by top-Respect members).
-- Persistent on-chain history (242+ OREC transactions as of May 2026).
+- **A room that keeps meeting.** 41 settled periods on the ZOR ledger, at a median of 7 days apart, mean 8.1 people settled per period and 4 to 12 in recent sessions. Read against a 188-person community roll that is low participation, not the 60-80% figure reported for fractal communities generally; read against a token-weighted DAO's 3-10% of holders it is comparable, and the deliberation behind it is of an entirely different kind. Chapter 9 treats the gap as the open problem it is.
+- **Proposals that execute.** 153 OREC proposals since September 2025, 123 executed on-chain.
+- **Persistent on-chain history.** 316 transactions touching the OREC contract, and 514 contract events, in the snapshot committed at block 156,055,426.
+
+One thing it has not produced, and the honest version of this chapter has to say so: **contested deliberation at the OREC layer.** 137 of the 153 proposals were decided by a single voter, and no proposal has ever been voted down by anyone other than the person who opened it. The consensus work happens in the breakout room. The on-chain vote that follows is, so far, ratification. See Chapter 9.
 - Cultural anchor (Monday at 6pm EST is when ZAO decides what it is).
 
 ---
@@ -349,4 +351,4 @@ The mechanism has produced:
 
 ---
 
-**Word count: 2,691**
+**Word count: 3,569**
