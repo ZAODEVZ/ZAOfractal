@@ -1,6 +1,6 @@
 # Chapter 6: On-Chain Architecture
 
-Draft v0.1 - 2026-05-25 - awaiting Zaal review
+Draft v0.2 - 2026-08-26 - accuracy pass against the committed chain snapshot
 
 ---
 
@@ -26,7 +26,7 @@ The result: Respect-weighted proposals pass with 5-10% quorum (instead of 50%+),
 
 OREC proposals move through three explicit phases: voting, veto, and execution. Each phase has a fixed duration and distinct rules.
 
-### Phase 1: Voting Window (72 hours typical)
+### Phase 1: Voting Window (72 hours, fixed)
 
 When a member proposes a change - a Respect game outcome, a treasury allocation, a governance parameter adjustment - the proposal enters voting. Any holder of Respect can vote YES or NO. Their vote weight is their OG Respect balance read live at the moment they cast their vote (not a snapshot taken at proposal creation). This matches the OREC contract's behavior and is why the token must be soulbound - a live-balance vote is only safe when the balance cannot be borrowed or transferred in.
 
@@ -36,7 +36,7 @@ The proposer's wallet automatically votes YES upon submission. This is not a con
 
 Vote weight is non-delegatable. Your Respect is soulbound; your vote comes directly from your wallet. This prevents vote-buying intermediaries.
 
-### Phase 2: Veto Window (72 hours, follows voting)
+### Phase 2: Veto Window (72 hours, fixed, follows voting)
 
 When voting closes, the veto window opens. NO votes are still accepted. YES votes are not.
 
@@ -68,13 +68,15 @@ When conditions are met, **anyone** can call the execute function. This is impor
 
 ZAO maintains two separate Respect token contracts to decouple voting power from ongoing earnings.
 
-**OG Respect (ERC-20, Frozen Historical Ledger)**
+**OG Respect (ERC-20, dormant historical ledger - and the only one that votes)**
 
 Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` (Optimism Mainnet)
 
-Total supply: 38,484 Respect tokens (read on-chain), frozen since late 2025 - the ORDAO contract walkthrough dates the last mint to 18 December 2025.
+Total supply: 38,484 Respect across 122 holders (read on-chain). Dormant since late 2025: the last mint was 9 December 2025 and the last distribution 18 December 2025.
 
-OG Respect is the historical ledger. It covers fractals 1-73 (August 2024 - September 2025), before OREC was deployed. These tokens are soulbound: both `transfer()` and `transferFrom()` functions revert with "Respect is soulbound and cannot be transferred."
+**Dormant is not frozen, and the difference is a live risk.** `DEFAULT_ADMIN_ROLE` on this contract has exactly one member. That role can grant itself minting rights and issue vote weight at any time. Nothing on-chain prevents it and no proposal is required. This is the only genuinely permissioned capability anywhere in the stack, and it sits directly beneath the ledger that decides every vote. See Chapter 9 and `respect/SIGNER-COMMITTEE.md`.
+
+OG Respect is the historical ledger. It covers periods 1-66 (August 2024 - September 2025), before OREC was deployed. These tokens are soulbound: both `transfer()` and `transferFrom()` functions revert with "Respect is soulbound and cannot be transferred."
 
 OG Respect holders retain full voting power in ORDAO. If you earned 500 Respect in the early weeks, your 500 Respect still counts as voting weight in every proposal. This decouples voting rights from recency of contribution. An early adopter who has been absent for months can still vote at full weight, if they choose to.
 
@@ -82,7 +84,7 @@ OG Respect holders retain full voting power in ORDAO. If you earned 500 Respect 
 
 Address: `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` (Optimism Mainnet)
 
-ZOR is the active ledger for fractals 74+ (deployed September 2025, post-OREC). Every weekly Respect game result since September 2025 is minted as ZOR.
+ZOR is the active ledger from period 67 onward (deployed September 2025, post-OREC). Every weekly Respect game result since September 2025 is minted as ZOR: 333 awards to 70 addresses across 41 settled periods, 18,266 minted and 848 burned, leaving 17,418 outstanding.
 
 ZOR uses ERC-1155 (non-fungible token standard), not ERC-20. Each Respect award is a separate token ID, with metadata tracking the round, circle members, and rank. This creates an immutable record: "on 2026-05-20, member Alice earned 68 Respect for Rank 2 in Circle 3, with peers Bob, Carol, and Dan."
 
@@ -92,13 +94,13 @@ Only the OREC contract can mint ZOR. There is no admin minting. No manual overri
 
 ### Why Two Tokens?
 
-**Historical Preservation:** The OG ledger cannot be lost or rewritten. Even though frozen, members' OG balances remain on-chain as proof of early recognition and contribution. This is important for legitimacy: new members join a system with a visible, auditable history.
+**Historical Preservation:** The OG ledger cannot be lost or rewritten by members. Even while dormant, OG balances remain on-chain as proof of early recognition and contribution. This is important for legitimacy: new members join a system with a visible, auditable history.
 
 **Democratic Future:** ZOR reflects ongoing peer evaluation. Because it is minted by OREC proposals only, it is provably trustworthy - no backstage favoritism, no admin discretion.
 
 **Vote Weight Decoupling:** On-chain voting power is read from the OG ledger only. OREC reads a member's OG balance live, at the moment they cast their vote (not a snapshot at proposal creation); ZOR mints do not change voting weight. This is deliberate: it prevents "who earned Respect this week" from overwhelming "who has earned standing over the life of the community." A member with high OG votes at full weight even if they have been inactive lately.
 
-The honest consequence: a member who joined after the OG freeze and holds only ZOR currently has no on-chain voting weight, however much ZOR they earn. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - is an open governance problem (see Chapter 9).
+The honest consequence, and it is now measured rather than asserted: a member who joined after OG went dormant and holds only ZOR has no on-chain voting weight, however much ZOR they earn. **47 of the 70 people ever awarded ZOR are in exactly that position.** Among the 27 active in the last twelve settled periods, 14 hold no OG at all and another 9 sit below the 1,000 minimum weight - so 23 of 27 active contributors cannot carry a proposal. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - is an open governance problem (see Chapter 9).
 
 ---
 
@@ -149,7 +151,7 @@ This enforcement is at the contract level, not the wallet level. Even if a membe
 
 | Contract | Address | Role | Token Standard | Status |
 |----------|---------|------|---|---|
-| **OG Respect** | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` | Historical voting ledger | ERC-20 | Frozen (no new mints) |
+| **OG Respect** | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` | Historical ledger; the sole source of vote weight | ERC-20 | Dormant (no mints since Dec 2025; admin role can still mint) |
 | **ZOR Respect** | `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` | Active weekly ledger | ERC-1155 | Active (OREC mints each week) |
 | **OREC** | `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` | Voting + execution engine | Smart contract | Active |
 
@@ -157,14 +159,18 @@ This enforcement is at the contract level, not the wallet level. Even if a membe
 
 | Parameter | Value | Purpose |
 |-----------|-------|---------|
-| `voteLen` | 259,200 seconds (3 days) | Duration of YES/NO voting (read live) |
-| `vetoLen` | 259,200 seconds (3 days) | Duration of NO-only veto (read live) |
-| `minWeight` | 1,000 Respect (~2.6% of OG supply) | Minimum YES weight to qualify (read live) |
-| `respectContract` | `0x34cE89...` (OG) | Vote weight source, read live from OREC |
-| `respectContractZOR` | `0x9885CC...` | Minting target (active) |
-| `maxConcurrentProposals` | 10 | Prevent proposal spam |
+| `voteLen` | 259,200 seconds (3 days) | Duration of YES/NO voting |
+| `vetoLen` | 259,200 seconds (3 days) | Duration of NO-only veto |
+| `minWeight` | 1,000 Respect (~2.6% of OG supply) | Minimum YES weight to qualify |
+| `respectContract` | `0x34cE89...` (OG) | The one and only source of vote weight, read live at each vote |
+| `owner` | `0xcB05F9...` (OREC itself) | Every setter is `onlyOwner`, so parameters change only by passed proposal |
+| `maxLiveVotes` | not captured in the committed snapshot | Caps concurrent live votes per proposer; read it from the contract |
 
-These values are optimized for ZAO's 188-person community. Larger fractals would increase thresholds; smaller fractals might tighten windows.
+Every value above except `maxLiveVotes` is read from OREC in `data/summary.json` at block 156,055,426 and re-checked by `scripts/verify-claims.mjs`.
+
+Two corrections against earlier drafts of this table. There is **no `respectContractZOR` parameter** - OREC does not hold a pointer to the ZOR ledger; the relationship runs the other way, with OREC being the only address ZOR will accept a mint from. And the spam cap is `maxLiveVotes`, not `maxConcurrentProposals`; the value of 10 previously printed here was not read from the contract.
+
+These values suit ZAO's current scale - a community roll of 188, with 4 to 12 people settled per recent session. Larger fractals would raise thresholds; smaller ones might tighten windows.
 
 ---
 
@@ -264,7 +270,7 @@ ORDAO is **not** formally audited by a third-party security firm as of May 2026.
 
 1. **Optimystics Code Review:** sim31 (author) and the Optimystics team conducted line-by-line review of Solidity contracts.
 2. **Fuzzing:** orclient has unit tests covering all major vote paths.
-3. **Live Deployment:** OREC has been live on Optimism since September 2025, with 242+ transactions as of May 2026, all successful.
+3. **Live Deployment:** OREC has been live on Optimism since September 2025. As of block 156,055,426 on 2026-08-26 the committed snapshot records 316 transactions against it and 514 contract events, across 153 proposals. They have **not** all succeeded, and the earlier claim that they had was wrong: 123 proposals executed, 15 failed to pass, and **11 execution attempts reverted on-chain**. Every one of the 11 was a `mintRespectGroup` call, meaning a week of Respect Game results failed to settle and had to be redone. The failure mode and its 24 unminted award slots are documented in `respect/EXECUTION-RUNBOOK.md`.
 4. **Academic Review:** Larimer and Eden Fractal governance team reviewed the mechanism against Fractally design principles.
 
 **Recommended Next Steps:**

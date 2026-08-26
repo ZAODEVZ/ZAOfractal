@@ -397,6 +397,20 @@ const CLAIMS = [
   ['WP ch05', 'facilitation proxy: Zaal ranked in the window', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
   ['WP ch05', 'facilitation proxy: highest non-Zaal count', Math.max(...[...attendance.entries()].filter(([a]) => a !== '0x7234c36a71ec237c2ae7698e8916e0735001e9af').map(([, v]) => v.size)), 10],
 
+  ['WP ch06', 'OG holders', ogBalance.size, 122],
+  ['WP ch06', 'ZOR awards / addresses / settled periods', `${summary.zor.awards}/${everAwarded.length}/${sessions.length}`, '333/70/41'],
+  ['WP ch06', 'ZOR minted / burned / outstanding', `${summary.zor.respectMinted}/${summary.zor.respectBurned}/${summary.zor.respectHeld}`, '18266/848/17418'],
+  ['WP ch06', 'ever awarded ZOR with no vote weight', everAwarded.filter((a) => !ogBalance.has(a)).length, 47],
+  ['WP ch06', 'active contributors who cannot carry a proposal', activeRecently.filter((a) => (ogBalance.get(a) || 0) < MIN_WEIGHT).length, 23],
+  ['WP ch06', 'minWeight as a share of OG supply (%)', ((MIN_WEIGHT / summary.og.totalSupply) * 100).toFixed(1), '2.6'],
+  ['WP ch06', 'transactions against OREC', orecTransactions.size, 316],
+  ['WP ch06', 'OREC contract events', proposals.logCount, 514],
+  ['WP ch06', 'proposals executed', summary.orec.executed, 123],
+  ['WP ch06', 'proposals that failed to pass', summary.orec.byStage.Failed, 15],
+  ['WP ch06', 'execution attempts that reverted', summary.orec.failed, 11],
+  ['WP ch06', 'reverted executions that were all mintRespectGroup', failedExecutions.length, 11],
+  ['WP ch06', 'award slots left unminted by those reverts', unsettledRows.length, 24],
+
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see
   // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the
