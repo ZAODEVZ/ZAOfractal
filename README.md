@@ -1,41 +1,57 @@
 # ZAOfractal
 
-**Live site: [zaofractal.vercel.app](https://zaofractal.vercel.app)** (canonical domain `fractal.thezao.com` pending DNS).
+**The ZAO Fractal** - a weekly peer-ranked governance game that has been
+running on Mondays at 6pm EST since August 2024, settling on Optimism. The only
+music-focused fractal in existence, and the only active fractal on Optimism.
 
-Home of **ZAO Fractal** - the weekly Respect Game that has run unbroken on Mondays at 6pm EST since around August 2024. It is the only music-focused fractal in existence, the only active fractal on Optimism, and one of two on the Ethereum Superchain.
+This repo is the whole thing in one place: the governance document, the research
+it was built from, the operational runbooks, the on-chain data, the dashboard,
+and the tool that runs the game asynchronously.
+
+**Live site: [zaofractal.vercel.app](https://zaofractal.vercel.app)** (canonical
+domain `fractal.thezao.com` pending DNS).
+
+---
+
+## Start here
+
+| You want | Go |
+|---|---|
+| The short version | [The abstract](whitepaper/draft/ch00-abstract.md) - 500 words |
+| The whole argument | [The whitepaper](whitepaper/ZAO-Fractal-Whitepaper.md) - ~34,000 words |
+| Everything written here, indexed | [docs/README.md](docs/README.md) |
+| Where this goes next | [ROADMAP.md](ROADMAP.md) - L0 to L7, each with a measurable gate |
+| The live numbers | [`data/`](data/) - and see below |
+| What is broken about it | [Chapter 9](whitepaper/draft/ch09-limitations-and-open-problems.md) |
 
 ## What is a fractal?
 
-A fractal is a small-group consensus meeting that distributes a soulbound reputation token (Respect) to participants based on how their peers rank their recent contribution. Repeat weekly. Governance weight comes from contribution, not capital.
+A fractal is a small-group consensus meeting that distributes a soulbound
+reputation token - Respect - based on how peers rank each other's recent
+contribution. Repeat weekly. Governance weight comes from contribution, not
+capital.
 
-The idea was formalized by Daniel Larimer in *More Equal Animals* (Feb 20, 2021) and the Fractally protocol (Jan 28, 2022). Eden Fractal proved it could run for years. Optimism Fractal brought it to Ethereum. ZAO Fractal is the first to apply it to music.
+Formalized by Daniel Larimer in *More Equal Animals* (Feb 20, 2021) and the
+Fractally protocol (Jan 28, 2022). Eden Fractal proved it could run for years.
+Optimism Fractal brought it to Ethereum. ZAO Fractal is the first to apply it
+to music.
 
-## Repo layout
+---
 
+## Live facts
+
+Every figure below is read from the committed snapshot in [`data/`](data/) -
+OP Mainnet block 156,071,456, pulled 2026-08-26 - and held as an expectation in
+[`scripts/verify-claims.mjs`](scripts/verify-claims.mjs), which exits non-zero
+the moment one drifts.
+
+```bash
+node scripts/pull-data.mjs        # refresh data/*.json from chain
+node scripts/verify-claims.mjs    # re-check every figure quoted in this repo
 ```
-ZAOfractal/
-  README.md                  - this file
-  reference/                 - shallow survey: every fractal that has ever existed
-                               (Larimer, Fractally, Eden, Optimism, Roy, Aquadac, etc.)
-                               16 files, ~1300 lines. Start here.
-  research/                  - DEEP-tier: 6 hub docs + 4 sub-folders
-                               (whitepaper-foundations/, primary-sources/,
-                                context/, external/, code-walk/)
-                               25+ files, ~10500 lines, 320+ unique sources.
-  whitepaper/                - The magnum opus governance document
-                               draft/ contains the complete v0.2: abstract +
-                               11 chapters, 34,421 words, accuracy pass against
-                               the on-chain snapshot 2026-08-26. Assemble with
-                               scripts/assemble-whitepaper.mjs.
-```
 
-Start at [reference/README.md](reference/README.md) for the survey. Move to [research/README.md](research/README.md) when you need depth. The [whitepaper/README.md](whitepaper/README.md) tracks magnum-opus progress.
-
-## Live ZAO Fractal facts
-
-Measured from the committed snapshot at OP Mainnet block 156,071,456, pulled
-2026-08-26. Re-pull with `node scripts/pull-data.mjs`; re-check every figure
-quoted anywhere in this repo with `node scripts/verify-claims.mjs`.
+For the full set rather than the highlights, read
+[`data/summary.json`](data/summary.json) directly.
 
 | Fact | Value | Source |
 |------|-------|--------|
@@ -44,31 +60,103 @@ quoted anywhere in this repo with `node scripts/verify-claims.mjs`.
 | Settled periods on the ZOR ledger | 41, covering periods 67-110 | chain |
 | People settled per period | mean 8.1; 4 to 12 in recent sessions | chain |
 | Community roll | 188 (Farcaster, counted ~May 2026); 169 addresses have ever held Respect | community / chain |
-| Surface | Discord bot `fractalbotmarch2026` (52 slash commands, v2.1, March 28 2026) | unsourced in this repo |
-| Chain | Optimism (OP Mainnet) | chain |
-| OREC executor | `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` | chain |
-| OG Respect (ERC-20, periods 1-66) | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` | chain |
-| ZOR Respect (ERC-1155, periods 67+) | `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` | chain |
-| Submission UI | `zao.frapps.xyz/submitBreakout` | - |
 | OREC activity | 316 transactions, 514 events, 153 proposals, 123 executed, 11 execution reverts | chain |
 | Vote weight | read live from OG at each vote; ZOR confers none | chain |
+| Surface | Discord bot `fractalbotmarch2026` (52 slash commands, v2.1, March 28 2026) | unsourced in this repo |
+| Submission UI | `zao.frapps.xyz/submitBreakout` | - |
+
+| Contract | Address |
+|---|---|
+| OREC (voting and execution) | `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` |
+| OG Respect (ERC-20, periods 1-66) | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` |
+| ZOR Respect (ERC-1155, periods 67+) | `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` |
 
 **The streak is not an on-chain number.** The chain records settlement, not
 attendance, and periods 1-66 ran on a ledger with no per-period record at all.
-Whitepaper ch08 keeps the ritual claim and the chain claim apart on purpose.
+[Chapter 8](whitepaper/draft/ch08-the-zao-fractal.md) keeps the ritual claim and
+the chain claim apart on purpose, and says exactly what each one rests on.
 
-Operational docs that already exist:
+---
 
-- The whitepaper itself (complete v0.2, all 11 chapters + abstract) - [whitepaper/draft/](whitepaper/draft/)
-- The bot internals walkthrough - [research/code-walk/01-fractalbot-walkthrough.md](research/code-walk/01-fractalbot-walkthrough.md)
-- The ORDAO Solidity walkthrough - [research/code-walk/02-ordao-contracts-walkthrough.md](research/code-walk/02-ordao-contracts-walkthrough.md)
-- Frapp-GH (async GitHub-native fractal) full PRD, build-ready - [research/06-frapp-gh-prd.md](research/06-frapp-gh-prd.md)
+## What is in here
 
-Since shipped, all under [respect/](respect/): the OG-to-ZOR ledger
-reconciliation, the signer-committee proposal (which found there is no signer
-set to join - see `respect/SIGNER-COMMITTEE.md`), the execution and
-facilitation runbooks, and a dashboard in [dao/](dao/) reading the committed
-snapshot rather than a live indexer.
+### [whitepaper/](whitepaper/) - the governance document
+
+Abstract plus 11 chapters, v0.2, 34,421 words. Theory, mechanics, the on-chain
+architecture, the comparative case, and an honest limitations chapter. Edit the
+chapters in [`whitepaper/draft/`](whitepaper/draft/); the assembled document is
+generated by `node scripts/assemble-whitepaper.mjs`.
+
+### [respect/](respect/) - decision surfaces and runbooks
+
+The only tree that proposes actions, all measured, none executed.
+[Facilitation](respect/FACILITATION-RUNBOOK.md) (running the Monday game
+without the founder), [execution](respect/EXECUTION-RUNBOOK.md) (what happens
+after the meeting, and the 24 awards that never settled),
+[ledger reconciliation](respect/LEDGER-RECONCILIATION.md) (two ledgers, only
+one of which votes), and the [signer committee](respect/SIGNER-COMMITTEE.md),
+which found there is no signer set to join and the bottleneck is three separate
+problems.
+
+### [reference/](reference/) and [research/](research/) - the library
+
+Sixteen survey documents covering every fractal that has ever existed, and
+thirty-nine deep documents behind them, including code walkthroughs of the bot
+and the ORDAO contracts. [docs/README.md](docs/README.md) is the index.
+
+### [data/](data/) and [scripts/](scripts/) - the numbers
+
+A committed, reconciled snapshot of both Respect ledgers and the full OREC
+proposal history, plus the puller that produces it and the verifier that keeps
+every document honest against it.
+
+### [dao/](dao/) - the dashboard
+
+React and Vite. Leaderboard, proposals and a session timeline, reading the
+committed snapshot rather than a live indexer, so it works offline and cannot
+silently disagree with the docs.
+
+### [frapp-gh/](frapp-gh/) - the async game
+
+frapp-gh runs the Respect Game asynchronously on GitHub itself: contributions
+are Issues, ballots are comments in the period's session Discussion, and results
+are aggregated by Borda count onto the 2x Fibonacci curve. It continues ZAO's
+on-chain period numbering but awards nothing on-chain - Phase 1 is deliberately
+off-chain.
+
+Built and tested end to end locally; **not yet run against live GitHub**. It is
+the L3 item on the [roadmap](ROADMAP.md). See
+[frapp-gh/README.md](frapp-gh/README.md).
+
+### [site/](site/) - the docs site
+
+Astro 5, deployed to zaofractal.vercel.app, indexing the content collections
+with Pagefind search.
+
+---
+
+## Development
+
+```bash
+cd site && npm install && npm run dev      # docs site, localhost:4321
+cd dao && npm install && npm run dev       # dashboard, localhost:5173
+node scripts/pull-data.mjs                 # refresh the chain snapshot
+node scripts/verify-claims.mjs             # check every figure in every doc
+node scripts/assemble-whitepaper.mjs       # rebuild the whitepaper
+```
+
+## Contributing
+
+Issues use a template chooser; blank issues stay enabled, so nothing is blocked
+if none of the templates fit.
+
+If you change a document that quotes a number, run
+`node scripts/verify-claims.mjs` before committing. It holds every on-chain
+figure in this repo as an expectation, and a few sentences as well - a drifted
+number or a trimmed disclaimer fails the run rather than aging quietly into a
+falsehood.
+
+---
 
 ## Licensing
 
