@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
- * verify-claims.mjs - re-check every number quoted in the respect/ docs against
- * the committed snapshot.
+ * verify-claims.mjs - re-check every number quoted in the respect/ docs and in
+ * the whitepaper chapters against the committed snapshot.
  *
  * The respect/ decision docs - LEDGER-RECONCILIATION, SIGNER-COMMITTEE,
- * EXECUTION-RUNBOOK and FACILITATION-RUNBOOK - are full of hard figures. They go stale the moment someone runs scripts/pull-data.mjs
+ * EXECUTION-RUNBOOK and FACILITATION-RUNBOOK - and the whitepaper chapters
+ * under whitepaper/draft/ are full of hard figures. They go stale the moment someone runs scripts/pull-data.mjs
  * again. This script holds each quoted figure as an expectation and reports the
  * ones that have moved, so the docs get corrected rather than quietly drifting.
  *
@@ -176,6 +177,22 @@ const windowGroupCounts = [...groupsByPeriod.entries()]
   .map(([, g]) => g.size);
 const allGroupSizes = [...groupsByPeriod.values()].flatMap((g) => [...g.values()]).sort((a, b) => a - b);
 
+/** People *settled* per session inside the recent window - awards that actually
+ * minted, matching the session table in FACILITATION-RUNBOOK section 1. The
+ * whitepaper quotes this range where it used to quote "40+ per session". The
+ * attendance table above deliberately uses a wider count that includes reverted
+ * mints; these are two different measurements and must not be conflated. */
+const windowSessionSizes = [...groupsByPeriod.entries()]
+  .filter(([period]) => period >= WINDOW_FROM)
+  .map(([period]) => new Set(
+    awards.events.filter((e) => e.periodNumber === period).map((e) => lower(e.recipient)),
+  ).size)
+  .sort((a, b) => a - b);
+
+/** The first period the ZOR ledger covers. Everything before it ran on OG,
+ * which carries no per-period record, and the whitepaper says so by number. */
+const firstSettledPeriod = Math.min(...sessions.map((p) => p.periodNumber));
+
 // --- the claims, as written in the docs -------------------------------------
 
 const CLAIMS = [
@@ -286,6 +303,21 @@ const CLAIMS = [
   ['FACILITATION', 'attendance: unnamed 0xf73485a6 sessions ranked', sessionsRanked('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 7],
   ['FACILITATION', 'attendance: unnamed 0xf73485a6 latest session', latestSession('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 110],
 
+  // --- whitepaper/draft, v0.2 accuracy pass -------------------------------
+  // Every chain figure the chapters quote. A chapter that drifts should break
+  // here rather than age quietly into being wrong again.
+
+  ['WP ch01', 'OREC proposals', proposals.proposalCount, 153],
+  ['WP ch01', 'OREC proposals executed', summary.orec.executed, 123],
+  ['WP ch01', 'Respect awards on ZOR', summary.zor.awards, 333],
+  ['WP ch01', 'settled periods', sessions.length, 41],
+  ['WP ch01', 'addresses that ever held Respect', touched.size, 169],
+  ['WP ch01', 'latest period number', summary.zor.latestPeriod, 110],
+  ['WP ch01', 'periods predating the ZOR ledger', firstSettledPeriod - 1, 66],
+  ['WP ch01', 'mean people settled per period', (ascending.reduce((s, p) => s + p.participants, 0) / ascending.length).toFixed(1), '8.1'],
+  ['WP ch01', 'fewest settled in a recent session', windowSessionSizes[0], 4],
+  ['WP ch01', 'most settled in a recent session', windowSessionSizes.at(-1), 12],
+
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see
   // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the
@@ -302,7 +334,7 @@ for (const [doc, label, actual, expected] of CLAIMS) {
 
 console.log(`\nSnapshot pulled ${summary.pulledAt} at block ${summary.latestBlock}.`);
 if (drifted.length === 0) {
-  console.log(`All ${CLAIMS.length} figures quoted in the respect/ decision docs match the snapshot.`);
+  console.log(`All ${CLAIMS.length} figures quoted in the respect/ docs and whitepaper chapters match the snapshot.`);
 } else {
   console.log(`${drifted.length} of ${CLAIMS.length} figures have drifted. Update the prose, then update the expectations here.`);
   process.exit(1);
