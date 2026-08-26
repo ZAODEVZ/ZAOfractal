@@ -54,6 +54,28 @@ describe("cycle noun", () => {
     expect(renderTallyFailure(52, "Only 1 ballot.")).toContain("Week 52 did not tally");
   });
 
+  it("tells a member what the Respect is not, before and after they earn it", () => {
+    const body = renderSessionBody(zao, cycleWindow(zao, new Date("2026-08-26T12:00:00Z")));
+    const results = renderResults(result, zao);
+
+    // Both surfaces make the CATEGORY statement, not merely the timing one.
+    // "No tokens were minted" reads as "not yet"; this has to read as "not that".
+    for (const surface of [body, results]) {
+      // Phrasing differs between the two surfaces (one wraps it in bold), so
+      // assert the load-bearing clause rather than a sentence.
+      expect(surface).toMatch(/not a governance\s+weight/i);
+      expect(surface).toMatch(/record/i);
+      expect(surface).toContain("carries no vote");
+      expect(surface).toContain("ZOR or OG ledger");
+      expect(surface).toMatch(/open decision, not a\s+scheduled step/);
+    }
+
+    // And neither may go back to implying a mint is pending.
+    for (const surface of [body, results]) {
+      expect(surface).not.toMatch(/no Respect tokens were minted/i);
+    }
+  });
+
   it("falls back to Week when a config sets an empty noun", () => {
     expect(cycleNoun({ ...generic, cycleNoun: "   " })).toBe("Week");
   });

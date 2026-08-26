@@ -74,7 +74,16 @@ ${criteria || "_(none configured)_"}
 - Minimum ${config.ranking.minVoters} voters, or the ${noun.toLowerCase()} does not tally.
 - Bots do not vote.
 
-_Frapp-GH Phase 1 - ranking is off-chain. Nothing here mints tokens._`;
+## What you are earning
+
+Respect awarded here is a record of peer-ranked work.
+It is **not a governance weight**: it is not on the ZOR or OG ledger, it
+carries no vote, it counts toward no quorum, and it appears in none of the
+on-chain figures ZAO publishes. Real recognition of real work - and not the
+Respect that votes.
+
+Whether async Respect ever settles on-chain is an open decision, not a
+scheduled step. Do not plan around it settling.`;
 }
 
 export function renderSubmissionAck(
@@ -142,7 +151,11 @@ export function renderResults(result: TallyResult, config: FrameworkConfig): str
   }
 
   out += `Scores are rank sums - lower is better. Full ballots: \`.github/frapp-gh/vote-snapshots/week-${result.week}.json\`.\n\n`;
-  out += `_Phase 1: off-chain only. No Respect tokens were minted._`;
+  out += `---\n\n**What this Respect is.** A record, not a governance weight. `;
+  out += `Nothing above is on the ZOR or OG ledger: it carries no vote, counts toward `;
+  out += `no quorum, and appears in none of the on-chain figures ZAO publishes. `;
+  out += `Whether async Respect ever settles on-chain is an open decision, not a `;
+  out += `scheduled step - so this is what you earned, not an IOU for something else.`;
   return out;
 }
 

@@ -99,7 +99,12 @@ describe("full period replay", () => {
     const { resultsMarkdown, leaderboard } = await runScenario(scenario);
     expect(resultsMarkdown).toContain("# Period 111 Results");
     expect(resultsMarkdown).toContain("@alice");
-    expect(resultsMarkdown).toContain("Phase 1: off-chain only");
+    // The results comment is where a member is handed a number. It has to say
+    // what that number is NOT, or "you earned 110 Respect" under a curve they
+    // recognise from Monday reads as governance weight they do not have.
+    expect(resultsMarkdown).toContain("A record, not a governance weight");
+    expect(resultsMarkdown).toContain("carries no vote");
+    expect(resultsMarkdown).toContain("ZOR or OG ledger");
     expect(leaderboard?.entries[0]).toMatchObject({ githubUsername: "alice", totalRespect: 110 });
     expect(leaderboard?.weeksCounted).toEqual([111]);
   });

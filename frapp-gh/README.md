@@ -89,6 +89,15 @@ order is counted as a single facilitator ballot rather than losing the week.
 
 ### Results
 
+**What the Respect is.** A record of peer-ranked work, not a governance weight.
+Nothing frapp-gh awards is on the ZOR or OG ledger: it carries no vote, counts
+toward no quorum, and appears in none of the on-chain figures ZAO publishes.
+Whether async Respect ever settles on-chain is an open decision, not a scheduled
+step, so the session Discussion, the results comment and the leaderboard all say
+so plainly. Earlier copy said only that no tokens were minted, which reads as
+"not yet" when the honest statement is "not that" - a member should not spend a
+period earning a number they believed was a vote.
+
 Aggregation runs, the curve is applied, and a results table is posted to the
 session Discussion. Every ballot is committed to
 `.github/frapp-gh/vote-snapshots/week-N.json`, so anyone can recompute the tally.
