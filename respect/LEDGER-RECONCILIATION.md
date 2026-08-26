@@ -2,7 +2,7 @@
 
 **Status:** decision surface, 2026-08-26. Nothing here executes. Every number is
 measured from the committed snapshot in `data/`, pulled at OP Mainnet block
-156,053,890 on 2026-08-26. Reproduce with `node scripts/pull-data.mjs`.
+156,055,426 on 2026-08-26. Reproduce with `node scripts/pull-data.mjs`.
 
 This document exists because a single unified ledger is the prerequisite for
 **L5 - Autonomous operations** on the decentralization scale, whose gate is that
@@ -245,7 +245,7 @@ It also draws a line that matters for how they get restated.
 - The ZOR ledger covers periods **67 to 110**, and inside that range periods
   **71, 72 and 103 have no awards**. The longest run of consecutive period
   numbers ending at 110 is **7**.
-- Those 41 settled periods span **47.7 weeks**, at a median of 7 days apart, with
+- Those 41 settled periods span **47.8 weeks**, at a median of 7 days apart, with
   ten gaps longer than 10 days and a largest gap of 29 days.
 - **169 addresses** have ever held Respect on either ledger.
 - Mean participants per settled period: **8.1**, range 3 to 17.
@@ -296,8 +296,14 @@ queue in `whitepaper/README.md` rather than edited into the chapters here.
 ```bash
 node scripts/pull-data.mjs        # refresh data/*.json from OP Mainnet
 node scripts/build-members.mjs    # refresh the wallet -> name map
+node scripts/verify-claims.mjs    # re-check every figure in this doc
 cd dao && npm run dev             # browse the same numbers
 ```
+
+`verify-claims.mjs` holds all 62 figures quoted in this document and in
+[SIGNER-COMMITTEE.md](./SIGNER-COMMITTEE.md) as expectations and reports the
+ones that have moved. Run it after any pull; a drift means the prose needs an
+edit, not that the data is wrong.
 
 Every figure in this document comes from `data/summary.json`,
 `data/og-respect.json`, `data/zor-respect.json`, `data/award-events.json`,

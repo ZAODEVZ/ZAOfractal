@@ -2,7 +2,7 @@
 
 **Status:** proposal, 2026-08-26. Nothing here executes. Every figure is
 measured from `data/orec-proposals.json` in the committed snapshot, pulled at OP
-Mainnet block 156,053,890. Reproduce with `node scripts/pull-data.mjs`.
+Mainnet block 156,055,426. Reproduce with `node scripts/pull-data.mjs`.
 
 This is the **L5 - Autonomous operations** item on the decentralization scale.
 The gate for L5 is that Zaal takes 30 days fully off and cadence, settlement and
@@ -313,8 +313,8 @@ that has not shipped.
 
 ```bash
 node scripts/pull-data.mjs --only orec
-node -e "const p=require('./data/orec-proposals.json'); console.log(p.proposalCount)"
-cd dao && npm run dev    # Proposals tab, with per-voter tallies
+node scripts/verify-claims.mjs    # re-check every figure in this doc
+cd dao && npm run dev             # Proposals tab, with per-voter tallies
 ```
 
 Contract behaviour was read from `Orec.sol` as published in `@ordao/orec`, and
