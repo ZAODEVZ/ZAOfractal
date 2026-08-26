@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frapp-GH Respect Leaderboard</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1 id="community">Respect Leaderboard</h1>
+      <p class="sub" id="asof">Loading...</p>
+    </header>
+
+    <section class="cards" id="cards"></section>
+
+    <section class="panel">
+      <h2>Standings</h2>
+      <div id="table-wrap"><p class="empty">Loading...</p></div>
+    </section>
+
+    <p class="state" id="cycle"></p>
+
+    <footer>
+      Frapp-GH Phase 1 - async Respect Game on GitHub. Ranking is off-chain; no tokens are minted.
+      Ballots are committed to <code>.github/frapp-gh/vote-snapshots/</code>.
+    </footer>
+  </main>
+
+  <script>
+    const fmt = (n) => new Intl.NumberFormat("en-US").format(n);
+
+    function card(label, value, accent) {
+      return `<div class="card"><div class="label">${label}</div>
+              <div class="value${accent ? " accent" : ""}">${value}</div></div>`;
+    }
+
+    function row(entry) {
+      const recent = (entry.recentActivity || [])
+        .slice(0, 2)
+        .map((a) => `w${a.week} +${a.respectAwarded}${a.contribution ? ` - ${a.contribution}` : ""}`)
+        .join(" &middot; ");
+      const cls = entry.rank <= 3 ? ` r${entry.rank}` : "";
+      return `<tr>
+        <td><span class="rank${cls}">${entry.rank}</span></td>
+        <td>
+          <div class="who">
+            <img loading="lazy" alt="" src="https://github.com/${entry.githubUsername}.png?size=56" />
+            <a href="https://github.com/${entry.githubUsername}" rel="noopener">${entry.githubUsername}</a>
+          </div>
+          ${recent ? `<div class="recent hide-sm">${recent}</div>` : ""}
+        </td>
+        <td class="num hide-sm">${entry.weeksParticipated}</td>
+        <td class="num"><strong>${fmt(entry.totalRespect)}</strong></td>
+      </tr>`;
+    }
+
+    async function loadJSON(url) {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error(`${url} -> ${res.status}`);
+      return res.json();
+    }
+
+    async function render() {
+      let board;
+      try {
+        board = await loadJSON("./leaderboard.json");
+      } catch {
+        try {
+          board = await loadJSON("/api/v1/leaderboard");
+        } catch (err) {
+          document.getElementById("table-wrap").innerHTML =
+            `<p class="empty">No leaderboard yet. It is written after the first tally.</p>`;
+          document.getElementById("asof").textContent = "No cycles completed";
+          return;
+        }
+      }
+
+      document.getElementById("community").textContent = `${board.community} Respect`;
+      document.getElementById("asof").textContent =
+        `As of ${new Date(board.asOf).toLocaleString()} - ${board.weeksCounted.length} cycle(s) counted`;
+
+      document.getElementById("cards").innerHTML = [
+        card("Members", fmt(board.entries.length)),
+        card("Respect distributed", fmt(board.totalRespectDistributed), true),
+        card("Cycles", fmt(board.weeksCounted.length)),
+        card("Latest week", board.weeksCounted.length ? `#${Math.max(...board.weeksCounted)}` : "-"),
+      ].join("");
+
+      document.getElementById("table-wrap").innerHTML = board.entries.length
+        ? `<table>
+             <thead><tr>
+               <th>#</th><th>Member</th>
+               <th class="num hide-sm">Weeks</th><th class="num">Respect</th>
+             </tr></thead>
+             <tbody>${board.entries.map(row).join("")}</tbody>
+           </table>`
+        : `<p class="empty">No Respect awarded yet.</p>`;
+    }
+
+    async function renderCycle() {
+      try {
+        const status = await loadJSON("/api/v1/status");
+        const el = document.getElementById("cycle");
+        const when = (iso) => new Date(iso).toLocaleString();
+        el.innerHTML = `Week <code>${status.week}</code> is in the <code>${status.phase}</code> phase.
+          Voting closes ${when(status.voteCloseAt)}; results ${when(status.tallyAt)}.
+          Aggregation: <code>${status.algorithm}</code>.`;
+      } catch {
+        document.getElementById("cycle").textContent =
+          "Live cycle status is unavailable (static hosting without the API).";
+      }
+    }
+
+    render();
+    renderCycle();
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+name: Fractal contribution
+description: Submit work for this week's async Respect Game
+title: "[week] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Add this week's label (for example `week-52-contribution`) after opening,
+        or the bot will not pick it up. Peers rank contributions in the session
+        Discussion; ranking closes Saturday.
+  - type: textarea
+    id: what
+    attributes:
+      label: What I did
+      description: Short, concrete, and readable by someone who was not there.
+      placeholder: |
+        - Built the Borda aggregation and covered it with tests
+        - Deployed the webhook handler and verified a live delivery
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link a PR, commit, doc, or screenshot. At least one link.
+      placeholder: "owner/repo#12"
+    validations:
+      required: true
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Criteria tags
+      options:
+        - label: Vision
+        - label: Contribution
+        - label: Collaboration
+        - label: Innovation
+        - label: Onboarding

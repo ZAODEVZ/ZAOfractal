@@ -1,0 +1,41 @@
+{
+  "week": 52,
+  "snapshotTimestamp": "2026-05-30T22:00:00Z",
+  "discussionNumber": 100,
+  "ballot": [11, 12, 13, 14],
+  "voters": {
+    "dana": {
+      "githubUsername": "dana",
+      "accountAge": 900,
+      "eligibleTier": "tier-1",
+      "ranking": { "issueNumbers": [12, 11, 13, 14] },
+      "submittedAt": "2026-05-30T12:00:00Z",
+      "source": "discussion-comment"
+    },
+    "eli": {
+      "githubUsername": "eli",
+      "accountAge": 1200,
+      "eligibleTier": "tier-1",
+      "ranking": { "issueNumbers": [12, 13, 11, 14] },
+      "submittedAt": "2026-05-30T13:00:00Z",
+      "source": "discussion-comment"
+    },
+    "fiona": {
+      "githubUsername": "fiona",
+      "accountAge": 400,
+      "eligibleTier": "tier-1",
+      "ranking": { "issueNumbers": [11, 12] },
+      "submittedAt": "2026-05-30T18:00:00Z",
+      "source": "discussion-comment"
+    },
+    "newbie": {
+      "githubUsername": "newbie",
+      "accountAge": 3,
+      "eligibleTier": "tier-1",
+      "ranking": { "issueNumbers": [14, 13, 12, 11] },
+      "submittedAt": "2026-05-30T19:00:00Z",
+      "source": "discussion-comment",
+      "rejected": "account is 3 days old; 14 required"
+    }
+  }
+}

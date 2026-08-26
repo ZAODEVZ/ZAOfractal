@@ -1,0 +1,12 @@
+{
+  "action": "opened",
+  "issue": {
+    "node_id": "I_kwDOExample",
+    "number": 12,
+    "title": "Shipped fractal MVP Phase 1",
+    "body": "## What I Did\n- Built the Hono endpoint for webhook handlers\n- Deployed and tested the cycle handlers\n\n## Evidence\n- PR: bettercallzaal/frapp-gh#12\n\n## Criteria Tags\n[Vision, Contribution]",
+    "labels": [{ "name": "week-52-contribution" }],
+    "user": { "login": "alice" },
+    "created_at": "2026-05-27T10:00:00Z"
+  }
+}

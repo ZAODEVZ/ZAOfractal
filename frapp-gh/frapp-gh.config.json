@@ -1,0 +1,66 @@
+{
+  "community": "The ZAO",
+  "cycleNoun": "Period",
+  "sessionSchedule": {
+    "startDay": "Monday",
+    "startTime": "18:00",
+    "timezone": "America/New_York",
+    "cycleLength": 7,
+    "voteCloseOffsetDays": 5,
+    "tallyOffsetDays": 6,
+    "epochDate": "2026-08-24T18:00:00-04:00",
+    "epochWeekNumber": 110
+  },
+  "ranking": {
+    "algorithm": "borda",
+    "respectScores": [
+      110,
+      68,
+      42,
+      26,
+      16,
+      10
+    ],
+    "minVoters": 3,
+    "voterEligibility": "tier-1",
+    "minAccountAgeDays": 14,
+    "breakoutSize": 5
+  },
+  "github": {
+    "owner": "ZAODEVZ",
+    "repo": "ZAOfractal",
+    "issueLabel": "period-{N}-contribution",
+    "discussionCategory": "Fractal Sessions"
+  },
+  "ordao": {
+    "enabled": false,
+    "respectContractAddress": "0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c",
+    "orecContractAddress": "0xcB05F9254765CA521F7698e61E0A6CA6456Be532",
+    "chainId": 10
+  },
+  "contributionCriteria": [
+    {
+      "label": "Vision",
+      "description": "Long-term thinking, strategy, direction"
+    },
+    {
+      "label": "Contribution",
+      "description": "Code, content, ops work shipped"
+    },
+    {
+      "label": "Collaboration",
+      "description": "Helped others, mentorship, teamwork"
+    },
+    {
+      "label": "Innovation",
+      "description": "New ideas, experiments, exploration"
+    },
+    {
+      "label": "Onboarding",
+      "description": "Onboarded new members, documented processes"
+    }
+  ],
+  "seedList": [],
+  "denyList": [],
+  "enforcement": "soft"
+}

@@ -1,0 +1,60 @@
+# Tally and post results (Sun 18:00 America/New_York)
+# Cron is UTC. 22:00 UTC = 18:00 EDT; adjust to 23:00 for EST if you want a
+# fixed local hour year-round, or run the workflow manually.
+name: Fractal tally
+
+on:
+  workflow_dispatch:
+    inputs:
+      week:
+        description: Week number (blank = current cycle)
+        required: false
+      dry_run:
+        description: Compute without writing
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 22 * * 0"
+
+permissions:
+  contents: write
+  issues: write
+  discussions: write
+
+concurrency:
+  group: frapp-gh-tally
+  cancel-in-progress: false
+
+jobs:
+  tally:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run tally
+        env:
+          GITHUB_TOKEN: ${{ secrets.FRAPP_GH_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          npx tsx scripts/cycle.ts tally \
+            ${{ inputs.week && format('--week {0}', inputs.week) || '' }} \
+            ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Commit state
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "frapp-gh[bot]"
+          git config user.email "frapp-gh@users.noreply.github.com"
+          git add .github/frapp-gh public/leaderboard.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "no state changes"
+          else
+            git commit -m "chore(frapp-gh): tally week state"
+            git push
+          fi
