@@ -7,13 +7,23 @@ Phase 1 (this repo): async ranking, off-chain. Contributions are Issues, ballots
 are Discussion comments, aggregation is Borda count, Respect is the ZAO 2x
 Fibonacci curve, and everything is committed back to the repo as JSON.
 
+**Status: never run live.** Phase 1 is code-complete and tested end to end
+locally - the suite is green and `npm run replay` plays a whole period against
+recorded webhook deliveries - but nothing here has run against real GitHub. No
+App is registered, no webhook secret exists, nothing is deployed, and no real
+ballot has ever been cast. **Everything below describes what the code does when
+it runs, not something that has happened.** The first live period is a decision
+for Zaal, not a step that has been taken.
+
 Built from `research/06-frapp-gh-prd.md` in this repo.
 
-**Origin:** developed 2026-08-26 as a standalone repo at `~/Documents/frapp-gh`
-(three commits: scaffold, Phase 1, period numbering), then moved in here so
-ZAOfractal is the single home for everything fractal - docs, data, and the tools
-that run the game. The standalone copy is dead; this is the live tree. Paths in
-this README are relative to `frapp-gh/`.
+**Origin:** developed 2026-08-26 as a standalone repo at `~/Documents/frapp-gh`,
+then moved in here so ZAOfractal is the single home for everything fractal -
+docs, data, and the tools that run the game. That directory has since been
+deleted; this is the only tree. The move and everything after it are in this
+repo's history - `git log -- frapp-gh/` rather than a count written here, which
+would be stale the moment it was committed. Paths in this README are relative to
+`frapp-gh/`.
 
 ## The week
 
@@ -207,10 +217,12 @@ src/testing/      in-memory GitHub and store, replay engine
 **Workflows live at the repo root**, not here: GitHub only executes
 `.github/workflows` at the top level of a repository. See
 `../.github/workflows/fractal-{open,snapshot,tally}.yml` and `frapp-gh-ci.yml` -
-each sets `working-directory: frapp-gh`. The same applies to
-`.github/ISSUE_TEMPLATE/contribution.yml` here: it is inert until placed at the
-repo root, which would add a template chooser to every ZAOfractal issue, so that
-placement is a decision for Zaal rather than something this move assumed.
+each sets `working-directory: frapp-gh`. The contribution issue template is at
+the root for the same reason, as `../.github/ISSUE_TEMPLATE/contribution.yml`;
+it is not under `frapp-gh/`, where GitHub would never read it. That placement
+adds a template chooser to every ZAOfractal issue, blank issues included, which
+is a repo-wide change and was made deliberately rather than assumed - see the
+Submitting section above.
 
 State lives in git, so the audit trail is the commit history:
 
