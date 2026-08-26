@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-26T01:05:27.788Z",
+  "generatedAt": "2026-08-26T01:10:52.260Z",
   "source": "/Users/zaalpanthaki/Desktop/repos/fractalbotjuly2026/data",
   "counts": {
     "named": 144,
-    "namedAndHolding": 125,
-    "onChainHolders": 160,
-    "onChainUnnamed": 35,
+    "namedAndHolding": 129,
+    "onChainHolders": 169,
+    "onChainUnnamed": 40,
     "namesWithoutWallet": 23
   },
   "members": [
@@ -14,7 +14,7 @@
       "name": "Zaal",
       "source": "names_to_wallets.json",
       "holder": true,
-      "zorRespect": 774,
+      "zorRespect": 800,
       "zorAwards": 31,
       "ogRespect": 3094
     },
@@ -23,7 +23,7 @@
       "name": "Hurric4n3ike",
       "source": "names_to_wallets.json",
       "holder": true,
-      "zorRespect": 1136,
+      "zorRespect": 1176,
       "zorAwards": 22,
       "ogRespect": 2512
     },
@@ -32,7 +32,7 @@
       "name": "CandyToyBox",
       "source": "names_to_wallets.json",
       "holder": true,
-      "zorRespect": 1334,
+      "zorRespect": 1570,
       "zorAwards": 23,
       "ogRespect": 1914
     },
@@ -68,7 +68,7 @@
       "name": "Ohnahji B",
       "source": "names_to_wallets.json",
       "holder": true,
-      "zorRespect": 434,
+      "zorRespect": 594,
       "zorAwards": 12,
       "ogRespect": 1265
     },
@@ -86,9 +86,18 @@
       "name": "Meta Mu",
       "source": "names_to_wallets.json",
       "holder": true,
-      "zorRespect": 652,
+      "zorRespect": 746,
       "zorAwards": 6,
       "ogRespect": 825
+    },
+    {
+      "address": "0xb7f4b9caba6bb0aeaa2b5d8df23e2b59c192bdbb",
+      "name": "Zach L.",
+      "source": "names_to_wallets.json",
+      "holder": true,
+      "zorRespect": 872,
+      "zorAwards": 17,
+      "ogRespect": 611
     },
     {
       "address": "0xa70fe49c71529808eb881455073beded47f7016c",
@@ -98,15 +107,6 @@
       "zorRespect": 0,
       "zorAwards": 0,
       "ogRespect": 1379
-    },
-    {
-      "address": "0xb7f4b9caba6bb0aeaa2b5d8df23e2b59c192bdbb",
-      "name": "Zach L.",
-      "source": "names_to_wallets.json",
-      "holder": true,
-      "zorRespect": 722,
-      "zorAwards": 17,
-      "ogRespect": 611
     },
     {
       "address": "0x29185eb8cfd22aa719529217bfbade61677e0ad2",
@@ -136,6 +136,15 @@
       "ogRespect": 1122
     },
     {
+      "address": "0xc96ab83c1b1605c9cf5ecc661a415e41423185d8",
+      "name": "DCoop",
+      "source": "names_to_wallets.json",
+      "holder": true,
+      "zorRespect": 634,
+      "zorAwards": 2,
+      "ogRespect": 468
+    },
+    {
       "address": "0xf6519fef3eacfdb7843beea94a887255794438f0",
       "name": "Jango UU",
       "source": "names_to_wallets.json",
@@ -145,6 +154,15 @@
       "ogRespect": 910
     },
     {
+      "address": "0x82cb2305388c853ecfe9ea83a1604acf58466659",
+      "name": "fellenz",
+      "source": "names_to_wallets.json",
+      "holder": true,
+      "zorRespect": 370,
+      "zorAwards": 4,
+      "ogRespect": 647
+    },
+    {
       "address": "0x9e4281619db487c2f577e67a7174ff8f5c5e4706",
       "name": "Krem Beats",
       "source": "names_to_wallets.json",
@@ -152,24 +170,6 @@
       "zorRespect": 0,
       "zorAwards": 0,
       "ogRespect": 1000
-    },
-    {
-      "address": "0xc96ab83c1b1605c9cf5ecc661a415e41423185d8",
-      "name": "DCoop",
-      "source": "names_to_wallets.json",
-      "holder": true,
-      "zorRespect": 524,
-      "zorAwards": 2,
-      "ogRespect": 468
-    },
-    {
-      "address": "0x82cb2305388c853ecfe9ea83a1604acf58466659",
-      "name": "fellenz",
-      "source": "names_to_wallets.json",
-      "holder": true,
-      "zorRespect": 330,
-      "zorAwards": 4,
-      "ogRespect": 647
     },
     {
       "address": "0x1af4c2950c5c892d1f4aacd60e8f656a14555e5a",
@@ -212,7 +212,7 @@
       "name": "Motomoto",
       "source": "names_to_wallets.json",
       "holder": true,
-      "zorRespect": 644,
+      "zorRespect": 670,
       "zorAwards": 1,
       "ogRespect": 0
     },
@@ -289,6 +289,15 @@
       "ogRespect": 136
     },
     {
+      "address": "0x381cc779761212344f8400373a994d29e17522c6",
+      "name": "XTincT",
+      "source": "names_to_wallets.json",
+      "holder": true,
+      "zorRespect": 356,
+      "zorAwards": 3,
+      "ogRespect": 0
+    },
+    {
       "address": "0x0f02419a4aeddbfe3f97e535c1c53008b54f89e3",
       "name": "emily",
       "source": "history.json + wallets.json",
@@ -332,15 +341,6 @@
       "zorRespect": 0,
       "zorAwards": 0,
       "ogRespect": 246
-    },
-    {
-      "address": "0x381cc779761212344f8400373a994d29e17522c6",
-      "name": "XTincT",
-      "source": "names_to_wallets.json",
-      "holder": true,
-      "zorRespect": 246,
-      "zorAwards": 3,
-      "ogRespect": 0
     },
     {
       "address": "0x1d95b0b6d3582feec7ef35d2ccf91564ded0cf7f",
@@ -1174,7 +1174,7 @@
       "address": "0x41dbc193481c10fb019cb9ceaab7caf909cb8414",
       "name": "Eric W",
       "source": "names_to_wallets.json",
-      "holder": false,
+      "holder": true,
       "zorRespect": 0,
       "zorAwards": 0,
       "ogRespect": 0
@@ -1201,7 +1201,7 @@
       "address": "0x2b98017359a08867d0f4060edc579d9d0585e8c1",
       "name": "Harvesto",
       "source": "names_to_wallets.json",
-      "holder": false,
+      "holder": true,
       "zorRespect": 0,
       "zorAwards": 0,
       "ogRespect": 0
@@ -1273,7 +1273,7 @@
       "address": "0xaed620c450911c38714e666cd84137767e3d6286",
       "name": "Tadas",
       "source": "names_to_wallets.json",
-      "holder": false,
+      "holder": true,
       "zorRespect": 0,
       "zorAwards": 0,
       "ogRespect": 0
@@ -1282,7 +1282,7 @@
       "address": "0x461acd846b4cc249b96242f1ab7c72a39d94747c",
       "name": "Will T",
       "source": "names_to_wallets.json",
-      "holder": false,
+      "holder": true,
       "zorRespect": 0,
       "zorAwards": 0,
       "ogRespect": 0
@@ -1309,7 +1309,7 @@
   "unnamedHolders": [
     {
       "address": "0xf73485a61856ab07ad57152151db3ab99df9a8ea",
-      "zorRespect": 686,
+      "zorRespect": 738,
       "zorAwards": 7,
       "ogRespect": 0
     },
@@ -1380,6 +1380,12 @@
       "ogRespect": 0
     },
     {
+      "address": "0x287f404ac927d14fb7a8e6bfe04550c985a52b41",
+      "zorRespect": 110,
+      "zorAwards": 0,
+      "ogRespect": 0
+    },
+    {
       "address": "0x33b03beb0c8277d8fc35a844974dabfe289938c9",
       "zorRespect": 110,
       "zorAwards": 2,
@@ -1407,6 +1413,18 @@
       "address": "0x6f558aebfbd35477797ffa7a03fb81623c994769",
       "zorRespect": 110,
       "zorAwards": 1,
+      "ogRespect": 0
+    },
+    {
+      "address": "0x70a74f41e99e412657c014583544fa6ecdba4743",
+      "zorRespect": 110,
+      "zorAwards": 0,
+      "ogRespect": 0
+    },
+    {
+      "address": "0x938b5b4f009c8c2458e8664579213803d1d9f0ad",
+      "zorRespect": 110,
+      "zorAwards": 0,
       "ogRespect": 0
     },
     {
@@ -1464,6 +1482,12 @@
       "ogRespect": 66
     },
     {
+      "address": "0xa88c00082a73be6e71b80cdf836766f4e15a6454",
+      "zorRespect": 52,
+      "zorAwards": 0,
+      "ogRespect": 0
+    },
+    {
       "address": "0xdf302faea9a46fdf157277e098ce1e63e9969aa7",
       "zorRespect": 0,
       "zorAwards": 0,
@@ -1491,6 +1515,12 @@
       "address": "0x164e31f960ab37369e5b17ed0fada994e71aee5c",
       "zorRespect": 26,
       "zorAwards": 1,
+      "ogRespect": 0
+    },
+    {
+      "address": "0xd1346cc28bf99b1159a865e1a3027c49695de903",
+      "zorRespect": 16,
+      "zorAwards": 0,
       "ogRespect": 0
     },
     {

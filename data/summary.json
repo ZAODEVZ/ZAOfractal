@@ -1,6 +1,6 @@
 {
-  "pulledAt": "2026-08-26T01:03:17.578Z",
-  "latestBlock": 156053710,
+  "pulledAt": "2026-08-26T01:09:18.373Z",
+  "latestBlock": 156053890,
   "chainId": 10,
   "sources": {
     "blockscout": "https://optimism.blockscout.com/api/v2",
@@ -13,14 +13,18 @@
     "HATS": "0x3bc1A0Ad72417f2d411118085256fC53CBdDd137"
   },
   "zor": {
-    "holders": 59,
+    "holders": 70,
     "awards": 333,
     "periodsRecorded": 42,
     "firstPeriod": 0,
     "latestPeriod": 110,
     "firstAward": "2025-09-25T06:29:11.000000Z",
     "latestAward": "2026-08-25T18:41:21.000000Z",
-    "totalRespect": 15976
+    "burns": 28,
+    "respectMinted": 18266,
+    "respectBurned": 848,
+    "respectHeld": 17418,
+    "reconciliationResidual": 0
   },
   "og": {
     "holders": 122,
@@ -29,6 +33,8 @@
     "mints": 69,
     "distributions": 447,
     "recipients": 123,
+    "respectHeld": 38484,
+    "reconciliationResidual": 0,
     "firstDistribution": "2024-07-30T00:24:27.000000Z",
     "latestDistribution": "2025-12-18T15:46:11.000000Z",
     "totalSupply": 38484

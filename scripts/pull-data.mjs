@@ -229,53 +229,72 @@ function normalizeOgHolders(holders) {
 }
 
 /** ZOR holds two kinds of balance: fungible id 0 is accumulated Respect, every
- * other id is a single soulbound award badge (always value 1). */
-function normalizeZorHolders(holders) {
-  const totals = new Map();
+ * other id is a single soulbound award badge (always value 1).
+ *
+ * Blockscout's indexed value for the fungible id runs behind the chain (spot
+ * checks were short by 4-18%), so the Respect figure is read from the contract
+ * and only the award-badge count comes from the indexer. */
+async function normalizeZorHolders(holders, transfers) {
   const awards = new Map();
+  const addrs = new Set();
   for (const h of holders) {
     const address = h.address.hash;
-    if (h.token_id === '0') {
-      totals.set(address, (totals.get(address) || 0n) + BigInt(h.value));
-    } else {
-      awards.set(address, (awards.get(address) || 0) + 1);
-    }
+    addrs.add(address);
+    if (h.token_id !== '0') awards.set(address, (awards.get(address) || 0) + 1);
   }
-  const addrs = new Set([...totals.keys(), ...awards.keys()]);
-  return [...addrs]
-    .map((address) => ({
-      address,
-      respect: Number(totals.get(address) || 0n),
-      awards: awards.get(address) || 0,
-    }))
-    .sort((a, b) => b.respect - a.respect || a.address.localeCompare(b.address));
+  // The indexer's holder list has also been seen to drop accounts entirely, so
+  // seed the address set from everyone who ever received a token.
+  for (const t of transfers) {
+    if (t.to?.hash && t.to.hash !== ZERO) addrs.add(t.to.hash);
+  }
+
+  const pad = (v) => v.replace(/^0x/, '').toLowerCase().padStart(64, '0');
+  const rows = [];
+  for (const address of addrs) {
+    // balanceOf(address,uint256)
+    const raw = await rpc('eth_call', [{
+      to: CONTRACTS.ZOR_RESPECT,
+      data: '0x00fdd58e' + pad(address) + pad('0x0'),
+    }, 'latest']);
+    rows.push({ address, respect: Number(hexToBig(raw)), awards: awards.get(address) || 0 });
+  }
+  log(`  [ZOR_RESPECT] balances read from chain: ${rows.length}`);
+  return rows.sort((a, b) => b.respect - a.respect || a.address.localeCompare(b.address));
 }
 
-/** One row per ZOR mint: who, how much Respect, which weekly period, which
- * breakout group, what rank. This is the timeline the member write-ups need. */
+/** One row per ZOR award badge movement: who, how much Respect, which weekly
+ * period, which breakout group, what rank. Mints are the award timeline the
+ * member write-ups need; burns are kept separately so the ledger reconciles
+ * against on-chain balances. */
 function zorAwardEvents(transfers) {
   const rows = [];
+  const burns = [];
   for (const t of transfers) {
-    if (t.from.hash !== ZERO) continue; // mints only
+    const minting = t.from.hash === ZERO;
+    const burning = t.to.hash === ZERO;
+    if (!minting && !burning) continue;
     const tokenId = t.total?.token_id;
-    if (!tokenId || tokenId === '0') continue;
+    if (!tokenId || tokenId === '0') continue; // the fungible leg of the same tx
     const unpacked = unpackTokenId(tokenId);
     const props = t.total?.token_instance?.metadata?.properties || {};
-    rows.push({
+    const row = {
       date: t.timestamp,
       block: t.block_number,
       tx: t.transaction_hash,
-      recipient: t.to.hash,
+      recipient: minting ? t.to.hash : t.from.hash,
       periodNumber: props.periodNumber ?? unpacked.periodNumber,
       groupNum: props.groupNum ?? null,
       level: props.level ?? null,
       respect: props.denomination ?? null,
       mintType: props.mintType ?? unpacked.mintType,
       tokenId,
-    });
+    };
+    (minting ? rows : burns).push(row);
   }
-  rows.sort((a, b) => a.block - b.block || a.recipient.localeCompare(b.recipient));
-  return rows;
+  const byBlock = (a, b) => a.block - b.block || a.recipient.localeCompare(b.recipient);
+  rows.sort(byBlock);
+  burns.sort(byBlock);
+  return { awards: rows, burns };
 }
 
 /** OG Respect predates the ZOR award-metadata scheme, and it was not minted
@@ -520,19 +539,23 @@ async function main() {
 
   if (only.includes('zor')) {
     const zor = await pullToken('ZOR_RESPECT');
-    const holders = normalizeZorHolders(zor.holders);
-    const awards = zorAwardEvents(zor.transfers);
+    const holders = await normalizeZorHolders(zor.holders, zor.transfers);
+    const { awards, burns } = zorAwardEvents(zor.transfers);
     const periods = periodsFrom(awards);
+    const minted = awards.reduce((sum, a) => sum + (a.respect || 0), 0);
+    const burned = burns.reduce((sum, a) => sum + (a.respect || 0), 0);
+    const held = holders.reduce((s, h) => s + h.respect, 0);
     await write('zor-respect.json', {
       pulledAt, contract: CONTRACTS.ZOR_RESPECT, deployBlock: DEPLOY_BLOCK.ZOR_RESPECT,
       name: zor.meta.name, type: zor.meta.type,
       holderCount: holders.length, transferCount: Number(zor.counters.transfers_count),
-      totalRespect: holders.reduce((s, h) => s + h.respect, 0),
+      totalRespect: held,
       holders,
     });
     await write('award-events.json', {
       pulledAt, ledger: 'ZOR', contract: CONTRACTS.ZOR_RESPECT,
       count: awards.length, events: awards,
+      burnCount: burns.length, burns,
     });
     await write('periods.json', { pulledAt, count: periods.length, periods });
     summary.zor = {
@@ -543,7 +566,13 @@ async function main() {
       latestPeriod: periods.at(-1)?.periodNumber ?? null,
       firstAward: awards[0]?.date ?? null,
       latestAward: awards.at(-1)?.date ?? null,
-      totalRespect: holders.reduce((s, h) => s + h.respect, 0),
+      burns: burns.length,
+      // minted - burned should equal the balances read off the contract; a
+      // non-zero residual means the snapshot missed a transfer.
+      respectMinted: minted,
+      respectBurned: burned,
+      respectHeld: held,
+      reconciliationResidual: minted - burned - held,
     };
   }
 
@@ -568,6 +597,11 @@ async function main() {
       mints: rows.filter((r) => r.kind === 'mint').length,
       distributions: distributions.length,
       recipients: new Set(distributions.map((r) => r.to.toLowerCase())).size,
+      // Holder balances should add up to total supply; a residual means the
+      // indexer's holder list is incomplete.
+      respectHeld: holders.reduce((sum, h) => sum + h.respect, 0),
+      reconciliationResidual: Number(BigInt(og.meta.total_supply) / 10n ** 18n)
+        - holders.reduce((sum, h) => sum + h.respect, 0),
       firstDistribution: distributions[0]?.date ?? null,
       latestDistribution: distributions.at(-1)?.date ?? null,
       totalSupply: Number(BigInt(og.meta.total_supply) / 10n ** 18n),
