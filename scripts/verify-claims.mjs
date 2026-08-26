@@ -502,6 +502,21 @@ const CLAIMS = [
   ['ADMIN KEY', 'OG admin is the treasury wallet', (og.adminRole?.members ?? []).map(lower).join(','), lower(summary.og.treasury)],
   ['ADMIN KEY', 'ZOR is owned by OREC, not by a wallet', lower(summary.orec.config.owner), lower(summary.contracts.OREC)],
 
+  // --- ROADMAP.md, the public L0-L7 scale ------------------------------------
+  ['ROADMAP', 'period counter', summary.zor.latestPeriod, 110],
+  ['ROADMAP', 'settled periods', sessions.length, 41],
+  ['ROADMAP', 'first settled period', firstSettledPeriod, 67],
+  ['ROADMAP', 'mean settled per period', (ascending.reduce((s, p) => s + p.participants, 0) / ascending.length).toFixed(1), '8.1'],
+  ['ROADMAP', 'recent session range', `${windowSessionSizes[0]}-${windowSessionSizes.at(-1)}`, '4-12'],
+  ['ROADMAP', 'addresses that ever held Respect', touched.size, 169],
+  ['ROADMAP', 'founder ranked in the last 15 settled sessions', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
+  ['ROADMAP', 'highest non-founder attendance', Math.max(...[...attendance.entries()].filter(([a]) => a !== '0x7234c36a71ec237c2ae7698e8916e0735001e9af').map(([, v]) => v.size)), 10],
+  ['ROADMAP', 'executions by the top executor of all attempts', `${executions['0x7234c36a71ec237c2ae7698e8916e0735001e9af']}/${proposals.proposals.filter((p) => p.executedTx).length}`, '130/134'],
+  ['ROADMAP', 'addresses able to clear the minimum weight alone', [...ogBalance.values()].filter((v) => v >= MIN_WEIGHT).length, 12],
+  // L6's arithmetic, so the "physics problem" framing cannot rot either.
+  ['ROADMAP', 'circles a week at 1,000 participants in groups of 6', Math.round(1000 / 6), 167],
+  ['ROADMAP', 'growth multiple from the community roll to 1,000', (1000 / 188).toFixed(1), '5.3'],
+
   // --- prose invariants -----------------------------------------------------
   ['NOT-ASKED', 'runbook says the bench has not been contacted or agreed',
     /has been contacted, asked, approached or has agreed to\s+anything/.test(docText('respect/FACILITATION-RUNBOOK.md')), true],
