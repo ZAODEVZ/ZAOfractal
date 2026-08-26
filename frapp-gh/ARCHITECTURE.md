@@ -85,6 +85,20 @@ earns whatever the curve pays at that rank. Covered in `borda-count.test.ts`,
 `respect-scorer.test.ts`, and the replay scenario, so it cannot be refactored
 away by accident.
 
+### The curve is the live game's curve
+
+Verified against the chain, not assumed. Each on-chain award carries a `level`
+(6 highest, 1 lowest), so the curve is recoverable as level -> respect:
+`6=110, 5=68, 4=42, 3=26, 2=16, 1=10` across every period since 106. That is
+the curve in `frapp-gh.config.json`, and `scripts/verify-claims.mjs` pins the
+two together so an edit to either side reports.
+
+Two facts from the same data matter for Phase 2. A live period runs several
+breakout groups and pays a full curve *per group* - period 107 minted three
+110s - whereas the async game runs one group and pays one of each. And period
+105 paid a flat 40 to all six recipients, the only recent period off the curve;
+it is pinned as a known exception rather than filtered silently.
+
 `assignRespect` maps final rank onto the curve and flags ties so the results
 comment can explain why two equal scores ordered the way they did.
 

@@ -258,6 +258,24 @@ const firstSettledPeriod = Math.min(...sessions.map((p) => p.periodNumber));
 
 // --- the claims, as written in the docs -------------------------------------
 
+/* Recover the Respect curve the live game actually pays. Each award carries a
+ * `level` - 6 is the top of a breakout, 1 the bottom - so the curve is the
+ * level -> respect mapping, highest level first. Periods before 106 are skipped
+ * (see the FRAPP claims for why 105 is excluded). A period can contain several
+ * breakout groups, so 110 appears more than once per period; the async game
+ * runs a single group, so it pays one of each. */
+const curveLevels = new Map();
+let chainCurveIsConsistent = true;
+for (const e of awards.events) {
+  if (e.periodNumber < 106) continue;
+  const seen = curveLevels.get(e.level);
+  if (seen === undefined) curveLevels.set(e.level, e.respect);
+  else if (seen !== e.respect) chainCurveIsConsistent = false;
+}
+const chainCurve = [...curveLevels.entries()]
+  .sort(([a], [b]) => b - a)
+  .map(([, respect]) => respect);
+
 const CLAIMS = [
   ['LEDGER', 'OG holders with a balance', ogBalance.size, 122],
   ['LEDGER', 'ZOR holders with a balance', zorBalance.size, 64],
@@ -568,6 +586,19 @@ const CLAIMS = [
     periods.periods.find((p) => p.periodNumber === 109)?.date.slice(0, 10), '2026-08-18'],
   ['FRAPP', 'the chain has not fallen behind the epoch frapp-gh counts from',
     frapp((c) => summary.zor.latestPeriod >= c.sessionSchedule.epochWeekNumber), true],
+  /* The curve frapp-gh pays has to be the curve the live game pays, or an async
+   * period and a Monday breakout award different amounts for the same rank.
+   * On-chain the position is a `level` (6 highest), so the curve is recovered by
+   * mapping level -> respect over recent periods. Period 105 is excluded: every
+   * one of its six awards was a flat 40, the only recent period off the curve,
+   * and it is pinned separately so the exclusion is not silent. */
+  ['FRAPP', 'curve awarded on chain since period 106', chainCurve.join(','), '110,68,42,26,16,10'],
+  ['FRAPP', 'frapp-gh pays the curve the chain pays',
+    frapp((c) => c.ranking.respectScores.join(',')), '110,68,42,26,16,10'],
+  ['FRAPP', 'each on-chain level maps to exactly one amount', chainCurveIsConsistent, true],
+  ['FRAPP', 'period 105 is the one recent period off the curve',
+    awards.events.filter((e) => e.periodNumber === 105 && e.respect === 40).length, 6],
+
   ['FRAPP', 'frapp-gh README calls 08-25 settlement, not the session date',
     /settled on-chain the next day/.test(docText('frapp-gh/README.md')), true],
 
