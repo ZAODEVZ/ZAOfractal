@@ -226,8 +226,9 @@ The ordering is by cost-to-value, not by severity:
 1. **Execution rota now (Option 2).** Zero on-chain cost, fixes the most visible
    symptom this week, and it is the only item on this page that needs no
    proposal, no deploy and no decision from anyone but Zaal. Three names and a
-   runbook. The two proposals currently sitting passed and unexecuted are the
-   argument.
+   runbook - both drafted in [EXECUTION-RUNBOOK.md](./EXECUTION-RUNBOOK.md). The
+   two proposals currently sitting passed and unexecuted are the argument, and
+   so are the 24 award slots that eleven reverted executions left unminted.
 2. **Move the OG admin role to a Safe at threshold 2 or higher (Option 3).**
    Highest severity, low effort. Raise the existing Safe's threshold above 1
    first, or create a new one - a threshold-1 Safe is not a mitigation. Do this
@@ -253,7 +254,9 @@ is behavioural, and the contracts are not the reason it has not been met.
 Sequenced so each step is independently useful and nothing depends on a step
 that has not shipped.
 
-**Step 1 - Execution rota (this week, no chain work).**
+**Step 1 - Execution rota (this week, no chain work).** Written up in full,
+including a proposed bench that nobody has been contacted about, in
+[EXECUTION-RUNBOOK.md](./EXECUTION-RUNBOOK.md).
 - Name 3 to 5 executors. Candidates who have already acted on-chain: Tadas (4
   executions), Ohnahji B (11 votes), CandyToyBox, Meta Mu.
 - Write the execution runbook: how to spot a proposal in the Execution stage,

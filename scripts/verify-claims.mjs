@@ -3,8 +3,8 @@
  * verify-claims.mjs - re-check every number quoted in the respect/ docs against
  * the committed snapshot.
  *
- * respect/LEDGER-RECONCILIATION.md and respect/SIGNER-COMMITTEE.md are full of
- * hard figures. They go stale the moment someone runs scripts/pull-data.mjs
+ * respect/LEDGER-RECONCILIATION.md, respect/SIGNER-COMMITTEE.md and
+ * respect/EXECUTION-RUNBOOK.md are full of hard figures. They go stale the moment someone runs scripts/pull-data.mjs
  * again. This script holds each quoted figure as an expectation and reports the
  * ones that have moved, so the docs get corrected rather than quietly drifting.
  *
@@ -102,6 +102,49 @@ const lags = proposals.proposals
   .map((p) => (Date.parse(p.executedAt) - Date.parse(p.createdAt)) / 86400000)
   .sort((a, b) => a - b);
 
+/** Every award slot a reverted execution left unminted, and why the revert
+ * happened. Backs respect/EXECUTION-RUNBOOK.md sections 1 and 6. */
+const failedExecutions = proposals.proposals.filter((p) => p.executionFailed && p.action?.awards);
+
+const unsettled = new Map();
+for (const p of failedExecutions) {
+  const period = p.action.awards[0].periodNumber;
+  const minted = new Set(awards.events.filter((e) => e.periodNumber === period).map((e) => lower(e.recipient)));
+  for (const a of p.action.awards) {
+    if (!minted.has(lower(a.recipient))) {
+      unsettled.set(`${period}|${lower(a.recipient)}`, { period, recipient: lower(a.recipient), respect: a.respect });
+    }
+  }
+}
+const unsettledRows = [...unsettled.values()];
+const unsettledPeople = new Set(unsettledRows.map((r) => r.recipient));
+
+/** A revert is a duplicate when someone in the group already held an award for
+ * that period at the moment the execution ran. The rest are the ERC-1155
+ * acceptance-check failures on contract recipients. */
+const duplicateCauseFailures = failedExecutions.filter((p) => {
+  const period = p.action.awards[0].periodNumber;
+  const at = Date.parse(p.executedAt);
+  const priorHolders = new Set(
+    awards.events.filter((e) => e.periodNumber === period && Date.parse(e.date) < at).map((e) => lower(e.recipient)),
+  );
+  return p.action.awards.some((a) => priorHolders.has(lower(a.recipient)));
+}).length;
+
+/** The proposed bench in respect/EXECUTION-RUNBOOK.md section 2, by the three
+ * criteria it states. */
+const benchStats = (address) => {
+  const a = lower(address);
+  const cast = proposals.proposals.reduce((n, p) => n + p.votes.filter((v) => lower(v.voter) === a).length, 0);
+  const recent = awards.events.filter((e) => lower(e.recipient) === a && e.periodNumber >= 100).length;
+  const last = Math.max(0, ...awards.events.filter((e) => lower(e.recipient) === a).map((e) => e.periodNumber));
+  return { cast, recent, last };
+};
+const OHNAHJI = benchStats('0x64a15b1d2de581097cb48e5d82619203e24bb3e1');
+const CANDYTOYBOX = benchStats('0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66');
+const METAMU = benchStats('0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b');
+const TADAS = benchStats('0xaed620c450911c38714e666cd84137767e3d6286');
+
 // --- the claims, as written in the docs -------------------------------------
 
 const CLAIMS = [
@@ -169,6 +212,24 @@ const CLAIMS = [
   ['SIGNER', 'OREC vote window (days)', Number(summary.orec.config.voteLen) / 86400, 3],
   ['SIGNER', 'OREC veto window (days)', Number(summary.orec.config.vetoLen) / 86400, 3],
   ['SIGNER', 'OREC reads vote weight from OG', lower(summary.orec.config.respectContract), lower(summary.contracts.OG_RESPECT)],
+
+  ['RUNBOOK', 'award slots left unminted by reverted executions', unsettledRows.length, 24],
+  ['RUNBOOK', 'Respect left unminted', unsettledRows.reduce((n, r) => n + r.respect, 0), 1672],
+  ['RUNBOOK', 'people owed unminted Respect', unsettledPeople.size, 16],
+  ['RUNBOOK', 'of those with no name on file', [...unsettledPeople].filter((a) => !named.has(a)).length, 7],
+  ['RUNBOOK', 'periods with unminted awards', new Set(unsettledRows.map((r) => r.period)).size, 8],
+  ['RUNBOOK', 'reverts caused by a duplicate period award', duplicateCauseFailures, 7],
+  ['RUNBOOK', 'reverts with no duplicate (contract recipients)', failedExecutions.length - duplicateCauseFailures, 4],
+  ['RUNBOOK', 'bench: Ohnahji B votes', OHNAHJI.cast, 11],
+  ['RUNBOOK', 'bench: Ohnahji B awards since period 100', OHNAHJI.recent, 4],
+  ['RUNBOOK', 'bench: Ohnahji B last period', OHNAHJI.last, 109],
+  ['RUNBOOK', 'bench: CandyToyBox votes', CANDYTOYBOX.cast, 3],
+  ['RUNBOOK', 'bench: CandyToyBox awards since period 100', CANDYTOYBOX.recent, 5],
+  ['RUNBOOK', 'bench: CandyToyBox last period', CANDYTOYBOX.last, 110],
+  ['RUNBOOK', 'bench: Meta Mu votes', METAMU.cast, 1],
+  ['RUNBOOK', 'bench: Meta Mu awards since period 100', METAMU.recent, 5],
+  ['RUNBOOK', 'bench: Meta Mu last period', METAMU.last, 110],
+  ['RUNBOOK', 'Tadas last period (why he fails criterion 2)', TADAS.last, 68],
 ];
 
 const drifted = CLAIMS.filter(([, , actual, expected]) => String(actual) !== String(expected));
@@ -180,7 +241,7 @@ for (const [doc, label, actual, expected] of CLAIMS) {
 
 console.log(`\nSnapshot pulled ${summary.pulledAt} at block ${summary.latestBlock}.`);
 if (drifted.length === 0) {
-  console.log(`All ${CLAIMS.length} figures quoted in respect/LEDGER-RECONCILIATION.md and respect/SIGNER-COMMITTEE.md match the snapshot.`);
+  console.log(`All ${CLAIMS.length} figures quoted in respect/LEDGER-RECONCILIATION.md, respect/SIGNER-COMMITTEE.md and respect/EXECUTION-RUNBOOK.md match the snapshot.`);
 } else {
   console.log(`${drifted.length} of ${CLAIMS.length} figures have drifted. Update the prose, then update the expectations here.`);
   process.exit(1);
