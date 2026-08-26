@@ -155,3 +155,23 @@ Chapters 4-11 will be drafted in sequence, following the same research-to-draft 
 **Last updated:** 2026-05-25 - all 11 chapters drafted, brand-cleaned, deployed.
 
 **For questions:** Contact Zaal (zaalp99@gmail.com)
+
+---
+
+## Known-stale claims - v0.2 accuracy queue (2026-08-25)
+
+Logged here so the next accuracy pass has a checklist instead of a re-read.
+None of these are edited in the chapters yet; prose changes wait for the pass.
+
+| Claim | Where | Reality check needed |
+|---|---|---|
+| "90+ unbroken weeks" | ch01 (x3), ch08, this README | Repo README says 100+; Aug 2024 start implies ~104 by Aug 2026. Pick one number, source it, update everywhere in one commit. |
+| "188 members" | ch07, ch08 (x3), ch09 | Count was from ~May 2026. Re-verify before share. |
+| "as of May 2026" facts table | repo README | OREC tx count (242+), streak, bot version all 3 months stale. |
+| "only active fractal on Optimism" | ch01, ch08 | Was true at drafting; re-verify against the fractal-communities directory before publishing. |
+
+Also: the assembled `ZAO-Fractal-Whitepaper.md` renders an empty-looking
+Abstract heading (stray `---` after the title) - cosmetic, content is intact.
+
+Publish gate unchanged: nothing goes to permaweb and no Hat mints until Zaal
+re-reads and gives explicit go (board card b1281a6a).
