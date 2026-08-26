@@ -23,34 +23,52 @@ ZAOfractal/
                                 context/, external/, code-walk/)
                                25+ files, ~10500 lines, 320+ unique sources.
   whitepaper/                - The magnum opus governance document
-                               draft/ contains the complete v0.1: abstract +
-                               11 chapters, 28,529 words, accuracy pass 2026-07-21.
+                               draft/ contains the complete v0.2: abstract +
+                               11 chapters, 34,421 words, accuracy pass against
+                               the on-chain snapshot 2026-08-26. Assemble with
+                               scripts/assemble-whitepaper.mjs.
 ```
 
 Start at [reference/README.md](reference/README.md) for the survey. Move to [research/README.md](research/README.md) when you need depth. The [whitepaper/README.md](whitepaper/README.md) tracks magnum-opus progress.
 
-## Live ZAO Fractal facts (as of May 2026)
+## Live ZAO Fractal facts
 
-| Fact | Value |
-|------|-------|
-| Cadence | Mondays 6pm EST, weekly. Also runs anytime with 4+ unplayed members. |
-| Streak | 100+ continuous weeks |
-| Surface | Discord bot `fractalbotmarch2026` (52 slash commands, v2.1, March 28 2026) |
-| Chain | Optimism (OP Mainnet) |
-| OREC executor | `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` |
-| OG Respect (ERC-20, fractals 1-73) | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` |
-| ZOR Respect (ERC-1155, fractals 74+) | `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` |
-| Submission UI | `zao.frapps.xyz/submitBreakout` |
-| OREC transactions | 242+ as of May 21, 2026 |
+Measured from the committed snapshot at OP Mainnet block 156,055,426, pulled
+2026-08-26. Re-pull with `node scripts/pull-data.mjs`; re-check every figure
+quoted anywhere in this repo with `node scripts/verify-claims.mjs`.
+
+| Fact | Value | Source |
+|------|-------|--------|
+| Cadence | Mondays 6pm EST, weekly. Also runs anytime with 4+ unplayed members. | community |
+| Period counter | 110, settled 2026-08-25 | chain |
+| Settled periods on the ZOR ledger | 41, covering periods 67-110 | chain |
+| People settled per period | mean 8.1; 4 to 12 in recent sessions | chain |
+| Community roll | 188 (Farcaster, counted ~May 2026); 169 addresses have ever held Respect | community / chain |
+| Surface | Discord bot `fractalbotmarch2026` (52 slash commands, v2.1, March 28 2026) | unsourced in this repo |
+| Chain | Optimism (OP Mainnet) | chain |
+| OREC executor | `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` | chain |
+| OG Respect (ERC-20, periods 1-66) | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` | chain |
+| ZOR Respect (ERC-1155, periods 67+) | `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` | chain |
+| Submission UI | `zao.frapps.xyz/submitBreakout` | - |
+| OREC activity | 316 transactions, 514 events, 153 proposals, 123 executed, 11 execution reverts | chain |
+| Vote weight | read live from OG at each vote; ZOR confers none | chain |
+
+**The streak is not an on-chain number.** The chain records settlement, not
+attendance, and periods 1-66 ran on a ledger with no per-period record at all.
+Whitepaper ch08 keeps the ritual claim and the chain claim apart on purpose.
 
 Operational docs that already exist:
 
-- The whitepaper itself (complete v0.1, all 11 chapters + abstract) - [whitepaper/draft/](whitepaper/draft/)
+- The whitepaper itself (complete v0.2, all 11 chapters + abstract) - [whitepaper/draft/](whitepaper/draft/)
 - The bot internals walkthrough - [research/code-walk/01-fractalbot-walkthrough.md](research/code-walk/01-fractalbot-walkthrough.md)
 - The ORDAO Solidity walkthrough - [research/code-walk/02-ordao-contracts-walkthrough.md](research/code-walk/02-ordao-contracts-walkthrough.md)
 - Frapp-GH (async GitHub-native fractal) full PRD, build-ready - [research/06-frapp-gh-prd.md](research/06-frapp-gh-prd.md)
 
-Still to come: dashboard rebuild spec, OG-to-ZOR ledger reconciliation, signer-committee proposal for the 2-wallet OREC bottleneck.
+Since shipped, all under [respect/](respect/): the OG-to-ZOR ledger
+reconciliation, the signer-committee proposal (which found there is no signer
+set to join - see `respect/SIGNER-COMMITTEE.md`), the execution and
+facilitation runbooks, and a dashboard in [dao/](dao/) reading the committed
+snapshot rather than a live indexer.
 
 ## License
 
