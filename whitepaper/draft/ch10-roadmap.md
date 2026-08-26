@@ -1,10 +1,35 @@
 # Chapter 10: Roadmap
 
-> **Draft v0.1 - 2026-05-25 - awaiting Zaal review**
+> **Draft v0.2 - 2026-08-26 - accuracy pass against the committed chain snapshot**
 
 ---
 
 *ZAO Fractal is not a finished system. It is a practice that improves through iteration. The following roadmap is concrete: target dates, accountable owners, measurable outcomes. Each item addresses a limitation from Chapter 9 or an opportunity from Chapter 8.*
+
+---
+
+## Status as of 2026-08-26
+
+This roadmap was written in May 2026 with target dates through August. Those
+dates have passed. Publishing a roadmap whose deadlines are in the reader's
+past, without saying what happened, is how a roadmap becomes decoration - so
+here is the state of each item, before the items themselves.
+
+| Item | Target | Status as of 2026-08-26 |
+|---|---|---|
+| Restore fractals web dashboard | Jun 15 | **Partly done, elsewhere.** A dashboard exists in this repo (`dao/`) reading a committed on-chain snapshot rather than a live indexer. Not deployed at zaoos.com. |
+| Publish OG-to-ZOR reconciliation formula | Jun 15 | **Measured, not decided.** `respect/LEDGER-RECONCILIATION.md` costs out the options against real balances and names the open calls. No formula is adopted, and the decision is one person's to make. |
+| Establish 3+ signer committee for OREC | Jun 30 | **Superseded - see the rewritten item below.** The deliverable as written cannot be built. |
+| Ship documentation set | Jun 30 | **Partly done.** The whitepaper is complete and this accuracy pass is what you are reading; the operational runbooks now exist under `respect/`. Not published externally. |
+| Restore ornode or retire it | Jul 15 | **Decided by circumstance.** ornode is down and the dashboard was rewritten on 2026-08-25 to read a committed snapshot instead. The retirement is real; the formal notice has not been given. |
+| Frapp-GH go/no-go | Jul 15 | **Not decided.** |
+| Cignals pilot, EFBS pilot, Frapp-GH phase 1 | Q3 / Aug 31 | **Not started.** |
+
+Two of these were overtaken by measurement rather than by work: the ledger
+question turned out to be bigger than a conversion formula (Chapter 4), and
+the signer committee turned out to be the wrong fix for the wrong mechanism
+(Chapter 9). The dates below are left as written, because a roadmap that
+silently rewrites its own history is worth less than one that missed.
 
 ---
 
@@ -43,21 +68,19 @@
 
 ---
 
-## June 30, 2026: Establish 3+ Signer Committee for OREC
+## June 30, 2026: Establish 3+ Signer Committee for OREC - **superseded**
 
-**Target date:** June 30, 2026
+**Target date:** June 30, 2026. **Status:** cannot be built as specified.
 
-**Deliverable:** Multi-sig authorization for OREC contract submission. Propose and implement a 3-of-5 multi-sig (or equivalent) that controls ORDAO execution on-chain.
+**Why it is superseded.** The deliverable was "transfer OREC contract admin to a 3-of-5 multi-sig". OREC's owner is OREC itself, and every privileged setter is `onlyOwner`, so there is no admin to transfer; and `propose`, `vote` and `execute` are already open to anyone, so there is no submission permission to distribute. Chapter 9 works through the measurement. A multi-sig over OREC would grant nobody anything they do not already have.
 
-**Process:**
-1. ZAO council nominates 5 candidates (zaal + 4 others from the community)
-2. Fractal 120+ votes on the 5 nominees (simple majority)
-3. If approved, transfer OREC contract admin to the 3-of-5 multi-sig
-4. Test the multi-sig by submitting results from a Fractal through the new mechanism
+**What replaces it,** as three separate items rather than one:
 
-**Owner:** ZAO Governance + Zaal
+**10a. Relinquish or split the OG admin role.** This is the only genuinely permissioned capability in the stack: `DEFAULT_ADMIN_ROLE` on the OG Respect contract has exactly one member and can mint vote weight at will. A multi-sig *here* would do real work, and so would renouncing the role outright once the ledger question is settled. **Owner:** Zaal. **Blocker:** relinquishing before migration would freeze the genesis allocation, so this is sequenced after 10b, not before.
 
-**Rationale:** Centralized submission (zaal + civilmonkey.eth only) is a single-person failure mode. A multi-sig distributes trust and makes the system more resilient. It also demonstrates to the community that decentralization is real, not aspirational.
+**10b. Unify the ledgers so vote weight tracks current contribution.** The weight bottleneck - 12 addresses able to clear the minimum, one showing up - is a governance problem, not a key problem, and 47 of 70 ZOR recipients having no vote is what makes it urgent. `respect/LEDGER-RECONCILIATION.md` holds the costed options. **Owner:** Zaal, then a proposal.
+
+**10c. Recruit executors and facilitators.** Execution is permissionless, unpaid, and done by one person 130 times out of 134; facilitation shows the same shape. Both are solved by people agreeing to do a job, not by contracts. `respect/EXECUTION-RUNBOOK.md` and `respect/FACILITATION-RUNBOOK.md` hold the run sheets and the gates. **Owner:** ZAO Governance.
 
 ---
 
@@ -82,7 +105,9 @@
 
 **Target date:** July 15, 2026
 
-**Decision point:** ornode (an indexing service for ORDAO events) is currently DOWN. Restore it or retire it in favor of direct contract reads.
+**Decision point:** ornode (an indexing service for ORDAO events) is DOWN. Restore it or retire it in favor of direct contract reads.
+
+**Update, 2026-08-26:** effectively retired. The dashboard in `dao/` was rewritten on 2026-08-25 to read a committed on-chain snapshot produced by `scripts/pull-data.mjs`, which reconciles both ledgers to zero residual and needs no indexer at all. That is Option B without the subgraph. What is outstanding from this item is only the formal deprecation notice.
 
 **Option A (Restore):**
 - Debug the indexing service (likely infrastructure issue)
@@ -230,4 +255,4 @@ Governance is not a problem to be solved once. It is a practice. The practice im
 
 ---
 
-**Word count: 1,256**
+**Word count: 2,121**
