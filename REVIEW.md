@@ -4,6 +4,11 @@
 decision, not by accident: gate `gate_4c836a146dcd` is open and is yours to
 close. Nothing here has been pushed.
 
+**Git author does not separate the lanes.** Every commit on this branch is
+authored `zao-assistant`, whether it came from the whitepaper work or the
+frapp-gh work. Do not read the author field as a boundary - the hash lists in
+this file are the only thing that reconciles who did what.
+
 Regenerate the commit list with:
 
 ```bash
@@ -108,10 +113,14 @@ have not accepted.
 | `4555291` | **ch00 v0.2** plus `scripts/assemble-whitepaper.mjs`; the assembled document is regenerated from the drafts. |
 | `c12131e` | whitepaper README: what the pass corrected, and the five things it could not close. |
 | `a37008e` | repo README facts table, measured, with a source column per row. |
+| `5a2b956` | Makes code MIT **by default** rather than by enumeration, after `frapp-gh/` landed and matched neither license list. |
+| `fecda82` | **`ROADMAP.md`** - the L0-L7 decentralization scale, published with gates. Internals stripped: ticket numbers, an unannounced identity-allocation decision, and an assessment of a named third party's project. Current-state figures corrected to measured. |
+| `ae2572f` | **`docs/README.md`** - index across the four document trees, one hook per chapter and per runbook. |
+| `fdfdea4` | **`README.md` as the front door.** Also drops the "unbroken since August 2024" lede, which was the exact claim the v0.2 pass separated from what the chain proves. |
 | `af7ecbd` | This file - stops printing a commit count it invalidates by existing. |
 | `ece1e7a` | Reads OG's `DEFAULT_ADMIN_ROLE` membership from the contract into the snapshot, so the paper's highest-consequence claim is pinned rather than asserted. Moves the snapshot to block 156,071,456; no quoted figure changed. |
 | `a4e90cb` | Handoff records the v0.2 lane. |
-| `4329636`, `1d221ab`, `5ea6e4e`, `f24f902`, `49d6abe` | **Not mine - the frapp-gh lane** landed five commits on this branch while the licensing task ran. A new `frapp-gh/` code directory, TypeScript, with its own tests and vercel.json. I have not reviewed them; they are listed so the count reconciles. |
+| `4329636`, `1d221ab`, `5ea6e4e`, `f24f902`, `49d6abe`, `b2566e8` | **Not mine - the frapp-gh lane.** Six commits adding `frapp-gh/`, a TypeScript app with its own tests and deploy config: moved in from a standalone repo, workflows to the repo root, webhook handlers and a replay harness, a contents-API path fix, period vocabulary, and a root issue template with an unranked-work rule. Confirmed with that lane. I have not reviewed them. Note `b2566e8` adds `.github/ISSUE_TEMPLATE/contribution.yml` at the **repo root**, outside `frapp-gh/` - every ZAOfractal issue now gets a template chooser where there was none. Blank issues stay enabled. |
 | `35349cb` | Marks the not-contacted language in `FACILITATION-RUNBOOK.md` as load-bearing and asserts it in `verify-claims.mjs`, so a later pass cannot trim it quietly. Zaal's 2026-08-26 reconfirmation recorded in the doc. |
 | `528855b` | **Licensing, per your decision.** MIT (`LICENSE`) for code, CC BY 4.0 (`LICENSE-DOCS`) for documents, Copyright (c) 2026 Zaal Panthaki / BCZ Strategies LLC / The ZAO. README gains a Licensing section; the pending flag is gone. Worth one look before push: this is the commit that sets the terms under which everything else in the branch can be reused. |
 
