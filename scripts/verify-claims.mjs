@@ -470,6 +470,12 @@ const CLAIMS = [
   ['WP ch09', 'standing No votes, all self-reversals', standingNoVotes, 10],
   ['WP ch09', 'addresses able to clear the minimum weight alone', [...ogBalance.values()].filter((v) => v >= MIN_WEIGHT).length, 12],
 
+  ['WP ch11', 'proposals / executed', `${proposals.proposalCount}/${summary.orec.executed}`, '153/123'],
+  ['WP ch11', 'ZOR awards', summary.zor.awards, 333],
+  ['WP ch11', 'latest period number', summary.zor.latestPeriod, 110],
+  ['WP ch11', 'founder ranked in the last 15 settled sessions', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
+  ['WP ch11', 'highest non-founder attendance', Math.max(...[...attendance.entries()].filter(([a]) => a !== '0x7234c36a71ec237c2ae7698e8916e0735001e9af').map(([, v]) => v.size)), 10],
+
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see
   // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the
