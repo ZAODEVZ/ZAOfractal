@@ -2,3 +2,4 @@
 .env*.local
 .gstack/
 .env*
+.serena/

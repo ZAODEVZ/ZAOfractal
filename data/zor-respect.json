@@ -1,0 +1,307 @@
+{
+  "pulledAt": "2026-08-26T00:58:59.287Z",
+  "contract": "0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c",
+  "deployBlock": 141001446,
+  "name": "ZAO Fractal Respect",
+  "type": "ERC-1155",
+  "holderCount": 59,
+  "transferCount": 361,
+  "totalRespect": 15976,
+  "holders": [
+    {
+      "address": "0x8D43A3fC2fed663BF6B82Ea4792C0e5239D5eE66",
+      "respect": 1334,
+      "awards": 23
+    },
+    {
+      "address": "0x29F5DeE65E1Fb856B816EaB4f0B702c10e5Eaa34",
+      "respect": 1136,
+      "awards": 22
+    },
+    {
+      "address": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
+      "respect": 774,
+      "awards": 31
+    },
+    {
+      "address": "0x29185eB8cfD22Aa719529217bFbadE61677e0Ad2",
+      "respect": 732,
+      "awards": 9
+    },
+    {
+      "address": "0x07686BedB0102E47D33Cec73307D2CC391aFf396",
+      "respect": 726,
+      "awards": 11
+    },
+    {
+      "address": "0xb7f4b9CAbA6bb0AEaA2B5d8dF23E2B59c192bDbB",
+      "respect": 722,
+      "awards": 17
+    },
+    {
+      "address": "0xF73485A61856Ab07Ad57152151db3ab99dF9a8Ea",
+      "respect": 686,
+      "awards": 7
+    },
+    {
+      "address": "0x2d9cBC4ECFBd1B8F66Aa798FD51585AE058dAA8B",
+      "respect": 652,
+      "awards": 6
+    },
+    {
+      "address": "0x849e1C0b2460979D2f7c77B87b90C65C70406421",
+      "respect": 644,
+      "awards": 1
+    },
+    {
+      "address": "0xc96Ab83C1B1605c9cf5ecc661A415E41423185D8",
+      "respect": 524,
+      "awards": 2
+    },
+    {
+      "address": "0x4D16FCE1BD6E327AE31398CE9A2c4E12C077ecB1",
+      "respect": 498,
+      "awards": 8
+    },
+    {
+      "address": "0xe5adabBD71225E8074E30ff6cE2a66c9319C071b",
+      "respect": 482,
+      "awards": 8
+    },
+    {
+      "address": "0x64A15b1D2DE581097CB48e5D82619203E24BB3e1",
+      "respect": 434,
+      "awards": 12
+    },
+    {
+      "address": "0xfAb9a3D37999E12252b47468D2FFD4BE15936012",
+      "respect": 356,
+      "awards": 5
+    },
+    {
+      "address": "0x03726e10565402A1137960ba06681754BE7Fe05f",
+      "respect": 336,
+      "awards": 7
+    },
+    {
+      "address": "0x0f02419a4AeddBfE3F97E535C1C53008b54F89e3",
+      "respect": 330,
+      "awards": 3
+    },
+    {
+      "address": "0x82Cb2305388C853eCfe9eA83a1604Acf58466659",
+      "respect": 330,
+      "awards": 4
+    },
+    {
+      "address": "0x65284960d4eAdaf45e923430A59B7D3Bf34dB641",
+      "respect": 312,
+      "awards": 4
+    },
+    {
+      "address": "0x4440397b9E67A020bc96269F263817BE63184F3A",
+      "respect": 304,
+      "awards": 6
+    },
+    {
+      "address": "0x547f8B793362df477a23aF6ee05F8e4e291a2Ee4",
+      "respect": 288,
+      "awards": 3
+    },
+    {
+      "address": "0x381CC779761212344f8400373a994d29E17522c6",
+      "respect": 246,
+      "awards": 3
+    },
+    {
+      "address": "0x698e5A259c7564Fc209a31994d664Cb919725383",
+      "respect": 230,
+      "awards": 4
+    },
+    {
+      "address": "0x5eCC8a94C117Eeb5c6233600927E941c2548d574",
+      "respect": 220,
+      "awards": 2
+    },
+    {
+      "address": "0xEd78B6236C14c4088715cd90513C6C604275Db96",
+      "respect": 220,
+      "awards": 3
+    },
+    {
+      "address": "0xFb63D640E6061e4Fe50089620815483069D8eeAa",
+      "respect": 220,
+      "awards": 2
+    },
+    {
+      "address": "0x6ca74cEbd564A837991E10a701ab7605CAB3D358",
+      "respect": 178,
+      "awards": 2
+    },
+    {
+      "address": "0x2cdB521cEADD3401Cc30b6AEEaE58D059fee0732",
+      "respect": 152,
+      "awards": 2
+    },
+    {
+      "address": "0xEdc5999b1Ec1759970a681B9F5C197dd0B474016",
+      "respect": 152,
+      "awards": 2
+    },
+    {
+      "address": "0xF6519fEf3EAcfdB7843BEEa94a887255794438F0",
+      "respect": 150,
+      "awards": 2
+    },
+    {
+      "address": "0x96575Ac5E90e7b34d985F4e85d39E57bd552A60E",
+      "respect": 136,
+      "awards": 2
+    },
+    {
+      "address": "0xaB2759Ef5C399a0a704183f5146eC9f13AE442c3",
+      "respect": 136,
+      "awards": 2
+    },
+    {
+      "address": "0xfaCEf700458D4Fc9746F7f3e0d37B462711fF09e",
+      "respect": 136,
+      "awards": 3
+    },
+    {
+      "address": "0xE243c5C876FD259AC41Bf8A15aEF64Cf522fea8f",
+      "respect": 126,
+      "awards": 1
+    },
+    {
+      "address": "0x061294782b7C73a675cF54124853c8133e3463FC",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x062108149bd327d43556716d6C523D3E0Db508b7",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x0c687a27410E8a655Bf31befc4c88237A60B1D3D",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x33B03BEB0C8277d8FC35A844974daBfe289938c9",
+      "respect": 110,
+      "awards": 2
+    },
+    {
+      "address": "0x570e563BA92589AD6b31f3269D24Cb21E5a45CaD",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x5c4A053dE47C69F033ACEc58C2Bd1aA4d683E5aa",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x5D89bc84fb2eD7C9bC5405eD0B1297114EB39fCc",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x6d1F1724841181A2326d77BB09Eb16482F4AC3b8",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x6f558AebfBd35477797Ffa7A03Fb81623C994769",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x744CDf12D5D289db118Ed9293c10cfa952169071",
+      "respect": 110,
+      "awards": 2
+    },
+    {
+      "address": "0x9763C16Dd7dEb17D33355d999cf2dA219Cec9EEA",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0xdBAa464302ff8928F04F82A57db0434c9BC3024a",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0xE11C28F65177481A7CFE165E214c32482B10191D",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0xEa2fE2A296BB347a24f5Df0d06703fCb19140487",
+      "respect": 110,
+      "awards": 1
+    },
+    {
+      "address": "0x3D5E3102b2dF3289799F5b09fe4827A59c3e59EF",
+      "respect": 84,
+      "awards": 2
+    },
+    {
+      "address": "0x461Da8b51a36a3F845A02BF8924A66e0Ca76e27e",
+      "respect": 68,
+      "awards": 1
+    },
+    {
+      "address": "0x59223379E56f18Ead2AbDecE93BcfB5c6d6Cf5ae",
+      "respect": 68,
+      "awards": 1
+    },
+    {
+      "address": "0xa8B382EEE1D88eaff0B5398bc6AC6e32f6606fd0",
+      "respect": 68,
+      "awards": 1
+    },
+    {
+      "address": "0x8a1891e106b504656c525b3C45a3E95F7A73A73E",
+      "respect": 52,
+      "awards": 2
+    },
+    {
+      "address": "0x5F18D3e8Fd97e4E95033b53c0f4c6861825A0564",
+      "respect": 42,
+      "awards": 1
+    },
+    {
+      "address": "0x876EEb06f5d50f4BC348D63a7d94f62eE029C792",
+      "respect": 42,
+      "awards": 1
+    },
+    {
+      "address": "0xfa893e0326bC79aA30D72D64359e784770376D90",
+      "respect": 42,
+      "awards": 1
+    },
+    {
+      "address": "0x164e31F960ab37369e5b17Ed0faDA994E71AEE5c",
+      "respect": 26,
+      "awards": 1
+    },
+    {
+      "address": "0xEcd67fc6095Cf25C31516333413a1a2daE7401dF",
+      "respect": 16,
+      "awards": 1
+    },
+    {
+      "address": "0xfDA73B8459F66b6758D1809372Df921365053AF1",
+      "respect": 16,
+      "awards": 1
+    },
+    {
+      "address": "0x79299542c9011305E0f2b4f37986CD54a1C9EF58",
+      "respect": 10,
+      "awards": 1
+    }
+  ]
+}

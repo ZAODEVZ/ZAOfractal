@@ -1,0 +1,59 @@
+{
+  "pulledAt": "2026-08-26T01:03:17.578Z",
+  "latestBlock": 156053710,
+  "chainId": 10,
+  "sources": {
+    "blockscout": "https://optimism.blockscout.com/api/v2",
+    "rpc": "https://mainnet.optimism.io"
+  },
+  "contracts": {
+    "OREC": "0xcB05F9254765CA521F7698e61E0A6CA6456Be532",
+    "OG_RESPECT": "0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957",
+    "ZOR_RESPECT": "0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c",
+    "HATS": "0x3bc1A0Ad72417f2d411118085256fC53CBdDd137"
+  },
+  "zor": {
+    "holders": 59,
+    "awards": 333,
+    "periodsRecorded": 42,
+    "firstPeriod": 0,
+    "latestPeriod": 110,
+    "firstAward": "2025-09-25T06:29:11.000000Z",
+    "latestAward": "2026-08-25T18:41:21.000000Z",
+    "totalRespect": 15976
+  },
+  "og": {
+    "holders": 122,
+    "treasury": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
+    "transfers": 518,
+    "mints": 69,
+    "distributions": 447,
+    "recipients": 123,
+    "firstDistribution": "2024-07-30T00:24:27.000000Z",
+    "latestDistribution": "2025-12-18T15:46:11.000000Z",
+    "totalSupply": 38484
+  },
+  "orec": {
+    "config": {
+      "voteLen": "259200",
+      "vetoLen": "259200",
+      "minWeight": "1000000000000000000000",
+      "respectContract": "0x34ce89baa7e4a4b00e17f7e4c0cb97105c216957",
+      "owner": "0xcb05f9254765ca521f7698e61e0a6ca6456be532"
+    },
+    "proposals": 153,
+    "executed": 123,
+    "failed": 11,
+    "canceled": 0,
+    "byStage": {
+      "Failed": 15,
+      "Executed": 123,
+      "ExecutionFailed": 11,
+      "Executable": 2,
+      "Voting": 2
+    },
+    "respectMintingProposals": 87,
+    "firstProposal": "2025-09-11T15:22:03.000000Z",
+    "latestProposal": "2026-08-25T16:44:23.000000Z"
+  }
+}
