@@ -171,9 +171,16 @@ src/handlers/     cycle handlers (open/snapshot/tally), webhook handlers, markdo
 src/app.ts        Hono routes
 scripts/          cycle runner (used by Actions), offline tally, setup check
 public/           static leaderboard (no build step)
-.github/workflows/ fractal-open, fractal-snapshot, fractal-tally, ci
-.github/frapp-gh/  committed week state and vote snapshots
+.github/frapp-gh/ committed period state and vote snapshots
 ```
+
+**Workflows live at the repo root**, not here: GitHub only executes
+`.github/workflows` at the top level of a repository. See
+`../.github/workflows/fractal-{open,snapshot,tally}.yml` and `frapp-gh-ci.yml` -
+each sets `working-directory: frapp-gh`. The same applies to
+`.github/ISSUE_TEMPLATE/contribution.yml` here: it is inert until placed at the
+repo root, which would add a template chooser to every ZAOfractal issue, so that
+placement is a decision for Zaal rather than something this move assumed.
 
 State lives in git, so the audit trail is the commit history:
 

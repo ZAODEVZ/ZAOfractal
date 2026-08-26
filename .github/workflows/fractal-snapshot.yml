@@ -1,20 +1,21 @@
-# Tally and post results (Sun 18:00 America/New_York)
-# Cron is UTC. 22:00 UTC = 18:00 EDT; adjust to 23:00 for EST if you want a
-# fixed local hour year-round, or run the workflow manually.
-name: Fractal tally
+# Snapshot ballots (Sat 18:00 America/New_York)
+# Frapp-GH lives in frapp-gh/ - workflows only execute from the repo root, so
+# this drives the runner there. Cron is UTC (22:00 = 18:00 EDT) and does not
+# follow US daylight saving; use 23:00 for a fixed local hour in winter.
+name: Fractal snapshot
 
 on:
   workflow_dispatch:
     inputs:
-      week:
-        description: Week number (blank = current cycle)
+      period:
+        description: Period number (blank = current cycle)
         required: false
       dry_run:
         description: Compute without writing
         type: boolean
         default: false
   schedule:
-    - cron: "0 22 * * 0"
+    - cron: "0 22 * * 6"
 
 permissions:
   contents: write
@@ -22,11 +23,15 @@ permissions:
   discussions: write
 
 concurrency:
-  group: frapp-gh-tally
+  group: frapp-gh-snapshot
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: frapp-gh
+
 jobs:
-  tally:
+  snapshot:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,26 +40,28 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: frapp-gh/package-lock.json
 
       - run: npm ci
 
-      - name: Run tally
+      - name: Run snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.FRAPP_GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          npx tsx scripts/cycle.ts tally \
-            ${{ inputs.week && format('--week {0}', inputs.week) || '' }} \
+          npx tsx scripts/cycle.ts snapshot \
+            ${{ inputs.period && format('--week {0}', inputs.period) || '' }} \
             ${{ inputs.dry_run && '--dry-run' || '' }}
 
       - name: Commit state
         if: ${{ !inputs.dry_run }}
+        working-directory: .
         run: |
           git config user.name "frapp-gh[bot]"
           git config user.email "frapp-gh@users.noreply.github.com"
-          git add .github/frapp-gh public/leaderboard.json 2>/dev/null || true
+          git add frapp-gh/.github/frapp-gh frapp-gh/public/leaderboard.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "no state changes"
           else
-            git commit -m "chore(frapp-gh): tally week state"
+            git commit -m "chore(frapp-gh): snapshot period state"
             git push
           fi
