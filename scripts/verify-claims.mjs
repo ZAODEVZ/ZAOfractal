@@ -24,9 +24,19 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (name) => JSON.parse(readFileSync(join(ROOT, 'data', name), 'utf8'));
 
 const summary = read('summary.json');
-const frappConfig = JSON.parse(
-  readFileSync(join(ROOT, 'frapp-gh', 'frapp-gh.config.json'), 'utf8'),
-);
+/** frapp-gh's config, read soft. A file outside data/ can be moved or renamed
+ * by the lane that owns it, and a hard read would throw at load and take every
+ * other check down with it - including the NOT-ASKED prose guards, which is
+ * the last thing that should fail silently by failing loudly in the wrong
+ * place. Missing config renders its claims 'unreadable' and drifts. */
+const frappConfig = (() => {
+  try {
+    return JSON.parse(readFileSync(join(ROOT, 'frapp-gh', 'frapp-gh.config.json'), 'utf8'));
+  } catch {
+    return null;
+  }
+})();
+const frapp = (path) => (frappConfig ? path(frappConfig) : 'unreadable');
 const og = read('og-respect.json');
 const zor = read('zor-respect.json');
 const awards = read('award-events.json');
@@ -45,7 +55,15 @@ const proposals = read('orec-proposals.json');
  * decoration, it is the load-bearing part. And because the docs are CC BY 4.0,
  * which is perpetual and irrevocable, a softened copy cannot be recalled once
  * published. Hence a check rather than a hope. */
-const docText = (name) => readFileSync(join(ROOT, name), 'utf8');
+const docText = (name) => {
+  try {
+    return readFileSync(join(ROOT, name), 'utf8');
+  } catch {
+    // A deleted doc must fail as a drifted claim, not as a stack trace that
+    // stops the other checks from running at all.
+    return '';
+  }
+};
 
 const lower = (a) => a.toLowerCase();
 const MIN_WEIGHT = Number(BigInt(summary.orec.config.minWeight) / 10n ** 18n);
@@ -541,15 +559,15 @@ const CLAIMS = [
    * window - and a reader comparing frapp-gh/README.md against the facts table
    * in the root README will see both dates. Pinned so the distinction survives
    * an edit by someone who assumes one of them is a typo. */
-  ['FRAPP', 'frapp-gh epoch period number', frappConfig.sessionSchedule.epochWeekNumber, 110],
+  ['FRAPP', 'frapp-gh epoch period number', frapp((c) => c.sessionSchedule.epochWeekNumber), 110],
   ['FRAPP', 'frapp-gh epoch is the session Monday',
-    frappConfig.sessionSchedule.epochDate, '2026-08-24T18:00:00-04:00'],
+    frapp((c) => c.sessionSchedule.epochDate), '2026-08-24T18:00:00-04:00'],
   ['FRAPP', 'period 110 settled the day after its session',
     periods.periods.find((p) => p.periodNumber === 110)?.date.slice(0, 10), '2026-08-25'],
   ['FRAPP', 'period 109 settled the same evening as its session',
     periods.periods.find((p) => p.periodNumber === 109)?.date.slice(0, 10), '2026-08-18'],
   ['FRAPP', 'the chain has not fallen behind the epoch frapp-gh counts from',
-    summary.zor.latestPeriod >= frappConfig.sessionSchedule.epochWeekNumber, true],
+    frapp((c) => summary.zor.latestPeriod >= c.sessionSchedule.epochWeekNumber), true],
   ['FRAPP', 'frapp-gh README calls 08-25 settlement, not the session date',
     /settled on-chain the next day/.test(docText('frapp-gh/README.md')), true],
 
