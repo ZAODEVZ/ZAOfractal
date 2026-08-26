@@ -50,8 +50,9 @@ silently disenfranchised the largest holder mid-vote.
 All ten No votes are Zaal reversing a proposal he opened himself. OREC has never
 seen a contested vote.
 
-Execution timing: median 7 days from creation to execution, which is the
-protocol floor (3-day vote plus 3-day veto). But 18 executions took more than 14
+Execution timing: median 7 days from creation to execution, against a
+protocol floor of 6 (3-day vote plus 3-day veto) - so the typical proposal
+is executed about a day after it first becomes executable. But 18 executions took more than 14
 days and two took more than 30, the slowest 81. Two proposals sit passed and
 unexecuted right now, one for 28 days. Eleven of 134 execution attempts reverted
 - all of them `mintRespectGroup`, meaning a week's Respect Game results failed

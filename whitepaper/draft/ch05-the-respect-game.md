@@ -1,6 +1,6 @@
 # Chapter 5: The Respect Game
 
-Draft v0.1 - 2026-05-25 - awaiting Zaal review
+Draft v0.2 - 2026-08-26 - accuracy pass against the committed chain snapshot
 
 ---
 
@@ -31,12 +31,14 @@ The official weekly session runs Monday 6pm EST. Ad-hoc sessions can launch anyt
 
 ### Phase 2: Randomization (5 minutes)
 
-A facilitator (typically Zaal or civilmonkey.eth) runs the `/randomize` command. The bot:
+A facilitator runs the `/randomize` command. The bot:
 
 1. Fetches all members currently in the Fractal Waiting Room.
-2. Splits them into groups (maximum 6 per group, minimum 2).
+2. Splits them into groups (design maximum 6 per group, minimum 2; in practice 4 of the 68 groups ever settled ran larger, the biggest at 8).
 3. Auto-moves members into individual Discord voice channels (Fractal Group 1, Fractal Group 2, etc.).
 4. Posts a confirmation message with group assignments.
+
+**Who facilitates is a live problem, not a footnote.** The chain cannot name a facilitator - it records who was ranked, not who ran the room - but the proxy is stark: over the fifteen settled sessions from period 95 to period 110, Zaal was ranked in fourteen, and no other member exceeded ten. One person's Monday is load-bearing for the whole ritual. Building a facilitator bench is the first item on ZAO's decentralization scale; the run sheet, the candidates and the gate live in `respect/FACILITATION-RUNBOOK.md`. This chapter documents the mechanism, and Chapter 9 treats the dependency as the open problem it is.
 
 Randomization is cryptographically seeded. This prevents pre-planned collusion. A player cannot predict which group they will join; they cannot pre-arrange to rank each other highly.
 
@@ -113,7 +115,11 @@ await orclient.proposeBreakoutResult({
 })
 ```
 
-The OREC contract creates a new governance proposal. The proposer's wallet auto-votes YES with their OG Respect weight (vote weight is frozen at proposal creation time, preventing double-voting).
+The OREC contract creates a new governance proposal. The proposer's wallet auto-votes YES with their OG Respect weight.
+
+**There is no snapshot.** Earlier drafts of this chapter said vote weight is frozen at proposal creation. It is not: OREC reads `balanceOf` on the OG contract live, at the moment each vote is cast, with no checkpointing of any kind. Voting twice is prevented by recording one vote per address, not by freezing a balance.
+
+This is not a nuance. On December 9, 2025 the largest OG holder cast three votes that carried **zero weight**, because for four days his Respect was sitting in a different wallet. The votes registered as participation and changed nothing. Twelve of the votes ever cast on OREC carried zero weight for this class of reason. If you move your tokens, you move your vote with them, and nothing warns you.
 
 Respect is not minted yet. The proposal is recorded on-chain but awaits voting and veto windows.
 
@@ -123,31 +129,37 @@ Respect is not minted yet. The proposal is recorded on-chain but awaits voting a
 
 After submission, the proposal enters a two-phase governance cycle:
 
-### Voting Period (48 hours typical)
+### Voting Period (72 hours, fixed)
 
-- Any member with OG Respect can vote YES or NO.
-- Vote weight = your OG Respect balance at the moment you cast your vote (live, not snapshotted).
+- Any address can call `vote`. Holding OG Respect is what gives the vote weight; holding none is permitted and counts for nothing.
+- Vote weight = your OG Respect balance at the moment you cast your vote, read live.
+- Length: the deployed OREC has `voteLen` set to 259,200 seconds. Not "typical" - fixed, and changeable only by a passed proposal.
 - Cost: a fraction of a cent per vote on Optimism (roughly $0.001-0.003 in gas - cheap, non-prohibitive).
 - Process: On-chain transactions via Etherscan or a governance interface.
 
-### Veto Period (48 hours typical)
+### Veto Period (72 hours, fixed)
 
 - Voting period has closed; no new YES votes accepted.
 - ONLY NO votes are accepted (challenge window).
+- Length: `vetoLen`, also 259,200 seconds.
 - Purpose: Allows the community to mobilize opposition if off-chain consensus-building failed.
 - Prevents last-minute attacks: an attacker cannot wait until the final block of voting to dump a massive NO vote.
+
+So a breakout result submitted on Monday night is executable **six days later**, not four. Six days is the protocol floor; the median proposal is actually executed on day seven, a day after it first becomes possible.
 
 ### Execution
 
 After both windows elapse, anyone calls `execute(propId)` on OREC. The contract checks:
 
 ```
-(block.timestamp >= proposal.startBlock + votingPeriod + vetoPeriod)
+block.timestamp >= createTime + voteLen + vetoLen
 AND
-(proposal.yesWeight >= (totalRespect * minThreshold))
+proposal.yesWeight >= minWeight          // an absolute floor, currently 1,000 Respect
 AND
-(proposal.yesWeight > proposal.noWeight * 2)
+proposal.noWeight * 2 < proposal.yesWeight
 ```
+
+Note that `minWeight` is an absolute quantity of Respect, not a fraction of total supply. It does not rise as the ledger grows.
 
 If all conditions are met:
 - OREC calls the ZOR Respect contract's `mintRespect()` function.
@@ -387,19 +399,17 @@ The economics are unfavorable. Honest contribution is cheaper.
 
 ## X. The Open Bottleneck: OREC Authority
 
-As of May 2026, OREC minting authority is held by Zaal and civilmonkey.eth. These two individuals review proposals, run the `/randomize` and `/timer` commands, and facilitate sessions.
+Earlier drafts said OREC minting authority "is held by Zaal and civilmonkey.eth". Reading the deployed contract, that is the wrong mechanism, and the wrong mechanism leads to the wrong fix.
 
-This is **intentionally centralized** in the short term. It allows ZAO to operate efficiently without complex decentralized governance infrastructure. But it is also an acknowledged bottleneck.
+**Nothing about OREC is permissioned in the way that sentence implies.** `propose` is open to anyone. `vote` is open to anyone, at whatever weight their OG balance gives them, including none. `execute` is open to anyone, once a proposal has passed. There is no signer set to join, no key to be granted, no multisig to be added to. Every parameter that *is* privileged - `setMinWeight`, `setPeriodLengths`, `setRespectContract` - is `onlyOwner`, and the owner is OREC itself, which means only a passed proposal can change it.
 
-**The problem:** If Zaal or civilmonkey.eth become unavailable or corrupt, OREC operations halt. The weekly ritual breaks.
+What exists instead is three distinct bottlenecks wearing one name:
 
-**The plan:** Future ZAO governance should decentralize session facilitation. Possible mechanisms:
+1. **Weight.** Only 12 addresses hold enough OG to clear the 1,000 minimum alone, and one of them shows up reliably. No proposal in 153 has ever needed a second voter to reach the threshold. The practical rule today is that if one person votes yes it passes, and if he does not, nothing does.
+2. **Operations.** Execution is permissionless and unpaid, so almost nobody does it. Of 134 execution attempts, 130 were one person clicking a button anyone could click; the other 4 were a single other member, all in the first six weeks, none since October 2025.
+3. **Keys, and this one is real.** `DEFAULT_ADMIN_ROLE` on the OG Respect contract has exactly one member. That role can grant itself minting rights and issue vote weight at will. This is the only genuinely permissioned thing in the stack, and it sits under the ledger that decides every vote.
 
-1. **Rotate facilitators.** Each week, a different high-Respect member facilitates `/randomize` and `/timer`.
-2. **Multisig authority.** Require 3-of-5 trusted members to approve OREC execution.
-3. **Automate trivial sessions.** If consensus is obvious (e.g., 5-0 ranking), auto-execute without manual review.
-
-This is documented in ZAO research Doc 115 as a medium-priority governance upgrade.
+The first two are solved by recruiting people, not by changing contracts. The third is solved by relinquishing or splitting a role. Conflating them is what produced three years of "we should set up a multisig" for a system that has no signer set. The measurement and the proposed fixes are in `respect/SIGNER-COMMITTEE.md` and `respect/EXECUTION-RUNBOOK.md`; Chapter 9 carries the honest version of the limitation.
 
 ---
 
@@ -414,7 +424,7 @@ This is documented in ZAO research Doc 115 as a medium-priority governance upgra
 
 ---
 
-**Word count: 3,118**
+**Word count: 3,835**
 
 ---
 

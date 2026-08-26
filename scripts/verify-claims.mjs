@@ -380,6 +380,23 @@ const CLAIMS = [
   ['WP ch04', 'proposals ever voted down by someone other than the author', standingNoVotesByNonAuthor, 0],
   ['WP ch04', 'proposals that needed a second voter', neededASecondVoter, 0],
 
+  ['WP ch05', 'OREC vote window (seconds)', Number(summary.orec.config.voteLen), 259200],
+  ['WP ch05', 'OREC veto window (seconds)', Number(summary.orec.config.vetoLen), 259200],
+  ['WP ch05', 'days from submission to executable', (Number(summary.orec.config.voteLen) + Number(summary.orec.config.vetoLen)) / 86400, 6],
+  ['WP ch05', 'median days from proposal to execution', lags[Math.floor(lags.length / 2)].toFixed(0), '7'],
+  ['WP ch05', 'OREC minimum weight (Respect)', MIN_WEIGHT, 1000],
+  ['WP ch05', 'OREC reads vote weight from OG, not ZOR', lower(summary.orec.config.respectContract), lower(summary.contracts.OG_RESPECT)],
+  ['WP ch05', 'OREC owner is OREC itself', lower(summary.orec.config.owner), lower(summary.contracts.OREC)],
+  ['WP ch05', 'zero-weight votes ever cast', zeroWeightVotes, 12],
+  ['WP ch05', 'addresses able to clear the minimum alone', [...ogBalance.values()].filter((v) => v >= MIN_WEIGHT).length, 12],
+  ['WP ch05', 'execution attempts', proposals.proposals.filter((p) => p.executedTx).length, 134],
+  ['WP ch05', 'executions by the top executor', executions['0x7234c36a71ec237c2ae7698e8916e0735001e9af'], 130],
+  ['WP ch05', 'executions by anyone else', executions['0xaed620c450911c38714e666cd84137767e3d6286'], 4],
+  ['WP ch05', 'groups larger than the design maximum of 6', allGroupSizes.filter((n) => n > 6).length, 4],
+  ['WP ch05', 'largest group ever settled', allGroupSizes.at(-1), 8],
+  ['WP ch05', 'facilitation proxy: Zaal ranked in the window', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
+  ['WP ch05', 'facilitation proxy: highest non-Zaal count', Math.max(...[...attendance.entries()].filter(([a]) => a !== '0x7234c36a71ec237c2ae7698e8916e0735001e9af').map(([, v]) => v.size)), 10],
+
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see
   // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the
