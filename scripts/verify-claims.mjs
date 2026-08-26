@@ -448,6 +448,28 @@ const CLAIMS = [
   ['WP ch08', 'Respect issued per full ZAO group', 110 + 68 + 42 + 26 + 16 + 10, 272],
   ['WP ch08', 'Respect issued per full standard group', 55 + 34 + 21 + 13 + 8 + 5, 136],
 
+  ['WP ch09', 'addresses that ever held Respect', touched.size, 169],
+  ['WP ch09', 'recent session range', `${windowSessionSizes[0]}-${windowSessionSizes.at(-1)}`, '4-12'],
+  ['WP ch09', 'mean settled per period', (ascending.reduce((s, p) => s + p.participants, 0) / ascending.length).toFixed(1), '8.1'],
+  ['WP ch09', 'settled periods', sessions.length, 41],
+  ['WP ch09', 'recent sessions running a single group', windowGroupCounts.filter((n) => n === 1).length, 11],
+  ['WP ch09', 'sessions ever running three or more groups', windowGroupCounts.filter((n) => n > 2).length, 0],
+  ['WP ch09', 'founder ranked in the window', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
+  ['WP ch09', 'highest non-founder attendance in the window', Math.max(...[...attendance.entries()].filter(([a]) => a !== '0x7234c36a71ec237c2ae7698e8916e0735001e9af').map(([, v]) => v.size)), 10],
+  ['WP ch09', 'unminted award slots', unsettledRows.length, 24],
+  ['WP ch09', 'people owed unminted Respect', unsettledPeople.size, 16],
+  ['WP ch09', 'proposals', proposals.proposalCount, 153],
+  ['WP ch09', 'addresses that ever voted', voters.size, 9],
+  ['WP ch09', 'addresses that ever executed', Object.keys(executions).length, 2],
+  ['WP ch09', 'executions by the founder', executions['0x7234c36a71ec237c2ae7698e8916e0735001e9af'], 130],
+  ['WP ch09', 'execution attempts', proposals.proposals.filter((p) => p.executedTx).length, 134],
+  ['WP ch09', 'executions by anyone else', executions['0xaed620c450911c38714e666cd84137767e3d6286'], 4],
+  ['WP ch09', 'proposals decided by a single voter', proposals.proposals.filter((p) => p.voterCount === 1).length, 137],
+  ['WP ch09', 'proposals needing a second voter', neededASecondVoter, 0],
+  ['WP ch09', 'proposals voted down by a non-author', standingNoVotesByNonAuthor, 0],
+  ['WP ch09', 'standing No votes, all self-reversals', standingNoVotes, 10],
+  ['WP ch09', 'addresses able to clear the minimum weight alone', [...ogBalance.values()].filter((v) => v >= MIN_WEIGHT).length, 12],
+
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see
   // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the

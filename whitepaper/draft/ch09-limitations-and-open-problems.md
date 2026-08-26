@@ -1,10 +1,10 @@
 # Chapter 9: Limitations and Open Problems
 
-> **Draft v0.1 - 2026-05-25 - awaiting Zaal review**
+> **Draft v0.2 - 2026-08-26 - accuracy pass against the committed chain snapshot**
 
 ---
 
-*Fractal governance works in production. ZAO Fractal's 100+ weeks prove it. But the model breaks under specific conditions, fails in visible ways, and faces open problems that no fractal has solved yet. This chapter names those limits openly, not to undermine the system, but to earn its credibility.*
+*Fractal governance works in production. Two years of ZAO Fractal prove it. But the model breaks under specific conditions, fails in visible ways, and faces open problems that no fractal has solved yet. This chapter names those limits openly, not to undermine the system, but to earn its credibility. Everything measured here comes from the committed on-chain snapshot at OP Mainnet block 156,055,426, pulled 2026-08-26.*
 
 ---
 
@@ -12,11 +12,33 @@
 
 Weekly synchronous governance is demanding. Research on real-world participation shows a sharp drop-off: after 2-4 months of weekly meetings, attendance stabilizes around a core 40-50% who carry the consensus burden. The rest attend sporadically. The psychological research is clear: webinar fatigue, decision fatigue, and the simple human cost of predictable weekly commitment cause participation collapse.
 
-ZAO Fractal has sustained weekly meetings for 100+ weeks without an announced pause. By the evidence, this should not be possible. The fact that it is possible suggests either that:
+ZAO Fractal has sustained weekly meetings since August 2024 without an announced pause, across 110 numbered periods. Earlier drafts said this should not be possible by the evidence, and offered three explanations, the third being that the fatigue had not been measured and was accumulating beneath the surface.
 
-1. Music community members are unusually committed to governance, or
-2. The ritual is psychologically embedded in the weekly culture in a way that prevents burnout, or
-3. We have not yet measured the actual fatigue, and it is accumulating beneath the surface.
+**It has now been measured, and the third explanation is the one the data supports.** The ritual has held. The room has not.
+
+| | |
+|---|---|
+| Community roll | 188 |
+| Addresses that have ever held Respect | 169 |
+| People settled in a recent session | 4 to 12 |
+| Mean settled per period, all 41 settled periods | 8.1 |
+| Recent sessions that ran a single breakout group | 11 of 15 |
+| Sessions that ran three or more groups, ever | 0 |
+| Sessions in which the founder was ranked, periods 95-110 | 14 of 15 |
+| Highest count for anyone else | 10 |
+
+The weekly cadence did not collapse. Attendance did, quietly, to a core of
+under a dozen - and one person is in the room almost every week. That is not
+a governance system that has beaten democracy fatigue. It is one where the
+fatigue landed on attendance rather than on the calendar, and where a single
+person's absence would end the streak.
+
+Three readings remain open and the chain cannot distinguish them: the
+community genuinely shrank; participation moved to surfaces that do not
+settle on-chain; or settlement failures are erasing people who did turn up
+(section 5 of `respect/EXECUTION-RUNBOOK.md` documents 24 award slots owed
+to 16 people that never minted, so this is real but not large enough to
+explain the gap).
 
 Mitigations ZAO uses: We accept that not every member can attend every session. A core group of 4+ unplayed (absent) members triggers an automatic session (no rescheduling required). This lowers the barrier to skip a week. We also rotate facilitators so the burden does not fall on one person. But these are partial fixes. The risk is real: if the weekly ritual becomes a chore instead of a gathering, participation collapses into delegated voting, and the deliberation that makes fractals different evaporates.
 
@@ -26,9 +48,9 @@ Mitigations ZAO uses: We accept that not every member can attend every session. 
 
 Ranking contribution is subjective. Every study on open-source work, organizational bias, and implicit ranking shows the same pattern: visible work (presenting, facilitating, loud talking) is ranked higher than quiet work (infrastructure, documentation, mentorship behind closed doors). Two-thirds of open-source labor is invisible. When invisible labor is ranked, it gets lower compensation, lower status, lower Respect.
 
-ZAO Fractal is vulnerable to this. The Discord bot facilitators, the Discord channel mods, the people who speak in breakout rooms - they accumulate visibility. A developer who fixed a critical security bug in silence may earn less Respect than a community manager who posted memes weekly. Over 100+ weeks, this bias compounds. Early, visible, charismatic members accumulate Respect faster than late-arriving, quiet builders. The governance then drifts toward the preferences of high-Respect members, amplifying the original bias. ZAO Fractal becomes a soft plutocracy, ruled by visibility instead of contribution.
+ZAO Fractal is vulnerable to this. The Discord bot facilitators, the Discord channel mods, the people who speak in breakout rooms - they accumulate visibility. A developer who fixed a critical security bug in silence may earn less Respect than a community manager who posted memes weekly. Over two years, this bias compounds. Early, visible, charismatic members accumulate Respect faster than late-arriving, quiet builders. The governance then drifts toward the preferences of high-Respect members, amplifying the original bias. ZAO Fractal becomes a soft plutocracy, ruled by visibility instead of contribution.
 
-Evidence of this: As of May 2026, only two wallets have ever submitted to the OREC contract (Zaal and civilmonkey.eth). The operating core is concentrated. This is intentional - we designed it this way during growth phase - but it creates a visibility bottleneck. If OREC submission is the mechanism for on-chain governance, only people visible enough to be trusted with OREC signing power can propose on-chain changes. Newer members, quiet contributors, people in other timezones are locked out.
+Evidence of this, corrected: 9 addresses have ever cast a vote on OREC and 2 have ever executed a proposal. But there is no "OREC signing power" to be trusted with - the next section explains why that framing was wrong, and why the correct diagnosis is harder rather than easier.
 
 Mitigation: Transparent contribution rubric. Use an explicit checklist for ranking: *Did this person ship code? Did they mentor someone? Did they document? Did they curate?* Instead of "did they impress me," use structured judgment. This does not eliminate bias - it just makes it visible. The next mitigation is off-chain ranking on GitHub (Chapter 10 roadmap: Frapp-GH), which makes work verifiable and attributable without visibility bias.
 
@@ -38,7 +60,7 @@ Mitigation: Transparent contribution rubric. Use an explicit checklist for ranki
 
 Small groups can be gamed. A coordinated ring of 10 people in a 40-person fractal can dominate the Respect flows to the next layer if they rank each other highly in every session. The academic literature on Sybil attacks, collusion in consensus systems, and voting manipulation is clear: a minority that coordinates can capture a system designed for honest majority.
 
-ZAO Fractal has not experienced a documented attack of this kind. But we have not tried hard to prevent it either. The current mitigations are social: *we know each other, we would notice if someone was gaming the system, we would call it out.* This works at 40 active members. It breaks at 400. And it breaks instantly if someone joins with the intent to subvert.
+ZAO Fractal has not experienced a documented attack of this kind. But we have not tried hard to prevent it either. The current mitigations are social: *we know each other, we would notice if someone was gaming the system, we would call it out.* At a settled session of 8 people this is genuinely strong - everyone in a group of 5 knows everyone else. It breaks at 400. And it breaks instantly if someone joins with the intent to subvert.
 
 This is not a theoretical risk. Other DAOs have experienced this. Synthetify DAO on Solana lost $230,000 when an attacker created a governance proposal and voted it through an inattentive circle. The attack succeeded because the governance group was small and the attacker had capital resources.
 
@@ -72,7 +94,7 @@ This is an open design decision for the new Respect token under development. Res
 
 Roy Fractal at 700+ members on EOS proves that the mathematical structure of nested fractals scales. But Roy operates on EOS, a separate ecosystem with different visibility and economics. No Ethereum-side fractal has sustained 400+ members at consistent weekly cadence.
 
-ZAO is at 188 members, 40 active per session. What happens at 200? 400? 1000?
+ZAO has a community roll of 188 and settles a mean of 8.1 people per session. The scaling question this chapter used to ask - what happens at 200, 400, 1000? - is the wrong end of the problem. ZAO has never run three breakout groups in a single session. The nested-fractal machinery beyond one or two circles is untested at ZAO not because scaling is hard, but because the room has never been large enough to need it. What happens at 200 is still worth designing for. What happens at 40 is the live question.
 
 Dunbar's number (the cognitive limit on human relationships) is ~150. Beyond that, you cannot maintain trust through direct relationships. You need hierarchy, explicit roles, and representatives you have never met. Fractal governance is designed to scale through nested circles, but nesting adds layers of representative risk. At Layer 1 (40-person circle), your voice is 1/40. At Layer 2 (6 reps per circle), you are represented by someone. At Layer 3, you are represented by someone who is represented by someone. The voice attenuates.
 
@@ -112,11 +134,35 @@ Mitigation: Publish this whitepaper, then commission the documentation set (Chap
 
 ## Operating Core Concentration
 
-As of May 26, 2026, zaal.eth and civilmonkey.eth are the only two wallets that have ever submitted to the OREC contract. This is intentional. During ZAO Fractal's growth phase (Fractals 1-90+), we centralized submission authority for simplicity and coordination. One or two people could confirm that results were accurate, submit them on-chain, and maintain the contract.
+Earlier drafts of this chapter described the bottleneck as "zaal.eth and civilmonkey.eth are the only two wallets that have ever submitted to the OREC contract", and prescribed a signer committee with multi-sig approval.
 
-But centralization is intentional only if it is temporary. The longer two wallets remain the sole OREC signers, the more ZAO Fractal looks like a governance theater - voting happens, consensus is reached, but a single gatekeeper executes on-chain. This is not plutocracy (Respect is earned, not capital-weighted). But it is a bottleneck.
+**The diagnosis named the wrong mechanism, and the wrong mechanism produced a fix that cannot be built.** Reading the deployed contract: `propose` is open to anyone. `vote` is open to anyone. `execute` is open to anyone, once a proposal has passed. **There is no signer set.** There is nothing to be a member of, no key to be granted, no multi-sig to establish. Every wallet on Optimism with gas can already execute a passed ZAO proposal today. Nobody does.
 
-Mitigation: Establish a 3+ signer committee for OREC (Chapter 10, June 30 2026 target). Require multi-sig approval for on-chain submissions. This distributes execution authority and makes ZAO Fractal more resilient to single-person failure (what if zaal disappears?).
+Here is what the chain actually shows across 153 proposals from September 2025 to August 2026:
+
+| | |
+|---|---|
+| Addresses that have ever cast a vote | 9 |
+| Addresses that have ever executed a proposal | 2 |
+| Executions by the founder's wallet | 130 of 134 |
+| Executions by anyone else | 4, all before 2025-10-24 |
+| Proposals decided by a single voter | 137 of 153 |
+| Proposals needing a second voter to clear the minimum weight | 0 |
+| Proposals ever voted down by someone other than their author | 0 |
+
+(The 10 No votes on record are all one person reversing a proposal he opened himself. OREC has never seen a contested vote. And the name "civilmonkey.eth" cannot be matched to either executing wallet from the snapshot; the second executor, with 4 executions, is Tadas Vaitiekunas.)
+
+So the single bottleneck is really three, and they need three different fixes:
+
+**1. A weight bottleneck.** Only 12 addresses hold enough OG Respect to clear the 1,000 minimum weight alone, and only one of them shows up reliably. Because no proposal has ever needed a second voter, the operative rule is: if one person votes yes it passes, and if he does not, nothing does. *Fix: unify the ledgers so active contributors carry weight (Chapter 10). This is a governance change, not a key change.*
+
+**2. An operational bottleneck.** Execution is permissionless and unpaid, so nobody does it. 130 of 134 executions are one person clicking a button anyone could click. *Fix: recruit and, if necessary, compensate executors. This needs people, not contracts.*
+
+**3. A key bottleneck - and this one is real, and it is not in any previous draft of this chapter.** The OG Respect contract's `DEFAULT_ADMIN_ROLE` has **exactly one member**. That role can grant itself minting rights and issue vote weight at will. It is not frozen and it is not time-locked. OG is the sole source of vote weight in the entire system, so this is one wallet that can mint governance power for anyone, including itself, with no proposal and no veto window. *Fix: relinquish or split the role. This is the only genuinely permissioned thing in the stack and the only one a multi-sig would actually address.*
+
+Naming all three as "the OREC bottleneck" is what produced two years of "we should set up a multi-sig" for a system with no signer set, while the one component that is genuinely single-keyed went unmentioned. The measured case and the proposed remedies are in `respect/SIGNER-COMMITTEE.md` and `respect/EXECUTION-RUNBOOK.md`.
+
+**The facilitation dependency is the same shape.** The chain cannot name a facilitator, but over periods 95-110 the founder was ranked in 14 of 15 settled sessions and nobody else exceeded 10. A facilitator bench is the first item on ZAO's decentralization scale, with a stated gate: four consecutive weeks with two or more meetings per week and two or more non-founder facilitators. `respect/FACILITATION-RUNBOOK.md` holds the run sheet. As of this draft the gate has not been met and the bench has not been asked.
 
 ---
 
@@ -139,8 +185,10 @@ This matters because if peers are bad at judging contribution, the entire system
 - **05-critiques-failure-modes.md** (democracy fatigue research, visibility bias invisibility study, Sybil attack literature, cold-start inequality DAOstar research, scaling limits Dunbar's number, dormancy risk, subjectivity in ranking)
 - **02-live-communities-deep.md** (OF pause burnout hypothesis, Aquadac 4-year retention at 20-30 members, Eden Epoch 2 false start Aug 2024, Roy Fractal 700+ scale but documentation sparse)
 - **03-optimism-fractal-full-history.md** (OF paused Jan 2026 after 15 months, consolidation logic, developer concentration burnout)
-- **07-zao-fractal-distinctness.md** (OREC 2-wallet concentration zaal.eth + civilmonkey.eth, documentation gap Tanja call May 18 2026, ornode down, zao-fractal.vercel.app deleted, two-ledger reconciliation Doc 115)
+- **07-zao-fractal-distinctness.md** (documentation gap Tanja call May 18 2026, ornode down, zao-fractal.vercel.app deleted, two-ledger reconciliation Doc 115)
+- **`respect/SIGNER-COMMITTEE.md`, `respect/EXECUTION-RUNBOOK.md`, `respect/FACILITATION-RUNBOOK.md`** (the three bottlenecks, measured, with proposed remedies)
+- **`data/` snapshot, OP Mainnet block 156,055,426, pulled 2026-08-26** (9 voters, 2 executors, 137 single-voter proposals, 8.1 mean settled per period; re-check with `node scripts/verify-claims.mjs`)
 
 ---
 
-**Word count: 1,847**
+**Word count: 3,268**
