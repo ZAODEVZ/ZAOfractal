@@ -108,6 +108,8 @@ have not accepted.
 | `4555291` | **ch00 v0.2** plus `scripts/assemble-whitepaper.mjs`; the assembled document is regenerated from the drafts. |
 | `c12131e` | whitepaper README: what the pass corrected, and the five things it could not close. |
 | `a37008e` | repo README facts table, measured, with a source column per row. |
+| `af7ecbd` | This file - stops printing a commit count it invalidates by existing. |
+| `ece1e7a` | Reads OG's `DEFAULT_ADMIN_ROLE` membership from the contract into the snapshot, so the paper's highest-consequence claim is pinned rather than asserted. Moves the snapshot to block 156,071,456; no quoted figure changed. |
 
 ### On the whitepaper commits specifically
 
