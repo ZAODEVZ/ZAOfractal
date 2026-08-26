@@ -85,13 +85,21 @@ earns whatever the curve pays at that rank. Covered in `borda-count.test.ts`,
 `respect-scorer.test.ts`, and the replay scenario, so it cannot be refactored
 away by accident.
 
-### The curve is the live game's curve
+### The curve is the live game's *current* curve
 
 Verified against the chain, not assumed. Each on-chain award carries a `level`
 (6 highest, 1 lowest), so the curve is recoverable as level -> respect:
 `6=110, 5=68, 4=42, 3=26, 2=16, 1=10` across every period since 106. That is
 the curve in `frapp-gh.config.json`, and `scripts/verify-claims.mjs` pins the
 two together so an edit to either side reports.
+
+**The curve is policy, not physics, and it has changed.** ZAO's first four
+settled periods (67-70) paid standard Fibonacci - `55, 34, 21, 13, 8, 5` - and
+the 2x curve begins at period 73. Period 78 mixed a 110 with flat 40s, and 105
+paid a flat 40 to all six. So `respectScores` is config for a reason: a fork
+picks its own, and if ZAO escalates again the config moves with it or the
+claim reports. What must never drift is async-versus-live *at the same time* -
+one rank, one amount, whichever curve is current.
 
 Two facts from the same data matter for Phase 2. A live period runs several
 breakout groups and pays a full curve *per group* - period 107 minted three

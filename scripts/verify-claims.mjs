@@ -629,11 +629,12 @@ const CLAIMS = [
    * mapping level -> respect over recent periods. Period 105 is excluded: every
    * one of its six awards was a flat 40, the only recent period off the curve,
    * and it is pinned separately so the exclusion is not silent. */
-  ['FRAPP', 'curve awarded on chain since period 106', chainCurve.join(','), '110,68,42,26,16,10'],
-  ['FRAPP', 'frapp-gh pays the curve the chain pays',
+  ['FRAPP', 'curve paid by periods 106 onward (NOT every period ever settled)',
+    chainCurve.join(','), '110,68,42,26,16,10'],
+  ['FRAPP', 'frapp-gh pays what the game pays NOW, not every curve it has paid',
     frapp((c) => c.ranking.respectScores.join(',')), '110,68,42,26,16,10'],
   ['FRAPP', 'each on-chain level maps to exactly one amount', chainCurveIsConsistent, true],
-  ['FRAPP', 'period 105 is the one recent period off the curve',
+  ['FRAPP', 'period 105 is the one period since 106-era start paying flat 40',
     awards.events.filter((e) => e.periodNumber === 105 && e.respect === 40).length, 6],
 
   ['FRAPP', 'frapp-gh README calls 08-25 settlement, not the session date',

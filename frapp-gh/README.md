@@ -92,9 +92,13 @@ median across groups. Closer to the live fractal and much harder for one outlier
 ballot to move. Groups are shuffled with the week number as the seed so the
 result stays reproducible.
 
-**Respect:** `[110, 68, 42, 26, 16, 10]` by final rank - the same curve the live
-Monday game pays, checked against on-chain award levels by
-`scripts/verify-claims.mjs` rather than copied from the PRD and hoped over. Rank 7 and beyond earn 0,
+**Respect:** `[110, 68, 42, 26, 16, 10]` by final rank - the curve the live
+Monday game pays *now*, checked against on-chain award levels by
+`scripts/verify-claims.mjs` rather than copied from the PRD and hoped over. It
+is not the curve ZAO has always paid: periods 67-70 paid standard Fibonacci
+before the 2x curve began at 73. Change `respectScores` and you change what a
+rank is worth - keep it equal to whatever the live game pays, so an async
+period and a Monday breakout never award differently for the same rank. Rank 7 and beyond earn 0,
 matching the six paid places of a live breakout. One author holding two ranked
 contributions collects both amounts.
 
