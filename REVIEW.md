@@ -29,6 +29,24 @@ Neither file exists on origin today. Pushing either one is the act that makes
 the linkage public, and it is irreversible in practice - once it is in a public
 git history it is in clones, forks, caches and archives.
 
+**And it is worse than a file sitting in git.** `KNOWN_MEMBERS` in
+`dao/src/lib/constants.ts` is not reference data that a reader has to go
+looking for. It is imported by `dao/src/lib/format.ts`, whose `memberName()`
+is what every tab calls to render an address, and directly by
+`dao/src/pages/LeaderboardTab.tsx`. `dao/vercel.json` builds the app to a
+static bundle. So the full 144-entry name-to-wallet map is compiled into the
+JavaScript served to **every visitor of the deployed dashboard**, whether or
+not they ever clone anything. Publishing it is not disclosure-on-request; it
+is publication.
+
+One precision, in the other direction: `data/members.json` itself is not
+bundled. `dao/src/lib/data.ts` imports only the six chain-data files
+(`summary`, `zor-respect`, `og-respect`, `award-events`, `periods`,
+`orec-proposals`), none of which carry names. The exposure runs entirely
+through `constants.ts`. That matters if the answer turns out to be a
+qualified yes: shipping the snapshot without the name map is a separable
+change, and the dashboard degrades to short addresses rather than breaking.
+
 **Three partial-linkage commits sit downstream of that decision.** They publish
 names against *truncated* addresses (`0x64a15b1d…b3e1`) in prose:
 
