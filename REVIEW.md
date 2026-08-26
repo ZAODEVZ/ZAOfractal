@@ -11,7 +11,9 @@ git log --oneline origin/main..HEAD
 git rev-list --count origin/main..HEAD
 ```
 
-At the time of writing that count is **34**.
+No number is printed here on purpose. This file is itself one of the commits,
+so any count written into it is wrong the moment it is committed - the earlier
+draft said 21, then 34, and both were stale on arrival. Run the command.
 
 ---
 
