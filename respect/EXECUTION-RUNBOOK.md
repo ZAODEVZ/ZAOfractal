@@ -383,5 +383,8 @@ curl -sL "https://optimism.blockscout.com/api/v2/transactions/<executedTx>/inter
 ```
 
 Read alongside [SIGNER-COMMITTEE.md](./SIGNER-COMMITTEE.md) (why the rota is step
-one and what comes after) and [LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md)
-(the unified ledger that eventually makes ZOR the vote).
+one and what comes after), [FACILITATION-RUNBOOK.md](./FACILITATION-RUNBOOK.md)
+(the session that produces the proposal in the first place, and why the
+facilitator is currently the only person holding the Message) and
+[LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md) (the unified ledger that
+eventually makes ZOR the vote).

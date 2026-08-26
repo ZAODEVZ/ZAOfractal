@@ -3,8 +3,8 @@
  * verify-claims.mjs - re-check every number quoted in the respect/ docs against
  * the committed snapshot.
  *
- * respect/LEDGER-RECONCILIATION.md, respect/SIGNER-COMMITTEE.md and
- * respect/EXECUTION-RUNBOOK.md are full of hard figures. They go stale the moment someone runs scripts/pull-data.mjs
+ * The respect/ decision docs - LEDGER-RECONCILIATION, SIGNER-COMMITTEE,
+ * EXECUTION-RUNBOOK and FACILITATION-RUNBOOK - are full of hard figures. They go stale the moment someone runs scripts/pull-data.mjs
  * again. This script holds each quoted figure as an expectation and reports the
  * ones that have moved, so the docs get corrected rather than quietly drifting.
  *
@@ -145,6 +145,37 @@ const CANDYTOYBOX = benchStats('0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66');
 const METAMU = benchStats('0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b');
 const TADAS = benchStats('0xaed620c450911c38714e666cd84137767e3d6286');
 
+/** Session shape and attendance over the recent window, backing
+ * respect/FACILITATION-RUNBOOK.md sections 1 and 3. Attendance counts being
+ * ranked in a settled group OR in a group whose mint reverted, because the
+ * second kind is a settlement failure, not an absence. */
+const WINDOW_FROM = 95;
+
+const rankedRows = awards.events.map((e) => ({ period: e.periodNumber, address: lower(e.recipient) }));
+for (const r of unsettledRows) rankedRows.push({ period: r.period, address: r.recipient });
+
+const windowPeriods = [...new Set(rankedRows.filter((r) => r.period >= WINDOW_FROM).map((r) => r.period))];
+
+const attendance = new Map();
+for (const r of rankedRows) {
+  if (r.period < WINDOW_FROM) continue;
+  if (!attendance.has(r.address)) attendance.set(r.address, new Set());
+  attendance.get(r.address).add(r.period);
+}
+const sessionsRanked = (address) => attendance.get(lower(address))?.size ?? 0;
+const latestSession = (address) => Math.max(0, ...(attendance.get(lower(address)) ?? []));
+
+const groupsByPeriod = new Map();
+for (const e of awards.events) {
+  if (!groupsByPeriod.has(e.periodNumber)) groupsByPeriod.set(e.periodNumber, new Map());
+  const g = groupsByPeriod.get(e.periodNumber);
+  g.set(e.groupNum, (g.get(e.groupNum) ?? 0) + 1);
+}
+const windowGroupCounts = [...groupsByPeriod.entries()]
+  .filter(([period]) => period >= WINDOW_FROM)
+  .map(([, g]) => g.size);
+const allGroupSizes = [...groupsByPeriod.values()].flatMap((g) => [...g.values()]).sort((a, b) => a - b);
+
 // --- the claims, as written in the docs -------------------------------------
 
 const CLAIMS = [
@@ -230,6 +261,26 @@ const CLAIMS = [
   ['RUNBOOK', 'bench: Meta Mu awards since period 100', METAMU.recent, 5],
   ['RUNBOOK', 'bench: Meta Mu last period', METAMU.last, 110],
   ['RUNBOOK', 'Tadas last period (why he fails criterion 2)', TADAS.last, 68],
+
+  ['FACILITATION', 'settled sessions in the window (periods 95-110)', windowPeriods.length, 15],
+  ['FACILITATION', 'distinct people ranked in the window', attendance.size, 29],
+  ['FACILITATION', 'sessions that ran a single group', windowGroupCounts.filter((n) => n === 1).length, 11],
+  ['FACILITATION', 'sessions that ran two groups', windowGroupCounts.filter((n) => n === 2).length, 4],
+  ['FACILITATION', 'sessions that ran three or more', windowGroupCounts.filter((n) => n > 2).length, 0],
+  ['FACILITATION', 'groups ever settled', allGroupSizes.length, 68],
+  ['FACILITATION', 'median group size', allGroupSizes[Math.floor(allGroupSizes.length / 2)], 5],
+  ['FACILITATION', 'largest group ever', allGroupSizes.at(-1), 8],
+  ['FACILITATION', 'groups larger than the documented cap of 6', allGroupSizes.filter((n) => n > 6).length, 4],
+  ['FACILITATION', 'bench: Jose (Joseph Goats) sessions ranked', sessionsRanked('0x29185eb8cfd22aa719529217bfbade61677e0ad2'), 9],
+  ['FACILITATION', 'bench: Jose (Joseph Goats) latest session', latestSession('0x29185eb8cfd22aa719529217bfbade61677e0ad2'), 110],
+  ['FACILITATION', 'bench: Meta Mu sessions ranked', sessionsRanked('0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b'), 8],
+  ['FACILITATION', 'bench: Meta Mu latest session', latestSession('0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b'), 110],
+  ['FACILITATION', 'bench: Ohnahji B sessions ranked', sessionsRanked('0x64a15b1d2de581097cb48e5d82619203e24bb3e1'), 8],
+  ['FACILITATION', 'bench: Ohnahji B latest session', latestSession('0x64a15b1d2de581097cb48e5d82619203e24bb3e1'), 109],
+  ['FACILITATION', 'Zaal sessions ranked (the problem, as a number)', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
+  ['FACILITATION', 'alternate: CandyToyBox sessions ranked', sessionsRanked('0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66'), 7],
+  ['FACILITATION', 'unnamed 0xf73485a6 sessions ranked', sessionsRanked('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 7],
+  ['FACILITATION', 'unnamed 0xf73485a6 latest session', latestSession('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 110],
 ];
 
 const drifted = CLAIMS.filter(([, , actual, expected]) => String(actual) !== String(expected));
@@ -241,7 +292,7 @@ for (const [doc, label, actual, expected] of CLAIMS) {
 
 console.log(`\nSnapshot pulled ${summary.pulledAt} at block ${summary.latestBlock}.`);
 if (drifted.length === 0) {
-  console.log(`All ${CLAIMS.length} figures quoted in respect/LEDGER-RECONCILIATION.md, respect/SIGNER-COMMITTEE.md and respect/EXECUTION-RUNBOOK.md match the snapshot.`);
+  console.log(`All ${CLAIMS.length} figures quoted in the respect/ decision docs match the snapshot.`);
 } else {
   console.log(`${drifted.length} of ${CLAIMS.length} figures have drifted. Update the prose, then update the expectations here.`);
   process.exit(1);
