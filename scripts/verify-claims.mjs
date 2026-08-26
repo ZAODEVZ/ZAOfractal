@@ -271,16 +271,26 @@ const CLAIMS = [
   ['FACILITATION', 'median group size', allGroupSizes[Math.floor(allGroupSizes.length / 2)], 5],
   ['FACILITATION', 'largest group ever', allGroupSizes.at(-1), 8],
   ['FACILITATION', 'groups larger than the documented cap of 6', allGroupSizes.filter((n) => n > 6).length, 4],
-  ['FACILITATION', 'bench: Jose (Joseph Goats) sessions ranked', sessionsRanked('0x29185eb8cfd22aa719529217bfbade61677e0ad2'), 9],
-  ['FACILITATION', 'bench: Jose (Joseph Goats) latest session', latestSession('0x29185eb8cfd22aa719529217bfbade61677e0ad2'), 110],
-  ['FACILITATION', 'bench: Meta Mu sessions ranked', sessionsRanked('0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b'), 8],
-  ['FACILITATION', 'bench: Meta Mu latest session', latestSession('0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b'), 110],
-  ['FACILITATION', 'bench: Ohnahji B sessions ranked', sessionsRanked('0x64a15b1d2de581097cb48e5d82619203e24bb3e1'), 8],
-  ['FACILITATION', 'bench: Ohnahji B latest session', latestSession('0x64a15b1d2de581097cb48e5d82619203e24bb3e1'), 109],
-  ['FACILITATION', 'Zaal sessions ranked (the problem, as a number)', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
-  ['FACILITATION', 'alternate: CandyToyBox sessions ranked', sessionsRanked('0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66'), 7],
-  ['FACILITATION', 'unnamed 0xf73485a6 sessions ranked', sessionsRanked('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 7],
-  ['FACILITATION', 'unnamed 0xf73485a6 latest session', latestSession('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 110],
+  ['FACILITATION', 'attendance: Zaal sessions ranked (the problem, as a number)', sessionsRanked('0x7234c36a71ec237c2ae7698e8916e0735001e9af'), 14],
+  ['FACILITATION', 'attendance: Hurric4n3ike sessions ranked', sessionsRanked('0x29f5dee65e1fb856b816eab4f0b702c10e5eaa34'), 10],
+  ['FACILITATION', 'attendance: Hurric4n3ike latest session', latestSession('0x29f5dee65e1fb856b816eab4f0b702c10e5eaa34'), 105],
+  ['FACILITATION', 'attendance: Jose sessions ranked', sessionsRanked('0x29185eb8cfd22aa719529217bfbade61677e0ad2'), 9],
+  ['FACILITATION', 'attendance: Jose latest session', latestSession('0x29185eb8cfd22aa719529217bfbade61677e0ad2'), 110],
+  ['FACILITATION', 'attendance: Meta Mu sessions ranked', sessionsRanked('0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b'), 8],
+  ['FACILITATION', 'attendance: Meta Mu latest session', latestSession('0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b'), 110],
+  ['FACILITATION', 'attendance: Ohnahji B sessions ranked', sessionsRanked('0x64a15b1d2de581097cb48e5d82619203e24bb3e1'), 8],
+  ['FACILITATION', 'attendance: Ohnahji B latest session', latestSession('0x64a15b1d2de581097cb48e5d82619203e24bb3e1'), 109],
+  ['FACILITATION', 'attendance: CandyToyBox sessions ranked', sessionsRanked('0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66'), 7],
+  ['FACILITATION', 'attendance: Zach L. sessions ranked', sessionsRanked('0xb7f4b9caba6bb0aeaa2b5d8df23e2b59c192bdbb'), 7],
+  ['FACILITATION', 'attendance: Zach L. latest session', latestSession('0xb7f4b9caba6bb0aeaa2b5d8df23e2b59c192bdbb'), 107],
+  ['FACILITATION', 'attendance: unnamed 0xf73485a6 sessions ranked', sessionsRanked('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 7],
+  ['FACILITATION', 'attendance: unnamed 0xf73485a6 latest session', latestSession('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 110],
+
+  // Iman is on the named bench and is not in the ledger at all. That is a gap in
+  // the data or a role outside the Monday game, not evidence about him - see
+  // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the
+  // day he does appear, the doc gets corrected instead of quietly going stale.
+  ['FACILITATION', 'Iman appears in members.json', members.members.some((m) => /iman/i.test(m.name)), false],
 ];
 
 const drifted = CLAIMS.filter(([, , actual, expected]) => String(actual) !== String(expected));

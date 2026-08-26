@@ -161,10 +161,22 @@ Whitepaper ch05 documents the mechanism; this is the operational half.
   group **11 times out of 15**, and have never run three. A second facilitator
   is not for overflow - it is so the meeting can happen without one person.
 - **Zaal was ranked in 14 of those 15 sessions.** No one else exceeded 10.
-- Proposed facilitator bench, on attendance alone: **Jose (Joseph Goats) (9/15),
-  Meta Mu (8/15), Ohnahji B (8/15)**. Alternates: CandyToyBox (7/15, ranked in
-  110), Hurric4n3ike (10/15 but nothing since period 105 - ask directly), and
-  `0xf73485a6…a8ea` who is 7/15 including period 110 and has no name on file.
+- **Bench named by Zaal (gate resolved overnight): Ohnahji B, Iman and Jose.**
+  The doc records that choice and, separately, what the attendance ledger says.
+  Jose is 9/15 and Ohnahji B is 8/15, first and third among current non-Zaal
+  names, so the measurement agrees on those two. **Iman is not in the ledger at
+  all** - not in the 144 named members, not among the 169 addresses that ever
+  held Respect. The doc states plainly that this is a gap in the data or a role
+  outside the Monday game and **not evidence against him**; Zaal named him and
+  knows things the chain does not. The one operational consequence is real
+  though: no registered wallet visible means no Phase 5 submission, which is a
+  first-night blocker with a five-minute fix.
+- **Meta Mu (8/15, ranked in period 110) is recorded as the highest-attendance
+  current name Zaal did not choose** - same treatment as Hurric4n3ike (10/15 but
+  nothing since 105). The measurement says what it says regardless of the
+  decision, and a bench of three that loses someone will want to know where the
+  evidence pointed. Other alternates: CandyToyBox (7/15, ranked in 110), Zach L.
+  (7/15), and `0xf73485a6…a8ea` (7/15 including 110, no name on file).
 - Section 6 is an inventory of what a new facilitator hits on night one with no
   documented answer: who can run `/randomize`, which wallet submits Phase 5 and
   whether it needs OG weight, where the fractal number comes from, what to do
@@ -177,7 +189,10 @@ Whitepaper ch05 documents the mechanism; this is the operational half.
   facilitators at once and starting both cold is how it stalls.
 
 **Both docs state three times over that nobody named has been contacted, asked,
-or agreed to anything.** They are naming proposals for Zaal, not rosters.
+or agreed to anything.** The facilitator bench is now Zaal's decision rather
+than a proposal, and being named is still not being asked. The executor bench in
+EXECUTION-RUNBOOK.md is a separate role and remains a proposal; the two overlap
+by one name and the docs say not to merge them.
 
 Three more ch05 claims went to the whitepaper v0.2 queue rather than being
 edited in place: the 48-hour vote/veto windows (the contract says 72 each),
@@ -246,22 +261,25 @@ From the two runbooks:
 12. **Where does a proposal's Message actually come from?** ornode 404s on every
     path while the Frapps UI works. This blocks the terminal path for any
     execution rota and is the single highest-leverage answer on this list.
-13. **Accept, edit or replace the two proposed benches** - executor (Ohnahji B,
-    CandyToyBox, Meta Mu) and facilitator (Jose (Joseph Goats), Meta Mu,
-    Ohnahji B). **Nobody has been contacted.** Then ask them.
-14. **Ask Tadas** (only non-Zaal executor, four times, no award since period 68)
+13. **Ask the facilitator bench - Ohnahji B, Iman and Jose.** Named by Zaal,
+    none of them contacted. And **accept, edit or replace the executor bench**
+    (Ohnahji B, CandyToyBox, Meta Mu), which is a different role and still a
+    proposal.
+14. **Does Iman have a registered wallet?** Not in `data/members.json` at all.
+    Facilitating needs no wallet until Phase 5, and then it does.
+15. **Ask Tadas** (only non-Zaal executor, four times, no award since period 68)
     and **Hurric4n3ike** (highest non-Zaal attendance, nothing since period 105)
     directly. Both are either the strongest candidate on their page or someone
     who has stepped back, and only a conversation tells them apart.
-15. **Who is `0xf73485a6…a8ea`?** 7 of the last 15 sessions including period
+16. **Who is `0xf73485a6…a8ea`?** 7 of the last 15 sessions including period
     110, no name on file. On attendance they belong on the facilitator bench.
-16. **Name the six other unnamed backlog wallets** so people can be told what
+17. **Name the six other unnamed backlog wallets** so people can be told what
     they are owed.
-17. **Answer the six undocumented items** in `FACILITATION-RUNBOOK.md` section 6
+18. **Answer the six undocumented items** in `FACILITATION-RUNBOOK.md` section 6
     (bot permissions, submitting wallet, fractal number, oversized groups,
     non-converging rounds, mid-meeting escalation). Cheapest unblock on the
     list; none of them is a decision.
-18. **Is `/randomize` gated to one Discord role?** If so it is a five-minute fix
+19. **Is `/randomize` gated to one Discord role?** If so it is a five-minute fix
     and it is the literal first blocker for a second facilitator.
 
 ---
@@ -285,7 +303,7 @@ From the two runbooks:
 ```bash
 node scripts/pull-data.mjs        # refresh data/*.json from OP Mainnet
 node scripts/build-members.mjs    # refresh the wallet -> name map
-node scripts/verify-claims.mjs    # re-check all 98 figures in the docs
+node scripts/verify-claims.mjs    # re-check all 103 figures in the docs
 cd dao && npm run dev             # browse the same numbers
 ```
 

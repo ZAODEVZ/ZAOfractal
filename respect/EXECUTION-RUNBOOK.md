@@ -44,6 +44,13 @@ Section 6 lists every one of them.
 
 **Proposed only. Not contacted, not asked, not agreed.**
 
+Note that this is the **executor** bench, and it is still a proposal. The
+**facilitator** bench is a separate role and has now been named by Zaal -
+Ohnahji B, Iman and Jose, in [FACILITATION-RUNBOOK.md](./FACILITATION-RUNBOOK.md)
+section 3. Nobody on either has been contacted. The two overlap by one name and
+should not be merged: facilitating needs somebody reliably in the room,
+executing needs somebody who will send a transaction six days later.
+
 Selection criteria, applied to the snapshot and to nothing else:
 
 1. Has taken a governance action on OREC at least once (voted or executed).
@@ -302,7 +309,7 @@ clearest possible demonstration that the rota does something.
 | 95 | 68 | `0xf73485a6…a8ea` | (unnamed) |
 | 95 | 42 | `0x64a15b1d…b3e1` | Ohnahji B |
 | 95 | 26 | `0xe5adabbd…071b` | (unnamed) |
-| 96 | 110 | `0x29185eb8…0ad2` | Jose (Joseph Goats) |
+| 96 | 110 | `0x29185eb8…0ad2` | Jose |
 | 96 | 42 | `0x547f8b79…2ee4` | Shawn |
 | 96 | 26 | `0x64a15b1d…b3e1` | Ohnahji B |
 | 99 | 110 | `0xc96ab83c…85d8` | DCoop |
@@ -310,7 +317,7 @@ clearest possible demonstration that the rota does something.
 | 99 | 42 | `0x698e5a25…5383` | Kosbaar |
 | 99 | 26 | `0xe5adabbd…071b` | (unnamed) |
 | 108 | 110 | `0x2d9cbc4e…AA8B` | Meta Mu |
-| 108 | 68 | `0x29185eb8…0ad2` | Jose (Joseph Goats) |
+| 108 | 68 | `0x29185eb8…0ad2` | Jose |
 | 108 | 42 | `0xe5adabbd…071b` | (unnamed) |
 | 108 | 26 | `0x64a15b1d…b3e1` | Ohnahji B |
 
@@ -318,7 +325,7 @@ Seven of the sixteen are unnamed in `data/members.json`, which is its own tap -
 they cannot be told they are owed anything.
 
 `0xe5adabbd…071b` appears three times and is a contract; `0x29185eb8…0ad2`
-(Jose (Joseph Goats)) appears twice and is a contract. Re-minting to those
+(Jose) appears twice and is a contract. Re-minting to those
 addresses will revert again. Fix the wallet first, then re-propose.
 
 ---

@@ -1,13 +1,12 @@
 # Facilitation runbook - running the Respect Game without Zaal
 
-**Status:** proposal, 2026-08-26. Nothing here is agreed and nothing here has
-been scheduled.
+**Status:** 2026-08-26. The bench is named - Zaal resolved that gate overnight.
+Nothing else here is agreed and nothing here has been scheduled.
 
-**Nobody named on this page has been contacted, asked, approached or has agreed
-to anything.** The bench in section 3 is a naming proposal derived from the
-on-chain ledger by stated criteria, put in front of Zaal so he has a concrete
-list to accept, edit or replace. Every name is a suggestion until the person
-themselves says otherwise.
+**Nobody on the bench has been contacted, asked, approached or has agreed to
+anything.** Being named is not being asked. Section 3 records Zaal's choice and
+what the ledger independently says about the room; it is not a roster, a
+schedule, or a commitment by anyone on it.
 
 This is the **L1 - Facilitator bench** item on the decentralization scale. L0 is
 where the ZAO is now: one weekly synchronous game that works, is proven, and
@@ -138,54 +137,87 @@ expect.
 
 ---
 
-## 3. The proposed bench
+## 3. The bench
 
-**Proposed only. Not contacted, not asked, not agreed.**
+**Zaal's call, and it has been made: Ohnahji B, Iman and Jose.**
 
-Facilitating is not a governance role and needs no Respect, no vote weight and
+**Nobody on it has been contacted, asked, or has agreed to anything.** Naming a
+bench and having a bench are different things, and only the first one has
+happened.
+
+Facilitating is not a governance role. It needs no Respect, no vote weight and
 no key. What it needs is somebody who is reliably in the room and knows how the
-night runs. So the criteria are attendance, and nothing else:
+night runs - and only the second half of that is something a person can tell you
+about themselves.
 
-1. Ranked in a Respect Game group in at least half of the last 15 settled
-   sessions (periods 95 to 110).
-2. Ranked in period 109 or 110, so they are in the room now rather than
-   historically.
-3. A named identity in `data/members.json`, so a missed week has someone to ask.
+### What the ledger measures, and what it does not
 
-Attendance is counted as being ranked in a settled group **or** in a group whose
-mint reverted, because the second kind is not absence - it is the settlement
-bug in section 5 erasing people who did turn up.
+The attendance table below is the measurement of who is actually in the room on
+a Monday. It counts being ranked in a Respect Game group across the last 15
+settled sessions, periods 95 to 110, counting both settled groups **and** groups
+whose mint reverted, because the second kind is not absence - it is the
+settlement bug in section 5 erasing people who did turn up.
 
-Three people meet all three criteria:
-
-| Proposed | Wallet | Sessions ranked (of 15) | Latest session |
+| Member | Wallet | Sessions ranked (of 15) | Latest session |
 |---|---|---|---|
+| Zaal | `0x7234c36a…E9Af` | 14 | 110 |
+| Hurric4n3ike | `0x29f5dee6…Aa34` | 10 | 105 |
 | Jose (Joseph Goats) | `0x29185eb8…0ad2` | 9 | 110 |
 | Meta Mu | `0x2d9cbc4e…AA8B` | 8 | 110 |
 | Ohnahji B | `0x64a15b1d…b3e1` | 8 | 109 |
+| CandyToyBox | `0x8d43a3fc…eE66` | 7 | 110 |
+| Zach L. | `0xb7f4b9ca…bdbb` | 7 | 107 |
+| (unnamed) | `0xf73485a6…a8ea` | 7 | 110 |
 
-For reference, Zaal is 14 of 15 - which is the whole problem stated as a number.
+Zaal at 14 of 15 is the whole problem stated as a number.
 
-**Alternates, and why they are not in the three:**
+**Jose and Ohnahji B are both in that table**, at 9 and 8 sessions, first and
+third among non-Zaal names that are still current. The measurement agrees with
+the choice.
 
-- **CandyToyBox** `0x8d43a3fc…eE66` - 7 of 15, ranked in period 110. Misses
-  criterion 1 by half a session. Has also voted on OREC three times, so if the
-  bench needs a fourth, this is the obvious one.
-- **Hurric4n3ike** - 10 of 15, the highest non-Zaal attendance in the window, but
-  last ranked in period 105, five sessions ago. Fails criterion 2 only. Whether
-  that is a step back or a gap in settlement is not something the chain can
-  answer, and it is worth asking directly before writing it off.
+**Iman does not appear in it at all**, and does not appear anywhere in
+`data/members.json` - not among the 144 named members, not among the 169
+addresses that have ever held Respect. Said plainly, because it would be easy to
+read this table as an argument and it is not one:
+
+**This is a gap in the data, or a role that sits outside the Monday game. It is
+not evidence against Iman.** The ledger records who was ranked in a breakout
+group. It cannot record someone who runs ZAO Devz, who facilitates in a context
+that does not settle to ZOR, who attends without being ranked, or who simply has
+no wallet registered. Zaal named him, and Zaal knows things the chain does not.
+The chain is the wrong instrument for this question and saying otherwise would
+be dressing up an absence of data as a finding.
+
+What it does mean, operationally and only operationally: Iman has no wallet in
+the `/register` registry as far as this snapshot can see, and Phase 5 submission
+sends a transaction. That is a first-night blocker with a five-minute fix, and
+it is open call 5, not a reason to revisit the bench.
+
+### Meta Mu
+
+**Meta Mu is at 8 of 15, ranked in period 110 - tied with Ohnahji B on sessions
+and more recent, and the highest-attendance current name Zaal did not choose.**
+That is worth recording for the same reason Hurric4n3ike is: the measurement
+should say what it says regardless of the decision, and a bench of three that
+loses someone will want to know who the evidence pointed at. It is not an
+argument against the named three, and Zaal has reasons the table cannot hold.
+
+### The rest of the table
+
+- **Hurric4n3ike** - 10 of 15, the highest non-Zaal count in the window, but last
+  ranked in period 105, five sessions ago. Whether that is a step back or a gap
+  in settlement is not something the chain can answer, and it is worth asking
+  directly before writing it off.
+- **CandyToyBox** `0x8d43a3fc…eE66` - 7 of 15, ranked in period 110. Also voted
+  on OREC three times, so if the bench needs a fourth, this is the obvious one.
 - **Zach L.** - 7 of 15, last ranked in period 107.
-- **`0xf73485a6…a8ea`** - 7 of 15 and ranked in period 110, which would put them
-  in the three on attendance alone. They have no name in `data/members.json`, so
-  criterion 3 fails on our records rather than on the person. This is a tap, not
-  a judgement - see open call 4.
+- **`0xf73485a6…a8ea`** - 7 of 15 including period 110, and no name on file.
+  See open call 4 - this is a tap, not a judgement.
 
-**What the data cannot tell you, and Zaal can:** none of these criteria measure
-whether somebody can hold a room, keep a timer, or handle a disputed round.
-Attendance is a proxy for availability and nothing more. The bench should be
-three people Zaal thinks can run a meeting, and this list exists so that
-conversation starts from evidence instead of memory.
+**What the ledger cannot tell you about any of them:** whether they can hold a
+room, keep a timer, or handle a disputed round. Attendance is a proxy for
+availability and nothing more. That is exactly the part of the decision that was
+never the data's to make.
 
 ---
 
@@ -197,7 +229,8 @@ and trying to hit both from a standing start is how this stalls. Sequence it:
 
 **Weeks 1 to 2 - shadow.** The Monday game runs as it does now, with one bench
 member co-facilitating: they run `/randomize` and `/timer` while Zaal watches.
-Nothing else changes. Two weeks, two different bench members.
+Nothing else changes. Two weeks, two different bench members. This assumes all
+three have said yes; none has been asked yet.
 
 **Weeks 3 to 4 - solo Monday.** A bench member runs the whole Monday session
 end to end, including Phase 5 submission. Zaal is in the room and does not
@@ -291,15 +324,20 @@ that can be used.
 
 ## 7. Open calls - Zaal only
 
-1. **Accept, edit or replace the proposed bench.** Three names, none contacted.
-2. **Ask them.** Nothing on this page is real until three people have said yes,
-   and the first two weeks are shadowing, so the ask is small.
+1. **Ask Ohnahji B, Iman and Jose.** The bench is named and none of them knows
+   it. Nothing on this page is real until three people have said yes, and the
+   first two weeks are shadowing, so the ask is small.
+2. **Does Iman have a registered wallet?** He is not in `data/members.json` at
+   all. Facilitating needs no wallet until Phase 5, and then it does. Five
+   minutes, and it is a first-night blocker if it is missed.
 3. **Ask Hurric4n3ike directly.** Highest non-Zaal attendance in the window and
    absent from the last five sessions. That is either the strongest candidate on
    the page or somebody who has stepped back, and only a conversation
-   distinguishes them.
+   distinguishes them. Same for **Meta Mu**, who is tied for second on
+   attendance and ranked in the latest session - if the bench of three ever
+   needs a fourth, the measurement points there.
 4. **Who is `0xf73485a6…a8ea`?** Ranked in 7 of the last 15 sessions including
-   period 110, and has no name on file. On attendance they belong in the three.
+   period 110, and has no name on file.
 5. **Answer the six items in section 6,** or say who can. This is the cheapest
    item on the page and it is what actually unblocks a first solo session.
 6. **Confirm the meeting cadence the gate is measured against.** The scale says
