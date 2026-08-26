@@ -1,7 +1,7 @@
 # Handoff - fractal dashboard + fractal docs (2026-08-25/26)
 
-Repo: `ZAOfractal`, branch `main`, **14 commits ahead of origin, nothing
-pushed**. Push is Zaal's call.
+Repo: `ZAOfractal`, branch `main`, **ahead of origin and nothing pushed**.
+Push is Zaal's call. Exact count: `git rev-list --count origin/main..HEAD`.
 
 Three lanes ran in this pane. The dashboard data layer (task_52ea0cb8c31c)
 landed first; the two fractal docs (task_fa960c63996b, task_b5f03719b980) were
@@ -289,4 +289,6 @@ node scripts/verify-claims.mjs    # re-check all 98 figures in the docs
 cd dao && npm run dev             # browse the same numbers
 ```
 
-Nothing deployed, nothing pushed. **14 commits ahead of origin.**
+Nothing deployed, nothing pushed. Check how far ahead with
+`git rev-list --count origin/main..HEAD` - the number moves with every commit
+here, so it is not written down.
