@@ -411,6 +411,16 @@ const CLAIMS = [
   ['WP ch06', 'reverted executions that were all mintRespectGroup', failedExecutions.length, 11],
   ['WP ch06', 'award slots left unminted by those reverts', unsettledRows.length, 24],
 
+  ['WP ch07', 'addresses that ever held Respect', touched.size, 169],
+  ['WP ch07', 'latest period number', summary.zor.latestPeriod, 110],
+  ['WP ch07', 'settled periods', sessions.length, 41],
+  ['WP ch07', 'ZOR awards', summary.zor.awards, 333],
+  ['WP ch07', 'proposals / executed', `${proposals.proposalCount}/${summary.orec.executed}`, '153/123'],
+  ['WP ch07', 'mean people settled per period', (ascending.reduce((s, p) => s + p.participants, 0) / ascending.length).toFixed(1), '8.1'],
+  ['WP ch07', 'recent session range', `${windowSessionSizes[0]}-${windowSessionSizes.at(-1)}`, '4-12'],
+  ['WP ch07', 'days before a proposal is executable', (Number(summary.orec.config.voteLen) + Number(summary.orec.config.vetoLen)) / 86400, 6],
+  ['WP ch07', 'minWeight as a share of OG supply (%)', ((MIN_WEIGHT / summary.og.totalSupply) * 100).toFixed(1), '2.6'],
+
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see
   // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the

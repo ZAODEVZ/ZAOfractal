@@ -1,6 +1,6 @@
 # Chapter 7: Why Fractal
 
-Draft v0.1 - 2026-05-25 - awaiting Zaal review
+Draft v0.2 - 2026-08-26 - accuracy pass against the committed chain snapshot
 
 ---
 
@@ -41,7 +41,7 @@ Nine major governance models exist in production DAOs and research. Each solves 
 
 **Capture Risk:** 51% of voting power = control. In Compound, this is 8 coordinating delegates (low bar). In reality, control is lower: the top 8 delegates may not be coordinated, so effective control requires 20-30 delegates. Still oligarchic.
 
-**Assessment for ZAO:** Token voting would make ZAO plutocratic. ZAO has 188 members (artists, engineers, curators). Some are early adopters with capital, others are recent joiners with more contribution. If voting power flowed to capital, ZAO would be controlled by whoever accumulated the most tokens early, not by the community that creates music.
+**Assessment for ZAO:** Token voting would make ZAO plutocratic. ZAO has a community roll of 188 (artists, engineers, curators); 169 addresses have ever held Respect on chain. Some are early adopters with capital, others are recent joiners with more contribution. If voting power flowed to capital, ZAO would be controlled by whoever accumulated the most tokens early, not by the community that creates music.
 
 ---
 
@@ -193,17 +193,19 @@ Moreover, SourceCred's algorithm is opaque ("PageRank says you earned 47 cred").
 
 ### 9. Fractal Governance (Respect Tokens, ORDAO)
 
-**How it works:** Weekly 5-6 person circles reach consensus on ranking contributions. Fibonacci distribution (55/34/21/13/8/5 or variants). Soulbound Respect tokens minted on-chain. ORDAO voting with 5-10% quorum and veto period for minority protection.
+**How it works:** Weekly 5-6 person circles reach consensus on ranking contributions. Fibonacci distribution (55/34/21/13/8/5 or variants). Soulbound Respect tokens minted on-chain. ORDAO voting with a minimum-weight floor and a veto period for minority protection. In ZAO's deployment that floor is an absolute 1,000 Respect, roughly 2.6% of the OG supply, not a percentage quorum that scales with the ledger.
 
 **Sybil Resistance:** Extremely high. Respect earned via consensus; cannot be split or bought.
 
 **Plutocracy Resistance:** Extremely high. Respect = contribution quality (peer-evaluated), not capital.
 
-**Voter Participation:** High. Weekly rhythm embeds governance in community. 60-80% participation typical (vs. 3-10% in token voting).
+**Voter Participation:** High. Weekly rhythm embeds governance in community. 60-80% participation is the figure reported across fractal communities generally (vs. 3-10% in token voting).
+
+**A caveat that applies to every 60-80% in this chapter.** That number comes from the fractal literature and from other communities' self-reporting. It has never been measured at ZAO, and ZAO's own ledger does not support it: 4 to 12 people settle in a recent session against a community roll of 188. The comparison rows below are a comparison of *governance designs*, drawing on each design's reported experience. They are not a claim about ZAO's turnout. Section VII and Chapter 9 give ZAO's actual numbers.
 
 **Contribution vs. Capital:** Contribution-only. Capital has no direct influence.
 
-**Decision Speed:** Medium. Weekly circles take time; ORDAO voting + veto is 6 days (voting) + 3 days (veto) = 9 days.
+**Decision Speed:** Medium. Weekly circles take time; ORDAO voting + veto is 3 days (voting) + 3 days (veto) = 6 days before a proposal becomes executable. In ZAO's deployment the median proposal is executed on day 7.
 
 **Capture Risk:** Low. To control ORDAO, a coalition needs majority support in multiple circles AND high Respect (ORDAO voting power). This is hard - requires embedding deep in community culture.
 
@@ -252,7 +254,7 @@ Fractal does Sybil resistance by making identity costly to fake *without* capita
 
 Token-weighted DAOs have a participation crisis: 3-10% of eligible voters participate in typical governance. Moloch and Coordinape have higher participation, but Moloch requires high-friction capital tributes, and Coordinape requires synchronous voting each epoch.
 
-Fractal's weekly rhythm and human-scaled circles create high participation (60-80% typical). Governance is not a separate chore; it is embedded in community rhythm. "Monday 6pm EST, we gather and rank contributions." This becomes a cultural anchor, like a standup meeting in an open-source project.
+Fractal's weekly rhythm and human-scaled circles create high participation (60-80% typical across fractal communities; not measured at ZAO - see the caveat in section IV). Governance is not a separate chore; it is embedded in community rhythm. "Monday 6pm EST, we gather and rank contributions." This becomes a cultural anchor, like a standup meeting in an open-source project.
 
 **Winner: Fractal.**
 
@@ -322,7 +324,9 @@ Why does this matter? Because music is not capital. Music is contribution. A son
 
 Token voting says: the wealthiest music DAO member decides the community's future. Fractal voting says: the community decides, based on who creates value.
 
-ZAO Fractal is the first music governance system to implement this. We have proven (90+ weeks, 188 members, 40+ participants per session) that it works. It works better than token voting. Members show up. Engagement is high. Decisions reflect community values, not capital concentration.
+ZAO Fractal is the first music governance system to implement this, and it has been running weekly since August 2024 - 110 numbered periods, 41 of them settled on the on-chain ledger, 333 Respect awards, 153 governance proposals with 123 executed.
+
+Two years in, the claim that survives contact with the data is narrower than the one earlier drafts made, and it is still the important one. **What is proven:** that peer-ranked contribution can be the sole basis of governance weight, sustained week after week, with every award attributable to a named ranking and every proposal verifiable at an address. **What is not proven:** that it produces broad participation. A mean of 8.1 people settle per period against a community roll of 188. Section VII is where that gets treated as the open problem it is, and Chapter 9 gives it a chapter of its own. Fractal governance beats token voting on the question of *what confers power*. It has not yet beaten it on the question of *how many people show up*.
 
 ---
 
@@ -372,9 +376,9 @@ Fractal governance is optimal for ZAO because:
 
 1. It makes contribution, not capital, the source of voting power.
 2. It is Sybil-resistant without capital gatekeeping.
-3. It achieves high participation (60-80% of active members show up each week).
+3. It achieves high participation **among those who engage** - but the engaged group is small: 4 to 12 people settle in a recent session, out of a roll of 188. The 60-80% figure reported for fractal communities generally has never been measured at ZAO, and the ZAO ledger does not support it.
 4. It builds community as it governs.
-5. It has been proven over 90+ weeks in production.
+5. It has been running in production since August 2024, across 110 numbered periods.
 
 ---
 
@@ -388,7 +392,7 @@ It is the anti-whale, anti-VC, anti-plutocratic approach to music community gove
 
 Fractal governance is the mechanism. But the mechanism is only as good as the culture that sustains it.
 
-ZAO has built that culture over 90+ weeks. This whitepaper documents how and why. For music communities, for DAOs, and for anyone asking "is there an alternative to token voting?": there is. ZAO Fractal is the proof.
+ZAO has built that culture week by week since August 2024. This whitepaper documents how and why. For music communities, for DAOs, and for anyone asking "is there an alternative to token voting?": there is. ZAO Fractal is the proof.
 
 ---
 
