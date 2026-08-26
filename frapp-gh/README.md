@@ -236,6 +236,13 @@ State lives in git, so the audit trail is the commit history:
 public/leaderboard.json
 ```
 
+**`period-N` and `week-N` are the same number.** The community-facing name comes
+from `cycleNoun`, so ZAO reads "Period 111" in the Discussion and
+`period-111-contribution` on the label, while the field, the paths and the API
+routes stay `week` - `week-111/state.json`, `GET /api/v1/votes/111`. Nothing is
+misconfigured when those differ; only the vocabulary does. Renaming the
+internals is a live decision, not a settled one - see ARCHITECTURE.
+
 ## Replaying a whole period locally
 
 The async week runs end to end with no GitHub App, no network, and no

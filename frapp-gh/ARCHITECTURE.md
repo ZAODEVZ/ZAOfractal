@@ -7,6 +7,16 @@ whatever `cycleNoun` says, which for ZAO is "Period" continuing the on-chain
 count. The field names were not renamed because the numbering is the thing that
 has to match, not the vocabulary.
 
+**Open decision: revisit the rename before the first live period.** Keeping
+`week` internally costs one line of explanation in the README and leaves a ZAO
+reader looking at `week-111/state.json` under a Discussion titled "Period 111".
+Renaming through - `weekNumber` -> `periodNumber`, `week-N` -> `period-N` -
+touches the committed state paths, so it stops being doc-shaped the moment real
+periods exist on disk: filenames would change and any written state would need
+migrating. Right now nothing has run live and there is no state to migrate,
+which makes this the cheapest it will ever be. That argument inverts the day
+the first period settles, so decide before then rather than after.
+
 ## Shape
 
 GitHub is the database. Git is the log. The code is a scheduled job plus a
