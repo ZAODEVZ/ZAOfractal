@@ -165,10 +165,13 @@ None of these are edited in the chapters yet; prose changes wait for the pass.
 
 | Claim | Where | Reality check needed |
 |---|---|---|
-| "90+ unbroken weeks" | ch01 (x3), ch08, this README | Repo README says 100+; Aug 2024 start implies ~104 by Aug 2026. Pick one number, source it, update everywhere in one commit. |
-| "188 members" | ch07, ch08 (x3), ch09 | Count was from ~May 2026. Re-verify before share. |
-| "as of May 2026" facts table | repo README | OREC tx count (242+), streak, bot version all 3 months stale. |
+| "90+ unbroken weeks" | ch01 (x3), ch08, this README | Repo README says 100+; Aug 2024 start implies ~104 by Aug 2026. Pick one number, source it, update everywhere in one commit. **See the settlement-vs-ritual row below before picking.** |
+| "188 members" | ch07, ch08 (x3), ch09 | Count was from ~May 2026. On-chain, 169 addresses have ever held Respect on either ledger (122 OG, 70 ZOR, overlapping) as of 2026-08-26. 188 is presumably a community count, not a holder count - say which one the chapter means. |
+| "as of May 2026" facts table | repo README | Measured 2026-08-26: OREC has 287 transactions and 153 proposals, 123 executed, 11 execution failures, 15 failed to pass. Streak and bot version still need their own sourcing. |
 | "only active fractal on Optimism" | ch01, ch08 | Was true at drafting; re-verify against the fractal-communities directory before publishing. |
+| On-chain verifiability used to support the streak claim | ch01, ch08 | **The chain records settlement, not attendance, and these are different claims.** Provable: the latest period number is 110; the ZOR ledger covers periods 67-110 with 71, 72 and 103 carrying no awards; the longest run of consecutive periods ending at 110 is 7; those 41 settled periods span 47.7 weeks with a median 7-day gap and a largest gap of 29 days. Not provable: whether the game met in any given week. Periods 1-66 predate ZOR and ran on OG, which carries no per-week record at all, so two thirds of the history cannot be checked on chain even in principle. Do not silently restate the streak as 7 - fix the *justification*, then pick the number from off-chain evidence. Full working: `respect/LEDGER-RECONCILIATION.md` section 6. |
+| ZOR described as the governance token | ch04, ch06 (check) | OREC's `respectContract` is the OG ERC-20 `0x34cE...6957`, read live at vote time. ZOR confers no vote. 47 of the 70 people ever awarded ZOR hold zero vote weight. |
+| OREC bottleneck described as "zaal.eth + civilmonkey.eth" | ch09 | Measured: 9 addresses have ever voted, 2 have ever executed (Zaal 130, Tadas 4), and 137 of 153 proposals were decided by a single voter. Name the wallets from the data rather than from memory. See `respect/SIGNER-COMMITTEE.md`. |
 
 Also: the assembled `ZAO-Fractal-Whitepaper.md` renders an empty-looking
 Abstract heading (stray `---` after the title) - cosmetic, content is intact.
