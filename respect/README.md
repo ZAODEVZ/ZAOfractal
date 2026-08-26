@@ -49,6 +49,21 @@ launcher or factory touches this ledger. A proposal to make Respect tradeable
 is not a parameter change. It is a proposal to end fractal governance at The
 ZAO, and should be read as one.
 
+**The harder boundary is the one inside ZAO's own tooling.** The async game in
+[`frapp-gh/`](../frapp-gh/) assigns Respect and commits it to a repository as
+JSON. That is Respect in the sense that matters - peer-ranked, earned, on the
+same curve - but it is **not on either ledger**, so today it confers no vote
+and appears in none of the figures this repo quotes. Phase 1 is deliberately
+off-chain and has never run live.
+
+Two things follow, and they are open rather than settled. Off-chain Respect
+that is never settled on-chain is a record, not a governance weight, and a
+member earning it should be told which one they are getting. And if it is ever
+settled on-chain, it lands in the same ledger the Monday game settles into,
+which makes the anti-collusion work named at L3 of the [roadmap](../ROADMAP.md)
+a prerequisite rather than a refinement - an async path that can be gamed is a
+path to minting governance weight.
+
 ## How to earn it
 
 | Contribution | Respect |
