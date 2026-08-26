@@ -1,6 +1,7 @@
 # Handoff - fractal dashboard + fractal docs (2026-08-25/26)
 
-Repo: `ZAOfractal`, branch `main`, **ahead of origin and nothing pushed**.
+Repo: `ZAOfractal`, branch `bettercallzaal/ws-fractal-lane`, **ahead of
+origin and nothing pushed**.
 Exact count: `git rev-list --count origin/main..HEAD`.
 
 > ## DO NOT PUSH - this is a PII gate, not a preference
@@ -28,10 +29,16 @@ Exact count: `git rev-list --count origin/main..HEAD`.
 > Do not push, do not open a PR, do not merge to a branch that has a remote.
 > The decision is Zaal's.
 
-Three lanes ran in this pane. The dashboard data layer (task_52ea0cb8c31c)
+Four lanes ran in this pane. The dashboard data layer (task_52ea0cb8c31c)
 landed first; the two fractal docs (task_fa960c63996b, task_b5f03719b980) were
-built on its output and are closed and coordinator-verified; the facilitator
-bench (task_5e424cc44289) followed and produced two more runbooks.
+built on its output; the facilitator bench (task_5e424cc44289) followed and
+produced two more runbooks; and the whitepaper v0.2 accuracy pass
+(task_8632b5bd9be9) worked the queue the first three lanes had been filling.
+All four are closed and coordinator-verified.
+
+**`REVIEW.md` at the worktree root is the entry point for Zaal's review** - one
+line per unpushed commit, with the name-to-wallet linkage commits flagged
+first.
 
 ---
 
@@ -228,9 +235,13 @@ snapshot), and the facilitator naming.
 
 ## The unbroken-weeks finding, and how it was handled
 
-**No chapter prose was touched.** `whitepaper/README.md` gained three rows on
-the v0.2 accuracy queue and the existing rows were sharpened with measured
-figures.
+**Superseded by Part 4 - the chapters have now been edited.** What follows is
+the finding as the docs lanes left it, kept because its reasoning is what the
+v0.2 pass was built on.
+
+At the time: no chapter prose was touched, `whitepaper/README.md` gained three
+rows on the v0.2 accuracy queue and the existing rows were sharpened with
+measured figures.
 
 The framing, confirmed by the coordinator as correct: **the chain records
 settlement, not attendance.** Provable on-chain - latest period is 110, the ZOR
@@ -246,6 +257,83 @@ claims and neither refutes the other**. Do not restate the streak as 7. What
 needs fixing is only the chapters citing on-chain verifiability as the reason to
 trust a number the chain cannot speak to. Full working in
 `respect/LEDGER-RECONCILIATION.md` section 6.
+
+---
+
+## Part 4 - the whitepaper v0.2 accuracy pass (task_8632b5bd9be9)
+
+Nineteen commits, one per chapter plus `REVIEW.md` and the two READMEs. The
+queue in `whitepaper/README.md` is replaced by a record of what was corrected
+and, more usefully, what could not be closed.
+
+**The queue items.** Streak reframed - the period counter reads 110, and the
+ritual claim is kept apart from the chain claim in ch01/03/07/08/11, exactly as
+the finding above prescribed. The streak is never restated as 7. The 188 is
+labelled a community roll, with a new table in ch08 giving all four counts (188
+roll, 169 addresses ever holding, 144 named and resolvable, 4-12 settled per
+session). OREC's "242+ transactions" becomes 316 transactions, 514 events, 153
+proposals, 123 executed. OG-not-ZOR-votes is stated in four chapters with the
+measured consequence. ch05's 48-hour windows become 72 each. ch05's "frozen at
+proposal creation" becomes read-live, with the 2025-12-09 zero-weight case.
+
+**Found beyond the queue,** each its own commit:
+
+- **ch04's Gini of ~0.23** was wrong for every reading of it. Measured: 0.41 for
+  one payout, 0.53 for ZOR, **0.73 for OG - the ledger that votes**. Nine
+  holders reach a majority of vote weight, against the Compound eight the
+  chapter has always used as its contrast.
+- **ch08 claimed doubling Fibonacci gives 5x instead of 11x.** Doubling a vector
+  changes no ratio; both curves are 11:1. What it changes is accumulation rate,
+  272 per group against 136 - which is what the 0.73 is made of.
+- **ch06's config table listed two parameters OREC does not have**
+  (`respectContractZOR`, `maxConcurrentProposals`), and its verification section
+  said "all successful" while 11 executions had reverted.
+- **ch03 and ch07 applied other fractal communities' 60-80% turnout to ZAO.**
+  ZAO settles 8.1 per period.
+- **ch09's signer-committee fix could not be built** - there is no signer set.
+  Split into weight / operations / keys.
+- **ch10's targets were all in the past.** Status table added; the signer item
+  superseded rather than slipped.
+
+**The admin-key claim, and how it went wrong.** The highest-consequence new
+claim in the pass - one member on OG's `DEFAULT_ADMIN_ROLE`, able to mint vote
+weight on the only ledger that votes - was taken from
+`respect/SIGNER-COMMITTEE.md` and propagated into five places as measured fact
+**without ever being read from the chain**. The coordinator caught that it was
+the one claim the verifier could not hold. It is now read by `pull-data.mjs`
+(`getRoleMemberCount` / `getRoleMember` on `bytes32(0)`) into
+`og-respect.json`, and it checks out: count 1, holder `0x7234c36a...E9Af`, the
+treasury wallet. `SIGNER-COMMITTEE.md` carries its own provenance correction
+rather than being silently fixed underneath.
+
+**For Zaal, and this is the part that changes a decision:** that wallet is his
+own. The only genuinely permissioned capability in the stack is held by him
+personally. Roadmap item 10a is therefore not an unknown key holder to be
+found - it is his action to take, constrained by the ch10 sequencing note that
+relinquishing before migration would freeze the genesis allocation.
+
+**Guards.** `verify-claims.mjs` went from 103 expectations to **237**, with a
+group per chapter. Two kinds, and the difference is worth keeping: guards that
+**recompute** from raw data (the Gini over the balance vector,
+`holdersToReach`) are stronger than guards that **pin** a value the puller read
+(the admin role). Both fail in the same direction, which is what matters.
+
+**New:** `scripts/assemble-whitepaper.mjs` builds the document from `draft/`
+and strips drafting state, fixing the stray-rule-under-Abstract bug
+structurally. Edit the chapters, never `ZAO-Fractal-Whitepaper.md`.
+
+**Left open, recorded in `whitepaper/README.md`:** the streak number has no
+off-chain corroboration in this repo; the 188 was last counted in May; the
+only-active-fractal-on-Optimism claim is about other people's communities and
+is marked for re-verification before each publication; the bot version and its
+52 commands have no source here; and `civilmonkey.eth` cannot be matched to
+either executing wallet - the second executor, with 4 executions, is Tadas
+Vaitiekunas.
+
+**Side effect worth knowing:** re-pulling to capture the admin role moved the
+snapshot from block 156,055,426 to 156,071,456. No quoted figure changed, and
+every block reference across `respect/`, the chapters and both READMEs was
+resynced.
 
 ---
 
@@ -322,8 +410,9 @@ From the two runbooks:
    longer cosmetic. **Note this cuts against `gate_4c836a146dcd`** - every name
    added here makes the linkage larger, so do it knowing the redaction question
    is still open.
-2. Once Zaal answers tap 1, do the whitepaper v0.2 pass in one commit across
-   ch01, ch04, ch06, ch07, ch08, ch09 and the repo README.
+2. ~~Do the whitepaper v0.2 pass.~~ **Done - see Part 4.** It ran without
+   waiting on tap 1, because no correction depended on the allocation rule;
+   ch04 and ch10 point at the open decision rather than pre-empting it.
 3. Member write-up view: `awardsForMember()` in `dao/src/lib/data.ts` already
    returns a member's full history; it is only surfaced as a leaderboard
    expansion so far.
@@ -335,7 +424,8 @@ From the two runbooks:
 ```bash
 node scripts/pull-data.mjs        # refresh data/*.json from OP Mainnet
 node scripts/build-members.mjs    # refresh the wallet -> name map
-node scripts/verify-claims.mjs    # re-check all 103 figures in the docs
+node scripts/verify-claims.mjs    # re-check every figure in the docs and chapters
+node scripts/assemble-whitepaper.mjs  # rebuild the whitepaper from draft/
 cd dao && npm run dev             # browse the same numbers
 ```
 
