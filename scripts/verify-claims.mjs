@@ -24,6 +24,9 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (name) => JSON.parse(readFileSync(join(ROOT, 'data', name), 'utf8'));
 
 const summary = read('summary.json');
+const frappConfig = JSON.parse(
+  readFileSync(join(ROOT, 'frapp-gh', 'frapp-gh.config.json'), 'utf8'),
+);
 const og = read('og-respect.json');
 const zor = read('zor-respect.json');
 const awards = read('award-events.json');
@@ -528,6 +531,27 @@ const CLAIMS = [
     /none has been asked yet/.test(docText('respect/FACILITATION-RUNBOOK.md')), true],
   ['NOT-ASKED', 'whitepaper ch05 still names no facilitator',
     /civilmonkey/.test(docText('whitepaper/draft/ch05-the-respect-game.md').split('Earlier drafts said')[0]), false],
+
+  /* frapp-gh anchors its period numbering to the chain's, so the two can drift
+   * apart in exactly one way: someone edits the epoch, or a data re-pull moves
+   * period 110's settlement. Both are held here.
+   *
+   * The epoch is the SESSION Monday (2026-08-24), not the settlement date
+   * (2026-08-25). Those are different events - awards land after the OREC vote
+   * window - and a reader comparing frapp-gh/README.md against the facts table
+   * in the root README will see both dates. Pinned so the distinction survives
+   * an edit by someone who assumes one of them is a typo. */
+  ['FRAPP', 'frapp-gh epoch period number', frappConfig.sessionSchedule.epochWeekNumber, 110],
+  ['FRAPP', 'frapp-gh epoch is the session Monday',
+    frappConfig.sessionSchedule.epochDate, '2026-08-24T18:00:00-04:00'],
+  ['FRAPP', 'period 110 settled the day after its session',
+    periods.periods.find((p) => p.periodNumber === 110)?.date.slice(0, 10), '2026-08-25'],
+  ['FRAPP', 'period 109 settled the same evening as its session',
+    periods.periods.find((p) => p.periodNumber === 109)?.date.slice(0, 10), '2026-08-18'],
+  ['FRAPP', 'the chain has not fallen behind the epoch frapp-gh counts from',
+    summary.zor.latestPeriod >= frappConfig.sessionSchedule.epochWeekNumber, true],
+  ['FRAPP', 'frapp-gh README calls 08-25 settlement, not the session date',
+    /settled on-chain the next day/.test(docText('frapp-gh/README.md')), true],
 
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see

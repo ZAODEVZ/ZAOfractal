@@ -126,11 +126,20 @@ without it and names what is missing; `scripts/setup.ts` checks it too.
    cycle count, and `cycleNoun` to whatever the community calls one cycle.
 
    This repo ships ZAO's real numbering: `cycleNoun: "Period"`, epoch
-   `2026-08-24T18:00:00-04:00` = **period 110**, which is the session Monday for
-   the award ZAOfractal `data/periods.json` records on 2026-08-25. On-chain
-   awards land after the OREC vote window, so the award timestamp is not the
-   session date - period 109 (Mon 08-17) and 110 (Mon 08-24) are consecutive
-   Mondays. Sessions read "Period 111", labels read `period-111-contribution`.
+   `2026-08-24T18:00:00-04:00` = **period 110**.
+
+   That date is the **session Monday**, not the settlement date. Period 110
+   settled on-chain the next day - `data/periods.json` records it at
+   2026-08-25T16:49:49Z, and `summary.json` puts the last of its ten awards at
+   2026-08-25T18:41:21Z. Awards land after the OREC vote window, so settlement
+   can fall on any day; period 109 settled the same Monday evening as its
+   session (2026-08-18T00:39Z = Mon 08-17 20:39 ET) while 110 settled on the
+   Tuesday. The sessions themselves are consecutive Mondays: 109 on 08-17, 110
+   on 08-24. Anything citing a settlement date should say "settled", the way
+   the root README's facts table does; the epoch here is deliberately the
+   session.
+
+   Sessions read "Period 111", labels read `period-111-contribution`.
 2. **Repo.** Confirm the Discussions precondition above.
 3. **Auth.** Either a `GITHUB_TOKEN` with `repo` scope, or a GitHub App
    (`GITHUB_APP_ID`, `GITHUB_APP_PRIVATE_KEY`, `GITHUB_APP_INSTALLATION_ID`).
