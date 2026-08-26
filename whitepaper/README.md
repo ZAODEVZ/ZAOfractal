@@ -214,3 +214,16 @@ cannot drift back silently.
 Publish gate unchanged: nothing goes to permaweb and no Hat mints until Zaal
 re-reads and gives explicit go (board card b1281a6a). The repo-wide push gate
 (`gate_4c836a146dcd`) is separate and also unresolved - see `REVIEW.md`.
+
+---
+
+## License
+
+The documents in this directory are licensed **CC BY 4.0** - share and adapt
+with attribution. See [LICENSE-DOCS](../LICENSE-DOCS). Code in this repository (`scripts/`,
+`dao/`, `site/`) is MIT; see [LICENSE](../LICENSE). Copyright (c) 2026 Zaal Panthaki /
+BCZ Strategies LLC / The ZAO.
+
+CC BY 4.0 covers ZAO's own writing, not the third-party sources these documents
+cite, and not `data/`. LICENSE-DOCS states both limits and a note on the real
+people these documents name.

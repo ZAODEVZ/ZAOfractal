@@ -98,3 +98,16 @@ Re-validate every 4-6 weeks. APIs, contract addresses, and community participati
 External claims are sourced to primary URLs (Larimer's books, official websites, Medium articles, GitHub repos, governance forums, academic papers). ZAO-internal claims (contract addresses, OREC transaction counts, bot version history, weekly cadence) draw from the ZAO OS V1 research library and on-chain data.
 
 The sub-folders (`whitepaper-foundations/`, `primary-sources/`, `context/`, `external/`) are imported verbatim from the ZAO OS V1 research library (docs 056, 058, 184, 497, 657, 705, 718a-g). They retain their original cross-references to ZAO research doc numbers - follow the trail in the source repo for full lineage.
+
+---
+
+## License
+
+The documents in this directory are licensed **CC BY 4.0** - share and adapt
+with attribution. See [LICENSE-DOCS](../LICENSE-DOCS). Code in this repository (`scripts/`,
+`dao/`, `site/`) is MIT; see [LICENSE](../LICENSE). Copyright (c) 2026 Zaal Panthaki /
+BCZ Strategies LLC / The ZAO.
+
+CC BY 4.0 covers ZAO's own writing, not the third-party sources these documents
+cite, and not `data/`. LICENSE-DOCS states both limits and a note on the real
+people these documents name.

@@ -34,3 +34,16 @@ For a complete picture, read in order. Each file is standalone.
 ## Honest scope
 
 This is reference material, not the ZAO Fractal whitepaper. It exists to make sure anyone writing about ZAO Fractal can ground their words in verified history instead of inventing it. Every external claim traces to a primary URL listed in [sources.md](15-sources.md). When numbers are missing, the doc says so explicitly.
+
+---
+
+## License
+
+The documents in this directory are licensed **CC BY 4.0** - share and adapt
+with attribution. See [LICENSE-DOCS](../LICENSE-DOCS). Code in this repository (`scripts/`,
+`dao/`, `site/`) is MIT; see [LICENSE](../LICENSE). Copyright (c) 2026 Zaal Panthaki /
+BCZ Strategies LLC / The ZAO.
+
+CC BY 4.0 covers ZAO's own writing, not the third-party sources these documents
+cite, and not `data/`. LICENSE-DOCS states both limits and a note on the real
+people these documents name.

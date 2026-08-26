@@ -1,6 +1,6 @@
 Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-Copyright (c) 2026 BetterCallZaal Strategies LLC
+Copyright (c) 2026 Zaal Panthaki / BCZ Strategies LLC / The ZAO
 
 This license covers the documents in this repository:
 
@@ -13,22 +13,47 @@ This license covers the documents in this repository:
 The code - everything under scripts/, dao/ and site/ - is licensed separately
 under the MIT License. See LICENSE.
 
+WHAT THIS LICENSE DOES NOT COVER
+
+  data/          Not licensed here, and the omission is deliberate. data/ holds
+                 an on-chain snapshot (public chain data, not ours to license)
+                 alongside data/members.json, which binds community names to
+                 wallet addresses. That file is subject to an unresolved
+                 disclosure decision. Nothing in this license grants any right
+                 in it.
+
+  third-party    This license covers ZAO's own writing. It does not and cannot
+  sources        license the primary sources these documents quote, cite and
+                 synthesize - Daniel Larimer's books, the Fractally and Eden
+                 materials, Medium articles, academic papers, and other
+                 communities' documentation. Those remain under their own
+                 terms, and the citations throughout point to them.
+
+A NOTE ON NAMED PEOPLE
+
+These documents name real community members - who facilitates, who attends, who
+votes, who executes - because a governance record that anonymises its
+participants cannot be checked. CC BY 4.0 invites redistribution and adaptation
+of that material, and the grant is perpetual and irrevocable: material already
+distributed under it stays licensed even if a later version of the document
+removes a name.
+
+That is a property of publication, not of this license, but it is the reason
+the two decisions are linked. Anyone redistributing these documents should
+treat the named individuals as people rather than as data, and should note that
+being named in an attendance table or a proposed roster is not the same as
+having agreed to anything - `respect/FACILITATION-RUNBOOK.md` says so in its
+own opening.
+
 You are free to share and adapt this material for any purpose, including
 commercially, provided you give appropriate credit, link to this license, and
 indicate if changes were made.
 
 Attribute as:
 
-  "The ZAO Fractal Whitepaper" (or the document title), The ZAO /
-  BetterCallZaal Strategies LLC, CC BY 4.0,
+  "The ZAO Fractal Whitepaper" (or the document title), Zaal Panthaki /
+  BCZ Strategies LLC / The ZAO, CC BY 4.0,
   https://creativecommons.org/licenses/by/4.0/
-
-A note on what is being licensed, because it matters for a research archive:
-this license covers ZAO's own writing. It does not and cannot license the
-third-party primary sources these documents quote, cite and synthesize -
-Daniel Larimer's books, the Fractally and Eden materials, Medium articles,
-academic papers, and other communities' documentation. Those remain under
-their own terms, and the citations throughout point to them.
 
 The full legal code follows, retrieved from
 https://creativecommons.org/licenses/by/4.0/legalcode.txt

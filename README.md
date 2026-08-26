@@ -78,8 +78,9 @@ Two licenses, split by what the file is.
 |------|---------|------|
 | **Code** - `scripts/`, `dao/`, `site/` | MIT | [LICENSE](LICENSE) |
 | **Documents** - `whitepaper/`, `respect/`, `reference/`, `research/`, `RESOURCES.md` | CC BY 4.0 | [LICENSE-DOCS](LICENSE-DOCS) |
+| **`data/`** - the on-chain snapshot and the member map | neither, deliberately | see below |
 
-Copyright 2026 BetterCallZaal Strategies LLC.
+Copyright (c) 2026 Zaal Panthaki / BCZ Strategies LLC / The ZAO.
 
 MIT on the code so anyone can run the puller, fork the dashboard, or lift
 `verify-claims.mjs` into their own repo without asking. CC BY 4.0 on the
@@ -87,8 +88,23 @@ documents so the whitepaper and the research archive can be quoted, translated
 and built on, with attribution - which is the point of publishing a governance
 model rather than just running one.
 
-One limit worth stating plainly: CC BY 4.0 covers **ZAO's own writing**. It does
-not license the third-party primary sources these documents quote and
-synthesize - Larimer's books, the Fractally and Eden materials, Medium
-articles, academic papers, other communities' documentation. Those stay under
-their own terms, and the citations throughout point to them.
+Two limits worth stating plainly, both spelled out in `LICENSE-DOCS`.
+
+**CC BY 4.0 covers ZAO's own writing.** It does not license the third-party
+primary sources these documents quote and synthesize - Larimer's books, the
+Fractally and Eden materials, Medium articles, academic papers, other
+communities' documentation. Those stay under their own terms, and the citations
+throughout point to them.
+
+**`data/` is not licensed by either file, and the omission is deliberate.** It
+holds a public chain snapshot, which is not ours to license, alongside
+`data/members.json`, which binds community names to wallet addresses and is
+subject to a disclosure decision that has not been made. Neither license grants
+any right in it.
+
+And a related note rather than a limit: these documents name real people -
+who facilitates, who attends, who votes, who executes - because a governance
+record that anonymises its participants cannot be checked. CC BY 4.0 invites
+redistribution of that, and the grant is irrevocable once made. Being named in
+an attendance table or a proposed roster is not the same as having agreed to
+anything, and `LICENSE-DOCS` says so to anyone redistributing.

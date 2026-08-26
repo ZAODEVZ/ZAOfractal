@@ -60,6 +60,10 @@ const parts = [
   '',
   'Assembled from `whitepaper/draft/` by `scripts/assemble-whitepaper.mjs`.',
   'Edit the chapters, not this file.',
+  '',
+  'Licensed CC BY 4.0 - share and adapt with attribution. Copyright (c) 2026',
+  'Zaal Panthaki / BCZ Strategies LLC / The ZAO. Full terms, and what the',
+  'license does not cover, in `LICENSE-DOCS`.',
 ];
 
 for (const file of chapters) {
