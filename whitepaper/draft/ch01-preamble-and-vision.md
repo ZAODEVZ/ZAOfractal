@@ -120,7 +120,7 @@ The ZAO Fractal has been running weekly since August 2024. It will keep running,
 
 - **Chapter 8: The ZAO Fractal Specific Story** - What is distinctive about ZAO. 110 periods since August 2024. Only music-focused fractal. Only active Optimism fractal. Embedded in ZAO OS social client. Five voting criteria operationalize music-first governance. Founder expertise from Larimer-SingJoy-Zaal lineage.
 
-- **Chapter 9: Limitations and Open Problems** - Privacy and pseudonymity constraints. Scalability limits beyond 400-500 people. Measurement problem (can peers actually judge contribution?). Participation collapse risks. The "operating core bottleneck" (currently Zaal and civilmonkey.eth run OREC, intentional but planned decentralization). Cold-start problem for new fractals.
+- **Chapter 9: Limitations and Open Problems** - Privacy and pseudonymity constraints. Scalability limits beyond 400-500 people. Measurement problem (can peers actually judge contribution?). Participation collapse risks. The operating-core bottleneck, which turns out to be three separate bottlenecks - weight, operations, and a single-member admin key on the ledger that votes. Cold-start problem for new fractals.
 
 - **Chapter 10: Roadmap** - Integration into ZAO OS. Two-ledger reconciliation (OG Airtable era to ZOR on-chain era). Nested fractals (could ZAO Fractal scale to 500+ by running parallel fractals?). Governance on key decisions (music direction, partnerships, treasury). Connection to WaveWarZ (music competition game, could earn Respect).
 

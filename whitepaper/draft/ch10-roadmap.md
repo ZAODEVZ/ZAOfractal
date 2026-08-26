@@ -60,7 +60,7 @@ silently rewrites its own history is worth less than one that missed.
 - The snapshot date (Dec 2025)
 - The conversion ratio (1 OG = X ZOR, if applicable)
 - The claim mechanism (how to retroactively mint ZOR for earned OG)
-- A worked example (Alice earned 200 OG in Fractals 1-60, here is her ZOR balance)
+- A worked example (Alice earned 200 OG across periods 1-60, here is her ZOR balance)
 
 **Owner:** ZAO Governance + Tadas Vaitiekunas (Optimystics)
 

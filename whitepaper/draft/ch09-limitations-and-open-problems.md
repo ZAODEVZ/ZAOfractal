@@ -104,7 +104,7 @@ ZAO's roadmap (Chapter 10) includes a decision point: if ZAO grows past 100 acti
 
 ## Two-Ledger Reconciliation is Incomplete
 
-ZAO maintains two Respect ledgers (OG ERC-20 for Fractals 1-73, ZOR ERC-1155 for Fractals 74+). They are reconciled in Supabase. But on-chain, they are separate contracts. A member who earned 300 Respect in the OG era holds that in one contract. Respect earned in the ZOR era lives in another.
+ZAO maintains two Respect ledgers (OG ERC-20 for periods 1-66, ZOR ERC-1155 for periods 67 onward). They are reconciled in Supabase. But on-chain they are separate contracts, and only OG confers a vote - so this is not merely an accounting inconvenience. A member who earned 300 Respect in the OG era holds it in one contract and votes with it; a member who earned 300 in the ZOR era holds it in another and cannot vote at all. 47 of the 70 people ever awarded ZOR are in the second position.
 
 For ORDAO voting, this creates a real gap: does on-chain voting power include the active ZOR ledger? The current answer is no - OREC reads OG balances only, at the moment you vote. New ZOR mints do not change anyone's voting weight. This means the disadvantage runs toward newer members: a member who joined after the OG freeze (18 December 2025) and holds only ZOR has no on-chain voting weight at all, however much ZOR they have since earned. Early members who hold OG vote at full weight; the active reward ledger confers standing and record, but not yet a vote.
 

@@ -185,7 +185,7 @@ Governance on Ethereum mainnet is prohibitively expensive. A single YES vote on 
 - **Executing a passed proposal:** ~100,000 gas = 0.002-0.005 USD
 - **Minting ZOR Respect tokens:** ~30,000 gas per token = 0.0006-0.0015 USD per member
 
-A weekly Respect game with 40+ members and 8 groups costs approximately 0.10-0.20 USD in total gas. For comparison, a single governance vote on Ethereum mainnet costs more.
+A weekly Respect game costs cents in total gas - roughly 0.10-0.20 USD even at 40 members across 8 groups, and a fraction of that at the one or two groups a recent session actually runs. For comparison, a single governance vote on Ethereum mainnet costs more.
 
 This enables ZAO to run governance at a scale where every member's participation has financial viability. Members are not discouraged from voting due to gas costs.
 
@@ -284,7 +284,7 @@ For production use at scale (>500 members or >$1M treasury), commission a formal
 It is crucial to understand the architecture boundary: the Respect Game (breakout circles, Fibonacci ranking) is entirely off-chain. OREC is the enforcement layer.
 
 **Off-Chain (Human consensus):**
-- 40+ members gather in breakout rooms of 5-6 (breakout rooms on Farcaster, Discord, or Gather.town).
+- Members gather in breakout rooms of 5-6 (on Farcaster, Discord, or Gather.town).
 - Each circle discusses and reaches consensus on ranking (which names to place at each Fibonacci level).
 - The circle lead submits the ranking (e.g., "Alice: 110, Bob: 68, Carol: 42, ...") to a shared spreadsheet or Discord channel.
 
