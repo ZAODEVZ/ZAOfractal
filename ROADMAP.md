@@ -101,9 +101,10 @@ Phase 1 can ship and be wrong without anyone gaining a vote they did not earn.
 game is safer because a period runs several breakout groups that cross-check
 each other, while an async period is a single unreviewed group. The ledger does
 not support that: **23 of the 41 settled periods ran a single group, and 11 of
-the last 15**. Most live periods are single-group too, so group count is not
-the safeguard and a design that leans on it is leaning on something that is
-usually not there.
+the last 15**. (Those exclude period 0, which is not a session but a single
+stray award; counting it naively gives 24 of 42.) Most live periods are
+single-group too, so group count is not the safeguard, and a design that leans
+on it is leaning on something that is usually not there.
 
 The real difference is the room. A live group is four to six people who watched
 each other work that week and rank each other face to face. An async ballot is

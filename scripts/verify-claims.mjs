@@ -621,12 +621,24 @@ const CLAIMS = [
 
   /* ROADMAP L3 argues that group count is NOT the live game's safeguard,
    * because most live periods are single-group too. If that ever stops being
-   * true the argument needs rewriting, so it is pinned. */
-  ['ROADMAP L3', 'settled periods that ran a single group',
+   * true the argument needs rewriting, so it is pinned.
+   *
+   * EVERY period count in this file excludes period 0, which is not a session:
+   * it is one stray award of 110 minted 2026-08-18, flagged in
+   * LEDGER-RECONCILIATION section 5 to be explained or burned. Recomputing
+   * naively over award-events gives 42 periods and 24 single-group, not 41 and
+   * 23. The exclusion is right and it is stated in the labels rather than
+   * buried in a filter, for the same reason period 105's exclusion from the
+   * curve derivation is visible: a silent filter reads as a wrong number. */
+  ['ROADMAP L3', 'settled periods that ran a single group (excluding period 0)',
     [...groupsByPeriod.entries()].filter(([n, g]) => n > 0 && g.size === 1).length, 23],
-  ['ROADMAP L3', 'settled periods that ran more than one group',
+  ['ROADMAP L3', 'settled periods that ran more than one group (excluding period 0)',
     [...groupsByPeriod.entries()].filter(([n, g]) => n > 0 && g.size > 1).length, 18],
   ['ROADMAP L3', 'recent sessions that ran a single group', windowGroupCounts.filter((n) => n === 1).length, 11],
+  ['ROADMAP L3', 'the same counts INCLUDING period 0, so the difference is documented not discovered',
+    `${groupsByPeriod.size}/${[...groupsByPeriod.values()].filter((g) => g.size === 1).length}`, '42/24'],
+  ['ROADMAP L3', 'period 0 is still one stray award of 110, unexplained and unburned',
+    awards.events.filter((e) => e.periodNumber === 0).map((e) => e.respect).join(','), '110'],
 
   // --- prose invariants -----------------------------------------------------
   ['NOT-ASKED', 'runbook says the bench has not been contacted or agreed',
