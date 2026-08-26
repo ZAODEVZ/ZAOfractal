@@ -337,6 +337,55 @@ resynced.
 
 ---
 
+## Part 5 - post-level-up: the two-lane checking thread (ctx 44)
+
+After the level-up landed, this lane and the frapp-gh lane spent a long
+exchange checking each other's work on the same branch. It produced more
+corrections than either lane's own passes did, and the pattern is the reusable
+part.
+
+**Four errors, each caught by the lane that did not write it.**
+
+| Error | Written by | Caught by |
+|---|---|---|
+| "the 2x curve starts at period 71" - 71 and 72 settled nothing, so it is 73 | this lane | the verifier, on first run |
+| "period 105 is the one recent period off the curve" - it is one of six, and periods 67-70 paid standard Fibonacci | frapp-gh | this lane, checking rather than accepting |
+| "an async period is one group where a Monday period is several" - 23 of 41 live periods are single-group too | frapp-gh | this lane, from the ledger |
+| period 0 filtered out of the group counts silently, after the same exclusion had been made *visible* for period 105 three claims earlier | this lane | frapp-gh, recomputing |
+
+The last one is the one worth remembering: a principle applied once in a file
+and then not applied again three claims later was never a principle. It took an
+outside recount to find it.
+
+**What the checking produced, in this lane's tree:**
+
+- **The payout curve has a history** (`5f0ef2c`). The ledger shows periods
+  67-70 paid standard Fibonacci, 73 onward pays the 2x curve, and 78 and 105
+  paid neither. ch05 and ch08 had presented 2x as a constant.
+- **A period is not a group** (same commit). A session pays a full curve per
+  breakout group, so 21 of 41 periods minted more than one top award.
+- **ch04's payout Gini is era-proof, and why** (`12d105c`, `099f5c1`). Both
+  curves give 0.41 because they are exact scalar multiples and Gini is
+  scale-invariant - a theorem, not a coincidence. It would stop holding for a
+  curve that is not a multiple, which the ledger has already produced twice.
+- **What Respect is not** (`768af11`, `a8a3231`). The boundary against
+  tradeable artist and community tokens, and the harder case inside ZAO's own
+  tooling: frapp-gh assigns Respect off-chain, on neither ledger, so it confers
+  no vote. Recorded as open, because it is a governance question and not a
+  tooling one.
+- **L3's anti-collusion work gates the bridge, not the ranking** (`0764c1f`).
+  Off-chain, a gamed async period produces a bad leaderboard; with a settle
+  path, the same weakness mints governance weight.
+- **The verifier fails soft** (`4544931`). A missing file now drifts instead of
+  throwing at load, which had put an unrelated read upstream of the NOT-ASKED
+  prose guards.
+
+`scripts/verify-claims.mjs` went from 242 to **285 expectations**, and both
+lanes now add to the same file deliberately - a second file would have let each
+lane's phrasing sit next to the other's without either noticing.
+
+---
+
 ## Open Zaal-taps
 
 From the reconciliation doc:
@@ -431,7 +480,16 @@ cd dao && npm run dev             # browse the same numbers
 
 Nothing deployed, nothing pushed. Check how far ahead with
 `git rev-list --count origin/main..HEAD` - the number moves with every commit
-here, so it is not written down.
+here, so it is not written down. At the ctx-44 handoff it was 70.
+
+**The working tree is not clean, and the dirty files are not this lane's.**
+`frapp-gh/public/index.html` and `frapp-gh/src/handlers/formatting.ts` carry
+uncommitted changes belonging to the frapp-gh lane - the member-facing copy fix
+that replaces "no tokens are minted" (a timing statement) with "this Respect is
+a record, not a governance weight" (a category statement). That lane was
+holding it for its own go rather than committing off a peer message. **Do not
+commit, revert or stash those.** They are someone else's in-flight work on a
+shared branch.
 
 **Read the push gate at the top of this file before doing anything with a
 remote.** `gate_4c836a146dcd` is open and the branch carries a 144-person
