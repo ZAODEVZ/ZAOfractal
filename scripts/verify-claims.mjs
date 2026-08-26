@@ -451,11 +451,24 @@ const CLAIMS = [
   ['WP ch04', 'recently active with zero OG', activeRecently.filter((a) => !ogBalance.has(a)).length, 14],
   ['WP ch04', 'recently active under the minimum weight', activeRecently.filter((a) => ogBalance.has(a) && ogBalance.get(a) < MIN_WEIGHT).length, 9],
   ['WP ch04', 'recently active able to pass alone', activeRecently.filter((a) => (ogBalance.get(a) || 0) >= MIN_WEIGHT).length, 4],
-  // ch04 says "either curve" and the claim has to hold both, not just today's.
-  // The curve is policy, not physics - ZAO has escalated once already - so a
-  // figure pinned to one vector would quietly become a snapshot.
+  /* ch04 says "either curve" and the claim has to hold both, not just today's.
+   * The curve is policy, not physics - ZAO has escalated once already - so a
+   * figure pinned to one vector would quietly become a snapshot.
+   *
+   * WHY the two Ginis are equal, because it decides when they stop being:
+   * Gini is scale-invariant, and ZAO's two curves are exact scalar multiples,
+   * element for element - 110/55, 68/34, 42/21, 26/13, 16/8, 10/5 all exactly
+   * 2. So the equality is a theorem, not a coincidence that came out even.
+   *
+   * It stops holding the moment a curve is adopted that is NOT a scalar
+   * multiple of the others - which the ledger has already done twice, in the
+   * flat 40s of periods 78 and 105. If that ever becomes policy rather than an
+   * anomaly, 0.41 has to be recomputed rather than assumed, and the proportion
+   * check below is what fails first. */
   ['WP ch04', 'Gini of one Respect Game payout, 2x curve', gini([110, 68, 42, 26, 16, 10]), '0.41'],
   ['WP ch04', 'Gini of one Respect Game payout, standard curve', gini([55, 34, 21, 13, 8, 5]), '0.41'],
+  ['WP ch04', 'the two curves are exact scalar multiples, which is why the Ginis agree',
+    [110, 68, 42, 26, 16, 10].map((v, i) => v / [55, 34, 21, 13, 8, 5][i]).join(','), '2,2,2,2,2,2'],
   ['WP ch04', 'doubling the curve leaves the payout Gini unchanged',
     gini([110, 68, 42, 26, 16, 10]) === gini([55, 34, 21, 13, 8, 5]), true],
   ['WP ch04', 'Gini of the ZOR ledger', gini([...zorBalance.values()]), '0.53'],
