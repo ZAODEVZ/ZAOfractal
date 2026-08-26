@@ -122,6 +122,8 @@ have not accepted.
 | `4544931` | Makes the verifier degrade instead of crashing when a file it reads is missing. A hard read of the frapp-gh config sat upstream of every other check, including the guards on the not-contacted language. |
 | `5f0ef2c` | **ch05 and ch08: the payout curve has a history.** The ledger shows periods 67-70 paid standard Fibonacci and two later periods paid neither curve, where the chapter presented the 2x curve as a constant. Also: a session pays a full curve per breakout group, so a period can mint several top awards. |
 | `12d105c` | ch04's payout Gini labelled as holding for either curve, which it does, and pinned for both. |
+| `58454fa`, `099f5c1` | Logs the post-level-up commits; names scale-invariance as the property making ch04's payout Gini era-proof, and pins its limit. |
+| `768af11` | **`respect/README.md` gains "What Respect is not"** - the boundary against tradeable artist/community tokens, since The ZAO is increasingly adjacent to work that launches them. Also generalises the facilitation runbook's wallet open call. Worth a look: it states that a proposal to make Respect tradeable should be read as a proposal to end fractal governance here. |
 | `af7ecbd` | This file - stops printing a commit count it invalidates by existing. |
 | `ece1e7a` | Reads OG's `DEFAULT_ADMIN_ROLE` membership from the contract into the snapshot, so the paper's highest-consequence claim is pinned rather than asserted. Moves the snapshot to block 156,071,456; no quoted figure changed. |
 | `a4e90cb` | Handoff records the v0.2 lane. |
