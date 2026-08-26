@@ -102,6 +102,48 @@ describe("assignRespect", () => {
   });
 });
 
+describe("Respect for work nobody ranked", () => {
+  it("pays the curve at the rank it lands on", () => {
+    const ranked = assignRespect(
+      [
+        { issueNumber: 1, score: 4, firstPlaceVotes: 2, timesRanked: 2 },
+        { issueNumber: 2, score: 8, firstPlaceVotes: 0, timesRanked: 2 },
+        { issueNumber: 3, score: 9, firstPlaceVotes: 0, timesRanked: 0 },
+      ],
+      issues([
+        [1, "alice"],
+        [2, "bob"],
+        [3, "carol"],
+      ]),
+      ranking,
+    );
+
+    const unplaced = ranked.find((r) => r.issueNumber === 3);
+    expect(unplaced?.rank).toBe(3);
+    expect(unplaced?.respectAwarded).toBe(42);
+    expect(buildRespectMap(ranked).carol).toBe(42);
+  });
+
+  it("earns nothing once it falls past the end of the curve", () => {
+    const shortCurve = { ...ranking, respectScores: [110, 68] };
+    const ranked = assignRespect(
+      [
+        { issueNumber: 1, score: 1, firstPlaceVotes: 3, timesRanked: 3 },
+        { issueNumber: 2, score: 5, firstPlaceVotes: 0, timesRanked: 3 },
+        { issueNumber: 3, score: 9, firstPlaceVotes: 0, timesRanked: 0 },
+      ],
+      issues([
+        [1, "alice"],
+        [2, "bob"],
+        [3, "carol"],
+      ]),
+      shortCurve,
+    );
+    expect(ranked.find((r) => r.issueNumber === 3)?.respectAwarded).toBe(0);
+    expect(buildRespectMap(ranked).carol).toBeUndefined();
+  });
+});
+
 describe("buildRespectMap", () => {
   it("sums multiple ranked contributions from one author", () => {
     const ranked = assignRespect(

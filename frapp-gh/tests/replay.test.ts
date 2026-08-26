@@ -76,6 +76,25 @@ describe("full period replay", () => {
     expect(tally?.totalRespect).toBe(272);
   });
 
+  it("pays a contribution nobody ranked, at the bottom of the order", async () => {
+    const { tally, snapshot } = await runScenario(scenario);
+
+    // #45 is on the ballot but appears in no voter's ranking. That is a valid
+    // outcome: erin submitted work, nobody got to it, and the curve still
+    // reaches sixth place in a field of six.
+    const placedAnywhere = new Set(
+      Object.values(snapshot!.voters)
+        .filter((v) => !v.rejected)
+        .flatMap((v) => v.ranking.issueNumbers),
+    );
+    expect(placedAnywhere.has(45)).toBe(false);
+
+    const entry = tally!.ranked.find((r) => r.issueNumber === 45);
+    expect(entry?.rank).toBe(tally!.ranked.length);
+    expect(entry?.respectAwarded).toBe(10);
+    expect(tally!.respectDistributed.erin).toBe(10);
+  });
+
   it("posts a results comment naming the period, and writes the leaderboard", async () => {
     const { resultsMarkdown, leaderboard } = await runScenario(scenario);
     expect(resultsMarkdown).toContain("# Period 111 Results");

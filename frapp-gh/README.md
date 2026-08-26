@@ -39,6 +39,11 @@ ZAODEVZ/ZAOfractal#12
 [Contribution]
 ```
 
+There is a **Fractal contribution** template at the repository root
+(`.github/ISSUE_TEMPLATE/contribution.yml`) - templates only work from there, not
+from inside `frapp-gh/`. Blank issues stay available for everything else in
+ZAOfractal.
+
 The bot replies once with what it logged. A missing evidence link or criteria
 tag is a nudge, not a rejection (`enforcement: "soft"`). Set
 `"enforcement": "hard"` to close malformed submissions instead.
@@ -232,12 +237,14 @@ Write a new scenario by pointing a JSON file at other payloads - the format is
 `{ name, seed, steps: [{ at, webhook, payload } | { at, cycle }] }`. A step that
 returns 4xx exits non-zero, so a scenario doubles as a regression test.
 
-**One semantic worth knowing:** a contribution nobody ranked still receives the
-leftover-position average, so it can land inside the paid curve if the field is
-small - in the shipped scenario `#45` earns 10 with zero placements. It always
-sorts below anything actually ranked (`timesRanked` is a tie-break), but it is
-not zeroed. Set a shorter `respectScores` curve if a community wants unranked
-work to earn nothing.
+**Zero placements is a valid outcome and still earns.** A contribution no voter
+ranked takes the leftover-position average, so it can land inside the paid curve
+when the field is small - in the shipped scenario `#45` earns 10 with nobody
+having placed it. Submitting work that nobody got to is not the same as
+submitting nothing. It can never outrank a contribution that *was* placed
+(`timesRanked` is a tie-break), so it settles at the bottom and earns whatever
+the curve pays there - which is nothing once the field is longer than
+`respectScores`.
 
 ## Development
 

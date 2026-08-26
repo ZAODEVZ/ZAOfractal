@@ -82,6 +82,42 @@ describe("bordaCount", () => {
   });
 });
 
+describe("a contribution nobody ranked", () => {
+  // Decided rule, not an accident of the averaging: zero placements is a valid
+  // outcome, it still earns whatever the curve pays at its rank, and it can
+  // never sit above work a voter actually placed.
+  it("still scores, and settles below everything that was placed", () => {
+    const scored = bordaCount({
+      ballot: [1, 2, 3],
+      voters: [voter("a", [1, 2]), voter("b", [2, 1]), voter("c", [1, 2])],
+    });
+    const three = scored.find((s) => s.issueNumber === 3);
+
+    expect(three?.timesRanked).toBe(0);
+    expect(three?.firstPlaceVotes).toBe(0);
+    expect(three?.score).toBe(9); // position 3 on each of three ballots
+    expect(sortScored(scored).map((s) => s.issueNumber)).toEqual([1, 2, 3]);
+  });
+
+  it("cannot outrank a placed contribution on an equal score", () => {
+    const scored = sortScored([
+      { issueNumber: 9, score: 6, firstPlaceVotes: 0, timesRanked: 0 },
+      { issueNumber: 4, score: 6, firstPlaceVotes: 0, timesRanked: 1 },
+    ]);
+    expect(scored.map((s) => s.issueNumber)).toEqual([4, 9]);
+  });
+
+  it("holds when every voter submits an empty-ish ballot", () => {
+    const scored = bordaCount({
+      ballot: [1, 2],
+      voters: [voter("a", []), voter("b", [])],
+    });
+    // Both unplaced, both get the same leftover average; issue number decides.
+    expect(scored.every((s) => s.timesRanked === 0)).toBe(true);
+    expect(sortScored(scored).map((s) => s.issueNumber)).toEqual([1, 2]);
+  });
+});
+
 describe("sortScored tie-breaks", () => {
   it("prefers more first-place votes, then more voters, then lower issue number", () => {
     const sorted = sortScored([

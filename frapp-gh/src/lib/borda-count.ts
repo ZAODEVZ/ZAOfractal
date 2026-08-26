@@ -41,6 +41,13 @@ export function positionsForVoter(ballot: number[], ranking: number[]): Map<numb
   const unranked = ballot.filter((n) => !seen.has(n));
   if (unranked.length > 0) {
     // Average of the remaining positions: (position+1 ... ballot.length).
+    //
+    // A contribution that NO voter placed is the limit case of this, and it is
+    // deliberately still eligible for Respect: submitting work nobody got to is
+    // not the same as submitting nothing, and a small field means the curve can
+    // reach it. It can never outrank work that was actually placed - timesRanked
+    // is a tie-break in sortScored - so it settles at the bottom and earns
+    // whatever the curve pays there.
     const first = position + 1;
     const last = ballot.length;
     const average = (first + last) / 2;

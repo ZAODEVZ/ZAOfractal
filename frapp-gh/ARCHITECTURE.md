@@ -79,6 +79,12 @@ contribution, then the median across groups.
 issue number. Fully deterministic - the same snapshot always yields the same
 table.
 
+A contribution with zero placements is the limit case of the averaging rule and
+is deliberately kept eligible: it sorts below everything that was placed, and
+earns whatever the curve pays at that rank. Covered in `borda-count.test.ts`,
+`respect-scorer.test.ts`, and the replay scenario, so it cannot be refactored
+away by accident.
+
 `assignRespect` maps final rank onto the curve and flags ties so the results
 comment can explain why two equal scores ordered the way they did.
 
@@ -117,6 +123,5 @@ non-zero.
   changes the standings. The vote snapshots are the check on that.
 - One Discussion per period, found by exact title. Renaming a session Discussion
   detaches it from its period.
-- Workflows must live at the repository root; only their `working-directory`
-  points here. The issue template under `.github/ISSUE_TEMPLATE` is inert for
-  the same reason and needs a root placement decision.
+- Workflows and issue templates must live at the repository root; only the
+  workflows' `working-directory` points here. Both now do.

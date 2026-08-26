@@ -1,0 +1,48 @@
+name: Fractal contribution
+description: Submit work for this period's async Respect Game
+title: "[period] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Add this period's label after opening** - for example
+        `period-111-contribution` - or the bot will not pick it up. Peers rank
+        contributions in the period's session Discussion under **Fractal
+        Sessions**, and ranking closes Saturday 18:00 ET.
+
+        The tool that runs this lives in [`frapp-gh/`](../../tree/main/frapp-gh);
+        the rules, the Respect curve, and every past ballot are in
+        [`frapp-gh/README.md`](../../blob/main/frapp-gh/README.md) and
+        `frapp-gh/.github/frapp-gh/vote-snapshots/`.
+
+        Not submitting work? Open a blank issue instead - this template is only
+        for Respect Game contributions.
+  - type: textarea
+    id: what
+    attributes:
+      label: What I did
+      description: Short, concrete, and readable by someone who was not there.
+      placeholder: |
+        - Built the Borda aggregation and covered it with tests
+        - Walked two new contributors through their first submission
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link a PR, commit, doc, or screenshot. At least one link.
+      placeholder: "ZAODEVZ/ZAOfractal#40"
+    validations:
+      required: true
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Criteria tags
+      options:
+        - label: Vision
+        - label: Contribution
+        - label: Collaboration
+        - label: Innovation
+        - label: Onboarding
