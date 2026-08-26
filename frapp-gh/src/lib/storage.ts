@@ -6,6 +6,16 @@ import type { Leaderboard, VoteSnapshot, WeekState } from "./types.js";
 export const STATE_ROOT = ".github/frapp-gh";
 export const LEADERBOARD_PATH = "public/leaderboard.json";
 
+/**
+ * Prefix a repo-relative path with the tool's directory. FsStore does not need
+ * this - the Actions runner works inside frapp-gh/ - but every contents-API
+ * write is resolved from the repository root.
+ */
+export function repoPath(prefix: string | undefined, path: string): string {
+  const clean = (prefix ?? "").replace(/^\/+|\/+$/g, "");
+  return clean ? `${clean}/${path}` : path;
+}
+
 export function weekStatePath(week: number): string {
   return `${STATE_ROOT}/week-${week}/state.json`;
 }
@@ -74,10 +84,21 @@ export class FsStore implements Store {
 }
 
 export class GitHubStore implements Store {
-  constructor(private readonly client: GitHubClient) {}
+  /**
+   * @param pathPrefix directory holding the tool inside the repo ("frapp-gh"),
+   * or empty when the tool is the repo.
+   */
+  constructor(
+    private readonly client: GitHubClient,
+    private readonly pathPrefix = "",
+  ) {}
+
+  private full(path: string): string {
+    return repoPath(this.pathPrefix, path);
+  }
 
   private async read<T>(path: string): Promise<T | null> {
-    const file = await this.client.getFile(path);
+    const file = await this.client.getFile(this.full(path));
     if (!file) return null;
     try {
       return JSON.parse(file.content) as T;
@@ -91,7 +112,7 @@ export class GitHubStore implements Store {
   }
   async writeWeekState(state: WeekState): Promise<void> {
     await this.client.putFile(
-      weekStatePath(state.weekNumber),
+      this.full(weekStatePath(state.weekNumber)),
       `${JSON.stringify(state, null, 2)}\n`,
       `chore(frapp-gh): week ${state.weekNumber} state -> ${state.status}`,
     );
@@ -101,7 +122,7 @@ export class GitHubStore implements Store {
   }
   async writeSnapshot(snapshot: VoteSnapshot): Promise<void> {
     await this.client.putFile(
-      snapshotPath(snapshot.week),
+      this.full(snapshotPath(snapshot.week)),
       `${JSON.stringify(snapshot, null, 2)}\n`,
       `chore(frapp-gh): week ${snapshot.week} vote snapshot (${Object.keys(snapshot.voters).length} voters)`,
     );
@@ -111,7 +132,7 @@ export class GitHubStore implements Store {
   }
   async writeLeaderboard(leaderboard: Leaderboard): Promise<void> {
     await this.client.putFile(
-      LEADERBOARD_PATH,
+      this.full(LEADERBOARD_PATH),
       `${JSON.stringify(leaderboard, null, 2)}\n`,
       "chore(frapp-gh): refresh leaderboard",
     );

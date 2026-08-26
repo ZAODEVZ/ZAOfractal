@@ -6,6 +6,7 @@ import {
   FsStore,
   GitHubStore,
   LEADERBOARD_PATH,
+  repoPath,
   snapshotPath,
   weekStatePath,
 } from "../src/lib/storage.js";
@@ -43,6 +44,13 @@ describe("path helpers", () => {
   it("puts state and snapshots where the workflows commit them", () => {
     expect(weekStatePath(52)).toBe(".github/frapp-gh/week-52/state.json");
     expect(snapshotPath(52)).toBe(".github/frapp-gh/vote-snapshots/week-52.json");
+  });
+
+  it("prefixes repo paths, tolerating stray slashes and an empty prefix", () => {
+    expect(repoPath("frapp-gh", LEADERBOARD_PATH)).toBe("frapp-gh/public/leaderboard.json");
+    expect(repoPath("/frapp-gh/", LEADERBOARD_PATH)).toBe("frapp-gh/public/leaderboard.json");
+    expect(repoPath("", LEADERBOARD_PATH)).toBe(LEADERBOARD_PATH);
+    expect(repoPath(undefined, LEADERBOARD_PATH)).toBe(LEADERBOARD_PATH);
   });
 });
 
@@ -107,6 +115,37 @@ describe("GitHubStore", () => {
     const github = new FakeGitHub();
     github.files.set(weekStatePath(52), "{ half a file");
     await expect(new GitHubStore(github).readWeekState(52)).rejects.toThrow(/not valid JSON/);
+  });
+
+  it("writes under the tool's directory when it is nested in a larger repo", async () => {
+    const github = new FakeGitHub();
+    const store = new GitHubStore(github, "frapp-gh");
+
+    await store.writeWeekState(state);
+    await store.writeSnapshot(snapshot);
+    await store.writeLeaderboard({
+      asOf: "2026-09-06T22:00:00Z",
+      community: "The ZAO",
+      totalRespectDistributed: 272,
+      weeksCounted: [111],
+      entries: [],
+    });
+
+    // The contents API resolves from the repository root, so ZAOfractal must
+    // not grow a stray .github/frapp-gh or public/ at its top level.
+    expect([...github.files.keys()].sort()).toEqual([
+      "frapp-gh/.github/frapp-gh/vote-snapshots/week-52.json",
+      "frapp-gh/.github/frapp-gh/week-52/state.json",
+      "frapp-gh/public/leaderboard.json",
+    ]);
+    expect(await store.readWeekState(52)).toEqual(state);
+    expect(await store.readSnapshot(52)).toEqual(snapshot);
+  });
+
+  it("stays at the repo root when the tool is the repo", async () => {
+    const github = new FakeGitHub();
+    await new GitHubStore(github).writeWeekState(state);
+    expect([...github.files.keys()]).toEqual([".github/frapp-gh/week-52/state.json"]);
   });
 
   it("derives the week list from the committed leaderboard", async () => {

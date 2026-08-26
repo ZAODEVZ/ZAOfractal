@@ -87,6 +87,17 @@ describe("the repo's own config", () => {
     expect(weekLabel(config, 110)).toBe("period-110-contribution");
   });
 
+  it("records where the tool sits inside the repo", async () => {
+    const { readFileSync } = await import("node:fs");
+    const config = parseConfig(readFileSync("frapp-gh.config.json", "utf-8"));
+    expect(config.github.pathPrefix).toBe("frapp-gh");
+    expect(normalizeConfig(MINIMAL).github.pathPrefix).toBe("");
+    expect(
+      normalizeConfig({ github: { ...MINIMAL.github, pathPrefix: "/tools/frapp-gh/" } }).github
+        .pathPrefix,
+    ).toBe("tools/frapp-gh");
+  });
+
   it("defaults the cycle noun to Week for a community that does not set one", () => {
     expect(normalizeConfig(MINIMAL).cycleNoun).toBe("Week");
   });

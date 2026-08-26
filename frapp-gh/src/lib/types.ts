@@ -58,6 +58,12 @@ export interface GithubConfig {
   discussionCategory: string;
   /** Optional Projects v2 board number used as the ranking surface. */
   projectNumber?: number;
+  /**
+   * Directory holding this tool inside the repo, e.g. "frapp-gh". The GitHub
+   * contents API is repo-root-relative, so anything written through it needs
+   * this prefix. Empty when the tool is the repo.
+   */
+  pathPrefix?: string;
 }
 
 export interface OrdaoConfig {

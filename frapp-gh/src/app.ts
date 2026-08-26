@@ -32,6 +32,8 @@ export interface Env {
   FRAPP_GH_CONFIG?: string;
   FRAPP_GH_OWNER?: string;
   FRAPP_GH_REPO?: string;
+  /** Directory holding frapp-gh inside the repo, when it is not the repo root. */
+  FRAPP_GH_PATH_PREFIX?: string;
 }
 
 export interface Deps {
@@ -60,8 +62,23 @@ export async function defaultDeps(env: Env): Promise<Deps> {
       );
     }
     const bootstrap = new OctokitGitHubClient({ owner, repo, octokit });
-    const file = await bootstrap.getFile(CONFIG_FILENAME);
-    if (!file) throw new Error(`${owner}/${repo} has no ${CONFIG_FILENAME}`);
+    // The config names its own pathPrefix, so the bootstrap read cannot use it.
+    // Try the explicit env hint first, then the repo root, then the conventional
+    // subdirectory - which is where it lives when the tool is nested in a
+    // larger repo such as ZAOfractal.
+    const candidates = [...new Set([env.FRAPP_GH_PATH_PREFIX ?? "", "", "frapp-gh"])];
+    let file: { content: string } | null = null;
+    for (const prefix of candidates) {
+      file = await bootstrap.getFile(prefix ? `${prefix}/${CONFIG_FILENAME}` : CONFIG_FILENAME);
+      if (file) break;
+    }
+    if (!file) {
+      throw new Error(
+        `${owner}/${repo} has no ${CONFIG_FILENAME} (looked in: ${candidates
+          .map((p) => p || "repo root")
+          .join(", ")}). Set FRAPP_GH_PATH_PREFIX if it lives elsewhere.`,
+      );
+    }
     config = parseConfig(file.content);
   }
 
@@ -70,7 +87,7 @@ export async function defaultDeps(env: Env): Promise<Deps> {
     repo: config.github.repo,
     octokit,
   });
-  return { config, client, store: new GitHubStore(client) };
+  return { config, client, store: new GitHubStore(client, config.github.pathPrefix) };
 }
 
 function cycleContext(deps: Deps, dryRun = false): CycleContext {

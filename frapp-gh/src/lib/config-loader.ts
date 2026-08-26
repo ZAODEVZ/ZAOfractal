@@ -70,6 +70,7 @@ export function normalizeConfig(raw: unknown): FrameworkConfig {
       issueLabel,
       discussionCategory: c.github.discussionCategory ?? "Fractal Sessions",
       projectNumber: c.github.projectNumber,
+      pathPrefix: String(c.github.pathPrefix ?? "").replace(/^\/+|\/+$/g, ""),
     },
     ordao: {
       // Phase 1 never submits on-chain, whatever the file says.

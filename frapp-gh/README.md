@@ -163,6 +163,14 @@ Deploy target is Vercel (`api/index.ts`, `vercel.json`). Env vars are documented
 in `.env.example`. **Nothing here has been deployed** - no project is linked and
 no secrets are set.
 
+**Nesting matters for the service, not for Actions.** The contents API resolves
+paths from the repository root, so with frapp-gh living inside ZAOfractal every
+API write needs `github.pathPrefix` (set to `frapp-gh` here). Without it the
+service would write period state to `/.github/frapp-gh` and `/public` at the top
+of ZAOfractal. Actions are unaffected - they run with
+`working-directory: frapp-gh` and write through the filesystem. `FRAPP_GH_PATH_PREFIX`
+tells the bootstrap where to find the config before the config has been read.
+
 ## Layout
 
 ```
@@ -172,6 +180,8 @@ src/app.ts        Hono routes
 scripts/          cycle runner (used by Actions), offline tally, setup check
 public/           static leaderboard (no build step)
 .github/frapp-gh/ committed period state and vote snapshots
+fixtures/         recorded webhook payloads and replay scenarios
+src/testing/      in-memory GitHub and store, replay engine
 ```
 
 **Workflows live at the repo root**, not here: GitHub only executes

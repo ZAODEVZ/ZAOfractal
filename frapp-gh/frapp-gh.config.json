@@ -30,7 +30,8 @@
     "owner": "ZAODEVZ",
     "repo": "ZAOfractal",
     "issueLabel": "period-{N}-contribution",
-    "discussionCategory": "Fractal Sessions"
+    "discussionCategory": "Fractal Sessions",
+    "pathPrefix": "frapp-gh"
   },
   "ordao": {
     "enabled": false,
