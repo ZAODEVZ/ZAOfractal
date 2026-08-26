@@ -3,3 +3,4 @@
 .gstack/
 .env*
 .serena/
+node_modules/
