@@ -421,6 +421,33 @@ const CLAIMS = [
   ['WP ch07', 'days before a proposal is executable', (Number(summary.orec.config.voteLen) + Number(summary.orec.config.vetoLen)) / 86400, 6],
   ['WP ch07', 'minWeight as a share of OG supply (%)', ((MIN_WEIGHT / summary.og.totalSupply) * 100).toFixed(1), '2.6'],
 
+  ['WP ch08', 'latest period number', summary.zor.latestPeriod, 110],
+  ['WP ch08', 'settled periods on ZOR', sessions.length, 41],
+  ['WP ch08', 'first settled period', firstSettledPeriod, 67],
+  ['WP ch08', 'period numbers in range with no awards', missingPeriods(), '71,72,103'],
+  ['WP ch08', 'longest consecutive run ending at 110', longestRunEndingAtLatest(), 7],
+  ['WP ch08', 'span of settled periods (weeks)', spanWeeks.toFixed(1), '47.8'],
+  ['WP ch08', 'largest gap between settled periods (days)', Math.max(...gaps), 29],
+  ['WP ch08', 'periods that ran on OG with no per-period record', firstSettledPeriod - 1, 66],
+  ['WP ch08', 'execution attempts that reverted', summary.orec.failed, 11],
+  ['WP ch08', 'proposals / executed', `${proposals.proposalCount}/${summary.orec.executed}`, '153/123'],
+  ['WP ch08', 'OG holders when the ledger went dormant', ogBalance.size, 122],
+  ['WP ch08', 'OG total supply', summary.og.totalSupply, 38484],
+  ['WP ch08', 'ZOR awards / addresses', `${summary.zor.awards}/${everAwarded.length}`, '333/70'],
+  ['WP ch08', 'transactions against OREC', orecTransactions.size, 316],
+  ['WP ch08', 'ever awarded ZOR with no vote weight', everAwarded.filter((a) => !ogBalance.has(a)).length, 47],
+  ['WP ch08', 'counts table: addresses that ever held Respect', touched.size, 169],
+  ['WP ch08', 'counts table: OG holders', ogBalance.size, 122],
+  ['WP ch08', 'counts table: ZOR addresses ever', zor.holders.length, 70],
+  ['WP ch08', 'counts table: names resolvable to a wallet', members.counts.named, 144],
+  ['WP ch08', 'counts table: named and currently holding', members.counts.namedAndHolding, 129],
+  ['WP ch08', 'counts table: recent session range', `${windowSessionSizes[0]}-${windowSessionSizes.at(-1)}`, '4-12'],
+  ['WP ch08', 'counts table: mean settled per period', (ascending.reduce((s, p) => s + p.participants, 0) / ascending.length).toFixed(1), '8.1'],
+  ['WP ch08', 'Fibonacci ratio is identical on both curves', `${110 / 10}:${55 / 5}`, '11:11'],
+  ['WP ch08', 'top two ranks share of a ZAO payout (%)', (((110 + 68) / (110 + 68 + 42 + 26 + 16 + 10)) * 100).toFixed(0), '65'],
+  ['WP ch08', 'Respect issued per full ZAO group', 110 + 68 + 42 + 26 + 16 + 10, 272],
+  ['WP ch08', 'Respect issued per full standard group', 55 + 34 + 21 + 13 + 8 + 5, 136],
+
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see
   // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the
