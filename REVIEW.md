@@ -117,6 +117,11 @@ have not accepted.
 | `fecda82` | **`ROADMAP.md`** - the L0-L7 decentralization scale, published with gates. Internals stripped: ticket numbers, an unannounced identity-allocation decision, and an assessment of a named third party's project. Current-state figures corrected to measured. |
 | `ae2572f` | **`docs/README.md`** - index across the four document trees, one hook per chapter and per runbook. |
 | `fdfdea4` | **`README.md` as the front door.** Also drops the "unbroken since August 2024" lede, which was the exact claim the v0.2 pass separated from what the chain proves. |
+| `c479e08` | `DONE.md` records the level-up and its judgement calls. |
+| `8fc1bbc`, `224b32b`, `604f24d` | **Not mine - the frapp-gh lane**, adding claims to `scripts/verify-claims.mjs` for the async tool's period epoch and payout curve. |
+| `4544931` | Makes the verifier degrade instead of crashing when a file it reads is missing. A hard read of the frapp-gh config sat upstream of every other check, including the guards on the not-contacted language. |
+| `5f0ef2c` | **ch05 and ch08: the payout curve has a history.** The ledger shows periods 67-70 paid standard Fibonacci and two later periods paid neither curve, where the chapter presented the 2x curve as a constant. Also: a session pays a full curve per breakout group, so a period can mint several top awards. |
+| `12d105c` | ch04's payout Gini labelled as holding for either curve, which it does, and pinned for both. |
 | `af7ecbd` | This file - stops printing a commit count it invalidates by existing. |
 | `ece1e7a` | Reads OG's `DEFAULT_ADMIN_ROLE` membership from the contract into the snapshot, so the paper's highest-consequence claim is pinned rather than asserted. Moves the snapshot to block 156,071,456; no quoted figure changed. |
 | `a4e90cb` | Handoff records the v0.2 lane. |
