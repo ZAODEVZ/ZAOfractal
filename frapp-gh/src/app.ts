@@ -14,6 +14,7 @@ import {
 } from "./handlers/cron-handlers.js";
 import {
   handleDiscussionCommentEvent,
+  handleInstallationEvent,
   handleIssueEvent,
   verifySignature,
 } from "./handlers/webhook-handlers.js";
@@ -37,6 +38,8 @@ export interface Deps {
   config: FrameworkConfig;
   client: GitHubClient;
   store: Store;
+  /** Injectable clock. The replay harness drives this to move through a period. */
+  now?: () => Date;
 }
 
 /** Test seam: hand the app a fake GitHub and store instead of the network. */
@@ -71,7 +74,7 @@ export async function defaultDeps(env: Env): Promise<Deps> {
 }
 
 function cycleContext(deps: Deps, dryRun = false): CycleContext {
-  return { ...deps, now: new Date(), dryRun };
+  return { ...deps, now: deps.now?.() ?? new Date(), dryRun };
 }
 
 function requireCronSecret(env: Env, header: string | undefined): boolean {
@@ -102,12 +105,15 @@ export function createApp(depsFactory: DepsFactory = defaultDeps) {
     if (event === "ping") return c.json({ ok: true, pong: true });
 
     const deps = await depsFactory(env);
-    const ctx = { ...deps, now: new Date() };
+    const ctx = { ...deps, now: deps.now?.() ?? new Date() };
 
     try {
       if (event === "issues") return c.json(await handleIssueEvent(ctx, payload));
       if (event === "discussion_comment") {
         return c.json(await handleDiscussionCommentEvent(ctx, payload));
+      }
+      if (event === "installation" || event === "installation_repositories") {
+        return c.json(await handleInstallationEvent(ctx, payload));
       }
       return c.json({ handled: false, action: event, detail: "unsubscribed event" });
     } catch (err) {
@@ -141,8 +147,9 @@ export function createApp(depsFactory: DepsFactory = defaultDeps) {
   // --- Read endpoints ------------------------------------------------------
   app.get("/api/v1/status", async (c) => {
     const env = c.env ?? (process.env as unknown as Env);
-    const { config, store } = await depsFactory(env);
-    const now = new Date();
+    const deps = await depsFactory(env);
+    const { config, store } = deps;
+    const now = deps.now?.() ?? new Date();
     const window = cycleWindow(config, now);
     const state = await store.readWeekState(window.weekNumber);
     return c.json({

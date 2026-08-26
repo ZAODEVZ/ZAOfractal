@@ -1,0 +1,47 @@
+{
+  "action": "opened",
+  "issue": {
+    "node_id": "I_kwDOL44zM5",
+    "id": 2400000044,
+    "number": 44,
+    "title": "Fixed the DST bug in cycle scheduling",
+    "body": "## What I Did\n- Session start was drifting an hour across the November transition\n- Resolved the zone offset at the instant rather than at load\n\n## Evidence\nZAODEVZ/ZAOfractal#43\n\n## Criteria Tags\n[Contribution]",
+    "state": "open",
+    "labels": [
+      {
+        "id": 7788990011,
+        "name": "period-111-contribution",
+        "color": "5319E7"
+      }
+    ],
+    "user": {
+      "login": "dana",
+      "id": 100044,
+      "type": "User"
+    },
+    "created_at": "2026-09-01T14:22:11Z",
+    "updated_at": "2026-09-01T14:22:11Z",
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal/issues/44"
+  },
+  "repository": {
+    "id": 812345678,
+    "node_id": "R_kgDOMHk3Lg",
+    "name": "ZAOfractal",
+    "full_name": "ZAODEVZ/ZAOfractal",
+    "private": false,
+    "owner": {
+      "login": "ZAODEVZ",
+      "id": 178123456,
+      "type": "Organization"
+    },
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal"
+  },
+  "installation": {
+    "id": 58123456,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9u"
+  },
+  "sender": {
+    "login": "dana",
+    "type": "User"
+  }
+}

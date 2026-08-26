@@ -1,0 +1,47 @@
+{
+  "name": "Period 111 - a full async cycle from recorded deliveries",
+  "seed": {
+    "users": {
+      "alice": { "createdAt": "2019-03-04T00:00:00Z" },
+      "bob": { "createdAt": "2020-07-19T00:00:00Z" },
+      "carol": { "createdAt": "2018-01-22T00:00:00Z" },
+      "dana": { "createdAt": "2021-11-02T00:00:00Z" },
+      "erin": { "createdAt": "2017-05-30T00:00:00Z" },
+      "frank": { "createdAt": "2022-02-14T00:00:00Z" },
+      "hana": { "createdAt": "2016-09-01T00:00:00Z" },
+      "ivan": { "createdAt": "2019-12-11T00:00:00Z" },
+      "jae": { "createdAt": "2023-04-05T00:00:00Z" },
+      "kim": { "createdAt": "2015-06-18T00:00:00Z" },
+      "newbie": { "createdAt": "2026-08-30T00:00:00Z" }
+    }
+  },
+  "steps": [
+    { "at": "2026-08-31T21:00:00Z", "webhook": "installation", "payload": "installation.created.json", "note": "app installed on the org" },
+    { "at": "2026-08-31T21:05:00Z", "webhook": "ping", "payload": "ping.json" },
+    { "at": "2026-08-31T22:00:01Z", "cycle": "open", "note": "Monday 18:00 ET - period 111 opens" },
+
+    { "at": "2026-09-01T14:22:11Z", "webhook": "issues", "payload": "issues.opened.alice.json" },
+    { "at": "2026-09-01T16:40:00Z", "webhook": "issues", "payload": "issues.opened.bob.json" },
+    { "at": "2026-09-02T09:15:00Z", "webhook": "issues", "payload": "issues.opened.carol.json" },
+    { "at": "2026-09-02T18:03:00Z", "webhook": "issues", "payload": "issues.opened.dana.json" },
+    { "at": "2026-09-03T11:47:00Z", "webhook": "issues", "payload": "issues.opened.erin.json" },
+
+    { "at": "2026-09-03T12:30:00Z", "webhook": "issues", "payload": "issues.opened.unlabeled.json", "note": "no label yet - ignored" },
+    { "at": "2026-09-03T12:35:00Z", "webhook": "issues", "payload": "issues.labeled.frank.json", "note": "label added - now on the ballot" },
+
+    { "at": "2026-09-03T13:00:00Z", "webhook": "issues", "payload": "issues.opened.thin.json", "note": "thin submission - nudged, not rejected" },
+    { "at": "2026-09-03T13:20:00Z", "webhook": "issues", "payload": "issues.opened.bot.json", "note": "bot - ignored" },
+    { "at": "2026-09-04T10:00:00Z", "webhook": "issues", "payload": "issues.edited.alice.json", "note": "edit must not re-acknowledge" },
+    { "at": "2026-09-04T15:00:00Z", "webhook": "issues", "payload": "issues.unlabeled.gil.json", "note": "withdrawn from the ballot" },
+
+    { "at": "2026-09-05T18:04:00Z", "webhook": "discussion_comment", "payload": "discussion_comment.ballot.hana.json" },
+    { "at": "2026-09-05T19:31:00Z", "webhook": "discussion_comment", "payload": "discussion_comment.ballot.ivan.json" },
+    { "at": "2026-09-05T20:02:00Z", "webhook": "discussion_comment", "payload": "discussion_comment.ballot.jae.json", "note": "partial ballot" },
+    { "at": "2026-09-05T20:10:00Z", "webhook": "discussion_comment", "payload": "discussion_comment.chatter.json", "note": "not a ballot" },
+    { "at": "2026-09-05T21:15:00Z", "webhook": "discussion_comment", "payload": "discussion_comment.ballot.kim.json", "note": "kim's real ballot, after chatter" },
+    { "at": "2026-09-05T21:40:00Z", "webhook": "discussion_comment", "payload": "discussion_comment.ballot.newbie.json", "note": "account too new - rejected at snapshot" },
+
+    { "at": "2026-09-05T22:00:01Z", "cycle": "snapshot", "note": "Saturday 18:00 ET - voting closes" },
+    { "at": "2026-09-06T22:00:01Z", "cycle": "tally", "note": "Sunday 18:00 ET - results" }
+  ]
+}

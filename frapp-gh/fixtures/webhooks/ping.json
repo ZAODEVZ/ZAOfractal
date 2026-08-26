@@ -1,0 +1,25 @@
+{
+  "zen": "Non-blocking is better than blocking.",
+  "hook_id": 550123456,
+  "hook": {
+    "type": "App",
+    "events": [
+      "issues",
+      "discussion_comment",
+      "installation"
+    ]
+  },
+  "repository": {
+    "id": 812345678,
+    "node_id": "R_kgDOMHk3Lg",
+    "name": "ZAOfractal",
+    "full_name": "ZAODEVZ/ZAOfractal",
+    "private": false,
+    "owner": {
+      "login": "ZAODEVZ",
+      "id": 178123456,
+      "type": "Organization"
+    },
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal"
+  }
+}

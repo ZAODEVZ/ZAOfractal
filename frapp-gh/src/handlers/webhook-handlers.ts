@@ -1,10 +1,10 @@
 import { weekLabel } from "../lib/config-loader.js";
 import type { GitHubClient } from "../lib/github-api.js";
-import { parseContributionBody } from "../lib/parsing.js";
+import { parseContributionBody, parseRankingComment } from "../lib/parsing.js";
 import type { Store } from "../lib/storage.js";
 import type { ContributionIssue, FrameworkConfig } from "../lib/types.js";
 import { weekNumberFor } from "../lib/week.js";
-import { renderSubmissionAck, BOT_MARKER } from "./formatting.js";
+import { cycleNoun, renderSubmissionAck, BOT_MARKER } from "./formatting.js";
 
 export interface WebhookContext {
   config: FrameworkConfig;
@@ -70,13 +70,27 @@ export async function handleIssueEvent(
   payload: any,
 ): Promise<WebhookOutcome> {
   const action = payload.action as string;
-  if (!["opened", "edited", "labeled", "reopened"].includes(action)) {
+  if (!["opened", "edited", "labeled", "reopened", "unlabeled"].includes(action)) {
     return { handled: false, action, detail: "ignored action" };
   }
 
   const issue = toContribution(payload.issue ?? {});
   const week = weekNumberFor(ctx.config, ctx.now);
   const label = weekLabel(ctx.config, week);
+  const noun = cycleNoun(ctx.config);
+
+  // Withdrawing the label pulls the contribution off the ballot. Say so, so it
+  // is not a silent removal that surfaces only when results look wrong.
+  if (action === "unlabeled") {
+    const removed = payload.label?.name;
+    if (removed !== label) return { handled: false, action, detail: "unrelated label" };
+    await ctx.client.createIssueComment(
+      issue.number,
+      `${BOT_MARKER}\nRemoved from the ${noun.toLowerCase()} ${week} ballot - the \`${label}\` label was taken off. ` +
+        `Re-add it before voting closes to put this back in the running.`,
+    );
+    return { handled: true, action, detail: `withdrew #${issue.number} from the ballot` };
+  }
 
   if (!issue.labels.includes(label)) {
     return { handled: false, action, detail: `not labeled ${label}` };
@@ -137,12 +151,39 @@ export async function handleDiscussionCommentEvent(
   const action = payload.action as string;
   const body: string = payload.comment?.body ?? "";
   if (body.includes(BOT_MARKER)) return { handled: false, action, detail: "own comment" };
-  const looksLikeBallot = /(^|\n)\s*(\/rank|rank:)/i.test(body);
+
+  // Use the same parser the snapshot uses. A cheaper regex here would report
+  // "not a ballot" for numbered-list ballots that do in fact get counted, which
+  // is worse than saying nothing.
+  const ballot = parseRankingComment(body);
   return {
     handled: false,
     action,
-    detail: looksLikeBallot
-      ? `ballot noted from @${payload.comment?.user?.login ?? "unknown"}; counted at snapshot time`
+    detail: ballot
+      ? `ballot noted from @${payload.comment?.user?.login ?? "unknown"} (${
+          ballot.issueNumbers.length
+        } placed); counted at snapshot time`
       : "not a ballot",
+  };
+}
+
+/**
+ * Installation lifecycle. Nothing to provision - the config lives in the repo
+ * and state lives in git - so this only records what happened, which is what
+ * makes a missing installation diagnosable later.
+ */
+export async function handleInstallationEvent(
+  _ctx: WebhookContext,
+  payload: any,
+): Promise<WebhookOutcome> {
+  const action = payload.action as string;
+  const account = payload.installation?.account?.login ?? "unknown";
+  const repos: string[] = (payload.repositories ?? payload.repositories_added ?? []).map(
+    (r: any) => r.full_name ?? r.name,
+  );
+  return {
+    handled: true,
+    action,
+    detail: `installation ${action} for @${account}${repos.length ? ` on ${repos.join(", ")}` : ""}`,
   };
 }

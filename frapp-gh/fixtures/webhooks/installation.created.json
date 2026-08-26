@@ -1,0 +1,24 @@
+{
+  "action": "created",
+  "installation": {
+    "id": 58123456,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9u",
+    "account": {
+      "login": "ZAODEVZ",
+      "type": "Organization"
+    },
+    "app_slug": "frapp-gh",
+    "target_type": "Organization"
+  },
+  "repositories": [
+    {
+      "id": 812345678,
+      "name": "ZAOfractal",
+      "full_name": "ZAODEVZ/ZAOfractal"
+    }
+  ],
+  "sender": {
+    "login": "bettercallzaal",
+    "type": "User"
+  }
+}

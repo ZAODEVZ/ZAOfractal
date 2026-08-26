@@ -190,6 +190,45 @@ State lives in git, so the audit trail is the commit history:
 public/leaderboard.json
 ```
 
+## Replaying a whole period locally
+
+The async week runs end to end with no GitHub App, no network, and no
+credentials:
+
+```bash
+npm run replay                 # fixtures/scenarios/full-period.json
+npm run replay -- --results    # also print the results comment as posted
+```
+
+Recorded deliveries live in `fixtures/webhooks/` and a scenario orders them on a
+simulated clock. The harness signs each payload, posts it to the real webhook
+route, and moves GitHub's own state the way the delivery says it moved - an
+issue is on the ballot because an `issues.opened` delivery put it there, a ballot
+counts because a `discussion_comment` delivery carried it. So a green replay is
+evidence about the flow, not about the fake.
+
+The shipped scenario covers the awkward cases on purpose: a submission that
+arrives unlabeled and gets labeled later, a thin submission that is nudged
+rather than rejected, an edit that must not re-acknowledge, a withdrawn label, a
+bot, chatter that is not a ballot, a voter who corrects themselves in a later
+comment, a partial ballot, and an account too new to vote.
+
+```
+2026-09-05 22:00  200  cycle:snapshot   Period 111 snapshot: 4 ballots over 6 contributions
+2026-09-06 22:00  200  cycle:tally      Period 111 tallied: 272 Respect across 6 members
+```
+
+Write a new scenario by pointing a JSON file at other payloads - the format is
+`{ name, seed, steps: [{ at, webhook, payload } | { at, cycle }] }`. A step that
+returns 4xx exits non-zero, so a scenario doubles as a regression test.
+
+**One semantic worth knowing:** a contribution nobody ranked still receives the
+leftover-position average, so it can land inside the paid curve if the field is
+small - in the shipped scenario `#45` earns 10 with zero placements. It always
+sorts below anything actually ranked (`timesRanked` is a tie-break), but it is
+not zeroed. Set a shorter `respectScores` curve if a community wants unranked
+work to earn nothing.
+
 ## Development
 
 ```bash
@@ -200,8 +239,9 @@ npm run test:coverage   # 80% line/statement/function floor, 70% branch
 ```
 
 Handlers are written against `GitHubClient` and `Store` interfaces, so the whole
-week runs against an in-memory fake in `tests/fakes.ts` - `tests/cycle.test.ts`
-plays a full open -> snapshot -> tally cycle with no network.
+period runs against an in-memory fake in `src/testing/fakes.ts` -
+`tests/cycle.test.ts` plays open -> snapshot -> tally directly, and
+`tests/replay.test.ts` plays the same cycle through recorded webhook deliveries.
 
 ## Deviations from the PRD
 

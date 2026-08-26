@@ -18,7 +18,8 @@
     "cycle:snapshot": "tsx scripts/cycle.ts snapshot",
     "cycle:tally": "tsx scripts/cycle.ts tally",
     "tally:local": "tsx scripts/tally.ts",
-    "setup": "tsx scripts/setup.ts"
+    "setup": "tsx scripts/setup.ts",
+    "replay": "tsx scripts/replay.ts"
   },
   "dependencies": {
     "@octokit/auth-app": "^7.1.3",

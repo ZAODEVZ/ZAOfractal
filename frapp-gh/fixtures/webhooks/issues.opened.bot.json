@@ -1,0 +1,47 @@
+{
+  "action": "opened",
+  "issue": {
+    "node_id": "I_kwDOL48zM5",
+    "id": 2400000048,
+    "number": 48,
+    "title": "Bump tsx",
+    "body": "Automated dependency bump.",
+    "state": "open",
+    "labels": [
+      {
+        "id": 7788990011,
+        "name": "period-111-contribution",
+        "color": "5319E7"
+      }
+    ],
+    "user": {
+      "login": "dependabot[bot]",
+      "id": 100048,
+      "type": "User"
+    },
+    "created_at": "2026-09-01T14:22:11Z",
+    "updated_at": "2026-09-01T14:22:11Z",
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal/issues/48"
+  },
+  "repository": {
+    "id": 812345678,
+    "node_id": "R_kgDOMHk3Lg",
+    "name": "ZAOfractal",
+    "full_name": "ZAODEVZ/ZAOfractal",
+    "private": false,
+    "owner": {
+      "login": "ZAODEVZ",
+      "id": 178123456,
+      "type": "Organization"
+    },
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal"
+  },
+  "installation": {
+    "id": 58123456,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9u"
+  },
+  "sender": {
+    "login": "dependabot[bot]",
+    "type": "Bot"
+  }
+}

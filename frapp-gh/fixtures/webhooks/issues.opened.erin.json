@@ -1,0 +1,47 @@
+{
+  "action": "opened",
+  "issue": {
+    "node_id": "I_kwDOL45zM5",
+    "id": 2400000045,
+    "number": 45,
+    "title": "Ran the first async dry run",
+    "body": "## What I Did\n- Played a whole period against the replay harness and wrote up what broke\n\n## Evidence\nhttps://github.com/ZAODEVZ/ZAOfractal/discussions/211\n\n## Criteria Tags\n[Collaboration, Innovation]",
+    "state": "open",
+    "labels": [
+      {
+        "id": 7788990011,
+        "name": "period-111-contribution",
+        "color": "5319E7"
+      }
+    ],
+    "user": {
+      "login": "erin",
+      "id": 100045,
+      "type": "User"
+    },
+    "created_at": "2026-09-01T14:22:11Z",
+    "updated_at": "2026-09-01T14:22:11Z",
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal/issues/45"
+  },
+  "repository": {
+    "id": 812345678,
+    "node_id": "R_kgDOMHk3Lg",
+    "name": "ZAOfractal",
+    "full_name": "ZAODEVZ/ZAOfractal",
+    "private": false,
+    "owner": {
+      "login": "ZAODEVZ",
+      "id": 178123456,
+      "type": "Organization"
+    },
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal"
+  },
+  "installation": {
+    "id": 58123456,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9u"
+  },
+  "sender": {
+    "login": "erin",
+    "type": "User"
+  }
+}

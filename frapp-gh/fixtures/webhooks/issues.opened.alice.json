@@ -1,0 +1,47 @@
+{
+  "action": "opened",
+  "issue": {
+    "node_id": "I_kwDOL41zM5",
+    "id": 2400000041,
+    "number": 41,
+    "title": "Shipped the Borda aggregation",
+    "body": "## What I Did\n- Built the rank aggregation with partial-ballot handling\n- Covered the tie-break order with tests\n\n## Evidence\nZAODEVZ/ZAOfractal#40\n\n## Criteria Tags\n[Contribution, Innovation]",
+    "state": "open",
+    "labels": [
+      {
+        "id": 7788990011,
+        "name": "period-111-contribution",
+        "color": "5319E7"
+      }
+    ],
+    "user": {
+      "login": "alice",
+      "id": 100041,
+      "type": "User"
+    },
+    "created_at": "2026-09-01T14:22:11Z",
+    "updated_at": "2026-09-01T14:22:11Z",
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal/issues/41"
+  },
+  "repository": {
+    "id": 812345678,
+    "node_id": "R_kgDOMHk3Lg",
+    "name": "ZAOfractal",
+    "full_name": "ZAODEVZ/ZAOfractal",
+    "private": false,
+    "owner": {
+      "login": "ZAODEVZ",
+      "id": 178123456,
+      "type": "Organization"
+    },
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal"
+  },
+  "installation": {
+    "id": 58123456,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9u"
+  },
+  "sender": {
+    "login": "alice",
+    "type": "User"
+  }
+}

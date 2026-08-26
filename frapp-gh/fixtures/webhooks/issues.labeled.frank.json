@@ -1,0 +1,52 @@
+{
+  "action": "labeled",
+  "label": {
+    "id": 7788990011,
+    "name": "period-111-contribution",
+    "color": "5319E7"
+  },
+  "issue": {
+    "node_id": "I_kwDOL46zM5",
+    "id": 2400000046,
+    "number": 46,
+    "title": "Helped with docs",
+    "body": "## What I Did\nCleaned up stale links across the docs tree and fixed the two dead PRD references.\n\n## Evidence\nZAODEVZ/ZAOfractal#38\n\n## Criteria Tags\n[Contribution]",
+    "state": "open",
+    "labels": [
+      {
+        "id": 7788990011,
+        "name": "period-111-contribution",
+        "color": "5319E7"
+      }
+    ],
+    "user": {
+      "login": "frank",
+      "id": 100046,
+      "type": "User"
+    },
+    "created_at": "2026-09-01T14:22:11Z",
+    "updated_at": "2026-09-01T14:22:11Z",
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal/issues/46"
+  },
+  "repository": {
+    "id": 812345678,
+    "node_id": "R_kgDOMHk3Lg",
+    "name": "ZAOfractal",
+    "full_name": "ZAODEVZ/ZAOfractal",
+    "private": false,
+    "owner": {
+      "login": "ZAODEVZ",
+      "id": 178123456,
+      "type": "Organization"
+    },
+    "html_url": "https://github.com/ZAODEVZ/ZAOfractal"
+  },
+  "installation": {
+    "id": 58123456,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9u"
+  },
+  "sender": {
+    "login": "frank",
+    "type": "User"
+  }
+}
