@@ -619,6 +619,15 @@ const CLAIMS = [
   ['SOULBOUND', 'respect/README states the boundary against tradeable tokens',
     /Respect is not one of those, and it must never become one/.test(docText('respect/README.md')), true],
 
+  /* ROADMAP L3 argues that group count is NOT the live game's safeguard,
+   * because most live periods are single-group too. If that ever stops being
+   * true the argument needs rewriting, so it is pinned. */
+  ['ROADMAP L3', 'settled periods that ran a single group',
+    [...groupsByPeriod.entries()].filter(([n, g]) => n > 0 && g.size === 1).length, 23],
+  ['ROADMAP L3', 'settled periods that ran more than one group',
+    [...groupsByPeriod.entries()].filter(([n, g]) => n > 0 && g.size > 1).length, 18],
+  ['ROADMAP L3', 'recent sessions that ran a single group', windowGroupCounts.filter((n) => n === 1).length, 11],
+
   // --- prose invariants -----------------------------------------------------
   ['NOT-ASKED', 'runbook says the bench has not been contacted or agreed',
     /has been contacted, asked, approached or has agreed to\s+anything/.test(docText('respect/FACILITATION-RUNBOOK.md')), true],

@@ -89,6 +89,33 @@ Play without meeting.
 **Gate: 25%+ of weekly Respect awarded through the async path for 4 consecutive
 weeks.**
 
+### The constraint that makes the anti-collusion work a prerequisite
+
+Off-chain, an async period produces a leaderboard. The moment there is a path
+that settles it on-chain, the same period mints **governance weight** - into
+the same ledger the Monday game settles into. That changes the review from a
+refinement to a precondition for the bridge, though not for the ranking:
+Phase 1 can ship and be wrong without anyone gaining a vote they did not earn.
+
+**Where the asymmetry actually lies, measured.** It is tempting to say the live
+game is safer because a period runs several breakout groups that cross-check
+each other, while an async period is a single unreviewed group. The ledger does
+not support that: **23 of the 41 settled periods ran a single group, and 11 of
+the last 15**. Most live periods are single-group too, so group count is not
+the safeguard and a design that leans on it is leaning on something that is
+usually not there.
+
+The real difference is the room. A live group is four to six people who watched
+each other work that week and rank each other face to face. An async ballot is
+a comment. That is what a settle path has to compensate for, and it is a
+property of how the ranking was produced rather than of the ranking algorithm.
+
+So the design constraint for any future bridge: **it should not be able to
+settle a period that async rules alone produced.** What supplies the missing
+review - a facilitator sign-off, a quorum of independent ballots, a
+challenge window, something else - is open, and it is a governance decision
+rather than a tooling one.
+
 Status: in build - [`frapp-gh/`](frapp-gh/), GitHub-native, from the PRD in
 [`research/06-frapp-gh-prd.md`](research/06-frapp-gh-prd.md).
 
