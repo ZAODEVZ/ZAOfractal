@@ -108,6 +108,25 @@ for (const p of proposals.proposals) {
   for (const v of p.votes) if (v.tx) orecTransactions.add(v.tx);
 }
 
+/** Gini over a value vector, the standard mean-absolute-difference form.
+ * Whitepaper ch04 quotes three of these and used to quote one wrong one. */
+function gini(values) {
+  const v = values.slice().sort((a, b) => a - b);
+  const n = v.length;
+  const total = v.reduce((a, b) => a + b, 0);
+  let num = 0;
+  v.forEach((x, i) => { num += (2 * (i + 1) - n - 1) * x; });
+  return (num / (n * total)).toFixed(2);
+}
+
+/** A No vote cast by anyone other than the account that opened the proposal.
+ * All ten standing No votes on record are the author reversing himself, which
+ * is why ch04 and ch09 can say the vote has never been contested. */
+const standingNoVotesByNonAuthor = proposals.proposals.filter((p) => {
+  const author = lower(p.votes[0]?.voter ?? '');
+  return p.finalVotes.some((v) => v.vote === 'No' && lower(v.voter) !== author);
+}).length;
+
 const lags = proposals.proposals
   .filter((p) => p.executedAt)
   .map((p) => (Date.parse(p.executedAt) - Date.parse(p.createdAt)) / 86400000)
@@ -337,6 +356,29 @@ const CLAIMS = [
   ['WP ch03', 'transactions touching OREC', orecTransactions.size, 316],
   ['WP ch03', 'OREC contract events', proposals.logCount, 514],
   ['WP ch03', 'proposals decided by a single voter', proposals.proposals.filter((p) => p.voterCount === 1).length, 137],
+
+  ['WP ch04', 'OG holders', ogBalance.size, 122],
+  ['WP ch04', 'OG total supply', summary.og.totalSupply, 38484],
+  ['WP ch04', 'OG transfers', summary.og.transfers, 518],
+  ['WP ch04', 'OG mints, all to the treasury', summary.og.mints, 69],
+  ['WP ch04', 'OG distributions', summary.og.distributions, 447],
+  ['WP ch04', 'OG peer-to-peer transfers', og.transfers.filter((t) => t.kind === 'peer-transfer').length, 0],
+  ['WP ch04', 'OG returns to the treasury', og.transfers.filter((t) => t.kind === 'return').length, 2],
+  ['WP ch04', 'ZOR awards', summary.zor.awards, 333],
+  ['WP ch04', 'ZOR addresses ever awarded', everAwarded.length, 70],
+  ['WP ch04', 'ZOR minted / burned / held', `${summary.zor.respectMinted}/${summary.zor.respectBurned}/${summary.zor.respectHeld}`, '18266/848/17418'],
+  ['WP ch04', 'first period on the ZOR ledger', firstSettledPeriod, 67],
+  ['WP ch04', 'ever awarded ZOR with no vote weight', everAwarded.filter((a) => !ogBalance.has(a)).length, 47],
+  ['WP ch04', 'recently active with zero OG', activeRecently.filter((a) => !ogBalance.has(a)).length, 14],
+  ['WP ch04', 'recently active under the minimum weight', activeRecently.filter((a) => ogBalance.has(a) && ogBalance.get(a) < MIN_WEIGHT).length, 9],
+  ['WP ch04', 'recently active able to pass alone', activeRecently.filter((a) => (ogBalance.get(a) || 0) >= MIN_WEIGHT).length, 4],
+  ['WP ch04', 'Gini of one Respect Game payout', gini([110, 68, 42, 26, 16, 10]), '0.41'],
+  ['WP ch04', 'Gini of the ZOR ledger', gini([...zorBalance.values()]), '0.53'],
+  ['WP ch04', 'Gini of the OG ledger (the one that votes)', gini([...ogBalance.values()]), '0.73'],
+  ['WP ch04', 'OG holders for a majority of vote weight', holdersToReach(0.5), 9],
+  ['WP ch04', 'OG holders for a two-thirds supermajority', holdersToReach(2 / 3), 16],
+  ['WP ch04', 'proposals ever voted down by someone other than the author', standingNoVotesByNonAuthor, 0],
+  ['WP ch04', 'proposals that needed a second voter', neededASecondVoter, 0],
 
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see

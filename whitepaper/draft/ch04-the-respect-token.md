@@ -1,6 +1,6 @@
 # Chapter 4: The Respect Token
 
-Draft v0.1 - 2026-05-25 - awaiting Zaal review
+Draft v0.2 - 2026-08-26 - accuracy pass against the committed chain snapshot
 
 ---
 
@@ -27,18 +27,24 @@ Soulbound means: Respect cannot be transferred from one address to another. The 
 
 On Optimism Mainnet, ZAO maintains two Respect token contracts:
 
-**OG Respect (ERC-20, Frozen Archive)**
+**OG Respect (ERC-20, dormant, and the only ledger that votes)**
 - Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`
 - Deployed: July 30, 2024
-- Total Supply: 38,484 ZAO
-- Status: Frozen (no new mints since December 18, 2025)
-- Transfer Restriction: Enforced via role-based access control (thirdweb). Members cannot transfer; the admin can move it, but has chosen not to. Soulbound in practice.
+- Total supply: 38,484, held across 122 addresses
+- Status: dormant, not frozen. Last mint December 9, 2025; last distribution December 18, 2025. The distinction matters: `DEFAULT_ADMIN_ROLE` on this contract has exactly one member, and that role can still grant itself minting rights and issue vote weight. Nothing on-chain prevents it. See Chapter 9.
+- Transfer restriction: enforced via role-based access control (thirdweb). Members cannot transfer; the admin can move it, but has not. Soulbound in practice, and the ledger bears this out - across 518 transfers there have been **zero peer-to-peer transfers**. All 447 distributions went from the treasury wallet to a member, and only two ever came back.
 
-**ZOR Respect (ERC-1155, Active Democratic Era)**
+**ZOR Respect (ERC-1155, the active ledger, and it does not vote)**
 - Address: `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c`
 - Deployed: September 11, 2025
-- Minting Authority: OREC contract only (`0xcB05F9254765CA521F7698e61E0A6CA6456Be532`)
-- Transfer Function: All transfers revert except minting (from zero address) and burning (to zero address)
+- Minting authority: OREC contract only (`0xcB05F9254765CA521F7698e61E0A6CA6456Be532`)
+- Transfer function: all transfers revert except minting (from the zero address) and burning (to the zero address)
+- 333 awards to 70 addresses across 41 settled periods; 18,266 minted, 848 burned, 17,418 outstanding
+
+**Read those two together before going further.** The active ledger confers no
+vote, and the voting ledger is no longer being issued. Section III states that in
+full, because it is the most important thing to understand about Respect at The
+ZAO today and the earlier draft of this chapter left it to be inferred.
 
 The soulbound property solves a critical problem: **separation of voting power from capital**.
 
@@ -52,7 +58,7 @@ Soulbound enforcement prevents this. Your Respect balance equals your verified c
 
 The ZAO maintains two separate Respect ledgers because the community went through two distinct eras:
 
-**Era 1: Manual Distribution (Fractals 1-73, August 2024 - August 2025)**
+**Era 1: Manual Distribution (periods 1-66, August 2024 - September 2025)**
 
 Pre-OREC governance used an Airtable audit trail. Community members earned OG Respect through:
 - Posting introductions in #intros (25 points)
@@ -63,19 +69,21 @@ Pre-OREC governance used an Airtable audit trail. Community members earned OG Re
 - Featured artist showcase on thezao.com (50 points)
 - Weekly Respect Game rankings (Fibonacci curve: 55/34/21/13/8/5)
 
-Zaal and civilmonkey.eth manually reviewed contributions and minted OG Respect to the appropriate addresses. The frozen OG contract preserves this ledger as an immutable historical record.
+Zaal and civilmonkey.eth manually reviewed contributions and minted OG Respect to the appropriate addresses. The OG contract preserves this ledger, but it preserves only balances. All 69 mints went to a single treasury wallet, which then distributed by transfer, and OG carries no per-award metadata at all - no period, no group, no rank. A transfer of 110 Respect on a Tuesday is indistinguishable from any other transfer of 110. Two thirds of ZAO's history therefore cannot be reconstructed from chain data even in principle.
 
-**Era 2: Democratic Distribution (Fractals 74+, September 2025 - Present)**
+**Era 2: Democratic Distribution (periods 67-110, September 2025 - present)**
 
-Post-OREC governance distributes Respect through on-chain voting proposals. Every Monday at 6pm EST, The ZAO Fractal convenes. Breakout groups reach consensus on contribution rankings. A facilitator submits the ranking via `proposeBreakoutResult()` to the OREC contract. If the proposal passes the OREC voting cycle (2/3 supermajority, no active veto), ZOR Respect is minted directly to the wallets of ranked members.
+Post-OREC governance distributes Respect through on-chain voting proposals. Every Monday at 6pm EST, The ZAO Fractal convenes. Breakout groups reach consensus on contribution rankings. A facilitator submits the ranking via `proposeBreakoutResult()` to the OREC contract. If the proposal passes the OREC voting cycle (2/3 supermajority, no active veto), ZOR Respect is minted directly to the wallets of ranked members. Unlike OG, each award is a distinct token id carrying its period, group and rank, which is why the weekly game can be reconstructed from chain data from period 67 onward and not before.
 
 **Why maintain both?**
 
 1. **Historical integrity.** OG Respect cannot be lost or retroactively modified. It proves that early contributors were recognized.
-2. **Vote weight continuity.** OREC reads OG Respect balances to determine voting power on new proposals. A member with 1000 OG Respect retains full voting weight even if they have not earned ZOR lately.
-3. **Democratic transition.** ZOR allows future Respect distribution to be purely peer-driven, with no central admin (not even Zaal) holding minting authority.
+2. **Vote weight.** OREC's `respectContract` is set to the OG ERC-20, and it reads a voter's balance **live from that contract at the moment the vote is cast**. A member with 1,000 OG Respect carries full voting weight even if they have not earned ZOR lately.
+3. **Democratic transition.** ZOR allows Respect distribution to be purely peer-driven, with no central admin holding minting authority over it.
 
-The two ledgers have not yet been unified - they remain separate on-chain. This is an acknowledged open issue for ZAO governance (documented in ZAO research Doc 115).
+**The cost of running both, stated plainly.** ZOR confers no vote. Of the 70 people ever awarded ZOR, **47 hold no OG at all and therefore have no vote weight whatsoever**. Narrow it to the people actually showing up - the 27 awarded ZOR in the last 12 settled periods - and 14 have zero OG, 9 hold some but sit under the 1,000 minimum weight, and 4 can carry a proposal alone. The ledger that records who is contributing and the ledger that decides who governs have come apart, and the gap runs in the worst direction: the more recently you joined, the less likely your recognized contribution carries a vote.
+
+The two ledgers have not been unified - they remain separate on-chain. This is the largest open issue in ZAO governance. The measurement, the migration options and their costs are worked through in `respect/LEDGER-RECONCILIATION.md`; Chapter 10 carries the roadmap item.
 
 ---
 
@@ -215,18 +223,23 @@ This creates an intentional tension: The system would value consistency (you mus
 
 ## VII. Equality: Respect vs. Token-Weighted DAOs
 
-The Gini coefficient measures income inequality (0 = perfect equality, 1 = perfect inequality). ZAO's Fibonacci distribution produces a Gini of approximately **0.23**.
+The Gini coefficient measures inequality (0 = perfect equality, 1 = perfect inequality). Earlier drafts of this chapter reported a single figure of ~0.23 for "ZAO". There is no single figure, and the honest version needs three, because a weekly payout and an accumulated ledger are not the same object.
 
-| System | Gini Coefficient |
+| What is being measured | Gini |
 |---|---|
-| Fractal Respect Game (ZAO) | ~0.23 |
+| A single Respect Game payout (110-68-42-26-16-10) | 0.41 |
+| The ZOR ledger as accumulated to date (64 holders) | 0.53 |
+| The OG ledger, which is what actually votes (122 holders) | **0.73** |
 | Typical token-weighted DAO | 0.97-0.99 |
 | US household income | ~0.39 |
-| Most equal countries (Slovakia, Slovenia) | ~0.24 |
 
-ZAO's governance is **dramatically more equal** than token-weighted DAOs while still rewarding excellence. The top 33% of a group (ranks 1-2) earn roughly 65% of the Respect - meaningfully unequal, but far from winner-take-all.
+The first is computed from the payout vector; the other two from the committed snapshot at block 156,055,426.
 
-By contrast, Compound has a Gini of approximately 0.97 (8 delegates hold 50%+ of voting power). Uniswap is similarly concentrated. These are plutocracies, not democracies.
+Read the table honestly. The **mechanism** is egalitarian: within a group the top 33% (ranks 1-2) take 65% of the Respect - meaningfully unequal, far from winner-take-all - and no member can hoard the rest, because consensus is required. The **outcome** is much less so. Two years of compounding on a ledger distributed by hand produces a vote-weight distribution at 0.73, and it takes only **9 of the 122 OG holders to reach a majority of vote weight, or 16 to reach the two-thirds supermajority OREC requires**.
+
+Set that beside the Compound number this chapter has always quoted - 8 delegates holding 50%+ - and the comparison stops being flattering. ZAO's 9 is not meaningfully better than Compound's 8. What differs is not the concentration; it is **how it was acquired**. Compound's was bought. ZAO's was earned in a room, one week at a time, and every award traces to a named ranking. That is a real difference and it is the one worth defending. Claiming an equality the ledger does not show is not.
+
+The remedies are concrete: unify the ledgers so current contribution carries current weight (Chapter 10), and adopt the decay model in section VI so accumulation stops being permanent. Chapter 9 treats this as an open problem rather than a solved one.
 
 The Respect Game achieves fairness through deliberate mechanism design: Fibonacci scaling + ordinal ranking + peer consensus. No group member can hoard all available Respect; consensus is required, and 2/3 of the group must agree on each rank. Gaming a consensus group of 5-6 people is dramatically harder than gaming a permissionless token market.
 
@@ -234,7 +247,7 @@ The Respect Game achieves fairness through deliberate mechanism design: Fibonacc
 
 ## VIII. Voting Weight: The 2/3+ Rule
 
-Respect determines voting weight in the OREC governance contract. A proposal passes when:
+OG Respect - and only OG Respect - determines voting weight in the OREC governance contract. A proposal passes when:
 
 ```
 yesWeight > 2 * noWeight  AND  yesWeight >= minWeight
@@ -245,6 +258,8 @@ This is the **2/3 supermajority rule**. Equivalently, **1/3 of active Respect ca
 This is fundamentally consent-based, not majority-based. A 60/40 vote fails (YES must exceed double NO). A 51/49 vote fails. Only a 67+/33 or stronger split passes.
 
 This supermajority forces genuine consensus building. A slim majority cannot impose outcomes on a large minority. The minority has real blocking power.
+
+That is the design. What the deployed contract has so far experienced is different, and Chapter 9 is where it is confronted: across 153 proposals, **no proposal has ever been voted down by anyone other than the person who opened it**, and no proposal has ever needed a second voter to clear the minimum weight. The supermajority rule has never had to bind, because the vote has never been contested.
 
 ---
 
@@ -287,7 +302,7 @@ All transactions are publicly verifiable on Etherscan (Optimism Mainnet explorer
 
 ---
 
-**Word count: 2,847**
+**Word count: 3,038**
 
 ---
 
