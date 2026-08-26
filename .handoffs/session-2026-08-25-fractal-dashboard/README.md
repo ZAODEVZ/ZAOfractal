@@ -1,7 +1,32 @@
 # Handoff - fractal dashboard + fractal docs (2026-08-25/26)
 
 Repo: `ZAOfractal`, branch `main`, **ahead of origin and nothing pushed**.
-Push is Zaal's call. Exact count: `git rev-list --count origin/main..HEAD`.
+Exact count: `git rev-list --count origin/main..HEAD`.
+
+> ## DO NOT PUSH - this is a PII gate, not a preference
+>
+> `gate_4c836a146dcd`, Zaal's, raised by the estate PII pass which flagged this
+> repo **NEEDS-REDACTION**. **Pushing this branch would be the disclosure event
+> for a 144-person name-to-wallet linkage.** Verified against origin:
+>
+> - `data/members.json` **does not exist on origin** and binds 144 community
+>   names to Optimism addresses, sourced from a Discord bot export.
+> - Commit `38884b1` writes 129 of those mappings into
+>   `dao/src/lib/constants.ts`. That file **is on origin today and contains no
+>   names** - just the empty `KNOWN_MEMBERS` stub with a commented-out example.
+>
+> So the linkage exists nowhere public right now, and a push publishes it in two
+> places at once. This is not fixable by editing the tip: `38884b1` is in the
+> middle of the branch, so the names are in the history whatever HEAD looks
+> like. Redaction here means a rewrite, not a revert.
+>
+> Nothing in the four `respect/` docs depends on the names being committed -
+> they quote roughly twenty of them inline, which is a separate and much smaller
+> question. `scripts/build-members.mjs` regenerates the full map from the bot
+> export on demand, so the file being local-only costs nothing operationally.
+>
+> Do not push, do not open a PR, do not merge to a branch that has a remote.
+> The decision is Zaal's.
 
 Three lanes ran in this pane. The dashboard data layer (task_52ea0cb8c31c)
 landed first; the two fractal docs (task_fa960c63996b, task_b5f03719b980) were
@@ -281,6 +306,10 @@ From the two runbooks:
     list; none of them is a decision.
 19. **Is `/randomize` gated to one Discord role?** If so it is a five-minute fix
     and it is the literal first blocker for a second facilitator.
+20. **`gate_4c836a146dcd` - the name-to-wallet linkage.** Redact and rewrite
+    history, keep `data/members.json` local-only and strip `38884b1`, or accept
+    publication. See the block at the top of this file. This is the only thing
+    blocking a push and it is not a formality.
 
 ---
 
@@ -289,7 +318,10 @@ From the two runbooks:
 1. Name the 40 unnamed holders - `data/members.json` has them under
    `unnamedHolders`, ranked. Unmined sources: `zao-fractal-bot`'s Supabase
    migrations, Farcaster handles. Seven of them are owed unminted Respect and
-   one of them belongs on the facilitator bench, so this is no longer cosmetic.
+   one of them is 7-of-15 on the facilitator attendance table, so this is no
+   longer cosmetic. **Note this cuts against `gate_4c836a146dcd`** - every name
+   added here makes the linkage larger, so do it knowing the redaction question
+   is still open.
 2. Once Zaal answers tap 1, do the whitepaper v0.2 pass in one commit across
    ch01, ch04, ch06, ch07, ch08, ch09 and the repo README.
 3. Member write-up view: `awardsForMember()` in `dao/src/lib/data.ts` already
@@ -310,3 +342,7 @@ cd dao && npm run dev             # browse the same numbers
 Nothing deployed, nothing pushed. Check how far ahead with
 `git rev-list --count origin/main..HEAD` - the number moves with every commit
 here, so it is not written down.
+
+**Read the push gate at the top of this file before doing anything with a
+remote.** `gate_4c836a146dcd` is open and the branch carries a 144-person
+name-to-wallet linkage that does not exist on origin.

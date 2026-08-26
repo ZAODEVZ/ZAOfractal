@@ -191,7 +191,7 @@ be dressing up an absence of data as a finding.
 What it does mean, operationally and only operationally: Iman has no wallet in
 the `/register` registry as far as this snapshot can see, and Phase 5 submission
 sends a transaction. That is a first-night blocker with a five-minute fix, and
-it is open call 5, not a reason to revisit the bench.
+it is open call 2, not a reason to revisit the bench.
 
 ### Meta Mu
 
