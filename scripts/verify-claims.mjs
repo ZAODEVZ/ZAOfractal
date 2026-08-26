@@ -31,6 +31,19 @@ const periods = read('periods.json');
 const members = read('members.json');
 const proposals = read('orec-proposals.json');
 
+/** Prose invariants. Everything else in this file guards a number; these guard
+ * sentences that a decision rests on, and that a later pass could trim without
+ * noticing what it was holding up.
+ *
+ * FACILITATION-RUNBOOK.md names three people for a role none of them has been
+ * asked about. Zaal reconfirmed on 2026-08-26 that the names stay public. That
+ * is defensible precisely because the document says, repeatedly and in its own
+ * header, that being named is not being asked - so the disclaimer is not
+ * decoration, it is the load-bearing part. And because the docs are CC BY 4.0,
+ * which is perpetual and irrevocable, a softened copy cannot be recalled once
+ * published. Hence a check rather than a hope. */
+const docText = (name) => readFileSync(join(ROOT, name), 'utf8');
+
 const lower = (a) => a.toLowerCase();
 const MIN_WEIGHT = Number(BigInt(summary.orec.config.minWeight) / 10n ** 18n);
 
@@ -488,6 +501,18 @@ const CLAIMS = [
   ['ADMIN KEY', 'OG DEFAULT_ADMIN_ROLE member count', og.adminRole?.memberCount ?? 'unverified', 1],
   ['ADMIN KEY', 'OG admin is the treasury wallet', (og.adminRole?.members ?? []).map(lower).join(','), lower(summary.og.treasury)],
   ['ADMIN KEY', 'ZOR is owned by OREC, not by a wallet', lower(summary.orec.config.owner), lower(summary.contracts.OREC)],
+
+  // --- prose invariants -----------------------------------------------------
+  ['NOT-ASKED', 'runbook says the bench has not been contacted or agreed',
+    /has been contacted, asked, approached or has agreed to\s+anything/.test(docText('respect/FACILITATION-RUNBOOK.md')), true],
+  ['NOT-ASKED', '"being named is not being asked" survives',
+    /[Bb]eing named is not being asked/.test(docText('respect/FACILITATION-RUNBOOK.md')), true],
+  ['NOT-ASKED', 'section 3 repeats that nobody on the bench has agreed',
+    /Nobody on it has been contacted, asked, or has agreed to anything/.test(docText('respect/FACILITATION-RUNBOOK.md')), true],
+  ['NOT-ASKED', 'the rota still says none has been asked',
+    /none has been asked yet/.test(docText('respect/FACILITATION-RUNBOOK.md')), true],
+  ['NOT-ASKED', 'whitepaper ch05 still names no facilitator',
+    /civilmonkey/.test(docText('whitepaper/draft/ch05-the-respect-game.md').split('Earlier drafts said')[0]), false],
 
   // Iman is on the named bench and is not in the ledger at all. That is a gap in
   // the data or a role outside the Monday game, not evidence about him - see

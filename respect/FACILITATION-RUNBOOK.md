@@ -8,6 +8,22 @@ anything.** Being named is not being asked. Section 3 records Zaal's choice and
 what the ledger independently says about the room; it is not a roster, a
 schedule, or a commitment by anyone on it.
 
+> **Do not trim this language.** Zaal reconfirmed on 2026-08-26 that the three
+> names stay public here, under the standing policy that aggregating
+> already-public information is fine. That decision rests on this document
+> being explicit that the bench has not been asked - the sentence above, and
+> its repeats in section 3 and section 4, are what make naming an unasked
+> bench defensible rather than presumptuous.
+>
+> This matters more than an ordinary style note because the documents are
+> licensed CC BY 4.0, and that grant is perpetual and irrevocable. Once this is
+> published, copies carrying a softened version cannot be recalled. So the
+> language has to be right *before* push, not after.
+>
+> If a later pass edits this file, check the not-contacted language survived.
+> `scripts/verify-claims.mjs` asserts it, so removing it fails the check rather
+> than passing quietly.
+
 This is the **L1 - Facilitator bench** item on the decentralization scale. L0 is
 where the ZAO is now: one weekly synchronous game that works, is proven, and
 stops if one person stops. L1 is the game surviving any one person's absence.
