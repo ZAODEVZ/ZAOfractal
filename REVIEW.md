@@ -11,7 +11,7 @@ git log --oneline origin/main..HEAD
 git rev-list --count origin/main..HEAD
 ```
 
-At the time of writing that count is **21**.
+At the time of writing that count is **34**.
 
 ---
 
@@ -90,14 +90,48 @@ have not accepted.
 | `2e529f8` | Handoff note stops hardcoding the ahead-of-origin count. |
 | `7c9bf35` | Records the named facilitator bench and what the ledger can and cannot say about it. **Names three people.** |
 | `fc55278` | Records the PII push gate; fixes a dangling cross-reference. |
-| `0b0e193` | **whitepaper ch01 v0.2** - separates the ritual claim from the chain claim. The streak stays a community record; the verifiability paragraph now says what the chain actually proves. Period number settled at 110. |
-| `9bdd062` | **whitepaper ch03 v0.2** - "40+ members in 6-7 breakout rooms" and "60-80% participation" corrected to the measured room; the on-chain history figure corrected from "242+ transactions". |
-| `e6bf95f` | **whitepaper ch04 v0.2** - says which ledger votes (OG, not ZOR) and replaces a flattering Gini of 0.23 with three measured ones, the load-bearing one being 0.73 on the ledger that votes. |
+| `0b0e193` | **ch01 v0.2** - separates the ritual claim from the chain claim. The streak stays a community record; the verifiability paragraph says what the chain actually proves. Period number settled at 110. |
+| `9bdd062` | **ch03 v0.2** - "40+ members in 6-7 breakout rooms" and "60-80% participation" corrected to the measured room; "242+ transactions" corrected. |
+| `e6bf95f` | **ch04 v0.2** - says which ledger votes (OG, not ZOR); replaces a flattering Gini of 0.23 with three measured ones, the load-bearing one 0.73 on the ledger that votes. |
+| `6e2409e` | This file. |
+| `b0c6ea8` | **ch05 v0.2** - the vote and veto windows are 72 hours, not 48; vote weight is read live, never frozen; the "OREC minting authority" framing replaced with the three real bottlenecks. |
+| `27e21f7` | This file - the name map is served to every dashboard visitor. |
+| `6b78583` | **ch06 v0.2** - two config-table rows that describe parameters the contract does not have; "242+ transactions, all successful" corrected to 316 with 11 execution reverts. |
+| `4eda850` | **ch07 v0.2** - stops presenting other fractal communities' 60-80% turnout as something ZAO has proven. |
+| `d59d996` | **ch08 v0.2** - the streak table, the four member counts, and the Fibonacci doubling that changes no ratio. |
+| `9adf568` | **ch09 v0.2** - the bottleneck was diagnosed as the wrong mechanism; adds the single-member OG admin role, which appeared in no previous draft. |
+| `5cc9ea9` | **ch10 v0.2** - status for every expired target date; the signer-committee item superseded because it cannot be built. |
+| `4666cb2` | **ch11 v0.2** - keeps the manifesto voice, fixes what it claims the chain proves. |
+| `51aefa1` | Sweeps the residual v0.1 phrasings the per-chapter passes missed. |
+| `4555291` | **ch00 v0.2** plus `scripts/assemble-whitepaper.mjs`; the assembled document is regenerated from the drafts. |
+| `c12131e` | whitepaper README: what the pass corrected, and the five things it could not close. |
+| `a37008e` | repo README facts table, measured, with a source column per row. |
 
-The whitepaper v0.2 commits publish no names. They publish corrections that are
-less flattering than what they replace - the participation rate, the Gini, the
-concentration of vote weight. That is deliberate, and it is the part most worth
-your eye before it goes out.
+### On the whitepaper commits specifically
+
+They publish no names. What they publish is a set of corrections that are
+**less flattering than what they replace**: participation of 8.1 per session
+against a roll of 188, a Gini of 0.73 on the ledger that votes, 9 holders
+reaching a majority of vote weight against Compound's 8 delegates, a
+verification section that claimed "all successful" when 11 executions
+reverted, and a founder ranked in 14 of the last 15 sessions.
+
+That is deliberate. A governance paper that overstates its own numbers has no
+standing to criticise anyone else's, and every one of these was going to be
+found by the first serious reader with a block explorer. But it is a change in
+what the document says about ZAO, made without you in the room, so it is the
+part most worth your eye before any of it goes out.
+
+Two judgement calls inside that, both reversible:
+
+- **The whitepaper names no facilitator.** ch05 previously said "typically Zaal
+  or civilmonkey.eth". It now gives the measurement and points at
+  `respect/FACILITATION-RUNBOOK.md` rather than printing the three names you
+  chose, because nobody on that bench has been asked yet and a whitepaper is a
+  louder surface than a runbook.
+- **The streak number is 110 everywhere**, taken from the community's own
+  period counter. Nothing in this repo corroborates it off-chain and the chain
+  cannot. If you have a better source, it changes one number in six chapters.
 
 ---
 
