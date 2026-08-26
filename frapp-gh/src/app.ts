@@ -171,6 +171,7 @@ export function createApp(depsFactory: DepsFactory = defaultDeps) {
     const state = await store.readWeekState(window.weekNumber);
     return c.json({
       community: config.community,
+      cycleNoun: config.cycleNoun ?? "Week",
       week: window.weekNumber,
       phase: phaseFor(config, now),
       opensAt: window.opensAt.toISOString(),

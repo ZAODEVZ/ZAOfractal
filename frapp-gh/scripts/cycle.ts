@@ -22,7 +22,9 @@ type Command = "open" | "snapshot" | "tally" | "leaderboard";
 
 function parseArgs(argv: string[]) {
   const command = argv[2] as Command | undefined;
-  const weekFlag = argv.indexOf("--week");
+  // --period is the ZAO-facing name; --week is kept because the internal
+  // field is weekNumber and older workflow runs pass it.
+  const weekFlag = Math.max(argv.indexOf("--week"), argv.indexOf("--period"));
   return {
     command,
     week: weekFlag > -1 ? Number(argv[weekFlag + 1]) : undefined,
@@ -33,7 +35,9 @@ function parseArgs(argv: string[]) {
 async function main() {
   const { command, week, dryRun } = parseArgs(process.argv);
   if (!command || !["open", "snapshot", "tally", "leaderboard"].includes(command)) {
-    console.error("Usage: tsx scripts/cycle.ts open|snapshot|tally|leaderboard [--week N] [--dry-run]");
+    console.error(
+      "Usage: tsx scripts/cycle.ts open|snapshot|tally|leaderboard [--period N] [--dry-run]",
+    );
     process.exit(2);
   }
 

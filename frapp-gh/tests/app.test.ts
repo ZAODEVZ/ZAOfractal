@@ -152,6 +152,8 @@ describe("HTTP surface", () => {
     const body: any = await res.json();
     expect(body.community).toBe("The ZAO");
     expect(body.algorithm).toBe("borda");
+    // The leaderboard page reads this to label itself in the community's words.
+    expect(body.cycleNoun).toBe("Week");
     expect(["submission", "voting", "tally", "closed"]).toContain(body.phase);
   });
 

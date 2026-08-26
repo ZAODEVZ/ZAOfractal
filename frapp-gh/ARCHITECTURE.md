@@ -1,6 +1,11 @@
 # Architecture
 
-Frapp-GH Phase 1. Source spec: `research/06-frapp-gh-prd.md` in ZAOfractal.
+Frapp-GH Phase 1. Source spec: `research/06-frapp-gh-prd.md` in this repo.
+
+Internally a cycle is a "week" (`weekNumber`, `weekStatePath`); to readers it is
+whatever `cycleNoun` says, which for ZAO is "Period" continuing the on-chain
+count. The field names were not renamed because the numbering is the thing that
+has to match, not the vocabulary.
 
 ## Shape
 
@@ -49,7 +54,12 @@ without their predecessor's artifact and return a 409 rather than throwing.
 |---|---|---|
 | `.github/frapp-gh/week-N/state.json` | all three steps | status, discussion, counts, Respect map |
 | `.github/frapp-gh/vote-snapshots/week-N.json` | snapshot | every ballot, with eligibility verdicts |
-| `public/leaderboard.json` | tally | cumulative Respect, rebuilt from all week states |
+| `public/leaderboard.json` | tally | cumulative Respect, rebuilt from all period states |
+
+Paths are relative to `frapp-gh/`. The Actions runner writes them directly
+(`working-directory: frapp-gh`); the deployed service writes through the
+contents API, which resolves from the repository root, so `github.pathPrefix`
+prefixes every one of those writes with `frapp-gh/`.
 
 The snapshot is the receipt: it records rejected ballots and the reason, so the
 tally can be recomputed by anyone from committed data alone.
@@ -88,6 +98,15 @@ payloads are HMAC-verified with a constant-time compare; the cycle endpoints
 require a shared secret header. Nothing signs a transaction, and `config.ordao`
 is forced to `enabled: false` at load.
 
+## Replay
+
+`src/testing/replay.ts` plays a scenario of recorded webhook deliveries against
+the real routes with an injected clock and in-memory GitHub. Each payload is
+applied to the fake before it reaches the handler, so the fake's state is
+derived from the same deliveries the handlers see rather than hand-authored
+alongside them. `npm run replay` runs a full period; a 4xx at any step exits
+non-zero.
+
 ## Known limits
 
 - Projects v2 gives one shared board order, so per-voter drag-ranking is not
@@ -96,5 +115,8 @@ is forced to `enabled: false` at load.
 - Cron is fixed UTC and does not follow US daylight saving.
 - The leaderboard rebuilds from committed week states; a hand-edited state file
   changes the standings. The vote snapshots are the check on that.
-- One Discussion per week, found by exact title. Renaming a session Discussion
-  detaches it from its week.
+- One Discussion per period, found by exact title. Renaming a session Discussion
+  detaches it from its period.
+- Workflows must live at the repository root; only their `working-directory`
+  points here. The issue template under `.github/ISSUE_TEMPLATE` is inert for
+  the same reason and needs a root placement decision.

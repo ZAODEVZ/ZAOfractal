@@ -31,6 +31,11 @@
   <script>
     const fmt = (n) => new Intl.NumberFormat("en-US").format(n);
 
+    // The community's word for one cycle. ZAO says "Period" and numbers them
+    // on-chain; /api/v1/status carries it, and static hosting falls back.
+    let NOUN = "Week";
+    const nounPlural = () => `${NOUN}s`;
+
     function card(label, value, accent) {
       return `<div class="card"><div class="label">${label}</div>
               <div class="value${accent ? " accent" : ""}">${value}</div></div>`;
@@ -39,7 +44,7 @@
     function row(entry) {
       const recent = (entry.recentActivity || [])
         .slice(0, 2)
-        .map((a) => `w${a.week} +${a.respectAwarded}${a.contribution ? ` - ${a.contribution}` : ""}`)
+        .map((a) => `${NOUN.toLowerCase().slice(0, 1)}${a.week} +${a.respectAwarded}${a.contribution ? ` - ${a.contribution}` : ""}`)
         .join(" &middot; ");
       const cls = entry.rank <= 3 ? ` r${entry.rank}` : "";
       return `<tr>
@@ -79,42 +84,59 @@
 
       document.getElementById("community").textContent = `${board.community} Respect`;
       document.getElementById("asof").textContent =
-        `As of ${new Date(board.asOf).toLocaleString()} - ${board.weeksCounted.length} cycle(s) counted`;
+        `As of ${new Date(board.asOf).toLocaleString()} - ${board.weeksCounted.length} ${
+          board.weeksCounted.length === 1 ? NOUN.toLowerCase() : nounPlural().toLowerCase()
+        } counted`;
 
       document.getElementById("cards").innerHTML = [
         card("Members", fmt(board.entries.length)),
         card("Respect distributed", fmt(board.totalRespectDistributed), true),
-        card("Cycles", fmt(board.weeksCounted.length)),
-        card("Latest week", board.weeksCounted.length ? `#${Math.max(...board.weeksCounted)}` : "-"),
+        card(nounPlural(), fmt(board.weeksCounted.length)),
+        card(`Latest ${NOUN.toLowerCase()}`, board.weeksCounted.length ? `#${Math.max(...board.weeksCounted)}` : "-"),
       ].join("");
 
       document.getElementById("table-wrap").innerHTML = board.entries.length
         ? `<table>
              <thead><tr>
                <th>#</th><th>Member</th>
-               <th class="num hide-sm">Weeks</th><th class="num">Respect</th>
+               <th class="num hide-sm">${nounPlural()}</th><th class="num">Respect</th>
              </tr></thead>
              <tbody>${board.entries.map(row).join("")}</tbody>
            </table>`
         : `<p class="empty">No Respect awarded yet.</p>`;
     }
 
-    async function renderCycle() {
+    async function loadNoun() {
       try {
         const status = await loadJSON("/api/v1/status");
-        const el = document.getElementById("cycle");
-        const when = (iso) => new Date(iso).toLocaleString();
-        el.innerHTML = `Week <code>${status.week}</code> is in the <code>${status.phase}</code> phase.
-          Voting closes ${when(status.voteCloseAt)}; results ${when(status.tallyAt)}.
-          Aggregation: <code>${status.algorithm}</code>.`;
+        if (status.cycleNoun) NOUN = status.cycleNoun;
+        return status;
       } catch {
-        document.getElementById("cycle").textContent =
-          "Live cycle status is unavailable (static hosting without the API).";
+        return null;
       }
     }
 
-    render();
-    renderCycle();
+    async function renderCycle(status) {
+      const el = document.getElementById("cycle");
+      if (!status) {
+        el.textContent = "Live cycle status is unavailable (static hosting without the API).";
+        return;
+      }
+      try {
+        const when = (iso) => new Date(iso).toLocaleString();
+        el.innerHTML = `${NOUN} <code>${status.week}</code> is in the <code>${status.phase}</code> phase.
+          Voting closes ${when(status.voteCloseAt)}; results ${when(status.tallyAt)}.
+          Aggregation: <code>${status.algorithm}</code>.`;
+      } catch {
+        el.textContent = "Live cycle status is unavailable (static hosting without the API).";
+      }
+    }
+
+    // Noun first: the leaderboard headings depend on it.
+    loadNoun().then((status) => {
+      render();
+      renderCycle(status);
+    });
   </script>
 </body>
 </html>
