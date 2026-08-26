@@ -70,6 +70,25 @@ set to join - see `respect/SIGNER-COMMITTEE.md`), the execution and
 facilitation runbooks, and a dashboard in [dao/](dao/) reading the committed
 snapshot rather than a live indexer.
 
-## License
+## Licensing
 
-To be set by ZAO. Reference material in this repo synthesizes publicly available primary sources from the wider fractal-governance ecosystem (Larimer's books, Medium articles, official websites, public GitHub repos) and ZAO's own research library.
+Two licenses, split by what the file is.
+
+| What | License | File |
+|------|---------|------|
+| **Code** - `scripts/`, `dao/`, `site/` | MIT | [LICENSE](LICENSE) |
+| **Documents** - `whitepaper/`, `respect/`, `reference/`, `research/`, `RESOURCES.md` | CC BY 4.0 | [LICENSE-DOCS](LICENSE-DOCS) |
+
+Copyright 2026 BetterCallZaal Strategies LLC.
+
+MIT on the code so anyone can run the puller, fork the dashboard, or lift
+`verify-claims.mjs` into their own repo without asking. CC BY 4.0 on the
+documents so the whitepaper and the research archive can be quoted, translated
+and built on, with attribution - which is the point of publishing a governance
+model rather than just running one.
+
+One limit worth stating plainly: CC BY 4.0 covers **ZAO's own writing**. It does
+not license the third-party primary sources these documents quote and
+synthesize - Larimer's books, the Fractally and Eden materials, Medium
+articles, academic papers, other communities' documentation. Those stay under
+their own terms, and the citations throughout point to them.
