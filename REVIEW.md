@@ -111,6 +111,8 @@ have not accepted.
 | `af7ecbd` | This file - stops printing a commit count it invalidates by existing. |
 | `ece1e7a` | Reads OG's `DEFAULT_ADMIN_ROLE` membership from the contract into the snapshot, so the paper's highest-consequence claim is pinned rather than asserted. Moves the snapshot to block 156,071,456; no quoted figure changed. |
 | `a4e90cb` | Handoff records the v0.2 lane. |
+| `4329636`, `1d221ab`, `5ea6e4e`, `f24f902`, `49d6abe` | **Not mine - the frapp-gh lane** landed five commits on this branch while the licensing task ran. A new `frapp-gh/` code directory, TypeScript, with its own tests and vercel.json. I have not reviewed them; they are listed so the count reconciles. |
+| `35349cb` | Marks the not-contacted language in `FACILITATION-RUNBOOK.md` as load-bearing and asserts it in `verify-claims.mjs`, so a later pass cannot trim it quietly. Zaal's 2026-08-26 reconfirmation recorded in the doc. |
 | `528855b` | **Licensing, per your decision.** MIT (`LICENSE`) for code, CC BY 4.0 (`LICENSE-DOCS`) for documents, Copyright (c) 2026 Zaal Panthaki / BCZ Strategies LLC / The ZAO. README gains a Licensing section; the pending flag is gone. Worth one look before push: this is the commit that sets the terms under which everything else in the branch can be reused. |
 
 ### On the whitepaper commits specifically

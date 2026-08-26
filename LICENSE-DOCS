@@ -10,8 +10,13 @@ This license covers the documents in this repository:
   research/      the deep-research archive
   RESOURCES.md   the master index
 
-The code - everything under scripts/, dao/ and site/ - is licensed separately
-under the MIT License. See LICENSE.
+The list above is exhaustive: these document trees are CC BY 4.0, and anything
+else is not, unless it is added to this list.
+
+All code in this repository - currently scripts/, dao/, site/ and frapp-gh/,
+and any code directory added later - is licensed separately under the MIT
+License. See LICENSE. Code is MIT by default; documents are CC BY 4.0 by this
+list. Between them nothing is left unlicensed by accident.
 
 WHAT THIS LICENSE DOES NOT COVER
 

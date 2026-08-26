@@ -22,6 +22,12 @@ SOFTWARE.
 
 ---
 
-This license covers the code in this repository. The documents - the
-whitepaper, and everything under respect/, reference/ and research/ - are
-licensed separately under CC BY 4.0. See LICENSE-DOCS.
+This license covers ALL CODE in this repository - currently scripts/, dao/,
+site/ and frapp-gh/, and any code directory added later. The enumeration is
+illustrative, not exhaustive: new code is MIT by default, so a directory added
+tomorrow does not fall between the two licenses.
+
+The documents - the whitepaper, and everything under respect/, reference/ and
+research/ - are licensed separately under CC BY 4.0. See LICENSE-DOCS.
+
+data/ is covered by neither. See LICENSE-DOCS for why.

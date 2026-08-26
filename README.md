@@ -72,11 +72,13 @@ snapshot rather than a live indexer.
 
 ## Licensing
 
-Two licenses, split by what the file is.
+Two licenses, split by what the file is. Code is MIT **by default**, so a
+directory added tomorrow is covered; documents are CC BY 4.0 by the explicit
+list below. Nothing falls between them by accident.
 
 | What | License | File |
 |------|---------|------|
-| **Code** - `scripts/`, `dao/`, `site/` | MIT | [LICENSE](LICENSE) |
+| **Code** - `scripts/`, `dao/`, `site/`, `frapp-gh/`, and any code added later | MIT | [LICENSE](LICENSE) |
 | **Documents** - `whitepaper/`, `respect/`, `reference/`, `research/`, `RESOURCES.md` | CC BY 4.0 | [LICENSE-DOCS](LICENSE-DOCS) |
 | **`data/`** - the on-chain snapshot and the member map | neither, deliberately | see below |
 
