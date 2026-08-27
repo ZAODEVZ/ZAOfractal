@@ -130,6 +130,8 @@ have not accepted.
 | `a4e90cb` | Handoff records the v0.2 lane. |
 | `4329636`, `1d221ab`, `5ea6e4e`, `f24f902`, `49d6abe`, `b2566e8` | **Not mine - the frapp-gh lane.** Six commits adding `frapp-gh/`, a TypeScript app with its own tests and deploy config: moved in from a standalone repo, workflows to the repo root, webhook handlers and a replay harness, a contents-API path fix, period vocabulary, and a root issue template with an unranked-work rule. Confirmed with that lane. I have not reviewed them. Note `b2566e8` adds `.github/ISSUE_TEMPLATE/contribution.yml` at the **repo root**, outside `frapp-gh/` - every ZAOfractal issue now gets a template chooser where there was none. Blank issues stay enabled. |
 | `35349cb` | Marks the not-contacted language in `FACILITATION-RUNBOOK.md` as load-bearing and asserts it in `verify-claims.mjs`, so a later pass cannot trim it quietly. Zaal's 2026-08-26 reconfirmation recorded in the doc. |
+| `2a095f4`, `ebfdda0` | **The frapp-gh lane, appended by that lane** after the whitepaper lane wrote its handoff, so these two are the only rows here not logged by it and it has not reviewed them. `2a095f4` is doc-only: `period-N` and `week-N` are the same number, and the rename of the internals is logged in `frapp-gh/ARCHITECTURE.md` as an open decision to settle **before** the first live period, since it stops being doc-shaped once real period state exists on disk. `ebfdda0` changes what three member-facing surfaces tell a contributor - see below. |
+
 | `528855b` | **Licensing, per your decision.** MIT (`LICENSE`) for code, CC BY 4.0 (`LICENSE-DOCS`) for documents, Copyright (c) 2026 Zaal Panthaki / BCZ Strategies LLC / The ZAO. README gains a Licensing section; the pending flag is gone. Worth one look before push: this is the commit that sets the terms under which everything else in the branch can be reused. |
 
 ### On the whitepaper commits specifically
@@ -157,6 +159,36 @@ Two judgement calls inside that, both reversible:
 - **The streak number is 110 everywhere**, taken from the community's own
   period counter. Nothing in this repo corroborates it off-chain and the chain
   cannot. If you have a better source, it changes one number in six chapters.
+
+---
+
+## On the frapp-gh member-facing copy (`ebfdda0`)
+
+Worth your eye because it is the only commit on this branch that changes what a
+contributor is told they are earning.
+
+All three surfaces - session Discussion, results comment, leaderboard page -
+previously said a version of **"no Respect tokens were minted"**. That is a
+timing statement; it reads as *not yet*. The honest statement is *not that*:
+Respect awarded by frapp-gh is a record of peer-ranked work, it is on neither
+the ZOR nor the OG ledger, it carries no vote, it counts toward no quorum, and
+it appears in none of the on-chain figures this repo quotes.
+
+The gap mattered because every other signal argued the other way. A member sees
+the curve they recognise from Monday, sees a number against their name, and
+reads "no tokens minted" as a mint that has not happened yet.
+
+All three now make the category statement, and each says the settle question is
+an open decision rather than a scheduled step - so the copy does not promise
+what Phase 2 has not decided. Tests assert both halves: the statement must be
+present, and the surfaces must not regress to implying a pending mint.
+
+**The decision underneath it is still open and is yours.** Whether async Respect
+should ever settle on-chain, and under what review, is not a tooling question.
+If it ever does settle, it lands in the same ledger the Monday game settles
+into, which promotes the anti-collusion work on `ROADMAP.md` L3 from a
+refinement to a prerequisite: an async path that can be gamed mints governance
+weight, not just an inflated leaderboard.
 
 ---
 
