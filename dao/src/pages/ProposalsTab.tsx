@@ -38,9 +38,7 @@ function matches(p: Proposal, filter: Filter): boolean {
   return p.stage === 'Failed' || p.stage === 'ExecutionFailed';
 }
 
-interface Props { wallet: string | null; }
-
-export default function ProposalsTab({ wallet: _wallet }: Props) {
+export default function ProposalsTab() {
   const [filter, setFilter] = useState<Filter>('All');
   const [open, setOpen] = useState<string | null>(null);
 

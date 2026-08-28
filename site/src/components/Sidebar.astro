@@ -205,12 +205,3 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '');
     .sidebar { display: none; }
   }
 </style>
-
-<script type="module" is:inline>
-// Note: render of SidebarNode is recursive; emit inline below via Astro fragment.
-</script>
-
-<style>
-  /* The SidebarNode is inlined below via a fragment. Astro recursive components
-     require a tiny dedicated file; for simplicity we expand 3 levels inline. */
-</style>

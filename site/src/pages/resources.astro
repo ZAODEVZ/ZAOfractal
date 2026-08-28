@@ -1,17 +1,39 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { marked } from 'marked';
+import sanitizeHtml from 'sanitize-html';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-// Inline-render RESOURCES.md from the parent repo using marked
+// Inline-render RESOURCES.md from the parent repo using marked.
+// marked does NOT sanitize, so its output is passed through sanitize-html
+// before set:html. This keeps a careless or malicious markdown PR from
+// injecting <script>, event-handler attributes, or javascript: URIs into
+// the docs domain. The CSP in vercel.json is the second line of defense.
 const filePath = path.resolve('../RESOURCES.md');
 let html = '';
 try {
   const md = await fs.readFile(filePath, 'utf-8');
   // Strip the leading H1 since we render our own
   const stripped = md.replace(/^#\s.+$/m, '').trim();
-  html = await marked.parse(stripped);
+  const rawHtml = await marked.parse(stripped);
+  html = sanitizeHtml(rawHtml, {
+    allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img', 'h1', 'h2'],
+    allowedAttributes: {
+      ...sanitizeHtml.defaults.allowedAttributes,
+      a: ['href', 'name', 'target', 'rel', 'title'],
+      img: ['src', 'alt', 'title'],
+      th: ['align'],
+      td: ['align'],
+      '*': ['class', 'id'],
+    },
+    // Drops javascript:, data: (for hrefs), and other unsafe URL schemes.
+    allowedSchemes: ['http', 'https', 'mailto'],
+    // Harden any links that survive; noopener blocks reverse-tabnabbing.
+    transformTags: {
+      a: sanitizeHtml.simpleTransform('a', { rel: 'noopener noreferrer' }),
+    },
+  });
 } catch (e) {
   html = '<p>RESOURCES.md not found at expected path.</p>';
 }

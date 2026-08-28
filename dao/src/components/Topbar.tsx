@@ -1,19 +1,11 @@
 import React from 'react';
-import { shortAddr } from '../lib/format';
 import { FRAPPS_URL } from '../lib/constants';
 
-interface Props {
-  wallet: string | null;
-  onConnect: (addr: string) => void;
-  onDisconnect: () => void;
-}
-
-export default function Topbar({ wallet, onConnect, onDisconnect }: Props) {
-  const handleConnect = () => {
-    const mock = prompt('Enter your wallet address:');
-    if (mock?.startsWith('0x')) onConnect(mock);
-  };
-
+// This dashboard is read-only: it reads Respect balances and proposals from the
+// ornode and does not sign or send anything. Wallet connection and every
+// governance action (submitting results, voting) happen on frapps.xyz, so we
+// link out there rather than ask for an address we cannot verify.
+export default function Topbar() {
   return (
     <header className="topbar">
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -21,17 +13,15 @@ export default function Topbar({ wallet, onConnect, onDisconnect }: Props) {
           ZAO <span>fractal</span>
         </div>
         <span className="pill pill-orange" style={{ fontSize: '0.68rem' }}>OP Mainnet</span>
+        <span
+          className="pill pill-dim"
+          style={{ fontSize: '0.68rem' }}
+          title="This dashboard only reads on-chain data. Governance actions happen on frapps.xyz."
+        >
+          read-only
+        </span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-        <a
-          href={FRAPPS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-secondary"
-          style={{ fontSize: '0.8rem', padding: '0.35rem 0.85rem' }}
-        >
-          frapps.xyz ↗
-        </a>
         <a
           href="https://zaofractal.vercel.app"
           target="_blank"
@@ -41,15 +31,15 @@ export default function Topbar({ wallet, onConnect, onDisconnect }: Props) {
         >
           Docs ↗
         </a>
-        {wallet ? (
-          <button className="btn btn-secondary" onClick={onDisconnect} style={{ fontSize: '0.82rem' }}>
-            {shortAddr(wallet)} ✕
-          </button>
-        ) : (
-          <button className="btn btn-primary" onClick={handleConnect}>
-            Connect Wallet
-          </button>
-        )}
+        <a
+          href={FRAPPS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary"
+          style={{ fontSize: '0.8rem', padding: '0.35rem 0.85rem' }}
+        >
+          Open app on frapps.xyz ↗
+        </a>
       </div>
     </header>
   );
