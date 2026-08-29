@@ -1,3 +1,6 @@
 .vercel
 .env*.local
 .gstack/
+.env*
+.serena/
+node_modules/
