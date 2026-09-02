@@ -134,6 +134,76 @@ This matters because if peers are bad at judging contribution, the entire system
 
 ---
 
+## The Franchise Closes Behind You
+
+Measured 2026-09-02; see `research/08-zao-fractal-measured-state.md` sections 8
+and 10.
+
+OREC reads OG for vote weight. OG froze in December 2025. ZOR, the token every
+weekly award now issues, confers no governance weight at all. The consequence
+is arithmetic rather than behavioural: **no new voter can be created under the
+current configuration.**
+
+Of the 161 members in `respect_members` holding a wallet, 94 hold OG only, 21
+hold both, 18 hold neither, and **28 hold ZOR only and therefore have no vote**.
+Measured across the whole ZOR era, of the 70 members who have ever received an
+award, **47 - two-thirds - cannot vote.** That share has risen monotonically:
+25% at period 67, 52% by 74, 58% by 80, 62% by 100, 67% by period 111. It can
+only continue rising, because every new participant joins the denominator and
+never the numerator.
+
+The highest-earning member with no vote holds 738 ZOR, which is more than most
+voting members hold in OG, against a `minWeight` of 1000 to pass a proposal.
+
+The dashboard does not surface this. `computeRespectWeight` sums OG + ZOR and
+labels the result "weight"; for those 28 members that figure is lifetime
+earnings, not voting power, and the two render identically.
+
+Nothing here is a malfunction. Every component does what it says. It is a
+design consequence of freezing the governance ledger while continuing to issue
+a non-governance reward, and it is the single largest gap between what the
+Respect Game promises participants and what it delivers.
+
+## Respect Earned and Never Issued
+
+Measured 2026-09-02; see `research/08-zao-fractal-measured-state.md` section 11.
+
+The Airtable `Respect` table carries one column per meeting. **"ZAO Fractal 71"
+has 6 members scored and "ZAO Fractal 72" has 4.** Neither period has any mint
+on chain. Ten member-awards from November 2025 were played for, scored, and
+never issued, and no system tracks that they are outstanding.
+
+Period 103 has no mints and no Airtable column, but Airtable's per-meeting
+columns stop at fractal 98, so its absence there is not evidence either way.
+Resolving it needs the Discord history.
+
+Related: in the range where both records overlap, periods 67 to 98, each source
+holds meetings the other lacks - the chain has period 73 and Airtable does not;
+Airtable has 71 and 72 and the chain does not. **There is no single complete
+record of the ZAO fractal.**
+
+## Infrastructure Single-Points-of-Failure: Two Measured Instances
+
+The section above names this class. Two concrete instances, both measured
+2026-09-01.
+
+**The recorder had no credentials for five months.** The deployed bot's `.env`
+contains `ALCHEMY_API_KEY`, `DISCORD_TOKEN`, `FRACTAL_BOT_WEBHOOK_SECRET` and
+`WEB_WEBHOOK_URL`, and no Supabase credentials at all. Its only write path was
+a webhook documented in its own source as "fire-and-forget semantics (10s
+timeout)". Nothing has been written to `fractal_sessions` since 2026-03-23 and
+nobody noticed for five months, because nothing depended on the recording
+strongly enough to fail visibly.
+
+**One key mints everything.** Every one of the last twelve ZOR mints was sent
+by `0x7234c36a71ec237c2ae7698e8916e0735001e9af`, which holds 3094 OG against a
+`minWeight` of 1000 - clearing the passing threshold three times over, alone,
+every week. If that key is lost, no Respect can be minted by anyone, since ZOR's
+owner is OREC and OREC requires a passed proposal. `ch10`'s milestone
+"Establish 3+ Signer Committee for OREC", dated 2026-06-30, is what this was
+for. Zaal was shown the measurement on 2026-09-01 and chose to accept the risk
+for now; recorded here so the acceptance is visible.
+
 ## Sources
 
 - **05-critiques-failure-modes.md** (democracy fatigue research, visibility bias invisibility study, Sybil attack literature, cold-start inequality DAOstar research, scaling limits Dunbar's number, dormancy risk, subjectivity in ranking)

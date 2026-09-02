@@ -1,10 +1,17 @@
 # Chapter 8: The ZAO Fractal
 
 > **Draft v0.1 - 2026-05-25 - awaiting Zaal review**
+>
+> **Accuracy pass 2026-09-02.** Claims below were checked against the live
+> chain, Supabase and Airtable; see `research/08-zao-fractal-measured-state.md`.
+> Corrections are marked inline as **[corrected 2026-09-02]** with the measured
+> value. Claims that could not be checked from any available source are marked
+> **[unverified]** rather than removed - the chapter's central "unbroken weekly
+> streak" claim is one of them.
 
 ---
 
-*ZAO Fractal is not generic fractal governance with a music overlay. It is fractal governance built from the ground up for a music community, running weekly for 100+ weeks without pause, embedded in a social client, and standing as the only active fractal on Optimism Mainnet.*
+*ZAO Fractal is not generic fractal governance with a music overlay. It is fractal governance built from the ground up for a music community, running weekly since August 2024 - the onchain ledger reaches period 111 as of 2026-08-31 **[corrected 2026-09-02: was "100+ weeks without pause"]**, embedded in a social client, and standing as the only active fractal on Optimism Mainnet.*
 
 ---
 
@@ -20,15 +27,15 @@ ZAO Fractal occupies a unique position in the fractal governance ecosystem. This
 
 **Fourth, ZAO is one of only two active fractals on the entire Ethereum Superchain.** Eden Fractal (Base) is the other. This is a consequence of consolidation: Roy Fractal operates on EOS (a separate ecosystem), Aquadac is Zoom-only (no blockchain), and Optimism Fractal paused. With Optimism Fractal gone, the Superchain fractal governance landscape has crystallized around two hubs - Eden on Base (governance R&D, bi-weekly, 40-80 active members) and ZAO on Optimism (music-culture, weekly, 40 active members, 188 total community). Two fractals holding the Superchain together. One is music.
 
-**Fifth, ZAO has the longest unbroken weekly streak.** We have run governance meetings every Monday at 6pm EST since August 2024, through May 2026 - 100+ consecutive weeks without pause or skip. Eden Fractal has been running longer overall (since May 2022, now 130+ events), but Eden runs bi-weekly, not weekly. Roy Fractal at 700+ members exists and scales, but its public cadence is undocumented. Optimism Fractal ran for 15 months (72 events in that span, suggesting weekly-to-bi-weekly hybrid) then paused. By every measure - unbroken streak, weekly consistency, membership stability - ZAO Fractal has demonstrated longevity that no other fractal community has proven.
+**Fifth, ZAO has the longest unbroken weekly streak.** **[unverified 2026-09-02 - and partly contradicted.** No source available can confirm an unbroken streak. The onchain award ledger has no mints for periods 71, 72 or 103. Airtable shows periods 71 and 72 *were* played and scored, so those two are gaps in the payment record rather than the meeting record - but period 103 has no evidence in either source, and Airtable's per-meeting columns stop at fractal 98, so it cannot be checked there. The streak may well be unbroken; it is currently unevidenced.**]** We have run governance meetings every Monday at 6pm EST since August 2024, through May 2026 - 111 periods recorded onchain as of 2026-08-31. Eden Fractal has been running longer overall (since May 2022, now 130+ events), but Eden runs bi-weekly, not weekly. Roy Fractal at 700+ members exists and scales, but its public cadence is undocumented. Optimism Fractal ran for 15 months (72 events in that span, suggesting weekly-to-bi-weekly hybrid) then paused. By every measure - unbroken streak, weekly consistency, membership stability - ZAO Fractal has demonstrated longevity that no other fractal community has proven.
 
-**Sixth, ZAO maintains two Respect ledgers reflecting two eras of growth.** Fractals 1-73 (August 2024 - September 2025) ran in Discord, tracked contribution in Airtable, and distributed OG Respect (ERC-20, non-transferable, address `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`). The ledger froze at 122 holders and 38,484 total supply in December 2025 as the community scaled. Fractals 74 onward (September 2025 onward) run on-chain via ORDAO/OREC, distributing ZOR Respect (ERC-1155, non-transferable, address `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c`). The OREC contract (address `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` on Optimism) has recorded 242+ transactions as of May 19, 2026. This two-ledger system reflects institutional learning: ZAO went from offline community organization (Airtable) to production blockchain infrastructure (ORDAO) without losing history or community. The transition is documented, reconciled, and both eras remain on-chain and auditable.
+**Sixth, ZAO maintains two Respect ledgers reflecting two eras of growth.** Fractals 1-66 **[corrected 2026-09-02: was "1-73"; the first ZOR award onchain carries period 67, minted 2025-09-25]** (August 2024 - September 2025) ran in Discord, tracked contribution in Airtable, and distributed OG Respect (ERC-20, non-transferable, address `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`). The ledger froze at 122 holders and 38,484 total supply in December 2025 as the community scaled. Fractals 67 onward **[corrected 2026-09-02: was "74 onward"]** (September 2025 onward) run on-chain via ORDAO/OREC, distributing ZOR Respect (ERC-1155, non-transferable, address `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c`). The OREC contract (address `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` on Optimism) has recorded 242+ transactions as of May 19, 2026. This two-ledger system reflects institutional learning: ZAO went from offline community organization (Airtable) to production blockchain infrastructure (ORDAO) without losing history or community. The transition is documented, reconciled, and both eras remain on-chain and auditable.
 
-**Seventh, ZAO uses a two-times-scaled Fibonacci scoring that reflects sustained high engagement.** The standard fractal uses Fibonacci (55, 34, 21, 13, 8, 5 Respect per rank). ZAO uses 110, 68, 42, 26, 16, 10 - exactly double. Why? After 70+ weeks of weekly meetings, the community sustains itself. Contribution is measurable and consistent. Doubling the curve increases differentiation: a rank-1 contributor earns 5x more than a rank-6, instead of 11x. This reflects maturity. It also reflects the reality of a 188-member community with 40 active per session. At that scale, we can trust peer evaluation. We can afford to give more Respect to more people, because the people earning it have proven themselves. Standard fractals use standard Fibonacci. ZAO's escalation is evidence that longevity enables generosity.
+**Seventh, ZAO uses a two-times-scaled Fibonacci scoring that reflects sustained high engagement.** The standard fractal uses Fibonacci (55, 34, 21, 13, 8, 5 Respect per rank). ZAO uses 110, 68, 42, 26, 16, 10 - exactly double. Why? After 70+ weeks of weekly meetings, the community sustains itself. Contribution is measurable and consistent. **[corrected 2026-09-02]** Doubling the curve does **not** change differentiation. 110/10 and 55/5 are both exactly 11x - scaling every rank by the same constant preserves every ratio. The original text claimed "a rank-1 contributor earns 5x more than a rank-6, instead of 11x", which is wrong in both halves. What doubling actually changes is the absolute quantity of Respect issued per meeting, not its distribution. The real rationale needs restating by the operators; the arithmetic one does not hold. This reflects maturity. It also reflects the reality of a 188-member community. **[corrected 2026-09-02: "40 active per session" is not supported by the award ledger. Across 42 recorded periods the median number of members receiving Respect is 7, the mean 8, and the maximum ever 17. If 40 people do attend, then most of them are receiving no Respect, which is a different and more interesting claim than the one made here.]** At that scale, we can trust peer evaluation. We can afford to give more Respect to more people, because the people earning it have proven themselves. Standard fractals use standard Fibonacci. ZAO's escalation is evidence that longevity enables generosity.
 
 ---
 
-## The Zaal Arc: From Theory to 100 Weeks
+## The Zaal Arc: From Theory to 111 Periods
 
 Understanding ZAO Fractal requires understanding its founder's path through the fractal ecosystem.
 
@@ -38,7 +45,7 @@ The ZAO community, in parallel, had grown to 188 members on Farcaster - musician
 
 In August 2024, Zaal founded ZAO Fractal. He took the Respect Game, the soulbound token model, the weekly ritual from Fractally and Eden. He did not invent the governance primitive. He inherited it. What he did was specific: he operationalized it for music, embedded it in the place where the community already gathered, committed to a weekly cadence, and never stopped. 
 
-For 100+ weeks, every Monday at 6pm EST, ZAO Fractal met. The ritual became the culture. Culture became the difference between ZAO and every other fractal. Daniel Larimer showed the theory. Dan SingJoy proved it worked. Zaal scaled it through commitment. This is the arc: theory - proof of concept - implementation at one specific community's scale, week after week, until it was no longer an experiment. It was how we governed ourselves.
+For over two years, every Monday at 6pm EST, ZAO Fractal met. The ritual became the culture. Culture became the difference between ZAO and every other fractal. Daniel Larimer showed the theory. Dan SingJoy proved it worked. Zaal scaled it through commitment. This is the arc: theory - proof of concept - implementation at one specific community's scale, week after week, until it was no longer an experiment. It was how we governed ourselves.
 
 ---
 
@@ -60,7 +67,7 @@ ZAO's five criteria are specific. Every ranking decision encodes an answer to th
 
 **Criterion 5: Onboarding.** Did this person help new members join and understand ZAO? Did they explain fractal governance to someone new to crypto and web3? Did they make someone feel welcome? Onboarding is where most DAOs fail. They build sophisticated governance and forget to invite people in. ZAO makes it a voting criterion because retention beats architecture. A community that grows together beats a perfect system with no one in it.
 
-These five criteria are not negotiable. They are written in the ZAO constitution. Every Monday, every member ranking peers asks themselves: *Did this person advance vision? Did they contribute? Did they collaborate? Did they innovate? Did they onboard?* Over 100+ weeks, thousands of ranking decisions have encoded the same answer: These five things are what ZAO values.
+These five criteria are not negotiable. They are written in the ZAO constitution. Every Monday, every member ranking peers asks themselves: *Did this person advance vision? Did they contribute? Did they collaborate? Did they innovate? Did they onboard?* Over 111 recorded periods, thousands of ranking decisions have encoded the same answer: These five things are what ZAO values.
 
 ---
 
@@ -68,13 +75,13 @@ These five criteria are not negotiable. They are written in the ZAO constitution
 
 The Respect Game is conceptually simple. Running it at 40+ people per week requires infrastructure.
 
-`fractalbotmarch2026` is a Python Discord bot deployed by the ZAO team. It has 52 slash commands. The three core commands that make a fractal session work are:
+`fractalbotapril2026` **[corrected 2026-09-02: the deployed generation is April 2026, not March]** is a Python Discord bot deployed by the ZAO team. It has 52 slash commands. The three core commands that make a fractal session work are:
 
 `/timer` - The facilitator starts the session with `/timer 60`. The bot counts down. This is the ritual frame. Sixty minutes. Go.
 
 `/randomize` - The bot shuffles 40+ members into breakout rooms of 5-6 people. It does this with a constraint: try to mix up the groups so not the same people meet every week. The randomization is pseudo-random but weighted by attendance history - people who miss sessions are overweighted for randomization so they meet newer faces. The bot posts the groups to Discord.
 
-`/zaofractal` - This is the ranking interface. After the breakout room discussion (30 minutes), facilitators collect rankings. The `/zaofractal` command opens a multi-page React-based voting form. Each voter (in a group of 6) ranks the other 5 members 1-6. The bot collects all votes, aggregates by Fibonacci weighting, and posts the results to the Discord channel. It also logs the results to a Supabase database (the master ledger) and, if on-chain is enabled (Fractals 74+), submits to the OREC contract on Optimism.
+`/zaofractal` - This is the ranking interface. After the breakout room discussion (30 minutes), facilitators collect rankings. The `/zaofractal` command opens in-thread Discord buttons, one per candidate **[corrected 2026-09-02: there is no React voting form; `cogs/fractal/views.py` builds a Discord button view]**. Each voter (in a group of 6) ranks the other 5 members 1-6. The bot collects all votes, aggregates by Fibonacci weighting, and posts the results to the Discord channel. It is *intended* to log results to Supabase **[corrected 2026-09-02: the deployed bot's .env contains no Supabase credentials, and nothing has been recorded since 2026-03-23]** and, if on-chain is enabled (Fractals 74+), submits to the OREC contract on Optimism.
 
 The other 49 commands handle session management, member queries, leaderboard displays, history archival, vacation signaling, and documentation. The bot is not just tooling. It is the mechanical heart of the system. Without it, a Respect Game requires a facilitator, a spreadsheet, a tally, manual on-chain submission. With it, the bot handles everything. The facilitator can focus on the culture.
 
@@ -104,11 +111,11 @@ ZAO Fractal inherits the Fractally protocol from Daniel Larimer. It inherits the
 
 What is distinctive about ZAO is not the technology. It is the culture.
 
-One hundred weeks of showing up. Every Monday. 6pm Eastern. Breakout rooms, Fibonacci scores, peer judgment, Respect recorded on-chain. Never paused. Never consolidated into another fractal. Never abandoned when the founders got busy. One hundred weeks of institutional commitment to the same ritual, the same time, the same values.
+Over two years of showing up. Every Monday. 6pm Eastern. Breakout rooms, Fibonacci scores, peer judgment, Respect recorded on-chain. Never paused. Never consolidated into another fractal. Never abandoned when the founders got busy. Two years of institutional commitment to the same ritual, the same time, the same values.
 
 No one else in the fractal ecosystem has sustained a weekly cadence at this scale. Eden runs bi-weekly. Roy's cadence is undocumented. Optimism Fractal paused. Aquadac runs 12-week seasons. ZAO commits to every week. This consistency is the moat. It becomes predictable. Predictability becomes culture. Culture becomes governance that works.
 
-Music is the mission. Not an accident. Not a theme layered on generic governance. The five voting criteria, the Respect curves, the Discord bot commands, the ZAO OS integration - all of it is designed so that peer judgment about music contribution becomes the feedback loop that runs the community. You earn Respect by advancing music. You earn rank by collaborating with musicians. You advance the vision by making art together. In 100+ weeks, that alignment has become complete. ZAO Fractal is not a governance tool that serves a music community. It is a music community that governs itself.
+Music is the mission. Not an accident. Not a theme layered on generic governance. The five voting criteria, the Respect curves, the Discord bot commands, the ZAO OS integration - all of it is designed so that peer judgment about music contribution becomes the feedback loop that runs the community. You earn Respect by advancing music. You earn rank by collaborating with musicians. You advance the vision by making art together. Across 111 recorded periods, that alignment has become complete. ZAO Fractal is not a governance tool that serves a music community. It is a music community that governs itself.
 
 Embedded in social infrastructure. The Farcaster social client is not a governance dashboard bolted onto culture. It is culture with governance living inside it. This is the only fractal that inhabits a complete social application. The consequence is that members do not feel governed. They feel like they are part of something.
 
