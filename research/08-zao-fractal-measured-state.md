@@ -93,8 +93,17 @@ Every one of the last twelve ZOR mints was sent by
 alone, every week.
 
 `research/onchain-governance-audit-2026-07-21.md` independently lists Zaal's OG
-holding as 3094. The addresses therefore match: **the sole relayer is the
-founder's own wallet**, not a service key.
+holding as 3094. The addresses therefore match: that wallet is the founder's,
+not a service key.
+
+**CORRECTED 2026-09-02.** "Sole relayer" was the wrong frame. OREC's `execute`
+is permissionless: the burn transaction in section 12 was sent by
+`0xaed620c450911c38714e666cd84137767e3d6286`, which holds **zero** OG, and it
+executed successfully. So relaying is replaceable by anyone and is not the
+risk. The risk is narrower and sharper than first stated: **one wallet holds
+enough vote weight to pass any proposal alone**, and it is the same wallet that
+in practice does the relaying. Losing the key stops nothing being executed; it
+stops anything being *passed*.
 
 That sharpens the risk rather than softening it. If that key is lost, no
 Respect can be minted by anyone, because ZOR's owner is OREC and OREC needs a
@@ -379,10 +388,58 @@ what was minted*, which is not the same as what was played. Reconstructing the
 full history needs the chain, the Airtable, and Discord, and even together they
 have a hole at period 103.
 
-## 12. Still open
+## 12. Six periods currently carry no Respect
+
+A correction to sections 2 and 11, found on 2026-09-02 by looking for burns
+rather than mints.
+
+**OG has never been burned.** Zero transfers to the zero address, ever. The
+ledger is static as well as frozen.
+
+**ZOR has 28 burns, all in one transaction.**
+`0x12c1c2514fc04d890ada3d96b4b0ca9f55aac5ef46b8eee357be9d7891eba0f1`, on
+2025-10-24, executed against the OREC executor with the same selector
+`0xfd165a73` used for every award.
+
+What it burned:
+
+| Period | Awards burned | Awardees that period |
+|---|---|---|
+| 67 | 12 | 12 |
+| 68 | 10 | 10 |
+| 69 | 3 | 3 |
+| 70 | 3 | 3 |
+
+**Every award from the first four ZOR periods, reversed in full.** And none of
+the four has been re-minted since: their only mint dates are 2025-09-25 through
+2025-10-17, all before the burn.
+
+Combined with section 11 - periods 71 and 72 were played and never minted -
+**periods 67 to 72, six consecutive meetings, currently carry no live Respect
+at all.** Four were issued and revoked; two were never issued.
+
+Whether the reversal was intended (bad data, wrong amounts, a re-run under
+different period numbers) or a mistake is not answerable from the chain. Note
+that period 73 was minted on 2025-11-10, two weeks after the burn, with 10
+awardees, and periods 74 and 75 carry 17 each - unusually large. That is
+consistent with a re-issue under new numbers, and consistent with several other
+things. **Do not treat it as established.** It needs an operator who was there.
+
+### 12.1 What this does to the earlier sections
+
+- Section 2's per-period table counts **mint events**, some of which were later
+  reversed. It is a record of what was issued, not of what is currently held.
+- The "70 distinct ZOR recipients" in section 10 likewise counts anyone ever
+  minted to, including the 28 reversed awards.
+- Neither changes section 8 or 10's conclusions, which are computed from OG
+  balances and are unaffected by ZOR burns.
+
+## 13. Still open
 
 
 - ~~The Airtable tokens base, still unreached.~~ **CLOSED, section 7.**
+- **The 2025-10-24 burn**, new: why were periods 67-70 reversed in full, and
+  were they re-issued under other numbers? Needs an operator, not the chain.
 - ~~Periods 71, 72, 103.~~ **Closed for 71 and 72, section 11**: both ran and
   were never minted. **Period 103 remains open** and needs Discord history;
   neither the chain nor Airtable can answer it.
