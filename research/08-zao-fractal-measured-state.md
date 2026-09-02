@@ -10,8 +10,9 @@ document is only the ZAO part, and only the parts that were read from the chain
 or the database.
 
 It extends `research/onchain-governance-audit-2026-07-21.md`, which remains
-correct where it overlaps. Three things that audit listed as unreachable are
-resolved here, and section 4 says how.
+correct where it overlaps. All three things that audit listed as unreachable
+are resolved here (section 4), and two of its open flags are closed (sections 7
+and 8).
 
 ---
 
@@ -115,7 +116,8 @@ from this machine, and the credentials were in
 - *"ZAOOS Supabase (`respect_members`, `wallets`) ... not reachable from this
   session"* - reachable via REST with the service role key in the same file.
   Project `efsxtoxvigqowjhgcbiz`.
-- *"the ORDAO tokens Airtable was not reachable"* - still not reached. Open.
+- *"the ORDAO tokens Airtable was not reachable"* - **reached, section 7.** The
+  base id is not in any env file; it is hardcoded in ZAO OS source.
 
 And one correction to that audit's framing: **`wallets` does not exist.** It is
 named as a table to reach; it is not in the schema. Only `respect_members`,
@@ -228,6 +230,84 @@ one wallet until the December freeze. That is a materially different story from
 the one the whitepaper tells, and it should be checked against the operators
 before being written into `ch06`.
 
+## 7. The two registries, reconciled (2026-09-02)
+
+Closes section 6's first open item. The ORDAO tokens Airtable is reachable:
+base `appTUNG04rjZ9kSF4`, via `AIRTABLE_TOKEN` in
+`~/Documents/ZAO OS V1/.env.local`. Tables: `Summary`, `Respect`, `Misc`,
+`Fractal Hosts`, `ZAO Festivals`, `Wallet Data`. The base id is hardcoded at
+`ZAO OS V1/src/app/api/admin/respect-import/route.ts:10`, not in any env file,
+which is why it was not found before.
+
+`AIRTABLE_PAT` returns 403 and `AIRTABLE_TOKEN` works; neither can list bases
+(no `schema.bases:read` scope), only read records.
+
+| | records | valid wallets |
+|---|---|---|
+| Airtable `Wallet Data` | 187 | 159 |
+| Supabase `respect_members` | 188 | 161 |
+
+Reconciled on lowercased wallet address:
+
+| | count | meaning |
+|---|---|---|
+| in both | 147 | agree |
+| **Airtable only** | **12** | on the public leaderboard, invisible to the bot |
+| **Supabase only** | **14** | known to the bot, absent from the leaderboard |
+| same wallet, different name | 2 | |
+
+**Roughly 15% of the membership exists in exactly one of the two systems.**
+The counts being nearly equal (187 vs 188) hides this: it looks like two copies
+of one list, and it is not.
+
+### 7.1 The drift has a face
+
+`0xf73485a6...` is **`Iman`** in Airtable and **`0xf734...a8ea`** - an unnamed
+hex placeholder - in `respect_members`.
+
+That wallet is a recipient in period 110's award transaction
+`0x10d6878532...` on 2026-08-25, at rank 4, level 3, 26 Respect.
+
+So a member earns Respect, is named correctly on the public leaderboard, and is
+anonymous to the bot that runs the game. Any bot feature that resolves people
+by name - roster capture, `/mystats`, a welcome message - cannot see him.
+
+The other mismatch is cosmetic: `0$` versus `0$ (OS)`.
+
+## 8. The OG/ZOR numbering overlap, closed
+
+Closes the 2026-07-21 audit's open flag 4, which read: *OG "fractals 1-73
+through Sep 2025" but froze Dec 2025; ZOR "74+ from Sep 2025". 3-month overlap
+unexplained.*
+
+Full ZOR mint ledger read from genesis via `alchemy_getAssetTransfers`
+(`order: asc`, paged to exhaustion - the entire ZOR history fits in one page of
+1000 transfers).
+
+**ZOR awards begin at period 67, on 2025-09-25.** Not 74. Periods 1 through 66
+carry no ZOR award at all.
+
+Periods present: 67 through 111, **except 71, 72 and 103**, plus an anomalous
+period `0`.
+
+Three corrections and one new question follow.
+
+- The documented "ZOR from 74" is **wrong by seven periods**; the chain says 67.
+- The gap is **not just period 103**. Periods **71 and 72** are also empty, and
+  no document mentions them.
+- **Period `0` has awards dated 2026-08-18**, which is not a plausible first
+  fractal. Something minted with an unset period number. Unexplained, and worth
+  chasing because it means the period field is not always populated correctly.
+
+On the overlap itself: the 20 most recent OG mints all went to a **single
+address**, `0x7234c36a...`, in bulk amounts (2852, 2559, 2000, 1000, 110, 50),
+the last on 2025-12-09. Those are not per-member fractal awards. So the
+"overlap" is not two award ledgers running concurrently - it is ZOR taking over
+per-member awards from period 67 while OG continued to receive bulk mints to
+one wallet until the December freeze. That is a materially different story from
+the one the whitepaper tells, and it should be checked against the operators
+before being written into `ch06`.
+
 ## 6. Still open
 
 - ~~The Airtable tokens base, still unreached.~~ **CLOSED, section 7.**
@@ -243,3 +323,5 @@ before being written into `ch06`.
   corrections to the documented version.
 - **`ch08-the-zao-fractal.md` is stale**: it says "100 Weeks" and the chain is
   at period 111.
+
+
