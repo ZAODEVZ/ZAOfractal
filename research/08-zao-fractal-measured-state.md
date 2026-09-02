@@ -150,8 +150,9 @@ header comment reads "fire-and-forget semantics (10s timeout)".
 So the game ran correctly every week for five months and recorded nothing, and
 nothing depended on the recording strongly enough for anyone to notice.
 
-**The chain is therefore the only complete ledger of the ZAO fractal.** Every
-award since period 1 is on Optimism. What exists only in Supabase, and is
+**The chain is the only complete ledger of what was minted** - though section
+11 shows that is not the same as what was played, since periods 71 and 72 were
+scored in Airtable and never minted at all. What exists only in Supabase, and is
 therefore lost for the 2026-03-23 to 2026-09-02 window, is the human layer:
 names, Discord ids, group names, facilitator, thread links, and anyone who
 attended and earned nothing.
@@ -301,13 +302,90 @@ ZOR counts it.
 Correcting section 7: the period gaps are 71, 72 and 103; period 0 is not a gap
 but a stray.
 
-## 10. Still open
+## 10. Governance drift: two-thirds of earners cannot vote
+
+Extends section 8 from a snapshot to a trend, and answers whether it is
+getting worse. It is, and the reason is structural rather than behavioural.
+
+**The weekly flow is flat.** Of every period's awardees, the share holding zero
+OG has not moved: 34% across periods 67-89, and 34% across periods 90-111. A
+third of each week's awards have gone to people with no vote, steadily, for a
+year. No trend.
+
+**The accumulated stock is not flat.** Of everyone who has ever received a ZOR
+award, up to and including each period:
+
+| By period | Date | Members ever awarded | With no vote | Share |
+|---|---|---|---|---|
+| 67 | 2025-09-25 | 12 | 3 | 25% |
+| 74 | 2025-11-17 | 27 | 14 | 52% |
+| 80 | 2025-12-29 | 38 | 22 | 58% |
+| 90 | 2026-03-26 | 52 | 31 | 60% |
+| 100 | 2026-06-08 | 61 | 38 | 62% |
+| **111** | **2026-08-31** | **70** | **47** | **67%** |
+
+**Two-thirds of everyone who has ever earned Respect in the ZOR era cannot
+vote**, and the figure rises monotonically.
+
+It has to. OG is the governance token, OG froze in December 2025, and ZOR
+confers no vote. **No new voter can ever be created under the current
+configuration.** Every new participant is added to the denominator and never to
+the numerator, so the share converges to 100% as the community grows. Nothing
+anyone does at a meeting can change it.
+
+Method: ZOR mints from genesis via `alchemy_getAssetTransfers`, joined to a
+batched `balanceOf` read of OG for all 70 distinct recipients. Caveat: OG
+balances are today's. Since OG froze in December 2025 they are static for any
+period after that, and the late OG mints went in bulk to one address rather
+than to awardees, so this is a fair proxy for the earlier periods too - but it
+is a proxy, not a point-in-time read.
+
+## 11. Two meetings were played and never paid
+
+Closes the periods 71, 72 and 103 question, using the Airtable `Respect` table,
+which carries one column per meeting (186 member rows, 192 columns, 80 of them
+per-fractal, covering fractals 14 to 98).
+
+| Period | Airtable | Chain | Conclusion |
+|---|---|---|---|
+| 71 | **"ZAO Fractal 71", 6 members scored** | no mints | **ran, never minted** |
+| 72 | **"ZAO Fractal 72", 4 members scored** | no mints | **ran, never minted** |
+| 103 | no column - but Airtable stops at 98 | no mints | **unknown from these sources** |
+
+**Ten member-awards from November 2025 were earned and never issued.** The
+meetings were played and scored; the Respect does not exist onchain. Whether to
+mint them now is an operator decision, not a research one, but the members
+concerned are owed and nothing currently tracks that.
+
+Period 103 cannot be resolved from either source: the chain has no mints, and
+Airtable's per-fractal columns end at 98, so its absence there is not evidence.
+Answering it needs the Discord history.
+
+### 11.1 Neither ledger is complete
+
+In the range where both sources overlap, periods 67 to 98, each one contains
+meetings the other lacks:
+
+- **Chain only:** period 73 (10 awardees, 2025-11-10). No Airtable column.
+- **Airtable only:** periods 71 and 72. No mints.
+
+Airtable is also missing columns for fractals 26, 57, 58 and 59, all below the
+chain's coverage floor of 67, so those cannot be cross-checked at all.
+
+The practical consequence: **there is no single complete record of the ZAO
+fractal.** Section 5 said the chain is the only complete ledger. That was
+wrong, and this section corrects it - the chain is the only complete ledger *of
+what was minted*, which is not the same as what was played. Reconstructing the
+full history needs the chain, the Airtable, and Discord, and even together they
+have a hole at period 103.
+
+## 12. Still open
 
 
 - ~~The Airtable tokens base, still unreached.~~ **CLOSED, section 7.**
-- ~~Period 103.~~ **Partly closed, section 8**: the gap is periods 71, 72 and
-  103, and whether each was a meeting that never ran or one never submitted is
-  still open - answering it needs the Discord history, not the chain.
+- ~~Periods 71, 72, 103.~~ **Closed for 71 and 72, section 11**: both ran and
+  were never minted. **Period 103 remains open** and needs Discord history;
+  neither the chain nor Airtable can answer it.
 - ~~Period `0`.~~ **CLOSED, section 9**: a single 1-Respect test mint.
 - ~~App-vs-chain weight.~~ **CLOSED, section 8.** 28 members have zero
   governance weight; the dashboard shows them a number that is not their vote.
