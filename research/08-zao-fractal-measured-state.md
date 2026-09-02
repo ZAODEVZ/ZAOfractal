@@ -236,18 +236,81 @@ one wallet until the December freeze. That is a materially different story from
 the one the whitepaper tells, and it should be checked against the operators
 before being written into `ch06`.
 
-## 8. Still open
+## 8. Who can actually vote (2026-09-02)
+
+Closes the app-versus-chain weight item, carried over from the 2026-07-21
+audit. Read directly: `balanceOf` on OG and `balanceOf(addr, 0)` on ZOR, for
+every one of the 161 `respect_members` rows that has a wallet.
+
+| Holding | Members | Governance weight |
+|---|---|---|
+| OG and ZOR | 21 | yes |
+| OG only | 94 | yes |
+| **ZOR only** | **28** | **none** |
+| neither | 18 | none |
+
+Members hold 37,512 of OG's 38,484 supply, and 15,684 ZOR.
+
+**Twenty-eight members have earned Respect and cannot vote on anything.** That
+is 20% of the 143 members holding any Respect at all. OREC's `respectContract`
+is OG, OG has been frozen since December 2025, and ZOR is not a governance
+token - so anyone who arrived after the freeze accumulates Respect weekly and
+accumulates no say, permanently, by construction.
+
+The dashboard does not show this. `computeRespectWeight` sums OG + ZOR and
+labels the result "weight". For these 28 people that number is not their voting
+power, it is their lifetime earnings, and the two are presented identically.
+
+The highest-earning members with no vote:
+
+| ZOR earned | Member |
+|---|---|
+| 738 | `0xf734...a8ea` |
+| 726 | Steve Strange |
+| 670 | Motomoto |
+| 498 | SwarthyHatter |
+| 482 | Leo (Civil_Monkey) |
+| 356 | XTincT |
+| 330 | Emily |
+
+**`0xf734...a8ea` is Iman** - the same wallet as section 6.1, named in Airtable
+and anonymous in `respect_members`. He is simultaneously the most-earning
+voteless member of the fractal and a member the bot cannot identify by name.
+Two independent defects landing on one person is a useful test of whether these
+findings matter in practice.
+
+For scale: 738 ZOR is more than the OG holding of most voting members, and
+`minWeight` to pass a proposal is 1000.
+
+This is not a bug in any component. Every part behaves as written. It is a
+governance design consequence that nothing currently surfaces to the people it
+affects.
+
+## 9. The period 0 anomaly, explained
+
+One award carries period 0: **1 Respect**, mint type 10, to
+`0x70a74f41e99e412657c014583544fa6ecdba4743`, on 2026-08-18, transaction
+`0x055d04485f74...`.
+
+One Respect is not on the ladder (110/68/42/26/16/10), and period 0 is not a
+real meeting. This is a **test mint left in the live ledger**. It is harmless
+to governance - ZOR carries no vote - but any tooling that derives the meeting
+list from token ids will see a phantom period 0, and any leaderboard summing
+ZOR counts it.
+
+Correcting section 7: the period gaps are 71, 72 and 103; period 0 is not a gap
+but a stray.
+
+## 10. Still open
 
 
 - ~~The Airtable tokens base, still unreached.~~ **CLOSED, section 7.**
 - ~~Period 103.~~ **Partly closed, section 8**: the gap is periods 71, 72 and
   103, and whether each was a meeting that never ran or one never submitted is
   still open - answering it needs the Discord history, not the chain.
-- **Period `0`**, new: awards dated 2026-08-18 carrying period number zero.
-- **App-vs-chain weight**, carried over from the July audit: the dashboard's
-  `computeRespectWeight` sums OG + ZOR and calls it weight, while governance
-  counts OG only. A ZOR-only member has zero voting power however much they
-  earn. Unreconciled.
+- ~~Period `0`.~~ **CLOSED, section 9**: a single 1-Respect test mint.
+- ~~App-vs-chain weight.~~ **CLOSED, section 8.** 28 members have zero
+  governance weight; the dashboard shows them a number that is not their vote.
 - ~~The OG/ZOR numbering overlap.~~ **CLOSED, section 8**, with three
   corrections to the documented version.
 - **`ch08-the-zao-fractal.md` is stale**: it says "100 Weeks" and the chain is
