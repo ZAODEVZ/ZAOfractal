@@ -86,20 +86,60 @@ dead end to avoid. That is the opposite of iteration 1's conclusion.
 one feature that genuinely appears once and never again. Its removal has no
 recorded reason, and section 3.6 explains why no such reason exists anywhere.
 
-### 3.1b The random tie break was a headline feature, not an accident
+### 3.1b CORRECTED AGAIN: the tie break was advertised but unreachable
 
-`fractalbotnov2025`'s README Overview lists, as a selling point:
+Iteration 2 of this document said the random tie break was "a deliberate,
+advertised design decision... carried forward through every generation". Zaal
+pushed back: "the tie breaker was never a thing." He is right, and this is the
+second time in one research pass that a README was allowed to stand in for
+behaviour - the exact error section 3.1 was written to warn about. Noted as a
+pattern in my own work, not just the repo's.
 
-> **Tie-Breaking**: Automatic random selection for tied votes
+What is true: `fractalbotnov2025`'s README Overview does list
+"**Tie-Breaking**: Automatic random selection for tied votes" as a headline
+feature, and `random.choice` does appear in
+`fractalbotapril2026 cogs/fractal/group.py check_for_winner`.
 
-So the random tie break in `cogs/fractal/group.py check_for_winner` was a
-deliberate, advertised design decision from November 2025, carried forward
-through every generation since.
+What is also true, and decisive: **that code cannot execute.**
 
-Zaal reversed it on 2026-09-01: "No tie break we need consensus to move
-forward." That is a reversal of a ten-month-old intentional choice, not the
-correction of an oversight. Worth recording as such, because the next person to
-read `group.py` will otherwise assume the randomness was laziness.
+`check_for_winner` recomputes the tally after every single vote and resolves
+the moment any candidate reaches `get_vote_threshold()`. Two candidates can
+therefore never hold the threshold simultaneously - vote counts move one at a
+time, and a vote *change* decrements a candidate who must already have been at
+or above the threshold, which would have resolved the round earlier.
+
+Verified by exhaustive simulation of the transcribed v1 logic on 2026-09-02:
+
+| Group size | Threshold | Sequences tried | Tie branch reached |
+|---|---|---|---|
+| 4 | 2 | 6,144 (all first-vote orderings) | 0 |
+| 6 | 3 | 400,001 | 0 |
+| 4 | 2 | 200,000 random, with vote changes | 0 |
+| 6 | 3 | 200,000 random, with vote changes | 0 |
+
+Zero, across 606,145 sequences.
+
+**The one path in is a bug.** `check_for_winner` ends:
+
+```python
+winner = discord.utils.get(self.active_candidates, id=winner_id)
+if winner:
+    await self.start_new_round(winner)
+    return
+```
+
+There is no `else`. If the winning member has left the server, `winner` is
+`None`, the round silently fails to advance, and votes keep accumulating - at
+which point a tie could form. So the tie break was reachable only as a
+consequence of an unhandled dropout, never in normal play.
+
+**What this means for the 2026-09-01 decision.** Zaal's "No tie break we need
+consensus to move forward" did not reverse a working mechanic. It removed dead
+code and replaced the thing that actually decided close rounds: with a
+threshold of exactly half for even groups (see the `majorityThreshold`
+correction in `zao-fractal-bot` PR #17), a 3-3 split in a group of six was
+settled by whichever third vote arrived first. Not a tie break - a race on
+click order. That is what was really there, and that is what got fixed.
 
 ### 3.2 ENS is the only feature that survived every generation, and v2 dropped it
 
