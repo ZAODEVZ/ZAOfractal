@@ -434,6 +434,21 @@ things. **Do not treat it as established.** It needs an operator who was there.
 - Neither changes section 8 or 10's conclusions, which are computed from OG
   balances and are unaffected by ZOR burns.
 
+### 12.2 The July audit's decay flag was already fixed
+
+That audit's open flag 1 read: *ch04 claims Respect decays to ~0 after ~230
+weeks of inactivity, but also says OG holders keep full weight forever.*
+
+Checked 2026-09-02: **no longer true.** `ch04` was last edited on 2026-07-22,
+the day after the audit, and now states plainly that "Respect ledgers are
+static - the current OG and ZOR balances do not decay", using the conditional
+throughout for the decay model it describes as "under consideration for the
+next-generation Respect token".
+
+The measurement backs it: zero OG burns ever, and ZOR's only burns are the
+single 2025-10-24 reversal. Nothing has decayed. Flag closed, and a note added
+to `ch04` recording the evidence so it does not get re-flagged.
+
 ## 13. Still open
 
 
