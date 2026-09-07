@@ -4,7 +4,18 @@ Draft v0.1 - 2026-05-25 - awaiting Zaal review
 
 ---
 
-> *The Respect Game is the weekly ceremony where five-person breakout groups reach consensus on contribution rankings. No votes are cast. No tallies. Just honest peer judgment, encoded on-chain.*
+> *The Respect Game is the weekly ceremony where small breakout groups reach consensus on contribution rankings.
+
+> **[corrected 2026-09-02]** The original read "five-person breakout groups".
+> Measured across 78 award transactions on chain, each one group's batch: the
+> median group is **4** members, the mean 4.3, the range 1 to 8. Only 26% have
+> exactly five. The distribution is 1:6 groups, 2:4, 3:7, 4:24, 5:20, 6:16,
+> 8:1. The table later in this chapter saying "3-6 person groups" is the more
+> accurate figure - 86% fall in that band - but note six groups of a single
+> member (supplementary or make-up awards) and one group of eight, which
+> exceeds the documented six-member cap. See
+> `research/08-zao-fractal-measured-state.md`.
+ No votes are cast. No tallies. Just honest peer judgment, encoded on-chain.*
 
 ---
 
@@ -352,7 +363,7 @@ This is a deliberate trade-off:
 
 Eden Fractal uses **secret voting** (votes recorded but not announced immediately). The argument: secret voting prevents social pressure and ensures independent judgment.
 
-ZAO's choice of public voting reflects its values: transparency and conversation over privacy and independence. The small group size (5-6 people) makes privacy less critical; social dynamics are already visible.
+ZAO's choice of public voting reflects its values: transparency and conversation over privacy and independence. The small group size (**median 4, typically 3-6** **[corrected 2026-09-02]**) makes privacy less critical; social dynamics are already visible.
 
 Both approaches are valid. The important thing is that the mechanism is consistent, intentional, and tested.
 

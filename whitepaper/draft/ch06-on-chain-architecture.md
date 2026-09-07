@@ -321,6 +321,30 @@ The frapps pattern decouples ORDAO from ZAO governance. ZAO is an application bu
 
 ---
 
+
+## Measured 2026-09-02: reversals, and who may execute
+
+Three facts from the live chain that this chapter did not previously record.
+See `research/08-zao-fractal-measured-state.md` section 12.
+
+**Execution is permissionless.** OREC's `execute` can be called by anyone; it
+is the *vote weight* that gates a proposal, not the sender. Demonstrated by
+transaction `0x12c1c2514fc04d890ada3d96b4b0ca9f55aac5ef46b8eee357be9d7891eba0f1`,
+sent by `0xaed620c450911c38714e666cd84137767e3d6286`, an address holding **zero**
+OG, which executed successfully. Any concentration concern therefore belongs to
+who can *pass* a proposal, not to who relays it.
+
+**Awards can be reversed, and have been.** That same transaction, on
+2025-10-24, burned 28 ZOR awards - every award from periods 67, 68, 69 and 70,
+matching each period's full awardee count. Respect is soulbound to its holder
+but it is not immutable: an executed OREC proposal can burn it.
+
+**Six consecutive periods currently carry no Respect.** Periods 67 to 70 were
+minted and burned in full and have never been re-minted; periods 71 and 72 were
+played and scored in Airtable and never minted at all. The reason for the
+reversal is not recoverable from the chain and is listed as an open question
+for the operators.
+
 ## Sources
 
 - `research/whitepaper-foundations/03-ordao-onchain-architecture.md` - Primary source, OREC mechanism, Respect token design
