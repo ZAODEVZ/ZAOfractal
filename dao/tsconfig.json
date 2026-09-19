@@ -17,7 +17,6 @@
     "jsx": "react-jsx",
     "strict": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
     "paths": {
       "@data/*": [
         "../data/*"
