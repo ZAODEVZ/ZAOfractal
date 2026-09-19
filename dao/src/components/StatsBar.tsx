@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { summary, sessions, allMembers, currentStreak } from '../lib/data';
+import { formatRespect } from '../lib/format';
 
 function nextMondayEST(): Date {
   // ZAO Respect Game: every Monday at 6pm EST (UTC-5 / UTC-4 DST)
@@ -29,12 +31,6 @@ function formatCountdown(ms: number): string {
   return `${m}m`;
 }
 
-const STATIC_STATS = [
-  { value: '100+', label: 'Weeks Running' },
-  { value: '~100', label: 'Members' },
-  { value: '8,000+', label: 'ZOR Earned' },
-];
-
 export default function StatsBar() {
   const [countdown, setCountdown] = useState('');
 
@@ -48,9 +44,18 @@ export default function StatsBar() {
     return () => clearInterval(id);
   }, []);
 
+  // Every figure here comes from the committed snapshot, so it is whatever the
+  // chain said at the last pull - no rounding up, no "100+".
+  const stats = [
+    { value: String(summary.zor.latestPeriod), label: 'Latest Period' },
+    { value: `${currentStreak()} of ${sessions.length}`, label: 'Streak / Sessions on ZOR' },
+    { value: String(allMembers().length), label: 'Respect Holders' },
+    { value: formatRespect(summary.zor.respectHeld), label: 'ZOR Respect Held' },
+  ];
+
   return (
     <div className="stats-row" style={{ marginBottom: '1.75rem' }}>
-      {STATIC_STATS.map((s) => (
+      {stats.map((s) => (
         <div key={s.label} className="stat-card">
           <div className="stat-value">{s.value}</div>
           <div className="stat-label">{s.label}</div>

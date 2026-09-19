@@ -11,6 +11,8 @@ Status as of 2026-07-21: the new token is BUILT and tested locally; nothing is d
 - **Community / members** - start with [What Respect is](#what-respect-is) and [How to earn it](#how-to-earn-it). The public page is thezao.com/zao-token.
 - **Builders / team** - [On-chain reality](#on-chain-reality-verified) and [The new Respect token](#the-new-respect-token), then the detailed [LAUNCH-RUNBOOK.md](./LAUNCH-RUNBOOK.md).
 - **Deciding / launch** - jump to [Build status](#build-status) and [LAUNCH-RUNBOOK.md](./LAUNCH-RUNBOOK.md). Nothing launches without a deliberate go.
+- **Deciding the migration** - [LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md) is the measured decision surface: who can vote today, who cannot, and what each genesis allocation rule costs. [SIGNER-COMMITTEE.md](./SIGNER-COMMITTEE.md) covers the governance bottleneck and what actually fixes it.
+- **Running the week** - [FACILITATION-RUNBOOK.md](./FACILITATION-RUNBOOK.md) is the L1 facilitator bench: the run sheet for the Monday game, the named bench of three (Ohnahji B, Iman and Jose - none of them contacted yet), what the attendance ledger independently says about the room, the rota that reaches the L1 gate, and the six things nobody has written down yet. [EXECUTION-RUNBOOK.md](./EXECUTION-RUNBOOK.md) picks up where a session ends: how to spot a proposal that needs executing, the two ways a mint reverts, and the 24 award slots that never settled because of them.
 - **Investors / partners** - the whole page reads top to bottom; the mechanics are verifiable on-chain (addresses below).
 
 ---
@@ -73,9 +75,13 @@ Planned addition (not built): `award(to, amount, reason)` so each distribution r
 
 Full launch sequence and what each step needs: **[LAUNCH-RUNBOOK.md](./LAUNCH-RUNBOOK.md)**.
 
+Measured against chain data as of 2026-08-26: **[LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md)** (the OG-to-ZOR migration, five genesis allocation options scored, identity gaps), **[SIGNER-COMMITTEE.md](./SIGNER-COMMITTEE.md)** (the OREC bottleneck, what breaks if a signer is lost, migration path), **[FACILITATION-RUNBOOK.md](./FACILITATION-RUNBOOK.md)** (the L1 facilitator bench and the run sheet) and **[EXECUTION-RUNBOOK.md](./EXECUTION-RUNBOOK.md)** (the execution rota, the revert causes, the unsettled-award backlog).
+
+Every figure in those four is re-checkable with `node scripts/verify-claims.mjs`, which holds all 103 quoted numbers as expectations and exits non-zero when the chain has moved past the prose.
+
 ## Open decisions (block a real launch, not the docs)
 
-1. Confirm the genesis allocation rule (default: lifetime Respect = sum of your fractal scores; does the export already include the ZOR era?).
+1. Confirm the genesis allocation rule (default: lifetime Respect = sum of your fractal scores; does the export already include the ZOR era?). **Now scored against chain data - see [LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md) section 4.**
 2. The `FINAL_ADMIN` multisig that will own the token.
 3. Whether to add a real per-voter weight cap (today there is none).
 4. Audit firm + budget before mainnet.

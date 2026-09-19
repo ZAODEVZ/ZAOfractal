@@ -23,8 +23,8 @@ ZAOfractal/
                                 context/, external/, code-walk/)
                                25+ files, ~10500 lines, 320+ unique sources.
   whitepaper/                - The magnum opus governance document
-                               draft/ contains Ch.1-3 v0.1 (8200 words)
-                               Ch.4-11 still to come.
+                               draft/ contains the complete v0.1: abstract +
+                               11 chapters, 28,529 words, accuracy pass 2026-07-21.
 ```
 
 Start at [reference/README.md](reference/README.md) for the survey. Move to [research/README.md](research/README.md) when you need depth. The [whitepaper/README.md](whitepaper/README.md) tracks magnum-opus progress.
@@ -45,7 +45,7 @@ Start at [reference/README.md](reference/README.md) for the survey. Move to [res
 
 Operational docs that already exist:
 
-- The whitepaper itself (Ch.1-3 first drafts) - [whitepaper/draft/](whitepaper/draft/)
+- The whitepaper itself (complete v0.1, all 11 chapters + abstract) - [whitepaper/draft/](whitepaper/draft/)
 - The bot internals walkthrough - [research/code-walk/01-fractalbot-walkthrough.md](research/code-walk/01-fractalbot-walkthrough.md)
 - The ORDAO Solidity walkthrough - [research/code-walk/02-ordao-contracts-walkthrough.md](research/code-walk/02-ordao-contracts-walkthrough.md)
 - Frapp-GH (async GitHub-native fractal) full PRD, build-ready - [research/06-frapp-gh-prd.md](research/06-frapp-gh-prd.md)

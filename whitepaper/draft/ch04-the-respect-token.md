@@ -164,7 +164,7 @@ This is mechanism design: Fibonacci is not arbitrary. It is the specific curve t
 
 ## VI. Respect Accumulation, and the Decay Question
 
-Respect does not disappear when earned. It accumulates over time, creating persistent reputation. Today, Respect ledgers are static - the current OG and ZOR balances do not decay. However, to keep governance weighted toward recent contribution rather than letting long-inactive members hold power forever, a weekly decay model is under consideration for the next-generation Respect token.
+Respect does not disappear when earned. It accumulates over time, creating persistent reputation. Today, Respect ledgers are static - the current OG and ZOR balances do not decay. **[verified 2026-09-02: OG has never been burned - zero transfers to the zero address in its entire history. ZOR has exactly 28 burns, all in a single transaction on 2025-10-24 reversing periods 67-70 in full, which is a correction rather than decay. No decay mechanism has ever run on either ledger. See `research/08-zao-fractal-measured-state.md` section 12.]** However, to keep governance weighted toward recent contribution rather than letting long-inactive members hold power forever, a weekly decay model is under consideration for the next-generation Respect token.
 
 ### The Proposed Decay Model
 
