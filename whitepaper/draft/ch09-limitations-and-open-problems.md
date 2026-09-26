@@ -58,6 +58,17 @@ ZAO's mitigation: one-time grants of baseline Respect to new joiners (an amount 
 
 ## Respect Decay and Governance Weight Over Time
 
+> **RULED OUT 2026-09-26.** The "open design decision" below is resolved: Zaal ruled no-burn wins
+> (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6, commit `0f9cfad2`) -
+> activation already does what decay was for, and every system surveyed (Colony, Gardens,
+> Coordinape, fractally's own moving average) decays a weight or scoring input, never the earned
+> record. Respect does not decay under ZIP-2, permanently, not just as of this writing. This
+> chapter's framing below as an open tradeoff predates that ruling and is kept for the record of
+> what was weighed; it is no longer live. (Note: this whitepaper draft's other chapters also
+> predate several other 2026-09-26 rulings - OG resuming as an achievements ledger, Respect
+> splitting by project, Season 3 reframed as the production release - that this section does not
+> attempt to reconcile; those need their own pass.)
+
 Respect today accumulates and does not decay. The current OG and ZOR ledgers are static - once minted, a member's Respect balance does not erode. This means that long-inactive early members retain their full voting weight indefinitely, even if they have contributed nothing for months or years. Over multi-year horizons, this creates a structural bias: governance power settles toward whoever arrived first and has not been voted out, regardless of recent contribution.
 
 A weekly decay - for example, a 2% reduction per week (giving a ~34-week half-life) - would keep governance weighted toward recent contribution rather than letting long-inactive members hold power forever. The math works: if Respect erodes over time, stepping away costs you authority. Staying active preserves it. This would incentivize continuous participation and make the system more responsive to the community's current state.
