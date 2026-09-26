@@ -208,7 +208,12 @@ Respect today accumulates without decay; the OG and ZOR ledgers are static. A me
 R(52 weeks, 1x per week) ≈ 5,720 Respect (without decay)
 ```
 
-A weekly decay mechanism - to keep governance weighted toward recent contribution - is a design option under consideration for the new Respect token. If adopted, a 2% weekly decay would give a ~34-week half-life and reduce long-inactive members' voting power over time.
+**RULED OUT 2026-09-26** (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6,
+commit `0f9cfad2`): a weekly decay mechanism - 2% weekly, ~34-week half-life, to keep governance
+weighted toward recent contribution - was under consideration for the new Respect token. Zaal ruled
+no-burn wins instead: activation already does what decay was for, and decaying the earned record
+(rather than a weight or scoring input, as every surveyed system does) would punish absence twice.
+Respect balances do not decay under ZIP-2.
 
 The same member reaches Elder tier (2000+ Respect) in approximately 50 weeks. Tier thresholds in ZAO are:
 
