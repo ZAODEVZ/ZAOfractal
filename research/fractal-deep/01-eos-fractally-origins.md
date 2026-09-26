@@ -296,7 +296,15 @@ Then map NEW_AVERAGE to continuous Fibonacci curve.
 **Why This Change Matters:**
 - **Momentum**: A person's standing persists even if they miss a week. Missing one session only decreases the moving average by 1/6.
 - **Fairness**: A single bad week doesn't wipe out your reputation.
-- **Decay**: The 6-week averaging window creates a natural ~34-week half-life for older contributions (2% weekly decay effect).
+- **Decay**: A 1/6 (~16.7%) weekly retention loss gives a half-life of `ln(0.5)/ln(5/6)` ≈ **3.8
+  weeks**, not ~34 weeks and not a 2% weekly rate - **corrected 2026-09-26**, verified against
+  Addendum 1's raw text via the Hive API (the rendered `hive.blog` page is a JS shell with no
+  content to check this against, which is likely how the error went uncaught). See
+  `reference/02-fractally-protocol.md` for the full correction and the primary-source citation.
+  A *separate*, unrelated ~34-week half-life appears elsewhere in this repo's whitepaper drafts
+  for a proposed 2% weekly decay on the Respect *token balance* itself (a different, still-open
+  design proposal, not this scoring-average mechanism) - that figure is arithmetically correct
+  for its own 2% rate and is not affected by this correction.
 
 **Example:**
 - Week 1: Rank 1 (level = 1). Average = 1.
