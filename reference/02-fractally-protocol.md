@@ -20,15 +20,33 @@ Fractally codified the weekly ritual that every downstream fractal still uses to
 
 The white paper proposed `AVERAGE(FIBONACCI(LEVEL))` - an exponential moving average of weekly ranks.
 
-Larimer's **Addendum 1** (Hive post) revised it to `FIBONACCI(AVERAGE(LEVEL))` - apply the Fibonacci function to a moving-average weighted level. The formula:
+Larimer's **Addendum 1** (Hive post) revised it to `FIBONACCI(AVERAGE(LEVEL))` - apply the Fibonacci function to a moving-average weighted level. The formula, quoted verbatim from the post:
 
 ```
-NEW_AVG = (CURRENT_AVG * 5 + NEW_LEVEL) / 6
+NEW_AVERAGE = (CURRENT_AVERAGE * 5 + NEW_LEVEL)/6
 ```
 
-Then map `NEW_AVG` to its position on a continuous Fibonacci curve. This creates **momentum** - your standing persists even if you miss a week. Decay is ~1/6 per week, half-life ~34 weeks.
+Then map `NEW_AVERAGE` to its position on a continuous Fibonacci curve. This creates **momentum**
+- your standing persists even if you miss a week. **Corrected 2026-09-26**: a 5/6 weekly
+retention gives half-life `ln(0.5)/ln(5/6) = 3.80 weeks`, not the ~34 weeks this doc previously
+stated - that number was off by roughly 9x and did not trace to anything in the source. The post
+itself states no half-life; it only contrasts this formula against "a pure moving window average
+would go from 0 to max in just 6 weeks," calling the revised formula slower ("more momentum") by
+comparison, which is true at both the correct and the previous figure and does not, by itself,
+tell you which is right - the arithmetic does.
+
+The post also states this scoring model has its own membership cutoff, separate from Season 3's
+2026-09-26 ruling of a 90-day rolling vote-eligibility window: **"after 12 weeks of
+non-attendance someone would cease to be a member and their income would fall to 0."** Twelve
+weeks is 84 days - close to Season 3's 90 days, but Fractally's cutoff drops *membership itself*,
+where Season 3's rule drops only the vote.
 
 Both Eden Fractal and ZAO Fractal use the revised (Addendum 1) formula.
+
+*(Verified 2026-09-26 by fetching Addendum 1's raw body directly via the Hive `condenser_api.get_content`
+API - 13,728 characters. The `hive.blog` page itself renders as a 513-byte JavaScript shell with
+no server-side content, which likely explains why this number went uncaught: a browser view of
+the source page shows nothing to check it against.)*
 
 ## What Fractally promised
 
