@@ -7,7 +7,7 @@ Every primary URL referenced in this reference library, organized by topic. All 
 - [More Equal Animals: The Subtle Art of True Democracy](https://www.amazon.com/More-Equal-Animals-Subtle-Democracy-ebook/dp/B08X4TY925) - Daniel Larimer, published Feb 20, 2021 - [FULL]
 - [Introducing Fractally - The next generation of DAOs](https://medium.com/gofractally/introducing-fractally-the-next-generation-of-daos-7c94981514d8) - Larimer, Medium, Jan 28, 2022 - [FULL]
 - [Fractally White Paper 1.0](https://fractally.com/uploads/Fractally%20White%20Paper%201.0.pdf) - Fractally team, Feb 22, 2022 - [FULL]
-- [Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1) - Larimer, Hive - [FULL]
+- [Fractally White Paper Addendum 1](https://hive.blog/fractally/@dan/fractally-white-paper-addendum-1) - Larimer, Hive - [FULL] (the rendered page is a 513-byte JS shell with no server-side content - fetch the raw body via Hive's `condenser_api.get_content` API, not a page fetch, or you will read nothing and not know it. A decay-half-life figure sourced from this page was off by ~9x until corrected 2026-09-26 - see `02-fractally-protocol.md`)
 - [fractally.com](https://fractally.com) - the protocol home site (dormant) - [FULL]
 - [Fractal Democracy and the Star Trek Test](https://hive.blog/eden/@mada/fractal-democracy-and-the-star-trek-test) - Mada, Hive - [FULL]
 
