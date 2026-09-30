@@ -302,8 +302,8 @@ Then map NEW_AVERAGE to continuous Fibonacci curve.
   content to check this against, which is likely how the error went uncaught). See
   `reference/02-fractally-protocol.md` for the full correction and the primary-source citation.
   A *separate*, unrelated ~34-week half-life appears elsewhere in this repo's whitepaper drafts
-  for a proposed 2% weekly decay on the Respect *token balance* itself (a different, still-open
-  design proposal, not this scoring-average mechanism) - that figure is arithmetically correct
+  for a proposed 2% weekly decay on the Respect *token balance* itself (a different
+  design proposal, ruled out 2026-09-26 - see whitepaper ch04 VI - not this scoring-average mechanism) - that figure is arithmetically correct
   for its own 2% rate and is not affected by this correction.
 
 **Example:**
