@@ -164,6 +164,15 @@ This is mechanism design: Fibonacci is not arbitrary. It is the specific curve t
 
 ## VI. Respect Accumulation, and the Decay Question
 
+> **RULED OUT 2026-09-26.** Zaal ruled no-burn wins (zao-vault
+> `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6, commit `0f9cfad2`):
+> activation already does what decay was for, and every system surveyed (Colony, Gardens,
+> Coordinape, fractally's own moving average) decays weight or a scoring input, never the
+> earned record - keeping both would punish absence twice. The rest of this section (the 2%
+> weekly decay model, the 50x equilibrium rule, the 34-week half-life) is kept below as a
+> record of the proposal that was considered and rejected, not as a live design option.
+> ZIP-2's no-burn design stands: Respect balances never decay.
+
 Respect does not disappear when earned. It accumulates over time, creating persistent reputation. Today, Respect ledgers are static - the current OG and ZOR balances do not decay. **[verified 2026-09-02: OG has never been burned - zero transfers to the zero address in its entire history. ZOR has exactly 28 burns, all in a single transaction on 2025-10-24 reversing periods 67-70 in full, which is a correction rather than decay. No decay mechanism has ever run on either ledger. See `research/08-zao-fractal-measured-state.md` section 12.]** However, to keep governance weighted toward recent contribution rather than letting long-inactive members hold power forever, a weekly decay model is under consideration for the next-generation Respect token.
 
 ### The Proposed Decay Model
