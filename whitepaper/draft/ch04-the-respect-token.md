@@ -31,7 +31,7 @@ On Optimism Mainnet, ZAO maintains two Respect token contracts:
 - Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`
 - Deployed: July 30, 2024
 - Total Supply: 38,484 ZAO
-- Status: Frozen (no new mints since December 18, 2025)
+- Status: Frozen (no new mints since December 18, 2025). Ruled 2026-09-26 to resume as the one-time achievements ledger (intro, socials linked, voted on a proposal, ZAO 101, video), minted through OREC as custom transactions once past OG amounts are repaired (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, rulings 1 and 5). Not yet resumed.
 - Transfer Restriction: Enforced via role-based access control (thirdweb). Members cannot transfer; the admin can move it, but has chosen not to. Soulbound in practice.
 
 **ZOR Respect (ERC-1155, Active Democratic Era)**
@@ -162,63 +162,11 @@ This is mechanism design: Fibonacci is not arbitrary. It is the specific curve t
 
 ---
 
-## VI. Respect Accumulation, and the Decay Question
+## VI. Respect Accumulation: Earned Standing Does Not Decay
 
-> **RULED OUT 2026-09-26.** Zaal ruled no-burn wins (zao-vault
-> `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6, commit `0f9cfad2`):
-> activation already does what decay was for, and every system surveyed (Colony, Gardens,
-> Coordinape, fractally's own moving average) decays weight or a scoring input, never the
-> earned record - keeping both would punish absence twice. The rest of this section (the 2%
-> weekly decay model, the 50x equilibrium rule, the 34-week half-life) is kept below as a
-> record of the proposal that was considered and rejected, not as a live design option.
-> ZIP-2's no-burn design stands: Respect balances never decay.
+Respect does not disappear when earned. It accumulates over time, creating persistent reputation. The OG and ZOR ledgers are static: a balance changes only when OREC mints. **[verified 2026-09-02: OG has never been burned - zero transfers to the zero address in its entire history. ZOR has exactly 28 burns, all in a single transaction on 2025-10-24 reversing periods 67-70 in full, which is a correction rather than decay. No decay mechanism has ever run on either ledger. See `research/08-zao-fractal-measured-state.md` section 12.]**
 
-Respect does not disappear when earned. It accumulates over time, creating persistent reputation. Today, Respect ledgers are static - the current OG and ZOR balances do not decay. **[verified 2026-09-02: OG has never been burned - zero transfers to the zero address in its entire history. ZOR has exactly 28 burns, all in a single transaction on 2025-10-24 reversing periods 67-70 in full, which is a correction rather than decay. No decay mechanism has ever run on either ledger. See `research/08-zao-fractal-measured-state.md` section 12.]** However, to keep governance weighted toward recent contribution rather than letting long-inactive members hold power forever, a weekly decay model is under consideration for the next-generation Respect token.
-
-### The Proposed Decay Model
-
-If adopted, each week a member's Respect balance would evolve according to:
-
-```
-R(t) = R(t-1) * 0.98 + earned(t)
-```
-
-At the start of each week, balances would shrink by 2%. New earnings would be added. Over time, if a member stops contributing, their balance would decay to zero.
-
-### Equilibrium: The 50x Rule (If Decay Is Adopted)
-
-If a member earns a constant amount every week and decay is active, their balance would reach equilibrium when:
-
-```
-R_equilibrium = earned / 0.02 = 50 * earned
-```
-
-**Example:** A member ranking 2nd every week earns 68 Respect. Their equilibrium balance would be:
-
-```
-R_eq = 68 / 0.02 = 3,400 Respect
-```
-
-At this point, weekly earnings (68) would exactly offset weekly decay (3,400 * 0.02 = 68). The balance would stabilize.
-
-### Half-Life: 34 Weeks (If Decay Is Adopted)
-
-With 2% weekly decay, Respect would have a half-life of approximately 34.3 weeks:
-
-```
-0.5 = 0.98^n
-n = log(0.5) / log(0.98) = 34.3 weeks
-```
-
-An inactive member's Respect balance would drop to 50% of its current value every 34 weeks (approximately 8 months).
-
-### The Case for Decay
-
-Decay would enforce meritocratic governance. Without it, a member who earned high Respect years ago but contributed nothing recently would retain full voting power forever - creating an unearned oligarchy of past contributors.
-
-With decay, voting power would gradually shift to active contributors. After 4.4 years of zero participation (approximately 230 weeks), a member's balance would decay to near-zero. Governance power would be tied to recent contribution, not accumulated history.
-
-This creates an intentional tension: The system would value consistency (you must keep showing up to maintain power) but tolerate gaps (your balance does not vanish immediately if you miss a week). The 34-week half-life would be long enough to weather temporary absence, short enough to prevent stale oligarchy.
+A weekly decay of balances (2 percent a week, a 34-week half-life) was considered for the next-generation token and ruled out on 2026-09-26 (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6): Season 3 gates the vote on a rolling 90-day activation instead, so a member who steps away loses this quarter's vote and keeps every point, and every comparable system surveyed (Colony, Gardens, Coordinape, fractally's own moving average) decays a weight or a scoring input, never the earned record. The rejected model is preserved in this repository's history (commits before 2026-10-10) and in ZAOOS research `governance/2558-dao-periodic-reactivation-precedent`; it is not a live design option. Activation is specified in ZIP-2 section 3 (`bettercallzaal/zao-papers`).
 
 ---
 

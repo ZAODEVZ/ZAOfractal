@@ -68,7 +68,7 @@ When conditions are met, **anyone** can call the execute function. This is impor
 
 ZAO maintains two separate Respect token contracts to decouple voting power from ongoing earnings.
 
-**OG Respect (ERC-20, Frozen Historical Ledger)**
+**OG Respect (ERC-20, Frozen Historical Ledger; ruled 2026-09-26 to resume as the achievements ledger)**
 
 Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` (Optimism Mainnet)
 
@@ -96,9 +96,11 @@ Only the OREC contract can mint ZOR. There is no admin minting. No manual overri
 
 **Democratic Future:** ZOR reflects ongoing peer evaluation. Because it is minted by OREC proposals only, it is provably trustworthy - no backstage favoritism, no admin discretion.
 
-**Vote Weight Decoupling:** On-chain voting power is read from the OG ledger only. OREC reads a member's OG balance live, at the moment they cast their vote (not a snapshot at proposal creation); ZOR mints do not change voting weight. This is deliberate: it prevents "who earned Respect this week" from overwhelming "who has earned standing over the life of the community." A member with high OG votes at full weight even if they have been inactive lately.
+**Vote Weight Decoupling:** On-chain voting power is read from the OG ledger only. OREC reads a member's OG balance live, at the moment they cast their vote (not a snapshot at proposal creation); ZOR mints do not change voting weight. In v0.1 this was described as deliberate: it prevents "who earned Respect this week" from overwhelming "who has earned standing over the life of the community." A member with high OG votes at full weight even if they have been inactive lately. That reading is superseded by the ruling below; this paragraph describes the contract as deployed.
 
-The honest consequence: a member who joined after the OG freeze and holds only ZOR currently has no on-chain voting weight, however much ZOR they earn. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - is an open governance problem (see Chapter 9).
+The honest consequence: a member who joined after the OG freeze and holds only ZOR currently has no on-chain voting weight, however much ZOR they earn. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - was an open governance problem through v0.1.
+
+**Ruled 2026-10-10 (zao-vault `decisions/grill-2026-10-09-seat-morning.md`, item 78): vote weight is OG plus ZOR, summed in whole Respect.** The mechanism is a small contract implementing `IRespect.respectOf()` that returns a wallet's OG balance (divided by 10^18) plus its ZOR balance, installed by one passed OREC proposal calling `setRespectContract`; OREC owns itself, so only a passed proposal can make that call, and no redeploy is needed. ZOR already answers `respectOf` (interface id `0x58970ca8`, measured 2026-09-26, ZAOOS `governance/2562-zao-fractal-state-and-build-plan`). The wrapper is unwritten and needs a reviewer outside The ZAO before it ships; until that proposal passes, OREC reads OG only, exactly as this chapter describes. Nothing in this ruling moves a token or mints.
 
 ---
 

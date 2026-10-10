@@ -1,8 +1,8 @@
 # The ZAO Fractal Whitepaper
 
-**Status:** Abstract + 11 chapters (v0.1) - share-readiness accuracy pass complete (2026-07-21)
+**Status:** Abstract + 11 chapters - share-readiness accuracy pass complete (2026-07-21); rulings pass 2026-10-10 (decay cut, 72 h windows, vote weight ruled OG + ZOR, roadmap rewritten for Season 3)
 
-**Version:** v0.1 - reviewed against on-chain reality; decay reframed as a design option (not a live feature); vote weight corrected to live-at-vote; abstract added
+**Version:** v0.2 draft - v0.1 reviewed against on-chain reality and corrected to live-at-vote; 2026-10-10: the decay model is removed (ruled out 2026-09-26, no-burn wins), chapter 5's 48-hour windows and chapter 7's 9-day cycle corrected to the measured 72 h + 72 h, chapter 6 carries the 2026-10-10 vote-weight ruling (OG + ZOR summed, by one setRespectContract proposal), chapter 10 is rewritten around Season 3 (1 December 2026) with the v0.1 items' status recorded
 
 ---
 
@@ -28,7 +28,7 @@ The whitepaper is hybrid manifesto-specification: it makes the case for earned g
 | 7 | Why Fractal - comparative case | Argument | Draft v0.1 | 4,002 |
 | 8 | The ZAO Fractal - specific story | Manifesto + Narrative | Draft v0.1 | 2,701 |
 | 9 | Limitations and Open Problems | Plain Honesty | Draft v0.1 | 2,117 |
-| 10 | Roadmap | Plain | Draft v0.1 | 1,578 |
+| 10 | Roadmap | Plain | Draft v0.2 (2026-10-10) | 1,450 |
 | 11 | Conclusion - "new governance culture" | Manifesto | Draft v0.1 | 1,419 |
 
 **Total: 28,529 words.**
