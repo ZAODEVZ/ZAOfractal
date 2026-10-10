@@ -162,11 +162,11 @@ This is mechanism design: Fibonacci is not arbitrary. It is the specific curve t
 
 ---
 
-## VI. Respect Accumulation: Earned Standing Does Not Decay
+## VI. Respect Accumulation
 
-Respect does not disappear when earned. It accumulates over time, creating persistent reputation. The OG and ZOR ledgers are static: a balance changes only when OREC mints. **[verified 2026-09-02: OG has never been burned - zero transfers to the zero address in its entire history. ZOR has exactly 28 burns, all in a single transaction on 2025-10-24 reversing periods 67-70 in full, which is a correction rather than decay. No decay mechanism has ever run on either ledger. See `research/08-zao-fractal-measured-state.md` section 12.]**
+Respect does not disappear when earned. It accumulates over time, creating persistent reputation. The OG and ZOR ledgers are static: a balance changes only when OREC mints. **[verified 2026-09-02: OG has never been burned - zero transfers to the zero address in its entire history. ZOR has exactly 28 burns, all in a single transaction on 2025-10-24 reversing periods 67-70 in full, which is a correction of a mis-recorded result, not an erosion of standing. No balance has ever been reduced on either ledger for any other reason. See `research/08-zao-fractal-measured-state.md` section 12.]**
 
-A weekly decay of balances (2 percent a week, a 34-week half-life) was considered for the next-generation token and ruled out on 2026-09-26 (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6): Season 3 gates the vote on a rolling 90-day activation instead, so a member who steps away loses this quarter's vote and keeps every point, and every comparable system surveyed (Colony, Gardens, Coordinape, fractally's own moving average) decays a weight or a scoring input, never the earned record. The rejected model is preserved in this repository's history (commits before 2026-10-10) and in ZAOOS research `governance/2558-dao-periodic-reactivation-precedent`; it is not a live design option. Activation is specified in ZIP-2 section 3 (`bettercallzaal/zao-papers`).
+Standing earned stays earned. What moves with participation is the vote, not the balance: Season 3 gates voting on a rolling 90-day activation, so a member who steps away keeps every point and regains the vote by taking part again (ZIP-2 section 3, `bettercallzaal/zao-papers`; precedent survey in ZAOOS research `governance/2558-dao-periodic-reactivation-precedent`).
 
 ---
 
@@ -213,7 +213,7 @@ Soulbound design has honest costs:
 
 **2. No rapid onboarding of external capital.** A wealthy person cannot buy their way into ZAO governance in week one. This is intentional, but it makes cold-start difficult. New fractals cannot bootstrap voting power by external funding.
 
-**3. No transfer-on-death mechanism.** If a member passes away, their Respect cannot be transferred to heirs or designated stewards. Under current static ledgers, the balance remains frozen; if decay is adopted in a future token, the balance would decay over time. This is a limitation for human life planning.
+**3. No transfer-on-death mechanism.** If a member passes away, their Respect cannot be transferred to heirs or designated stewards. The balance stays on the wallet, unreachable. This is a limitation for human life planning.
 
 **4. Requires active participation to maintain power.** Unlike token holders (who can buy and hold passively), Respect holders must keep contributing to stay above the governance threshold. This is intentionally demanding.
 
@@ -239,7 +239,7 @@ All transactions are publicly verifiable on Etherscan (Optimism Mainnet explorer
 
 - ZAO internal research: Respect Game mechanism (Fibonacci mathematics, game theory, sybil defense)
 - ZAO internal research: ORDAO on-chain architecture (contract addresses, soulbound enforcement, two-ledger model)
-- ZAO internal research: Respect token mechanics deep dive (decay equilibrium, half-life, tier thresholds, voting criteria, Gini coefficient, one-time grants)
+- ZAO internal research: Respect token mechanics deep dive (tier thresholds, voting criteria, Gini coefficient, one-time grants)
 - ZAO internal research: Foundational mechanism design (Daniel Larimer, Ultimatum Game, consensus models)
 
 ---

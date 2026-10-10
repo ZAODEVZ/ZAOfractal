@@ -1,8 +1,8 @@
 # The ZAO Fractal Whitepaper
 
-**Status:** Abstract + 11 chapters - share-readiness accuracy pass complete (2026-07-21); rulings pass 2026-10-10 (decay cut, 72 h windows, vote weight ruled OG + ZOR, roadmap rewritten for Season 3)
+**Status:** Abstract + 11 chapters - share-readiness accuracy pass complete (2026-07-21); rulings pass 2026-10-10 (balance-erosion proposal removed per the 2026-09-26 ruling, 72 h windows, vote weight ruled OG + ZOR, roadmap rewritten for Season 3)
 
-**Version:** v0.2 draft - v0.1 reviewed against on-chain reality and corrected to live-at-vote; 2026-10-10: the decay model is removed (ruled out 2026-09-26, no-burn wins), chapter 5's 48-hour windows and chapter 7's 9-day cycle corrected to the measured 72 h + 72 h, chapter 6 carries the 2026-10-10 vote-weight ruling (OG + ZOR summed, by one setRespectContract proposal), chapter 10 is rewritten around Season 3 (1 December 2026) with the v0.1 items' status recorded
+**Version:** v0.2 draft - v0.1 reviewed against on-chain reality and corrected to live-at-vote; 2026-10-10: the proposed weekly balance erosion is removed from every chapter and from the compiled file (ruled out 2026-09-26, no-burn wins; Season 3 gates the vote on activation instead), chapter 5's 48-hour windows and chapter 7's 9-day cycle corrected to the measured 72 h + 72 h, chapter 6 carries the 2026-10-10 vote-weight ruling (OG + ZOR summed, by one setRespectContract proposal), chapter 10 is rewritten around Season 3 (1 December 2026) with the v0.1 items' status recorded
 
 ---
 
@@ -70,7 +70,7 @@ The theory chapter. Establishes the intellectual foundation for fractal governan
 | Chapter | Focus |
 |---------|-------|
 | 4 | The Respect Token: what it is, why soulbound, why ordinal ranking, how it accumulates over time |
-| 5 | The Respect Game: 6-phase weekly session, Fibonacci scoring (2x 110/68/42/26/16/10 in ZAO), 2% weekly decay, 2/3 consensus gate, Sybil/collusion defense |
+| 5 | The Respect Game: 6-phase weekly session, Fibonacci scoring (2x 110/68/42/26/16/10 in ZAO), 72 h voting and 72 h veto windows, 2/3 consensus gate, Sybil/collusion defense |
 | 6 | ORDAO/OREC: three-phase voting/veto/execution cycle, passing formula (yesWeight > 2x noWeight), ERC-1155 soulbound enforcement, contract addresses on Optimism |
 | 7 | Comparative analysis: fractal vs. token-weighted voting, quadratic voting, conviction voting, Nouns auctions, Moloch exit rights, Optimism Citizens' House |
 | 8 | ZAO Fractal specifics: 90+ weeks, music-focus, voting criteria (Vision/Contribution/Collaboration/Innovation/Onboarding), Optimism incumbent status, Zaal-SingJoy-Larimer lineage |

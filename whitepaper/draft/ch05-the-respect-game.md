@@ -203,12 +203,10 @@ Each rank earns approximately 60% more than the rank below (phi = 1.618). This r
 
 **Respect accumulation over time:**
 
-Respect today accumulates without decay; the OG and ZOR ledgers are static. A member ranking 1st every week for 52 weeks reaches approximately:
+Respect accumulates; the OG and ZOR ledgers are static and a balance changes only when OREC mints. A member ranking 1st every week for 52 weeks reaches approximately:
 ```
-R(52 weeks, 1x per week) ≈ 5,720 Respect (without decay)
+R(52 weeks, 1x per week) ≈ 5,720 Respect
 ```
-
-Balances never decay. A weekly decay model for the next-generation token was considered and ruled out on 2026-09-26 (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6); Season 3 gates the vote on a rolling 90-day activation instead and leaves every earned point in place (ZIP-2 section 3; Chapter 4, Section VI).
 
 The same member reaches Elder tier (2000+ Respect) in approximately 50 weeks. Tier thresholds in ZAO are:
 
