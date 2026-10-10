@@ -62,19 +62,13 @@ ZAO Fractal uses a **2x Fibonacci** curve in its Year 2 / ZOR era:
 
 **Total per group: 272 Respect distributed.**
 
-## Optional decay
+## No decay: earned standing is permanent, active voice is not
 
-ZAO Fractal applies **2% weekly decay**:
+Respect balances do not decay. The OG and ZOR ledgers are static; a balance changes only when OREC mints (and once, on 2025-10-24, when a mis-recorded result for periods 67-70 was reversed in full).
 
-```
-R(t) = R(t-1) * 0.98 + earned(t)
-```
+A weekly erosion of balances (2 percent a week, a 34-week half-life) was studied as a per-fractal policy option and **ruled out by Zaal on 2026-09-26** (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6): no-burn wins. Season 3 answers the same concern on the vote rather than the balance. Voting is gated on a rolling 90-day activation: a member who signed or attended within the last 90 days votes at full weight; a member who did not keeps every point and regains the vote by taking part again (`bettercallzaal/zao-papers`, ZIP-2 section 3). Every comparable system surveyed (Colony, Gardens, Coordinape, fractally's own moving average) decays a weight or a scoring input, never the earned record.
 
-Equilibrium under constant earning: `R_eq = earned / 0.02`. The half-life is approximately **34 weeks**.
-
-Decay keeps voting weight tied to *recent* contribution, not a one-time burst from years ago. A member who earned 1000 Respect three years ago and has done nothing since is gradually overtaken by an active contributor earning steadily today.
-
-This is a per-fractal policy choice. Eden Fractal uses moving-average decay through the Addendum 1 scoring formula but does not apply an explicit per-week multiplier on the token itself.
+Eden Fractal uses a moving-average formula in its Addendum 1 scoring; that is a scoring input, not an erosion of balances, and ZAO does not apply it.
 
 ## Voting weight (OREC)
 

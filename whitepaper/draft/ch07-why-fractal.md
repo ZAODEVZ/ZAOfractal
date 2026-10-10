@@ -203,7 +203,7 @@ Moreover, SourceCred's algorithm is opaque ("PageRank says you earned 47 cred").
 
 **Contribution vs. Capital:** Contribution-only. Capital has no direct influence.
 
-**Decision Speed:** Medium. Weekly circles take time; ORDAO voting + veto is 6 days (voting) + 3 days (veto) = 9 days.
+**Decision Speed:** Medium. Weekly circles take time; ORDAO voting + veto is 72 hours (voting) + 72 hours (veto) = 6 days (`voteLen` and `vetoLen` read live from OREC, Chapter 6).
 
 **Capture Risk:** Low. To control ORDAO, a coalition needs majority support in multiple circles AND high Respect (ORDAO voting power). This is hard - requires embedding deep in community culture.
 
@@ -274,7 +274,7 @@ Fractal governance *is* community building. The mechanism doubles as cultural pr
 
 ### Trade-Off 1: Speed vs. Deliberation
 
-Fractal circles take time. Weekly breakout rooms, consensus-building, off-chain discussion, then ORDAO voting (9 days). A token-weighted DAO can vote in 3 days. An emergency (e.g., exploit response) might need an hour decision window.
+Fractal circles take time. Weekly breakout rooms, consensus-building, off-chain discussion, then ORDAO voting (6 days: 72 hours voting, 72 hours veto). A token-weighted DAO can vote in 3 days. An emergency (e.g., exploit response) might need an hour decision window.
 
 Fractal is not designed for emergencies. If ZAO faces a critical security issue, the community should have a separate, fast voting layer (e.g., multisig or snapshot voting) for emergency pause. Fractal handles ongoing governance; fast voting handles rare crises.
 

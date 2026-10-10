@@ -14,7 +14,7 @@ For a complete picture, read in order. Each file is standalone.
 | 04 | [genesis-fractal.md](04-genesis-fractal.md) | The 30-week 2022 experiment that proved weekly cadence |
 | 05 | [eden-fractal.md](05-eden-fractal.md) | The R&D sibling, May 2022-present (EOS to Base) |
 | 06 | [optimism-fractal.md](06-optimism-fractal.md) | The Ethereum chapter, Oct 2023-Jan 2026 (PAUSED) |
-| 07 | [respect-token-mechanics.md](07-respect-token-mechanics.md) | Soulbound, Fibonacci, decay, Gini coefficient |
+| 07 | [respect-token-mechanics.md](07-respect-token-mechanics.md) | Soulbound, Fibonacci, no decay (ruled 2026-09-26), Gini coefficient |
 | 08 | [ordao-orec-frapps.md](08-ordao-orec-frapps.md) | The Optimystics software stack |
 | 09 | [respect-game-process.md](09-respect-game-process.md) | The weekly meeting, step by step |
 | 10 | [fractal-communities-directory.md](10-fractal-communities-directory.md) | Every known fractal, alive or dormant |

@@ -124,7 +124,7 @@ await orclient.proposeBreakoutResult({
 })
 ```
 
-The OREC contract creates a new governance proposal. The proposer's wallet auto-votes YES with their OG Respect weight (vote weight is frozen at proposal creation time, preventing double-voting).
+The OREC contract creates a new governance proposal. The proposer's wallet auto-votes YES with their OG Respect weight. OREC reads vote weight live when each vote is cast, not at proposal creation; one address holds one vote per proposal, which is what prevents double-voting (measured from `Orec.sol`, `_vote()`; see Chapter 6).
 
 Respect is not minted yet. The proposal is recorded on-chain but awaits voting and veto windows.
 
@@ -134,14 +134,14 @@ Respect is not minted yet. The proposal is recorded on-chain but awaits voting a
 
 After submission, the proposal enters a two-phase governance cycle:
 
-### Voting Period (48 hours typical)
+### Voting Period (72 hours; `voteLen` 259,200 seconds, read live from OREC, Chapter 6, Section V)
 
 - Any member with OG Respect can vote YES or NO.
 - Vote weight = your OG Respect balance at the moment you cast your vote (live, not snapshotted).
 - Cost: a fraction of a cent per vote on Optimism (roughly $0.001-0.003 in gas - cheap, non-prohibitive).
 - Process: On-chain transactions via Etherscan or a governance interface.
 
-### Veto Period (48 hours typical)
+### Veto Period (72 hours, follows voting; `vetoLen` 259,200 seconds, Chapter 6, Section V)
 
 - Voting period has closed; no new YES votes accepted.
 - ONLY NO votes are accepted (challenge window).
@@ -203,17 +203,10 @@ Each rank earns approximately 60% more than the rank below (phi = 1.618). This r
 
 **Respect accumulation over time:**
 
-Respect today accumulates without decay; the OG and ZOR ledgers are static. A member ranking 1st every week for 52 weeks reaches approximately:
+Respect accumulates; the OG and ZOR ledgers are static and a balance changes only when OREC mints. A member ranking 1st every week for 52 weeks reaches approximately:
 ```
-R(52 weeks, 1x per week) ≈ 5,720 Respect (without decay)
+R(52 weeks, 1x per week) ≈ 5,720 Respect
 ```
-
-**RULED OUT 2026-09-26** (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6,
-commit `0f9cfad2`): a weekly decay mechanism - 2% weekly, ~34-week half-life, to keep governance
-weighted toward recent contribution - was under consideration for the new Respect token. Zaal ruled
-no-burn wins instead: activation already does what decay was for, and decaying the earned record
-(rather than a weight or scoring input, as every surveyed system does) would punish absence twice.
-Respect balances do not decay under ZIP-2.
 
 The same member reaches Elder tier (2000+ Respect) in approximately 50 weeks. Tier thresholds in ZAO are:
 

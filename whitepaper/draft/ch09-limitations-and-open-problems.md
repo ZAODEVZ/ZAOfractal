@@ -56,26 +56,13 @@ ZAO's mitigation: one-time grants of baseline Respect to new joiners (an amount 
 
 ---
 
-## Respect Decay and Governance Weight Over Time
+## Earned Standing Is Permanent; Active Voice Is Not
 
-> **RULED OUT 2026-09-26.** The "open design decision" below is resolved: Zaal ruled no-burn wins
-> (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6, commit `0f9cfad2`) -
-> activation already does what decay was for, and every system surveyed (Colony, Gardens,
-> Coordinape, fractally's own moving average) decays a weight or scoring input, never the earned
-> record. Respect does not decay under ZIP-2, permanently, not just as of this writing. This
-> chapter's framing below as an open tradeoff predates that ruling and is kept for the record of
-> what was weighed; it is no longer live. (Note: this whitepaper draft's other chapters also
-> predate several other 2026-09-26 rulings - OG resuming as an achievements ledger, Respect
-> splitting by project, Season 3 reframed as the production release - that this section does not
-> attempt to reconcile; those need their own pass.)
+Respect accumulates and never leaves a wallet: once minted, a balance changes only when OREC mints again. The structural worry is real: governance power can settle toward whoever arrived first and never left, regardless of recent contribution.
 
-Respect today accumulates and does not decay. The current OG and ZOR ledgers are static - once minted, a member's Respect balance does not erode. This means that long-inactive early members retain their full voting weight indefinitely, even if they have contributed nothing for months or years. Over multi-year horizons, this creates a structural bias: governance power settles toward whoever arrived first and has not been voted out, regardless of recent contribution.
+Season 3 answers it on the vote rather than the balance. Voting is gated on a rolling 90-day activation: a member who signed or attended within the last 90 days votes at full weight, a member who did not keeps every point and regains the vote by taking part again (ZIP-2 section 3 in `bettercallzaal/zao-papers`; outside precedent, from co-operative bylaws to Optimism's Citizens' House, in ZAOOS research `governance/2558-dao-periodic-reactivation-precedent`). The trade-off is turnout: gating the vote on a recurring signal concentrates the electorate in those who show up, and quorum must therefore be defined as a share of the active pool, never as a fixed number of members.
 
-A weekly decay - for example, a 2% reduction per week (giving a ~34-week half-life) - would keep governance weighted toward recent contribution rather than letting long-inactive members hold power forever. The math works: if Respect erodes over time, stepping away costs you authority. Staying active preserves it. This would incentivize continuous participation and make the system more responsive to the community's current state.
-
-But decay has real tradeoffs. Earned standing erodes if you step away for a season (e.g., a member on sabbatical or managing personal crisis loses voting power even though they earned it). Decay also requires on-chain implementation (recurring token burns, week-by-week state updates) which adds operational complexity. And there is a philosophical question: should governance power be time-limited at all? Early contributors built the system; do they not deserve to carry that weight permanently?
-
-This is an open design decision for the new Respect token under development. Respect today does not decay. Whether to add decay to the next generation of the token is a tradeoff the community will decide, balancing liveness (current members have voice) against durability (contribution you earned stays earned).
+Two rulings that reshape other chapters are recorded here rather than silently applied, because this draft predates them: OG Respect resumes as the one-time achievements ledger and Respect splits by project (ZAO Fractal Respect for governance, ZAO Festivals Respect, WaveWarZ Respect later), both 2026-09-26 (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, rulings 1 and 2); and vote weight becomes OG plus ZOR summed, 2026-10-10 (Chapter 6, Section III). Chapter 10 carries the dates.
 
 ---
 
