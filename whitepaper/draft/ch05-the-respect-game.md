@@ -134,14 +134,14 @@ Respect is not minted yet. The proposal is recorded on-chain but awaits voting a
 
 After submission, the proposal enters a two-phase governance cycle:
 
-### Voting Period (72 hours)
+### Voting Period (72 hours; `voteLen` 259,200 seconds, read live from OREC, Chapter 6, Section V)
 
 - Any member with OG Respect can vote YES or NO.
 - Vote weight = your OG Respect balance at the moment you cast your vote (live, not snapshotted).
 - Cost: a fraction of a cent per vote on Optimism (roughly $0.001-0.003 in gas - cheap, non-prohibitive).
 - Process: On-chain transactions via Etherscan or a governance interface.
 
-### Veto Period (72 hours, follows voting)
+### Veto Period (72 hours, follows voting; `vetoLen` 259,200 seconds, Chapter 6, Section V)
 
 - Voting period has closed; no new YES votes accepted.
 - ONLY NO votes are accepted (challenge window).

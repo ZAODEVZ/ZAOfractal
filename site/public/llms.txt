@@ -37,7 +37,7 @@ ORDAO, OREC, ZOR, $ZAO Respect, The ZAO, ZAO Fractal, ZAO OS, BetterCallZaal, ZA
 - Bot: fractalbotmarch2026 v2.1 (52 slash commands).
 - Submission UI: zao.frapps.xyz/submitBreakout.
 - Scoring: 2x Fibonacci (110/68/42/26/16/10 per rank in a 6-person group). Eden uses standard 1x (55/34/21/13/8/5).
-- Decay: 2% weekly, ~34-week half-life.
+- Balances: static. Respect never decays; a balance changes only when OREC mints. A weekly erosion was considered and ruled out on 2026-09-26 (no-burn wins). Season 3 gates the vote on a rolling 90-day activation instead: inactive members keep every point and lose only the vote until they take part again.
 - Gini: ~0.23 (vs typical token-DAO 0.97-0.99).
 
 ## Whitepaper chapters (all 11 live in draft)
