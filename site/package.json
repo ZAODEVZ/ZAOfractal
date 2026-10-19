@@ -11,15 +11,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.1",
+    "@astrojs/markdown-remark": "^7.3.2",
     "@astrojs/sitemap": "^3.7.4",
     "@shikijs/transformers": "^4.5.0",
-    "astro": "^7.3.5",
+    "astro": "^7.3.8",
     "astro-og-canvas": "^0.13.2",
     "astro-pagefind": "^2.0.1",
     "canvaskit-wasm": "^0.42.0",
     "hast-util-from-html": "^2.0.3",
-    "marked": "^18.0.14",
+    "marked": "^18.1.0",
     "pagefind": "^1.5.2",
     "sanitize-html": "^2.18.0",
     "unist-util-visit": "^5.1.0"
