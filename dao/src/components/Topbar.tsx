@@ -23,7 +23,7 @@ export default function Topbar() {
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
         <a
-          href="https://zaofractal.vercel.app"
+          href="https://fractal.thezao.com"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-secondary"

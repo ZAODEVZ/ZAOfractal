@@ -46,7 +46,7 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 
 // Per-page structured data (schema.org TechArticle) passed to BaseLayout's
 // jsonLd prop. Every doc (whitepaper chapter, research, reference) is an article.
-const siteUrl = Astro.site ? Astro.site.toString() : 'https://zaofractal.vercel.app/';
+const siteUrl = Astro.site ? Astro.site.toString() : 'https://fractal.thezao.com/';
 const articleJsonLd: Record<string, unknown> = {
   '@context': 'https://schema.org',
   '@type': 'TechArticle',

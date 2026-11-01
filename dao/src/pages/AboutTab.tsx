@@ -23,7 +23,7 @@ export default function AboutTab() {
         <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
           <a href="https://thezao.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">The ZAO ↗</a>
           <a href={FRAPPS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">frapps.xyz ↗</a>
-          <a href="https://zaofractal.vercel.app" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Docs ↗</a>
+          <a href="https://fractal.thezao.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Docs ↗</a>
         </div>
       </div>
 

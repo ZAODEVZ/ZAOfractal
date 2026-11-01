@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /og/
-Sitemap: https://zaofractal.vercel.app/sitemap-index.xml
+Sitemap: https://fractal.thezao.com/sitemap-index.xml

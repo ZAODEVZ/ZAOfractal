@@ -11,14 +11,14 @@ ZAOfractal is the public documentation home of ZAO Fractal - a soulbound peer-ra
 
 ## Site URLs
 
-- Home: https://zaofractal.vercel.app/
-- Whitepaper: https://zaofractal.vercel.app/whitepaper
-- Research: https://zaofractal.vercel.app/research
-- Reference: https://zaofractal.vercel.app/reference
-- Lineage timeline: https://zaofractal.vercel.app/lineage
-- People: https://zaofractal.vercel.app/people
-- Bibliography: https://zaofractal.vercel.app/bibliography
-- Resources master index: https://zaofractal.vercel.app/resources
+- Home: https://fractal.thezao.com/
+- Whitepaper: https://fractal.thezao.com/whitepaper
+- Research: https://fractal.thezao.com/research
+- Reference: https://fractal.thezao.com/reference
+- Lineage timeline: https://fractal.thezao.com/lineage
+- People: https://fractal.thezao.com/people
+- Bibliography: https://fractal.thezao.com/bibliography
+- Resources master index: https://fractal.thezao.com/resources
 - Source repo: https://github.com/ZAODEVZ/ZAOfractal
 
 ## On-chain (Optimism / OP Mainnet)
@@ -42,19 +42,19 @@ ORDAO, OREC, ZOR, $ZAO Respect, The ZAO, ZAO Fractal, ZAO OS, BetterCallZaal, ZA
 
 ## Whitepaper chapters (all 11 live in draft)
 
-[Ch.1: Preamble and Vision](https://zaofractal.vercel.app/whitepaper/draft/ch01-preamble-and-vision)
-[Ch.2: The Problem](https://zaofractal.vercel.app/whitepaper/draft/ch02-the-problem)
-[Ch.3: Fractal Democracy - First Principles](https://zaofractal.vercel.app/whitepaper/draft/ch03-fractal-democracy-first-principles)
-[Ch.4: The Respect Token](https://zaofractal.vercel.app/whitepaper/draft/ch04-the-respect-token)
-[Ch.5: The Respect Game](https://zaofractal.vercel.app/whitepaper/draft/ch05-the-respect-game)
-[Ch.6: On-Chain Architecture](https://zaofractal.vercel.app/whitepaper/draft/ch06-on-chain-architecture)
-[Ch.7: Why Fractal](https://zaofractal.vercel.app/whitepaper/draft/ch07-why-fractal)
-[Ch.8: The ZAO Fractal](https://zaofractal.vercel.app/whitepaper/draft/ch08-the-zao-fractal)
-[Ch.9: Limitations and Open Problems](https://zaofractal.vercel.app/whitepaper/draft/ch09-limitations-and-open-problems)
-[Ch.10: Roadmap](https://zaofractal.vercel.app/whitepaper/draft/ch10-roadmap)
-[Ch.11: Conclusion](https://zaofractal.vercel.app/whitepaper/draft/ch11-conclusion)
+[Ch.1: Preamble and Vision](https://fractal.thezao.com/whitepaper/draft/ch01-preamble-and-vision)
+[Ch.2: The Problem](https://fractal.thezao.com/whitepaper/draft/ch02-the-problem)
+[Ch.3: Fractal Democracy - First Principles](https://fractal.thezao.com/whitepaper/draft/ch03-fractal-democracy-first-principles)
+[Ch.4: The Respect Token](https://fractal.thezao.com/whitepaper/draft/ch04-the-respect-token)
+[Ch.5: The Respect Game](https://fractal.thezao.com/whitepaper/draft/ch05-the-respect-game)
+[Ch.6: On-Chain Architecture](https://fractal.thezao.com/whitepaper/draft/ch06-on-chain-architecture)
+[Ch.7: Why Fractal](https://fractal.thezao.com/whitepaper/draft/ch07-why-fractal)
+[Ch.8: The ZAO Fractal](https://fractal.thezao.com/whitepaper/draft/ch08-the-zao-fractal)
+[Ch.9: Limitations and Open Problems](https://fractal.thezao.com/whitepaper/draft/ch09-limitations-and-open-problems)
+[Ch.10: Roadmap](https://fractal.thezao.com/whitepaper/draft/ch10-roadmap)
+[Ch.11: Conclusion](https://fractal.thezao.com/whitepaper/draft/ch11-conclusion)
 
 ## Optional fetches
 
-[Resources master index](https://zaofractal.vercel.app/resources)
-[Foundations DEEP research](https://zaofractal.vercel.app/research/01-foundations-deep)
+[Resources master index](https://fractal.thezao.com/resources)
+[Foundations DEEP research](https://fractal.thezao.com/research/01-foundations-deep)

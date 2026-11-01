@@ -12,9 +12,9 @@ import rehypeCopyButton from './src/plugins/rehype-copy-button.mjs';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 
 // The repo lives at github.com/ZAODEVZ/ZAOfractal.
-// Public site at zaofractal.vercel.app; canonical domain fractal.thezao.com pending DNS.
+// Public site at fractal.thezao.com.
 export default defineConfig({
-  site: 'https://zaofractal.vercel.app',
+  site: 'https://fractal.thezao.com',
   trailingSlash: 'never',
   integrations: [sitemap(), pagefind()],
   // Emit every hoisted <script> as an external /_astro/*.js file instead of
