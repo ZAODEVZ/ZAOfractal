@@ -56,14 +56,14 @@ const { prev, next } = Astro.props;
   .pn-prev { text-align: left; }
   .pn-next { text-align: right; align-items: flex-end; }
   .pn-dir {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     font-size: 0.75rem;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
   .pn-title {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-display, 'Syne', sans-serif);
     font-weight: 700;
     font-size: 1rem;
     color: var(--cyan);

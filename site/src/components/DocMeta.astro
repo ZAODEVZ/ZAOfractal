@@ -68,7 +68,7 @@ const show = lastValidated || relatedList.length > 0;
     padding: 0.2rem 0;
   }
   .docmeta-label {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-display, 'Syne', sans-serif);
     font-weight: 700;
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -78,7 +78,7 @@ const show = lastValidated || relatedList.length > 0;
   }
   .docmeta-value {
     color: var(--text-muted);
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     font-size: 0.85rem;
   }
   .related-doc {
