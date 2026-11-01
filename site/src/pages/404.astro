@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Page not found" description="This page does not exist on the ZAOfractal docs site.">
+  <h1>Page not found</h1>
+  <p class="muted">
+    That page is not here. It may have moved when the docs were reorganized.
+    Try one of these instead:
+  </p>
+  <div class="doc-grid">
+    <div class="doc-card">
+      <a href="/">
+        <div class="title tag-cyan">Home</div>
+        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+          Start from the ZAOfractal homepage.
+        </p>
+      </a>
+    </div>
+    <div class="doc-card">
+      <a href="/whitepaper">
+        <div class="title tag-gold">Whitepaper</div>
+        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+          The ZAO Fractal Whitepaper, all 11 chapters.
+        </p>
+      </a>
+    </div>
+    <div class="doc-card">
+      <a href="/research">
+        <div class="title tag-orange">Research</div>
+        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+          The deep research library behind the whitepaper.
+        </p>
+      </a>
+    </div>
+  </div>
+</BaseLayout>

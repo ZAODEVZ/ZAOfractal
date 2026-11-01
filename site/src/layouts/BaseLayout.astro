@@ -44,6 +44,8 @@ const siteJsonLd = {
     },
   ],
 };
+// Escape '<' so a value containing '</script>' cannot close the JSON-LD tag early.
+const jsonLdSafe = (data: unknown) => JSON.stringify(data).replace(/</g, '\\u003c');
 ---
 <!doctype html>
 <html lang="en">
@@ -67,8 +69,8 @@ const siteJsonLd = {
   <link rel="canonical" href={canonical} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{fullTitle}</title>
-  <script type="application/ld+json" set:html={JSON.stringify(siteJsonLd)} />
-  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  <script type="application/ld+json" set:html={jsonLdSafe(siteJsonLd)} />
+  {jsonLd && <script type="application/ld+json" set:html={jsonLdSafe(jsonLd)} />}
 </head>
 <body>
   <Nav />
