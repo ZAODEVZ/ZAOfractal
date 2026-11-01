@@ -13,7 +13,9 @@ const OUT = join(HERE, '..', 'src', 'data');
 const read = (f) => JSON.parse(readFileSync(join(ROOT, 'data', f), 'utf8'));
 const write = (f, v) => writeFileSync(join(OUT, f), JSON.stringify(v) + '\n');
 mkdirSync(OUT, { recursive: true });
-const noEmDash = (s) => s.replace(/\s*—\s*/g, ', ');
+// Same output on every checkout: LF only (Windows autocrlf gives CRLF), and no em dash in UI text.
+const clean = (s) => s.replace(/\r\n?/g, '\n').replace(/\s*—\s*/g, ', ');
+const noEmDash = clean;
 
 const summary = read('summary.json');
 const zor = read('zor-respect.json');
