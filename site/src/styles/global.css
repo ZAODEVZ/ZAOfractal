@@ -1,28 +1,39 @@
-/* ZAOfractal site - D3 Native: academic-press / archival
- * Warm-dark palette (plum-tinted, not blue) + serif body for long-form prose.
- * Syne 800 headings (kept), Spectral body (new), Outfit chrome (kept), JetBrains Mono code.
+/* ZAOfractal site - thezao.com palette: navy ground and panel, gold only on
+ * links, buttons and active states, headings in the text colour.
+ * Fonts by role: --font-display (Syne), --font-body (Outfit),
+ * --font-prose (Spectral), --font-mono (JetBrains Mono).
+ * Contrast on --bg / --bg-elev / --bg-card (WCAG): --text 15.6 / 13.6 / 11.9,
+ * --text-muted 9.7 / 8.5 / 7.4, --text-dim 6.8 / 5.9 / 5.2, --gold 11.0 / 9.5 / 8.4.
+ * thezao.com's #6f7f96 is not used for text: 4.38:1 on #03182f, under AA.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
-  /* Warm-dark base */
-  --bg: #0F0E16;
-  --bg-elev: #1A1822;
-  --bg-card: #221F2D;
-  --text: #F0EDE6;
-  --text-muted: #B8B0A5;
-  --text-dim: #877E73;
-  /* Brand accents - slightly deeper / matte to match archival feel */
-  --orange: #E55611;
-  --cyan: #5B86A8;
-  --gold: #D4A23A;
-  --magenta: #C44784;
-  --border: #2A2630;
-  --rule: #3A3540;
+  /* thezao.com navy */
+  --bg: #03182f;
+  --bg-elev: #022449;
+  --bg-card: #0a2e57;
+  --text: #eaf0f8;
+  --text-muted: #b4c0d2;
+  --text-dim: #93a1b5;
+  /* One accent. gold is for links, buttons and active states. The older
+   * accent names stay defined as gold so components outside this file follow
+   * without an edit. */
+  --gold: #f5c518;
+  --orange: var(--gold);
+  --cyan: var(--gold);
+  --magenta: var(--gold);
+  --border: #12385f;
+  --rule: #1b4470;
   --radius: 8px;
   --max-w: 880px;
   --read-col: 720px;
+  /* Fonts by role (names shared with ZAOfractal #38) */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-prose: 'Spectral', 'Iowan Old Style', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 * {
@@ -34,7 +45,7 @@
 html {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +54,7 @@ html {
 /* Long-form prose uses Spectral. The .doc-main article inside DocLayout gets
  * this treatment; index pages + chrome stay in Outfit. */
 article {
-  font-family: 'Spectral', 'Iowan Old Style', Georgia, serif;
+  font-family: var(--font-prose);
   font-weight: 400;
   font-size: 1.05rem;
   line-height: 1.75;
@@ -69,28 +80,28 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Syne', system-ui, sans-serif;
+  font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--text);
   line-height: 1.2;
 }
 
-h1 { font-size: 2.5rem; margin: 0 0 1.5rem; color: var(--orange); }
-h2 { font-size: 1.6rem; margin: 2.5rem 0 1rem; color: var(--gold); }
-h3 { font-size: 1.2rem; margin: 1.75rem 0 0.75rem; color: var(--cyan); }
-h4 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+h1 { font-size: 2.5rem; margin: 0 0 1.5rem; }
+h2 { font-size: 1.6rem; margin: 2.5rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 1.75rem 0 0.75rem; }
+h4 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; }
 
 /* Drop cap: first letter of the first <p> AFTER the first H2 inside an article.
  * Targets body prose, not the thesis pull-quote. CSS-only. */
 article h2:first-of-type + p::first-letter {
-  font-family: 'Syne', serif;
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: 3.5rem;
   float: left;
   line-height: 0.95;
   padding: 0.35rem 0.5rem 0 0;
-  color: var(--orange);
+  color: var(--text);
 }
 
 /* When ChapterHero is rendered, hide ALL H1s inside the Markdown article body
@@ -105,7 +116,7 @@ p, ul, ol, blockquote, table { margin: 0 0 1rem; }
 a {
   color: var(--cyan);
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+  border-bottom: 1px solid rgba(245, 197, 24, 0.35);
   transition: color 0.15s, border-color 0.15s;
 }
 a:hover { color: var(--gold); border-bottom-color: var(--gold); }
@@ -117,7 +128,7 @@ li { margin-bottom: 0.25rem; }
  * Spectral italic, thin gold rules above + below, no background fill,
  * generous padding, used inline in article body. */
 blockquote {
-  font-family: 'Spectral', Georgia, serif;
+  font-family: var(--font-prose);
   font-style: italic;
   font-weight: 400;
   font-size: 1.15rem;
@@ -136,7 +147,7 @@ blockquote p { margin: 0; }
 blockquote p + p { margin-top: 0.5rem; }
 blockquote em, blockquote cite {
   font-style: normal;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--text-dim);
   text-transform: uppercase;
@@ -146,7 +157,7 @@ blockquote em, blockquote cite {
 }
 
 code {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.9em;
   background: var(--bg-elev);
   padding: 0.15em 0.4em;
@@ -184,8 +195,8 @@ th, td {
 }
 th {
   background: var(--bg-card);
-  color: var(--orange);
-  font-family: 'Syne', sans-serif;
+  color: var(--text);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -226,7 +237,7 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
 }
 .doc-card a:hover { color: var(--orange); }
 .doc-card .title {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
   margin-bottom: 0.4rem;
@@ -253,7 +264,7 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
   padding: 0.2rem 0.7rem;
   font-size: 0.75rem;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
 }
 .fm-pill .k { color: var(--text-dim); margin-right: 0.3rem; }
 .fm-pill .v { color: var(--cyan); }
@@ -269,7 +280,7 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
 /* External links (rendered by rehype-external-links plugin) */
 .ext-link {
   color: var(--cyan);
-  border-bottom: 1px solid rgba(91, 134, 168, 0.35);
+  border-bottom: 1px solid rgba(245, 197, 24, 0.35);
   transition: color 0.15s, border-color 0.15s;
 }
 .ext-link::after {
@@ -296,9 +307,9 @@ p.ext-link-block .ext-link {
   border: 1px solid var(--cyan);
   border-bottom: 1px solid var(--cyan);
   border-radius: var(--radius);
-  background: rgba(91, 134, 168, 0.08);
+  background: rgba(245, 197, 24, 0.08);
   color: var(--cyan);
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -315,7 +326,7 @@ p.ext-link-block .ext-link::after {
   flex-shrink: 0;
 }
 p.ext-link-block .ext-link:hover {
-  background: rgba(91, 134, 168, 0.18);
+  background: rgba(245, 197, 24, 0.18);
   color: var(--text);
   border-color: var(--gold);
 }
@@ -340,27 +351,27 @@ p.ext-link-block .ext-link:hover {
   background: var(--bg-card);
 }
 .contract-address .ca-label {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.78em;
-  color: var(--orange);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 .contract-address .ca-addr {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   background: transparent !important;
   color: var(--cyan) !important;
   padding: 0 !important;
   font-size: 0.95em;
 }
 .contract-address .ca-badge {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.65em;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--gold);
-  background: rgba(255, 201, 60, 0.1);
+  background: rgba(245, 197, 24, 0.1);
   padding: 0.05rem 0.4rem;
   border-radius: 4px;
 }
