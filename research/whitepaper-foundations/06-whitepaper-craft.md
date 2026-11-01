@@ -410,7 +410,7 @@ parent-doc: 718
 **7.3 Rollout Phases:**
 - **Phase 1 (Weeks 1-4):** Deploy Respect.sol, enable earning, soft launch with pilot group (20 members)
 - **Phase 2 (Weeks 5-12):** Full launch, first cycle, Curator Circles form, Council elected
-- **Phase 3 (Weeks 13+):** Federation layer, external partnership integration (SongJam, Juke, etc.), constitution finalized on-chain
+- **Phase 3 (Weeks 13+):** Federation layer, external partnership integration (Juke, etc.), constitution finalized on-chain
 
 **7.4 Security & Audits:**
 - Smart contracts: Audited by [firm], coverage report at [link]
@@ -480,7 +480,7 @@ parent-doc: 718
 
 **Phase 3: Federation & Partnerships (Months 10-18)**
 - [ ] Federation layer (9-member strategic council)
-- [ ] SongJam + Juke integration (Respect affects curation, play-to-earn)
+- [ ] Juke integration (Respect affects curation, play-to-earn)
 - [ ] External DAO partnerships (MakerDAO-style SubDAOs for specific projects)
 - [ ] On-chain constitution (Snapshot + Kleros integration for disputes)
 
