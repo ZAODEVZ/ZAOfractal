@@ -22,7 +22,9 @@ export const ERA_LABEL: Record<Era, string> = {
 export const ERA_COLOR: Record<Era, string> = {
   'pre-fractal': 'var(--text-dim)',
   'fractally': '#a78bfa',
-  'eos-eden': 'var(--cyan)',
+  // Not var(--cyan): the thezao.com token change aliases --cyan to --gold,
+  // which would make this era match 'zao'. Existing token keeps all five distinct.
+  'eos-eden': 'var(--text)',
   'optimism-fractal': '#ff4d8a',
   'zao': 'var(--orange)',
 };
