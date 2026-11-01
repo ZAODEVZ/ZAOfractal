@@ -29,7 +29,7 @@ ZAOfractal is the public documentation home of ZAO Fractal - a soulbound peer-ra
 
 ## Brand glossary (exact spellings)
 
-ORDAO, OREC, ZOR, $ZAO Respect, The ZAO, ZAO Fractal, ZAO OS, BetterCallZaal, ZABAL, WaveWarZ, FISHBOWLZ, SongJam, COC Concertz, NERDDAO, Daniel Larimer, Dan SingJoy, Tadas Vaitiekunas, sim31, Eden Fractal, Optimism Fractal, Fractally, Optimystics, Discord.thezao.com.
+ORDAO, OREC, ZOR, $ZAO Respect, The ZAO, ZAO Fractal, ZAO OS, BetterCallZaal, ZABAL, WaveWarZ, FISHBOWLZ, COC Concertz, NERDDAO, Daniel Larimer, Dan SingJoy, Tadas Vaitiekunas, sim31, Eden Fractal, Optimism Fractal, Fractally, Optimystics, Discord.thezao.com.
 
 ## Key facts
 

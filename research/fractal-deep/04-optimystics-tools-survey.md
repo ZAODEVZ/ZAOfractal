@@ -299,7 +299,7 @@ A live-meeting competition app for fractal events. Communities propose speeches,
 
 **Timeline:** Pilot in June 2026 (when Cignals mainnet version expected to release).
 
-**Music-specific angle (Doc 03):** Fractal DJ has been tested at Eden events. For ZAO, ranking WaveWarZ tracks, Joseph Goats performances, or SongJam submissions via Cignals could become a core ZAO Fractal game variant.
+**Music-specific angle (Doc 03):** Fractal DJ has been tested at Eden events. For ZAO, ranking WaveWarZ tracks or Joseph Goats performances via Cignals could become a core ZAO Fractal game variant.
 
 ---
 
