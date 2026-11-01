@@ -1,13 +1,15 @@
 ---
 // Home page intro. Plain on purpose: no background animation, no gradient
-// text, no glow, no hand-typed numbers. Colors and fonts come only from the
+// text, no glow, no hand-typed numbers (the Fractal number comes
+// from lib/week.ts, and index.astro keeps it current in the browser). Colors and fonts come only from the
 // tokens in styles/global.css, with the old names as fallbacks so this works
 // before and after the token PR lands. Live figures arrive later from ornode
 // at build time (site/src/lib/ornode.ts, not yet written).
 
 interface Props {
-  weekNumber?: number;
+  weekNumber: number;
 }
+const { weekNumber } = Astro.props;
 ---
 <section class="hero" aria-labelledby="hero-title">
   <h1 id="hero-title" class="hero-title">The ZAO's weekly Respect Game</h1>
@@ -19,7 +21,7 @@ interface Props {
   </p>
 
   <p class="hero-when">
-    Mondays at 6pm EST, on Discord. Running weekly since August 2024.
+    Fractal <span data-fractal-week>{weekNumber}</span>. Mondays at 6pm EST, on Discord. Running weekly since August 2024.
   </p>
 
   <div class="hero-cta">

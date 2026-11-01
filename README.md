@@ -29,19 +29,23 @@ ZAOfractal/
 
 Start at [reference/README.md](reference/README.md) for the survey. Move to [research/README.md](research/README.md) when you need depth. The [whitepaper/README.md](whitepaper/README.md) tracks magnum-opus progress.
 
-## Live ZAO Fractal facts (as of May 2026)
+## Live ZAO Fractal facts
+
+On-chain numbers come from [data/summary.json](data/summary.json) (pulled 26 Aug 2026, Optimism block 156,055,426). Rerun [scripts/pull-data.mjs](scripts/pull-data.mjs) to refresh them.
 
 | Fact | Value |
 |------|-------|
 | Cadence | Mondays 6pm EST, weekly. Also runs anytime with 4+ unplayed members. |
-| Streak | 100+ continuous weeks |
-| Surface | Discord bot `fractalbotmarch2026` (52 slash commands, v2.1, March 28 2026) |
+| Streak | Fractal 122 is Monday 2 Nov 2026; weekly since mid-2024 |
+| Surface | Discord bot `fractalbotmarch2026` (52 slash commands, v2.1, March 28 2026; not re-checked since) |
 | Chain | Optimism (OP Mainnet) |
 | OREC executor | `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` |
 | OG Respect (ERC-20, fractals 1-73) | `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957` |
 | ZOR Respect (ERC-1155, fractals 74+) | `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c` |
 | Submission UI | `zao.frapps.xyz/submitBreakout` |
-| OREC transactions | 242+ as of May 21, 2026 |
+| OREC proposals | 153 total: 123 executed, 11 execution failed, 15 failed, 2 executable, 2 voting (87 Respect-minting) |
+| ZOR Respect | 70 holders, 333 awards over 42 recorded periods (latest period 110, 25 Aug 2026); 17,418 held after 848 burned |
+| OG Respect | 122 holders, 38,484 supply, 447 distributions (last 18 Dec 2025) |
 
 Operational docs that already exist:
 
