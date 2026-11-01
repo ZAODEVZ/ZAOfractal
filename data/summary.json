@@ -1,6 +1,6 @@
 {
-  "pulledAt": "2026-08-26T02:00:30.821Z",
-  "latestBlock": 156055426,
+  "pulledAt": "2026-11-01T13:12:09.131Z",
+  "latestBlock": 158969975,
   "chainId": 10,
   "sources": {
     "blockscout": "https://optimism.blockscout.com/api/v2",
@@ -13,17 +13,17 @@
     "HATS": "0x3bc1A0Ad72417f2d411118085256fC53CBdDd137"
   },
   "zor": {
-    "holders": 70,
-    "awards": 333,
-    "periodsRecorded": 42,
+    "holders": 77,
+    "awards": 365,
+    "periodsRecorded": 48,
     "firstPeriod": 0,
-    "latestPeriod": 110,
+    "latestPeriod": 118,
     "firstAward": "2025-09-25T06:29:11.000000Z",
-    "latestAward": "2026-08-25T18:41:21.000000Z",
+    "latestAward": "2026-10-19T21:38:17.000000Z",
     "burns": 28,
-    "respectMinted": 18266,
+    "respectMinted": 20612,
     "respectBurned": 848,
-    "respectHeld": 17418,
+    "respectHeld": 19764,
     "reconciliationResidual": 0
   },
   "og": {
@@ -47,19 +47,19 @@
       "respectContract": "0x34ce89baa7e4a4b00e17f7e4c0cb97105c216957",
       "owner": "0xcb05f9254765ca521f7698e61e0a6ca6456be532"
     },
-    "proposals": 153,
-    "executed": 123,
-    "failed": 11,
+    "proposals": 179,
+    "executed": 143,
+    "failed": 12,
     "canceled": 0,
     "byStage": {
-      "Failed": 15,
-      "Executed": 123,
-      "ExecutionFailed": 11,
-      "Executable": 2,
-      "Voting": 2
+      "Failed": 16,
+      "Executed": 143,
+      "ExecutionFailed": 12,
+      "Executable": 4,
+      "Veto": 4
     },
-    "respectMintingProposals": 87,
+    "respectMintingProposals": 96,
     "firstProposal": "2025-09-11T15:22:03.000000Z",
-    "latestProposal": "2026-08-25T16:44:23.000000Z"
+    "latestProposal": "2026-10-27T16:35:47.000000Z"
   }
 }
