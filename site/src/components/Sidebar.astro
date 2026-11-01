@@ -132,7 +132,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '');
     margin-bottom: 1.5rem;
   }
   .sb-section-label {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-display, 'Syne', sans-serif);
     font-weight: 700;
     font-size: 0.7rem !important;
     text-transform: uppercase;
@@ -173,7 +173,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '');
     cursor: pointer;
     padding: 0.18rem 0.4rem;
     color: var(--text);
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-display, 'Syne', sans-serif);
     font-weight: 600;
     font-size: 0.83rem;
     list-style: none;
@@ -185,7 +185,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '');
   details summary::-webkit-details-marker { display: none; }
   details summary::before {
     content: '>';
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', monospace);
     font-size: 0.7rem;
     color: var(--text-dim);
     transition: transform 0.15s;

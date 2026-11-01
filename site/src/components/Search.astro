@@ -127,7 +127,7 @@
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 0.05rem 0.4rem;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     font-size: 0.7rem;
     color: var(--text-dim);
   }
@@ -172,17 +172,17 @@
     --pagefind-ui-tag: var(--bg-elev);
     --pagefind-ui-border-width: 1px;
     --pagefind-ui-border-radius: 8px;
-    --pagefind-ui-font: 'Outfit', system-ui, sans-serif;
+    --pagefind-ui-font: var(--font-body, 'Outfit', system-ui, sans-serif);
   }
   :global(.pagefind-ui .pagefind-ui__search-input) {
     background: var(--bg-card) !important;
     color: var(--text) !important;
     border-color: var(--border) !important;
-    font-family: 'Outfit', system-ui, sans-serif !important;
+    font-family: var(--font-body, 'Outfit', system-ui, sans-serif) !important;
   }
   :global(.pagefind-ui .pagefind-ui__result-link) {
     color: var(--cyan) !important;
-    font-family: 'Syne', sans-serif !important;
+    font-family: var(--font-display, 'Syne', sans-serif) !important;
     font-weight: 700 !important;
   }
   :global(.pagefind-ui .pagefind-ui__result-excerpt mark) {

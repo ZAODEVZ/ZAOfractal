@@ -35,7 +35,7 @@ const body = m ? m[2].trim() : title;
     border-bottom: 1px solid var(--rule);
   }
   .ch-num {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-display, 'Syne', sans-serif);
     font-weight: 800;
     font-size: clamp(5rem, 12vw, 8rem);
     line-height: 0.85;
@@ -49,14 +49,14 @@ const body = m ? m[2].trim() : title;
     gap: 0.4rem;
   }
   .ch-label {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     font-size: 0.78rem;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.12em;
   }
   .ch-title {
-    font-family: 'Spectral', Georgia, serif;
+    font-family: var(--font-prose, 'Spectral', Georgia, serif);
     font-style: italic;
     font-weight: 500;
     font-size: clamp(1.8rem, 3.5vw, 2.6rem);

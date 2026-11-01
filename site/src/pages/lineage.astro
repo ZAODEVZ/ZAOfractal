@@ -59,7 +59,7 @@ const eras: Era[] = ['pre-fractal', 'fractally', 'eos-eden', 'optimism-fractal',
     align-items: center;
     gap: 0.4rem;
     font-size: 0.75rem;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -130,7 +130,7 @@ const eras: Era[] = ['pre-fractal', 'fractally', 'eos-eden', 'optimism-fractal',
     grid-column: 3;
   }
   .tl-when {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     font-size: 0.75rem;
     color: var(--text-dim);
     text-transform: uppercase;
@@ -138,7 +138,7 @@ const eras: Era[] = ['pre-fractal', 'fractally', 'eos-eden', 'optimism-fractal',
     margin-bottom: 0.4rem;
   }
   .tl-title {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-display, 'Syne', sans-serif);
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--text);
@@ -157,7 +157,7 @@ const eras: Era[] = ['pre-fractal', 'fractally', 'eos-eden', 'optimism-fractal',
     margin: 0 0 0.5rem;
   }
   .tl-era {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     font-size: 0.65rem;
     color: var(--era);
     text-transform: uppercase;

@@ -139,7 +139,7 @@ const showReadProgress = collection === 'whitepaper' && slug.startsWith('draft/'
   .source-link a {
     color: var(--text-dim);
     border: none;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
   }
   .source-link a:hover { color: var(--cyan); }
   @media (max-width: 1279px) {
