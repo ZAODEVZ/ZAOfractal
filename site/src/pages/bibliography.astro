@@ -70,7 +70,7 @@ const letters = Object.keys(groups).sort();
 ---
 <BaseLayout title="Bibliography">
   <h1>Bibliography</h1>
-  <p style="font-family: 'Spectral', serif; font-style: italic; font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+  <p style="font-family: var(--font-prose, 'Spectral', serif); font-style: italic; font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
     Every external source cited across the ZAOfractal repo, deduplicated and alphabetized.
     {sorted.length} entries. For ZAO-internal cross-references, see <a href="/resources">Resources</a>.
   </p>
@@ -104,7 +104,7 @@ const letters = Object.keys(groups).sort();
     background: var(--bg-elev);
     border: 1px solid var(--border);
     border-radius: 8px;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     font-size: 0.8rem;
   }
   .biblio-jump a {
@@ -122,7 +122,7 @@ const letters = Object.keys(groups).sort();
     margin-bottom: 2rem;
   }
   .biblio-letter {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-display, 'Syne', sans-serif);
     font-weight: 800;
     font-size: 1.8rem;
     color: var(--orange);
@@ -135,7 +135,7 @@ const letters = Object.keys(groups).sort();
     list-style: none;
     padding: 0;
     margin: 0;
-    font-family: 'Spectral', Georgia, serif;
+    font-family: var(--font-prose, 'Spectral', Georgia, serif);
     font-size: 0.98rem;
     line-height: 1.6;
   }
@@ -163,7 +163,7 @@ const letters = Object.keys(groups).sort();
     border-bottom-color: var(--orange);
   }
   .biblio-origins {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
     font-size: 0.7rem;
     color: var(--text-dim);
     text-transform: uppercase;
