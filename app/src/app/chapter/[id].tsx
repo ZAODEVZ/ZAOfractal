@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { FlatList, InteractionManager, Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeIn, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
@@ -7,8 +7,6 @@ import { BackBar, Empty, Skeleton, Tap } from '../../ui/kit';
 import { c, f } from '../../ui/theme';
 import { chapters } from '../../lib/whitepaper';
 import { parseBlocks, type Block, type Inline } from '../../lib/markdown';
-
-const AnimatedList = Animated.createAnimatedComponent(FlatList<Block>);
 
 function Spans({ spans }: { spans: Inline[] }) {
   return (
@@ -96,12 +94,12 @@ export default function ChapterScreen() {
   const chapter = chapters[index];
   const next = chapters[index + 1];
 
-  // Lay out after the push animation so the transition stays smooth on long chapters.
+  // Lay out after the push animation has had a moment, so the transition stays smooth on long chapters.
   const [ready, setReady] = useState(false);
   useEffect(() => {
     setReady(false);
-    const h = InteractionManager.runAfterInteractions(() => setReady(true));
-    return () => h.cancel();
+    const h = setTimeout(() => setReady(true), 220);
+    return () => clearTimeout(h);
   }, [id]);
   const blocks = useMemo(() => (chapter && ready ? parseBlocks(chapter.body) : []), [chapter, ready]);
 
@@ -125,11 +123,11 @@ export default function ChapterScreen() {
     <View style={s.root}>
       <BackBar label={chapter.num ? `Chapter ${chapter.num}` : 'Whitepaper'} />
       <View style={s.barTrack}><Animated.View style={[s.barFill, bar]} /></View>
-      <AnimatedList
+      <Animated.FlatList<Block>
         data={blocks}
         onScroll={onScroll}
         scrollEventThrottle={16}
-        keyExtractor={(_: Block, i: number) => String(i)}
+        keyExtractor={(_, i) => String(i)}
         initialNumToRender={16}
         windowSize={9}
         contentContainerStyle={[s.column, { paddingBottom: insets.bottom + 48 }]}
@@ -140,7 +138,7 @@ export default function ChapterScreen() {
             {!ready && <Loading />}
           </Animated.View>
         }
-        renderItem={({ item }: { item: Block }) => <View style={s.pad}><BlockView b={item} /></View>}
+        renderItem={({ item }) => <View style={s.pad}><BlockView b={item} /></View>}
         ListFooterComponent={
           ready && next ? (
             <View style={s.pad}>
