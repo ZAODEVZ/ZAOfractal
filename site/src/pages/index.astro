@@ -20,7 +20,7 @@ const weekNumber = currentFractalWeek();
        app/join/page.tsx (MIT, https://github.com/ZAODEVZ/ZAO101). -->
   <h2>Join a session</h2>
   <p>
-    ZAO Fractal meets every Monday at 6pm EST. This is week {weekNumber}.
+    ZAO Fractal meets every Monday at 6pm EST. This week is Fractal <span data-fractal-week>{weekNumber}</span>.
     In small groups, members share what they worked on and rank each other's
     contributions; the result is recorded on Optimism as Respect.
   </p>
@@ -67,8 +67,8 @@ const weekNumber = currentFractalWeek();
         <div class="title tag-gold">Whitepaper</div>
         <div class="meta">{wpCount} files - magnum opus drafts</div>
         <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          The ZAO Fractal Whitepaper. All twelve chapters, ch00 to ch11, are
-          drafted.
+          The ZAO Fractal Whitepaper. All 11 chapters plus the abstract are in
+          the v0.1 draft.
         </p>
       </a>
     </div>
@@ -94,7 +94,7 @@ const weekNumber = currentFractalWeek();
         <div class="title tag-cyan">Lineage timeline</div>
         <div class="meta">2014 -> 2026 - the fractal-democracy story</div>
         <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          Larimer's BitShares through ZAO Fractal Week {weekNumber}. Every milestone color-coded by era.
+          Larimer's BitShares through ZAO Fractal <span data-fractal-week>{weekNumber}</span>. Every milestone color-coded by era.
         </p>
       </a>
     </div>
@@ -113,7 +113,7 @@ const weekNumber = currentFractalWeek();
   <table>
     <tbody>
       <tr><td><strong>Cadence</strong></td><td>Mondays 6pm EST, weekly. Also runs anytime with 4+ unplayed members.</td></tr>
-      <tr><td><strong>Streak</strong></td><td>Week {weekNumber}+ continuous</td></tr>
+      <tr><td><strong>Streak</strong></td><td>Fractal <span data-fractal-week>{weekNumber}</span>, weekly since 2024</td></tr>
       <tr><td><strong>Surface</strong></td><td>Discord bot <code>fractalbotmarch2026</code> (52 slash commands, v2.1)</td></tr>
       <tr><td><strong>Chain</strong></td><td>Optimism (OP Mainnet)</td></tr>
       <tr><td><strong>OREC executor</strong></td><td><code>0xcB05F9254765CA521F7698e61E0A6CA6456Be532</code></td></tr>
@@ -132,4 +132,14 @@ const weekNumber = currentFractalWeek();
     and <code>whitepaper/</code> in the repo gets a page here. Push to <code>main</code>
     and the site rebuilds.
   </p>
+
+  <script>
+    // Recompute in the browser so the number stays right between deploys.
+    // Bundled to an external /_astro/*.js file, so the strict CSP allows it.
+    import { currentFractalWeek } from '../lib/week';
+    const num = String(currentFractalWeek());
+    document.querySelectorAll('[data-fractal-week]').forEach((el) => {
+      el.textContent = num;
+    });
+  </script>
 </BaseLayout>
