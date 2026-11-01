@@ -16,6 +16,30 @@ const weekNumber = currentFractalWeek();
 <BaseLayout title="ZAOfractal">
   <Hero weekNumber={weekNumber} />
 
+  <!-- Join steps: wording and three-step structure adapted from ZAODEVZ/ZAO101
+       app/join/page.tsx (MIT, https://github.com/ZAODEVZ/ZAO101). -->
+  <h2>Join a session</h2>
+  <p>
+    ZAO Fractal meets every Monday at 6pm EST. This is week {weekNumber}.
+    In small groups, members share what they worked on and rank each other's
+    contributions; the result is recorded on Optimism as Respect.
+  </p>
+  <ol>
+    <li>
+      <strong>Join the ZAO Discord.</strong> Sessions run there:
+      <a href="https://discord.thezao.com">discord.thezao.com</a>.
+    </li>
+    <li>
+      <strong>Find the next session.</strong> Every ZAO event, fractal
+      sessions included, is on the calendar at
+      <a href="https://luma.com/zao">luma.com/zao</a>.
+    </li>
+    <li>
+      <strong>Show up.</strong> Come on a Monday at 6pm EST, listen in, and
+      share what you worked on when it is your turn.
+    </li>
+  </ol>
+
   <h2>Browse the docs</h2>
   <div class="doc-grid">
     <div class="doc-card">
@@ -43,8 +67,8 @@ const weekNumber = currentFractalWeek();
         <div class="title tag-gold">Whitepaper</div>
         <div class="meta">{wpCount} files - magnum opus drafts</div>
         <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          The ZAO Fractal Whitepaper. Chapters 1-3 in v0.1 draft. Chapters 4-11
-          still to come.
+          The ZAO Fractal Whitepaper. All twelve chapters, ch00 to ch11, are
+          drafted.
         </p>
       </a>
     </div>
@@ -96,7 +120,7 @@ const weekNumber = currentFractalWeek();
       <tr><td><strong>OG Respect (ERC-20, fractals 1-73)</strong></td><td><code>0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957</code></td></tr>
       <tr><td><strong>ZOR Respect (ERC-1155, fractals 74+)</strong></td><td><code>0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c</code></td></tr>
       <tr><td><strong>Submission UI</strong></td><td><a href="https://zao.frapps.xyz/submitBreakout">zao.frapps.xyz/submitBreakout</a></td></tr>
-      <tr><td><strong>OREC transactions</strong></td><td>242+ as of May 21, 2026</td></tr>
+      <tr><td><strong>OREC transactions</strong></td><td>Live count at <a href="https://zao.frapps.xyz">zao.frapps.xyz</a></td></tr>
     </tbody>
   </table>
 
