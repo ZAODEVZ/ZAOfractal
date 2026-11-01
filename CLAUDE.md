@@ -6,7 +6,7 @@ ZAO Fractal is a music-focused fractal democracy DAO running weekly Respect Game
 
 ```
 /
-├── site/          Astro 5 docs site → zaofractal.vercel.app
+├── site/          Astro 5 docs site → fractal.thezao.com
 ├── dao/           React + Vite DAO frontend → zao.frapps.xyz
 ├── reference/     16 shallow-survey markdown docs (content collection)
 ├── research/      38 deep-research markdown docs (content collection)

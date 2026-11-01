@@ -15,7 +15,7 @@ The ZAO Fractal Whitepaper draft is live.
 
 Theory + mechanism + ORDAO contracts + the music-fractal case + honest limitations + roadmap.
 
-zaofractal.vercel.app
+fractal.thezao.com
 ```
 
 **Option B - the question:**
@@ -25,7 +25,7 @@ What does governance look like when you cannot buy your way in?
 
 ZAO Fractal has run a weekly soulbound peer-ranked Respect Game for 100+ weeks on Optimism. We just shipped the whitepaper draft + the full research library + the lineage from Larimer to today.
 
-zaofractal.vercel.app
+fractal.thezao.com
 ```
 
 **Option C - the line:**
@@ -35,12 +35,12 @@ zaofractal.vercel.app
 
 Whitepaper draft (11 chapters) + research library (500+ sources) + the 12-year fractal-democracy lineage from BitShares to today.
 
-zaofractal.vercel.app
+fractal.thezao.com
 ```
 
 Lead with B if the audience is governance-curious. Lead with A if it is ZAO-internal. Lead with C if it is a Larimer / Eden / Optimystics-aware audience.
 
-Embed: zaofractal.vercel.app (Farcaster will unfurl the home page once OG cards land).
+Embed: fractal.thezao.com (Farcaster will unfurl the home page once OG cards land).
 
 ---
 
@@ -53,7 +53,7 @@ The ZAO Fractal Whitepaper is up. 11 chapters, 28,529 words.
 
 Theory + mechanism + ORDAO contracts + honest limitations + roadmap.
 
-zaofractal.vercel.app
+fractal.thezao.com
 ```
 
 ---
@@ -82,7 +82,7 @@ What is here:
 - Resources master index - every URL, contract, person, repo, paper.
 
 Source repo: github.com/ZAODEVZ/ZAOfractal
-Live site: zaofractal.vercel.app
+Live site: fractal.thezao.com
 
 Next Monday 6pm EST is Fractal 100+. Discord.thezao.com.
 ```
@@ -94,7 +94,7 @@ Next Monday 6pm EST is Fractal 100+. Discord.thezao.com.
 ```
 **ZAOfractal is live.**
 
-The ZAO Fractal documentation home is up at https://zaofractal.vercel.app
+The ZAO Fractal documentation home is up at https://fractal.thezao.com
 
 Includes:
 - The whitepaper draft (11 chapters, 28,529 words)
@@ -105,11 +105,11 @@ Includes:
 - The Eden Creators Garden inventory
 - Master resource index
 
-If you want to read one thing, read Chapter 1: https://zaofractal.vercel.app/whitepaper/draft/ch01-preamble-and-vision
+If you want to read one thing, read Chapter 1: https://fractal.thezao.com/whitepaper/draft/ch01-preamble-and-vision
 
-If you want to skip to the case for fractal governance, read Chapter 7: https://zaofractal.vercel.app/whitepaper/draft/ch07-why-fractal
+If you want to skip to the case for fractal governance, read Chapter 7: https://fractal.thezao.com/whitepaper/draft/ch07-why-fractal
 
-If you want the honest limitations, read Chapter 9: https://zaofractal.vercel.app/whitepaper/draft/ch09-limitations-and-open-problems
+If you want the honest limitations, read Chapter 9: https://fractal.thezao.com/whitepaper/draft/ch09-limitations-and-open-problems
 
 All comments + corrections welcome. Drafts are v0.1 awaiting Zaal review + community feedback.
 
@@ -123,7 +123,7 @@ Repo: https://github.com/ZAODEVZ/ZAOfractal
 ```
 Heads up - just shipped the ZAOfractal repo + site.
 
-zaofractal.vercel.app
+fractal.thezao.com
 
 The whitepaper is in draft v0.1 - 11 chapters end-to-end. Everything traces to canonical research (no fabrication). All four ZAO contracts inline-linked to Etherscan.
 
@@ -144,7 +144,7 @@ Roadmap is in chapter 10 if you want to see the next 3 months at a glance.
 ```
 Quick heads up - I shipped the ZAO Fractal Whitepaper draft + the full ZAOfractal docs site this week.
 
-zaofractal.vercel.app
+fractal.thezao.com
 
 The whitepaper draws heavily on Optimystics' work - ORDAO + OREC + Respect Game + Fractalgram + Cignals are all credited and cited. The lineage chapter (8) tells the Larimer -> SingJoy -> Tadas -> Zaal arc honestly.
 
@@ -169,7 +169,7 @@ ZAO is a music community on Farcaster + Optimism. We just published the whitepap
 
 It is the first music-focused application of Daniel Larimer's fractal-democracy framework. Members earn soulbound reputation through peer ranking, not by buying tokens.
 
-The draft + the supporting research library + a 22-milestone lineage timeline are at zaofractal.vercel.app.
+The draft + the supporting research library + a 22-milestone lineage timeline are at fractal.thezao.com.
 
 I would love to talk if you cover governance / DAOs / Web3-music / sortition / soulbound reputation. The whitepaper is 11 chapters; Chapter 7 is the comparative case if you want the elevator pitch in prose form, and Chapter 9 is the honest limitations chapter.
 
