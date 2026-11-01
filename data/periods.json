@@ -1,6 +1,6 @@
 {
-  "pulledAt": "2026-08-26T01:09:18.373Z",
-  "count": 42,
+  "pulledAt": "2026-11-01T13:12:09.131Z",
+  "count": 48,
   "periods": [
     {
       "periodNumber": 0,
@@ -326,9 +326,9 @@
       "periodNumber": 109,
       "date": "2026-08-18T00:39:27.000000Z",
       "groups": 1,
-      "participants": 6,
-      "awards": 6,
-      "respect": 372
+      "participants": 7,
+      "awards": 7,
+      "respect": 482
     },
     {
       "periodNumber": 110,
@@ -337,6 +337,54 @@
       "participants": 10,
       "awards": 10,
       "respect": 518
+    },
+    {
+      "periodNumber": 111,
+      "date": "2026-08-31T22:17:03.000000Z",
+      "groups": 1,
+      "participants": 1,
+      "awards": 1,
+      "respect": 110
+    },
+    {
+      "periodNumber": 112,
+      "date": "2026-09-24T23:52:31.000000Z",
+      "groups": 1,
+      "participants": 4,
+      "awards": 4,
+      "respect": 246
+    },
+    {
+      "periodNumber": 114,
+      "date": "2026-09-24T23:51:23.000000Z",
+      "groups": 1,
+      "participants": 6,
+      "awards": 6,
+      "respect": 466
+    },
+    {
+      "periodNumber": 116,
+      "date": "2026-10-05T22:39:49.000000Z",
+      "groups": 1,
+      "participants": 7,
+      "awards": 7,
+      "respect": 482
+    },
+    {
+      "periodNumber": 117,
+      "date": "2026-10-12T22:39:55.000000Z",
+      "groups": 1,
+      "participants": 4,
+      "awards": 4,
+      "respect": 330
+    },
+    {
+      "periodNumber": 118,
+      "date": "2026-10-19T21:37:29.000000Z",
+      "groups": 2,
+      "participants": 9,
+      "awards": 9,
+      "respect": 602
     }
   ]
 }
