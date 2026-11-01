@@ -147,7 +147,7 @@ export default function ChapterScreen() {
                 <Text style={s.nextTitle}>{next.title}</Text>
               </Tap>
             </View>
-          ) : null
+          ) : undefined
         }
       />
     </View>
