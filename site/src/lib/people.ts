@@ -75,7 +75,7 @@ export const PEOPLE: Person[] = [
     name: 'Zaal Panthaki',
     initials: 'ZP',
     role: 'ZAO founder',
-    blurb: 'Joined Optimism Fractal at week 6, served on Eden council, founded ZAO Fractal in August 2024. Built 7 generations of the fractal Discord bot. Deployed ORDAO for ZAO with Tadas. On daily/weekly terms with SingJoy and Tadas. Wallet: zaal.eth.',
+    blurb: 'Joined Optimism Fractal at week 6, served on Eden council, founded ZAO Fractal in July 2024. Built 7 generations of the fractal Discord bot. Deployed ORDAO for ZAO with Tadas. On daily/weekly terms with SingJoy and Tadas. Wallet: zaal.eth.',
     links: [
       { label: 'BetterCallZaal', href: 'https://bettercallzaal.com' },
       { label: 'Farcaster', href: 'https://warpcast.com/zaal' },

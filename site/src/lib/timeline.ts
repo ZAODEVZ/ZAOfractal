@@ -44,7 +44,7 @@ export const TIMELINE: TimelineEvent[] = [
   { when: 'May 2022', title: 'Eden Fractal Epoch 1 (EOS)', body: 'SingJoy founds Eden Fractal as a permanent community. 77 contributors earn EDEN.', era: 'eos-eden' },
   { when: 'February 2023', title: 'Fractalgram released', body: 'Tadas Vaitiekunas (sim31) ships the Telegram Web A client for live sessions.', era: 'eos-eden' },
   { when: 'October 2023', title: 'Optimism Fractal launches', body: 'SingJoy + Optimystics bring fractal governance to OP Mainnet. Tripartite model.', era: 'optimism-fractal' },
-  { when: '~August 2024', title: 'ZAO Fractal begins', body: 'Zaal founds the first music-focused fractal. Weekly Mondays 6pm EST.', era: 'zao' },
+  { when: 'July 2024', title: 'ZAO Fractal begins', body: 'Zaal founds the first music-focused fractal. Weekly Mondays 6pm EST.', era: 'zao' },
   { when: 'July 30, 2024', title: 'OG Respect ERC-20 deployed', body: '0x34cE...6957 on Optimism. Tracks contributions outside the weekly game.', era: 'zao' },
   { when: 'November 2024', title: 'ORDAO Season 5 approved', body: 'Optimism Fractal Council formally adopts ORDAO. First production ORDAO on Ethereum mainnet.', era: 'optimism-fractal' },
   { when: 'June 5, 2025', title: 'Eden Fractal Epoch 2 launches', body: 'Event #121, 3-year anniversary. Eden migrates to Base via ORDAO + snapshot-and-claim.', era: 'eos-eden' },
