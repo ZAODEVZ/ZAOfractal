@@ -75,7 +75,7 @@ export const PEOPLE: Person[] = [
     name: 'Zaal Panthaki',
     initials: 'ZP',
     role: 'ZAO founder',
-    blurb: 'Joined Optimism Fractal at week 6, served on Eden council, founded ZAO Fractal in July 2024. Built 7 generations of the fractal Discord bot. Deployed ORDAO for ZAO with Tadas. On daily/weekly terms with SingJoy and Tadas. Wallet: zaal.eth.',
+    blurb: 'Joined Optimism Fractal at week 6, served on Eden council, founded ZAO Fractal in July 2024. Built 7 generations of the fractal Discord bot. Deployed ORDAO for ZAO with Tadas.',
     links: [
       { label: 'BetterCallZaal', href: 'https://bettercallzaal.com' },
       { label: 'Farcaster', href: 'https://warpcast.com/zaal' },
@@ -87,7 +87,7 @@ export const PEOPLE: Person[] = [
     name: 'civilmonkey.eth',
     initials: 'CM',
     role: 'ZAO OREC co-signer',
-    blurb: 'One of two wallets that has ever submitted to ZAO\'s OREC contract. Operational core alongside Zaal. The 2-wallet bottleneck is a documented open issue.',
+    blurb: 'Helps run the onchain side of ZAO Fractal alongside Zaal.',
     links: [],
     group: 'zao',
     accent: 'cyan',
@@ -96,7 +96,7 @@ export const PEOPLE: Person[] = [
     name: 'Shakruz Azirof',
     initials: 'SA',
     role: 'Roy Fractal founder',
-    blurb: 'Founded Roy Fractal on EOS - the largest fractal community at 700+ members. Multi-platform facilitation: YouTube archive + Telegram async + Zoom realtime. Nested breakout rooms. Uzbekistan-based.',
+    blurb: 'Founded Roy Fractal on EOS - the largest fractal community at 700+ members. Multi-platform facilitation: YouTube archive + Telegram async + Zoom realtime. Nested breakout rooms.',
     links: [
       { label: 'eosrespect.io', href: 'https://eosrespect.io' },
     ],
@@ -124,8 +124,8 @@ export const PEOPLE: Person[] = [
   {
     name: 'Mikael',
     initials: 'MK',
-    role: 'Fractal Circles creator (dormant)',
-    blurb: 'Built Fractal Circles - an async contribution pre-prep tool. Tanja\'s May 18 2026 call described the problem it solved: "people do amazing work but forget it on presentation day." Mikael unreachable since May 2026. Status: ABANDON revival, route to Frapp-GH instead.',
+    role: 'Fractal Circles creator',
+    blurb: 'Built Fractal Circles, a tool that helps people prepare what they will share before a fractal meeting.',
     links: [],
     group: 'fractal-founders',
     accent: 'orange',

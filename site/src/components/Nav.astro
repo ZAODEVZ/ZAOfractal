@@ -10,6 +10,7 @@ const links = [
   { href: '/lineage', label: 'Lineage' },
   { href: '/people', label: 'People' },
   { href: '/bibliography', label: 'Bibliography' },
+  { href: '/resources', label: 'Resources' },
 ];
 ---
 <header class="site-nav">
@@ -17,14 +18,18 @@ const links = [
     <a href="/" class="brand">
       <span class="brand-z">ZAO</span><span class="brand-rest">fractal</span>
     </a>
-    <nav class="desktop-nav">
+    <nav class="desktop-nav members-only" aria-label="Member sections">
       {links.map(l => (
         <a href={l.href} class={isActive(l.href) ? 'active' : ''}>{l.label}</a>
       ))}
     </nav>
     <div class="nav-right">
-      <Search />
-      <MobileNav />
+      <div class="members-only"><Search /></div>
+      <button type="button" class="btn btn-secondary btn-small non-members-only" data-member-connect>
+        <span class="connect-long">ZAO member? Connect your wallet</span>
+        <span class="connect-short">Member? Connect</span>
+      </button>
+      <div class="members-only"><MobileNav /></div>
     </div>
   </div>
 </header>
@@ -79,7 +84,10 @@ const links = [
     align-items: center;
     gap: 0.5rem;
   }
+  .connect-short { display: none; }
   @media (max-width: 720px) {
+    .connect-long { display: none; }
+    .connect-short { display: inline; }
     .nav-inner { padding: 0.7rem 0.85rem; gap: 0.6rem; }
     .desktop-nav { display: none; }
     .nav-right { gap: 0.4rem; }

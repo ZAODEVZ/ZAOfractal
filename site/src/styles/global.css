@@ -426,3 +426,57 @@ article h2[id]:hover::before, article h3[id]:hover::before {
   .contract-address { gap: 0.25rem; padding: 0.05rem 0.4rem; font-size: 0.8em; }
   .contract-address .ca-label { display: none; }
 }
+
+/* ---------------------------------------------------------------------------
+ * Member view. Newcomers see a short, plain site; ZAO members (wallet holds
+ * Respect, checked by /api/member) see everything. public/member-early.js sets
+ * html.is-member before paint. This is for simplicity, not secrecy.
+ * ------------------------------------------------------------------------- */
+html:not(.is-member) .members-only { display: none !important; }
+html.is-member .non-members-only { display: none !important; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.btn:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.btn:disabled { opacity: 0.6; cursor: progress; }
+.btn-primary { background: var(--gold); color: var(--bg); }
+.btn-primary:hover { background: var(--text); }
+.btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-secondary:hover { border-color: var(--text-muted); }
+.btn-small { padding: 0.35rem 0.75rem; font-size: 0.85rem; }
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.link-button:hover { color: var(--orange); }
+
+.member-gate {
+  max-width: var(--read-col);
+  margin: 3rem 0;
+  padding: 1.75rem 1.5rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.member-gate h1 { margin-top: 0; font-size: clamp(1.5rem, 4vw, 2rem); }
+.member-gate-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+.member-status:empty { display: none; }
+.member-status { margin-top: 1rem; font-size: 0.95rem; }

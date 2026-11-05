@@ -13,17 +13,36 @@ const resCount = research.length;
 const wpCount = whitepaper.length;
 const weekNumber = currentFractalWeek();
 ---
-<BaseLayout title="ZAOfractal">
+<BaseLayout title="ZAOfractal" description="ZAO Fractal is the weekly meeting of The ZAO, a music community. Every Monday at 6pm EST members share what they did, rank each other, and earn Respect.">
   <Hero weekNumber={weekNumber} />
+
+  <!-- Newcomer home: everything above the members-only block is public and
+       written for someone who has never heard of The ZAO. Keep it short,
+       plain, and free of unexplained crypto words. -->
+
+  <h2>What is The ZAO?</h2>
+  <p>
+    The ZAO is a music community of builders: artists, engineers, curators,
+    mentors and DJs who make culture together. Learn more at
+    <a href="https://thezao.com">thezao.com</a>.
+  </p>
+
+  <h2 id="how-it-works">How the weekly meeting works</h2>
+  <ol>
+    <li>Everyone gathers on Discord on Monday at 6pm EST.</li>
+    <li>People split into small groups, usually six.</li>
+    <li>Each person shares what they did for the community that week.</li>
+    <li>The group agrees on a ranking of everyone's contributions.</li>
+    <li>
+      The ranking turns into Respect points, recorded onchain. More Respect
+      means more say in ZAO decisions. Your voice comes from what you
+      contribute, not from what you can pay.
+    </li>
+  </ol>
 
   <!-- Join steps: wording and three-step structure adapted from ZAODEVZ/ZAO101
        app/join/page.tsx (MIT, https://github.com/ZAODEVZ/ZAO101). -->
   <h2>Join a session</h2>
-  <p>
-    ZAO Fractal meets every Monday at 6pm EST. This week is Fractal <span data-fractal-week>{weekNumber}</span>.
-    In small groups, members share what they worked on and rank each other's
-    contributions; the result is recorded on Optimism as Respect.
-  </p>
   <ol>
     <li>
       <strong>Join the ZAO Discord.</strong> Sessions run there:
@@ -40,98 +59,138 @@ const weekNumber = currentFractalWeek();
     </li>
   </ol>
 
-  <h2>Browse the docs</h2>
-  <div class="doc-grid">
-    <div class="doc-card">
-      <a href="/reference">
-        <div class="title tag-orange">Reference</div>
-        <div class="meta">{refCount} files - shallow lineage survey</div>
-        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          Every fractal that ever existed (Larimer, Fractally, Eden, Optimism, Roy, Aquadac).
-          Start here.
-        </p>
-      </a>
-    </div>
-    <div class="doc-card">
-      <a href="/research">
-        <div class="title tag-cyan">Research</div>
-        <div class="meta">{resCount} files - DEEP-tier, 500+ sources</div>
-        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          Theory, mechanism, ORDAO contracts, communities, music, async, identity,
-          tooling, the full Optimystics catalog, and history of every fractal end to end.
-        </p>
-      </a>
-    </div>
-    <div class="doc-card">
-      <a href="/whitepaper">
-        <div class="title tag-gold">Whitepaper</div>
-        <div class="meta">{wpCount} files - magnum opus drafts</div>
-        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          The ZAO Fractal Whitepaper. All 11 chapters plus the abstract are in
-          the v0.1 draft.
-        </p>
-      </a>
-    </div>
-    <div class="doc-card">
-      <a href="/resources">
-        <div class="title tag-orange">Resources</div>
-        <div class="meta">Master index</div>
-        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          Every person, organization, community, contract, tool, paper, and URL
-          cited across the repo. One place to find any reference.
-        </p>
-      </a>
-    </div>
-  </div>
+  <h2>Words you will hear</h2>
+  <dl class="glossary">
+    <dt>Fractal</dt>
+    <dd>The weekly meeting itself: small groups that share and rank each other's work.</dd>
+    <dt>Breakout</dt>
+    <dd>One of those small groups, usually six people.</dd>
+    <dt>Respect</dt>
+    <dd>
+      Points you earn from your group's ranking. They cannot be bought, sold or
+      sent to someone else. They are a lasting record of what you contributed.
+    </dd>
+    <dt>Onchain</dt>
+    <dd>
+      Written to a public blockchain (here, Optimism), a shared record that
+      anyone can check and no one can quietly change.
+    </dd>
+    <dt>Wallet</dt>
+    <dd>An app that holds your onchain account. Your Respect is tied to it.</dd>
+  </dl>
 
-  <h2>Visual explorations</h2>
-  <p class="muted">
-    Two pages built on top of the canonical Markdown source for non-linear browsing.
-  </p>
-  <div class="doc-grid">
-    <div class="doc-card">
-      <a href="/lineage">
-        <div class="title tag-cyan">Lineage timeline</div>
-        <div class="meta">2014 -> 2026 - the fractal-democracy story</div>
-        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          Larimer's BitShares through ZAO Fractal <span data-fractal-week>{weekNumber}</span>. Every milestone color-coded by era.
-        </p>
-      </a>
-    </div>
-    <div class="doc-card">
-      <a href="/people">
-        <div class="title tag-gold">People</div>
-        <div class="meta">Who built this lineage</div>
-        <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
-          Larimer, SingJoy, Tadas, Zaal, Mikael, plus the founders of every active fractal community.
-        </p>
-      </a>
-    </div>
-  </div>
-
-  <h2>Live ZAO Fractal facts</h2>
+  <h2>Quick facts</h2>
   <table>
     <tbody>
-      <tr><td><strong>Cadence</strong></td><td>Mondays 6pm EST, weekly. Also runs anytime with 4+ unplayed members.</td></tr>
-      <tr><td><strong>Streak</strong></td><td>Fractal <span data-fractal-week>{weekNumber}</span>, weekly since 2024</td></tr>
-      <tr><td><strong>Surface</strong></td><td>The ZAO Fractal Discord bot, in #fractal-bot</td></tr>
-      <tr><td><strong>Chain</strong></td><td>Optimism (OP Mainnet)</td></tr>
-      <tr><td><strong>OREC executor</strong></td><td><code>0xcB05F9254765CA521F7698e61E0A6CA6456Be532</code></td></tr>
-      <tr><td><strong>OG Respect (ERC-20, fractals 1-73)</strong></td><td><code>0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957</code></td></tr>
-      <tr><td><strong>ZOR Respect (ERC-1155, fractals 74+)</strong></td><td><code>0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c</code></td></tr>
-      <tr><td><strong>Submission UI</strong></td><td><a href="https://zao.frapps.xyz/submitBreakout">zao.frapps.xyz/submitBreakout</a></td></tr>
-      <tr><td><strong>OREC transactions</strong></td><td>Live count at <a href="https://zao.frapps.xyz">zao.frapps.xyz</a></td></tr>
+      <tr><td><strong>When</strong></td><td>Mondays at 6pm EST, every week. Extra sessions can run any time 4 or more members who have not played in the last 7 days are around.</td></tr>
+      <tr><td><strong>How long</strong></td><td>Meeting number <span data-fractal-week>{weekNumber}</span> this week, every week since 2024.</td></tr>
+      <tr><td><strong>Where</strong></td><td>The ZAO Discord. The ZAO Fractal bot runs each session in the #fractal-bot channel.</td></tr>
+      <tr><td><strong>Respect is recorded on</strong></td><td>Optimism, a public blockchain network.</td></tr>
     </tbody>
   </table>
 
-  <h2>About this site</h2>
-  <p>
-    Auto-generated from the Markdown source in the
-    <a href="https://github.com/ZAODEVZ/ZAOfractal">ZAODEVZ/ZAOfractal</a> repo
-    via Astro. Every file under <code>reference/</code>, <code>research/</code>,
-    and <code>whitepaper/</code> in the repo gets a page here. Push to <code>main</code>
-    and the site rebuilds.
-  </p>
+  <div class="members-only">
+    <h2>For members: contracts and tools</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Chain</strong></td><td>Optimism (OP Mainnet)</td></tr>
+        <tr><td><strong>OREC executor</strong></td><td><code>0xcB05F9254765CA521F7698e61E0A6CA6456Be532</code></td></tr>
+        <tr><td><strong>OG Respect (ERC-20, fractals 1-73)</strong></td><td><code>0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957</code></td></tr>
+        <tr><td><strong>ZOR Respect (ERC-1155, fractals 74+)</strong></td><td><code>0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c</code></td></tr>
+        <tr><td><strong>Submission UI</strong></td><td><a href="https://zao.frapps.xyz/submitBreakout">zao.frapps.xyz/submitBreakout</a></td></tr>
+        <tr><td><strong>OREC transactions</strong></td><td>Live count at <a href="https://zao.frapps.xyz">zao.frapps.xyz</a></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Browse the docs</h2>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <a href="/reference">
+          <div class="title tag-orange">Reference</div>
+          <div class="meta">{refCount} files - shallow lineage survey</div>
+          <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+            Every fractal that ever existed (Larimer, Fractally, Eden, Optimism, Roy, Aquadac).
+            Start here.
+          </p>
+        </a>
+      </div>
+      <div class="doc-card">
+        <a href="/research">
+          <div class="title tag-cyan">Research</div>
+          <div class="meta">{resCount} files - DEEP-tier, 500+ sources</div>
+          <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+            Theory, mechanism, ORDAO contracts, communities, music, async, identity,
+            tooling, the full Optimystics catalog, and history of every fractal end to end.
+          </p>
+        </a>
+      </div>
+      <div class="doc-card">
+        <a href="/whitepaper">
+          <div class="title tag-gold">Whitepaper</div>
+          <div class="meta">{wpCount} files - magnum opus drafts</div>
+          <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+            The ZAO Fractal Whitepaper. All 11 chapters plus the abstract are in
+            the v0.1 draft.
+          </p>
+        </a>
+      </div>
+      <div class="doc-card">
+        <a href="/resources">
+          <div class="title tag-orange">Resources</div>
+          <div class="meta">Master index</div>
+          <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+            Every person, organization, community, contract, tool, paper, and URL
+            cited across the repo. One place to find any reference.
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <h2>Visual explorations</h2>
+    <p class="muted">
+      Two pages built on top of the canonical Markdown source for non-linear browsing.
+    </p>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <a href="/lineage">
+          <div class="title tag-cyan">Lineage timeline</div>
+          <div class="meta">2014 to 2026: the fractal-democracy story</div>
+          <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+            Larimer's BitShares through ZAO Fractal <span data-fractal-week>{weekNumber}</span>. Every milestone color-coded by era.
+          </p>
+        </a>
+      </div>
+      <div class="doc-card">
+        <a href="/people">
+          <div class="title tag-gold">People</div>
+          <div class="meta">Who built this lineage</div>
+          <p class="muted" style="margin-top: 0.5rem; font-size: 0.9rem;">
+            Larimer, SingJoy, Tadas, Zaal, Mikael, plus the founders of every active fractal community.
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <h2>About this site</h2>
+    <p>
+      Auto-generated from the Markdown source in the
+      <a href="https://github.com/ZAODEVZ/ZAOfractal">ZAODEVZ/ZAOfractal</a> repo
+      via Astro. Every file under <code>reference/</code>, <code>research/</code>,
+      and <code>whitepaper/</code> in the repo gets a page here. Push to <code>main</code>
+      and the site rebuilds.
+    </p>
+  </div>
+
+  <section class="member-cta non-members-only" aria-labelledby="member-cta-title">
+    <h2 id="member-cta-title">Already a ZAO member?</h2>
+    <p>
+      If your wallet holds ZAO Respect, connect it to open the full site: the
+      whitepaper, research, history and people behind the fractal. Your wallet
+      only signs a short message. It is free and sends nothing.
+    </p>
+    <button type="button" class="btn btn-secondary" data-member-connect>ZAO member? Connect your wallet</button>
+    <p class="member-status muted" data-member-status aria-live="polite"></p>
+  </section>
 
   <script>
     // Recompute in the browser so the number stays right between deploys.
@@ -143,3 +202,23 @@ const weekNumber = currentFractalWeek();
     });
   </script>
 </BaseLayout>
+
+<style>
+  .glossary dt {
+    font-weight: 700;
+    color: var(--gold);
+    margin-top: 0.9rem;
+  }
+  .glossary dd {
+    margin: 0.2rem 0 0;
+    color: var(--text-muted);
+  }
+  .member-cta {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .member-cta h2 { margin-top: 0; }
+</style>

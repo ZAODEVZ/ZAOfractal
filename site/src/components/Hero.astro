@@ -1,10 +1,8 @@
 ---
-// Home page intro. Plain on purpose: no background animation, no gradient
-// text, no glow, no hand-typed numbers (the Fractal number comes
-// from lib/week.ts, and index.astro keeps it current in the browser). Colors and fonts come only from the
-// tokens in styles/global.css, with the old names as fallbacks so this works
-// before and after the token PR lands. Live figures arrive later from ornode
-// at build time (site/src/lib/ornode.ts, not yet written).
+// Home page intro, written for someone who has never heard of The ZAO.
+// Plain on purpose: no background animation, no gradient text, no hand-typed
+// numbers (the Fractal number comes from lib/week.ts, and index.astro keeps it
+// current in the browser). Colors and fonts come from styles/global.css.
 
 interface Props {
   weekNumber: number;
@@ -12,21 +10,23 @@ interface Props {
 const { weekNumber } = Astro.props;
 ---
 <section class="hero" aria-labelledby="hero-title">
-  <h1 id="hero-title" class="hero-title">The ZAO's weekly Respect Game</h1>
+  <h1 id="hero-title" class="hero-title">A weekly meeting where musicians and builders recognize each other's work</h1>
 
   <p class="hero-sub">
-    Every week, members meet in small random groups, usually six, rank each other's recent
-    contributions, and earn Respect onchain on Optimism. Governance in The ZAO comes from
-    contribution, not capital.
+    ZAO Fractal is the weekly meeting of The ZAO. Every Monday, members meet in
+    small groups, share what they worked on, and rank each other. That ranking
+    becomes Respect: a permanent public record of who contributed.
   </p>
 
   <p class="hero-when">
-    Fractal <span data-fractal-week>{weekNumber}</span>. Mondays at 6pm EST, on Discord. Running weekly since July 2024.
+    Mondays at 6pm EST, on Discord. This week is meeting number <span data-fractal-week>{weekNumber}</span>.
   </p>
 
   <div class="hero-cta">
-    <a href="/whitepaper" class="cta cta-primary">Read the whitepaper</a>
-    <a href="/research" class="cta cta-secondary">Browse the research</a>
+    <a href="https://discord.thezao.com" class="btn btn-primary">Join the Discord</a>
+    <a href="#how-it-works" class="btn btn-secondary non-members-only">How it works</a>
+    <a href="/whitepaper" class="btn btn-secondary members-only">Read the whitepaper</a>
+    <a href="/research" class="btn btn-secondary members-only">Browse the research</a>
   </div>
 </section>
 
@@ -40,9 +40,9 @@ const { weekNumber } = Astro.props;
   }
   .hero-title {
     font-family: var(--font-display, 'Syne', system-ui, sans-serif);
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.9rem, 5vw, 2.75rem);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.12;
     letter-spacing: -0.01em;
     color: var(--text);
     margin: 0 0 1.25rem;
@@ -64,40 +64,7 @@ const { weekNumber } = Astro.props;
     gap: 0.75rem;
     flex-wrap: wrap;
   }
-  .cta {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.65rem 1.15rem;
-    border-radius: var(--radius, 8px);
-    font-family: var(--font-body, 'Outfit', system-ui, sans-serif);
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    border: 1px solid transparent;
-    transition: background-color 0.15s, border-color 0.15s;
-  }
-  .cta:focus-visible {
-    outline: 2px solid var(--text);
-    outline-offset: 2px;
-  }
-  .cta-primary {
-    background: var(--gold);
-    color: var(--bg);
-  }
-  .cta-primary:hover {
-    background: var(--text);
-  }
-  .cta-secondary {
-    color: var(--text);
-    border-color: var(--border);
-  }
-  .cta-secondary:hover {
-    border-color: var(--text-muted);
-  }
   @media (max-width: 600px) {
     .hero { padding: 2.5rem 0 2rem; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .cta { transition: none; }
   }
 </style>

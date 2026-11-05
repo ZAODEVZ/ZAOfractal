@@ -2,7 +2,7 @@
   "buildCommand": "cd site && npm ci && npm run build",
   "outputDirectory": "site/dist",
   "framework": null,
-  "installCommand": "echo 'install handled by buildCommand'",
+  "installCommand": "npm ci",
   "headers": [
     {
       "source": "/(.*)",

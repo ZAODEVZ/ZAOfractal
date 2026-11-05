@@ -1,6 +1,8 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import MemberGate from '../components/MemberGate.astro';
+import MemberScript from '../components/MemberScript.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -8,6 +10,8 @@ interface Props {
   description?: string;
   ogImage?: string;
   jsonLd?: Record<string, unknown>;
+  /** Override the default: every page except home, 404 and privacy is members-only. */
+  membersOnly?: boolean;
 }
 
 const {
@@ -15,7 +19,13 @@ const {
   description = 'ZAO Fractal - the weekly Respect Game, ORDAO governance, and the lineage of fractal democracy.',
   ogImage,
   jsonLd,
+  membersOnly: membersOnlyProp,
 } = Astro.props;
+// Newcomers get a short, simple site; ZAO members see everything. Not secrecy:
+// the content is public in the repo. See components/MemberGate.astro.
+const PUBLIC_PATHS = ['/', '/404', '/privacy'];
+const pagePath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const membersOnly = membersOnlyProp ?? !PUBLIC_PATHS.includes(pagePath);
 const fullTitle = title === 'ZAOfractal' ? title : `${title} - ZAOfractal`;
 // Social card: use the passed per-page ogImage if it exists, else the branded
 // default card (1200x630 PNG). Favicon SVG is a poor social card, so avoid it here.
@@ -69,14 +79,23 @@ const jsonLdSafe = (data: unknown) => JSON.stringify(data).replace(/</g, '\\u003
   <link rel="canonical" href={canonical} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{fullTitle}</title>
+  <script is:inline src="/member-early.js"></script>
   <script type="application/ld+json" set:html={jsonLdSafe(siteJsonLd)} />
   {jsonLd && <script type="application/ld+json" set:html={jsonLdSafe(jsonLd)} />}
 </head>
 <body>
   <Nav />
   <main>
-    <slot />
+    {membersOnly ? (
+      <>
+        <div class="members-only"><slot /></div>
+        <MemberGate />
+      </>
+    ) : (
+      <slot />
+    )}
   </main>
+  <MemberScript />
   <Footer />
   <script>
     // Copy-button handler for code blocks. Listens once, delegates to any .copy click.

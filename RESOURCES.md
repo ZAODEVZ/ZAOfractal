@@ -408,7 +408,7 @@ The ZAO OS V1 research library hosts the canonical source docs many things here 
 | 705 | Fractal governance external deep research | `governance/705-fractal-governance-external-deep-research/` |
 | 718 | ZAO Fractal Whitepaper foundations | `governance/718-zao-fractal-whitepaper-foundations/` (hub + 7 sub-docs 718a-g) |
 
-Library base path: `/Users/zaalpanthaki/Documents/ZAO OS V1/research/`. The most-load-bearing of these (056, 058, 184, 497, 657, 705, 718a-g) are imported verbatim into `/research/whitepaper-foundations/`, `/research/primary-sources/`, `/research/context/`, `/research/external/`.
+The paths above are folders in the ZAO OS V1 research library, which is not published in this repo or on this site. The most-load-bearing of these (056, 058, 184, 497, 657, 705, 718a-g) are imported verbatim into `/research/whitepaper-foundations/`, `/research/primary-sources/`, `/research/context/`, `/research/external/`.
 
 ---
 
