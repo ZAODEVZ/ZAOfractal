@@ -30,8 +30,20 @@ try {
     // Drops javascript:, data: (for hrefs), and other unsafe URL schemes.
     allowedSchemes: ['http', 'https', 'mailto'],
     // Harden any links that survive; noopener blocks reverse-tabnabbing.
+    // RESOURCES.md uses repo-relative links (research/x.md) so they work on
+    // GitHub. Map those to their site routes; drop the href of any other
+    // relative or local path, which would 404 here, and keep the text.
     transformTags: {
-      a: sanitizeHtml.simpleTransform('a', { rel: 'noopener noreferrer' }),
+      a: (tagName, attribs) => {
+        const attrs = { ...attribs, rel: 'noopener noreferrer' };
+        const href = attrs.href ?? '';
+        if (href && !/^(https?:|mailto:|#)/i.test(href)) {
+          const doc = href.match(/^(?:\.\/)?(research|reference|whitepaper)\/(.+?)\.md(#.*)?$/);
+          if (doc && !/readme$/i.test(doc[2])) attrs.href = `/${doc[1]}/${doc[2]}${doc[3] ?? ''}`;
+          else delete attrs.href;
+        }
+        return { tagName, attribs: attrs };
+      },
     },
   });
 } catch (e) {

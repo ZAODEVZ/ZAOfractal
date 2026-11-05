@@ -1,0 +1,85 @@
+---
+// One bundled script for every "Connect your wallet" and "Leave member view"
+// button on the page. Mounted once in BaseLayout. Buttons opt in with
+// data-member-connect / data-member-leave; messages go to every
+// [data-member-status] element.
+---
+<script>
+  import { buildMemberMessage, clearMember, randomNonce, readMember, saveMember, toHex } from '../lib/member';
+
+  type Eip1193 = { request: (args: { method: string; params?: unknown[] }) => Promise<unknown> };
+
+  const root = document.documentElement;
+
+  function setMember(on: boolean) {
+    root.classList.toggle('is-member', on);
+  }
+
+  function say(text: string) {
+    document.querySelectorAll<HTMLElement>('[data-member-status]').forEach((el) => {
+      el.textContent = text;
+    });
+  }
+
+  function busy(on: boolean) {
+    document.querySelectorAll<HTMLButtonElement>('[data-member-connect]').forEach((b) => {
+      b.disabled = on;
+    });
+  }
+
+  // The early head script already set the class; this also drops an expired one.
+  setMember(readMember() !== null);
+
+  async function connect() {
+    const eth = (window as unknown as { ethereum?: Eip1193 }).ethereum;
+    if (!eth) {
+      say('No wallet found in this browser. Open this page in your wallet app, or add a wallet extension, then try again.');
+      return;
+    }
+    busy(true);
+    say('Check your wallet. It will ask you to connect, then to sign a short message. Signing is free.');
+    try {
+      const accounts = (await eth.request({ method: 'eth_requestAccounts' })) as string[];
+      const address = accounts?.[0];
+      if (!address) throw new Error('no account');
+      const message = buildMemberMessage(location.host, address, randomNonce(), new Date().toISOString());
+      const signature = (await eth.request({ method: 'personal_sign', params: [toHex(message), address] })) as string;
+      say('Checking your ZAO Respect...');
+      const res = await fetch('/api/member', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ address, message, signature }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { member?: boolean; error?: string };
+      if (!res.ok) {
+        say(data.error || 'Something went wrong. Please try again.');
+        return;
+      }
+      if (data.member) {
+        saveMember(address);
+        setMember(true);
+        say('Welcome back. Member view is on.');
+      } else {
+        say('This wallet holds no ZAO Respect yet. Respect comes from taking part in the Monday fractal, so join us there first.');
+      }
+    } catch (err) {
+      const code = (err as { code?: number })?.code;
+      say(code === 4001 ? 'No problem. Nothing was signed.' : 'The wallet did not finish. Please try again.');
+    } finally {
+      busy(false);
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as Element | null;
+    if (target?.closest('[data-member-connect]')) {
+      e.preventDefault();
+      connect();
+    } else if (target?.closest('[data-member-leave]')) {
+      e.preventDefault();
+      clearMember();
+      setMember(false);
+      say('');
+    }
+  });
+</script>

@@ -1,0 +1,12 @@
+{
+  "name": "zaofractal-api",
+  "private": true,
+  "type": "module",
+  "description": "Vercel serverless functions under api/. The docs site has its own package.json in site/.",
+  "scripts": {
+    "test": "node --test api/_member.test.mjs"
+  },
+  "dependencies": {
+    "viem": "2.57.16"
+  }
+}
