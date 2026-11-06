@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { TIMELINE, ERA_LABEL, ERA_COLOR, type Era } from '../lib/timeline';
+import { VIDEO_SERIES, VIDEO_COUNT, VIDEOS_GENERATED, videoById, formatDate } from '../lib/videos';
 
 const eras: Era[] = ['pre-fractal', 'fractally', 'eos-eden', 'optimism-fractal', 'zao'];
 ---
@@ -28,11 +29,43 @@ const eras: Era[] = ['pre-fractal', 'fractally', 'eos-eden', 'optimism-fractal',
           <div class="tl-when">{event.when}</div>
           <h3 class="tl-title">{event.url ? <a href={event.url} target="_blank" rel="noopener noreferrer">{event.title}</a> : event.title}</h3>
           <p class="tl-body">{event.body}</p>
+          {event.video && videoById(event.video) && (
+            <a class="tl-watch" href={videoById(event.video)!.url} target="_blank" rel="noopener noreferrer">
+              Watch: {videoById(event.video)!.title}
+            </a>
+          )}
           <div class="tl-era">{ERA_LABEL[event.era]}</div>
         </article>
       </li>
     ))}
   </ol>
+
+  <h2 id="recordings" style="margin-top: 3rem;">Recordings</h2>
+  <p class="muted">
+    The lineage was filmed. {VIDEO_COUNT} meeting recordings from the fractals that came before ZAO, from the
+    first fractally meetings to the last Optimism Fractal, all published on the
+    <a href="https://www.youtube.com/@EdenCreators" target="_blank" rel="noopener noreferrer">Eden Creators</a> channel.
+    Dates are YouTube upload dates, usually within days of the meeting. Listed as of {formatDate(VIDEOS_GENERATED)}.
+  </p>
+  <div class="rec-series">
+    {VIDEO_SERIES.map((s) => (
+      <details class="rec-group" style={`--era: ${ERA_COLOR[s.era]}`}>
+        <summary>
+          <span class="rec-label">{s.label}</span>
+          <span class="rec-meta">{s.count} recordings{s.first && s.last ? `, ${formatDate(s.first)} to ${formatDate(s.last)}` : ''}</span>
+        </summary>
+        <ol class="rec-list">
+          {s.videos.map((v) => (
+            <li>
+              <span class="rec-date">{v.date}</span>
+              <a href={v.url} target="_blank" rel="noopener noreferrer">{v.title}</a>
+              {v.durationMin !== null && <span class="rec-dur">{v.durationMin} min</span>}
+            </li>
+          ))}
+        </ol>
+      </details>
+    ))}
+  </div>
 
   <h2 style="margin-top: 3rem;">Read more</h2>
   <ul>
@@ -163,7 +196,74 @@ const eras: Era[] = ['pre-fractal', 'fractally', 'eos-eden', 'optimism-fractal',
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
+  .tl-watch {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--cyan);
+    border: none;
+    margin: 0 0 0.5rem;
+  }
+  .tl-watch:hover { color: var(--era); }
+  .rec-series {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+  }
+  .rec-group {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--era);
+    border-radius: 0 8px 8px 0;
+  }
+  .rec-group summary {
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    align-items: baseline;
+  }
+  .rec-label {
+    font-family: var(--font-display, 'Syne', sans-serif);
+    font-weight: 700;
+    color: var(--text);
+  }
+  .rec-meta {
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+  .rec-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 1rem 0.9rem;
+    max-height: 26rem;
+    overflow-y: auto;
+  }
+  .rec-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+    padding: 0.3rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .rec-list a {
+    color: var(--text-muted);
+    border: none;
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .rec-list a:hover { color: var(--era); }
+  .rec-date, .rec-dur {
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
   @media (max-width: 760px) {
+    .rec-dur { display: none; }
     .timeline::before { left: 16px; }
     .tl-item { grid-template-columns: 32px 1fr; }
     .tl-dot { grid-column: 1; margin: 1rem 0 0 9px; }

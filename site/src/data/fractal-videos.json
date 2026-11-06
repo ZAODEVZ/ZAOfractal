@@ -1,0 +1,3365 @@
+{
+  "source": "YouTube @EdenCreators channel and the Optimism Fractal playlist, via yt-dlp",
+  "generated": "2026-11-05",
+  "count": 330,
+  "series": [
+    {
+      "key": "genesis",
+      "label": "Genesis Fractal",
+      "era": "fractally",
+      "count": 9,
+      "first": "2022-09-05",
+      "last": "2022-09-26"
+    },
+    {
+      "key": "fractally",
+      "label": "fractally",
+      "era": "fractally",
+      "count": 9,
+      "first": "2022-06-29",
+      "last": "2022-09-05"
+    },
+    {
+      "key": "eden-town-hall",
+      "label": "Eden Town Hall",
+      "era": "eos-eden",
+      "count": 56,
+      "first": "2022-06-29",
+      "last": "2026-10-31"
+    },
+    {
+      "key": "eden-fractal",
+      "label": "Eden Fractal",
+      "era": "eos-eden",
+      "count": 151,
+      "first": "2022-06-29",
+      "last": "2026-11-03"
+    },
+    {
+      "key": "optimism-fractal",
+      "label": "Optimism Fractal",
+      "era": "optimism-fractal",
+      "count": 85,
+      "first": "2023-10-24",
+      "last": "2026-01-21"
+    },
+    {
+      "key": "optimism-town-hall",
+      "label": "Optimism Town Hall",
+      "era": "optimism-fractal",
+      "count": 15,
+      "first": "2024-12-05",
+      "last": "2025-11-06"
+    },
+    {
+      "key": "ordao-fractal",
+      "label": "ORDAO Fractal",
+      "era": "optimism-fractal",
+      "count": 5,
+      "first": "2024-12-26",
+      "last": "2025-10-17"
+    }
+  ],
+  "videos": [
+    {
+      "id": "IYueJH_ugbg",
+      "date": "2022-06-29",
+      "durationMin": 119,
+      "title": "Eden ƒractal Meeting 2",
+      "series": "eden-fractal",
+      "episode": 2,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=IYueJH_ugbg"
+    },
+    {
+      "id": "pYmz6o0I_Rg",
+      "date": "2022-06-29",
+      "durationMin": 119,
+      "title": "Eden ƒractal Meeting 3",
+      "series": "eden-fractal",
+      "episode": 3,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=pYmz6o0I_Rg"
+    },
+    {
+      "id": "BJdA2pB2TFQ",
+      "date": "2022-06-29",
+      "durationMin": 145,
+      "title": "Eden Town Hall June 19",
+      "series": "eden-town-hall",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=BJdA2pB2TFQ"
+    },
+    {
+      "id": "gDA_tzBgVCY",
+      "date": "2022-06-29",
+      "durationMin": 121,
+      "title": "Eden Town Hall June 26",
+      "series": "eden-town-hall",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=gDA_tzBgVCY"
+    },
+    {
+      "id": "8eOetspyM3Y",
+      "date": "2022-06-29",
+      "durationMin": 131,
+      "title": "fractally 16",
+      "series": "fractally",
+      "episode": 16,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=8eOetspyM3Y"
+    },
+    {
+      "id": "c2n-jNFOpqY",
+      "date": "2022-06-29",
+      "durationMin": 170,
+      "title": "Fractally Afterparty 17",
+      "series": "fractally",
+      "episode": null,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=c2n-jNFOpqY"
+    },
+    {
+      "id": "hkSCjxhoZVM",
+      "date": "2022-06-29",
+      "durationMin": 143,
+      "title": "fractally meeting 17",
+      "series": "fractally",
+      "episode": 17,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=hkSCjxhoZVM"
+    },
+    {
+      "id": "hd09-2m-W4w",
+      "date": "2022-06-30",
+      "durationMin": 139,
+      "title": "Eden Fractal Meeting 4",
+      "series": "eden-fractal",
+      "episode": 4,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=hd09-2m-W4w"
+    },
+    {
+      "id": "12axzvNrLXU",
+      "date": "2022-06-30",
+      "durationMin": 122,
+      "title": "Eden Fractal's First Meeting",
+      "series": "eden-fractal",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=12axzvNrLXU"
+    },
+    {
+      "id": "4i8O1Pf1VEA",
+      "date": "2022-07-02",
+      "durationMin": 192,
+      "title": "ƒractally meeting 18",
+      "series": "fractally",
+      "episode": 18,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=4i8O1Pf1VEA"
+    },
+    {
+      "id": "O0so5JNUHgk",
+      "date": "2022-07-03",
+      "durationMin": 132,
+      "title": "Eden Town Hall, July 3rd",
+      "series": "eden-town-hall",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=O0so5JNUHgk"
+    },
+    {
+      "id": "ht1HKc7Dxx4",
+      "date": "2022-07-08",
+      "durationMin": 160,
+      "title": "Eden Fractal 5",
+      "series": "eden-fractal",
+      "episode": 5,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=ht1HKc7Dxx4"
+    },
+    {
+      "id": "npVF2XcbUMU",
+      "date": "2022-07-20",
+      "durationMin": 118,
+      "title": "Eden ƒractal Meeting 7",
+      "series": "eden-fractal",
+      "episode": 7,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=npVF2XcbUMU"
+    },
+    {
+      "id": "TkBRZpQY_6g",
+      "date": "2022-07-21",
+      "durationMin": 119,
+      "title": "Eden ƒractal Meeting 6",
+      "series": "eden-fractal",
+      "episode": 6,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=TkBRZpQY_6g"
+    },
+    {
+      "id": "LE3uhQ8BkWc",
+      "date": "2022-07-27",
+      "durationMin": 124,
+      "title": "Eden ƒractal 8",
+      "series": "eden-fractal",
+      "episode": 8,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=LE3uhQ8BkWc"
+    },
+    {
+      "id": "zQ-zQ4JX-Hc",
+      "date": "2022-08-04",
+      "durationMin": 133,
+      "title": "Eden ƒractal meeting 9",
+      "series": "eden-fractal",
+      "episode": 9,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=zQ-zQ4JX-Hc"
+    },
+    {
+      "id": "Plq_p0LDNbw",
+      "date": "2022-08-10",
+      "durationMin": 194,
+      "title": "Eden ƒractal Meeting 10",
+      "series": "eden-fractal",
+      "episode": 10,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Plq_p0LDNbw"
+    },
+    {
+      "id": "2kDiBcNvLIs",
+      "date": "2022-08-17",
+      "durationMin": 160,
+      "title": "Eden ƒractal Meeting 11",
+      "series": "eden-fractal",
+      "episode": 11,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=2kDiBcNvLIs"
+    },
+    {
+      "id": "COfPsnCFFEk",
+      "date": "2022-08-24",
+      "durationMin": 176,
+      "title": "Eden ƒractal Meeting 12",
+      "series": "eden-fractal",
+      "episode": 12,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=COfPsnCFFEk"
+    },
+    {
+      "id": "bhMElT2saa8",
+      "date": "2022-08-31",
+      "durationMin": 214,
+      "title": "Eden ƒractal Meeting 13",
+      "series": "eden-fractal",
+      "episode": 13,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=bhMElT2saa8"
+    },
+    {
+      "id": "yeSjSS8yp7Q",
+      "date": "2022-09-05",
+      "durationMin": 148,
+      "title": "Fractally 22 meeting",
+      "series": "fractally",
+      "episode": 22,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=yeSjSS8yp7Q"
+    },
+    {
+      "id": "uIaOf7pRTjE",
+      "date": "2022-09-05",
+      "durationMin": 208,
+      "title": "Fractally Meeting 25",
+      "series": "fractally",
+      "episode": 25,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=uIaOf7pRTjE"
+    },
+    {
+      "id": "0pARu4MbQOw",
+      "date": "2022-09-05",
+      "durationMin": 133,
+      "title": "ƒractally meeting 20",
+      "series": "fractally",
+      "episode": 20,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=0pARu4MbQOw"
+    },
+    {
+      "id": "_avXvsdlikE",
+      "date": "2022-09-05",
+      "durationMin": 131,
+      "title": "ƒractally meeting 21",
+      "series": "fractally",
+      "episode": 21,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=_avXvsdlikE"
+    },
+    {
+      "id": "0jy5S6yYBZI",
+      "date": "2022-09-05",
+      "durationMin": 174,
+      "title": "ƒractally meeting 23",
+      "series": "fractally",
+      "episode": 23,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=0jy5S6yYBZI"
+    },
+    {
+      "id": "LUglfvP4mG8",
+      "date": "2022-09-05",
+      "durationMin": 186,
+      "title": "Genesis ƒractal Meeting 24",
+      "series": "genesis",
+      "episode": 24,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=LUglfvP4mG8"
+    },
+    {
+      "id": "4TVUdeh4GTU",
+      "date": "2022-09-05",
+      "durationMin": 157,
+      "title": "Genesis ƒractal Meeting 26",
+      "series": "genesis",
+      "episode": 26,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=4TVUdeh4GTU"
+    },
+    {
+      "id": "P41jF23j08s",
+      "date": "2022-09-05",
+      "durationMin": 157,
+      "title": "Genesis ƒractally Meeting 27",
+      "series": "genesis",
+      "episode": 27,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=P41jF23j08s"
+    },
+    {
+      "id": "wQQ15ReVMCs",
+      "date": "2022-09-06",
+      "durationMin": 7,
+      "title": "Eden Town Hall Meeting September 4",
+      "series": "eden-town-hall",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=wQQ15ReVMCs"
+    },
+    {
+      "id": "ER0M9D98gT0",
+      "date": "2022-09-07",
+      "durationMin": 214,
+      "title": "Eden ƒractal Meeting 14",
+      "series": "eden-fractal",
+      "episode": 14,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=ER0M9D98gT0"
+    },
+    {
+      "id": "uA6jOLw_U50",
+      "date": "2022-09-11",
+      "durationMin": 5,
+      "title": "Eden Town Hall September 11",
+      "series": "eden-town-hall",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=uA6jOLw_U50"
+    },
+    {
+      "id": "S_rG8wQXqnU",
+      "date": "2022-09-11",
+      "durationMin": 181,
+      "title": "Genesis Fractal 28",
+      "series": "genesis",
+      "episode": 28,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=S_rG8wQXqnU"
+    },
+    {
+      "id": "RItsiW-pHj8",
+      "date": "2022-09-14",
+      "durationMin": 133,
+      "title": "Eden ƒractal Meeting 15",
+      "series": "eden-fractal",
+      "episode": 15,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=RItsiW-pHj8"
+    },
+    {
+      "id": "-vsuYOw7l6E",
+      "date": "2022-09-19",
+      "durationMin": 87,
+      "title": "Genesis ƒractal Meeting 29 Part 2",
+      "series": "genesis",
+      "episode": 29,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=-vsuYOw7l6E"
+    },
+    {
+      "id": "vuAyvoMm1Oc",
+      "date": "2022-09-19",
+      "durationMin": 93,
+      "title": "Genesis ƒractal Meeting 29, Part 1",
+      "series": "genesis",
+      "episode": 29,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=vuAyvoMm1Oc"
+    },
+    {
+      "id": "syZhseek-YM",
+      "date": "2022-09-22",
+      "durationMin": 217,
+      "title": "Eden ƒractal Meeting 16",
+      "series": "eden-fractal",
+      "episode": 16,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=syZhseek-YM"
+    },
+    {
+      "id": "wMmHAa0YnQY",
+      "date": "2022-09-25",
+      "durationMin": 4,
+      "title": "Town Hall September 18",
+      "series": "eden-town-hall",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=wMmHAa0YnQY"
+    },
+    {
+      "id": "k5NR9O7FYcI",
+      "date": "2022-09-26",
+      "durationMin": 40,
+      "title": "Eden Town Hall September 25",
+      "series": "eden-town-hall",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=k5NR9O7FYcI"
+    },
+    {
+      "id": "Oe7KVH0vXGY",
+      "date": "2022-09-26",
+      "durationMin": 39,
+      "title": "Genesis Fractal Meeting 30 Post Discussion",
+      "series": "genesis",
+      "episode": 30,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=Oe7KVH0vXGY"
+    },
+    {
+      "id": "Dy9BvwdmNiw",
+      "date": "2022-09-26",
+      "durationMin": 91,
+      "title": "Genesis ƒractal Meeting 30, Part 1",
+      "series": "genesis",
+      "episode": 30,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=Dy9BvwdmNiw"
+    },
+    {
+      "id": "JEv_EoMmDSw",
+      "date": "2022-09-26",
+      "durationMin": 55,
+      "title": "Genesis ƒractal Meeting 30, Part 2",
+      "series": "genesis",
+      "episode": 30,
+      "era": "fractally",
+      "url": "https://www.youtube.com/watch?v=JEv_EoMmDSw"
+    },
+    {
+      "id": "X4DYsKaoKj4",
+      "date": "2022-09-29",
+      "durationMin": 226,
+      "title": "Eden ƒractal Meeting 17",
+      "series": "eden-fractal",
+      "episode": 17,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=X4DYsKaoKj4"
+    },
+    {
+      "id": "AVC8w8T8a60",
+      "date": "2022-10-04",
+      "durationMin": 20,
+      "title": "Eden Town Hall: Consensus!",
+      "series": "eden-town-hall",
+      "episode": null,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=AVC8w8T8a60"
+    },
+    {
+      "id": "2s74g-rAGO0",
+      "date": "2022-10-12",
+      "durationMin": 36,
+      "title": "Eden Town Hall #19",
+      "series": "eden-town-hall",
+      "episode": 19,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=2s74g-rAGO0"
+    },
+    {
+      "id": "XsznxqL4t7U",
+      "date": "2022-10-16",
+      "durationMin": 198,
+      "title": "Eden Fractal 19",
+      "series": "eden-fractal",
+      "episode": 19,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=XsznxqL4t7U"
+    },
+    {
+      "id": "4lzSumVbyQM",
+      "date": "2022-10-18",
+      "durationMin": 19,
+      "title": "Town Hall 20",
+      "series": "eden-town-hall",
+      "episode": 20,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=4lzSumVbyQM"
+    },
+    {
+      "id": "mY2RCCaKWzA",
+      "date": "2022-10-23",
+      "durationMin": 150,
+      "title": "Eden Fractal 20",
+      "series": "eden-fractal",
+      "episode": 20,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=mY2RCCaKWzA"
+    },
+    {
+      "id": "7MQ3arHfj10",
+      "date": "2022-11-02",
+      "durationMin": 145,
+      "title": "Eden Fractal 21",
+      "series": "eden-fractal",
+      "episode": 21,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=7MQ3arHfj10"
+    },
+    {
+      "id": "eJ7g6wWSPKY",
+      "date": "2022-11-09",
+      "durationMin": 235,
+      "title": "Eden Fractal 22",
+      "series": "eden-fractal",
+      "episode": 22,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=eJ7g6wWSPKY"
+    },
+    {
+      "id": "gTdQPbrpifI",
+      "date": "2022-11-09",
+      "durationMin": 9,
+      "title": "EF 22 - Dan Singjoy",
+      "series": "eden-fractal",
+      "episode": 22,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=gTdQPbrpifI"
+    },
+    {
+      "id": "i_StjGImwnI",
+      "date": "2022-11-15",
+      "durationMin": 8,
+      "title": "Eden Fractal Brainstorming Sessions - Eden Town Hall 24",
+      "series": "eden-town-hall",
+      "episode": 24,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=i_StjGImwnI"
+    },
+    {
+      "id": "Ivmvhd9xlP8",
+      "date": "2022-11-16",
+      "durationMin": 127,
+      "title": "Eden Fractal 23",
+      "series": "eden-fractal",
+      "episode": 23,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Ivmvhd9xlP8"
+    },
+    {
+      "id": "kXiH2dhe9Es",
+      "date": "2022-11-21",
+      "durationMin": 129,
+      "title": "Eden Fractal 24",
+      "series": "eden-fractal",
+      "episode": 24,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=kXiH2dhe9Es"
+    },
+    {
+      "id": "FUH143BcajM",
+      "date": "2022-11-28",
+      "durationMin": 170,
+      "title": "Eden Fractal 25",
+      "series": "eden-fractal",
+      "episode": 25,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=FUH143BcajM"
+    },
+    {
+      "id": "6qJjybPshv4",
+      "date": "2022-11-28",
+      "durationMin": 6,
+      "title": "EF 24 - Dan Singjoy",
+      "series": "eden-fractal",
+      "episode": 24,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=6qJjybPshv4"
+    },
+    {
+      "id": "xOpSsBud5iM",
+      "date": "2022-11-28",
+      "durationMin": 6,
+      "title": "EF 25 - Dan Singjoy",
+      "series": "eden-fractal",
+      "episode": 25,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=xOpSsBud5iM"
+    },
+    {
+      "id": "ot4Siw6E36M",
+      "date": "2022-12-07",
+      "durationMin": 166,
+      "title": "Eden Fractal 26",
+      "series": "eden-fractal",
+      "episode": 26,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=ot4Siw6E36M"
+    },
+    {
+      "id": "Am0vCObSsZU",
+      "date": "2022-12-12",
+      "durationMin": 6,
+      "title": "EF 27 - Dan Singjoy",
+      "series": "eden-fractal",
+      "episode": 27,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Am0vCObSsZU"
+    },
+    {
+      "id": "4rY5TnHUR8g",
+      "date": "2022-12-21",
+      "durationMin": 101,
+      "title": "Town Hall 29",
+      "series": "eden-town-hall",
+      "episode": 29,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=4rY5TnHUR8g"
+    },
+    {
+      "id": "3YdILDgRAkE",
+      "date": "2022-12-24",
+      "durationMin": 149,
+      "title": "Eden Fractal 27",
+      "series": "eden-fractal",
+      "episode": 27,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=3YdILDgRAkE"
+    },
+    {
+      "id": "ZxA59IqkMSo",
+      "date": "2022-12-26",
+      "durationMin": 147,
+      "title": "Eden Fractal 28",
+      "series": "eden-fractal",
+      "episode": 28,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=ZxA59IqkMSo"
+    },
+    {
+      "id": "5WfLoJzIR_0",
+      "date": "2022-12-30",
+      "durationMin": 142,
+      "title": "Eden Fractal 29",
+      "series": "eden-fractal",
+      "episode": 29,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=5WfLoJzIR_0"
+    },
+    {
+      "id": "m_49vF05_IY",
+      "date": "2023-01-03",
+      "durationMin": 140,
+      "title": "Eden Fractal 30",
+      "series": "eden-fractal",
+      "episode": 30,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=m_49vF05_IY"
+    },
+    {
+      "id": "yrl2P56TKCs",
+      "date": "2023-01-06",
+      "durationMin": 76,
+      "title": "Eden Town Hall 31 - Puppets, Proxies, & Evolution!",
+      "series": "eden-town-hall",
+      "episode": 31,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=yrl2P56TKCs"
+    },
+    {
+      "id": "jtM3QAwkwPQ",
+      "date": "2023-01-06",
+      "durationMin": 55,
+      "title": "ETH 24 - Hypha+Eden Update, Bees, & Brainstorming!",
+      "series": "eden-town-hall",
+      "episode": 24,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=jtM3QAwkwPQ"
+    },
+    {
+      "id": "zw6JNi1xOZI",
+      "date": "2023-01-10",
+      "durationMin": 99,
+      "title": "Eden Fractal 31",
+      "series": "eden-fractal",
+      "episode": 31,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=zw6JNi1xOZI"
+    },
+    {
+      "id": "19eL6GpwiZU",
+      "date": "2023-01-15",
+      "durationMin": 80,
+      "title": "Eden Town Hall 28 - Inspiration and Infinite Games!",
+      "series": "eden-town-hall",
+      "episode": 28,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=19eL6GpwiZU"
+    },
+    {
+      "id": "P7EbH6e_Xqs",
+      "date": "2023-01-15",
+      "durationMin": 60,
+      "title": "Town Hall 32 - Learning from the 5th Eden Election",
+      "series": "eden-town-hall",
+      "episode": 32,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=P7EbH6e_Xqs"
+    },
+    {
+      "id": "n7iFaR4lDGs",
+      "date": "2023-01-17",
+      "durationMin": 153,
+      "title": "Eden Fractal 32",
+      "series": "eden-fractal",
+      "episode": 32,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=n7iFaR4lDGs"
+    },
+    {
+      "id": "F89YOeWb91w",
+      "date": "2023-01-22",
+      "durationMin": 113,
+      "title": "ETH 33 - Hypha + Eden Walkthrough, EFBS 4 & more!",
+      "series": "eden-town-hall",
+      "episode": 33,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=F89YOeWb91w"
+    },
+    {
+      "id": "kyIsE915UYw",
+      "date": "2023-01-25",
+      "durationMin": 160,
+      "title": "Eden Fractal 33",
+      "series": "eden-fractal",
+      "episode": 33,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=kyIsE915UYw"
+    },
+    {
+      "id": "N4eSV0QbQWc",
+      "date": "2023-01-29",
+      "durationMin": 110,
+      "title": "ETH 34: Town Halls, Antelopes, and Camazotz!",
+      "series": "eden-town-hall",
+      "episode": 34,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=N4eSV0QbQWc"
+    },
+    {
+      "id": "SyI8ghnXznI",
+      "date": "2023-01-30",
+      "durationMin": 155,
+      "title": "Eden Fractal 34",
+      "series": "eden-fractal",
+      "episode": 34,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=SyI8ghnXznI"
+    },
+    {
+      "id": "6ijS-vITLf4",
+      "date": "2023-02-05",
+      "durationMin": 116,
+      "title": "ETH 35: How Does Eden Empower Artists?",
+      "series": "eden-town-hall",
+      "episode": 35,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=6ijS-vITLf4"
+    },
+    {
+      "id": "MRMOd8YnnLE",
+      "date": "2023-02-07",
+      "durationMin": 186,
+      "title": "EF 35: MSIG Updates and Fractalgram!",
+      "series": "eden-fractal",
+      "episode": 35,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=MRMOd8YnnLE"
+    },
+    {
+      "id": "d6KXgSlFDrQ",
+      "date": "2023-02-14",
+      "durationMin": 178,
+      "title": "EF 36: Fractalgram, Cagendagram, and Proxies!",
+      "series": "eden-fractal",
+      "episode": 36,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=d6KXgSlFDrQ"
+    },
+    {
+      "id": "naU2kNily2Y",
+      "date": "2023-02-19",
+      "durationMin": 118,
+      "title": "ETH 36: What is Decentralized Governance?",
+      "series": "eden-town-hall",
+      "episode": 36,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=naU2kNily2Y"
+    },
+    {
+      "id": "_a-SbzL5_xY",
+      "date": "2023-02-22",
+      "durationMin": 195,
+      "title": "EF 37: Participant Agreements and More!",
+      "series": "eden-fractal",
+      "episode": 37,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=_a-SbzL5_xY"
+    },
+    {
+      "id": "Iupevg1vGZw",
+      "date": "2023-02-28",
+      "durationMin": 161,
+      "title": "EF 38: Vision, Mission, and Agreement",
+      "series": "eden-fractal",
+      "episode": 38,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Iupevg1vGZw"
+    },
+    {
+      "id": "PwT8iXlH5ow",
+      "date": "2023-03-07",
+      "durationMin": 165,
+      "title": "EF 39: Using Notion as a Collaborative Tool",
+      "series": "eden-fractal",
+      "episode": 39,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=PwT8iXlH5ow"
+    },
+    {
+      "id": "tDp6khZZI4U",
+      "date": "2023-03-14",
+      "durationMin": 169,
+      "title": "EF 40: Firmament, Albedo, & Emergent Missions",
+      "series": "eden-fractal",
+      "episode": 40,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=tDp6khZZI4U"
+    },
+    {
+      "id": "XYs7B3VALoA",
+      "date": "2023-03-22",
+      "durationMin": 180,
+      "title": "EF 41: Aquadac and Pomelo Grants",
+      "series": "eden-fractal",
+      "episode": 41,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=XYs7B3VALoA"
+    },
+    {
+      "id": "anGBjOjiJKQ",
+      "date": "2023-03-30",
+      "durationMin": 171,
+      "title": "EF 42: Pomelo Pitch Session #2",
+      "series": "eden-fractal",
+      "episode": 42,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=anGBjOjiJKQ"
+    },
+    {
+      "id": "XiotcOZLGi8",
+      "date": "2023-04-03",
+      "durationMin": 100,
+      "title": "ETH 37: What are DAMS?",
+      "series": "eden-town-hall",
+      "episode": 37,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=XiotcOZLGi8"
+    },
+    {
+      "id": "rceOHCDBEnk",
+      "date": "2023-04-04",
+      "durationMin": 147,
+      "title": "EF 43: Exploring Notion Workflows",
+      "series": "eden-fractal",
+      "episode": 43,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=rceOHCDBEnk"
+    },
+    {
+      "id": "xJ9kl0aYVxM",
+      "date": "2023-04-12",
+      "durationMin": 148,
+      "title": "EF 44: Automated MSIG Proposal",
+      "series": "eden-fractal",
+      "episode": 44,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=xJ9kl0aYVxM"
+    },
+    {
+      "id": "FYgNvA_r2cI",
+      "date": "2023-04-18",
+      "durationMin": 167,
+      "title": "EF 45: Agreements and EdenFractal.com",
+      "series": "eden-fractal",
+      "episode": 45,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=FYgNvA_r2cI"
+    },
+    {
+      "id": "cZBcV8xKEc0",
+      "date": "2023-04-25",
+      "durationMin": 161,
+      "title": "EF 46: Decentralized Media Governance Model",
+      "series": "eden-fractal",
+      "episode": 46,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=cZBcV8xKEc0"
+    },
+    {
+      "id": "Rfu5P8BqFI0",
+      "date": "2023-05-02",
+      "durationMin": 161,
+      "title": "EF 47: Alien Worlds and Documentation",
+      "series": "eden-fractal",
+      "episode": 47,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Rfu5P8BqFI0"
+    },
+    {
+      "id": "7rglsbn6VZI",
+      "date": "2023-05-09",
+      "durationMin": 185,
+      "title": "EF 48: Signaling Alien Worlds",
+      "series": "eden-fractal",
+      "episode": 48,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=7rglsbn6VZI"
+    },
+    {
+      "id": "uZqJ4fxrbmE",
+      "date": "2023-05-16",
+      "durationMin": 156,
+      "title": "EF 49: Respecting Signatories and Talking EOS EVM",
+      "series": "eden-fractal",
+      "episode": 49,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=uZqJ4fxrbmE"
+    },
+    {
+      "id": "pbef5uQRgD8",
+      "date": "2023-05-23",
+      "durationMin": 151,
+      "title": "EF 50: Polls",
+      "series": "eden-fractal",
+      "episode": 50,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=pbef5uQRgD8"
+    },
+    {
+      "id": "CgMwDjWbYLI",
+      "date": "2023-05-28",
+      "durationMin": 172,
+      "title": "EF 51: Anniversary Planning and Games!",
+      "series": "eden-fractal",
+      "episode": 51,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=CgMwDjWbYLI"
+    },
+    {
+      "id": "a4cVXMmz6Ic",
+      "date": "2023-06-07",
+      "durationMin": 167,
+      "title": "EF 52: Anniversary and Account Planning",
+      "series": "eden-fractal",
+      "episode": 52,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=a4cVXMmz6Ic"
+    },
+    {
+      "id": "3y-589VHNZM",
+      "date": "2023-06-28",
+      "durationMin": 213,
+      "title": "EF 53: Eden Fractal's First Anniversary",
+      "series": "eden-fractal",
+      "episode": 53,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=3y-589VHNZM"
+    },
+    {
+      "id": "Wfc4g-YUFrw",
+      "date": "2023-07-05",
+      "durationMin": 166,
+      "title": "EF 54: Signaling Alien Worlds, Part III",
+      "series": "eden-fractal",
+      "episode": 54,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Wfc4g-YUFrw"
+    },
+    {
+      "id": "FZN4i7jAT1A",
+      "date": "2023-07-06",
+      "durationMin": 104,
+      "title": "ETH 54: Public Goods, Fractals, & Elections",
+      "series": "eden-town-hall",
+      "episode": 54,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=FZN4i7jAT1A"
+    },
+    {
+      "id": "fTSuXr3era0",
+      "date": "2023-07-11",
+      "durationMin": 156,
+      "title": "EF 55: Inventing Games for Public Goods!",
+      "series": "eden-fractal",
+      "episode": 55,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=fTSuXr3era0"
+    },
+    {
+      "id": "pcMLZfbTnOA",
+      "date": "2023-07-12",
+      "durationMin": 152,
+      "title": "EF 56: Gamifying Public Goods",
+      "series": "eden-fractal",
+      "episode": 56,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=pcMLZfbTnOA"
+    },
+    {
+      "id": "w3jFSSTSJvk",
+      "date": "2023-07-14",
+      "durationMin": 143,
+      "title": "EF 57: The Future of Creative Collaboration",
+      "series": "eden-fractal",
+      "episode": 57,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=w3jFSSTSJvk"
+    },
+    {
+      "id": "qJX-DqiqJpo",
+      "date": "2023-07-19",
+      "durationMin": 161,
+      "title": "EF 58: Collaborating with Eden on EOS",
+      "series": "eden-fractal",
+      "episode": 58,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=qJX-DqiqJpo"
+    },
+    {
+      "id": "Rs2bQahN2Hk",
+      "date": "2023-08-02",
+      "durationMin": 142,
+      "title": "EF 59: The Future of Cagendas",
+      "series": "eden-fractal",
+      "episode": 59,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Rs2bQahN2Hk"
+    },
+    {
+      "id": "ECIckj1pF_k",
+      "date": "2023-08-04",
+      "durationMin": 140,
+      "title": "EF 60: Respect Trees",
+      "series": "eden-fractal",
+      "episode": 60,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=ECIckj1pF_k"
+    },
+    {
+      "id": "tuefR2BBUcM",
+      "date": "2023-08-08",
+      "durationMin": 43,
+      "title": "ETH 55: A Tale of More Equal Animals",
+      "series": "eden-town-hall",
+      "episode": 55,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=tuefR2BBUcM"
+    },
+    {
+      "id": "yr1NzIdezG8",
+      "date": "2023-08-15",
+      "durationMin": 159,
+      "title": "EF 61: Growing Communities",
+      "series": "eden-fractal",
+      "episode": 61,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=yr1NzIdezG8"
+    },
+    {
+      "id": "owtShRiQ8qw",
+      "date": "2023-08-22",
+      "durationMin": 139,
+      "title": "EF 62: New Topics Game!",
+      "series": "eden-fractal",
+      "episode": 62,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=owtShRiQ8qw"
+    },
+    {
+      "id": "ec5lw6DXrGQ",
+      "date": "2023-08-28",
+      "durationMin": 149,
+      "title": "EF 63: Talking Topics and Jitsi!",
+      "series": "eden-fractal",
+      "episode": 63,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=ec5lw6DXrGQ"
+    },
+    {
+      "id": "jChX4U2aoOY",
+      "date": "2023-09-08",
+      "durationMin": 157,
+      "title": "EF 64: Changing Community Keys",
+      "series": "eden-fractal",
+      "episode": 64,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=jChX4U2aoOY"
+    },
+    {
+      "id": "40vZQ9Smlns",
+      "date": "2023-09-19",
+      "durationMin": 144,
+      "title": "EF 65: Crafting Keys",
+      "series": "eden-fractal",
+      "episode": 65,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=40vZQ9Smlns"
+    },
+    {
+      "id": "uDFrqdLmp8I",
+      "date": "2023-09-25",
+      "durationMin": 142,
+      "title": "EF 66: Permission Possible",
+      "series": "eden-fractal",
+      "episode": 66,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=uDFrqdLmp8I"
+    },
+    {
+      "id": "xX3n_bMigAM",
+      "date": "2023-09-28",
+      "durationMin": 177,
+      "title": "EF 67: Growing with Optimism",
+      "series": "eden-fractal",
+      "episode": 67,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=xX3n_bMigAM"
+    },
+    {
+      "id": "QcWcW2meiTg",
+      "date": "2023-10-04",
+      "durationMin": 155,
+      "title": "EF 68: Planting Optimism Fractal",
+      "series": "eden-fractal",
+      "episode": 68,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=QcWcW2meiTg"
+    },
+    {
+      "id": "hlmDnOkudTw",
+      "date": "2023-10-16",
+      "durationMin": 153,
+      "title": "EF 69: Regeneration Nation",
+      "series": "eden-fractal",
+      "episode": 69,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=hlmDnOkudTw"
+    },
+    {
+      "id": "DOsg5ntH_VY",
+      "date": "2023-10-18",
+      "durationMin": 129,
+      "title": "EF 70: Fractal Fruits",
+      "series": "eden-fractal",
+      "episode": 70,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=DOsg5ntH_VY"
+    },
+    {
+      "id": "NTZA7A_5tbo",
+      "date": "2023-10-21",
+      "durationMin": 118,
+      "title": "EF 71: Galactic Gatherings",
+      "series": "eden-fractal",
+      "episode": 71,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=NTZA7A_5tbo"
+    },
+    {
+      "id": "ZFoAoZgwx3g",
+      "date": "2023-10-22",
+      "durationMin": 117,
+      "title": "EF 72: Optimism Fractal Benefits",
+      "series": "eden-fractal",
+      "episode": 72,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=ZFoAoZgwx3g"
+    },
+    {
+      "id": "UxZIcui76Po",
+      "date": "2023-10-24",
+      "durationMin": 75,
+      "title": "OF 1: Welcome to Optimism Fractal!",
+      "series": "optimism-fractal",
+      "episode": 1,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=UxZIcui76Po"
+    },
+    {
+      "id": "ugSdR2A3PIs",
+      "date": "2023-10-24",
+      "durationMin": 6,
+      "title": "Optimism Fractal and RetroPGF",
+      "series": "optimism-fractal",
+      "episode": null,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=ugSdR2A3PIs"
+    },
+    {
+      "id": "IFNjgReIV0c",
+      "date": "2023-10-24",
+      "durationMin": 5,
+      "title": "Optimism Fractal Proposal Overview",
+      "series": "optimism-fractal",
+      "episode": null,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=IFNjgReIV0c"
+    },
+    {
+      "id": "IQmPbzIZ7DA",
+      "date": "2023-11-06",
+      "durationMin": 53,
+      "title": "OF 2: Illuminating Public Goods",
+      "series": "optimism-fractal",
+      "episode": 2,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=IQmPbzIZ7DA"
+    },
+    {
+      "id": "Qme5QU5Czc0",
+      "date": "2023-11-13",
+      "durationMin": 109,
+      "title": "EF 73: Fractal Sports",
+      "series": "eden-fractal",
+      "episode": 73,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Qme5QU5Czc0"
+    },
+    {
+      "id": "1_u2bPldnvc",
+      "date": "2023-11-13",
+      "durationMin": 55,
+      "title": "OF 3: Doing Cool Things",
+      "series": "optimism-fractal",
+      "episode": 3,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=1_u2bPldnvc"
+    },
+    {
+      "id": "39yd-alEvKE",
+      "date": "2023-11-16",
+      "durationMin": 67,
+      "title": "EF 74: Game of Respect",
+      "series": "eden-fractal",
+      "episode": 74,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=39yd-alEvKE"
+    },
+    {
+      "id": "TXy0CUNhEy0",
+      "date": "2023-11-17",
+      "durationMin": 92,
+      "title": "EF 75: Eden Fractal Seasons",
+      "series": "eden-fractal",
+      "episode": 75,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=TXy0CUNhEy0"
+    },
+    {
+      "id": "lNjBLjGLcqI",
+      "date": "2023-11-18",
+      "durationMin": 73,
+      "title": "OF 4: Collective Collaborations",
+      "series": "optimism-fractal",
+      "episode": 4,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=lNjBLjGLcqI"
+    },
+    {
+      "id": "lSd3aIB9QO0",
+      "date": "2023-11-22",
+      "durationMin": 81,
+      "title": "EF 76: Agenda Games",
+      "series": "eden-fractal",
+      "episode": 76,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=lSd3aIB9QO0"
+    },
+    {
+      "id": "i_K3gbVxWII",
+      "date": "2023-11-27",
+      "durationMin": 87,
+      "title": "OF 5: Respect Games and RetroPitches!",
+      "series": "optimism-fractal",
+      "episode": 5,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=i_K3gbVxWII"
+    },
+    {
+      "id": "Ed5t4-4w3Zo",
+      "date": "2023-11-29",
+      "durationMin": 58,
+      "title": "EF 77: Fractal Future",
+      "series": "eden-fractal",
+      "episode": 77,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Ed5t4-4w3Zo"
+    },
+    {
+      "id": "QO8MN6Yx9OQ",
+      "date": "2023-12-02",
+      "durationMin": 98,
+      "title": "OF 6: Public Goods Games",
+      "series": "optimism-fractal",
+      "episode": 6,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=QO8MN6Yx9OQ"
+    },
+    {
+      "id": "kdkQ23GKtC8",
+      "date": "2023-12-18",
+      "durationMin": 124,
+      "title": "OF 7: The Regen Games",
+      "series": "optimism-fractal",
+      "episode": 7,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=kdkQ23GKtC8"
+    },
+    {
+      "id": "hEBFirEOhDo",
+      "date": "2024-01-03",
+      "durationMin": 73,
+      "title": "EF 78: Collective Vision",
+      "series": "eden-fractal",
+      "episode": 78,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=hEBFirEOhDo"
+    },
+    {
+      "id": "WxRRKP9fvSM",
+      "date": "2024-01-03",
+      "durationMin": 50,
+      "title": "EF 79: Team Visionary",
+      "series": "eden-fractal",
+      "episode": 79,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=WxRRKP9fvSM"
+    },
+    {
+      "id": "bQpiTD3kbmA",
+      "date": "2024-01-05",
+      "durationMin": 89,
+      "title": "OF 8: Merry Measures",
+      "series": "optimism-fractal",
+      "episode": 8,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=bQpiTD3kbmA"
+    },
+    {
+      "id": "qehuN_l5mpk",
+      "date": "2024-01-10",
+      "durationMin": 47,
+      "title": "EF 80: Upvote Game",
+      "series": "eden-fractal",
+      "episode": 80,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=qehuN_l5mpk"
+    },
+    {
+      "id": "2x4xU2J8Jak",
+      "date": "2024-01-15",
+      "durationMin": 89,
+      "title": "OF 9: Impact Scores",
+      "series": "optimism-fractal",
+      "episode": 9,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=2x4xU2J8Jak"
+    },
+    {
+      "id": "m4sYohD9fC8",
+      "date": "2024-01-23",
+      "durationMin": 92,
+      "title": "EF 81: Visionary Voyage",
+      "series": "eden-fractal",
+      "episode": 81,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=m4sYohD9fC8"
+    },
+    {
+      "id": "ood7Rzgb2Bw",
+      "date": "2024-01-29",
+      "durationMin": 74,
+      "title": "OF 10: Consensus Gaming",
+      "series": "optimism-fractal",
+      "episode": 10,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=ood7Rzgb2Bw"
+    },
+    {
+      "id": "jfSCm395CRs",
+      "date": "2024-01-31",
+      "durationMin": 52,
+      "title": "EF 82: Path Forward",
+      "series": "eden-fractal",
+      "episode": 82,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=jfSCm395CRs"
+    },
+    {
+      "id": "R2z7zRWS3os",
+      "date": "2024-02-18",
+      "durationMin": 41,
+      "title": "OF 13 second breakout room",
+      "series": "optimism-fractal",
+      "episode": 13,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=R2z7zRWS3os"
+    },
+    {
+      "id": "91lpL3Wpu_k",
+      "date": "2024-02-18",
+      "durationMin": 37,
+      "title": "OF 15 second breakout room",
+      "series": "optimism-fractal",
+      "episode": 15,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=91lpL3Wpu_k"
+    },
+    {
+      "id": "uah5psJSKn4",
+      "date": "2024-02-19",
+      "durationMin": 88,
+      "title": "OF 11: Collaborative Growth",
+      "series": "optimism-fractal",
+      "episode": 11,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=uah5psJSKn4"
+    },
+    {
+      "id": "Sd5G_03XnhA",
+      "date": "2024-02-20",
+      "durationMin": 70,
+      "title": "EF 83: Mission Game",
+      "series": "eden-fractal",
+      "episode": 83,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Sd5G_03XnhA"
+    },
+    {
+      "id": "5UPGWi6B7W0",
+      "date": "2024-02-23",
+      "durationMin": 53,
+      "title": "EF 84: Scoping Growth",
+      "series": "eden-fractal",
+      "episode": 84,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=5UPGWi6B7W0"
+    },
+    {
+      "id": "AearWNtJu2s",
+      "date": "2024-02-23",
+      "durationMin": 85,
+      "title": "OF 12: Optimistic Polling",
+      "series": "optimism-fractal",
+      "episode": 12,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=AearWNtJu2s"
+    },
+    {
+      "id": "Y0yTbDDhmj4",
+      "date": "2024-03-06",
+      "durationMin": 86,
+      "title": "OF 13: Council Formation",
+      "series": "optimism-fractal",
+      "episode": 13,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=Y0yTbDDhmj4"
+    },
+    {
+      "id": "zFWgF-KMV5E",
+      "date": "2024-03-08",
+      "durationMin": 57,
+      "title": "EF 85: Mission Dynamics",
+      "series": "eden-fractal",
+      "episode": 85,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=zFWgF-KMV5E"
+    },
+    {
+      "id": "z_nij2Z2Jhk",
+      "date": "2024-03-14",
+      "durationMin": 93,
+      "title": "OF 14: Sages Signal",
+      "series": "optimism-fractal",
+      "episode": 14,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=z_nij2Z2Jhk"
+    },
+    {
+      "id": "9w9ek3IiZLs",
+      "date": "2024-03-25",
+      "durationMin": 53,
+      "title": "EF 92: Fractal Target Markets",
+      "series": "eden-fractal",
+      "episode": 92,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=9w9ek3IiZLs"
+    },
+    {
+      "id": "BbqnBucgKHg",
+      "date": "2024-03-25",
+      "durationMin": 87,
+      "title": "OF 15: Optimistic Vision",
+      "series": "optimism-fractal",
+      "episode": 15,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=BbqnBucgKHg"
+    },
+    {
+      "id": "pC3o5V4fpm0",
+      "date": "2024-04-11",
+      "durationMin": 85,
+      "title": "OF 16: Introducing OPF Respect Trees",
+      "series": "optimism-fractal",
+      "episode": 16,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=pC3o5V4fpm0"
+    },
+    {
+      "id": "ROCuRKcuIC4",
+      "date": "2024-04-29",
+      "durationMin": 71,
+      "title": "OF 17: Hour Coordination",
+      "series": "optimism-fractal",
+      "episode": 17,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=ROCuRKcuIC4"
+    },
+    {
+      "id": "GXXeaBWT3Mk",
+      "date": "2024-05-01",
+      "durationMin": 86,
+      "title": "OF 18: Cultivating Connections",
+      "series": "optimism-fractal",
+      "episode": 18,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=GXXeaBWT3Mk"
+    },
+    {
+      "id": "D3g-d-Q4ssE",
+      "date": "2024-05-02",
+      "durationMin": 84,
+      "title": "OF 19: Sowing Stories",
+      "series": "optimism-fractal",
+      "episode": 19,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=D3g-d-Q4ssE"
+    },
+    {
+      "id": "Jdm9GKzFoiU",
+      "date": "2024-05-06",
+      "durationMin": 88,
+      "title": "OF 20: Attestation Nation",
+      "series": "optimism-fractal",
+      "episode": 20,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=Jdm9GKzFoiU"
+    },
+    {
+      "id": "h2m9_7cgTow",
+      "date": "2024-05-06",
+      "durationMin": 86,
+      "title": "OF 21: The Joy of Consensus",
+      "series": "optimism-fractal",
+      "episode": 21,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=h2m9_7cgTow"
+    },
+    {
+      "id": "5FeRMLjw0yY",
+      "date": "2024-05-08",
+      "durationMin": 81,
+      "title": "OF 22: Retro Funding Optimism Fractal",
+      "series": "optimism-fractal",
+      "episode": 22,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=5FeRMLjw0yY"
+    },
+    {
+      "id": "JhtgnEqC_Es",
+      "date": "2024-05-27",
+      "durationMin": 92,
+      "title": "OF 23: Optimism Fractal Seasons",
+      "series": "optimism-fractal",
+      "episode": 23,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=JhtgnEqC_Es"
+    },
+    {
+      "id": "pjQH394S4zc",
+      "date": "2024-05-31",
+      "durationMin": 85,
+      "title": "OF 24: Optimism Fractal Season 2 Finale",
+      "series": "optimism-fractal",
+      "episode": 24,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=pjQH394S4zc"
+    },
+    {
+      "id": "vKEcm-3npXQ",
+      "date": "2024-06-01",
+      "durationMin": 53,
+      "title": "EF 86: Strategy Game",
+      "series": "eden-fractal",
+      "episode": 86,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=vKEcm-3npXQ"
+    },
+    {
+      "id": "-QbLQgOZKwk",
+      "date": "2024-06-02",
+      "durationMin": 90,
+      "title": "OF 25: Welcome to Optimism Fractal Season 3",
+      "series": "optimism-fractal",
+      "episode": 25,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=-QbLQgOZKwk"
+    },
+    {
+      "id": "8pibc49WB9Q",
+      "date": "2024-06-05",
+      "durationMin": 57,
+      "title": "EF 87: Eden Fractal Captains",
+      "series": "eden-fractal",
+      "episode": 87,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=8pibc49WB9Q"
+    },
+    {
+      "id": "XdzOMH54LrM",
+      "date": "2024-06-05",
+      "durationMin": 90,
+      "title": "OF 26: Exploring Optimism Town Hall",
+      "series": "optimism-fractal",
+      "episode": 26,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=XdzOMH54LrM"
+    },
+    {
+      "id": "08pMPx6MLnc",
+      "date": "2024-06-08",
+      "durationMin": 88,
+      "title": "OF 27: Topics Game and Base Builders",
+      "series": "optimism-fractal",
+      "episode": 27,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=08pMPx6MLnc"
+    },
+    {
+      "id": "XG23Mc3F0K0",
+      "date": "2024-06-12",
+      "durationMin": 49,
+      "title": "EF 88: Fractal Expansions",
+      "series": "eden-fractal",
+      "episode": 88,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=XG23Mc3F0K0"
+    },
+    {
+      "id": "CsTqPS4HHsw",
+      "date": "2024-06-12",
+      "durationMin": 84,
+      "title": "OF 28: Optimism Fractal Software",
+      "series": "optimism-fractal",
+      "episode": 28,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=CsTqPS4HHsw"
+    },
+    {
+      "id": "p0jq5fO1Hwg",
+      "date": "2024-06-17",
+      "durationMin": 67,
+      "title": "EF 89: Mission Crafting",
+      "series": "eden-fractal",
+      "episode": 89,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=p0jq5fO1Hwg"
+    },
+    {
+      "id": "jty7ndt0Zis",
+      "date": "2024-06-17",
+      "durationMin": 76,
+      "title": "OF 29: Reflection Session",
+      "series": "optimism-fractal",
+      "episode": 29,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=jty7ndt0Zis"
+    },
+    {
+      "id": "NVw7-Bz5RDw",
+      "date": "2024-06-19",
+      "durationMin": 57,
+      "title": "EF 90: Eden Fractal Mission",
+      "series": "eden-fractal",
+      "episode": 90,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=NVw7-Bz5RDw"
+    },
+    {
+      "id": "91GLDo8pK1I",
+      "date": "2024-06-21",
+      "durationMin": 60,
+      "title": "EF 91: Fractal Regens",
+      "series": "eden-fractal",
+      "episode": 91,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=91GLDo8pK1I"
+    },
+    {
+      "id": "JI0mreeaSgY",
+      "date": "2024-06-21",
+      "durationMin": 92,
+      "title": "OF 30: Governance Intent",
+      "series": "optimism-fractal",
+      "episode": 30,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=JI0mreeaSgY"
+    },
+    {
+      "id": "OGh897p1RNQ",
+      "date": "2024-06-24",
+      "durationMin": 82,
+      "title": "OF 31: Onchain Summer",
+      "series": "optimism-fractal",
+      "episode": 31,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=OGh897p1RNQ"
+    },
+    {
+      "id": "xbwycrsTN-o",
+      "date": "2024-06-28",
+      "durationMin": 68,
+      "title": "EF 93: Team Building",
+      "series": "eden-fractal",
+      "episode": 93,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=xbwycrsTN-o"
+    },
+    {
+      "id": "iyd-1AhZ77Q",
+      "date": "2024-06-28",
+      "durationMin": 40,
+      "title": "OF 32: Breakout Room 1",
+      "series": "optimism-fractal",
+      "episode": 32,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=iyd-1AhZ77Q"
+    },
+    {
+      "id": "d8QCL5b4aoU",
+      "date": "2024-06-28",
+      "durationMin": 93,
+      "title": "OF 32: Optimism Season 6",
+      "series": "optimism-fractal",
+      "episode": 32,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=d8QCL5b4aoU"
+    },
+    {
+      "id": "B0b0klPCVzA",
+      "date": "2024-07-01",
+      "durationMin": 62,
+      "title": "EF 94: Eden Fractal Products",
+      "series": "eden-fractal",
+      "episode": 94,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=B0b0klPCVzA"
+    },
+    {
+      "id": "2h5OgHOXW9M",
+      "date": "2024-07-03",
+      "durationMin": 61,
+      "title": "EF 95: Strategic Planning",
+      "series": "eden-fractal",
+      "episode": 95,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=2h5OgHOXW9M"
+    },
+    {
+      "id": "lQCI8IJxmgc",
+      "date": "2024-07-05",
+      "durationMin": 51,
+      "title": "OF 33 breakout room 1",
+      "series": "optimism-fractal",
+      "episode": 33,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=lQCI8IJxmgc"
+    },
+    {
+      "id": "kf-YCt_nJUQ",
+      "date": "2024-07-09",
+      "durationMin": 61,
+      "title": "EF 96: Seasonal Structure",
+      "series": "eden-fractal",
+      "episode": 96,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=kf-YCt_nJUQ"
+    },
+    {
+      "id": "xwyjJnqdkrQ",
+      "date": "2024-07-11",
+      "durationMin": 91,
+      "title": "OF 33: Superchain Builders",
+      "series": "optimism-fractal",
+      "episode": 33,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=xwyjJnqdkrQ"
+    },
+    {
+      "id": "dfhZPli_hAc",
+      "date": "2024-07-15",
+      "durationMin": 59,
+      "title": "EF 97: Community Goals and Objectives",
+      "series": "eden-fractal",
+      "episode": 97,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=dfhZPli_hAc"
+    },
+    {
+      "id": "5LM2k1IpjzQ",
+      "date": "2024-07-19",
+      "durationMin": 39,
+      "title": "OF 35 Breakout room 1",
+      "series": "optimism-fractal",
+      "episode": 35,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=5LM2k1IpjzQ"
+    },
+    {
+      "id": "j9BBB0HHDVU",
+      "date": "2024-07-23",
+      "durationMin": 58,
+      "title": "EF 98: Fulfilling Needs",
+      "series": "eden-fractal",
+      "episode": 98,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=j9BBB0HHDVU"
+    },
+    {
+      "id": "1qrFN93-tyA",
+      "date": "2024-07-25",
+      "durationMin": 60,
+      "title": "EF 99: Branding Strategy",
+      "series": "eden-fractal",
+      "episode": 99,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=1qrFN93-tyA"
+    },
+    {
+      "id": "F9nwIxjoIts",
+      "date": "2024-07-25",
+      "durationMin": 115,
+      "title": "OF 34: Season Prep",
+      "series": "optimism-fractal",
+      "episode": 34,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=F9nwIxjoIts"
+    },
+    {
+      "id": "37SELXKrBn0",
+      "date": "2024-07-31",
+      "durationMin": 57,
+      "title": "EF 100: Fractal Milestone",
+      "series": "eden-fractal",
+      "episode": 100,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=37SELXKrBn0"
+    },
+    {
+      "id": "wHziLIsTgH8",
+      "date": "2024-08-02",
+      "durationMin": 56,
+      "title": "EF 101: Eden Fractal's 2nd Anniversary",
+      "series": "eden-fractal",
+      "episode": 101,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=wHziLIsTgH8"
+    },
+    {
+      "id": "FROpf7JFD08",
+      "date": "2024-08-05",
+      "durationMin": 84,
+      "title": "EF 102: Celebrating Fractal Communities",
+      "series": "eden-fractal",
+      "episode": 102,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=FROpf7JFD08"
+    },
+    {
+      "id": "9S_C4vjeZYU",
+      "date": "2024-08-05",
+      "durationMin": 86,
+      "title": "OF 35: Mission Requests",
+      "series": "optimism-fractal",
+      "episode": 35,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=9S_C4vjeZYU"
+    },
+    {
+      "id": "P18cOpiGPJU",
+      "date": "2024-08-09",
+      "durationMin": 59,
+      "title": "EF 103: Community Ambitions",
+      "series": "eden-fractal",
+      "episode": 103,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=P18cOpiGPJU"
+    },
+    {
+      "id": "w8nKmeOrL6g",
+      "date": "2024-08-11",
+      "durationMin": 94,
+      "title": "OF 36: Optimism Fractal Season 3 Finale",
+      "series": "optimism-fractal",
+      "episode": 36,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=w8nKmeOrL6g"
+    },
+    {
+      "id": "iYhaoUOlNJw",
+      "date": "2024-08-14",
+      "durationMin": 65,
+      "title": "EF 104: Eden Epochs",
+      "series": "eden-fractal",
+      "episode": 104,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=iYhaoUOlNJw"
+    },
+    {
+      "id": "AvZkH8N0kTQ",
+      "date": "2024-08-18",
+      "durationMin": 50,
+      "title": "EF 105: Strategic Goals",
+      "series": "eden-fractal",
+      "episode": 105,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=AvZkH8N0kTQ"
+    },
+    {
+      "id": "AOniKTW7gUo",
+      "date": "2024-08-22",
+      "durationMin": 120,
+      "title": "OF 37: Welcome to Optimism Fractal Season 4",
+      "series": "optimism-fractal",
+      "episode": 37,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=AOniKTW7gUo"
+    },
+    {
+      "id": "3jCxF4Z8S9k",
+      "date": "2024-08-23",
+      "durationMin": 54,
+      "title": "OF 38 Breakout room 1",
+      "series": "optimism-fractal",
+      "episode": 38,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=3jCxF4Z8S9k"
+    },
+    {
+      "id": "JAJBlsXgvnY",
+      "date": "2024-08-25",
+      "durationMin": 56,
+      "title": "EF 106: Fractal Development",
+      "series": "eden-fractal",
+      "episode": 106,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=JAJBlsXgvnY"
+    },
+    {
+      "id": "0y7cEpzkMbo",
+      "date": "2024-08-26",
+      "durationMin": 91,
+      "title": "OF 38: Superchain Collaboration",
+      "series": "optimism-fractal",
+      "episode": 38,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=0y7cEpzkMbo"
+    },
+    {
+      "id": "QVUmC7OiMn0",
+      "date": "2024-08-30",
+      "durationMin": 45,
+      "title": "OF 39 Breakout room 1",
+      "series": "optimism-fractal",
+      "episode": 39,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=QVUmC7OiMn0"
+    },
+    {
+      "id": "BRp6qj2wE-0",
+      "date": "2024-09-03",
+      "durationMin": 54,
+      "title": "EF 107: Respect Games App Evolution",
+      "series": "eden-fractal",
+      "episode": 107,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=BRp6qj2wE-0"
+    },
+    {
+      "id": "luw4yz_kA3Y",
+      "date": "2024-09-03",
+      "durationMin": 85,
+      "title": "OF 39: Community Insights",
+      "series": "optimism-fractal",
+      "episode": 39,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=luw4yz_kA3Y"
+    },
+    {
+      "id": "T-d0TiufAng",
+      "date": "2024-09-10",
+      "durationMin": 63,
+      "title": "OF 40 Breakout room 2",
+      "series": "optimism-fractal",
+      "episode": 40,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=T-d0TiufAng"
+    },
+    {
+      "id": "jYcMpadnaZA",
+      "date": "2024-09-10",
+      "durationMin": 116,
+      "title": "OF 40: Optimism Fractal ORDAO App",
+      "series": "optimism-fractal",
+      "episode": 40,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=jYcMpadnaZA"
+    },
+    {
+      "id": "Li6zGajVSEs",
+      "date": "2024-09-13",
+      "durationMin": 49,
+      "title": "OF 41 Breakout room 2",
+      "series": "optimism-fractal",
+      "episode": 41,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=Li6zGajVSEs"
+    },
+    {
+      "id": "_58c4pFYyAc",
+      "date": "2024-09-16",
+      "durationMin": 80,
+      "title": "EF 108: Optimistic Respect-based Executive Contract",
+      "series": "eden-fractal",
+      "episode": 108,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=_58c4pFYyAc"
+    },
+    {
+      "id": "x59XKN7tv88",
+      "date": "2024-09-16",
+      "durationMin": 119,
+      "title": "OF 41: Optimism Fractal Hats Tree, Let's GROW, and Hats Protocol",
+      "series": "optimism-fractal",
+      "episode": 41,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=x59XKN7tv88"
+    },
+    {
+      "id": "kD5RJcx9Hkw",
+      "date": "2024-09-20",
+      "durationMin": 37,
+      "title": "OF 42 Breakout Room 1",
+      "series": "optimism-fractal",
+      "episode": 42,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=kD5RJcx9Hkw"
+    },
+    {
+      "id": "WCWNgR6_HV4",
+      "date": "2024-09-25",
+      "durationMin": 106,
+      "title": "OF 42: Builder Progress and Retro Funding 6",
+      "series": "optimism-fractal",
+      "episode": 42,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=WCWNgR6_HV4"
+    },
+    {
+      "id": "txs0zB5U1vY",
+      "date": "2024-09-30",
+      "durationMin": 58,
+      "title": "EF 109: The State of Fractals",
+      "series": "eden-fractal",
+      "episode": 109,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=txs0zB5U1vY"
+    },
+    {
+      "id": "Odp8371Jv0w",
+      "date": "2024-09-30",
+      "durationMin": 115,
+      "title": "OF 43: Optimism Missions and Governance Enhancements",
+      "series": "optimism-fractal",
+      "episode": 43,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=Odp8371Jv0w"
+    },
+    {
+      "id": "DnfsRxzSYPc",
+      "date": "2024-10-05",
+      "durationMin": 84,
+      "title": "OF 44 Breakout Room 1",
+      "series": "optimism-fractal",
+      "episode": 44,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=DnfsRxzSYPc"
+    },
+    {
+      "id": "c1syDhXVIGI",
+      "date": "2024-10-07",
+      "durationMin": 104,
+      "title": "OF 44: Joyful Gardeners & Hats Protocol Deep Dive with David Ehrlichman",
+      "series": "optimism-fractal",
+      "episode": 44,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=c1syDhXVIGI"
+    },
+    {
+      "id": "pYkJezfdfcQ",
+      "date": "2024-10-15",
+      "durationMin": 76,
+      "title": "EF 110: Unveiling the Respect Games App",
+      "series": "eden-fractal",
+      "episode": 110,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=pYkJezfdfcQ"
+    },
+    {
+      "id": "V_GbCeNSbfU",
+      "date": "2024-10-15",
+      "durationMin": 113,
+      "title": "OF 45: One Year Anniversary and Retro Funding 6 Brainstorming",
+      "series": "optimism-fractal",
+      "episode": 45,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=V_GbCeNSbfU"
+    },
+    {
+      "id": "77xcSBAxVRc",
+      "date": "2024-10-21",
+      "durationMin": 113,
+      "title": "OF 46: Introducing RetroSeason",
+      "series": "optimism-fractal",
+      "episode": 46,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=77xcSBAxVRc"
+    },
+    {
+      "id": "_DdEa_fevE4",
+      "date": "2024-10-29",
+      "durationMin": 118,
+      "title": "OF 47: Optimism Fractal RetroPitches & One Year Anniversary Celebration",
+      "series": "optimism-fractal",
+      "episode": 47,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=_DdEa_fevE4"
+    },
+    {
+      "id": "Ulv6OZg9pyw",
+      "date": "2024-11-02",
+      "durationMin": 66,
+      "title": "EF 111: Eden Fractal Season Finale and Optimism Fractal Impact",
+      "series": "eden-fractal",
+      "episode": 111,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Ulv6OZg9pyw"
+    },
+    {
+      "id": "bPAaWThUIzY",
+      "date": "2024-11-09",
+      "durationMin": 106,
+      "title": "OF 48: Optimism Fractal Season Finale and RetroPitches Endeavors",
+      "series": "optimism-fractal",
+      "episode": 48,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=bPAaWThUIzY"
+    },
+    {
+      "id": "kSsBnlQ_myg",
+      "date": "2024-11-28",
+      "durationMin": 58,
+      "title": "OF 49: Optimism Fractal Season 5",
+      "series": "optimism-fractal",
+      "episode": 49,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=kSsBnlQ_myg"
+    },
+    {
+      "id": "K_un1_cjmmI",
+      "date": "2024-12-03",
+      "durationMin": 103,
+      "title": "EF 112: ORDAO Deployment and Higher-Order Fractal",
+      "series": "eden-fractal",
+      "episode": 112,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=K_un1_cjmmI"
+    },
+    {
+      "id": "qpQjEB3M06Y",
+      "date": "2024-12-05",
+      "durationMin": 59,
+      "title": "OF 50: Evaluating Impact on Optimism",
+      "series": "optimism-fractal",
+      "episode": 50,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=qpQjEB3M06Y"
+    },
+    {
+      "id": "1OiZPQK2Abo",
+      "date": "2024-12-05",
+      "durationMin": 57,
+      "title": "OTH 27: Optimism Fractal ORDAO Software Implementation",
+      "series": "optimism-town-hall",
+      "episode": 27,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=1OiZPQK2Abo"
+    },
+    {
+      "id": "QtwLxARAGUI",
+      "date": "2024-12-16",
+      "durationMin": 59,
+      "title": "OTH 28: Optimism Retro Funding 6 - Builder Insights",
+      "series": "optimism-town-hall",
+      "episode": 28,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=QtwLxARAGUI"
+    },
+    {
+      "id": "RbF9SbS7UvM",
+      "date": "2024-12-18",
+      "durationMin": 53,
+      "title": "OF 51: Governance Pioneers",
+      "series": "optimism-fractal",
+      "episode": 51,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=RbF9SbS7UvM"
+    },
+    {
+      "id": "hDfbA43lEyg",
+      "date": "2024-12-18",
+      "durationMin": 47,
+      "title": "OTH 29: Optimism Fractal and Town Hall 2025 Plans",
+      "series": "optimism-town-hall",
+      "episode": 29,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=hDfbA43lEyg"
+    },
+    {
+      "id": "CxDLRAR58yg",
+      "date": "2024-12-24",
+      "durationMin": 119,
+      "title": "EF 113: Eden Fractal 2025 Strategy Framework",
+      "series": "eden-fractal",
+      "episode": 113,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=CxDLRAR58yg"
+    },
+    {
+      "id": "0qSFfNccYAI",
+      "date": "2024-12-26",
+      "durationMin": 61,
+      "title": "OF 52: Supercharging Collaboration",
+      "series": "optimism-fractal",
+      "episode": 52,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=0qSFfNccYAI"
+    },
+    {
+      "id": "aEDjU9OwpU0",
+      "date": "2024-12-26",
+      "durationMin": 70,
+      "title": "ORDAO Office Hours #5",
+      "series": "ordao-fractal",
+      "episode": null,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=aEDjU9OwpU0"
+    },
+    {
+      "id": "TJjbXMXudfA",
+      "date": "2024-12-27",
+      "durationMin": 50,
+      "title": "OTH 30: Optimism S7 & Intro to 2025 Strategy for Optimism Fractal and Town Hall",
+      "series": "optimism-town-hall",
+      "episode": 30,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=TJjbXMXudfA"
+    },
+    {
+      "id": "8qQ2fEC5r1o",
+      "date": "2024-12-28",
+      "durationMin": 60,
+      "title": "OF 53: Builder Showcase",
+      "series": "optimism-fractal",
+      "episode": 53,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=8qQ2fEC5r1o"
+    },
+    {
+      "id": "9_RCCuvgIMU",
+      "date": "2024-12-29",
+      "durationMin": 53,
+      "title": "OTH 31: Optimism Fractal and Town Hall Growth Strategies",
+      "series": "optimism-town-hall",
+      "episode": 31,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=9_RCCuvgIMU"
+    },
+    {
+      "id": "u0sdL4JjqQw",
+      "date": "2025-01-22",
+      "durationMin": 57,
+      "title": "OF 54: Ethereum Gardeners",
+      "series": "optimism-fractal",
+      "episode": 54,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=u0sdL4JjqQw"
+    },
+    {
+      "id": "Y5HMUwis49A",
+      "date": "2025-01-22",
+      "durationMin": 62,
+      "title": "OTH 32: Growing Together",
+      "series": "optimism-town-hall",
+      "episode": 32,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=Y5HMUwis49A"
+    },
+    {
+      "id": "cIlnZ6WGxb4",
+      "date": "2025-01-28",
+      "durationMin": 68,
+      "title": "EF 114: Growing the Fractal Ecosystem",
+      "series": "eden-fractal",
+      "episode": 114,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=cIlnZ6WGxb4"
+    },
+    {
+      "id": "C_zMP6BtMik",
+      "date": "2025-01-31",
+      "durationMin": 62,
+      "title": "OF 55: Coordinating Legitimacy",
+      "series": "optimism-fractal",
+      "episode": 55,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=C_zMP6BtMik"
+    },
+    {
+      "id": "gbLzzOo2jh8",
+      "date": "2025-02-02",
+      "durationMin": 54,
+      "title": "OTH 33: Optimism Fractal Respect Game Mission Proposal",
+      "series": "optimism-town-hall",
+      "episode": 33,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=gbLzzOo2jh8"
+    },
+    {
+      "id": "pnai8_OH3po",
+      "date": "2025-02-04",
+      "durationMin": 71,
+      "title": "EF 115: Coordination Games",
+      "series": "eden-fractal",
+      "episode": 115,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=pnai8_OH3po"
+    },
+    {
+      "id": "5Sy2zHcGjIA",
+      "date": "2025-02-14",
+      "durationMin": 69,
+      "title": "OF 56: Ethereum Public Goods Game Mechanism",
+      "series": "optimism-fractal",
+      "episode": 56,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=5Sy2zHcGjIA"
+    },
+    {
+      "id": "6W64rMHvZ_0",
+      "date": "2025-02-18",
+      "durationMin": 61,
+      "title": "EF 116: Exploring AI and Dialectics in DAOs with Dialexity",
+      "series": "eden-fractal",
+      "episode": 116,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=6W64rMHvZ_0"
+    },
+    {
+      "id": "27GuFpiJ_zU",
+      "date": "2025-02-18",
+      "durationMin": 57,
+      "title": "OTH 34: Respect Game Mission: Fund Distribution Research & Blueprint",
+      "series": "optimism-town-hall",
+      "episode": 34,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=27GuFpiJ_zU"
+    },
+    {
+      "id": "SvaWZnX1H8o",
+      "date": "2025-03-05",
+      "durationMin": 72,
+      "title": "OF 57: Regenerative Governance",
+      "series": "optimism-fractal",
+      "episode": 57,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=SvaWZnX1H8o"
+    },
+    {
+      "id": "8je7MpHt9Bs",
+      "date": "2025-03-05",
+      "durationMin": 37,
+      "title": "OTH 35: Ethereum Gatherings",
+      "series": "optimism-town-hall",
+      "episode": 35,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=8je7MpHt9Bs"
+    },
+    {
+      "id": "it30fAcdFlk",
+      "date": "2025-03-19",
+      "durationMin": 68,
+      "title": "OF 58: Rebuilding Economies",
+      "series": "optimism-fractal",
+      "episode": 58,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=it30fAcdFlk"
+    },
+    {
+      "id": "nkWy5CJz17Q",
+      "date": "2025-03-19",
+      "durationMin": 54,
+      "title": "OTH 36: Exploring LobbyFi in DAO Governance",
+      "series": "optimism-town-hall",
+      "episode": 36,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=nkWy5CJz17Q"
+    },
+    {
+      "id": "uOsZ-f9cZF8",
+      "date": "2025-03-24",
+      "durationMin": 84,
+      "title": "EF 117: Fractal Governance Architecture",
+      "series": "eden-fractal",
+      "episode": 117,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=uOsZ-f9cZF8"
+    },
+    {
+      "id": "y4iqjPgkBOo",
+      "date": "2025-03-25",
+      "durationMin": 63,
+      "title": "OF 59: Public Goods Infrastructure",
+      "series": "optimism-fractal",
+      "episode": 59,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=y4iqjPgkBOo"
+    },
+    {
+      "id": "hmgpK73lgLw",
+      "date": "2025-03-25",
+      "durationMin": 70,
+      "title": "OTH 37: Optimism Fractal Seasonal Rhythms",
+      "series": "optimism-town-hall",
+      "episode": 37,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=hmgpK73lgLw"
+    },
+    {
+      "id": "BLslXdv9B3s",
+      "date": "2025-03-28",
+      "durationMin": 100,
+      "title": "EF 118: Fulfilling the Vision of Eden Fractal Epoch 2",
+      "series": "eden-fractal",
+      "episode": 118,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=BLslXdv9B3s"
+    },
+    {
+      "id": "M55-hOQroF4",
+      "date": "2025-04-15",
+      "durationMin": 63,
+      "title": "OF 60: Ethereum Players",
+      "series": "optimism-fractal",
+      "episode": 60,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=M55-hOQroF4"
+    },
+    {
+      "id": "0hekghkN3fU",
+      "date": "2025-04-24",
+      "durationMin": 51,
+      "title": "OTH 38: Optimism Fractal Season 6 Planning",
+      "series": "optimism-town-hall",
+      "episode": 38,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=0hekghkN3fU"
+    },
+    {
+      "id": "EzJiXbd2cT0",
+      "date": "2025-04-28",
+      "durationMin": 107,
+      "title": "EF 119: Eden Fractal Epoch 2 Implementation Planning",
+      "series": "eden-fractal",
+      "episode": 119,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=EzJiXbd2cT0"
+    },
+    {
+      "id": "cNN6dUhP-18",
+      "date": "2025-05-25",
+      "durationMin": 26,
+      "title": "ORDAO Fractal App Demo: Onchain Democratic Execution",
+      "series": "ordao-fractal",
+      "episode": null,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=cNN6dUhP-18"
+    },
+    {
+      "id": "GoFV-GuZa1o",
+      "date": "2025-05-27",
+      "durationMin": 65,
+      "title": "OF 61: Optimism Fractal Season 6",
+      "series": "optimism-fractal",
+      "episode": 61,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=GoFV-GuZa1o"
+    },
+    {
+      "id": "V-HpqQSSxq8",
+      "date": "2025-05-28",
+      "durationMin": 54,
+      "title": "EF 120: Eden Fractal Epoch 1 Finale & Preparing for Epoch 2",
+      "series": "eden-fractal",
+      "episode": 120,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=V-HpqQSSxq8"
+    },
+    {
+      "id": "K-_KsBH06EU",
+      "date": "2025-05-28",
+      "durationMin": 56,
+      "title": "OTH 39: Superchain Collaborative Governance & Season 4 Launch",
+      "series": "optimism-town-hall",
+      "episode": 39,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=K-_KsBH06EU"
+    },
+    {
+      "id": "GaOt52wcGfo",
+      "date": "2025-05-31",
+      "durationMin": 67,
+      "title": "OF 62: Playing with the Optimism Fractal ORDAO App",
+      "series": "optimism-fractal",
+      "episode": 62,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=GaOt52wcGfo"
+    },
+    {
+      "id": "6ADNR5gB7f4",
+      "date": "2025-06-06",
+      "durationMin": 55,
+      "title": "ORF 1:  The First ORDAO Fractal Event",
+      "series": "ordao-fractal",
+      "episode": 1,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=6ADNR5gB7f4"
+    },
+    {
+      "id": "lL2Op7S-NVk",
+      "date": "2025-06-11",
+      "durationMin": 69,
+      "title": "EF 121: Eden Fractal Epoch 2 Launch",
+      "series": "eden-fractal",
+      "episode": 121,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=lL2Op7S-NVk"
+    },
+    {
+      "id": "xBwDOcFhpHI",
+      "date": "2025-06-11",
+      "durationMin": 45,
+      "title": "ETH 57: Eden Fractal Epoch 2 and Town Hall Revival",
+      "series": "eden-town-hall",
+      "episode": 57,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=xBwDOcFhpHI"
+    },
+    {
+      "id": "Zwc5QtdFSCA",
+      "date": "2025-06-26",
+      "durationMin": 84,
+      "title": "OF 63: Gamified Governance",
+      "series": "optimism-fractal",
+      "episode": 63,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=Zwc5QtdFSCA"
+    },
+    {
+      "id": "T8SP6TgKoEY",
+      "date": "2025-06-30",
+      "durationMin": 61,
+      "title": "EF 122: Eden Fractal Respect Game on Base",
+      "series": "eden-fractal",
+      "episode": 122,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=T8SP6TgKoEY"
+    },
+    {
+      "id": "5ahYK48Uk7o",
+      "date": "2025-07-01",
+      "durationMin": 59,
+      "title": "ETH 58: Eden Fractal 3-Year Anniversary Celebration",
+      "series": "eden-town-hall",
+      "episode": 58,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=5ahYK48Uk7o"
+    },
+    {
+      "id": "FqSu-IU5HCA",
+      "date": "2025-07-02",
+      "durationMin": 70,
+      "title": "ETH 56: Open Mic Night and Company",
+      "series": "eden-town-hall",
+      "episode": 56,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=FqSu-IU5HCA"
+    },
+    {
+      "id": "ULgM9Y4r7JI",
+      "date": "2025-07-03",
+      "durationMin": 74,
+      "title": "OF 64: Cross-chain Collaboration",
+      "series": "optimism-fractal",
+      "episode": 64,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=ULgM9Y4r7JI"
+    },
+    {
+      "id": "yhU4D5KePpE",
+      "date": "2025-07-06",
+      "durationMin": 59,
+      "title": "EF 123: Impact Measurement",
+      "series": "eden-fractal",
+      "episode": 123,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=yhU4D5KePpE"
+    },
+    {
+      "id": "o5PNuMQ8zNk",
+      "date": "2025-07-06",
+      "durationMin": 76,
+      "title": "ETH 59: Community Governance & Fractal Expansion",
+      "series": "eden-town-hall",
+      "episode": 59,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=o5PNuMQ8zNk"
+    },
+    {
+      "id": "6Lc2W0wW37Y",
+      "date": "2025-07-16",
+      "durationMin": 58,
+      "title": "OF 65: Onchain Builders",
+      "series": "optimism-fractal",
+      "episode": 65,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=6Lc2W0wW37Y"
+    },
+    {
+      "id": "nYzKJeRyJ3w",
+      "date": "2025-07-21",
+      "durationMin": 50,
+      "title": "EF 124: Democratic Innovation",
+      "series": "eden-fractal",
+      "episode": 124,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=nYzKJeRyJ3w"
+    },
+    {
+      "id": "JupqyYHTUbQ",
+      "date": "2025-07-25",
+      "durationMin": 73,
+      "title": "ETH 60: Event Scheduling, Epoch 2 Progress & Consensus Process Discussion",
+      "series": "eden-town-hall",
+      "episode": 60,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=JupqyYHTUbQ"
+    },
+    {
+      "id": "k5s9B_P3E7I",
+      "date": "2025-08-01",
+      "durationMin": 94,
+      "title": "OF 66: Bridging Communities",
+      "series": "optimism-fractal",
+      "episode": 66,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=k5s9B_P3E7I"
+    },
+    {
+      "id": "CjBQVOBXb6I",
+      "date": "2025-08-09",
+      "durationMin": 69,
+      "title": "EF 125: Building Abundance",
+      "series": "eden-fractal",
+      "episode": 125,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=CjBQVOBXb6I"
+    },
+    {
+      "id": "3jAwOWA23u0",
+      "date": "2025-08-09",
+      "durationMin": 76,
+      "title": "ETH 61: Planning Fractal Impact Concert & Legislative Process",
+      "series": "eden-town-hall",
+      "episode": 61,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=3jAwOWA23u0"
+    },
+    {
+      "id": "Ib0eLTK1q9Y",
+      "date": "2025-09-11",
+      "durationMin": 67,
+      "title": "EF 126: Returning from Summer Break",
+      "series": "eden-fractal",
+      "episode": 126,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Ib0eLTK1q9Y"
+    },
+    {
+      "id": "IfnGwuRsxkQ",
+      "date": "2025-09-17",
+      "durationMin": 117,
+      "title": "OF 67: Welcome Back & Discussion on Eric’s Initiatives",
+      "series": "optimism-fractal",
+      "episode": 67,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=IfnGwuRsxkQ"
+    },
+    {
+      "id": "-fIiljrbRP0",
+      "date": "2025-09-25",
+      "durationMin": 71,
+      "title": "EF 127: Governance Pioneers",
+      "series": "eden-fractal",
+      "episode": 127,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=-fIiljrbRP0"
+    },
+    {
+      "id": "V62rSFI5Bdo",
+      "date": "2025-10-01",
+      "durationMin": 48,
+      "title": "ETH 62: Welcoming Delegates & Onboarding Resources",
+      "series": "eden-town-hall",
+      "episode": 62,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=V62rSFI5Bdo"
+    },
+    {
+      "id": "SrZl0rIhDYA",
+      "date": "2025-10-02",
+      "durationMin": 50,
+      "title": "OF 68: Collaborative Governance",
+      "series": "optimism-fractal",
+      "episode": 68,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=SrZl0rIhDYA"
+    },
+    {
+      "id": "-PKRaY7Ca1k",
+      "date": "2025-10-07",
+      "durationMin": 72,
+      "title": "EF 128: Consensus Cultivation",
+      "series": "eden-fractal",
+      "episode": 128,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=-PKRaY7Ca1k"
+    },
+    {
+      "id": "kmKKTC5PXsg",
+      "date": "2025-10-08",
+      "durationMin": 58,
+      "title": "ETH 63: Meeting Time & ORDAO Discussion",
+      "series": "eden-town-hall",
+      "episode": 63,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=kmKKTC5PXsg"
+    },
+    {
+      "id": "p19yaAle21M",
+      "date": "2025-10-09",
+      "durationMin": 71,
+      "title": "OF 69: Ethereum Journey",
+      "series": "optimism-fractal",
+      "episode": 69,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=p19yaAle21M"
+    },
+    {
+      "id": "x4pXATq9IN8",
+      "date": "2025-10-16",
+      "durationMin": 54,
+      "title": "EF 129: Coordination Renaissance",
+      "series": "eden-fractal",
+      "episode": 129,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=x4pXATq9IN8"
+    },
+    {
+      "id": "K2G0y4vxv5g",
+      "date": "2025-10-17",
+      "durationMin": 77,
+      "title": "ORF 2: Previewing the Eden Fractal Claim Interface",
+      "series": "ordao-fractal",
+      "episode": 2,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=K2G0y4vxv5g"
+    },
+    {
+      "id": "7WfCVxmXX-A",
+      "date": "2025-10-17",
+      "durationMin": 29,
+      "title": "ORF 3: How to Claim Eden Fractal Respect on Base",
+      "series": "ordao-fractal",
+      "episode": 3,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=7WfCVxmXX-A"
+    },
+    {
+      "id": "aTs0bF8o45E",
+      "date": "2025-10-28",
+      "durationMin": 21,
+      "title": "ETH 64: First Proposal Passed in Epoch 2!",
+      "series": "eden-town-hall",
+      "episode": 64,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=aTs0bF8o45E"
+    },
+    {
+      "id": "U7800Ex2ljw",
+      "date": "2025-10-28",
+      "durationMin": 46,
+      "title": "OF 70: Platform for Innovation",
+      "series": "optimism-fractal",
+      "episode": 70,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=U7800Ex2ljw"
+    },
+    {
+      "id": "e7T8KnDi4TY",
+      "date": "2025-10-28",
+      "durationMin": 85,
+      "title": "OTH 40: Fractal Appreciation Research & Anniversary Plans",
+      "series": "optimism-town-hall",
+      "episode": 40,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=e7T8KnDi4TY"
+    },
+    {
+      "id": "a7Ox0fLTkp0",
+      "date": "2025-11-04",
+      "durationMin": 57,
+      "title": "EF 130: Eden Fractal Enhanced Decision-Making",
+      "series": "eden-fractal",
+      "episode": 130,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=a7Ox0fLTkp0"
+    },
+    {
+      "id": "2XeT1u5jMA4",
+      "date": "2025-11-04",
+      "durationMin": 59,
+      "title": "ETH 65: Respect Trees & Season 12 Proposal",
+      "series": "eden-town-hall",
+      "episode": 65,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=2XeT1u5jMA4"
+    },
+    {
+      "id": "gRLqGJhJhk4",
+      "date": "2025-11-06",
+      "durationMin": 71,
+      "title": "OF 71: Optimism Fractal 2 Year Anniversary",
+      "series": "optimism-fractal",
+      "episode": 71,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=gRLqGJhJhk4"
+    },
+    {
+      "id": "tVF23AT809g",
+      "date": "2025-11-06",
+      "durationMin": 46,
+      "title": "OTH 41: Gardens, Respect Trees & Planning",
+      "series": "optimism-town-hall",
+      "episode": 41,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=tVF23AT809g"
+    },
+    {
+      "id": "q_JEjPhMZkc",
+      "date": "2026-01-21",
+      "durationMin": 78,
+      "title": "EF 131: Eden Fractal Creators and Builders Unite",
+      "series": "eden-fractal",
+      "episode": 131,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=q_JEjPhMZkc"
+    },
+    {
+      "id": "XMVmuteJR6w",
+      "date": "2026-01-21",
+      "durationMin": 116,
+      "title": "EF 132: Eden Fractal Season 11 Finale",
+      "series": "eden-fractal",
+      "episode": 132,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=XMVmuteJR6w"
+    },
+    {
+      "id": "l8y7f62PwOk",
+      "date": "2026-01-21",
+      "durationMin": 57,
+      "title": "ETH 66: The History and Future of Fractal Tokenomics",
+      "series": "eden-town-hall",
+      "episode": 66,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=l8y7f62PwOk"
+    },
+    {
+      "id": "0Vu4Drwce9M",
+      "date": "2026-01-21",
+      "durationMin": 65,
+      "title": "ETH 67: Strategic Planning for Optimism Fractal Hiatus",
+      "series": "eden-town-hall",
+      "episode": 67,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=0Vu4Drwce9M"
+    },
+    {
+      "id": "koQFSV0WbV4",
+      "date": "2026-01-21",
+      "durationMin": 49,
+      "title": "OF 72: Optimism Fractal Community Recognition",
+      "series": "optimism-fractal",
+      "episode": 72,
+      "era": "optimism-fractal",
+      "url": "https://www.youtube.com/watch?v=koQFSV0WbV4"
+    },
+    {
+      "id": "Mk5tft_w5Q8",
+      "date": "2026-01-22",
+      "durationMin": 58,
+      "title": "EF 133: Eden Fractal Looking Ahead in 2026",
+      "series": "eden-fractal",
+      "episode": 133,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Mk5tft_w5Q8"
+    },
+    {
+      "id": "hunqRSItXzE",
+      "date": "2026-01-22",
+      "durationMin": 55,
+      "title": "ETH 68: Eden Fractal Event Structure & Visions",
+      "series": "eden-town-hall",
+      "episode": 68,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=hunqRSItXzE"
+    },
+    {
+      "id": "SMkPXd-1B_g",
+      "date": "2026-01-28",
+      "durationMin": 119,
+      "title": "ETH 69: New Respect Trees Game & Spec-Driven Development",
+      "series": "eden-town-hall",
+      "episode": 69,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=SMkPXd-1B_g"
+    },
+    {
+      "id": "2UzcAJ1rMOo",
+      "date": "2026-02-03",
+      "durationMin": 76,
+      "title": "EF 134: Building Homes for Fractal Coordination",
+      "series": "eden-fractal",
+      "episode": 134,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=2UzcAJ1rMOo"
+    },
+    {
+      "id": "WAMipJTAhWA",
+      "date": "2026-02-03",
+      "durationMin": 59,
+      "title": "ETH 70: Fractal Circle Bot Demo and 15 Years of Governance Innovation",
+      "series": "eden-town-hall",
+      "episode": 70,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=WAMipJTAhWA"
+    },
+    {
+      "id": "IEpsX-8ZTMA",
+      "date": "2026-02-12",
+      "durationMin": 119,
+      "title": "ETH 71: Fractalgram Design Principles: Building Apps for Communities",
+      "series": "eden-town-hall",
+      "episode": 71,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=IEpsX-8ZTMA"
+    },
+    {
+      "id": "zR0ithYDNoo",
+      "date": "2026-02-19",
+      "durationMin": 44,
+      "title": "EF 135: Eden Fractal Governance Awakening",
+      "series": "eden-fractal",
+      "episode": 135,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=zR0ithYDNoo"
+    },
+    {
+      "id": "Vo8k91wwA9g",
+      "date": "2026-02-19",
+      "durationMin": 59,
+      "title": "ETH 72: Building Smarter Contribution Systems for Fractal Governance",
+      "series": "eden-town-hall",
+      "episode": 72,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Vo8k91wwA9g"
+    },
+    {
+      "id": "XASkV4Kpl_g",
+      "date": "2026-02-24",
+      "durationMin": 110,
+      "title": "ETH 73: AI-Powered Governance, Fractal Bots, and Building for 2026",
+      "series": "eden-town-hall",
+      "episode": 73,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=XASkV4Kpl_g"
+    },
+    {
+      "id": "yIS3IBNVTy8",
+      "date": "2026-03-02",
+      "durationMin": 61,
+      "title": "EF 136: Eden Fractal Seeds of Consensus",
+      "series": "eden-fractal",
+      "episode": 136,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=yIS3IBNVTy8"
+    },
+    {
+      "id": "uGbzoStSEHs",
+      "date": "2026-03-02",
+      "durationMin": 57,
+      "title": "ETH 74: ORDAO Config Approved and Break Plans",
+      "series": "eden-town-hall",
+      "episode": 74,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=uGbzoStSEHs"
+    },
+    {
+      "id": "pjiv4lVU8_w",
+      "date": "2026-03-10",
+      "durationMin": 168,
+      "title": "ETH 75: Envisioning Firmament & SRT Coordination",
+      "series": "eden-town-hall",
+      "episode": 75,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=pjiv4lVU8_w"
+    },
+    {
+      "id": "50xLZDBIHTw",
+      "date": "2026-03-16",
+      "durationMin": 54,
+      "title": "EF 137: Eden Fractal Root Networks",
+      "series": "eden-fractal",
+      "episode": 137,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=50xLZDBIHTw"
+    },
+    {
+      "id": "Hp0qJlgcWoo",
+      "date": "2026-03-23",
+      "durationMin": 152,
+      "title": "ETH 77: Fractal Scheduling and Context Engineering",
+      "series": "eden-town-hall",
+      "episode": 77,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=Hp0qJlgcWoo"
+    },
+    {
+      "id": "QrG9OXOuSwA",
+      "date": "2026-04-02",
+      "durationMin": 63,
+      "title": "EF 138: Planting Seeds Before Spring Break",
+      "series": "eden-fractal",
+      "episode": 138,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=QrG9OXOuSwA"
+    },
+    {
+      "id": "wm_2urYvT3A",
+      "date": "2026-04-02",
+      "durationMin": 59,
+      "title": "ETH 78: Fractal Governance Growth and Lineages",
+      "series": "eden-town-hall",
+      "episode": 78,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=wm_2urYvT3A"
+    },
+    {
+      "id": "sX_Mjhgp-xQ",
+      "date": "2026-05-21",
+      "durationMin": 65,
+      "title": "EF 139: Eden Fractal Spring Awakening",
+      "series": "eden-fractal",
+      "episode": 139,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=sX_Mjhgp-xQ"
+    },
+    {
+      "id": "orWifiOGFWM",
+      "date": "2026-05-21",
+      "durationMin": 60,
+      "title": "ETH 79: Clean Architecture for Fractal Communities",
+      "series": "eden-town-hall",
+      "episode": 79,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=orWifiOGFWM"
+    },
+    {
+      "id": "3kxuG-wzxM4",
+      "date": "2026-06-02",
+      "durationMin": 35,
+      "title": "EF 140: Tending New Roots",
+      "series": "eden-fractal",
+      "episode": 140,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=3kxuG-wzxM4"
+    },
+    {
+      "id": "w3hKK2LeE1U",
+      "date": "2026-06-02",
+      "durationMin": 61,
+      "title": "ETH 80: Charting the Firmament",
+      "series": "eden-town-hall",
+      "episode": 80,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=w3hKK2LeE1U"
+    },
+    {
+      "id": "VX3w5l1FCVw",
+      "date": "2026-06-18",
+      "durationMin": 75,
+      "title": "EF 141: Eden Fractal Metamorphosis",
+      "series": "eden-fractal",
+      "episode": 141,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=VX3w5l1FCVw"
+    },
+    {
+      "id": "2KNNWednm2A",
+      "date": "2026-06-18",
+      "durationMin": 54,
+      "title": "ETH 81: The Growth of ZAO Fractal",
+      "series": "eden-town-hall",
+      "episode": 81,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=2KNNWednm2A"
+    },
+    {
+      "id": "9sPiWGoMYUY",
+      "date": "2026-06-29",
+      "durationMin": 70,
+      "title": "ETH 82: Reflecting on Four Years of Eden Fractal",
+      "series": "eden-town-hall",
+      "episode": 82,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=9sPiWGoMYUY"
+    },
+    {
+      "id": "WfByXlLNuLA",
+      "date": "2026-06-30",
+      "durationMin": 65,
+      "title": "EF 142: Celebrating Fractal Growth",
+      "series": "eden-fractal",
+      "episode": 142,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=WfByXlLNuLA"
+    },
+    {
+      "id": "XoiTs7acynM",
+      "date": "2026-07-06",
+      "durationMin": 63,
+      "title": "ETH 83: Fractal Decision-Making for Nonprofits",
+      "series": "eden-town-hall",
+      "episode": 83,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=XoiTs7acynM"
+    },
+    {
+      "id": "H8oEMuFQbLc",
+      "date": "2026-07-23",
+      "durationMin": 61,
+      "title": "ETH 84: New Events Time & Upcoming Break",
+      "series": "eden-town-hall",
+      "episode": 84,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=H8oEMuFQbLc"
+    },
+    {
+      "id": "sv8rq-5DQ_I",
+      "date": "2026-07-24",
+      "durationMin": 33,
+      "title": "EF 143: Eden Fractal Change Makers",
+      "series": "eden-fractal",
+      "episode": 143,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=sv8rq-5DQ_I"
+    },
+    {
+      "id": "DIs3m5h22M4",
+      "date": "2026-08-08",
+      "durationMin": 37,
+      "title": "EF 144: Eden Fractal Respect Game Season 12 Finale",
+      "series": "eden-fractal",
+      "episode": 144,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=DIs3m5h22M4"
+    },
+    {
+      "id": "4DIk5Q42rvY",
+      "date": "2026-08-08",
+      "durationMin": 63,
+      "title": "ETH 85: ZAO Fractal Ecosystem and Starting Sparkz",
+      "series": "eden-town-hall",
+      "episode": 85,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=4DIk5Q42rvY"
+    },
+    {
+      "id": "jvXE7jJVV8U",
+      "date": "2026-09-15",
+      "durationMin": 61,
+      "title": "EF 145: Eden Fractal Season 13 Kickoff Game!",
+      "series": "eden-fractal",
+      "episode": 145,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=jvXE7jJVV8U"
+    },
+    {
+      "id": "ECo0R9Xoj2w",
+      "date": "2026-09-15",
+      "durationMin": 52,
+      "title": "ETH 86: Eden Fractal Season 13 Strategy & Growth",
+      "series": "eden-town-hall",
+      "episode": 86,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=ECo0R9Xoj2w"
+    },
+    {
+      "id": "5nvYDjXZsWU",
+      "date": "2026-10-01",
+      "durationMin": 23,
+      "title": "EF 146: Rooted in Community",
+      "series": "eden-fractal",
+      "episode": 146,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=5nvYDjXZsWU"
+    },
+    {
+      "id": "UR8zIDWK5Lg",
+      "date": "2026-10-01",
+      "durationMin": 55,
+      "title": "ETH 87: Contribution Circles, Fractals for Students & more",
+      "series": "eden-town-hall",
+      "episode": 87,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=UR8zIDWK5Lg"
+    },
+    {
+      "id": "_wOXskryXKE",
+      "date": "2026-10-13",
+      "durationMin": 30,
+      "title": "EF 147: Building the Autumn Hearth",
+      "series": "eden-fractal",
+      "episode": 147,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=_wOXskryXKE"
+    },
+    {
+      "id": "KXUmm-caQGU",
+      "date": "2026-10-14",
+      "durationMin": 96,
+      "title": "ETH 88: Refining Eden Fractal's Vision Statement",
+      "series": "eden-town-hall",
+      "episode": 88,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=KXUmm-caQGU"
+    },
+    {
+      "id": "M8kClkl76OQ",
+      "date": "2026-10-31",
+      "durationMin": 81,
+      "title": "ETH 89: Expanding the Vision Beyond Decision-Making",
+      "series": "eden-town-hall",
+      "episode": 89,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=M8kClkl76OQ"
+    },
+    {
+      "id": "cK8wRIYINPc",
+      "date": "2026-11-03",
+      "durationMin": 28,
+      "title": "EF 148: Building a Foundation",
+      "series": "eden-fractal",
+      "episode": 148,
+      "era": "eos-eden",
+      "url": "https://www.youtube.com/watch?v=cK8wRIYINPc"
+    }
+  ]
+}
