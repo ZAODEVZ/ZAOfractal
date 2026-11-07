@@ -212,7 +212,7 @@ The ZAO uses a custom curve - exactly 2x the canonical Fibonacci. **[corrected 2
 | 6th | 10 | 2x |
 | **Per-group total** | **272** | 2x |
 
-**Rationale:** **[corrected 2026-11-07]** Why 2x, in Zaal's words (2026-11-07, zao-vault `notes/pathways-dj-questions-2026-11-07.md` (vault PR #480)): "fibobnachi based on fractally groupchat, we did 1 year of 1x fibonachi points and then did year two of 2x fibonachi points to create a natural decay as future colaborations can be worth more but the next year 3x hasnt been something im ready for as i want to add more before contributions count for more than past years". So the 2x is a yearly step - year 1 at 1x, year 2 at 2x - that makes newer work weigh more than older balances. A year 3 at 3x is not decided. Shares inside a room do not change. The curve is no steeper than canonical Fibonacci; it still resists gaming (peer-ranked, not tradeable).
+**Rationale:** **[corrected 2026-11-07]** Why 2x, in Zaal's words (his answers of 2026-11-07): "fibobnachi based on fractally groupchat, we did 1 year of 1x fibonachi points and then did year two of 2x fibonachi points to create a natural decay as future colaborations can be worth more but the next year 3x hasnt been something im ready for as i want to add more before contributions count for more than past years". So the 2x is a yearly step - year 1 at 1x, year 2 at 2x - that makes newer work weigh more than older balances. A year 3 at 3x is not decided. Shares inside a room do not change. The curve is no steeper than canonical Fibonacci; it still resists gaming (peer-ranked, not tradeable).
 
 ### Why Fibonacci at All
 
