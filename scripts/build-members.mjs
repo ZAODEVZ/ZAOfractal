@@ -161,7 +161,8 @@ async function main() {
 
   const out = {
     generatedAt: new Date().toISOString(),
-    source: SOURCE_DIR,
+    // A public description, never SOURCE_DIR: the repo is public and that is a local path.
+    source: "the fractal Discord bot's data/ export (names_to_wallets.json, wallets.json, history.json)",
     counts: {
       named: members.length,
       namedAndHolding: members.filter((m) => m.holder).length,

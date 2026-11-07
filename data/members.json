@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-08-26T01:10:52.260Z",
-  "source": "/Users/zaalpanthaki/Desktop/repos/fractalbotjuly2026/data",
+  "source": "the fractal Discord bot's data/ export (names_to_wallets.json, wallets.json, history.json)",
   "counts": {
     "named": 144,
     "namedAndHolding": 129,
