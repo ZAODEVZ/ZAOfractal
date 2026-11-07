@@ -13,7 +13,7 @@ Its core innovation is being **optimistic**: instead of demanding a 50% quorum (
 **OREC** = **O**ptimistic **R**espect-based **E**xecutive **C**ontract. A Solidity contract that runs three phases per proposal:
 
 1. **Voting period.** Anyone votes yes or no, weighted by Respect. Low quorum (e.g. 5%) - the design assumption is that most members will not vote, and that is OK.
-2. **Veto period.** A time-delayed challenge window where **only NO votes count, vetoes carry 2x weight**. A coalition with just 1/3 of yes-weight can veto.
+2. **Veto period.** A time-delayed challenge window where **only NO votes count, vetoes carry 2x weight**. NO weight of at least half the YES weight, one third of the weight cast, vetoes (corrected 2026-11-07).
 3. **Execution.** If a proposal survives both periods, anyone can call `execute()` to enact it on-chain.
 
 The passing formula:

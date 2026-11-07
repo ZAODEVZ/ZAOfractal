@@ -130,7 +130,7 @@ In a 6-person breakout group reaching consensus:
 
 ### ZAO's Custom 2x Fibonacci (May 2026)
 
-The ZAO uses a double curve to reward top performers more aggressively:
+The ZAO uses a double curve. **[corrected 2026-11-07]** Shares inside a room are identical on either curve: rank 1 takes 40.4% of a room's Respect and earns 11x rank 6. Doubling changes only absolute amounts, so it matters only against fixed numbers: tier thresholds, `minWeight`, and balances earned earlier at 1x.
 
 | Rank | Respect | vs. Standard | Phi Ratio | Cumulative % |
 |------|---------|------|-----|---------|
@@ -142,7 +142,7 @@ The ZAO uses a double curve to reward top performers more aggressively:
 | 6th | 10 | 2.0x | 0.625x | 100.0% |
 | **Total** | **272** | 2.0x | -- | Per-group distribution |
 
-**Rationale:** ZAO is a music community where top contributors (artists, builders) have outsized impact. The 2x curve maintains Fibonacci's peer-resistance (cannot buy rank 1) while doubling total weekly distribution - allowing top performers to reach high tiers (Elder, Legend) faster than standard Fibonacci.
+**Rationale:** **[corrected 2026-11-07]** Why 2x, in Zaal's words (2026-11-07, zao-vault `notes/pathways-dj-questions-2026-11-07.md` (vault PR #480)): "fibobnachi based on fractally groupchat, we did 1 year of 1x fibonachi points and then did year two of 2x fibonachi points to create a natural decay as future colaborations can be worth more but the next year 3x hasnt been something im ready for as i want to add more before contributions count for more than past years". So the 2x is a yearly step - year 1 at 1x, year 2 at 2x - that makes newer work weigh more than older balances. A year 3 at 3x is not decided. Shares inside a room do not change. The 2x curve keeps Fibonacci's peer-resistance (cannot buy rank 1) and doubles total weekly distribution, so against fixed tiers (Elder, Legend) everyone advances twice as fast; nobody gains share inside a room.
 
 **Constraint:** Even with 2x curve, someone earning 1st place every week for 1 year reaches ~5,720 Respect (with decay) - still far below a whale's 100k+ token stash in typical DAOs. Soulbound nature ensures whales = contributors, not capital holders.
 

@@ -230,7 +230,7 @@ A Fibonacci rank split (62/38) exceeds the psychological fairness threshold. Ran
 
 ### ZAO's 2x Fibonacci Variant
 
-ZAO uses **2x Fibonacci** (standard multiplied by 2) to reward top performers faster:
+ZAO uses **2x Fibonacci** (standard multiplied by 2). **[corrected 2026-11-07]** Shares inside a room are identical on either curve: rank 1 takes 40.4% of a room's Respect and earns 11x rank 6. Doubling changes only absolute amounts, so it matters only against fixed numbers: tier thresholds, `minWeight`, and balances earned earlier at 1x.
 
 | Rank | Respect | Standard Ratio | Equilibrium @ 55 earn/week |
 |------|---------|----------------|---------------------------|
@@ -241,7 +241,7 @@ ZAO uses **2x Fibonacci** (standard multiplied by 2) to reward top performers fa
 | 5th | 16 | 2.0x | 800 |
 | 6th | 10 | 2.0x | 500 |
 
-**Rationale:** Accelerates tier advancement for top contributors (artists, builders, mentors), while preserving the 60% ratio that makes consensus fair.
+**Rationale:** Why 2x, in Zaal's words (2026-11-07, zao-vault `notes/pathways-dj-questions-2026-11-07.md` (vault PR #480)): "fibobnachi based on fractally groupchat, we did 1 year of 1x fibonachi points and then did year two of 2x fibonachi points to create a natural decay as future colaborations can be worth more but the next year 3x hasnt been something im ready for as i want to add more before contributions count for more than past years". So the 2x is a yearly step - year 1 at 1x, year 2 at 2x - that makes newer work weigh more than older balances. A year 3 at 3x is not decided. Shares inside a room do not change. Against fixed tier thresholds a top contributor also advances twice as fast; that is a side effect of the step, not a change to anyone's share of a room.
 
 **Check:** A top performer earning rank 1 every week reaches ~5,700 Respect in one year (with 2% weekly decay). A whale with 100k tokens in a typical DAO cannot buy this; Respect is consensus-earned, not purchasable. **Immunity to plutocracy is structural.**
 
@@ -389,7 +389,7 @@ AND
 ```
 
 **Consequences:**
-- 1/3 of active Respect can veto (YES must exceed 2x NO).
+- **[corrected 2026-11-07]** 1/3 of the weight that votes can veto (NO weight of at least half the YES weight); weight that does not vote counts for nothing (YES must exceed 2x NO).
 - 2/3 can guarantee passage.
 - 50-50 splits always fail.
 - Abstentions have zero weight.
@@ -468,7 +468,7 @@ This creates **asymmetric supermajorities:**
 | 50% YES, 50% NO | 500 | 500 | No (500 not > 1000) | Deadlock; fails |
 | 34% YES, 33% NO | 340 | 330 | Yes (340 > 660? No.) | Actually no; 340 not > 660. |
 
-**Key insight:** 1/3 of active Respect holders can veto. 2/3 can execute. No single whale can force passage; no small minority can block if 2/3 supports.
+**Key insight:** **[corrected 2026-11-07]** 1/3 of the weight that votes can veto (NO weight of at least half the YES weight); weight that does not vote counts for nothing. 2/3 of the weight that votes can execute. No single whale can force passage; no small minority can block if 2/3 supports.
 
 ---
 

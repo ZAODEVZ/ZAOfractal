@@ -111,6 +111,12 @@ passing proposal. `whitepaper/draft/ch10-roadmap.md` carries a milestone dated
 2026-06-30, "Establish 3+ Signer Committee for OREC". It is **two months
 overdue** and this is what it was for.
 
+**The design intent, beside the measurement (added 2026-11-07).** Zaal, on
+onboarding (zao-vault `notes/pathways-dj-questions-2026-11-07.md` (vault PR #480)): "yes the idea is noone new can immedialty take over governance without being level 6 each week for many weeks in a row". That intent holds for
+newcomers: a new member starts at zero OG, and ZOR confers no vote. It does not
+limit an early holder: the wallet above already clears `minWeight` alone. Both
+are true at once.
+
 Zaal was shown this measurement on 2026-09-01 and chose to accept the risk for
 now. Recorded so the acceptance is visible rather than looking like nobody
 noticed.

@@ -148,7 +148,7 @@ The ZAO uses a 2x scaling to accelerate tier progression for top contributors:
 | 6th | 10 | 1.600x | 100.0% |
 | **Total** | **272** | -- | -- |
 
-The 2x curve preserves the golden ratio (preventing gaming) while doubling velocity. A top contributor earning 1st place every week reaches Elder tier (2000+ Respect) in approximately 50 weeks with the 2x curve, versus 100 weeks with the standard curve.
+The 2x curve preserves the golden ratio (preventing gaming) while doubling velocity. **[corrected 2026-11-07]** Doubling changes no one's share of a room; it changes only absolute amounts, so the faster pace below holds only against fixed thresholds like the Elder tier. Zaal's reason for 2x is a yearly step - year 1 at 1x, year 2 at 2x - so newer work weighs more than older balances (`research/09-open-questions-for-operators.md` section 4). A top contributor earning 1st place every week reaches Elder tier (2000+ Respect) in approximately 50 weeks with the 2x curve, versus 100 weeks with the standard curve.
 
 ### Why Fibonacci? The Ultimatum Game Insight
 
@@ -197,7 +197,7 @@ Respect determines voting weight in the OREC governance contract. A proposal pas
 yesWeight > 2 * noWeight  AND  yesWeight >= minWeight
 ```
 
-This is the **2/3 supermajority rule**. Equivalently, **1/3 of active Respect can veto** any proposal.
+This is the **2/3 supermajority rule**. Equivalently, **1/3 of active Respect can veto** any proposal. **[corrected 2026-11-07]** One third of the weight that *votes*, not of all Respect: weight that does not vote counts for nothing.
 
 This is fundamentally consent-based, not majority-based. A 60/40 vote fails (YES must exceed double NO). A 51/49 vote fails. Only a 67+/33 or stronger split passes.
 

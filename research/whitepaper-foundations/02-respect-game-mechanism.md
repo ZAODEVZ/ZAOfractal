@@ -116,7 +116,7 @@ Dan Larimer's insight (Fractally WP 1.0, Section 3.3):
 
 ### ZAO's Custom 2x Fibonacci Curve (May 2026)
 
-The ZAO Music Community uses a 2x scaling to reward top performers faster:
+The ZAO Music Community uses a 2x scaling. **[corrected 2026-11-07]** Shares inside a room are identical on either curve: rank 1 takes 40.4% of a room's Respect and earns 11x rank 6. Doubling changes only absolute amounts, so it matters only against fixed numbers: tier thresholds, `minWeight`, and balances earned earlier at 1x.
 
 | Rank | Respect Tokens | vs. Standard Fibonacci | Phi Ratio (preserved) | Cumulative % of Group |
 |------|---|---|---|---|
@@ -129,8 +129,8 @@ The ZAO Music Community uses a 2x scaling to reward top performers faster:
 | **Total** | **272** | 2.0x | -- | Per-group distribution |
 
 **Rationale:**
-- ZAO prioritizes rapid tier advancement for top contributors (artists, builders, mentors)
-- Maintains Fibonacci's 60% ratio (prevents gaming) but doubles velocity
+- **[corrected 2026-11-07]** Why 2x, in Zaal's words (2026-11-07, zao-vault `notes/pathways-dj-questions-2026-11-07.md` (vault PR #480)): "fibobnachi based on fractally groupchat, we did 1 year of 1x fibonachi points and then did year two of 2x fibonachi points to create a natural decay as future colaborations can be worth more but the next year 3x hasnt been something im ready for as i want to add more before contributions count for more than past years". So the 2x is a yearly step - year 1 at 1x, year 2 at 2x - that makes newer work weigh more than older balances. A year 3 at 3x is not decided. Shares inside a room do not change.
+- Maintains Fibonacci's ratios exactly; only absolute amounts double
 - Top performer earning 1st place every week reaches Elder tier (2000+ Respect) in ~50 weeks vs. 100 weeks with standard curve
 - Still sybil-resistant: peer consensus required; cannot buy rank 1 no matter the wealth
 
@@ -411,7 +411,7 @@ All three conditions must be true to execute:
 **Simple majority (50%+1):** Majority tyranny. 50.1% can override 49.9%.
 
 **2/3 (67%):** Enables minority veto. 33% can block any proposal.
-- 1/3 of Respect holders form veto coalition
+- **[corrected 2026-11-07]** Holders of 1/3 of the weight that votes form a veto coalition; weight that does not vote counts for nothing
 - They coordinated voting NO blocks execution
 - Creates checks and balances
 
