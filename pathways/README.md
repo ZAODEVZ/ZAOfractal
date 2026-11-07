@@ -24,3 +24,6 @@ node scripts/build-runs.mjs    # rebuild data/runs.json from them
 ```
 
 `build-runs.mjs` reads only committed files, makes no network calls, and writes counts, not recipient addresses.
+
+- `source` in `runs.json` records the sha256 of each input snapshot, after the Pathways run-ledger convention of input hashes. To check a ledger was built from the committed snapshot: `shasum -a 256 data/orec-proposals.json data/award-events.json` and compare.
+- `pending` lists proposals that had not executed when the snapshot was pulled (still voting, in the veto window, or passed and awaiting execution), by id, stage and creation time only. The pull decodes a proposal's action from its execution tx, so the period a pending proposal carries is not known until it executes.

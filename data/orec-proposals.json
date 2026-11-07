@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-11-01T13:12:09.131Z",
+  "pulledAt": "2026-11-07T22:27:50.957Z",
   "contract": "0xcB05F9254765CA521F7698e61E0A6CA6456Be532",
   "deployBlock": 141001439,
   "config": {
@@ -9,8 +9,8 @@
     "respectContract": "0x34ce89baa7e4a4b00e17f7e4c0cb97105c216957",
     "owner": "0xcb05f9254765ca521f7698e61e0a6ca6456be532"
   },
-  "logCount": 597,
-  "proposalCount": 179,
+  "logCount": 604,
+  "proposalCount": 181,
   "proposals": [
     {
       "propId": "0x433706d73b5ab8d4f52f499c0dc81b83b97c0d68c8b51f7bc9e23a27fdedd88e",
@@ -12161,8 +12161,8 @@
       "createdBlock": 158156176,
       "createdTx": "0x7f2739b79f4a89dda576a288262a230743dab0b6fa1cb5018c421b899f0fea53",
       "createdAt": "2026-10-13T17:05:29.000000Z",
-      "stage": "Executable",
-      "executed": false,
+      "stage": "Executed",
+      "executed": true,
       "executionFailed": false,
       "canceled": false,
       "votes": [
@@ -12176,6 +12176,9 @@
           "tx": "0x7f2739b79f4a89dda576a288262a230743dab0b6fa1cb5018c421b899f0fea53"
         }
       ],
+      "executedAt": "2026-11-02T12:30:49.000000Z",
+      "executedBlock": 159011936,
+      "executedTx": "0x0f7c9efa2cf56325d6aa95366aeb5ac55d7b6e92272ae04a709cbc0436116e1d",
       "yesWeight": 3094,
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
@@ -12192,15 +12195,28 @@
           "at": "2026-10-13T17:05:29.000000Z",
           "tx": "0x7f2739b79f4a89dda576a288262a230743dab0b6fa1cb5018c421b899f0fea53"
         }
-      ]
+      ],
+      "entrypoint": "execute(Message)",
+      "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+      "action": {
+        "target": "0x9885cceef7e8371bf8d6f2413723d25917e7445c",
+        "call": "0xdfd469ed",
+        "memo": "0x31cb66e1af258608852c0cf3dc0861ed3dbf05f51c5cc9ff8bcce21f6131c745",
+        "awards": null,
+        "periodNumber": null,
+        "respectMinted": null,
+        "signalType": null,
+        "signalData": null,
+        "signalValue": null
+      }
     },
     {
       "propId": "0x6b3b4ec9f6510a6dd38663ed708e7674e43f198d3496a59a0867c6f013f2854e",
       "createdBlock": 158425920,
       "createdTx": "0x8f4d82dd050c542e6cb059e232eb85fc7356b3e80cc9418799a09e21a551424e",
       "createdAt": "2026-10-19T22:56:57.000000Z",
-      "stage": "Executable",
-      "executed": false,
+      "stage": "Executed",
+      "executed": true,
       "executionFailed": false,
       "canceled": false,
       "votes": [
@@ -12214,6 +12230,9 @@
           "tx": "0x8f4d82dd050c542e6cb059e232eb85fc7356b3e80cc9418799a09e21a551424e"
         }
       ],
+      "executedAt": "2026-11-02T12:30:29.000000Z",
+      "executedBlock": 159011926,
+      "executedTx": "0x85712de6cc1dc6b1167efe75bc40dd487a535dbf33981ce0e79e419cdffe083e",
       "yesWeight": 3094,
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
@@ -12230,15 +12249,65 @@
           "at": "2026-10-19T22:56:57.000000Z",
           "tx": "0x8f4d82dd050c542e6cb059e232eb85fc7356b3e80cc9418799a09e21a551424e"
         }
-      ]
+      ],
+      "entrypoint": "execute(Message)",
+      "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+      "action": {
+        "target": "0x9885cceef7e8371bf8d6f2413723d25917e7445c",
+        "call": "mintRespectGroup",
+        "memo": "0x413893f68ba1798435a7e4bef8d931f012c8521eda825e6ae14ea5d3fd3184df",
+        "awards": [
+          {
+            "recipient": "0xb7f4b9caba6bb0aeaa2b5d8df23e2b59c192bdbb",
+            "respect": 110,
+            "periodNumber": 119,
+            "mintType": 10
+          },
+          {
+            "recipient": "0x07686bedb0102e47d33cec73307d2cc391aff396",
+            "respect": 68,
+            "periodNumber": 119,
+            "mintType": 10
+          },
+          {
+            "recipient": "0x4d16fce1bd6e327ae31398ce9a2c4e12c077ecb1",
+            "respect": 42,
+            "periodNumber": 119,
+            "mintType": 10
+          },
+          {
+            "recipient": "0x82cb2305388c853ecfe9ea83a1604acf58466659",
+            "respect": 26,
+            "periodNumber": 119,
+            "mintType": 10
+          },
+          {
+            "recipient": "0xe5adabbd71225e8074e30ff6ce2a66c9319c071b",
+            "respect": 16,
+            "periodNumber": 119,
+            "mintType": 10
+          },
+          {
+            "recipient": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+            "respect": 10,
+            "periodNumber": 119,
+            "mintType": 10
+          }
+        ],
+        "periodNumber": 119,
+        "respectMinted": 272,
+        "signalType": null,
+        "signalData": null,
+        "signalValue": null
+      }
     },
     {
       "propId": "0x35e5894745b190dd723a3172a2e91f6a10765c4e1b0e5b78532b016ce53abc6e",
       "createdBlock": 158727973,
       "createdTx": "0x78a22c96f430721f7dc5d0c48dc0d9eab794d2d2e0934c503e07613b9750e7bf",
       "createdAt": "2026-10-26T22:45:23.000000Z",
-      "stage": "Veto",
-      "executed": false,
+      "stage": "Executed",
+      "executed": true,
       "executionFailed": false,
       "canceled": false,
       "votes": [
@@ -12252,6 +12321,9 @@
           "tx": "0x78a22c96f430721f7dc5d0c48dc0d9eab794d2d2e0934c503e07613b9750e7bf"
         }
       ],
+      "executedAt": "2026-11-02T12:30:15.000000Z",
+      "executedBlock": 159011919,
+      "executedTx": "0x246c4ef9ceec036a9231021dfbab74b6e1f9e768c6c9a9c69cbd07deff9c5158",
       "yesWeight": 3094,
       "noWeight": 0,
       "yesWeightWei": "3094000000000000000000",
@@ -12268,14 +12340,58 @@
           "at": "2026-10-26T22:45:23.000000Z",
           "tx": "0x78a22c96f430721f7dc5d0c48dc0d9eab794d2d2e0934c503e07613b9750e7bf"
         }
-      ]
+      ],
+      "entrypoint": "execute(Message)",
+      "executedBy": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+      "action": {
+        "target": "0x9885cceef7e8371bf8d6f2413723d25917e7445c",
+        "call": "mintRespectGroup",
+        "memo": "0x413893f68ba1798435a7e4bef8d931f012c8521eda825e6ae14ea5d3fd3184df",
+        "awards": [
+          {
+            "recipient": "0x29185eb8cfd22aa719529217bfbade61677e0ad2",
+            "respect": 110,
+            "periodNumber": 120,
+            "mintType": 10
+          },
+          {
+            "recipient": "0x14f18fa55540f16de1456e93f37a4326dc3da041",
+            "respect": 68,
+            "periodNumber": 120,
+            "mintType": 10
+          },
+          {
+            "recipient": "0xe34a582682691f31ea4d08c133b3692ff0ebfa24",
+            "respect": 42,
+            "periodNumber": 120,
+            "mintType": 10
+          },
+          {
+            "recipient": "0x03726e10565402a1137960ba06681754be7fe05f",
+            "respect": 26,
+            "periodNumber": 120,
+            "mintType": 10
+          },
+          {
+            "recipient": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+            "respect": 16,
+            "periodNumber": 120,
+            "mintType": 10
+          }
+        ],
+        "periodNumber": 120,
+        "respectMinted": 262,
+        "signalType": null,
+        "signalData": null,
+        "signalValue": null
+      }
     },
     {
       "propId": "0xf69aca2d4441ef8442320c7b7b4dc99f1ef491a55a12ab972961480eba07dd38",
       "createdBlock": 158760019,
       "createdTx": "0xd2d474736011b0d2cea5bb948468ff7c4907e1e09a6edf840707a49bdb23e79e",
       "createdAt": "2026-10-27T16:33:35.000000Z",
-      "stage": "Veto",
+      "stage": "Executable",
       "executed": false,
       "executionFailed": false,
       "canceled": false,
@@ -12313,7 +12429,7 @@
       "createdBlock": 158760036,
       "createdTx": "0x32ca83627f78d8d69d71db998f064cdda2e63f84362d3f74c4e797157a92ccb0",
       "createdAt": "2026-10-27T16:34:09.000000Z",
-      "stage": "Veto",
+      "stage": "Executable",
       "executed": false,
       "executionFailed": false,
       "canceled": false,
@@ -12351,7 +12467,7 @@
       "createdBlock": 158760085,
       "createdTx": "0xbd4085e9a397150dbb5005298109b23485e8a1c968fd3e390adae8190584243f",
       "createdAt": "2026-10-27T16:35:47.000000Z",
-      "stage": "Veto",
+      "stage": "Executable",
       "executed": false,
       "executionFailed": false,
       "canceled": false,
@@ -12381,6 +12497,82 @@
           "block": 158760085,
           "at": "2026-10-27T16:35:47.000000Z",
           "tx": "0xbd4085e9a397150dbb5005298109b23485e8a1c968fd3e390adae8190584243f"
+        }
+      ]
+    },
+    {
+      "propId": "0xc1dd2dce4b7e3551801ec9d38c7ff9b900e91f5ed2548921cc430ae98fbff92a",
+      "createdBlock": 159011749,
+      "createdTx": "0xb2981819f4a3065da9df8ab5007e826f58056bde3440c93171d6ee3879126fad",
+      "createdAt": "2026-11-02T12:24:35.000000Z",
+      "stage": "Veto",
+      "executed": false,
+      "executionFailed": false,
+      "canceled": false,
+      "votes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 159011749,
+          "at": "2026-11-02T12:24:35.000000Z",
+          "tx": "0xb2981819f4a3065da9df8ab5007e826f58056bde3440c93171d6ee3879126fad"
+        }
+      ],
+      "yesWeight": 3094,
+      "noWeight": 0,
+      "yesWeightWei": "3094000000000000000000",
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 159011749,
+          "at": "2026-11-02T12:24:35.000000Z",
+          "tx": "0xb2981819f4a3065da9df8ab5007e826f58056bde3440c93171d6ee3879126fad"
+        }
+      ]
+    },
+    {
+      "propId": "0x4f4db60f18eb0905a10b8d3218f43bcf2e5b2b8142279bcab004135bf41ac67a",
+      "createdBlock": 159032436,
+      "createdTx": "0xc7f26735860022213838836c7cc718a412bb1707d1b5e8af4a9420ad3222ce23",
+      "createdAt": "2026-11-02T23:54:09.000000Z",
+      "stage": "Veto",
+      "executed": false,
+      "executionFailed": false,
+      "canceled": false,
+      "votes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 159032436,
+          "at": "2026-11-02T23:54:09.000000Z",
+          "tx": "0xc7f26735860022213838836c7cc718a412bb1707d1b5e8af4a9420ad3222ce23"
+        }
+      ],
+      "yesWeight": 3094,
+      "noWeight": 0,
+      "yesWeightWei": "3094000000000000000000",
+      "noWeightWei": "0",
+      "voterCount": 1,
+      "voteChanges": 0,
+      "finalVotes": [
+        {
+          "voter": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
+          "vote": "Yes",
+          "weight": 3094,
+          "weightWei": "3094000000000000000000",
+          "block": 159032436,
+          "at": "2026-11-02T23:54:09.000000Z",
+          "tx": "0xc7f26735860022213838836c7cc718a412bb1707d1b5e8af4a9420ad3222ce23"
         }
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-11-01T13:12:09.131Z",
+  "pulledAt": "2026-11-07T22:27:50.957Z",
   "contract": "0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957",
   "deployBlock": 123349892,
   "name": "ZAO RESPECT TOKEN",
@@ -5760,7 +5760,7 @@
       "from": "0x7A944994cE587bD133c2E6C683FE34951cBb5575",
       "to": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "respect": 3094,
-      "method": "0x6a761202"
+      "method": "execTransaction"
     },
     {
       "date": "2025-12-18T15:43:05.000000Z",
@@ -5800,7 +5800,7 @@
       "from": "0x7A944994cE587bD133c2E6C683FE34951cBb5575",
       "to": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
       "respect": 150,
-      "method": "0x6a761202"
+      "method": "execTransaction"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "pulledAt": "2026-11-01T13:12:09.131Z",
-  "count": 48,
+  "pulledAt": "2026-11-07T22:27:50.957Z",
+  "count": 50,
   "periods": [
     {
       "periodNumber": 0,
@@ -382,9 +382,25 @@
       "periodNumber": 118,
       "date": "2026-10-19T21:37:29.000000Z",
       "groups": 2,
-      "participants": 9,
-      "awards": 9,
-      "respect": 602
+      "participants": 10,
+      "awards": 10,
+      "respect": 712
+    },
+    {
+      "periodNumber": 119,
+      "date": "2026-11-02T12:30:29.000000Z",
+      "groups": 1,
+      "participants": 6,
+      "awards": 6,
+      "respect": 272
+    },
+    {
+      "periodNumber": 120,
+      "date": "2026-11-02T12:30:15.000000Z",
+      "groups": 1,
+      "participants": 5,
+      "awards": 5,
+      "respect": 262
     }
   ]
 }

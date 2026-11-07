@@ -3,18 +3,57 @@
   "source": {
     "proposals": {
       "file": "data/orec-proposals.json",
-      "pulledAt": "2026-11-01T13:12:09.131Z",
-      "contract": "0xcB05F9254765CA521F7698e61E0A6CA6456Be532"
+      "pulledAt": "2026-11-07T22:27:50.957Z",
+      "contract": "0xcB05F9254765CA521F7698e61E0A6CA6456Be532",
+      "sha256": "dab6bb7560f1ef0fa5b54e06adc336dda02413a698d605774597f1c3ee5cbbc8"
     },
     "awards": {
       "file": "data/award-events.json",
-      "pulledAt": "2026-11-01T13:12:09.131Z",
-      "contract": "0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c"
+      "pulledAt": "2026-11-07T22:27:50.957Z",
+      "contract": "0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c",
+      "sha256": "0e39b2bdadc373a36e662e33a1b6ea744711f817ae6d567fe53bebb956297fbf"
     }
   },
   "note": "Only executed proposals that minted ZOR appear here. Proposals still voting, vetoed or failed are in data/orec-proposals.json. periodNumber is the on-chain period, not a meeting number.",
-  "count": 48,
+  "count": 50,
   "unmatchedAwardEvents": 0,
+  "pending": [
+    {
+      "propId": "0x55e992ec923ea0110ccbf5fe995e1f9b8ffa4e9a361c9f54956eb5b8241e102d",
+      "stage": "Executable",
+      "createdAt": "2026-07-28T16:48:43.000000Z"
+    },
+    {
+      "propId": "0x1c7dccd3e31d27684a19b60ebc49e4a69df8f4cbc7c3917797c8e5242720d8ef",
+      "stage": "Executable",
+      "createdAt": "2026-10-06T16:30:41.000000Z"
+    },
+    {
+      "propId": "0xf69aca2d4441ef8442320c7b7b4dc99f1ef491a55a12ab972961480eba07dd38",
+      "stage": "Executable",
+      "createdAt": "2026-10-27T16:33:35.000000Z"
+    },
+    {
+      "propId": "0x2afd6745944cdd522082bb245a9a7bc9c3a7e543495d8ec7bb7de3a2c227d9a6",
+      "stage": "Executable",
+      "createdAt": "2026-10-27T16:34:09.000000Z"
+    },
+    {
+      "propId": "0x58ae9d74a1c096e26b4f0543287201bed3188d52c70fd1d4afde6d9d9c921f83",
+      "stage": "Executable",
+      "createdAt": "2026-10-27T16:35:47.000000Z"
+    },
+    {
+      "propId": "0xc1dd2dce4b7e3551801ec9d38c7ff9b900e91f5ed2548921cc430ae98fbff92a",
+      "stage": "Veto",
+      "createdAt": "2026-11-02T12:24:35.000000Z"
+    },
+    {
+      "propId": "0x4f4db60f18eb0905a10b8d3218f43bcf2e5b2b8142279bcab004135bf41ac67a",
+      "stage": "Veto",
+      "createdAt": "2026-11-02T23:54:09.000000Z"
+    }
+  ],
   "runs": [
     {
       "periodNumber": 0,
@@ -1439,8 +1478,8 @@
       "status": "executed",
       "firstAwardAt": "2026-10-19T21:37:29.000000Z",
       "groups": 2,
-      "awards": 9,
-      "respect": 602,
+      "awards": 10,
+      "respect": 712,
       "proposals": [
         {
           "propId": "0x2de4753f2ab5de9d97dcbd57bd7415539f1d27340f4af6753da02e83c4a1e8eb",
@@ -1471,6 +1510,58 @@
             10
           ],
           "awards": 4
+        },
+        {
+          "propId": "0x2c8e84f1082f9b44da10f0067debb38d2adc74605e6a6f3f8f1fa58e51774055",
+          "stage": "Executed",
+          "executedAt": "2026-11-02T12:30:49.000000Z",
+          "executedTx": "0x0f7c9efa2cf56325d6aa95366aeb5ac55d7b6e92272ae04a709cbc0436116e1d",
+          "mintTypes": [
+            10
+          ],
+          "awards": 1
+        }
+      ]
+    },
+    {
+      "periodNumber": 119,
+      "recipe": "ZAO.Fractal.RunRespectGame@v1",
+      "status": "executed",
+      "firstAwardAt": "2026-11-02T12:30:29.000000Z",
+      "groups": 1,
+      "awards": 6,
+      "respect": 272,
+      "proposals": [
+        {
+          "propId": "0x6b3b4ec9f6510a6dd38663ed708e7674e43f198d3496a59a0867c6f013f2854e",
+          "stage": "Executed",
+          "executedAt": "2026-11-02T12:30:29.000000Z",
+          "executedTx": "0x85712de6cc1dc6b1167efe75bc40dd487a535dbf33981ce0e79e419cdffe083e",
+          "mintTypes": [
+            10
+          ],
+          "awards": 6
+        }
+      ]
+    },
+    {
+      "periodNumber": 120,
+      "recipe": "ZAO.Fractal.RunRespectGame@v1",
+      "status": "executed",
+      "firstAwardAt": "2026-11-02T12:30:15.000000Z",
+      "groups": 1,
+      "awards": 5,
+      "respect": 262,
+      "proposals": [
+        {
+          "propId": "0x35e5894745b190dd723a3172a2e91f6a10765c4e1b0e5b78532b016ce53abc6e",
+          "stage": "Executed",
+          "executedAt": "2026-11-02T12:30:15.000000Z",
+          "executedTx": "0x246c4ef9ceec036a9231021dfbab74b6e1f9e768c6c9a9c69cbd07deff9c5158",
+          "mintTypes": [
+            10
+          ],
+          "awards": 5
         }
       ]
     }

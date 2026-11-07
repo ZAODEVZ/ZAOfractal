@@ -9,12 +9,16 @@
  *   - data/award-events.json    (every ZOR mint, with periodNumber and groupNum)
  * A proposal is tied to a period when its executedTx is the tx of a ZOR mint.
  *
+ * `source` records the sha256 of each input file, so a reader can check the ledger was built
+ * from the committed snapshot (`shasum -a 256 data/orec-proposals.json data/award-events.json`).
+ *
  * Zero dependencies, no network. Counts only: no recipient addresses are written.
  * The on-chain periodNumber is recorded as-is; it is not converted to a meeting number.
  *
  * Usage:  node scripts/build-runs.mjs        (refresh the snapshots first with pull-data.mjs)
  */
 
+import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -23,8 +27,13 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = join(ROOT, 'data');
 const RECIPE_ID = 'ZAO.Fractal.RunRespectGame@v1';
 
-const proposals = JSON.parse(await readFile(join(DATA, 'orec-proposals.json'), 'utf8'));
-const awards = JSON.parse(await readFile(join(DATA, 'award-events.json'), 'utf8'));
+// Read the raw bytes once, so the sha256 recorded in `source` is of exactly the file parsed.
+// This follows the Pathways run-ledger convention of `input_hashes` (adopted, not copied).
+const sha256 = (buf) => createHash('sha256').update(buf).digest('hex');
+const proposalsRaw = await readFile(join(DATA, 'orec-proposals.json'));
+const awardsRaw = await readFile(join(DATA, 'award-events.json'));
+const proposals = JSON.parse(proposalsRaw.toString('utf8'));
+const awards = JSON.parse(awardsRaw.toString('utf8'));
 
 const byExecTx = new Map();
 for (const p of proposals.proposals) {
@@ -76,17 +85,26 @@ const rows = [...runs.values()]
     proposals: [...r.proposals.values()].map((p) => ({ ...p, mintTypes: [...p.mintTypes].sort() })),
   }));
 
+// Proposals that have not executed yet (still voting, in the veto window, or passed but not
+// executed). The pull decodes a proposal's action only from its execution tx, so which period
+// a pending proposal carries is not known here and is not guessed.
+const pending = proposals.proposals
+  .filter((p) => !p.executed && !p.canceled && !p.executionFailed && ['Voting', 'Veto', 'Executable'].includes(p.stage))
+  .map((p) => ({ propId: p.propId, stage: p.stage, createdAt: p.createdAt }))
+  .sort((a, b) => a.createdAt.localeCompare(b.createdAt));
+
 const out = {
   recipe: RECIPE_ID,
   source: {
-    proposals: { file: 'data/orec-proposals.json', pulledAt: proposals.pulledAt, contract: proposals.contract },
-    awards: { file: 'data/award-events.json', pulledAt: awards.pulledAt, contract: awards.contract },
+    proposals: { file: 'data/orec-proposals.json', pulledAt: proposals.pulledAt, contract: proposals.contract, sha256: sha256(proposalsRaw) },
+    awards: { file: 'data/award-events.json', pulledAt: awards.pulledAt, contract: awards.contract, sha256: sha256(awardsRaw) },
   },
   note: 'Only executed proposals that minted ZOR appear here. Proposals still voting, vetoed or failed are in data/orec-proposals.json. periodNumber is the on-chain period, not a meeting number.',
   count: rows.length,
   unmatchedAwardEvents: unmatched,
+  pending,
   runs: rows,
 };
 
 await writeFile(join(DATA, 'runs.json'), JSON.stringify(out, null, 2) + '\n');
-console.log(`wrote ${rows.length} runs to data/runs.json (${unmatched} award events with no matching executed proposal)`);
+console.log(`wrote ${rows.length} runs to data/runs.json (${unmatched} award events with no matching executed proposal, ${pending.length} proposals pending)`);
