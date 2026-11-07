@@ -1,0 +1,43 @@
+{
+  "schema": "zao.fractal.run-record/v1",
+  "recordedBy": "scripts/build-runs.mjs",
+  "periodNumber": 87,
+  "recipe": "ZAO.Fractal.RunRespectGame@v1",
+  "status": "executed",
+  "firstAwardAt": "2026-03-03T16:18:29.000000Z",
+  "groups": 3,
+  "awards": 13,
+  "respect": 754,
+  "proposals": [
+    {
+      "propId": "0x13fe37fe20cbabd8548c73482fbc6a785ab35306c3fbc6a8103ccd45edfc0140",
+      "stage": "Executed",
+      "executedAt": "2026-03-03T16:18:29.000000Z",
+      "executedTx": "0xa680f94059ca7e069be2ba092cf49b62de8edb0463a3f723de6a6590d81b354e",
+      "mintTypes": [
+        10
+      ],
+      "awards": 4
+    },
+    {
+      "propId": "0x3b42767f0dc417ac4785dedb8cc06297a11d49798ad0a59d291ede65e7f4cb63",
+      "stage": "Executed",
+      "executedAt": "2026-03-03T16:20:05.000000Z",
+      "executedTx": "0x6a606befa3d54d9fecf244387b9ee9292cf755e63a53611a38017b2247d50531",
+      "mintTypes": [
+        10
+      ],
+      "awards": 4
+    },
+    {
+      "propId": "0xb68245b5977ba7a727e912bc9f92d24da014ffa77fc270639e9a99d908712cf2",
+      "stage": "Executed",
+      "executedAt": "2026-03-03T16:20:31.000000Z",
+      "executedTx": "0x398411ad37a69f2da8f4c9ebfabfd65aff8faed6bcf1a9edb8268bde7726b07b",
+      "mintTypes": [
+        10
+      ],
+      "awards": 5
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+// Read-only view of the Respect Game run ledger. The data is written by
+// scripts/build-runs.mjs: data/runs.json is the index, data/runs/<period>.json
+// holds one record per on-chain period. Read at build time, the same way
+// resources.astro reads RESOURCES.md, so nothing here calls the network.
+interface Proposal { propId: string; executedAt: string | null; executedTx: string; awards: number }
+interface RunRecord {
+  periodNumber: number; recipe: string; status: string; recordedBy: string;
+  firstAwardAt: string | null; groups: number; awards: number; respect: number; proposals: Proposal[];
+}
+interface IndexRow { periodNumber: number; file: string; sha256: string }
+interface Pending { propId: string; stage: string; createdAt: string }
+
+const dataDir = path.resolve('../data');
+let index: {
+  recipe: string;
+  source: Record<string, { file: string; pulledAt: string; sha256: string }>;
+  count: number;
+  pending: Pending[];
+  runs: IndexRow[];
+} | null = null;
+let runs: (RunRecord & { sha256: string })[] = [];
+try {
+  index = JSON.parse(await fs.readFile(path.join(dataDir, 'runs.json'), 'utf-8'));
+  runs = await Promise.all(
+    index!.runs.map(async (row) => ({
+      ...(JSON.parse(await fs.readFile(path.resolve('..', row.file), 'utf-8')) as RunRecord),
+      sha256: row.sha256,
+    })),
+  );
+  runs.sort((a, b) => b.periodNumber - a.periodNumber);
+} catch (e) {
+  index = null;
+}
+
+const day = (iso: string | null) => (iso ? iso.slice(0, 10) : '-');
+const short = (h: string) => `${h.slice(0, 10)}...${h.slice(-4)}`;
+const tx = (h: string) => `https://optimistic.etherscan.io/tx/${h}`;
+const totalRespect = runs.reduce((n, r) => n + r.respect, 0);
+const pulledAt = index ? Object.values(index.source)[0]?.pulledAt : null;
+---
+<BaseLayout title="Runs" description="Every on-chain run of the weekly Respect Game, one record per period.">
+  <h1>Respect Game runs</h1>
+  {index ? (
+    <>
+      <p class="muted" style="font-size: 1.05rem;">
+        Each week's game, recorded as a run of the recipe <code>{index.recipe}</code>
+        (<a href="https://github.com/ZAODEVZ/ZAOfractal/blob/main/pathways/ZAO.Fractal.RunRespectGame.v1.yaml" target="_blank" rel="noopener noreferrer">pathways/</a>,
+        in the Pathways recipe format by DJ Thomson). {index.count} runs on chain, {totalRespect.toLocaleString('en-US')} Respect
+        minted through them. Snapshot pulled {day(pulledAt)}.
+      </p>
+      <p class="muted">
+        Period is the on-chain period number, not a meeting number. Counts only: no names or wallets.
+        Each row links the transaction that executed its proposal.
+      </p>
+
+      <div class="run-table">
+      <table>
+        <thead>
+          <tr><th>Period</th><th>Executed</th><th>Rooms</th><th>Awards</th><th>Respect</th><th>Proposals</th></tr>
+        </thead>
+        <tbody>
+          {runs.map((r) => (
+            <tr>
+              <td><a href={`https://github.com/ZAODEVZ/ZAOfractal/blob/main/data/runs/${r.periodNumber}.json`} target="_blank" rel="noopener noreferrer">{r.periodNumber}</a></td>
+              <td>{day(r.firstAwardAt)}</td>
+              <td>{r.groups}</td>
+              <td>{r.awards}</td>
+              <td>{r.respect.toLocaleString('en-US')}</td>
+              <td>
+                <div class="run-props">
+                  {r.proposals.map((p) => (
+                    <a href={tx(p.executedTx)} target="_blank" rel="noopener noreferrer"><code>{short(p.propId)}</code></a>
+                  ))}
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+
+      {index.pending.length > 0 && (
+        <>
+          <h2 style="margin-top: 2.5rem;">Not yet executed</h2>
+          <p class="muted">
+            Proposals that had not executed when the snapshot was pulled. Which period each carries is known
+            only once it executes, so they are listed here and not as runs.
+          </p>
+          <table>
+            <thead><tr><th>Proposal</th><th>Stage</th><th>Created</th></tr></thead>
+            <tbody>
+              {index.pending.map((p) => (
+                <tr><td><code>{short(p.propId)}</code></td><td>{p.stage}</td><td>{day(p.createdAt)}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      <h2 style="margin-top: 2.5rem;">Check it</h2>
+      <p class="muted">
+        The ledger is rebuilt from committed snapshots, and records the sha256 of each one:
+      </p>
+      <ul class="run-hashes">
+        {Object.values(index.source).map((s) => (
+          <li><code>{s.file}</code> <code>{s.sha256}</code></li>
+        ))}
+      </ul>
+      <p class="muted">
+        Run <code>node scripts/build-runs.mjs</code> and <code>shasum -a 256 data/orec-proposals.json data/award-events.json</code>
+        in the repo to compare.
+      </p>
+    </>
+  ) : (
+    <p>Run ledger not found. Build it with <code>node scripts/build-runs.mjs</code>.</p>
+  )}
+</BaseLayout>
+
+<style>
+  .run-table {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  .run-table table {
+    margin: 0;
+  }
+  .run-props {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.6rem;
+  }
+  .run-props code,
+  .run-hashes code {
+    font-size: 0.8rem;
+  }
+  .run-hashes code {
+    word-break: break-all;
+  }
+</style>
