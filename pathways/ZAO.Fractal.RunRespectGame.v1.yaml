@@ -31,7 +31,7 @@ pathway_template:
     attendees: list of members present (wallet bound)
     period_number: integer, the on-chain period for this meeting
     room_size: 3 to 6
-    award_curve: [110, 68, 42, 26, 16, 10]
+    award_curve: [110, 68, 42, 26, 16, 10]   # rank 1 to rank 6; source: ZAO_FIBONACCI in dao/src/lib/constants.ts (2 x [55, 34, 21, 13, 8, 5])
   steps:
   - id: form_rooms
     agent_id: facilitator
