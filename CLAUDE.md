@@ -55,7 +55,7 @@ Frapps UI: `https://zao.frapps.xyz`
 
 ## Respect Game
 
-Every Monday 6pm EST. 6-person breakout rooms. Rank peers 1-6; bottom rank gets 0. ZAO uses 2× Fibonacci: `110, 68, 42, 26, 16, 10`.
+Every Monday 6pm EST. Breakout rooms of up to 6. Rank peers 1-6; every rank earns Respect, and rank 6 gets the smallest award, 10. ZAO uses 2× Fibonacci: `110, 68, 42, 26, 16, 10` (`ZAO_FIBONACCI` in `dao/src/lib/constants.ts`). A room of fewer than 6 uses the top awards only (a room of 5 gets 110 down to 16). Periods 67 to 70 (Sept to Oct 2025) minted at 1×: `55, 34, 21, 13, 8, 5`.
 
 OREC pass condition: `noWeight * 2 < yesWeight && yesWeight >= minWeight` (2/3 supermajority, 1/3 veto).
 
