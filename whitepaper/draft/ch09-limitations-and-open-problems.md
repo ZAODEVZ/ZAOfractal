@@ -62,7 +62,7 @@ Respect accumulates and never leaves a wallet: once minted, a balance changes on
 
 Season 3 answers it on the vote rather than the balance. Voting is gated on a rolling 90-day activation: a member who signed or attended within the last 90 days votes at full weight, a member who did not keeps every point and regains the vote by taking part again (ZIP-2 section 3 in `bettercallzaal/zao-papers`; outside precedent, from co-operative bylaws to Optimism's Citizens' House, in ZAOOS research `governance/2558-dao-periodic-reactivation-precedent`). The trade-off is turnout: gating the vote on a recurring signal concentrates the electorate in those who show up, and quorum must therefore be defined as a share of the active pool, never as a fixed number of members.
 
-Two rulings that reshape other chapters are recorded here rather than silently applied, because this draft predates them: OG Respect resumes as the one-time achievements ledger and Respect splits by project (ZAO Fractal Respect for governance, ZAO Festivals Respect, WaveWarZ Respect later), both 2026-09-26 (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, rulings 1 and 2); and vote weight becomes OG plus ZOR summed, 2026-10-10 (Chapter 6, Section III). Chapter 10 carries the dates.
+Two rulings that reshape other chapters are recorded here rather than silently applied, because this draft predates them: OG Respect resumes as the one-time achievements ledger and Respect splits by project (ZAO Fractal Respect for governance, ZAO Festivals Respect, WaveWarZ Respect later), both ruled by Zaal on 2026-09-26; and vote weight becomes OG plus ZOR summed, 2026-10-10 (Chapter 6, Section III). Chapter 10 carries the dates.
 
 ---
 
