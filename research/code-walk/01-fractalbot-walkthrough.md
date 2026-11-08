@@ -851,7 +851,7 @@ proposal_tx = orclient.proposeBreakoutResult(
 | [cogs/fractal/group.py](https://raw.githubusercontent.com/bettercallzaal/fractalbotmarch2026/main/cogs/fractal/group.py) | Voting logic | [FULL] |
 | [cogs/timer.py](https://raw.githubusercontent.com/bettercallzaal/fractalbotmarch2026/main/cogs/timer.py) | Timer UI | [FULL] |
 | [utils/web_integration.py](https://raw.githubusercontent.com/bettercallzaal/fractalbotmarch2026/main/utils/web_integration.py) | Webhook client | [FULL] |
-| [Doc 188: ZAO Fractal Bot Process](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/governance/188-zao-fractal-bot-process/README.md) | Research | [FULL] |
+| [Doc 188: ZAO Fractal Bot Process](https://github.com/bettercallzaal/ZAOOS/blob/main/research/governance/188-zao-fractal-bot-process/README.md) | Research | [FULL] |
 | [discord.py 2.0 Docs](https://discordpy.readthedocs.io/) | Reference | [FULL] |
 | [Supabase PostgreSQL](https://supabase.com) | Database | [FULL] |
 | [Optimism OP Mainnet](https://docs.optimism.io) | Blockchain | [FULL] |

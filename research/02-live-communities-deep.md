@@ -346,9 +346,9 @@ No longer 4+ competing hubs on the Superchain; Eden is now the primary Ethereum-
 
 ### FULL (Complete, Verified)
 
-1. [104-fractal-communities-directory/README.md](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/governance/104-fractal-communities-directory/README.md) - Comprehensive directory updated May 2026
-2. [306-eden-fractal-op-fractal-deep-history/README.md](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/governance/306-eden-fractal-op-fractal-deep-history/README.md) - Complete history of Eden/OF, Larimer philosophy, chain migrations
-3. [105-fractal-key-people/README.md](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/community/105-fractal-key-people/README.md) - Dan SingJoy, Tadas Vaitiekunas, key people
+1. [104-fractal-communities-directory/README.md](https://github.com/bettercallzaal/ZAOOS/blob/main/research/governance/104-fractal-communities-directory/README.md) - Comprehensive directory updated May 2026
+2. [306-eden-fractal-op-fractal-deep-history/README.md](https://github.com/bettercallzaal/ZAOOS/blob/main/research/governance/306-eden-fractal-op-fractal-deep-history/README.md) - Complete history of Eden/OF, Larimer philosophy, chain migrations
+3. [105-fractal-key-people/README.md](https://github.com/bettercallzaal/ZAOOS/blob/main/research/community/105-fractal-key-people/README.md) - Dan SingJoy, Tadas Vaitiekunas, key people
 4. [Hive: Genesis Fractal Results](https://hive.blog/fractally/@mattlangston/first-results-from-the-fractal-governance-experiments) - 30-week experiment data, 97 participants, Respect distribution
 5. [Optimystics: Fractal History Blog](https://optimystics.io/blog/fractalhistory) - Timeline of all communities 2021-2025
 

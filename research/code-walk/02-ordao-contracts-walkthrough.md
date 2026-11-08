@@ -1089,8 +1089,8 @@ const handleSubmitBreakout = async (rankings: Address[]) => {
 | [ZAO community.config.ts](https://github.com/bettercallzaal/zaoos/blob/main/community.config.ts) | Config reference | [FULL] |
 | [Optimism Documentation](https://docs.optimism.io) | Chain reference | [FULL] |
 | [OpenZeppelin ERC-1155](https://github.com/OpenZeppelin/openzeppelin-contracts) | Token standard | [FULL] |
-| [Doc 56: ORDAO & Respect System](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/governance/056-ordao-respect-system/README.md) | Research | [FULL] |
-| [Doc 718c: ORDAO On-Chain Architecture](file:///Users/zaalpanthaki/Documents/ZAOfractal/research/whitepaper-foundations/03-ordao-onchain-architecture.md) | Whitepaper foundation | [FULL] |
+| [Doc 56: ORDAO & Respect System](https://github.com/bettercallzaal/ZAOOS/blob/main/research/governance/056-ordao-respect-system/README.md) | Research | [FULL] |
+| [Doc 718c: ORDAO On-Chain Architecture](https://github.com/ZAODEVZ/ZAOfractal/blob/main/research/whitepaper-foundations/03-ordao-onchain-architecture.md) | Whitepaper foundation | [FULL] |
 | [sim31/orfrapps CLI](https://github.com/sim31/orfrapps) | Deployment tools | [FULL] |
 | [Fractalgram Integration](https://github.com/Optimystics/fractalgram) | Telegram UI | [FULL] |
 | [Optimism Fractal Case Study](https://optimismfractal.com) | Live deployment | [FULL] |
