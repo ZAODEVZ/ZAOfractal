@@ -43,7 +43,10 @@ A note on the Epoch 1 to 2 transition: Eden has publicly clarified that August 2
 | Token | Soulbound ERC-1155 | OG ERC-20 (1-73) + ZOR ERC-1155 (74+) |
 | Scoring | 1x Fibonacci (55/34/21/13/8/5) | 2x Fibonacci (110/68/42/26/16/10) |
 | Focus | Governance R&D | Music + culture |
+| Room topic | How we work better on fractals; who is improving the fractal ecosystem | Open on purpose: anyone shares what they are working on |
 | Surface | Fractalgram (Telegram) + edenfractal.com | Discord bot + ZAO OS (Farcaster) |
+
+**Room topic.** Most fractals give the room a topic: Eden Fractal asks how we work better on fractals and who is improving the fractal ecosystem; Optimism Fractal asks what you are doing to improve Optimism or the OP Stack; EZ fractal is built around an EZ token. The ZAO's is left open on purpose, so anyone can come and share what they are working on. Zaal, in his answers of 2026-11-07, in Zaal's words, spelling tidied: "tbh I left it open specifically so I can invite more people to just come and share what they are working on, most other fractal groups Eden Fractal (topic = how do we work better on fractals, who's doing work to improve the fractal ecosystem) or Optimism Fractal (topic = what are you doing to improve Optimism blockchain or OP Stack) and there's other fractals like EZ fractal which is all based around an EZ token,"
 
 ## Why ZAO and Eden are close
 

@@ -19,7 +19,7 @@ tier: DEEP
 
 | Decision | Owner | Status | Notes |
 |----------|-------|--------|-------|
-| **Use ZAO's 2x Fibonacci scoring (110/68/42/26/16/10) as standard curve** | Zaal | Live | More reward differentiation than canonical Fibonacci (55/34/21/13/8/5). See Section 4. |
+| **Use ZAO's 2x Fibonacci scoring (110/68/42/26/16/10) as standard curve** | Zaal | Live | Same differentiation as canonical Fibonacci (55/34/21/13/8/5), double the amounts: a year 2 step so newer work weighs more than older balances (corrected 2026-11-07). See Section 4. |
 | **Keep OREC submission gated to experienced 2-3 wallets** | Zaal | Current | Risk mitigation until UI/UX in ZAO OS is finalized. Plan to open via ZAO OS UI (future sprint). |
 | **Sync on-chain Respect state (OG + ZOR) into Supabase `respect_balances` as cache** | Doc 115 owner | In progress | Leaderboard.ts already reads both contracts; cache layer adds decay + tier calculation. |
 | **Document fractal as non-technical onboarding tool** | Zaal + CLAUDE.md | Doc 703 rec | Tanja + non-builders cannot explain the fractal. Skeleton guides + video intros needed. |
@@ -124,7 +124,7 @@ All three conditions must be true:
 - `yes_weight >= min_weight_threshold` (minimum participation)
 - `yes_weight > 2 * no_weight` (supermajority: YES exceeds double the NO)
 
-**Consequence:** 1/3 of active Respect holders can block any proposal. 2/3 can pass one.
+**Consequence:** **[corrected 2026-11-07]** 1/3 of the weight that votes can veto (NO weight of at least half the YES weight); weight that does not vote counts for nothing. 2/3 of the weight that votes can pass one.
 
 ### Key Parameters (Configurable per Deployment)
 
@@ -200,7 +200,7 @@ Each rank earns roughly 60% more than the one below (phi ~ 1.618). Top 33% earn 
 
 ### ZAO's Custom 2x Fibonacci Curve
 
-The ZAO uses a custom curve - roughly 2x the canonical Fibonacci - to reward differentiation more aggressively:
+The ZAO uses a custom curve - exactly 2x the canonical Fibonacci. **[corrected 2026-11-07]** Shares inside a room are identical on either curve: rank 1 takes 40.4% of a room's Respect and earns 11x rank 6. Doubling changes only absolute amounts, so it matters only against fixed numbers: tier thresholds, `minWeight`, and balances earned earlier at 1x.
 
 | Rank | Respect | vs. Standard |
 |------|---------|------|
@@ -212,7 +212,7 @@ The ZAO uses a custom curve - roughly 2x the canonical Fibonacci - to reward dif
 | 6th | 10 | 2x |
 | **Per-group total** | **272** | 2x |
 
-**Rationale:** ZAO prioritizes recognizing top contributors (musicians, builders) over baseline participation. The curve steeper than canonical Fibonacci but still resists gaming (peer-ranked, not tradeable). See doc 703 context for governance decisions on this curve choice.
+**Rationale:** **[corrected 2026-11-07]** Why 2x, in Zaal's words, spelling tidied (his answers of 2026-11-07): "Fibonacci based on Fractally groupchat, we did 1 year of 1x Fibonacci points and then did year two of 2x Fibonacci points to create a natural decay as future collaborations can be worth more but the next year 3x hasn't been something I'm ready for as I want to add more before contributions count for more than past years". So the 2x is a yearly step - year 1 at 1x, year 2 at 2x - that makes newer work weigh more than older balances. A year 3 at 3x is not decided. Shares inside a room do not change. The curve is no steeper than canonical Fibonacci; it still resists gaming (peer-ranked, not tradeable).
 
 ### Why Fibonacci at All
 

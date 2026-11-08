@@ -176,7 +176,7 @@ yesWeight > 2 * noWeight  AND  yesWeight >= minThreshold
 ```
 
 **Consequences:**
-- 1/3 of active Respect holders can block any proposal (veto power).
+- NO weight of at least half the YES weight, one third of the weight cast, blocks any proposal (veto power). **[corrected 2026-11-07]**
 - 2/3 can guarantee passage (supermajority).
 - 50-50 splits always fail (YES is not > 2x NO).
 - Abstentions are invisible (zero voting power).
@@ -261,7 +261,7 @@ In behavioral economics, people accept splits that feel "fair enough" even if un
 
 **Defense layer 4: Soulbound token.** OG Respect is soulbound for members (restricted transfers). This prevents a fake account from cashing out or transferring stolen Respect to another account. Soulbinding locks earned Respect in place.
 
-**Defense layer 5: OREC voting.** Even if a breakout group successfully mines Respect for a fake account, the OREC proposal can be vetoed by the wider community. 1/3 of Respect holders can block execution.
+**Defense layer 5: OREC voting.** Even if a breakout group successfully mines Respect for a fake account, the OREC proposal can be vetoed by the wider community. NO weight of at least half the YES weight, one third of the weight cast, blocks execution. **[corrected 2026-11-07]**
 
 **Sybil cost estimate:** To move one person 10 places in ranking over 15 weeks across 15 different random groups requires approximately 150 fake accounts (10 per group, 15 groups). Each account must have a wallet, Farcaster identity, and human-like Discord presence. This is expensive (time and identity costs) and provides minimal benefit (15 votes on one person's Respect).
 

@@ -23,7 +23,7 @@ parent-doc: 718
 | **Soulbound Design** | OG (ERC-20) frozen, historical ledger. ZOR (ERC-1155) active, living ledger. Both block transfers at contract level using `_beforeTokenTransfer` hooks. | Two-ledger model: historical preservation + democratic future. Transfer reversion = simple code, strong enforcement. |
 | **Vote Weight Source** | Reads OG Respect (ERC-20, frozen) at proposal block number for voting power. New Respect minted to ZOR (ERC-1155) post-execution. | Legacy votes remain valid; new distribution is democratic. Decouples vote rights from ongoing earnings. |
 | **Chain Choice** | Optimism OP Mainnet: EVM-equivalent, 100x lower gas than Ethereum, 2-second blocks, Superchain ecosystem ready. | Optimism enables affordable, scalable fractal governance. Base addition (2026) enables Superchain expansion. |
-| **Execution Security** | 1/3 of active Respect holders can veto. 2/3 can execute. No timelocks on veto challenge (window is fixed). Sync risk between on-chain OREC + off-chain ornode. | Minority protection baked in. Attack surface: proposal metadata mismatches, reorg during veto window. |
+| **Execution Security** | 1/3 of the weight that votes can veto (corrected 2026-11-07). 2/3 can execute. No timelocks on veto challenge (window is fixed). Sync risk between on-chain OREC + off-chain ornode. | Minority protection baked in. Attack surface: proposal metadata mismatches, reorg during veto window. |
 | **frapps Platform** | Deployment tooling (orfrapps CLI) + multi-instance config (frapp.json). ZAO runs on zao.frapps.xyz, ornode at zao-ornode.frapps.xyz. | Mature production stack; no custom infrastructure needed. Config-as-code pattern reduces ops burden. |
 
 ---
@@ -80,7 +80,7 @@ AND
 ```
 
 **Consequences:**
-- 1/3 of active Respect holders can block any proposal (veto power).
+- **[corrected 2026-11-07]** 1/3 of the weight that votes can veto (NO weight of at least half the YES weight); weight that does not vote counts for nothing.
 - 2/3 can guarantee passage (supermajority).
 - 50-50 splits always fail (not > 2x).
 - Abstentions are invisible (vote weight = 0 contributes nothing).

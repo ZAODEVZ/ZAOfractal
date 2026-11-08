@@ -2,7 +2,7 @@
 
 Earned governance, verified on-chain. The ZAO.
 
-Version v0.2 draft - compiled 2026-10-10 by scripts/build-whitepaper.mjs from whitepaper/draft/
+Version v0.2 draft - compiled 2026-11-07 by scripts/build-whitepaper.mjs from whitepaper/draft/
 
 ---
 
@@ -887,7 +887,7 @@ The ZAO uses a 2x scaling to accelerate tier progression for top contributors:
 | 6th | 10 | 1.600x | 100.0% |
 | **Total** | **272** | -- | -- |
 
-The 2x curve preserves the golden ratio (preventing gaming) while doubling velocity. A top contributor earning 1st place every week reaches Elder tier (2000+ Respect) in approximately 50 weeks with the 2x curve, versus 100 weeks with the standard curve.
+The 2x curve preserves the golden ratio (preventing gaming) and every rank's share of a room. **[corrected 2026-11-07]** It changes only absolute amounts, so the faster pace below holds only against fixed thresholds like the Elder tier. In summary of Zaal's answer (his words are quoted in `research/09-open-questions-for-operators.md` section 4), 2x is a yearly step - year 1 at 1x, year 2 at 2x - so newer work weighs more than older balances. A top contributor earning 1st place every week reaches Elder tier (2000+ Respect) in approximately 50 weeks with the 2x curve, versus 100 weeks with the standard curve.
 
 ### Why Fibonacci? The Ultimatum Game Insight
 
@@ -936,7 +936,7 @@ Respect determines voting weight in the OREC governance contract. A proposal pas
 yesWeight > 2 * noWeight  AND  yesWeight >= minWeight
 ```
 
-This is the **2/3 supermajority rule**. Equivalently, **1/3 of active Respect can veto** any proposal.
+This is the **2/3 supermajority rule**. Equivalently, **NO weight of at least half the YES weight, one third of the weight cast, vetoes** any proposal. **[corrected 2026-11-07]** Weight that does not vote counts for nothing.
 
 This is fundamentally consent-based, not majority-based. A 60/40 vote fails (YES must exceed double NO). A 51/49 vote fails. Only a 67+/33 or stronger split passes.
 
@@ -1169,7 +1169,7 @@ yesWeight > 2 * noWeight  AND  yesWeight >= minThreshold
 ```
 
 **Consequences:**
-- 1/3 of active Respect holders can block any proposal (veto power).
+- NO weight of at least half the YES weight, one third of the weight cast, blocks any proposal (veto power). **[corrected 2026-11-07]**
 - 2/3 can guarantee passage (supermajority).
 - 50-50 splits always fail (YES is not > 2x NO).
 - Abstentions are invisible (zero voting power).
@@ -1254,7 +1254,7 @@ In behavioral economics, people accept splits that feel "fair enough" even if un
 
 **Defense layer 4: Soulbound token.** OG Respect is soulbound for members (restricted transfers). This prevents a fake account from cashing out or transferring stolen Respect to another account. Soulbinding locks earned Respect in place.
 
-**Defense layer 5: OREC voting.** Even if a breakout group successfully mines Respect for a fake account, the OREC proposal can be vetoed by the wider community. 1/3 of Respect holders can block execution.
+**Defense layer 5: OREC voting.** Even if a breakout group successfully mines Respect for a fake account, the OREC proposal can be vetoed by the wider community. NO weight of at least half the YES weight, one third of the weight cast, blocks execution. **[corrected 2026-11-07]**
 
 **Sybil cost estimate:** To move one person 10 places in ranking over 15 weeks across 15 different random groups requires approximately 150 fake accounts (10 per group, 15 groups). Each account must have a wallet, Farcaster identity, and human-like Discord presence. This is expensive (time and identity costs) and provides minimal benefit (15 votes on one person's Respect).
 
@@ -1466,7 +1466,7 @@ Vote weight is non-delegatable. Your Respect is soulbound; your vote comes direc
 
 When voting closes, the veto window opens. NO votes are still accepted. YES votes are not.
 
-This is the crucial minority protection mechanism. If consensus-building failed off-chain, the community has a challenge window to mobilize opposition. Blocking power comes from the passing threshold, not from any per-vote multiplier: under the OREC default a proposal fails unless YES exceeds twice the NO weight (see Phase 3), so a coalition holding roughly one-third of the YES weight can block it. These thresholds are OREC defaults - ZAO sets and has historically adjusted its own parameters - and the current ZAO values should be read from the live contract, not assumed. The veto window shifts the burden of proof onto the proposer, who must accommodate dissent or watch the proposal fail.
+This is the crucial minority protection mechanism. If consensus-building failed off-chain, the community has a challenge window to mobilize opposition. Blocking power comes from the passing threshold, not from any per-vote multiplier: under the OREC default a proposal fails unless YES exceeds twice the NO weight (see Phase 3), so NO weight of at least half the YES weight, one third of the weight cast, blocks it. **[corrected 2026-11-07]** These thresholds are OREC defaults - ZAO sets and has historically adjusted its own parameters - and the current ZAO values should be read from the live contract, not assumed. The veto window shifts the burden of proof onto the proposer, who must accommodate dissent or watch the proposal fail.
 
 The veto window also prevents last-minute attacks. An attacker cannot wait until the final block of voting to dump a massive NO vote (by purchasing Respect from a reluctant holder). Respect is soulbound; no one sells it. The attacker would have had to earn it over weeks. This creates a natural audit trail: high-impact veto voters are visible, and their Respect history is public.
 
@@ -1482,7 +1482,7 @@ AND
 (yes_weight > no_weight * 2)
 ```
 
-In mathematical form: 1/3 of active Respect holders can block any proposal (veto power). 2/3 can guarantee passage. A 50-50 split always fails (not > 2x). Abstentions are invisible (zero voting weight contributes nothing).
+In mathematical form: NO weight of at least half the YES weight, one third of the weight cast, blocks any proposal (veto power). **[corrected 2026-11-07]** 2/3 can guarantee passage. A 50-50 split always fails (not > 2x). Abstentions are invisible (zero voting weight contributes nothing).
 
 ZAO's `minWeight` is a fixed 1,000 Respect, read live from the OREC contract - not a percentage of supply. Against ZAO's 38,484 OG Respect that is roughly 2.6%, deliberately low so a small active minority can pass routine proposals while the veto window protects everyone else. (The value is a governance parameter ZAO sets, not a constant; read it from the contract for the current figure.)
 
@@ -2222,7 +2222,7 @@ ZAO Fractal occupies a unique position in the fractal governance ecosystem. This
 
 **Sixth, ZAO maintains two Respect ledgers reflecting two eras of growth.** Fractals 1-66 **[corrected 2026-09-02: was "1-73"; the first ZOR award onchain carries period 67, minted 2025-09-25]** (August 2024 - September 2025) ran in Discord, tracked contribution in Airtable, and distributed OG Respect (ERC-20, non-transferable, address `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`). New mints to the OG Respect ledger paused at 122 holders and 38,484 total supply in December 2025 as an administrative policy choice (OG Respect remains mintable whenever chosen), while the community scaled into on-chain ORDAO/OREC infrastructure. Fractals 67 onward **[corrected 2026-09-02: was "74 onward"]** (September 2025 onward) run on-chain via ORDAO/OREC, distributing ZOR Respect (ERC-1155, non-transferable, address `0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c`). The OREC contract (address `0xcB05F9254765CA521F7698e61E0A6CA6456Be532` on Optimism) has recorded 242+ transactions as of May 19, 2026. This two-ledger system reflects institutional learning: ZAO went from offline community organization (Airtable) to production blockchain infrastructure (ORDAO) without losing history or community. The transition is documented, reconciled, and both eras remain on-chain and auditable.
 
-**Seventh, ZAO uses a two-times-scaled Fibonacci scoring that reflects sustained high engagement.** The standard fractal uses Fibonacci (55, 34, 21, 13, 8, 5 Respect per rank). ZAO uses 110, 68, 42, 26, 16, 10 - exactly double. Why? After 70+ weeks of weekly meetings, the community sustains itself. Contribution is measurable and consistent. **[corrected 2026-09-02]** Doubling the curve does **not** change differentiation. 110/10 and 55/5 are both exactly 11x - scaling every rank by the same constant preserves every ratio. The original text claimed "a rank-1 contributor earns 5x more than a rank-6, instead of 11x", which is wrong in both halves. What doubling actually changes is the absolute quantity of Respect issued per meeting, not its distribution. The real rationale needs restating by the operators; the arithmetic one does not hold. This reflects maturity. It also reflects the reality of a 188-member community. **[corrected 2026-09-02: "40 active per session" is not supported by the award ledger. Across 42 recorded periods the median number of members receiving Respect is 7, the mean 8, and the maximum ever 17. If 40 people do attend, then most of them are receiving no Respect, which is a different and more interesting claim than the one made here.]** At that scale, we can trust peer evaluation. We can afford to give more Respect to more people, because the people earning it have proven themselves. Standard fractals use standard Fibonacci. ZAO's escalation is evidence that longevity enables generosity.
+**Seventh, ZAO uses a two-times-scaled Fibonacci scoring that reflects sustained high engagement.** The standard fractal uses Fibonacci (55, 34, 21, 13, 8, 5 Respect per rank). ZAO uses 110, 68, 42, 26, 16, 10 - exactly double. Why? After 70+ weeks of weekly meetings, the community sustains itself. Contribution is measurable and consistent. **[corrected 2026-09-02]** Doubling the curve does **not** change differentiation. 110/10 and 55/5 are both exactly 11x - scaling every rank by the same constant preserves every ratio. The original text claimed "a rank-1 contributor earns 5x more than a rank-6, instead of 11x", which is wrong in both halves. What doubling actually changes is the absolute quantity of Respect issued per meeting, not its distribution. The real rationale needs restating by the operators; the arithmetic one does not hold. **[restated 2026-11-07]** In summary of Zaal's answer (his words are quoted in `research/09-open-questions-for-operators.md` section 4): a yearly step, year 1 at 1x and year 2 at 2x, so newer work weighs more than older balances; year 3 at 3x is not decided (`research/09-open-questions-for-operators.md` section 4). This reflects maturity. It also reflects the reality of a 188-member community. **[corrected 2026-09-02: "40 active per session" is not supported by the award ledger. Across 42 recorded periods the median number of members receiving Respect is 7, the mean 8, and the maximum ever 17. If 40 people do attend, then most of them are receiving no Respect, which is a different and more interesting claim than the one made here.]** At that scale, we can trust peer evaluation. We can afford to give more Respect to more people, because the people earning it have proven themselves. Standard fractals use standard Fibonacci. ZAO's escalation is evidence that longevity enables generosity.
 
 ---
 

@@ -40,7 +40,7 @@ Vote weight is non-delegatable. Your Respect is soulbound; your vote comes direc
 
 When voting closes, the veto window opens. NO votes are still accepted. YES votes are not.
 
-This is the crucial minority protection mechanism. If consensus-building failed off-chain, the community has a challenge window to mobilize opposition. Blocking power comes from the passing threshold, not from any per-vote multiplier: under the OREC default a proposal fails unless YES exceeds twice the NO weight (see Phase 3), so a coalition holding roughly one-third of the YES weight can block it. These thresholds are OREC defaults - ZAO sets and has historically adjusted its own parameters - and the current ZAO values should be read from the live contract, not assumed. The veto window shifts the burden of proof onto the proposer, who must accommodate dissent or watch the proposal fail.
+This is the crucial minority protection mechanism. If consensus-building failed off-chain, the community has a challenge window to mobilize opposition. Blocking power comes from the passing threshold, not from any per-vote multiplier: under the OREC default a proposal fails unless YES exceeds twice the NO weight (see Phase 3), so NO weight of at least half the YES weight, one third of the weight cast, blocks it. **[corrected 2026-11-07]** These thresholds are OREC defaults - ZAO sets and has historically adjusted its own parameters - and the current ZAO values should be read from the live contract, not assumed. The veto window shifts the burden of proof onto the proposer, who must accommodate dissent or watch the proposal fail.
 
 The veto window also prevents last-minute attacks. An attacker cannot wait until the final block of voting to dump a massive NO vote (by purchasing Respect from a reluctant holder). Respect is soulbound; no one sells it. The attacker would have had to earn it over weeks. This creates a natural audit trail: high-impact veto voters are visible, and their Respect history is public.
 
@@ -56,7 +56,7 @@ AND
 (yes_weight > no_weight * 2)
 ```
 
-In mathematical form: 1/3 of active Respect holders can block any proposal (veto power). 2/3 can guarantee passage. A 50-50 split always fails (not > 2x). Abstentions are invisible (zero voting weight contributes nothing).
+In mathematical form: NO weight of at least half the YES weight, one third of the weight cast, blocks any proposal (veto power). **[corrected 2026-11-07]** 2/3 can guarantee passage. A 50-50 split always fails (not > 2x). Abstentions are invisible (zero voting weight contributes nothing).
 
 ZAO's `minWeight` is a fixed 1,000 Respect, read live from the OREC contract - not a percentage of supply. Against ZAO's 38,484 OG Respect that is roughly 2.6%, deliberately low so a small active minority can pass routine proposals while the veto window protects everyone else. (The value is a governance parameter ZAO sets, not a constant; read it from the contract for the current figure.)
 
