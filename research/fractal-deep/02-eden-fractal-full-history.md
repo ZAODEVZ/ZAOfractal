@@ -383,7 +383,7 @@ Eden shifted from weekly (Epoch 1) to bi-weekly (Epoch 2):
 - [Eden Fractal - Epoch 2 Implementation Plan](https://edenfractal.com/epoch2-implementation-plan) [FULL]
 - [Eden Fractal - Epoch 2 Timeline Clarification](https://edenfractal.com/epoch2-implementation-plan/elements-of-epoch-2/clarifying-eden-fractals-epoch-1-and-epoch-2-timeline) [FULL]
 - [Eden Fractal - Official History](https://edenfractal.com/history) [FULL]
-- [02-live-communities-deep.md (ZAO internal research)](file:///Users/zaalpanthaki/Documents/ZAOfractal/research/02-live-communities-deep.md) [FULL]
+- [02-live-communities-deep.md (ZAO internal research)](https://github.com/ZAODEVZ/ZAOfractal/blob/main/research/02-live-communities-deep.md) [FULL]
 
 ---
 
@@ -412,7 +412,7 @@ Optimism Fractal ran for 15 months (October 2023 - January 2026), then the counc
 - Together, Eden + ZAO cover the entire Superchain governance landscape
 
 **Sources:**
-- [02-live-communities-deep.md - Section on Optimism Fractal Pause](file:///Users/zaalpanthaki/Documents/ZAOfractal/research/02-live-communities-deep.md) [FULL]
+- [02-live-communities-deep.md - Section on Optimism Fractal Pause](https://github.com/ZAODEVZ/ZAOfractal/blob/main/research/02-live-communities-deep.md) [FULL]
 
 ### Shared Infrastructure with ZAO Fractal
 
@@ -442,7 +442,7 @@ As of May 2026, Eden Fractal is the only general-purpose fractal on the entire E
 Eden is the incumbent.
 
 **Sources:**
-- [07-zao-fractal-distinctness.md - ZAO vs Eden comparison](file:///Users/zaalpanthaki/Documents/ZAOfractal/research/whitepaper-foundations/07-zao-fractal-distinctness.md) [FULL]
+- [07-zao-fractal-distinctness.md - ZAO vs Eden comparison](https://github.com/ZAODEVZ/ZAOfractal/blob/main/research/whitepaper-foundations/07-zao-fractal-distinctness.md) [FULL]
 
 ---
 
@@ -476,7 +476,7 @@ Eden is the incumbent.
 **Sources:**
 - [Dan SingJoy - Official Site](https://www.dansingjoy.com) [FULL]
 - [Dan SingJoy - LinkedIn](https://www.linkedin.com/in/dansingjoy/) [FULL]
-- [07-zao-fractal-distinctness.md - Founder Expertise Section](file:///Users/zaalpanthaki/Documents/ZAOfractal/research/whitepaper-foundations/07-zao-fractal-distinctness.md) [FULL]
+- [07-zao-fractal-distinctness.md - Founder Expertise Section](https://github.com/ZAODEVZ/ZAOfractal/blob/main/research/whitepaper-foundations/07-zao-fractal-distinctness.md) [FULL]
 
 ---
 
@@ -510,7 +510,7 @@ Eden is the incumbent.
 12. [Dan SingJoy - LinkedIn Profile](https://www.linkedin.com/in/dansingjoy/) [FULL]
 13. [Introducing Fractally - Medium](https://medium.com/gofractally/introducing-fractally-the-next-generation-of-daos-7c94981514d8) [FULL]
 14. [Eden Fractal Epoch 2 - Optimism Gov Forum](https://gov.optimism.io/t/eden-fractal-epoch-2-implementing-fractal-decision-making-on-the-superchain/9976) [FULL]
-15. [02-live-communities-deep.md - ZAO Internal Research](file:///Users/zaalpanthaki/Documents/ZAOfractal/research/02-live-communities-deep.md) [FULL]
+15. [02-live-communities-deep.md - ZAO Internal Research](https://github.com/ZAODEVZ/ZAOfractal/blob/main/research/02-live-communities-deep.md) [FULL]
 
 ### PARTIAL Sources (Limited Data)
 
