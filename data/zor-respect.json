@@ -1,17 +1,17 @@
 {
-  "pulledAt": "2026-11-01T13:12:09.131Z",
+  "pulledAt": "2026-11-07T22:27:50.957Z",
   "contract": "0x9885CCeEf7E8371Bf8d6f2413723D25917E7445c",
   "deployBlock": 141001446,
   "name": "ZAO Fractal Respect",
   "type": "ERC-1155",
-  "holderCount": 77,
-  "transferCount": 393,
-  "totalRespect": 19764,
+  "holderCount": 78,
+  "transferCount": 405,
+  "totalRespect": 20408,
   "holders": [
     {
       "address": "0x8D43A3fC2fed663BF6B82Ea4792C0e5239D5eE66",
       "respect": 1732,
-      "awards": 9
+      "awards": 6
     },
     {
       "address": "0x29F5DeE65E1Fb856B816EaB4f0B702c10e5Eaa34",
@@ -19,24 +19,24 @@
       "awards": 22
     },
     {
+      "address": "0xb7f4b9CAbA6bb0AEaA2B5d8dF23E2B59c192bDbB",
+      "respect": 982,
+      "awards": 18
+    },
+    {
+      "address": "0x29185eB8cfD22Aa719529217bFbadE61677e0Ad2",
+      "respect": 978,
+      "awards": 6
+    },
+    {
       "address": "0x7234c36A71ec237c2Ae7698e8916e0735001E9Af",
-      "respect": 926,
-      "awards": 30
+      "respect": 952,
+      "awards": 29
     },
     {
       "address": "0x2d9cBC4ECFBd1B8F66Aa798FD51585AE058dAA8B",
       "respect": 882,
       "awards": 13
-    },
-    {
-      "address": "0xb7f4b9CAbA6bb0AEaA2B5d8dF23E2B59c192bDbB",
-      "respect": 872,
-      "awards": 17
-    },
-    {
-      "address": "0x29185eB8cfD22Aa719529217bFbadE61677e0Ad2",
-      "respect": 868,
-      "awards": 6
     },
     {
       "address": "0xc96Ab83C1B1605c9cf5ecc661A415E41423185D8",
@@ -49,14 +49,14 @@
       "awards": 9
     },
     {
+      "address": "0x07686BedB0102E47D33Cec73307D2CC391aFf396",
+      "respect": 794,
+      "awards": 12
+    },
+    {
       "address": "0x64A15b1D2DE581097CB48e5D82619203E24BB3e1",
       "respect": 730,
       "awards": 13
-    },
-    {
-      "address": "0x07686BedB0102E47D33Cec73307D2CC391aFf396",
-      "respect": 726,
-      "awards": 11
     },
     {
       "address": "0x849e1C0b2460979D2f7c77B87b90C65C70406421",
@@ -65,23 +65,23 @@
     },
     {
       "address": "0x82Cb2305388C853eCfe9eA83a1604Acf58466659",
-      "respect": 616,
-      "awards": 6
-    },
-    {
-      "address": "0xe5adabBD71225E8074E30ff6cE2a66c9319C071b",
-      "respect": 524,
-      "awards": 3
+      "respect": 642,
+      "awards": 7
     },
     {
       "address": "0x4D16FCE1BD6E327AE31398CE9A2c4E12C077ecB1",
-      "respect": 498,
-      "awards": 8
+      "respect": 540,
+      "awards": 9
+    },
+    {
+      "address": "0xe5adabBD71225E8074E30ff6cE2a66c9319C071b",
+      "respect": 540,
+      "awards": 1
     },
     {
       "address": "0x03726e10565402A1137960ba06681754BE7Fe05f",
-      "respect": 378,
-      "awards": 7
+      "respect": 404,
+      "awards": 8
     },
     {
       "address": "0x381CC779761212344f8400373a994d29E17522c6",
@@ -106,7 +106,7 @@
     {
       "address": "0x4440397b9E67A020bc96269F263817BE63184F3A",
       "respect": 304,
-      "awards": 2
+      "awards": 1
     },
     {
       "address": "0x547f8B793362df477a23aF6ee05F8e4e291a2Ee4",
@@ -144,12 +144,22 @@
       "awards": 2
     },
     {
+      "address": "0x14f18fA55540f16DE1456E93f37A4326dC3DA041",
+      "respect": 178,
+      "awards": 1
+    },
+    {
       "address": "0x6ca74cEbd564A837991E10a701ab7605CAB3D358",
       "respect": 178,
       "awards": 2
     },
     {
       "address": "0x2cdB521cEADD3401Cc30b6AEEaE58D059fee0732",
+      "respect": 152,
+      "awards": 2
+    },
+    {
+      "address": "0xe34A582682691f31Ea4d08c133B3692Ff0ebfA24",
       "respect": 152,
       "awards": 2
     },
@@ -197,11 +207,6 @@
       "address": "0x0c687a27410E8a655Bf31befc4c88237A60B1D3D",
       "respect": 110,
       "awards": 1
-    },
-    {
-      "address": "0x14f18fA55540f16DE1456E93f37A4326dC3DA041",
-      "respect": 110,
-      "awards": 0
     },
     {
       "address": "0x287F404Ac927d14fb7A8e6Bfe04550c985A52B41",
@@ -269,6 +274,11 @@
       "awards": 1
     },
     {
+      "address": "0xB22Cc2CCa676d23037aF5a67F9Ca495dc9f77402",
+      "respect": 110,
+      "awards": 1
+    },
+    {
       "address": "0xdBAa464302ff8928F04F82A57db0434c9BC3024a",
       "respect": 110,
       "awards": 1
@@ -280,11 +290,6 @@
     },
     {
       "address": "0xE11C28F65177481A7CFE165E214c32482B10191D",
-      "respect": 110,
-      "awards": 1
-    },
-    {
-      "address": "0xe34A582682691f31Ea4d08c133B3692Ff0ebfA24",
       "respect": 110,
       "awards": 1
     },

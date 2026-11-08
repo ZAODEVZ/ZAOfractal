@@ -1,0 +1,23 @@
+{
+  "schema": "zao.fractal.run-record/v1",
+  "recordedBy": "scripts/build-runs.mjs",
+  "periodNumber": 102,
+  "recipe": "ZAO.Fractal.RunRespectGame@v1",
+  "status": "executed",
+  "firstAwardAt": "2026-06-22T22:49:07.000000Z",
+  "groups": 1,
+  "awards": 6,
+  "respect": 272,
+  "proposals": [
+    {
+      "propId": "0xc7de09ca8871524d96f5fd5501647ab5f6dcb20c72a5986b08371475c8e53684",
+      "stage": "Executed",
+      "executedAt": "2026-06-22T22:49:07.000000Z",
+      "executedTx": "0x9c8500472bc0e56da085d1b07b087250e53822cc100f3eab5cba603a14d9c3ff",
+      "mintTypes": [
+        10
+      ],
+      "awards": 6
+    }
+  ]
+}
