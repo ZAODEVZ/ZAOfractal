@@ -129,7 +129,7 @@ The ZAO Music Community uses a 2x scaling. **[corrected 2026-11-07]** Shares ins
 | **Total** | **272** | 2.0x | -- | Per-group distribution |
 
 **Rationale:**
-- **[corrected 2026-11-07]** Why 2x, in Zaal's words (his answers of 2026-11-07): "fibobnachi based on fractally groupchat, we did 1 year of 1x fibonachi points and then did year two of 2x fibonachi points to create a natural decay as future colaborations can be worth more but the next year 3x hasnt been something im ready for as i want to add more before contributions count for more than past years". So the 2x is a yearly step - year 1 at 1x, year 2 at 2x - that makes newer work weigh more than older balances. A year 3 at 3x is not decided. Shares inside a room do not change.
+- **[corrected 2026-11-07]** Why 2x, in Zaal's words, spelling tidied (his answers of 2026-11-07): "Fibonacci based on Fractally groupchat, we did 1 year of 1x Fibonacci points and then did year two of 2x Fibonacci points to create a natural decay as future collaborations can be worth more but the next year 3x hasn't been something I'm ready for as I want to add more before contributions count for more than past years". So the 2x is a yearly step - year 1 at 1x, year 2 at 2x - that makes newer work weigh more than older balances. A year 3 at 3x is not decided. Shares inside a room do not change.
 - Maintains Fibonacci's ratios exactly; only absolute amounts double
 - Top performer earning 1st place every week reaches Elder tier (2000+ Respect) in ~50 weeks vs. 100 weeks with standard curve
 - Still sybil-resistant: peer consensus required; cannot buy rank 1 no matter the wealth

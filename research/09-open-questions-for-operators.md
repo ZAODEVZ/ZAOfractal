@@ -86,7 +86,7 @@ Whether that was the intent is not recoverable from the chain.
 replacement rationale. A governance document should be able to say why its
 central parameter is what it is.
 
-**Answered 2026-11-07 by Zaal** in his answers of 2026-11-07: "fibobnachi based on fractally groupchat, we did 1 year of 1x fibonachi points and then did year two of 2x fibonachi points to create a natural decay as future colaborations can be worth more but the next year 3x hasnt been something im ready for as i want to add more before contributions count for more than past years".
+**Answered 2026-11-07 by Zaal** in his answers of 2026-11-07, in Zaal's words, spelling tidied: "Fibonacci based on Fractally groupchat, we did 1 year of 1x Fibonacci points and then did year two of 2x Fibonacci points to create a natural decay as future collaborations can be worth more but the next year 3x hasn't been something I'm ready for as I want to add more before contributions count for more than past years".
 
 So doubling is a yearly step (year 1 at 1x, year 2 at 2x) that makes newer
 work weigh more than older balances: a decay by issuance, not a change to
