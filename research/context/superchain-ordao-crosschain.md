@@ -192,7 +192,7 @@ ZAO already has a Hats tree deployed at `0x3bc1A0Ad72417f2d411118085256fC53CBdDd
 
 | Aspect | Eden Fractal | ZAO Fractal | Note |
 |--------|---|---|---|
-| **Fibonacci curve** | 1x standard (55, 34, 21, 13, 8, 5) | 2x multiplied (110, 68, 42, 26, 16, 10) | ZAO uses 2x for faster participation rewards |
+| **Fibonacci curve** | 1x standard (55, 34, 21, 13, 8, 5) | 2x multiplied (110, 68, 42, 26, 16, 10) | ZAO moved from 1x to 2x in its second year, a yearly step so newer work weighs more than older balances (Zaal, answers of 2026-11-07); shares inside a room are the same on either curve **[corrected 2026-11-07]** |
 | **Cadence** | Bi-weekly | Weekly | ZAO runs faster engagement cycle |
 | **Participants per session** | 6 per breakout (multiple breakouts) | 6 per breakout (1-3 breakouts) | Eden scales to 40+; ZAO to ~20-30 per session |
 | **Minting mechanism** | ORDAO via Tadas-deployed frapps.xyz instance | ORDAO via discord bot + zao.frapps.xyz | Both use ORDAO as authority; UX differs |
