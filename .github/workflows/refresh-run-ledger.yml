@@ -1,17 +1,24 @@
 name: Refresh run ledger
 
-# Weekly: re-pull the on-chain snapshots and rebuild the Respect Game run ledger
+# On demand: re-pull the on-chain snapshots and rebuild the Respect Game run ledger
 # (data/runs.json, the Pathways run records for ZAO.Fractal.RunRespectGame@v1),
 # then open a PR with the diff. It never pushes to main; a human reads the diff
-# and merges. On the schedule it opens a PR only when the ledger gains a run
-# (a new period executed on chain); a manual run always opens one.
+# and merges. Run it from the Actions tab (Run workflow).
+#
+# NO SCHEDULE YET, on purpose: a cron is Zaal's decision. If he adds one, the
+# gate below already handles it: a scheduled run opens a PR only when the ledger
+# gains a run (a new period executed on chain); a manual run always opens one.
 #
 # Both scripts are keyless, zero-dependency and read-only against public
 # endpoints (Blockscout OP Mainnet, mainnet.optimism.io). Measured locally on
 # 2026-11-12: pull-data.mjs took about 42 s, build-runs.mjs under 1 s.
 #
-# Tuesday 14:00 UTC is the day after the Monday game, so a period that executed
-# over the weekend shows up in the next refresh.
+# Proposed schedule, if wanted: '0 14 * * 2' (Tuesday 14:00 UTC, the day after
+# the Monday game).
+#
+# Every run step uses `shell: bash`, which GitHub runs as `bash -eo pipefail`,
+# so a crash in build-runs.mjs fails the step even though its output is piped
+# to tee.
 #
 # Note: a PR opened with GITHUB_TOKEN does not trigger the CI workflow. Re-run
 # CI from the PR page, or push an empty commit, before merging. If the repo does
@@ -19,9 +26,11 @@ name: Refresh run ledger
 # last step fails with GitHub's message, so the run goes red rather than silent.
 
 on:
-  schedule:
-    - cron: '0 14 * * 2'
   workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
 
 permissions:
   contents: write
