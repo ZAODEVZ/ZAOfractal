@@ -31,7 +31,7 @@ On Optimism Mainnet, ZAO maintains two Respect token contracts:
 - Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`
 - Deployed: July 30, 2024
 - Total Supply: 38,484 ZAO
-- Status: Frozen (no new mints since December 18, 2025). Ruled 2026-09-26 to resume as the one-time achievements ledger (intro, socials linked, voted on a proposal, ZAO 101, video), minted through OREC as custom transactions once past OG amounts are repaired (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, rulings 1 and 5). Not yet resumed.
+- Status: Frozen (no new mints since December 18, 2025). Ruled 2026-09-26 to resume as the one-time achievements ledger (intro, socials linked, voted on a proposal, ZAO 101, video), minted through OREC as custom transactions once past OG amounts are repaired (Zaal's rulings of 2026-09-26). Not yet resumed.
 - Transfer Restriction: Enforced via role-based access control (thirdweb). Members cannot transfer; the admin can move it, but has chosen not to. Soulbound in practice.
 
 **ZOR Respect (ERC-1155, Active Democratic Era)**
