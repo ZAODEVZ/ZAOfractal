@@ -14,7 +14,7 @@ The ZAO is a music community of 188 builders - artists, engineers, curators, men
 
 ZAO Fractal is the governance mechanism that makes this possible. Every Monday at 6pm EST, we gather in breakout rooms of 5-6 people. No votes are cast. No tally. Instead, we reach consensus through back-and-forth negotiation about who in our community advanced the ZAO vision - music, art, and technology - that week. We rank each other on five explicit criteria: Vision alignment, Contribution, Collaboration, Innovation, and Onboarding. The ranking produces Respect tokens - soulbound, non-transferable, earned through peer consensus. You cannot buy Respect. You cannot trade it. You can only earn it by showing up, doing work, and convincing people who know you that the work mattered.
 
-We have run this ritual for 90+ unbroken weeks. The ZAO Fractal is now the longest-running fractal governance community in the ecosystem. It is the only fractal focused on music. It is the only active fractal on Optimism. And it is embedded in a full social client - governance lives inside the place where community already works, not in a separate dashboard.
+We have run this ritual weekly since 30 July 2024, for 100+ weeks. The ZAO Fractal is now the longest-running fractal governance community in the ecosystem. It is the only fractal focused on music. It is the only active fractal on Optimism. And it is embedded in a full social client - governance lives inside the place where community already works, not in a separate dashboard.
 
 This whitepaper documents how and why.
 
@@ -22,7 +22,7 @@ This whitepaper documents how and why.
 
 ## What This Whitepaper Is
 
-This is not a proposal. The ZAO Fractal exists. 90+ weeks of on-chain governance history proves it works.
+This is not a proposal. The ZAO Fractal exists. 100+ weeks of on-chain governance history proves it works.
 
 This is a document for the wider world - for other music communities, for other fractals, for anyone building Web3 governance and wondering if there is an alternative to token-weighted voting. It is a manual for earned governance. It is also a reflection on first principles: what does democracy actually mean at human scale, and how do we scale it fractally to larger communities without losing the human relationships that make power legitimate?
 
@@ -98,7 +98,7 @@ But the culture is what sustains it. The culture is Mondays at 6pm EST. The cult
 
 This is not new. This is how human organizations have always worked at their best. It is how bands are run, how research labs function, how open-source projects stay true to their mission. The novelty is that we can now encode it on-chain, prove it works at 188+ people, and show that it scales better than voting.
 
-The ZAO Fractal has been running for 90+ weeks. It will keep running, with or without this whitepaper. But we write this whitepaper because other communities should see: there is an alternative. Voting is not the only way. Governance can be earned.
+The ZAO Fractal has been running for 100+ weeks. It will keep running, with or without this whitepaper. But we write this whitepaper because other communities should see: there is an alternative. Voting is not the only way. Governance can be earned.
 
 ---
 
@@ -116,7 +116,7 @@ The ZAO Fractal has been running for 90+ weeks. It will keep running, with or wi
 
 - **Chapter 7: Why Fractal** - Comparative analysis. How does fractal differ from quadratic voting (QV requires identity infrastructure), conviction voting (QV is temporal, Fractal is social), Nouns (Nouns is capital-gated membership, Fractal is contribution-gated), Moloch (Moloch is grant-making, Fractal is continuous reputation), and Optimism's bicameral system (two houses vs. nested fractals).
 
-- **Chapter 8: The ZAO Fractal Specific Story** - What is distinctive about ZAO. 90+ weeks unbroken. Only music-focused fractal. Only active Optimism fractal. Embedded in ZAO OS social client. Five voting criteria operationalize music-first governance. Founder expertise from Larimer-SingJoy-Zaal lineage.
+- **Chapter 8: The ZAO Fractal Specific Story** - What is distinctive about ZAO. 100+ weeks, weekly since 30 July 2024. Only music-focused fractal. Only active Optimism fractal. Embedded in ZAO OS social client. Five voting criteria operationalize music-first governance. Founder expertise from Larimer-SingJoy-Zaal lineage.
 
 - **Chapter 9: Limitations and Open Problems** - Privacy and pseudonymity constraints. Scalability limits beyond 400-500 people. Measurement problem (can peers actually judge contribution?). Participation collapse risks. The "operating core bottleneck" (currently Zaal and civilmonkey.eth run OREC, intentional but planned decentralization). Cold-start problem for new fractals.
 
@@ -129,7 +129,7 @@ The ZAO Fractal has been running for 90+ weeks. It will keep running, with or wi
 ## Citation Sources
 
 - **01-theory-foundations.md** (Daniel Larimer, "More Equal Animals" [Feb 20 2021], rational ignorance problem, fractal scaling, Pareto principle)
-- **07-zao-fractal-distinctness.md** (90+ weeks, music-focused, Optimism incumbent status, voting criteria, Zaal lineage)
+- **07-zao-fractal-distinctness.md** (100+ weeks, music-focused, Optimism incumbent status, voting criteria, Zaal lineage)
 - **04-comparative-dao-governance.md** (Compound 8 delegates / 50%+ power, Uniswap 11 delegates, voter apathy 3-10%, token-weighted plutocracy)
 
 ---
