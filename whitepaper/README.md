@@ -40,7 +40,7 @@ The whitepaper is hybrid manifesto-specification: it makes the case for earned g
 ### Chapter 1: Preamble and Vision
 Opens with the thesis: in The ZAO, governance comes from contribution, not capital. Introduces what The ZAO is (188-member music community on Farcaster + Optimism), what ZAO Fractal is (weekly ritual that mints earned reputation), and why the rest of the whitepaper matters. Closes with the line: "ZAO Fractal is not a new governance technology. It is a new governance culture."
 
-**Key claims:** 90+ weeks unbroken, only music-focused fractal, only active fractal on Optimism, embedded in social client, manifesto voice.
+**Key claims:** 100+ weeks, weekly since 30 July 2024, only music-focused fractal, only active fractal on Optimism, embedded in social client, manifesto voice.
 
 ### Chapter 2: The Problem
 Diagnoses the failure of modern DAO governance through specific data: Compound (8 delegates hold 50%+ power), Uniswap (11 delegates), voter apathy (3-10% participation), vote-buying incentives. Argues that token voting is structurally plutocratic and particularly inappropriate for music communities where contribution matters more than capital.
@@ -73,7 +73,7 @@ The theory chapter. Establishes the intellectual foundation for fractal governan
 | 5 | The Respect Game: 6-phase weekly session, Fibonacci scoring (2x 110/68/42/26/16/10 in ZAO), 72 h voting and 72 h veto windows, 2/3 consensus gate, Sybil/collusion defense |
 | 6 | ORDAO/OREC: three-phase voting/veto/execution cycle, passing formula (yesWeight > 2x noWeight), ERC-1155 soulbound enforcement, contract addresses on Optimism |
 | 7 | Comparative analysis: fractal vs. token-weighted voting, quadratic voting, conviction voting, Nouns auctions, Moloch exit rights, Optimism Citizens' House |
-| 8 | ZAO Fractal specifics: 90+ weeks, music-focus, voting criteria (Vision/Contribution/Collaboration/Innovation/Onboarding), Optimism incumbent status, Zaal-SingJoy-Larimer lineage |
+| 8 | ZAO Fractal specifics: 100+ weeks, music-focus, voting criteria (Vision/Contribution/Collaboration/Innovation/Onboarding), Optimism incumbent status, Zaal-SingJoy-Larimer lineage |
 | 9 | Honest limitations: participation collapse, visibility bias, cold start, OREC bottleneck (zaal.eth + civilmonkey.eth), unproven nested scaling beyond 50-100 |
 | 10 | Roadmap: integration into ZAO OS, two-ledger reconciliation, nested fractal scaling, WaveWarZ integration |
 | 11 | Conclusion: ZAO Fractal as proof of concept, "new governance culture" theme, the promise and the practice |
@@ -85,7 +85,7 @@ The theory chapter. Establishes the intellectual foundation for fractal governan
 All three draft chapters trace to the research library:
 
 - **01-theory-foundations.md** - Larimer's thesis, rational ignorance, sortition history, deliberative democracy, academic research, measurement theory, consensus design
-- **07-zao-fractal-distinctness.md** - The ZAO-specific facts: 90+ weeks, music focus, voting criteria, Optimism incumbent, Zaal lineage, two-ledger model, ritual schedule
+- **07-zao-fractal-distinctness.md** - The ZAO-specific facts: 100+ weeks, music focus, voting criteria, Optimism incumbent, Zaal lineage, two-ledger model, ritual schedule
 - **04-comparative-dao-governance.md** - Token voting plutocracy, Compound/Uniswap numbers, Sybil attacks on quadratic voting, conviction voting, Nouns, Moloch, Optimism bicameral
 - **01-foundations-deep.md** - Deep synthesis of theory + mechanism + ORDAO contracts
 
@@ -123,7 +123,7 @@ Every claim in the whitepaper is verified against canonical sources:
 - **Fractally whitepaper** - released Feb 22 2022.
 - **Eden on EOS** - launched Oct 9 2021, 400+ participants, 9 election cycles, 1.5M USD distributed.
 - **Optimism Fractal** - paused Jan 2026 (verified via Optimystics, Optimism Collective updates).
-- **ZAO Fractal** - Aug 2024 start, 90+ weeks, Monday 6pm EST, 188 members, 40+ active per session.
+- **ZAO Fractal** - 30 July 2024 start, 100+ weeks, Monday 6pm EST, 188 members, 40+ active per session.
 - **Contract addresses** - verified on Optimism Etherscan (OREC, ORDAO, Respect tokens).
 - **Compound/Uniswap delegate concentration** - 8 and 11 delegates for 50%+ power (verified via governance portals, research papers).
 - **Navajas et al. 2018 Nature study** - empirically verified.
@@ -165,7 +165,7 @@ None of these are edited in the chapters yet; prose changes wait for the pass.
 
 | Claim | Where | Reality check needed |
 |---|---|---|
-| "90+ unbroken weeks" | ch01 (x3), ch08, this README | Repo README says 100+; Aug 2024 start implies ~104 by Aug 2026. Pick one number, source it, update everywhere in one commit. **See the settlement-vs-ritual row below before picking.** |
+| "90+ unbroken weeks" | ch01 (x3), ch08, this README | Settled 14 Nov 2026 by Zaal: "100+ weeks, weekly since 30 July 2024", updated everywhere under whitepaper/ in one PR. "Unbroken" dropped: periods 71, 72 and 103 have no on-chain mints (data/runs.json). The research/ docs keep their dated "as of May 2026" figures. |
 | "188 members" | ch07, ch08 (x3), ch09 | Count was from ~May 2026. On-chain, 169 addresses have ever held Respect on either ledger (122 OG, 70 ZOR, overlapping) as of 2026-08-26. 188 is presumably a community count, not a holder count - say which one the chapter means. |
 | "as of May 2026" facts table | repo README | Measured 2026-08-26: OREC has 287 transactions and 153 proposals, 123 executed, 11 execution failures, 15 failed to pass. Streak and bot version still need their own sourcing. |
 | "only active fractal on Optimism" | ch01, ch08 | Was true at drafting; re-verify against the fractal-communities directory before publishing. |

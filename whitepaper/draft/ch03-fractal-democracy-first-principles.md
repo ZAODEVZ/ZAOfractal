@@ -291,7 +291,7 @@ Fractal governance achieves Sybil resistance without requiring capital or on-cha
 
 3. **Exit is possible:** If I suspect you are a Sybil, I can exit the circle. I do not have to participate with you.
 
-4. **Reputation compounds:** Over 90+ weeks, a person's true contributions emerge. A Sybil that showed up once cannot accumulate meaningful Respect.
+4. **Reputation compounds:** Over 100+ weeks, a person's true contributions emerge. A Sybil that showed up once cannot accumulate meaningful Respect.
 
 This is why KYC and identity are acceptable here, whereas they are often rejected in crypto. The purpose is not surveillance or financial control; it is Sybil resistance. And the benefit - earned governance without capital requirements - is worth it.
 
@@ -317,7 +317,7 @@ The result is a governance system that:
 - Avoids power concentration (fractal structure + exit power prevent Pareto cascades).
 - Avoids tyranny of the majority (unanimous consensus or exit available).
 
-No single element is new. But the combination - practiced weekly at scale (188 ZAO members, 90+ weeks, 40+ per session) - is unprecedented in music communities.
+No single element is new. But the combination - practiced weekly at scale (188 ZAO members, 100+ weeks, 40+ per session) - is unprecedented in music communities.
 
 ---
 
@@ -329,7 +329,7 @@ ZAO Fractal operationalizes all of the above:
 - **Consensus:** Groups reach consensus on rank-ordering contributions (Fibonacci: 110-68-42-26-16-10 points).
 - **Soulbound Respect:** ERC-1155 tokens, non-transferable, minted weekly via OREC.
 - **Music-specific criteria:** Members rank on Vision (music/art/tech), Contribution, Collaboration, Innovation, Onboarding.
-- **Weekly rhythm:** Mondays 6pm EST, 90+ weeks unbroken.
+- **Weekly rhythm:** Mondays 6pm EST, 100+ weeks, weekly since 30 July 2024.
 - **Exit power:** Members can leave ZAO Fractal, join another circle, or initiate a parallel fractal.
 - **Fractal scaling:** (Potential future: 100 members split into two 50-person parallel fractals, each running the same weekly mechanism).
 

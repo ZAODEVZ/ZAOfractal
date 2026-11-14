@@ -322,7 +322,7 @@ Why does this matter? Because music is not capital. Music is contribution. A son
 
 Token voting says: the wealthiest music DAO member decides the community's future. Fractal voting says: the community decides, based on who creates value.
 
-ZAO Fractal is the first music governance system to implement this. We have proven (90+ weeks, 188 members, 40+ participants per session) that it works. It works better than token voting. Members show up. Engagement is high. Decisions reflect community values, not capital concentration.
+ZAO Fractal is the first music governance system to implement this. We have proven (100+ weeks, 188 members, 40+ participants per session) that it works. It works better than token voting. Members show up. Engagement is high. Decisions reflect community values, not capital concentration.
 
 ---
 
@@ -374,7 +374,7 @@ Fractal governance is optimal for ZAO because:
 2. It is Sybil-resistant without capital gatekeeping.
 3. It achieves high participation (60-80% of active members show up each week).
 4. It builds community as it governs.
-5. It has been proven over 90+ weeks in production.
+5. It has been proven over 100+ weeks in production.
 
 ---
 
@@ -388,7 +388,7 @@ It is the anti-whale, anti-VC, anti-plutocratic approach to music community gove
 
 Fractal governance is the mechanism. But the mechanism is only as good as the culture that sustains it.
 
-ZAO has built that culture over 90+ weeks. This whitepaper documents how and why. For music communities, for DAOs, and for anyone asking "is there an alternative to token voting?": there is. ZAO Fractal is the proof.
+ZAO has built that culture over 100+ weeks. This whitepaper documents how and why. For music communities, for DAOs, and for anyone asking "is there an alternative to token voting?": there is. ZAO Fractal is the proof.
 
 ---
 

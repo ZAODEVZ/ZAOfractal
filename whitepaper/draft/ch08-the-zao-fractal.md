@@ -131,7 +131,7 @@ These three things - longevity, music-first alignment, social embedding - are wh
 
 ## Sources
 
-- **07-zao-fractal-distinctness.md** (90+ weeks unbroken, music-focused, embedded in social client, five voting criteria, two ledgers, founder expertise path)
+- **07-zao-fractal-distinctness.md** (100+ weeks, weekly since 30 July 2024, music-focused, embedded in social client, five voting criteria, two ledgers, founder expertise path)
 - **01-preamble-and-vision.md** (Respect token non-transferability, community scale 188 members, 40 active per session, Monday 6pm EST ritual)
 - **02-live-communities-deep.md** (Optimism Fractal pause Jan 2026, Eden Fractal Epoch 2 bi-weekly cadence, Roy Fractal scale proof at 700+)
 - **03-optimism-fractal-full-history.md** (Optimism Fractal Oct 2023 - Jan 2026 pause, tripartite governance innovation, ORDAO production deployment)
