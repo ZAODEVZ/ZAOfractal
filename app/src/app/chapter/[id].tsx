@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { FlatList, InteractionManager, Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeIn, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
@@ -100,8 +100,15 @@ export default function ChapterScreen() {
   const [ready, setReady] = useState(false);
   useEffect(() => {
     setReady(false);
-    const h = InteractionManager.runAfterInteractions(() => setReady(true));
-    return () => h.cancel();
+    // InteractionManager is gone from react-native core (0.88 throws on access
+    // in dev and has no such export); its own notice says to use
+    // requestIdleCallback. A browser without it gets a timer instead.
+    if (typeof requestIdleCallback === 'function') {
+      const h = requestIdleCallback(() => setReady(true));
+      return () => cancelIdleCallback(h);
+    }
+    const t = setTimeout(() => setReady(true), 0);
+    return () => clearTimeout(t);
   }, [id]);
   const blocks = useMemo(() => (chapter && ready ? parseBlocks(chapter.body) : []), [chapter, ready]);
 
@@ -149,7 +156,7 @@ export default function ChapterScreen() {
                 <Text style={s.nextTitle}>{next.title}</Text>
               </Tap>
             </View>
-          ) : null
+          ) : undefined
         }
       />
     </View>

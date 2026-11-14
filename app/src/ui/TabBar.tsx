@@ -16,7 +16,7 @@ const ICONS: Record<string, string> = {
 };
 const LABELS: Record<string, string> = { index: 'Now', ranks: 'Ranks', votes: 'Votes', read: 'Read' };
 
-export function TabBar({ state, navigation }: BottomTabBarProps) {
+export function TabBar({ state, navigateToTab }: BottomTabBarProps) {
   const insets = useSafeAreaInsets();
   const [width, setWidth] = useState(0);
   const tabW = width / state.routes.length;
@@ -45,7 +45,7 @@ export function TabBar({ state, navigation }: BottomTabBarProps) {
             onPress={() => {
               if (!on) {
                 haptic.tick();
-                navigation.navigate(route.name);
+                navigateToTab(route.key);
               }
             }}
           >
