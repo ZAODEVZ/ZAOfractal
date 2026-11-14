@@ -1,0 +1,103 @@
+name: Refresh run ledger
+
+# On demand: re-pull the on-chain snapshots and rebuild the Respect Game run ledger
+# (data/runs.json, the Pathways run records for ZAO.Fractal.RunRespectGame@v1),
+# then open a PR with the diff. It never pushes to main; a human reads the diff
+# and merges. Run it from the Actions tab (Run workflow).
+#
+# NO SCHEDULE YET, on purpose: a cron is Zaal's decision. If he adds one, the
+# gate below already handles it: a scheduled run opens a PR only when the ledger
+# gains a run (a new period executed on chain); a manual run always opens one.
+#
+# Both scripts are keyless, zero-dependency and read-only against public
+# endpoints (Blockscout OP Mainnet, mainnet.optimism.io). Measured locally on
+# 2026-11-12: pull-data.mjs took about 42 s, build-runs.mjs under 1 s.
+#
+# Proposed schedule, if wanted: '0 14 * * 2' (Tuesday 14:00 UTC, the day after
+# the Monday game).
+#
+# Every run step uses `shell: bash`, which GitHub runs as `bash -eo pipefail`,
+# so a crash in build-runs.mjs fails the step even though its output is piped
+# to tee.
+#
+# Note: a PR opened with GITHUB_TOKEN does not trigger the CI workflow. Re-run
+# CI from the PR page, or push an empty commit, before merging. If the repo does
+# not allow Actions to create pull requests, the branch is still pushed and the
+# last step fails with GitHub's message, so the run goes red rather than silent.
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-run-ledger
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Pull snapshots, rebuild ledger, open PR
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Record the run count before
+        run: echo "BEFORE=$(node -e 'console.log(require("./data/runs.json").count)')" >> "$GITHUB_ENV"
+      - name: Pull on-chain snapshots
+        run: node scripts/pull-data.mjs --quiet
+      - name: Rebuild run ledger
+        run: node scripts/build-runs.mjs | tee build-runs.log
+      - name: Open PR if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          after="$(node -e 'console.log(require("./data/runs.json").count)')"
+          echo "runs before: ${BEFORE}, after: ${after}"
+          # Every pull rewrites the snapshots and the input hashes in runs.json, so
+          # a plain diff is never empty. A scheduled run opens a PR only when a new
+          # period executed on chain; a manual run always opens one.
+          if [ "$after" = "$BEFORE" ] && [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
+            echo "No new executed period; nothing to open."
+            exit 0
+          fi
+          if [ -z "$(git status --porcelain -- data)" ]; then
+            echo "No change in data/; nothing to open."
+            exit 0
+          fi
+          stamp="$(date -u +%Y-%m-%d)"
+          branch="data/refresh-run-ledger-${stamp}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add data
+          git commit -m "data: weekly on-chain snapshot and run ledger refresh (${stamp})"
+          git push origin "$branch"
+          {
+            echo "Weekly refresh by .github/workflows/refresh-run-ledger.yml, run ${GITHUB_RUN_ID}."
+            echo
+            echo "build-runs.mjs said:"
+            echo
+            echo '```'
+            cat build-runs.log
+            echo '```'
+            echo
+            echo "Files changed:"
+            echo
+            git diff --stat HEAD~1 -- data
+            echo
+            echo "Runs in the ledger: ${BEFORE} before, ${after} after."
+            echo
+            echo "CI does not run on PRs opened by GITHUB_TOKEN; re-run it before merging."
+          } > pr-body.md
+          gh pr create --base main --head "$branch" \
+            --title "data: weekly run ledger refresh (${stamp})" \
+            --body-file pr-body.md
