@@ -2,7 +2,7 @@
 
 Earned governance, verified on-chain. The ZAO.
 
-Version v0.2 draft - compiled 2026-11-07 by scripts/build-whitepaper.mjs from whitepaper/draft/
+Version v0.2 draft - compiled 2026-11-08 by scripts/build-whitepaper.mjs from whitepaper/draft/
 
 ---
 
@@ -770,7 +770,7 @@ On Optimism Mainnet, ZAO maintains two Respect token contracts:
 - Address: `0x34cE89baA7E4a4B00E17F7E4C0cb97105C216957`
 - Deployed: July 30, 2024
 - Total Supply: 38,484 ZAO
-- Status: Frozen (no new mints since December 18, 2025). Ruled 2026-09-26 to resume as the one-time achievements ledger (intro, socials linked, voted on a proposal, ZAO 101, video), minted through OREC as custom transactions once past OG amounts are repaired (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, rulings 1 and 5). Not yet resumed.
+- Status: Frozen (no new mints since December 18, 2025). Ruled 2026-09-26 to resume as the one-time achievements ledger (intro, socials linked, voted on a proposal, ZAO 101, video), minted through OREC as custom transactions once past OG amounts are repaired (Zaal's rulings of 2026-09-26). Not yet resumed.
 - Transfer Restriction: Enforced via role-based access control (thirdweb). Members cannot transfer; the admin can move it, but has chosen not to. Soulbound in practice.
 
 **ZOR Respect (ERC-1155, Active Democratic Era)**
@@ -1526,7 +1526,7 @@ Only the OREC contract can mint ZOR. There is no admin minting. No manual overri
 
 The honest consequence: a member who joined after the OG freeze and holds only ZOR currently has no on-chain voting weight, however much ZOR they earn. Their ZOR is a verifiable, soulbound record of contribution and a live reward ledger, but it does not yet confer governance power. Closing this gap - giving the active ZOR ledger a path to voting weight without discarding the OG history it was decoupled from - was an open governance problem through v0.1.
 
-**Ruled 2026-10-10 (zao-vault `decisions/grill-2026-10-09-seat-morning.md`, item 78): vote weight is OG plus ZOR, summed in whole Respect.** The mechanism is a small contract implementing `IRespect.respectOf()` that returns a wallet's OG balance (divided by 10^18) plus its ZOR balance, installed by one passed OREC proposal calling `setRespectContract`; OREC owns itself, so only a passed proposal can make that call, and no redeploy is needed. ZOR already answers `respectOf` (interface id `0x58970ca8`, measured 2026-09-26, ZAOOS `governance/2562-zao-fractal-state-and-build-plan`). The wrapper is unwritten and needs a reviewer outside The ZAO before it ships; until that proposal passes, OREC reads OG only, exactly as this chapter describes. Nothing in this ruling moves a token or mints.
+**Ruled by Zaal on 2026-10-10: vote weight is OG plus ZOR, summed in whole Respect.** The mechanism is a small contract implementing `IRespect.respectOf()` that returns a wallet's OG balance (divided by 10^18) plus its ZOR balance, installed by one passed OREC proposal calling `setRespectContract`; OREC owns itself, so only a passed proposal can make that call, and no redeploy is needed. ZOR already answers `respectOf` (interface id `0x58970ca8`, measured 2026-09-26, ZAOOS `governance/2562-zao-fractal-state-and-build-plan`). The wrapper is unwritten and needs a reviewer outside The ZAO before it ships; until that proposal passes, OREC reads OG only, exactly as this chapter describes. Nothing in this ruling moves a token or mints.
 
 ---
 
@@ -2400,7 +2400,7 @@ Respect accumulates and never leaves a wallet: once minted, a balance changes on
 
 Season 3 answers it on the vote rather than the balance. Voting is gated on a rolling 90-day activation: a member who signed or attended within the last 90 days votes at full weight, a member who did not keeps every point and regains the vote by taking part again (ZIP-2 section 3 in `bettercallzaal/zao-papers`; outside precedent, from co-operative bylaws to Optimism's Citizens' House, in ZAOOS research `governance/2558-dao-periodic-reactivation-precedent`). The trade-off is turnout: gating the vote on a recurring signal concentrates the electorate in those who show up, and quorum must therefore be defined as a share of the active pool, never as a fixed number of members.
 
-Two rulings that reshape other chapters are recorded here rather than silently applied, because this draft predates them: OG Respect resumes as the one-time achievements ledger and Respect splits by project (ZAO Fractal Respect for governance, ZAO Festivals Respect, WaveWarZ Respect later), both 2026-09-26 (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, rulings 1 and 2); and vote weight becomes OG plus ZOR summed, 2026-10-10 (Chapter 6, Section III). Chapter 10 carries the dates.
+Two rulings that reshape other chapters are recorded here rather than silently applied, because this draft predates them: OG Respect resumes as the one-time achievements ledger and Respect splits by project (ZAO Fractal Respect for governance, ZAO Festivals Respect, WaveWarZ Respect later), both ruled by Zaal on 2026-09-26; and vote weight becomes OG plus ZOR summed, 2026-10-10 (Chapter 6, Section III). Chapter 10 carries the dates.
 
 ---
 
@@ -2565,7 +2565,7 @@ for now; recorded here so the acceptance is visible.
 
 ## Season 3: The ZAO's production release, 1 December 2026
 
-Season 3 was first scoped as "the fractal season" (membership, manifesto, activation, a public points page; `bettercallzaal/zao-papers` ZIP-2, 2026-09-15). On 2026-09-26 Zaal reframed it: "its really ZIP one tbh so this is a whole new world and season 3 will but an update of everything we will be going out of beta and into full production release essentially" (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 3). The start moved from 1 November to **1 December 2026** the same day (ruling 4) and was reconfirmed on 2026-10-10: "dec 1st is best" (`decisions/grill-2026-10-09-seat-morning.md`, item 85). The first activation lands that day.
+Season 3 was first scoped as "the fractal season" (membership, manifesto, activation, a public points page; `bettercallzaal/zao-papers` ZIP-2, 2026-09-15). On 2026-09-26 Zaal reframed it: "its really ZIP one tbh so this is a whole new world and season 3 will but an update of everything we will be going out of beta and into full production release essentially" (Zaal's ruling of 2026-09-26). The start moved from 1 November to **1 December 2026** the same day and was reconfirmed on 2026-10-10: "dec 1st is best" (Zaal, 2026-10-10). The first activation lands that day.
 
 ---
 
@@ -2689,7 +2689,7 @@ Governance is not a problem to be solved once. It is a practice. The practice im
 
 ## Sources
 
-- zao-vault `decisions/grill-2026-09-22-seat-morning.md` (items 12 to 31), `grill-2026-09-22-seat-afternoon.md` (items 18, 19), `grill-2026-09-26-zao-papers-midday.md` (rulings 1 to 3), `grill-2026-09-26-zao-papers-afternoon.md` (rulings 1 to 6), `grill-2026-10-09-seat-morning.md` (items 78 to 85)
+- Zaal's rulings of 2026-09-22, 2026-09-26 and 2026-10-10, held in The ZAO's private decision log
 - `bettercallzaal/zao-papers` `zips/zip-0002-season-3.md` (ZIP-2) and its Open Items
 - ZAOOS research `governance/2562-zao-fractal-state-and-build-plan`, `governance/2558-dao-periodic-reactivation-precedent`, `governance/2642-zao-holder-approval-systems-inventory`, `governance/2656-zao-core-system-map`, `governance/2657-respect-binding-token-design`, `governance/115-zao-data-reconciliation`
 

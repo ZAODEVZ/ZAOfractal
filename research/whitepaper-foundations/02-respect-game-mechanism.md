@@ -737,12 +737,12 @@ All sources verified 2026-05-22. Each marked [FULL]/[PARTIAL]/[FAILED].
 
 ### ZAO OS Codebase & Docs
 
-- [Doc 058: Respect System Deep Dive](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/governance/058-respect-deep-dive/README.md) [FULL] - Decay mathematics, tier thresholds, orclient SDK, on-chain state reconciliation (OG + ZOR ledgers). Verified May 21, 2026.
-- [Doc 056: ORDAO & Respect Game System](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/governance/056-ordao-respect-system/README.md) [FULL] - ORDAO architecture, OREC mechanics, Fibonacci scoring, contract deployment details. Verified May 21, 2026.
+- [Doc 058: Respect System Deep Dive](https://github.com/bettercallzaal/ZAOOS/blob/main/research/governance/058-respect-deep-dive/README.md) [FULL] - Decay mathematics, tier thresholds, orclient SDK, on-chain state reconciliation (OG + ZOR ledgers). Verified May 21, 2026.
+- [Doc 056: ORDAO & Respect Game System](https://github.com/bettercallzaal/ZAOOS/blob/main/research/governance/056-ordao-respect-system/README.md) [FULL] - ORDAO architecture, OREC mechanics, Fibonacci scoring, contract deployment details. Verified May 21, 2026.
 - [community.config.ts](https://github.com/bettercallzaal/zaoos/blob/main/community.config.ts) [FULL] - ZAO contract addresses (OG Respect, ZOR, OREC), token IDs, respect parameters (2x Fibonacci curve).
 - [src/lib/respect/leaderboard.ts](https://github.com/bettercallzaal/zaoos/blob/main/src/lib/respect/leaderboard.ts) [FULL] - Live on-chain reads of both OG and ZOR balances via Viem, leaderboard cache logic.
-- [Doc 702: Respect & Fractal Lineage](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/governance/702-respect-fractal-lineage/README.md) [FULL] - History from Fractally → Eden → Optimism → ZAO. Verified May 21, 2026.
-- [Doc 703: ZAO Fractal Current State](file:///Users/zaalpanthaki/Documents/ZAO%20OS%20V1/research/governance/703-zao-fractal-current-state/README.md) [FULL] - Live metrics (100+ weeks, 242+ OREC txns, 20+ holders), operational issues, restoration plan. Verified May 21, 2026.
+- [Doc 702: Respect & Fractal Lineage](https://github.com/bettercallzaal/ZAOOS/blob/main/research/governance/702-respect-fractal-lineage/README.md) [FULL] - History from Fractally → Eden → Optimism → ZAO. Verified May 21, 2026.
+- [Doc 703: ZAO Fractal Current State](https://github.com/bettercallzaal/ZAOOS/blob/main/research/governance/703-zao-fractal-current-state-may-2026/README.md) [FULL] - Live metrics (100+ weeks, 242+ OREC txns, 20+ holders), operational issues, restoration plan. Verified May 21, 2026.
 
 ### NPM & SDK Docs
 

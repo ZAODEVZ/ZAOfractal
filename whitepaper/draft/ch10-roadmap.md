@@ -10,7 +10,7 @@
 
 ## Season 3: The ZAO's production release, 1 December 2026
 
-Season 3 was first scoped as "the fractal season" (membership, manifesto, activation, a public points page; `bettercallzaal/zao-papers` ZIP-2, 2026-09-15). On 2026-09-26 Zaal reframed it: "its really ZIP one tbh so this is a whole new world and season 3 will but an update of everything we will be going out of beta and into full production release essentially" (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 3). The start moved from 1 November to **1 December 2026** the same day (ruling 4) and was reconfirmed on 2026-10-10: "dec 1st is best" (`decisions/grill-2026-10-09-seat-morning.md`, item 85). The first activation lands that day.
+Season 3 was first scoped as "the fractal season" (membership, manifesto, activation, a public points page; `bettercallzaal/zao-papers` ZIP-2, 2026-09-15). On 2026-09-26 Zaal reframed it: "its really ZIP one tbh so this is a whole new world and season 3 will but an update of everything we will be going out of beta and into full production release essentially" (Zaal's ruling of 2026-09-26). The start moved from 1 November to **1 December 2026** the same day and was reconfirmed on 2026-10-10: "dec 1st is best" (Zaal, 2026-10-10). The first activation lands that day.
 
 ---
 
@@ -134,6 +134,6 @@ Governance is not a problem to be solved once. It is a practice. The practice im
 
 ## Sources
 
-- zao-vault `decisions/grill-2026-09-22-seat-morning.md` (items 12 to 31), `grill-2026-09-22-seat-afternoon.md` (items 18, 19), `grill-2026-09-26-zao-papers-midday.md` (rulings 1 to 3), `grill-2026-09-26-zao-papers-afternoon.md` (rulings 1 to 6), `grill-2026-10-09-seat-morning.md` (items 78 to 85)
+- Zaal's rulings of 2026-09-22, 2026-09-26 and 2026-10-10, held in The ZAO's private decision log
 - `bettercallzaal/zao-papers` `zips/zip-0002-season-3.md` (ZIP-2) and its Open Items
 - ZAOOS research `governance/2562-zao-fractal-state-and-build-plan`, `governance/2558-dao-periodic-reactivation-precedent`, `governance/2642-zao-holder-approval-systems-inventory`, `governance/2656-zao-core-system-map`, `governance/2657-respect-binding-token-design`, `governance/115-zao-data-reconciliation`

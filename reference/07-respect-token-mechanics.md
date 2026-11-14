@@ -68,7 +68,7 @@ Shares inside a room are identical on either curve: rank 1 takes 40.4% of a room
 
 Respect balances do not decay. The OG and ZOR ledgers are static; a balance changes only when OREC mints (and once, on 2025-10-24, when a mis-recorded result for periods 67-70 was reversed in full).
 
-A weekly erosion of balances was studied as a per-fractal policy option and **ruled out by Zaal on 2026-09-26** (zao-vault `decisions/grill-2026-09-26-zao-papers-afternoon.md`, ruling 6): no-burn wins. Season 3 answers the same concern on the vote rather than the balance. Voting is gated on a rolling 90-day activation: a member who signed or attended within the last 90 days votes at full weight; a member who did not keeps every point and regains the vote by taking part again (`bettercallzaal/zao-papers`, ZIP-2 section 3). Every comparable system surveyed (Colony, Gardens, Coordinape, fractally's own moving average) decays a weight or a scoring input, never the earned record.
+A weekly erosion of balances was studied as a per-fractal policy option and **ruled out by Zaal on 2026-09-26** (Zaal's ruling of 2026-09-26): no-burn wins. Season 3 answers the same concern on the vote rather than the balance. Voting is gated on a rolling 90-day activation: a member who signed or attended within the last 90 days votes at full weight; a member who did not keeps every point and regains the vote by taking part again (`bettercallzaal/zao-papers`, ZIP-2 section 3). Every comparable system surveyed (Colony, Gardens, Coordinape, fractally's own moving average) decays a weight or a scoring input, never the earned record.
 
 Eden Fractal uses a moving-average formula in its Addendum 1 scoring; that is a scoring input, not an erosion of balances, and ZAO does not apply it.
 

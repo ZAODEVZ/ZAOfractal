@@ -92,7 +92,7 @@ export default function Ranks() {
           <Eyebrow style={{ marginTop: 26, marginBottom: 6 }}>{num(rows.length)} holders</Eyebrow>
         </View>
       }
-      ListEmptyComponent={rows.length > 3 ? null : <Empty title="The board is forming" body="Holders show here after the next on-chain snapshot." />}
+      ListEmptyComponent={rows.length > 3 ? undefined : <Empty title="The board is forming" body="Holders show here after the next on-chain snapshot." />}
       ListFooterComponent={
         <View style={{ marginTop: 18 }}>
           <SnapshotNote date={formatDate(summary.pulledAt)} />
