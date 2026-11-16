@@ -12,7 +12,7 @@
  *   history.json           breakout rankings, which carry discord id -> display
  *                          name and so name the wallets.json-only entries
  *
- * Writes data/members.json and rewrites the KNOWN_MEMBERS block in
+ * Writes data/members.json without member name fields and rewrites the KNOWN_MEMBERS block in
  * dao/src/lib/constants.ts. Run scripts/pull-data.mjs first - the on-chain
  * snapshot is what tells us which names actually correspond to holders.
  *
@@ -170,7 +170,7 @@ async function main() {
       onChainUnnamed: unnamed.length,
       namesWithoutWallet: unmapped.length,
     },
-    members,
+    members: members.map(({ name, ...member }) => member),
     unnamedHolders: unnamed,
     namesWithoutWallet: unmapped,
   };

@@ -286,12 +286,11 @@ const CLAIMS = [
   ['FACILITATION', 'attendance: unnamed 0xf73485a6 sessions ranked', sessionsRanked('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 7],
   ['FACILITATION', 'attendance: unnamed 0xf73485a6 latest session', latestSession('0xf73485a61856ab07ad57152151db3ab99df9a8ea'), 110],
 
-  // Iman is on the named bench and is not in the ledger at all. That is a gap in
-  // the data or a role outside the Monday game, not evidence about him - see
-  // respect/FACILITATION-RUNBOOK.md section 3. Held as an expectation so that the
-  // day he does appear, the doc gets corrected instead of quietly going stale.
-  ['FACILITATION', 'Iman appears in members.json', members.members.some((m) => /iman/i.test(m.name)), false],
+
 ];
+
+// Member names are intentionally omitted from the public snapshot.
+console.log('UNVERIFIABLE: the historical identity lookup requires the private source export.');
 
 const drifted = CLAIMS.filter(([, , actual, expected]) => String(actual) !== String(expected));
 
