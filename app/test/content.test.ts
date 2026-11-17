@@ -9,11 +9,20 @@ const DATA = join(import.meta.dirname, '..', 'src', 'data');
 const load = (f: string) => JSON.parse(readFileSync(join(DATA, f), 'utf8'));
 
 test('no member names in structured data, addresses only', () => {
-  const members = JSON.parse(readFileSync(join(import.meta.dirname, '..', '..', 'data', 'members.json'), 'utf8')).members;
-  const names = new Set<string>(members.map((m: { name: string }) => m.name).filter(Boolean));
+  // Validate string fields directly: the public snapshot no longer supplies a name blacklist.
+  const strings: Record<string, RegExp> = {
+    a: /^0x[0-9a-fA-F]{40}$/,
+    id: /^0x[0-9a-fA-F]{64}$/,
+    tx: /^0x[0-9a-fA-F]{64}$/,
+    at: /^\d{4}-\d{2}-\d{2}T[\d:.]+Z$/,
+    d: /^\d{4}-\d{2}-\d{2}$/,
+    stage: /^(Voting|Veto|Executable|Executed|ExecutionFailed|Failed|Expired|Canceled)$/,
+    v: /^(Yes|No)$/,
+    call: /^(mintRespectGroup|signal|0x[0-9a-fA-F]{8})$/,
+  };
   for (const f of ['leaderboard.json', 'members.json', 'proposals.json']) {
     const walk = (v: unknown, key: string): void => {
-      if (typeof v === 'string' && key !== 'memo') assert.ok(!names.has(v), `${f} has a name at ${key}`);
+      if (typeof v === 'string' && key !== 'memo') assert.ok(strings[key]?.test(v), `${f} has an unexpected string at ${key}`);
       else if (v && typeof v === 'object') for (const [k, c] of Object.entries(v)) walk(c, k);
     };
     walk(load(f), '');

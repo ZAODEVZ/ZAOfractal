@@ -11,7 +11,6 @@
   "members": [
     {
       "address": "0x7234c36a71ec237c2ae7698e8916e0735001e9af",
-      "name": "Zaal",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 800,
@@ -20,7 +19,6 @@
     },
     {
       "address": "0x29f5dee65e1fb856b816eab4f0b702c10e5eaa34",
-      "name": "Hurric4n3ike",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 1176,
@@ -29,7 +27,6 @@
     },
     {
       "address": "0x8d43a3fc2fed663bf6b82ea4792c0e5239d5ee66",
-      "name": "CandyToyBox",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 1570,
@@ -38,7 +35,6 @@
     },
     {
       "address": "0x7990d756acf4e12afc41f995130a33925fb868ee",
-      "name": "Attabotty",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -47,7 +43,6 @@
     },
     {
       "address": "0xfab9a3d37999e12252b47468d2ffd4be15936012",
-      "name": "EZinCrypto",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 356,
@@ -56,7 +51,6 @@
     },
     {
       "address": "0x65284960d4eadaf45e923430a59b7d3bf34db641",
-      "name": "Prizem",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 312,
@@ -65,7 +59,6 @@
     },
     {
       "address": "0x64a15b1d2de581097cb48e5d82619203e24bb3e1",
-      "name": "Ohnahji B",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 594,
@@ -74,7 +67,6 @@
     },
     {
       "address": "0x744cdf12d5d289db118ed9293c10cfa952169071",
-      "name": "Gneric",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 110,
@@ -83,7 +75,6 @@
     },
     {
       "address": "0x2d9cbc4ecfbd1b8f66aa798fd51585ae058daa8b",
-      "name": "Meta Mu",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 746,
@@ -92,7 +83,6 @@
     },
     {
       "address": "0xb7f4b9caba6bb0aeaa2b5d8df23e2b59c192bdbb",
-      "name": "Zach L.",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 872,
@@ -101,7 +91,6 @@
     },
     {
       "address": "0xa70fe49c71529808eb881455073beded47f7016c",
-      "name": "jed XO",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -110,7 +99,6 @@
     },
     {
       "address": "0x29185eb8cfd22aa719529217bfbade61677e0ad2",
-      "name": "Jose (Joseph Goats)",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 732,
@@ -119,7 +107,6 @@
     },
     {
       "address": "0xbc66077e3a212c5f255cfc986e7c0508cfeabfd1",
-      "name": "heather",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -128,7 +115,6 @@
     },
     {
       "address": "0xfda73b8459f66b6758d1809372df921365053af1",
-      "name": "FailOften",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 16,
@@ -137,7 +123,6 @@
     },
     {
       "address": "0xc96ab83c1b1605c9cf5ecc661a415e41423185d8",
-      "name": "DCoop",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 634,
@@ -146,7 +131,6 @@
     },
     {
       "address": "0xf6519fef3eacfdb7843beea94a887255794438f0",
-      "name": "Jango UU",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 150,
@@ -155,7 +139,6 @@
     },
     {
       "address": "0x82cb2305388c853ecfe9ea83a1604acf58466659",
-      "name": "fellenz",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 370,
@@ -164,7 +147,6 @@
     },
     {
       "address": "0x9e4281619db487c2f577e67a7174ff8f5c5e4706",
-      "name": "Krem Beats",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -173,7 +155,6 @@
     },
     {
       "address": "0x1af4c2950c5c892d1f4aacd60e8f656a14555e5a",
-      "name": "Tricky",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -182,7 +163,6 @@
     },
     {
       "address": "0xfcf77ac2cef5eb373d8eb9163f518126cce44f47",
-      "name": "Songs of Eden",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -191,7 +171,6 @@
     },
     {
       "address": "0x07686bedb0102e47d33cec73307d2cc391aff396",
-      "name": "Steve Strange",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 726,
@@ -200,7 +179,6 @@
     },
     {
       "address": "0x03726e10565402a1137960ba06681754be7fe05f",
-      "name": "john blackwell",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 336,
@@ -209,7 +187,6 @@
     },
     {
       "address": "0x849e1c0b2460979d2f7c77b87b90c65c70406421",
-      "name": "Motomoto",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 670,
@@ -218,7 +195,6 @@
     },
     {
       "address": "0x547f8b793362df477a23af6ee05f8e4e291a2ee4",
-      "name": "Shawn",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 288,
@@ -227,7 +203,6 @@
     },
     {
       "address": "0xc98520e01789d21509ec449ddb5285fc56a6eed8",
-      "name": "Danici",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -236,7 +211,6 @@
     },
     {
       "address": "0x21bc394f9f7b52d632e2b22b5b5c6a4ab922d75b",
-      "name": "DopeStilo",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -245,7 +219,6 @@
     },
     {
       "address": "0xe86840d9c4db42da83366a9ee75e57c711a34204",
-      "name": "Binx",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -254,7 +227,6 @@
     },
     {
       "address": "0x4d16fce1bd6e327ae31398ce9a2c4e12c077ecb1",
-      "name": "SwarthyHatter",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 498,
@@ -263,7 +235,6 @@
     },
     {
       "address": "0xed78b6236c14c4088715cd90513c6c604275db96",
-      "name": "0$",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 220,
@@ -272,7 +243,6 @@
     },
     {
       "address": "0x69b256c8016759fdab80ada8e4b48ba2f6cea088",
-      "name": "Melatto",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -281,7 +251,6 @@
     },
     {
       "address": "0x698e5a259c7564fc209a31994d664cb919725383",
-      "name": "Kosbaar",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 230,
@@ -290,7 +259,6 @@
     },
     {
       "address": "0x381cc779761212344f8400373a994d29e17522c6",
-      "name": "XTincT",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 356,
@@ -299,7 +267,6 @@
     },
     {
       "address": "0x0f02419a4aeddbfe3f97e535c1c53008b54f89e3",
-      "name": "emily",
       "source": "history.json + wallets.json",
       "holder": true,
       "zorRespect": 330,
@@ -308,7 +275,6 @@
     },
     {
       "address": "0x50878df070d764aede0d91101d2de83fdcdcf79a",
-      "name": "Mr McFly",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -317,7 +283,6 @@
     },
     {
       "address": "0x38fbf3294dc874ce52f306b1bcb745d61ef028eb",
-      "name": "Mr Darius",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -326,7 +291,6 @@
     },
     {
       "address": "0x5c4a053de47c69f033acec58c2bd1aa4d683e5aa",
-      "name": "Jake K",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 110,
@@ -335,7 +299,6 @@
     },
     {
       "address": "0x6710287cee1a9d1a00251fdc9a12795ec7a86189",
-      "name": "1frog9",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -344,7 +307,6 @@
     },
     {
       "address": "0x1d95b0b6d3582feec7ef35d2ccf91564ded0cf7f",
-      "name": "Desultor",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -353,7 +315,6 @@
     },
     {
       "address": "0x2c4b9348d19c85b23a1b7ea110f0295a657197f3",
-      "name": "Tej",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -362,7 +323,6 @@
     },
     {
       "address": "0x3d5e3102b2df3289799f5b09fe4827a59c3e59ef",
-      "name": "LUI",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 84,
@@ -371,7 +331,6 @@
     },
     {
       "address": "0x5ecc8a94c117eeb5c6233600927e941c2548d574",
-      "name": "Thy Rev",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 220,
@@ -380,7 +339,6 @@
     },
     {
       "address": "0x06d43fe5b16a6783dfdaff1c6a4024e926e89e1f",
-      "name": "Trey",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -389,7 +347,6 @@
     },
     {
       "address": "0x3cc027125a697400b0c6255b3438f4bdbff9d7a6",
-      "name": "Visceral",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -398,7 +355,6 @@
     },
     {
       "address": "0x6e11a90fd63617fa22978451076dfe1d0eafb907",
-      "name": "PR0F!T",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -407,7 +363,6 @@
     },
     {
       "address": "0xffa5e3849bd29a81b202e935d23f4b6ca27d58fe",
-      "name": "trishgia",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -416,7 +371,6 @@
     },
     {
       "address": "0xa4a8e3d3d9907767150be04c55b5095bf639529d",
-      "name": "Anesi",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -425,7 +379,6 @@
     },
     {
       "address": "0x29f9ef8286dcc4f9a94340278db01f12c3483988",
-      "name": "Geek Myth",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -434,7 +387,6 @@
     },
     {
       "address": "0x711741ae6e6e4ee7abbc02212b141e963b314185",
-      "name": "Daniel Obute",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -443,7 +395,6 @@
     },
     {
       "address": "0x2cdb521ceadd3401cc30b6aeeae58d059fee0732",
-      "name": "Tic",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 152,
@@ -452,7 +403,6 @@
     },
     {
       "address": "0xcc749c4b3585b8cbb244afbb6c4c790dab4204e0",
-      "name": "Jen (One Love)",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -461,7 +411,6 @@
     },
     {
       "address": "0xfacef700458d4fc9746f7f3e0d37b462711ff09e",
-      "name": "penguin",
       "source": "history.json + wallets.json",
       "holder": true,
       "zorRespect": 136,
@@ -470,7 +419,6 @@
     },
     {
       "address": "0xa36411680abbfd712e5f6c61df054b5cf5ae6810",
-      "name": "GodCloud",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -479,7 +427,6 @@
     },
     {
       "address": "0x08aa4326a03af42f45c8b82ec747430f5de51ebd",
-      "name": "fernando",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -488,7 +435,6 @@
     },
     {
       "address": "0x76d74cff93d1357c3edbab57ae37c317a183d900",
-      "name": "The Blue Rush",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -497,7 +443,6 @@
     },
     {
       "address": "0x3c4cbade02a68f94d113005da721c46a5238cdfc",
-      "name": "Raqs",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -506,7 +451,6 @@
     },
     {
       "address": "0x41fd6111b3a62cf126b57aacc620eac7c7ba3c5c",
-      "name": "Ade Adeyemo",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -515,7 +459,6 @@
     },
     {
       "address": "0x4b6639f68cee82ac1ff0473003af04f8007ee2d1",
-      "name": "EVERSE",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -524,7 +467,6 @@
     },
     {
       "address": "0xd4d92bc93ce1ce285d308b3953b47bb8311719d9",
-      "name": "Ginger",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -533,7 +475,6 @@
     },
     {
       "address": "0x0c687a27410e8a655bf31befc4c88237a60b1d3d",
-      "name": "Sven",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 110,
@@ -542,7 +483,6 @@
     },
     {
       "address": "0x0c4952550465840736f161d2d6878b8c3b31f330",
-      "name": "judasaca",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -551,7 +491,6 @@
     },
     {
       "address": "0xd6c09962e907428112069273d5c0dc861e7b1c57",
-      "name": "davyd",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -560,7 +499,6 @@
     },
     {
       "address": "0xeae357bde3dc9ec3bbf81f4239760b37aa318405",
-      "name": "smokewavy",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -569,7 +507,6 @@
     },
     {
       "address": "0xf08d62405f064abc953fe3052ea84b4c4bd32678",
-      "name": "Beaver Jam Club",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -578,7 +515,6 @@
     },
     {
       "address": "0x5118c2b4e66eb91e83ccbedc021437a91e99f7c5",
-      "name": "Stonies",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -587,7 +523,6 @@
     },
     {
       "address": "0x81f2cb371985d4ecfe684011e489186bac647702",
-      "name": "hop the don",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -596,7 +531,6 @@
     },
     {
       "address": "0x1105f52b534faf048cf5b35ab2bf1b302b9d57d2",
-      "name": "Clejan",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -605,7 +539,6 @@
     },
     {
       "address": "0x10c163364fe153cadf6532a5b34481eefb99d96d",
-      "name": "losi",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -614,7 +547,6 @@
     },
     {
       "address": "0xdfbc0b0819f841cdda9b418078b4304809600185",
-      "name": "K3O$",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -623,7 +555,6 @@
     },
     {
       "address": "0x0d08ec62b556d3dec321a6097ab43c8488f9dfaf",
-      "name": "kailani",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -632,7 +563,6 @@
     },
     {
       "address": "0x934fbd975001ba40e3b8b2a7f180e74b12d0729f",
-      "name": "Kimiya",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -641,7 +571,6 @@
     },
     {
       "address": "0x156f8717a5c213cfcce01f7ab224bc983ce2f063",
-      "name": "Filip (FAETD)",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -650,7 +579,6 @@
     },
     {
       "address": "0x4f6d0ca7e66d5e447862793f23904ba15f51f4de",
-      "name": "GRLKRASH",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -659,7 +587,6 @@
     },
     {
       "address": "0xbd5f00d011f76918637807f553694e7f2eb02ea9",
-      "name": "maxwell aden",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -668,7 +595,6 @@
     },
     {
       "address": "0x6bb1040cdc05dbb2b9db70bbbc0266e01c52b325",
-      "name": "Timi Wale Lomo",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -677,7 +603,6 @@
     },
     {
       "address": "0x179edd4a88e493ec6ed6a367ecbe7635cc02314c",
-      "name": "JWilZ",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -686,7 +611,6 @@
     },
     {
       "address": "0x122b0eaa0a4252cefcb877f0bf608bae2cf7ca9e",
-      "name": "Wilson",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -695,7 +619,6 @@
     },
     {
       "address": "0x8a1891e106b504656c525b3c45a3e95f7a73a73e",
-      "name": "Mumbo",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 52,
@@ -704,7 +627,6 @@
     },
     {
       "address": "0x9599dccd7cb2355d47ac0da60bad1c83b2dd4e0a",
-      "name": "ArtElla",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -713,7 +635,6 @@
     },
     {
       "address": "0xa702ed4e6a82c8148cc6b1dc7e22f19e4339fc68",
-      "name": "Before Day 1",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -722,7 +643,6 @@
     },
     {
       "address": "0xc11c6f47fe090a706ba82964b8a98f1682b244ff",
-      "name": "Dan SingJoy",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -731,7 +651,6 @@
     },
     {
       "address": "0x8eec07693d06123af17eea6cab3757f4952c710b",
-      "name": "Eli Shams",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -740,7 +659,6 @@
     },
     {
       "address": "0xe9f595099f1260eb723a5447bbc53ac9fd11cf4f",
-      "name": "Fereshteh Farmand",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -749,7 +667,6 @@
     },
     {
       "address": "0x1dde560f2386bf497f04049a08e8fa40db9b2144",
-      "name": "Frederick Godswill",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -758,7 +675,6 @@
     },
     {
       "address": "0x007aefc84c5e47bcc0f6f1e7028196e18f574398",
-      "name": "Hero Granada",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -767,7 +683,6 @@
     },
     {
       "address": "0x297de1ccdebbe02873ee118f6888f511a4016cd4",
-      "name": "Jadyn",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -776,7 +691,6 @@
     },
     {
       "address": "0xd3390619331cbd1a0afb9f9bbb2177f69a8a13d5",
-      "name": "Kayll",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -785,7 +699,6 @@
     },
     {
       "address": "0x8fb6c453de2b64705956c61199e1f6df45cb7a2d",
-      "name": "Lorem Ipsum",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -794,7 +707,6 @@
     },
     {
       "address": "0x684d203c535daea5cd85392faa50cc0cb231b979",
-      "name": "Meran",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -803,7 +715,6 @@
     },
     {
       "address": "0x277acfa0b8aab0b891ab3429fdee800da3b18fe9",
-      "name": "Nasim",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -812,7 +723,6 @@
     },
     {
       "address": "0x3c85652f1784d154840ae327e57d31c82bd9754b",
-      "name": "NessytheRilla",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -821,7 +731,6 @@
     },
     {
       "address": "0xc8c80654ebc3df3b78c0282fcbd12f66ad8961a6",
-      "name": "Philip Giannattasio",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -830,7 +739,6 @@
     },
     {
       "address": "0x475f1ada912ded076fe9369ff1366bfca4a69baa",
-      "name": "Vasiawow",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -839,7 +747,6 @@
     },
     {
       "address": "0xdaa70eac656777b11d7edccf67dd2dad8240bb8c",
-      "name": "Yulia (YO_DESi) Ovcharyk",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -848,7 +755,6 @@
     },
     {
       "address": "0x0c1823a9c0928bc643473d049973e7428d92a5c6",
-      "name": "Марина Музыченко",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -857,7 +763,6 @@
     },
     {
       "address": "0x6df1fd18aaa9f1dd745e6e3afc3ff8522a556889",
-      "name": "Jayconnects",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -866,7 +771,6 @@
     },
     {
       "address": "0x74f1668cea1e733b434dec0d6dcf1f3ec64973d6",
-      "name": "Dr. Bruce",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -875,7 +779,6 @@
     },
     {
       "address": "0xd23ac3a45b429cf276f16acf3036ef23b1f37cf5",
-      "name": "Cryptotony",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -884,7 +787,6 @@
     },
     {
       "address": "0x0517a288d795905d955b1e9f005dc191956875f7",
-      "name": "CD",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -893,7 +795,6 @@
     },
     {
       "address": "0xf027828a6d9a0618a2f419ab71db39cf2295f027",
-      "name": "Vicid Flow",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -902,7 +803,6 @@
     },
     {
       "address": "0x444a327b63850aec4d9b7487d39ef4d3f3a7cdfd",
-      "name": "DSQISE",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -911,7 +811,6 @@
     },
     {
       "address": "0xa32ac6f43458c40369385e60f704912b33312919",
-      "name": "Poison Peso",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -920,7 +819,6 @@
     },
     {
       "address": "0x9f92e205fab7846e76903b087d4d98f3ba7a20e4",
-      "name": "jay.noted",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -929,7 +827,6 @@
     },
     {
       "address": "0x86354d410d57e0acb8321cb2692b34b2ff68341a",
-      "name": "Angel",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -938,7 +835,6 @@
     },
     {
       "address": "0x161bf804f9e50ee203024335ce927dcb411ae946",
-      "name": "Bacon Sandwhich",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -947,7 +843,6 @@
     },
     {
       "address": "0x9a499ed2f72f703655d4f4ac75afc072e4d519d4",
-      "name": "Feliq",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -956,7 +851,6 @@
     },
     {
       "address": "0x389522008fcee1f8bbe82c9fc9cb1538c3b20737",
-      "name": "Clemzy",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -965,7 +859,6 @@
     },
     {
       "address": "0x8902902f8f5aa3123d0b8e6717b015e847d11320",
-      "name": "Craig G",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -974,7 +867,6 @@
     },
     {
       "address": "0x26b4a8e9c7ecc7e3b7d46ca83bee1aa9e0af35a1",
-      "name": "Tre (Vader)",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -983,7 +875,6 @@
     },
     {
       "address": "0x8f59aa0f586d6d941152b9075b344cdc42e9b024",
-      "name": "Boch",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -992,7 +883,6 @@
     },
     {
       "address": "0x1f069ed706f9f8a156fc18679ee0c30db5953bbd",
-      "name": "Amanda Dragons",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1001,7 +891,6 @@
     },
     {
       "address": "0x328f0790d9ac6d3f4b65b655dd2f1440488ec3a8",
-      "name": "0xJack",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1010,7 +899,6 @@
     },
     {
       "address": "0x6984abf56f07a9b77f9c86505662df02abd18ca9",
-      "name": "Blake",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1019,7 +907,6 @@
     },
     {
       "address": "0x4260614dc21676b1aa75dbe4a50a3b416c4c0cd6",
-      "name": "deez",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1028,7 +915,6 @@
     },
     {
       "address": "0xcada053edaacae7e4b38bd5761fedc61ce61d7e8",
-      "name": "Demmy",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1037,7 +923,6 @@
     },
     {
       "address": "0x7b10f92a052e8630ec398cafd7f14a5e39eeb960",
-      "name": "Eye-Rye",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1046,7 +931,6 @@
     },
     {
       "address": "0x9288a0c657c43182af1e6ba714410a627214c4fd",
-      "name": "Gabe-SigueInventando",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1055,7 +939,6 @@
     },
     {
       "address": "0x4e443cdaff5c09a467ec5ee7e8b230ba463cbbbb",
-      "name": "hodlon",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1064,7 +947,6 @@
     },
     {
       "address": "0xb940daa644b080087dd027c7e0cb68cb1ce22805",
-      "name": "Lemon",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1073,7 +955,6 @@
     },
     {
       "address": "0x381777f8e01fa59bfb26c339dec98595fa4e7e9e",
-      "name": "Macho Migoo",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1082,7 +963,6 @@
     },
     {
       "address": "0x85e767682094ace9b788597042c5bcdcfcf8a395",
-      "name": "Michelle",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1091,7 +971,6 @@
     },
     {
       "address": "0xd46b94375251d1a6caebae37953eaf2177e6de52",
-      "name": "Nessa",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1100,7 +979,6 @@
     },
     {
       "address": "0x8c44ba8c6d796d377ce13bc2b8c3def0939bbb4b",
-      "name": "Polygon Elijah",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1109,7 +987,6 @@
     },
     {
       "address": "0xab5a7891e95bd14ff7c3a35b47b8aeef562d1444",
-      "name": "Pyricato",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1118,7 +995,6 @@
     },
     {
       "address": "0x1d2f6243b964ffad6c7e72c1ec7d3edd2deecdd3",
-      "name": "Nate Dinero",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1127,7 +1003,6 @@
     },
     {
       "address": "0xc5005787291c5bfbfbdee13dfba6a138744e64f6",
-      "name": "MsFathom",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1136,7 +1011,6 @@
     },
     {
       "address": "0xa0cb079d354b66188f533a919d1c58cd67afe398",
-      "name": "Adam Songjam",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1145,7 +1019,6 @@
     },
     {
       "address": "0x316c6d65208efc20e5f66f9ac58d0b21ef78f4fc",
-      "name": "Cannon Jones",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1154,7 +1027,6 @@
     },
     {
       "address": "0xb1b243a3b0b89ec638a9601dc7eb59f7b2c3f3b6",
-      "name": "Christano",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1163,7 +1035,6 @@
     },
     {
       "address": "0x35b47f98162aef16555435a2a5655fd5645842cc",
-      "name": "Dan (Anubis)",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1172,7 +1043,6 @@
     },
     {
       "address": "0x41dbc193481c10fb019cb9ceaab7caf909cb8414",
-      "name": "Eric W",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1181,7 +1051,6 @@
     },
     {
       "address": "0xe8b8679c248307a37a2bd35dd43d2278ba346138",
-      "name": "Goose Park",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1190,7 +1059,6 @@
     },
     {
       "address": "0x72fe009bd14a60cf653e656cc4a9523ff5bcabb1",
-      "name": "GritBeat",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1199,7 +1067,6 @@
     },
     {
       "address": "0x2b98017359a08867d0f4060edc579d9d0585e8c1",
-      "name": "Harvesto",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1208,7 +1075,6 @@
     },
     {
       "address": "0x081474ea6ba4ee05b685ceac097771b121ed2ea9",
-      "name": "Jaystreetz",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1217,7 +1083,6 @@
     },
     {
       "address": "0x368c8a0af7cbb2e9a7bc0a0925efb2ac00210bc1",
-      "name": "Leo (Civil_Monkey)",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1226,7 +1091,6 @@
     },
     {
       "address": "0x193a286d6b3301fffb7cb150b1c85f417c34be8e",
-      "name": "Marica",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1235,7 +1099,6 @@
     },
     {
       "address": "0xd7c87da92be8a2157af86641b12c9175632004dd",
-      "name": "Mojo The Ghost",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1244,7 +1107,6 @@
     },
     {
       "address": "0x530b77a1cb86dfb343cc07d60287f36ac2892a46",
-      "name": "Nani",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1253,7 +1115,6 @@
     },
     {
       "address": "0x9ca1971786778085be2fea12304ec48e18d558fb",
-      "name": "Paul Point",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1262,7 +1123,6 @@
     },
     {
       "address": "0x66341cd678e24af7f3bcb2bbfa77fc18a8e80599",
-      "name": "Ritzy P",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1271,7 +1131,6 @@
     },
     {
       "address": "0xaed620c450911c38714e666cd84137767e3d6286",
-      "name": "Tadas",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1280,7 +1139,6 @@
     },
     {
       "address": "0x461acd846b4cc249b96242f1ab7c72a39d94747c",
-      "name": "Will T",
       "source": "names_to_wallets.json",
       "holder": true,
       "zorRespect": 0,
@@ -1289,7 +1147,6 @@
     },
     {
       "address": "0x94734e11b78680a35b0a86ba3ce634d334d6d2a7",
-      "name": "Yoshiro Mare",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,
@@ -1298,7 +1155,6 @@
     },
     {
       "address": "0x77f70fc5e4a77d0e29e8bd611da40a9c898488e1",
-      "name": "Zadan",
       "source": "names_to_wallets.json",
       "holder": false,
       "zorRespect": 0,

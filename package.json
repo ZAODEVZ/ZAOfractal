@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Vercel serverless functions under api/. The docs site has its own package.json in site/.",
   "scripts": {
-    "test": "node --test api/_member.test.mjs"
+    "test": "node --test api/_member.test.mjs scripts/build-members.test.mjs"
   },
   "dependencies": {
     "viem": "2.57.16"

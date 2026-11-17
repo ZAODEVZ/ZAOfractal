@@ -77,7 +77,7 @@ Full launch sequence and what each step needs: **[LAUNCH-RUNBOOK.md](./LAUNCH-RU
 
 Measured against chain data as of 2026-08-26: **[LEDGER-RECONCILIATION.md](./LEDGER-RECONCILIATION.md)** (the OG-to-ZOR migration, five genesis allocation options scored, identity gaps), **[SIGNER-COMMITTEE.md](./SIGNER-COMMITTEE.md)** (the OREC bottleneck, what breaks if a signer is lost, migration path), **[FACILITATION-RUNBOOK.md](./FACILITATION-RUNBOOK.md)** (the L1 facilitator bench and the run sheet) and **[EXECUTION-RUNBOOK.md](./EXECUTION-RUNBOOK.md)** (the execution rota, the revert causes, the unsettled-award backlog).
 
-Every figure in those four is re-checkable with `node scripts/verify-claims.mjs`, which holds all 103 quoted numbers as expectations and exits non-zero when the chain has moved past the prose.
+`node scripts/verify-claims.mjs` checks 102 figures in those four documents and exits non-zero when the chain has moved past the prose. The identity lookup formerly checked against member names is no longer verifiable from the public snapshot: `data/members.json` omits each member's `name` field. Identity descriptions in these dated documents describe the earlier export; address membership and aggregate counts remain available.
 
 ## Open decisions (block a real launch, not the docs)
 
