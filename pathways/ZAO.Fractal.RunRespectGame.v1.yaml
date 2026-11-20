@@ -4,7 +4,8 @@
 # convention with credit. No Pathways code or spec text is copied. The same recipe was offered
 # to the Agentic Ecosystem FrenZ repo as AEF.ZAO.RunRespectGame@v1 (djat/pathways_x_aef PR #2).
 #
-# Runs of this recipe are listed in data/runs.json (scripts/build-runs.mjs).
+# Runs of this recipe are listed in data/runs.json (scripts/build-runs.mjs). A run record exists
+# only for a proposal that passed and was executed; not every game settles.
 # Rules of the game: CLAUDE.md (Respect Game) and
 # research/whitepaper-foundations/02-respect-game-mechanism.md.
 pathway_template:
@@ -22,17 +23,21 @@ pathway_template:
     One weekly Respect Game. Members meet, split into rooms of up to six, each person says
     what they contributed that week, and the room agrees a ranking. Rank sets the award on a
     doubled Fibonacci curve. The room's result is proposed on-chain, stands through a veto
-    window, and mints soulbound Respect. The value of a contribution is decided by the people
+    window, and mints non-transferable Respect (ZOR). The value of a contribution is decided by the people
     who worked beside it.
   research_question: >-
-    Can a small-room, consensus peer ranking, settled on-chain each week, serve as the
-    weighting a cooperative's patronage measure needs, where run counts alone only measure volume?
+    Can a small-room, consensus peer ranking, proposed on-chain after each game and minted
+    only when it passes, serve as the weighting a cooperative's patronage measure needs,
+    where run counts alone only measure volume?
   inputs:
     attendees: list of members present (wallet bound)
     period_number: integer, the on-chain period for this meeting
     room_size: 3 to 6
     award_curve: [110, 68, 42, 26, 16, 10]   # rank 1 to rank 6; source: ZAO_FIBONACCI in dao/src/lib/constants.ts (2 x [55, 34, 21, 13, 8, 5])
   steps:
+  - id: validate_inputs
+    agent_id: gate
+    skill: validate_pathway_inputs
   - id: form_rooms
     agent_id: facilitator
     skill: assign_breakout_rooms
@@ -68,12 +73,17 @@ pathway_template:
   output:
     artifact: pathway_run_record
     receipt: OREC proposal id (hash only; no names or wallets in the run record)
+    fields:
+      - period_number
+      - respect_room_outcome_digest   # sha256 of the room's ordered result as proposed on-chain; the same data is public in the proposal
   gate_profile:
     spec_version: 1.2.0
     default_autonomy: A0
     max_autonomy: A0
+    human_only_ranking: true
     non_delegable_acts:
     - rank_a_member
+    - agent_rank_over_humans
     - submit_or_execute_proposal
     - issue_or_transfer_token
     - admit_member
@@ -83,6 +93,7 @@ pathway_template:
     right_to_follow: downstream_intended
   human_judgment_boundary: >-
     Every ranking is made by people in the room. No agent ranks, proposes or executes.
-    Respect stays The ZAO's and is non-transferable.
-  compose:
-  - AEF.ZAO.EncodeRespectGovernance@v1   # in the Agentic Ecosystem FrenZ bundle, not this repo
+    Respect stays The ZAO's; the ZOR it mints is non-transferable.
+# In the Agentic Ecosystem FrenZ bundle this recipe is the mechanics behind
+# AEF.ZAO.EncodeRespectGovernance@v1, and its output feeds AEF.Coordination.MutualRespectEdge@v1
+# (respect_game_run_ref, respect_room_outcome_digest). It composes nothing itself.
