@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadMembers, blockscout, type MemberProfile } from '../../lib/members';
+
+export async function getStaticPaths() {
+  const members = await loadMembers();
+  return members.map((m) => ({ params: { address: m.slug }, props: { member: m } }));
+}
+
+const { member } = Astro.props as { member: MemberProfile };
+const title = member.name ?? `${member.address.slice(0, 6)}...${member.address.slice(-4)}`;
+---
+<BaseLayout title={`${title} - Member`} description="A ZAO Fractal member's public profile: wallet, Respect and Respect Game history, from on-chain data.">
+  <p class="muted"><a href="/member/">All members</a></p>
+  <h1>{member.name ?? 'ZAO Fractal member'}</h1>
+
+  <div class="wallet">
+    <code id="wallet">{member.address}</code>
+    <button type="button" class="btn btn-secondary btn-small" data-copy={member.address}>Copy</button>
+  </div>
+  <p class="muted">
+    <a href={blockscout(member.address)} target="_blank" rel="noopener noreferrer">View on Blockscout</a>
+  </p>
+
+  {!member.name && (
+    <p class="muted">
+      No public name. A name shows here only when the member picks one in ZAO OS and leaves this wallet visible there.
+    </p>
+  )}
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('button[data-copy]').forEach((b) => {
+    b.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(b.dataset.copy ?? '');
+        b.textContent = 'Copied';
+        setTimeout(() => (b.textContent = 'Copy'), 1500);
+      } catch {
+        b.textContent = 'Select and copy';
+      }
+    });
+  });
+</script>
+
+<style>
+  .wallet {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1rem 0 0.5rem;
+  }
+  .wallet code {
+    word-break: break-all;
+    font-size: 0.95rem;
+  }
+</style>
