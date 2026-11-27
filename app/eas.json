@@ -10,10 +10,13 @@
     },
     "production": {
       "autoIncrement": true,
+      "ios": { "autoIncrement": true },
       "android": { "buildType": "app-bundle" }
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {}
+    }
   }
 }
