@@ -1,13 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { loadMembers, loadRespectSnapshot, blockscout, tokenHoldings, type MemberProfile } from '../../lib/members';
+import {
+  loadMembers,
+  loadRespectSnapshot,
+  loadAttendance,
+  blockscout,
+  tokenHoldings,
+  type MemberProfile,
+  type Attendance,
+} from '../../lib/members';
 
 export async function getStaticPaths() {
-  const members = await loadMembers();
-  return members.map((m) => ({ params: { address: m.slug }, props: { member: m } }));
+  const [members, attendance] = await Promise.all([loadMembers(), loadAttendance()]);
+  return members.map((m) => ({
+    params: { address: m.slug },
+    props: { member: m, attended: attendance.get(m.slug) ?? [] },
+  }));
 }
 
-const { member } = Astro.props as { member: MemberProfile };
+const { member, attended } = Astro.props as { member: MemberProfile; attended: Attendance[] };
+const periods = new Set(attended.map((a) => a.period)).size;
+const txUrl = (h: string) => `https://optimism.blockscout.com/tx/${h}`;
 const snap = await loadRespectSnapshot();
 const fmt = (n: number) => n.toLocaleString('en-US');
 const title = member.name ?? `${member.address.slice(0, 6)}...${member.address.slice(-4)}`;
@@ -42,6 +55,37 @@ const title = member.name ?? `${member.address.slice(0, 6)}...${member.address.s
   <p class="muted">
     Held balances on OP Mainnet, as of the snapshot pulled {snap.pulledAt.slice(0, 10)}. Each number links to Blockscout.
     {member.isOgTreasury && ' This wallet also holds the OG Respect treasury, so its OG balance is not shown as earned Respect.'}
+  </p>
+
+  <h2>Respect Game attendance</h2>
+  {attended.length > 0 ? (
+    <>
+      <p class="muted">
+        {periods} {periods === 1 ? 'period' : 'periods'} with a ZOR award, from {attended[attended.length - 1].date} to {attended[0].date}.
+        Every rank earns Respect, so each award is a game this member played. Each row links its transaction.
+      </p>
+      <div class="att-table">
+        <table>
+          <thead><tr><th>Date</th><th>Period</th><th>Room</th><th>Rank</th><th>Respect</th></tr></thead>
+          <tbody>
+            {attended.map((a) => (
+              <tr>
+                <td><a href={txUrl(a.tx)} target="_blank" rel="noopener noreferrer">{a.date}</a></td>
+                <td>{a.period}</td>
+                <td>{a.room ?? '-'}</td>
+                <td>{a.rank ?? '-'}</td>
+                <td>{a.respect}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  ) : (
+    <p class="muted">No ZOR award on record for this wallet.</p>
+  )}
+  <p class="muted">
+    Games before the ZOR contract (fractals 1 to 73, OG Respect) are on chain only as balances, not per game, so they are not listed here.
   </p>
 
   {!member.name && (
@@ -97,6 +141,12 @@ const title = member.name ?? `${member.address.slice(0, 6)}...${member.address.s
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--orange, #e55611);
+  }
+  .att-table {
+    overflow-x: auto;
+  }
+  .att-table table {
+    margin: 0.5rem 0;
   }
   .tile .label {
     font-size: 0.85rem;

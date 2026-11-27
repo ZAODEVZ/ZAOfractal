@@ -24,7 +24,50 @@ export interface RespectSnapshot {
 }
 
 interface Holder { address: string; respect: number }
-interface AwardEvent { recipient: string }
+interface AwardEvent {
+  recipient: string;
+  date: string;
+  tx: string;
+  periodNumber: number;
+  groupNum: number | null;
+  level: number | null;
+  respect: number;
+}
+
+/** One ZOR award: the member was in a room that period and was ranked. */
+export interface Attendance {
+  period: number;
+  date: string; // YYYY-MM-DD
+  room: number | null;
+  rank: number | null; // 1 is top; null when the award carries no level
+  respect: number;
+  tx: string;
+}
+
+/**
+ * ZOR-era attendance per wallet, newest first. Every rank earns Respect, so an
+ * award means the member attended. Awards record level 6 for the top rank and
+ * level 1 for the sixth, so rank = 7 - level.
+ */
+export async function loadAttendance(): Promise<Map<string, Attendance[]>> {
+  const { events } = await readJson<{ events: AwardEvent[] }>('award-events.json');
+  const by = new Map<string, Attendance[]>();
+  for (const e of events) {
+    const slug = e.recipient.toLowerCase();
+    const list = by.get(slug) ?? [];
+    list.push({
+      period: e.periodNumber,
+      date: e.date.slice(0, 10),
+      room: e.groupNum,
+      rank: typeof e.level === 'number' && e.level >= 1 && e.level <= 6 ? 7 - e.level : null,
+      respect: e.respect,
+      tx: e.tx,
+    });
+    by.set(slug, list);
+  }
+  for (const list of by.values()) list.sort((a, b) => b.date.localeCompare(a.date) || b.period - a.period);
+  return by;
+}
 
 const dataDir = path.resolve('../data');
 const readJson = async <T>(file: string): Promise<T> =>
