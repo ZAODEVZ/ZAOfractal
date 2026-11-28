@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadMembers, loadRespectSnapshot, blockscout, tokenHoldings, type MemberProfile } from '../../lib/members';
+
+export async function getStaticPaths() {
+  const members = await loadMembers();
+  return members.map((m) => ({ params: { address: m.slug }, props: { member: m } }));
+}
+
+const { member } = Astro.props as { member: MemberProfile };
+const snap = await loadRespectSnapshot();
+const fmt = (n: number) => n.toLocaleString('en-US');
+const title = member.name ?? `${member.address.slice(0, 6)}...${member.address.slice(-4)}`;
+---
+<BaseLayout membersOnly={false} title={`${title} - Member`} description="A ZAO Fractal member's public profile: wallet, Respect and Respect Game history, from on-chain data.">
+  <p class="muted"><a href="/member/">All members</a></p>
+  <h1>{member.name ?? 'ZAO Fractal member'}</h1>
+
+  <div class="wallet">
+    <code id="wallet">{member.address}</code>
+    <button type="button" class="btn btn-secondary btn-small" data-copy={member.address}>Copy</button>
+  </div>
+  <p class="muted">
+    <a href={blockscout(member.address)} target="_blank" rel="noopener noreferrer">View on Blockscout</a>
+  </p>
+
+  <h2>Respect</h2>
+  <div class="respect">
+    <a class="tile" href={tokenHoldings(member.address, snap.zorContract)} target="_blank" rel="noopener noreferrer">
+      <span class="num">{fmt(member.zorRespect)}</span>
+      <span class="label">ZOR Respect<br />fractals 74 on</span>
+    </a>
+    <a class="tile" href={tokenHoldings(member.address, snap.ogContract)} target="_blank" rel="noopener noreferrer">
+      <span class="num">{member.isOgTreasury ? '-' : fmt(member.ogRespect)}</span>
+      <span class="label">OG Respect<br />fractals 1 to 73</span>
+    </a>
+    <div class="tile">
+      <span class="num">{fmt(member.zorRespect + member.ogRespect)}</span>
+      <span class="label">Total held</span>
+    </div>
+  </div>
+  <p class="muted">
+    Held balances on OP Mainnet, as of the snapshot pulled {snap.pulledAt.slice(0, 10)}. Each number links to Blockscout.
+    {member.isOgTreasury && ' This wallet also holds the OG Respect treasury, so its OG balance is not shown as earned Respect.'}
+  </p>
+
+  {!member.name && (
+    <p class="muted">
+      No public name. A name shows here only when the member picks one in ZAO OS and leaves this wallet visible there.
+    </p>
+  )}
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('button[data-copy]').forEach((b) => {
+    b.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(b.dataset.copy ?? '');
+        b.textContent = 'Copied';
+        setTimeout(() => (b.textContent = 'Copy'), 1500);
+      } catch {
+        b.textContent = 'Select and copy';
+      }
+    });
+  });
+</script>
+
+<style>
+  .wallet {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1rem 0 0.5rem;
+  }
+  .wallet code {
+    word-break: break-all;
+    font-size: 0.95rem;
+  }
+  .respect {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+  }
+  .tile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .tile .num {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--orange, #e55611);
+  }
+  .tile .label {
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+</style>
