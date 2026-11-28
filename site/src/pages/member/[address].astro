@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 const { member } = Astro.props as { member: MemberProfile };
 const title = member.name ?? `${member.address.slice(0, 6)}...${member.address.slice(-4)}`;
 ---
-<BaseLayout title={`${title} - Member`} description="A ZAO Fractal member's public profile: wallet, Respect and Respect Game history, from on-chain data.">
+<BaseLayout membersOnly={false} title={`${title} - Member`} description="A ZAO Fractal member's public profile: wallet, Respect and Respect Game history, from on-chain data.">
   <p class="muted"><a href="/member/">All members</a></p>
   <h1>{member.name ?? 'ZAO Fractal member'}</h1>
 

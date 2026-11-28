@@ -5,7 +5,7 @@ import { loadMembers } from '../../lib/members';
 const members = await loadMembers();
 const named = members.filter((m) => m.name).length;
 ---
-<BaseLayout title="Members" description="Every wallet that has earned ZAO Fractal Respect, each with its own profile page.">
+<BaseLayout membersOnly={false} title="Members" description="Every wallet that has earned ZAO Fractal Respect, each with its own profile page.">
   <h1>Members</h1>
   <p class="muted">
     Every wallet that holds ZOR or OG Respect or has received a ZOR award: {members.length} wallets.
