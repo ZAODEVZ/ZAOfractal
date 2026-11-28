@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadMembers } from '../../lib/members';
+
+const members = await loadMembers();
+const named = members.filter((m) => m.name).length;
+---
+<BaseLayout membersOnly={false} title="Members" description="Every wallet that has earned ZAO Fractal Respect, each with its own profile page.">
+  <h1>Members</h1>
+  <p class="muted">
+    Every wallet that holds ZOR or OG Respect or has received a ZOR award: {members.length} wallets.
+    {named} show a name their owner chose in ZAO OS; the rest show the wallet only.
+  </p>
+  <ul class="member-list">
+    {members.map((m) => (
+      <li>
+        <a href={`/member/${m.slug}/`}>{m.name ?? <code>{m.address}</code>}</a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
+
+<style>
+  .member-list {
+    list-style: none;
+    padding: 0;
+  }
+  .member-list li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  }
+  .member-list code {
+    word-break: break-all;
+    font-size: 0.85rem;
+  }
+</style>
